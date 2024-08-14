@@ -1,0 +1,261 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductSocialShare/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"share-option\" v-if=\"product?.social_share && option?.product?.social_share\">\n    <div class=\"product-title mt-0\">\n      <h4>{{ $t('Share it') }}</h4>\n    </div>\n    <ul class=\"product-social\">\n      <li>\n        <a href=\"javascript:void(0)\" @click=\"shareOnFacebook(product.slug)\">\n          <Icon name=\"ri:facebook-fill\"></Icon>\n        </a>\n      </li>\n      <li>\n        <a href=\"javascript:void(0)\" @click=\"shareOnTwitter(product.slug)\">\n          <Icon name=\"ri:twitter-fill\"></Icon>\n        </a>\n      </li>\n      <li>\n        <a href=\"javascript:void(0)\" @click=\"shareOnLinkedIn(product.slug)\">\n          <Icon name=\"ri:linkedin-fill\"></Icon>\n        </a>\n      </li>\n      <li>\n        <a href=\"javascript:void(0)\" @click=\"shareOnWhatsApp(product.slug)\">\n          <Icon name=\"ri:whatsapp-fill\"></Icon>\n        </a>\n      </li>\n      <li>\n        <a href=\"javascript:void(0)\" @click=\"shareViaEmail(product.slug)\">\n          <Icon name=\"ri:mail-fill\"></Icon>\n        </a>\n      </li>\n    </ul>\n  </div>\n</template>\n<script setup>\nlet props = defineProps({\n  product: Object,\n  option: Object\n})\n\nconst url = ref('http://localhost:3000'); // Replace with your website URL\n\nconst shareOnFacebook = (slug) => {\n  const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url.value + '/product/' + slug)}`;\n  window.open(facebookShareUrl, '_blank');\n};\n\nconst shareOnTwitter = (slug) => {\n  const twitterShareUrl = `https://twitter.com/intent/tweet?u=${encodeURIComponent(url.value + '/product/' + slug)}`;\n  window.open(twitterShareUrl, '_blank');\n};\n\nconst shareOnLinkedIn = (slug) => {\n  const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?u=${encodeURIComponent(url.value + '/product/' + slug)}`;\n  window.open(linkedInShareUrl, '_blank');\n};\n\nconst shareOnWhatsApp = (slug) => {\n  const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url.value + '/product/' + slug)}`;\n  window.open(whatsappShareUrl, '_blank');\n};\n\nconst shareViaEmail = (slug) => {\n  const subject = 'Check out this awesome product!';\n  const body = `I thought you might be interested in this product: ${url.value + '/product/' + slug}`;\n  const emailShareUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;\n  window.location.href = emailShareUrl;\n};\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056341910,
+      "end": 1716056342099,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342099,
+      "end": 1716056342099,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342099,
+      "end": 1716056342099,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342099,
+      "end": 1716056342099,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342099,
+      "end": 1716056342099,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342099,
+      "end": 1716056342099,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342099,
+      "end": 1716056342099,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342099,
+      "end": 1716056342099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342099,
+      "end": 1716056342099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342099,
+      "end": 1716056342099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342099,
+      "end": 1716056342099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object,\n  option: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nconst url = ref('http://localhost:3000'); // Replace with your website URL\n\nconst shareOnFacebook = (slug) => {\n  const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url.value + '/product/' + slug)}`;\n  window.open(facebookShareUrl, '_blank');\n};\n\nconst shareOnTwitter = (slug) => {\n  const twitterShareUrl = `https://twitter.com/intent/tweet?u=${encodeURIComponent(url.value + '/product/' + slug)}`;\n  window.open(twitterShareUrl, '_blank');\n};\n\nconst shareOnLinkedIn = (slug) => {\n  const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?u=${encodeURIComponent(url.value + '/product/' + slug)}`;\n  window.open(linkedInShareUrl, '_blank');\n};\n\nconst shareOnWhatsApp = (slug) => {\n  const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url.value + '/product/' + slug)}`;\n  window.open(whatsappShareUrl, '_blank');\n};\n\nconst shareViaEmail = (slug) => {\n  const subject = 'Check out this awesome product!';\n  const body = `I thought you might be interested in this product: ${url.value + '/product/' + slug}`;\n  const emailShareUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;\n  window.location.href = emailShareUrl;\n};\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  if (__props.product?.social_share && __props.option?.product?.social_share) {\n    _push(`<div${\n      _ssrRenderAttrs(_mergeProps({ class: \"share-option\" }, _attrs))\n    }><div class=\"product-title mt-0\"><h4>${\n      _ssrInterpolate(_ctx.$t('Share it'))\n    }</h4></div><ul class=\"product-social\"><li><a href=\"javascript:void(0)\">`)\n    _push(_ssrRenderComponent(_component_Icon, { name: \"ri:facebook-fill\" }, null, _parent))\n    _push(`</a></li><li><a href=\"javascript:void(0)\">`)\n    _push(_ssrRenderComponent(_component_Icon, { name: \"ri:twitter-fill\" }, null, _parent))\n    _push(`</a></li><li><a href=\"javascript:void(0)\">`)\n    _push(_ssrRenderComponent(_component_Icon, { name: \"ri:linkedin-fill\" }, null, _parent))\n    _push(`</a></li><li><a href=\"javascript:void(0)\">`)\n    _push(_ssrRenderComponent(_component_Icon, { name: \"ri:whatsapp-fill\" }, null, _parent))\n    _push(`</a></li><li><a href=\"javascript:void(0)\">`)\n    _push(_ssrRenderComponent(_component_Icon, { name: \"ri:mail-fill\" }, null, _parent))\n    _push(`</a></li></ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductSocialShare/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342099,
+      "end": 1716056342100,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342100,
+      "end": 1716056342100,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342100,
+      "end": 1716056342100,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342100,
+      "end": 1716056342100,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342100,
+      "end": 1716056342100,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342100,
+      "end": 1716056342100,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342100,
+      "end": 1716056342100,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342100,
+      "end": 1716056342100,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342100,
+      "end": 1716056342100,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  props: {\n    product: Object,\n    option: Object\n  },\n  setup(__props) {\n    let props = __props;\n    const url = ref(\"http://localhost:3000\");\n    const shareOnFacebook = (slug) => {\n      const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(facebookShareUrl, \"_blank\");\n    };\n    const shareOnTwitter = (slug) => {\n      const twitterShareUrl = `https://twitter.com/intent/tweet?u=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(twitterShareUrl, \"_blank\");\n    };\n    const shareOnLinkedIn = (slug) => {\n      const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?u=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(linkedInShareUrl, \"_blank\");\n    };\n    const shareOnWhatsApp = (slug) => {\n      const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(whatsappShareUrl, \"_blank\");\n    };\n    const shareViaEmail = (slug) => {\n      const subject = \"Check out this awesome product!\";\n      const body = `I thought you might be interested in this product: ${url.value + \"/product/\" + slug}`;\n      const emailShareUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;\n      (void 0).location.href = emailShareUrl;\n    };\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_Icon = _resolveComponent(\"Icon\");\n      if (__props.product?.social_share && __props.option?.product?.social_share) {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"share-option\" }, _attrs))}><div class=\"product-title mt-0\"><h4>${_ssrInterpolate(_ctx.$t(\"Share it\"))}</h4></div><ul class=\"product-social\"><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:facebook-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:twitter-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:linkedin-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:whatsapp-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:mail-fill\" }, null, _parent));\n        _push(`</a></li></ul></div>`);\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductSocialShare/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056342100,
+      "end": 1716056342171,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342171,
+      "end": 1716056342171,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342171,
+      "end": 1716056342171,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342171,
+      "end": 1716056342171,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342171,
+      "end": 1716056342171,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342171,
+      "end": 1716056342171,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342171,
+      "end": 1716056342171,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342171,
+      "end": 1716056342171,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342171,
+      "end": 1716056342171,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342171,
+      "end": 1716056342171,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  props: {\n    product: Object,\n    option: Object\n  },\n  setup(__props) {\n    let props = __props;\n    const url = ref(\"http://localhost:3000\");\n    const shareOnFacebook = (slug) => {\n      const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(facebookShareUrl, \"_blank\");\n    };\n    const shareOnTwitter = (slug) => {\n      const twitterShareUrl = `https://twitter.com/intent/tweet?u=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(twitterShareUrl, \"_blank\");\n    };\n    const shareOnLinkedIn = (slug) => {\n      const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?u=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(linkedInShareUrl, \"_blank\");\n    };\n    const shareOnWhatsApp = (slug) => {\n      const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(whatsappShareUrl, \"_blank\");\n    };\n    const shareViaEmail = (slug) => {\n      const subject = \"Check out this awesome product!\";\n      const body = `I thought you might be interested in this product: ${url.value + \"/product/\" + slug}`;\n      const emailShareUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;\n      (void 0).location.href = emailShareUrl;\n    };\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_Icon = _resolveComponent(\"Icon\");\n      if (__props.product?.social_share && __props.option?.product?.social_share) {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"share-option\" }, _attrs))}><div class=\"product-title mt-0\"><h4>${_ssrInterpolate(_ctx.$t(\"Share it\"))}</h4></div><ul class=\"product-social\"><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:facebook-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:twitter-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:linkedin-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:whatsapp-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:mail-fill\" }, null, _parent));\n        _push(`</a></li></ul></div>`);\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductSocialShare/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056342171,
+      "end": 1716056342173,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  props: {\n    product: Object,\n    option: Object\n  },\n  setup(__props) {\n    let props = __props;\n    const url = ref(\"http://localhost:3000\");\n    const shareOnFacebook = (slug) => {\n      const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(facebookShareUrl, \"_blank\");\n    };\n    const shareOnTwitter = (slug) => {\n      const twitterShareUrl = `https://twitter.com/intent/tweet?u=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(twitterShareUrl, \"_blank\");\n    };\n    const shareOnLinkedIn = (slug) => {\n      const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?u=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(linkedInShareUrl, \"_blank\");\n    };\n    const shareOnWhatsApp = (slug) => {\n      const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(whatsappShareUrl, \"_blank\");\n    };\n    const shareViaEmail = (slug) => {\n      const subject = \"Check out this awesome product!\";\n      const body = `I thought you might be interested in this product: ${url.value + \"/product/\" + slug}`;\n      const emailShareUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;\n      (void 0).location.href = emailShareUrl;\n    };\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_Icon = _resolveComponent(\"Icon\");\n      if (__props.product?.social_share && __props.option?.product?.social_share) {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"share-option\" }, _attrs))}><div class=\"product-title mt-0\"><h4>${_ssrInterpolate(_ctx.$t(\"Share it\"))}</h4></div><ul class=\"product-social\"><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:facebook-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:twitter-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:linkedin-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:whatsapp-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:mail-fill\" }, null, _parent));\n        _push(`</a></li></ul></div>`);\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductSocialShare/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056342171,
+      "end": 1716056342173,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342173,
+      "end": 1716056342173,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342173,
+      "end": 1716056342173,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342173,
+      "end": 1716056342173,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342173,
+      "end": 1716056342173,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342173,
+      "end": 1716056342173,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { ref } from 'vue';\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  props: {\n    product: Object,\n    option: Object\n  },\n  setup(__props) {\n    let props = __props;\n    const url = ref(\"http://localhost:3000\");\n    const shareOnFacebook = (slug) => {\n      const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(facebookShareUrl, \"_blank\");\n    };\n    const shareOnTwitter = (slug) => {\n      const twitterShareUrl = `https://twitter.com/intent/tweet?u=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(twitterShareUrl, \"_blank\");\n    };\n    const shareOnLinkedIn = (slug) => {\n      const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?u=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(linkedInShareUrl, \"_blank\");\n    };\n    const shareOnWhatsApp = (slug) => {\n      const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url.value + \"/product/\" + slug)}`;\n      (void 0).open(whatsappShareUrl, \"_blank\");\n    };\n    const shareViaEmail = (slug) => {\n      const subject = \"Check out this awesome product!\";\n      const body = `I thought you might be interested in this product: ${url.value + \"/product/\" + slug}`;\n      const emailShareUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;\n      (void 0).location.href = emailShareUrl;\n    };\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_Icon = __nuxt_component_0;\n      if (__props.product?.social_share && __props.option?.product?.social_share) {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"share-option\" }, _attrs))}><div class=\"product-title mt-0\"><h4>${_ssrInterpolate(_ctx.$t(\"Share it\"))}</h4></div><ul class=\"product-social\"><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:facebook-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:twitter-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:linkedin-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:whatsapp-fill\" }, null, _parent));\n        _push(`</a></li><li><a href=\"javascript:void(0)\">`);\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:mail-fill\" }, null, _parent));\n        _push(`</a></li></ul></div>`);\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductSocialShare/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056342173,
+      "end": 1716056342173,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056342173,
+      "end": 1716056342173,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342173,
+      "end": 1716056342173,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342173,
+      "end": 1716056342173,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/pages/cart/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <WidgetsBreadcrumb :breadcrumbs=\"breadcrumbs\" />\n    <section class=\"cart-section section-b-space\">\n        <div class=\"container-fluid-lg\">\n            <div class=\"row g-xl-5 g-sm-4 g-3\" v-if=\"cart.length\">\n                <div class=\"col-xxl-9 col-xl-8\">\n                    <ShopCartProducts />\n                </div>\n\n                <div class=\"col-xxl-3 col-xl-4\">\n                    <ShopCartSummary />\n                </div>\n            </div>\n            <WidgetsNoData\n            :classes=\"'no-data-added'\"\n            :image=\"'/svg/empty-items.svg'\"\n            :text=\"'No Items Added'\"\n            :description=\"'It appears that nothing has been added to your cart.'\"\n            v-if=\"!cart?.length\">\n            </WidgetsNoData>\n        </div>\n    </section>\n</template>\n<script setup>\nimport { useCartStore } from \"@/store/cart\"\nimport { storeToRefs } from \"pinia\";\nimport { useApiCartStore } from \"~~/store/CartWithApi\";\n\nvar breadcrumbs = { page: \"Cart\", links: [{ name: \"Cart\" }] }\nlet { cart, CartTotal } = storeToRefs(useCartStore())\nlet { ApiCart } = storeToRefs(useApiCartStore())\nif (useCookie('uat').value) {\n    useCartStore().GetCartDataFromApi()\n}\nlet ProductImage = ({ product }) => {\n    return product.selectedVariant?.variation_image?.original_url || product?.product_thumbnail?.original_url || PlaceholderImage\n}\n</script>",
+      "start": 1716056288935,
+      "end": 1716056289014,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056289014,
+      "end": 1716056289014,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056289014,
+      "end": 1716056289014,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056289014,
+      "end": 1716056289014,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056289014,
+      "end": 1716056289014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056289014,
+      "end": 1716056289014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056289014,
+      "end": 1716056289014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056289014,
+      "end": 1716056289014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createBlock as _createBlock, Fragment as _Fragment } from \"vue\"\n\nconst _hoisted_1 = { class: \"cart-section section-b-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = {\n  key: 0,\n  class: \"row g-xl-5 g-sm-4 g-3\"\n}\nconst _hoisted_4 = { class: \"col-xxl-9 col-xl-8\" }\nconst _hoisted_5 = { class: \"col-xxl-3 col-xl-4\" }\n\nimport { useCartStore } from \"@/store/cart\"\nimport { storeToRefs } from \"pinia\";\nimport { useApiCartStore } from \"~~/store/CartWithApi\";\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nvar breadcrumbs = { page: \"Cart\", links: [{ name: \"Cart\" }] }\nlet { cart, CartTotal } = storeToRefs(useCartStore())\nlet { ApiCart } = storeToRefs(useApiCartStore())\nif (useCookie('uat').value) {\n    useCartStore().GetCartDataFromApi()\n}\nlet ProductImage = ({ product }) => {\n    return product.selectedVariant?.variation_image?.original_url || product?.product_thumbnail?.original_url || PlaceholderImage\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_ShopCartProducts = _resolveComponent(\"ShopCartProducts\")\n  const _component_ShopCartSummary = _resolveComponent(\"ShopCartSummary\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  return (_openBlock(), _createElementBlock(_Fragment, null, [\n    _createVNode(_component_WidgetsBreadcrumb, { breadcrumbs: _unref(breadcrumbs) }, null, 8, [\"breadcrumbs\"]),\n    _createElementVNode(\"section\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        (_unref(cart).length)\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n              _createElementVNode(\"div\", _hoisted_4, [\n                _createVNode(_component_ShopCartProducts)\n              ]),\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createVNode(_component_ShopCartSummary)\n              ])\n            ]))\n          : _createCommentVNode(\"\", true),\n        (!_unref(cart)?.length)\n          ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n              key: 1,\n              classes: 'no-data-added',\n              image: '/svg/empty-items.svg',\n              text: 'No Items Added',\n              description: 'It appears that nothing has been added to your cart.'\n            }, null, 8, [\"image\", \"description\"]))\n          : _createCommentVNode(\"\", true)\n      ])\n    ])\n  ], 64))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289014,
+      "end": 1716056289014,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056289014,
+      "end": 1716056289014,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289014,
+      "end": 1716056289014,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056289014,
+      "end": 1716056289014,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056289014,
+      "end": 1716056289014,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056289014,
+      "end": 1716056289014,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289015,
+      "end": 1716056289015,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056289015,
+      "end": 1716056289015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056289015,
+      "end": 1716056289015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056289015,
+      "end": 1716056289015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056289015,
+      "end": 1716056289015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056289015,
+      "end": 1716056289015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056289015,
+      "end": 1716056289015,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056289015,
+      "end": 1716056289015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056289015,
+      "end": 1716056289015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056289015,
+      "end": 1716056289015,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056289015,
+      "end": 1716056289015,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useCookie } from '#app/composables/cookie';\nimport { PlaceholderImage } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/dataFilters.js';\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createBlock as _createBlock, Fragment as _Fragment } from \"vue\"\n\nconst _hoisted_1 = { class: \"cart-section section-b-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = {\n  key: 0,\n  class: \"row g-xl-5 g-sm-4 g-3\"\n}\nconst _hoisted_4 = { class: \"col-xxl-9 col-xl-8\" }\nconst _hoisted_5 = { class: \"col-xxl-3 col-xl-4\" }\n\nimport { useCartStore } from \"@/store/cart\"\nimport { storeToRefs } from \"pinia\";\nimport { useApiCartStore } from \"~~/store/CartWithApi\";\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nvar breadcrumbs = { page: \"Cart\", links: [{ name: \"Cart\" }] }\nlet { cart, CartTotal } = storeToRefs(useCartStore())\nlet { ApiCart } = storeToRefs(useApiCartStore())\nif (useCookie('uat').value) {\n    useCartStore().GetCartDataFromApi()\n}\nlet ProductImage = ({ product }) => {\n    return product.selectedVariant?.variation_image?.original_url || product?.product_thumbnail?.original_url || PlaceholderImage\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_ShopCartProducts = _resolveComponent(\"ShopCartProducts\")\n  const _component_ShopCartSummary = _resolveComponent(\"ShopCartSummary\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  return (_openBlock(), _createElementBlock(_Fragment, null, [\n    _createVNode(_component_WidgetsBreadcrumb, { breadcrumbs: _unref(breadcrumbs) }, null, 8, [\"breadcrumbs\"]),\n    _createElementVNode(\"section\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        (_unref(cart).length)\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n              _createElementVNode(\"div\", _hoisted_4, [\n                _createVNode(_component_ShopCartProducts)\n              ]),\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createVNode(_component_ShopCartSummary)\n              ])\n            ]))\n          : _createCommentVNode(\"\", true),\n        (!_unref(cart)?.length)\n          ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n              key: 1,\n              classes: 'no-data-added',\n              image: '/svg/empty-items.svg',\n              text: 'No Items Added',\n              description: 'It appears that nothing has been added to your cart.'\n            }, null, 8, [\"image\", \"description\"]))\n          : _createCommentVNode(\"\", true)\n      ])\n    ])\n  ], 64))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289015,
+      "end": 1716056289017,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056289017,
+      "end": 1716056289017,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056289017,
+      "end": 1716056289017,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056289017,
+      "end": 1716056289017,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056289017,
+      "end": 1716056289017,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Breadcrumb/index.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Cart/Products.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Cart/Summary.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/NoData/index.vue\";\nimport { useCookie } from '#app/composables/cookie';\nimport { PlaceholderImage } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/dataFilters.js';\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createBlock as _createBlock, Fragment as _Fragment } from \"vue\"\n\nconst _hoisted_1 = { class: \"cart-section section-b-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = {\n  key: 0,\n  class: \"row g-xl-5 g-sm-4 g-3\"\n}\nconst _hoisted_4 = { class: \"col-xxl-9 col-xl-8\" }\nconst _hoisted_5 = { class: \"col-xxl-3 col-xl-4\" }\n\nimport { useCartStore } from \"@/store/cart\"\nimport { storeToRefs } from \"pinia\";\nimport { useApiCartStore } from \"~~/store/CartWithApi\";\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nvar breadcrumbs = { page: \"Cart\", links: [{ name: \"Cart\" }] }\nlet { cart, CartTotal } = storeToRefs(useCartStore())\nlet { ApiCart } = storeToRefs(useApiCartStore())\nif (useCookie('uat').value) {\n    useCartStore().GetCartDataFromApi()\n}\nlet ProductImage = ({ product }) => {\n    return product.selectedVariant?.variation_image?.original_url || product?.product_thumbnail?.original_url || PlaceholderImage\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsBreadcrumb = __nuxt_component_0\n  const _component_ShopCartProducts = __nuxt_component_1\n  const _component_ShopCartSummary = __nuxt_component_2\n  const _component_WidgetsNoData = __nuxt_component_3\n\n  return (_openBlock(), _createElementBlock(_Fragment, null, [\n    _createVNode(_component_WidgetsBreadcrumb, { breadcrumbs: _unref(breadcrumbs) }, null, 8, [\"breadcrumbs\"]),\n    _createElementVNode(\"section\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        (_unref(cart).length)\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n              _createElementVNode(\"div\", _hoisted_4, [\n                _createVNode(_component_ShopCartProducts)\n              ]),\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createVNode(_component_ShopCartSummary)\n              ])\n            ]))\n          : _createCommentVNode(\"\", true),\n        (!_unref(cart)?.length)\n          ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n              key: 1,\n              classes: 'no-data-added',\n              image: '/svg/empty-items.svg',\n              text: 'No Items Added',\n              description: 'It appears that nothing has been added to your cart.'\n            }, null, 8, [\"image\", \"description\"]))\n          : _createCommentVNode(\"\", true)\n      ])\n    ])\n  ], 64))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289017,
+      "end": 1716056289017,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056289017,
+      "end": 1716056289017,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056289017,
+      "end": 1716056289017,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056289017,
+      "end": 1716056289017,
+      "order": "normal"
+    }
+  ]
+}

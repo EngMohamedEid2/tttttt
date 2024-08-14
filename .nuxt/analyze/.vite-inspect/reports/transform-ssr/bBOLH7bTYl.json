@@ -1,0 +1,259 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/ProductModal/Main.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"row g-sm-4 g-2\">\n        <div class=\"col-lg-6\">\n            <WidgetsModalsProductModalImages  :Data=\"Data.item\"/>\n        </div>\n        <WidgetsModalsProductModalRight  :Product=\"Data.item\" />\n    </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from 'pinia';\nimport { useCartStore } from '~~/store/cart';\nlet props = defineProps({ Data: { type: Object } })\n\nlet { addSelectionToCart } = useCartStore(), { cart } = storeToRefs(useCartStore());\nlet attributes = ref({}), existingCartItemIndex = ref(-1), GlobalSelectedVariant = ref({}), selectedAttributeIds = ref([]), productAvailable = ref(true), formSubmitted = ref(false);\n\nprops.Data.item?.attributes.forEach((attribute, i) => {\n        attributes.value[attribute.name] = { dropDownOptions: attribute.attribute_values, available:true }\n    })\n\n    \nwatch(() => attributes, () => {\n    productAvailable.value = true, selectedAttributeIds.value = [], existingCartItemIndex.value = -1,GlobalSelectedVariant.value = {};\n    for (const key in attributes.value) {\n        attributes.value[key].selected?.id && selectedAttributeIds.value.push(attributes.value[key].selected?.id)\n    }\n    if (selectedAttributeIds.value.length == props.Data.item.variations[0]?.attribute_values?.length) {\n        props.Data.item.variations.every((variant, index) => {\n            let count = 0;\n            selectedAttributeIds.value.forEach(id => {\n                variant.attribute_values.map(value => value.id).includes(id) && count++;\n            })\n            if (count == selectedAttributeIds.value.length) {\n                GlobalSelectedVariant.value = JSON.parse(JSON.stringify(variant))\n                let productIndex = cart.value.findIndex(item => (item.product_id == props.Data.item.id && item.variation_id == variant.id))\n                productIndex >= 0 ? existingCartItemIndex.value = productIndex : existingCartItemIndex.value = -1\n                return false\n            } else return true\n        })\n        Object.keys(GlobalSelectedVariant.value).length?productAvailable.value = true:productAvailable.value = false\n    }\n}, { deep: true })\n</script>",
+      "start": 1716056342621,
+      "end": 1716056342750,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342750,
+      "end": 1716056342750,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342750,
+      "end": 1716056342750,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342750,
+      "end": 1716056342750,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342750,
+      "end": 1716056342750,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342750,
+      "end": 1716056342750,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342750,
+      "end": 1716056342751,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342751,
+      "end": 1716056342751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342751,
+      "end": 1716056342751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342751,
+      "end": 1716056342751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342751,
+      "end": 1716056342751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from 'pinia';\nimport { useCartStore } from '~~/store/cart';\n\nconst _sfc_main = {\n  __name: 'Main',\n  __ssrInlineRender: true,\n  props: { Data: { type: Object } },\n  setup(__props) {\n\nlet props = __props\n\nlet { addSelectionToCart } = useCartStore(), { cart } = storeToRefs(useCartStore());\nlet attributes = ref({}), existingCartItemIndex = ref(-1), GlobalSelectedVariant = ref({}), selectedAttributeIds = ref([]), productAvailable = ref(true), formSubmitted = ref(false);\n\nprops.Data.item?.attributes.forEach((attribute, i) => {\n        attributes.value[attribute.name] = { dropDownOptions: attribute.attribute_values, available:true }\n    })\n\n    \nwatch(() => attributes, () => {\n    productAvailable.value = true, selectedAttributeIds.value = [], existingCartItemIndex.value = -1,GlobalSelectedVariant.value = {};\n    for (const key in attributes.value) {\n        attributes.value[key].selected?.id && selectedAttributeIds.value.push(attributes.value[key].selected?.id)\n    }\n    if (selectedAttributeIds.value.length == props.Data.item.variations[0]?.attribute_values?.length) {\n        props.Data.item.variations.every((variant, index) => {\n            let count = 0;\n            selectedAttributeIds.value.forEach(id => {\n                variant.attribute_values.map(value => value.id).includes(id) && count++;\n            })\n            if (count == selectedAttributeIds.value.length) {\n                GlobalSelectedVariant.value = JSON.parse(JSON.stringify(variant))\n                let productIndex = cart.value.findIndex(item => (item.product_id == props.Data.item.id && item.variation_id == variant.id))\n                productIndex >= 0 ? existingCartItemIndex.value = productIndex : existingCartItemIndex.value = -1\n                return false\n            } else return true\n        })\n        Object.keys(GlobalSelectedVariant.value).length?productAvailable.value = true:productAvailable.value = false\n    }\n}, { deep: true })\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsProductModalImages = _resolveComponent(\"WidgetsModalsProductModalImages\")\n  const _component_WidgetsModalsProductModalRight = _resolveComponent(\"WidgetsModalsProductModalRight\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"row g-sm-4 g-2\" }, _attrs))}><div class=\"col-lg-6\">`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsProductModalImages, {\n    Data: __props.Data.item\n  }, null, _parent))\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsProductModalRight, {\n    Product: __props.Data.item\n  }, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/ProductModal/Main.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342751,
+      "end": 1716056342751,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342751,
+      "end": 1716056342751,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342751,
+      "end": 1716056342751,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342751,
+      "end": 1716056342751,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342751,
+      "end": 1716056342751,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342751,
+      "end": 1716056342751,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342751,
+      "end": 1716056342751,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342751,
+      "end": 1716056342751,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342751,
+      "end": 1716056342751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056342752,
+      "end": 1716056342752,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342752,
+      "end": 1716056342752,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342752,
+      "end": 1716056342752,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342752,
+      "end": 1716056342752,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342752,
+      "end": 1716056342752,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342752,
+      "end": 1716056342752,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342752,
+      "end": 1716056342752,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342752,
+      "end": 1716056342752,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342752,
+      "end": 1716056342752,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342752,
+      "end": 1716056342752,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, watch } from 'vue';\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from 'pinia';\nimport { useCartStore } from '~~/store/cart';\n\nconst _sfc_main = {\n  __name: 'Main',\n  __ssrInlineRender: true,\n  props: { Data: { type: Object } },\n  setup(__props) {\n\nlet props = __props\n\nlet { addSelectionToCart } = useCartStore(), { cart } = storeToRefs(useCartStore());\nlet attributes = ref({}), existingCartItemIndex = ref(-1), GlobalSelectedVariant = ref({}), selectedAttributeIds = ref([]), productAvailable = ref(true), formSubmitted = ref(false);\n\nprops.Data.item?.attributes.forEach((attribute, i) => {\n        attributes.value[attribute.name] = { dropDownOptions: attribute.attribute_values, available:true }\n    })\n\n    \nwatch(() => attributes, () => {\n    productAvailable.value = true, selectedAttributeIds.value = [], existingCartItemIndex.value = -1,GlobalSelectedVariant.value = {};\n    for (const key in attributes.value) {\n        attributes.value[key].selected?.id && selectedAttributeIds.value.push(attributes.value[key].selected?.id)\n    }\n    if (selectedAttributeIds.value.length == props.Data.item.variations[0]?.attribute_values?.length) {\n        props.Data.item.variations.every((variant, index) => {\n            let count = 0;\n            selectedAttributeIds.value.forEach(id => {\n                variant.attribute_values.map(value => value.id).includes(id) && count++;\n            })\n            if (count == selectedAttributeIds.value.length) {\n                GlobalSelectedVariant.value = JSON.parse(JSON.stringify(variant))\n                let productIndex = cart.value.findIndex(item => (item.product_id == props.Data.item.id && item.variation_id == variant.id))\n                productIndex >= 0 ? existingCartItemIndex.value = productIndex : existingCartItemIndex.value = -1\n                return false\n            } else return true\n        })\n        Object.keys(GlobalSelectedVariant.value).length?productAvailable.value = true:productAvailable.value = false\n    }\n}, { deep: true })\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsProductModalImages = _resolveComponent(\"WidgetsModalsProductModalImages\")\n  const _component_WidgetsModalsProductModalRight = _resolveComponent(\"WidgetsModalsProductModalRight\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"row g-sm-4 g-2\" }, _attrs))}><div class=\"col-lg-6\">`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsProductModalImages, {\n    Data: __props.Data.item\n  }, null, _parent))\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsProductModalRight, {\n    Product: __props.Data.item\n  }, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/ProductModal/Main.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342752,
+      "end": 1716056342753,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, watch } from 'vue';\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from 'pinia';\nimport { useCartStore } from '~~/store/cart';\n\nconst _sfc_main = {\n  __name: 'Main',\n  __ssrInlineRender: true,\n  props: { Data: { type: Object } },\n  setup(__props) {\n\nlet props = __props\n\nlet { addSelectionToCart } = useCartStore(), { cart } = storeToRefs(useCartStore());\nlet attributes = ref({}), existingCartItemIndex = ref(-1), GlobalSelectedVariant = ref({}), selectedAttributeIds = ref([]), productAvailable = ref(true), formSubmitted = ref(false);\n\nprops.Data.item?.attributes.forEach((attribute, i) => {\n        attributes.value[attribute.name] = { dropDownOptions: attribute.attribute_values, available:true }\n    })\n\n    \nwatch(() => attributes, () => {\n    productAvailable.value = true, selectedAttributeIds.value = [], existingCartItemIndex.value = -1,GlobalSelectedVariant.value = {};\n    for (const key in attributes.value) {\n        attributes.value[key].selected?.id && selectedAttributeIds.value.push(attributes.value[key].selected?.id)\n    }\n    if (selectedAttributeIds.value.length == props.Data.item.variations[0]?.attribute_values?.length) {\n        props.Data.item.variations.every((variant, index) => {\n            let count = 0;\n            selectedAttributeIds.value.forEach(id => {\n                variant.attribute_values.map(value => value.id).includes(id) && count++;\n            })\n            if (count == selectedAttributeIds.value.length) {\n                GlobalSelectedVariant.value = JSON.parse(JSON.stringify(variant))\n                let productIndex = cart.value.findIndex(item => (item.product_id == props.Data.item.id && item.variation_id == variant.id))\n                productIndex >= 0 ? existingCartItemIndex.value = productIndex : existingCartItemIndex.value = -1\n                return false\n            } else return true\n        })\n        Object.keys(GlobalSelectedVariant.value).length?productAvailable.value = true:productAvailable.value = false\n    }\n}, { deep: true })\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsProductModalImages = _resolveComponent(\"WidgetsModalsProductModalImages\")\n  const _component_WidgetsModalsProductModalRight = _resolveComponent(\"WidgetsModalsProductModalRight\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"row g-sm-4 g-2\" }, _attrs))}><div class=\"col-lg-6\">`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsProductModalImages, {\n    Data: __props.Data.item\n  }, null, _parent))\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsProductModalRight, {\n    Product: __props.Data.item\n  }, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/ProductModal/Main.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342752,
+      "end": 1716056342753,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342753,
+      "end": 1716056342753,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342753,
+      "end": 1716056342753,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342753,
+      "end": 1716056342753,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342753,
+      "end": 1716056342753,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342753,
+      "end": 1716056342753,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/ProductModal/Images.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/ProductModal/Right.vue\";\nimport { ref, watch } from 'vue';\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from 'pinia';\nimport { useCartStore } from '~~/store/cart';\n\nconst _sfc_main = {\n  __name: 'Main',\n  __ssrInlineRender: true,\n  props: { Data: { type: Object } },\n  setup(__props) {\n\nlet props = __props\n\nlet { addSelectionToCart } = useCartStore(), { cart } = storeToRefs(useCartStore());\nlet attributes = ref({}), existingCartItemIndex = ref(-1), GlobalSelectedVariant = ref({}), selectedAttributeIds = ref([]), productAvailable = ref(true), formSubmitted = ref(false);\n\nprops.Data.item?.attributes.forEach((attribute, i) => {\n        attributes.value[attribute.name] = { dropDownOptions: attribute.attribute_values, available:true }\n    })\n\n    \nwatch(() => attributes, () => {\n    productAvailable.value = true, selectedAttributeIds.value = [], existingCartItemIndex.value = -1,GlobalSelectedVariant.value = {};\n    for (const key in attributes.value) {\n        attributes.value[key].selected?.id && selectedAttributeIds.value.push(attributes.value[key].selected?.id)\n    }\n    if (selectedAttributeIds.value.length == props.Data.item.variations[0]?.attribute_values?.length) {\n        props.Data.item.variations.every((variant, index) => {\n            let count = 0;\n            selectedAttributeIds.value.forEach(id => {\n                variant.attribute_values.map(value => value.id).includes(id) && count++;\n            })\n            if (count == selectedAttributeIds.value.length) {\n                GlobalSelectedVariant.value = JSON.parse(JSON.stringify(variant))\n                let productIndex = cart.value.findIndex(item => (item.product_id == props.Data.item.id && item.variation_id == variant.id))\n                productIndex >= 0 ? existingCartItemIndex.value = productIndex : existingCartItemIndex.value = -1\n                return false\n            } else return true\n        })\n        Object.keys(GlobalSelectedVariant.value).length?productAvailable.value = true:productAvailable.value = false\n    }\n}, { deep: true })\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsProductModalImages = __nuxt_component_0\n  const _component_WidgetsModalsProductModalRight = __nuxt_component_1\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"row g-sm-4 g-2\" }, _attrs))}><div class=\"col-lg-6\">`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsProductModalImages, {\n    Data: __props.Data.item\n  }, null, _parent))\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsProductModalRight, {\n    Product: __props.Data.item\n  }, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/ProductModal/Main.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342753,
+      "end": 1716056342753,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056342753,
+      "end": 1716056342753,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342753,
+      "end": 1716056342753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342753,
+      "end": 1716056342753,
+      "order": "normal"
+    }
+  ]
+}

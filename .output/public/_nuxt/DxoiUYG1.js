@@ -1,0 +1,1 @@
+import{M as t,N as n}from"./DzwC5H-t.js";const r=["innerHTML"],a={__name:"index",props:{store:Object},setup(e){return(o,s)=>(t(),n("p",{innerHTML:e.store.description},null,8,r))}};export{a as default};

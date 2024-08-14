@@ -1,0 +1,223 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/app.config.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default defineAppConfig({\n  nuxtIcon: {\n    size: \"24px\", // default <Icon> size applied\n  },\n});\n",
+      "start": 1716056290826,
+      "end": 1716056290947,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056290947,
+      "end": 1716056290947,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056290947,
+      "end": 1716056290947,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056290947,
+      "end": 1716056290947,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056290947,
+      "end": 1716056290947,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "export default defineAppConfig({\n  nuxtIcon: {\n    size: \"24px\"\n    // default <Icon> size applied\n  }\n});\n",
+      "start": 1716056290947,
+      "end": 1716056290976,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/app.config.ts"
+        ],
+        "sourcesContent": [
+          "export default defineAppConfig({\n  nuxtIcon: {\n    size: \"24px\", // default <Icon> size applied\n  },\n});\n"
+        ],
+        "mappings": "AAAA,eAAe,gBAAgB;AAAA,EAC7B,UAAU;AAAA,IACR,MAAM;AAAA;AAAA,EACR;AACF,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056290976,
+      "end": 1716056290976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056290976,
+      "end": 1716056290976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056290976,
+      "end": 1716056290976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056290976,
+      "end": 1716056290976,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056290976,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineAppConfig } from '#app/nuxt';\nexport default defineAppConfig({\n  nuxtIcon: {\n    size: \"24px\"\n    // default <Icon> size applied\n  }\n});\n",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056290977,
+      "end": 1716056290977,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056290977,
+      "end": 1716056290978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056290978,
+      "end": 1716056290978,
+      "order": "normal"
+    }
+  ]
+}

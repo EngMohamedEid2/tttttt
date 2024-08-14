@@ -1,0 +1,50 @@
+<template>
+  <div class="row g-4">
+    <div v-if="data?.product_slider_1?.status && data?.product_slider_1?.product_ids?.length"
+      :class="col ? col : 'col-xxl-3 col-xl-4 col-sm-6'">
+      <div class="category-menu">
+        <h3>{{ data?.product_slider_1?.title }}</h3>
+        <ThemesWidgetsProduct :Products="Products" :productIds="data?.product_slider_1?.product_ids || []"
+          :style="'vertical'" />
+      </div>
+    </div>
+
+    <div v-if="data?.product_slider_2?.status && data?.product_slider_2?.product_ids?.length"
+      :class="col ? col : 'col-xxl-3 col-xl-4 col-sm-6'">
+      <div class="category-menu">
+        <h3>{{ data?.product_slider_2?.title }}</h3>
+        <ThemesWidgetsProduct :Products="Products" :productIds="data?.product_slider_2?.product_ids || []"
+          :style="'vertical'" />
+      </div>
+    </div>
+
+    <div v-if="data?.product_slider_3?.status && data?.product_slider_3?.product_ids?.length"
+      :class="col ? col : 'col-xxl-3 col-xl-4 col-sm-6'">
+      <div class="category-menu">
+        <h3>{{ data?.product_slider_3?.title }}</h3>
+        <ThemesWidgetsProduct :Products="Products" :productIds="data?.product_slider_3?.product_ids || []"
+          :style="'vertical'" />
+      </div>
+    </div>
+
+    <div v-if="data?.product_slider_4?.status && data?.product_slider_4?.product_ids?.length"
+      :class="col ? col : 'col-xxl-3 col-xl-4 col-sm-6'">
+      <div class="category-menu">
+        <h3>{{ data?.product_slider_4?.title }}</h3>
+        <ThemesWidgetsProduct :Products="Products" :productIds="data?.product_slider_4?.product_ids || []"
+          :style="'vertical'" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+let props = defineProps({
+  data: Object,
+  Products: Object,
+  col: String
+})
+
+</script>
+
+<style lang="scss" scoped></style>

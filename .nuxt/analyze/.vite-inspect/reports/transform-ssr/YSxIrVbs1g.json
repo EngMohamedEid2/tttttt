@@ -1,0 +1,260 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/layouts/default.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <WidgetsLoader v-if=\"loading\" />\n\n    <!-- Layout Partial -->\n    <Header :logo=\"setLogo().header_logo\" />\n    <WidgetsMobileCart />\n    <slot />\n    <Footer :footer=\"setLogo().footer\" />\n\n    <!-- Widgets -->\n    <WidgetsCookie />\n    <WidgetsRecentlyPurchasePoppup />\n    <WidgetsStickyCart\n      v-if=\"ThemeOptions?.options?.general?.cart_style == 'cart_mini'\"\n    />\n    <WidgetsStickyCompare />\n    <div class=\"theme-option\">\n      <WidgetsThemeCustomizer />\n      <WidgetsBackToTop\n        v-if=\"ThemeOptions?.options?.general?.back_to_top_enable\"\n      />\n    </div>\n    <WidgetsModalsNewsletterModal />\n    <WidgetsModalsExitModal />\n  </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nimport { useUserStore } from \"@/store/user\";\n\nlet loading = ref(false);\nconst route = useRoute();\nconst router = useRouter();\n\nuseDataStore().GetProduct();\nuseDataStore().GetCategory();\n// useDataStore().GetCurrency();\n// useDataStore().GetBlog();\nuseDataStore().GetThemeoption();\nuseDataStore().GetNotifications();\nuseDataStore().GetSettings();\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nfunction setLogo() {\n  var headerLogo;\n  var footerLogo;\n  var footerClass;\n  if (route.path == \"/theme/paris\" || route.path == \"/theme/osaka\") {\n    headerLogo = \"/images/logo/1.png\";\n    footerLogo = \"/images/logo/1.png\";\n  } else if (route.path == \"/theme/tokyo\") {\n    headerLogo = \"/images/logo/2.png\";\n    footerLogo = \"/images/logo/2.png\";\n  } else if (route.path == \"/theme/rome\") {\n    headerLogo = \"/images/logo/3.png\";\n    footerLogo = \"/images/logo/3.png\";\n  } else if (route.path == \"/theme/madrid\") {\n    headerLogo = \"/images/logo/4.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-2\";\n  } else if (route.path == \"/theme/berlin\" || route.path == \"/theme/denver\") {\n    headerLogo = \"/images/logo/6.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-3\";\n  } else {\n    headerLogo = ThemeOptions?.value?.options?.logo?.header_logo?.original_url;\n    footerLogo = ThemeOptions?.value?.options?.logo?.footer_logo?.original_url;\n    footerClass =\n      ThemeOptions?.value?.options?.footer?.footer_style === \"dark_mode\"\n        ? \"footer-section-2 footer-color-3\"\n        : \"\";\n  }\n  return {\n    header_logo: headerLogo,\n    footer: { footer_logo: footerLogo, footer_class: footerClass },\n  };\n}\n\nwatch(\n  () => router,\n  () => {\n    loading.value = true;\n    setTimeout(() => {\n      loading.value = false;\n    }, 4000);\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  setLogo();\n  router.afterEach(() => {\n    setLogo();\n  });\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056343767,
+      "end": 1716056343800,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343800,
+      "end": 1716056343800,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343800,
+      "end": 1716056343800,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343800,
+      "end": 1716056343800,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343800,
+      "end": 1716056343800,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056343800,
+      "end": 1716056343800,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056343800,
+      "end": 1716056343800,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056343800,
+      "end": 1716056343800,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056343800,
+      "end": 1716056343800,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056343800,
+      "end": 1716056343800,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056343800,
+      "end": 1716056343800,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nimport { useUserStore } from \"@/store/user\";\n\n\nconst _sfc_main = {\n  __name: 'default',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet loading = ref(false);\nconst route = useRoute();\nconst router = useRouter();\n\nuseDataStore().GetProduct();\nuseDataStore().GetCategory();\n// useDataStore().GetCurrency();\n// useDataStore().GetBlog();\nuseDataStore().GetThemeoption();\nuseDataStore().GetNotifications();\nuseDataStore().GetSettings();\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nfunction setLogo() {\n  var headerLogo;\n  var footerLogo;\n  var footerClass;\n  if (route.path == \"/theme/paris\" || route.path == \"/theme/osaka\") {\n    headerLogo = \"/images/logo/1.png\";\n    footerLogo = \"/images/logo/1.png\";\n  } else if (route.path == \"/theme/tokyo\") {\n    headerLogo = \"/images/logo/2.png\";\n    footerLogo = \"/images/logo/2.png\";\n  } else if (route.path == \"/theme/rome\") {\n    headerLogo = \"/images/logo/3.png\";\n    footerLogo = \"/images/logo/3.png\";\n  } else if (route.path == \"/theme/madrid\") {\n    headerLogo = \"/images/logo/4.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-2\";\n  } else if (route.path == \"/theme/berlin\" || route.path == \"/theme/denver\") {\n    headerLogo = \"/images/logo/6.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-3\";\n  } else {\n    headerLogo = ThemeOptions?.value?.options?.logo?.header_logo?.original_url;\n    footerLogo = ThemeOptions?.value?.options?.logo?.footer_logo?.original_url;\n    footerClass =\n      ThemeOptions?.value?.options?.footer?.footer_style === \"dark_mode\"\n        ? \"footer-section-2 footer-color-3\"\n        : \"\";\n  }\n  return {\n    header_logo: headerLogo,\n    footer: { footer_logo: footerLogo, footer_class: footerClass },\n  };\n}\n\nwatch(\n  () => router,\n  () => {\n    loading.value = true;\n    setTimeout(() => {\n      loading.value = false;\n    }, 4000);\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  setLogo();\n  router.afterEach(() => {\n    setLogo();\n  });\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsLoader = _resolveComponent(\"WidgetsLoader\")\n  const _component_Header = _resolveComponent(\"Header\")\n  const _component_WidgetsMobileCart = _resolveComponent(\"WidgetsMobileCart\")\n  const _component_Footer = _resolveComponent(\"Footer\")\n  const _component_WidgetsCookie = _resolveComponent(\"WidgetsCookie\")\n  const _component_WidgetsRecentlyPurchasePoppup = _resolveComponent(\"WidgetsRecentlyPurchasePoppup\")\n  const _component_WidgetsStickyCart = _resolveComponent(\"WidgetsStickyCart\")\n  const _component_WidgetsStickyCompare = _resolveComponent(\"WidgetsStickyCompare\")\n  const _component_WidgetsThemeCustomizer = _resolveComponent(\"WidgetsThemeCustomizer\")\n  const _component_WidgetsBackToTop = _resolveComponent(\"WidgetsBackToTop\")\n  const _component_WidgetsModalsNewsletterModal = _resolveComponent(\"WidgetsModalsNewsletterModal\")\n  const _component_WidgetsModalsExitModal = _resolveComponent(\"WidgetsModalsExitModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (_unref(loading)) {\n    _push(_ssrRenderComponent(_component_WidgetsLoader, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_Header, {\n    logo: setLogo().header_logo\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsMobileCart, null, null, _parent))\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  _push(_ssrRenderComponent(_component_Footer, {\n    footer: setLogo().footer\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsCookie, null, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsRecentlyPurchasePoppup, null, null, _parent))\n  if (_unref(ThemeOptions)?.options?.general?.cart_style == 'cart_mini') {\n    _push(_ssrRenderComponent(_component_WidgetsStickyCart, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsStickyCompare, null, null, _parent))\n  _push(`<div class=\"theme-option\">`)\n  _push(_ssrRenderComponent(_component_WidgetsThemeCustomizer, null, null, _parent))\n  if (_unref(ThemeOptions)?.options?.general?.back_to_top_enable) {\n    _push(_ssrRenderComponent(_component_WidgetsBackToTop, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsNewsletterModal, null, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsExitModal, null, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"layouts/default.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343800,
+      "end": 1716056343802,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056343802,
+      "end": 1716056343802,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343802,
+      "end": 1716056343802,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343802,
+      "end": 1716056343802,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343802,
+      "end": 1716056343802,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343802,
+      "end": 1716056343802,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056343802,
+      "end": 1716056343802,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343802,
+      "end": 1716056343802,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056343802,
+      "end": 1716056343803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056343803,
+      "end": 1716056343803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056343803,
+      "end": 1716056343803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056343803,
+      "end": 1716056343803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056343803,
+      "end": 1716056343803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056343803,
+      "end": 1716056343803,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056343803,
+      "end": 1716056343803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056343803,
+      "end": 1716056343803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056343803,
+      "end": 1716056343803,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343803,
+      "end": 1716056343803,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343803,
+      "end": 1716056343803,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, watch, onMounted } from 'vue';\nimport { useRoute, useRouter } from '#app/composables/router';\nimport { unref as _unref, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nimport { useUserStore } from \"@/store/user\";\n\n\nconst _sfc_main = {\n  __name: 'default',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet loading = ref(false);\nconst route = useRoute();\nconst router = useRouter();\n\nuseDataStore().GetProduct();\nuseDataStore().GetCategory();\n// useDataStore().GetCurrency();\n// useDataStore().GetBlog();\nuseDataStore().GetThemeoption();\nuseDataStore().GetNotifications();\nuseDataStore().GetSettings();\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nfunction setLogo() {\n  var headerLogo;\n  var footerLogo;\n  var footerClass;\n  if (route.path == \"/theme/paris\" || route.path == \"/theme/osaka\") {\n    headerLogo = \"/images/logo/1.png\";\n    footerLogo = \"/images/logo/1.png\";\n  } else if (route.path == \"/theme/tokyo\") {\n    headerLogo = \"/images/logo/2.png\";\n    footerLogo = \"/images/logo/2.png\";\n  } else if (route.path == \"/theme/rome\") {\n    headerLogo = \"/images/logo/3.png\";\n    footerLogo = \"/images/logo/3.png\";\n  } else if (route.path == \"/theme/madrid\") {\n    headerLogo = \"/images/logo/4.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-2\";\n  } else if (route.path == \"/theme/berlin\" || route.path == \"/theme/denver\") {\n    headerLogo = \"/images/logo/6.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-3\";\n  } else {\n    headerLogo = ThemeOptions?.value?.options?.logo?.header_logo?.original_url;\n    footerLogo = ThemeOptions?.value?.options?.logo?.footer_logo?.original_url;\n    footerClass =\n      ThemeOptions?.value?.options?.footer?.footer_style === \"dark_mode\"\n        ? \"footer-section-2 footer-color-3\"\n        : \"\";\n  }\n  return {\n    header_logo: headerLogo,\n    footer: { footer_logo: footerLogo, footer_class: footerClass },\n  };\n}\n\nwatch(\n  () => router,\n  () => {\n    loading.value = true;\n    setTimeout(() => {\n      loading.value = false;\n    }, 4000);\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  setLogo();\n  router.afterEach(() => {\n    setLogo();\n  });\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsLoader = _resolveComponent(\"WidgetsLoader\")\n  const _component_Header = _resolveComponent(\"Header\")\n  const _component_WidgetsMobileCart = _resolveComponent(\"WidgetsMobileCart\")\n  const _component_Footer = _resolveComponent(\"Footer\")\n  const _component_WidgetsCookie = _resolveComponent(\"WidgetsCookie\")\n  const _component_WidgetsRecentlyPurchasePoppup = _resolveComponent(\"WidgetsRecentlyPurchasePoppup\")\n  const _component_WidgetsStickyCart = _resolveComponent(\"WidgetsStickyCart\")\n  const _component_WidgetsStickyCompare = _resolveComponent(\"WidgetsStickyCompare\")\n  const _component_WidgetsThemeCustomizer = _resolveComponent(\"WidgetsThemeCustomizer\")\n  const _component_WidgetsBackToTop = _resolveComponent(\"WidgetsBackToTop\")\n  const _component_WidgetsModalsNewsletterModal = _resolveComponent(\"WidgetsModalsNewsletterModal\")\n  const _component_WidgetsModalsExitModal = _resolveComponent(\"WidgetsModalsExitModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (_unref(loading)) {\n    _push(_ssrRenderComponent(_component_WidgetsLoader, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_Header, {\n    logo: setLogo().header_logo\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsMobileCart, null, null, _parent))\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  _push(_ssrRenderComponent(_component_Footer, {\n    footer: setLogo().footer\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsCookie, null, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsRecentlyPurchasePoppup, null, null, _parent))\n  if (_unref(ThemeOptions)?.options?.general?.cart_style == 'cart_mini') {\n    _push(_ssrRenderComponent(_component_WidgetsStickyCart, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsStickyCompare, null, null, _parent))\n  _push(`<div class=\"theme-option\">`)\n  _push(_ssrRenderComponent(_component_WidgetsThemeCustomizer, null, null, _parent))\n  if (_unref(ThemeOptions)?.options?.general?.back_to_top_enable) {\n    _push(_ssrRenderComponent(_component_WidgetsBackToTop, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsNewsletterModal, null, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsExitModal, null, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"layouts/default.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343803,
+      "end": 1716056343804,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, watch, onMounted } from 'vue';\nimport { useRoute, useRouter } from '#app/composables/router';\nimport { unref as _unref, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nimport { useUserStore } from \"@/store/user\";\n\n\nconst _sfc_main = {\n  __name: 'default',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet loading = ref(false);\nconst route = useRoute();\nconst router = useRouter();\n\nuseDataStore().GetProduct();\nuseDataStore().GetCategory();\n// useDataStore().GetCurrency();\n// useDataStore().GetBlog();\nuseDataStore().GetThemeoption();\nuseDataStore().GetNotifications();\nuseDataStore().GetSettings();\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nfunction setLogo() {\n  var headerLogo;\n  var footerLogo;\n  var footerClass;\n  if (route.path == \"/theme/paris\" || route.path == \"/theme/osaka\") {\n    headerLogo = \"/images/logo/1.png\";\n    footerLogo = \"/images/logo/1.png\";\n  } else if (route.path == \"/theme/tokyo\") {\n    headerLogo = \"/images/logo/2.png\";\n    footerLogo = \"/images/logo/2.png\";\n  } else if (route.path == \"/theme/rome\") {\n    headerLogo = \"/images/logo/3.png\";\n    footerLogo = \"/images/logo/3.png\";\n  } else if (route.path == \"/theme/madrid\") {\n    headerLogo = \"/images/logo/4.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-2\";\n  } else if (route.path == \"/theme/berlin\" || route.path == \"/theme/denver\") {\n    headerLogo = \"/images/logo/6.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-3\";\n  } else {\n    headerLogo = ThemeOptions?.value?.options?.logo?.header_logo?.original_url;\n    footerLogo = ThemeOptions?.value?.options?.logo?.footer_logo?.original_url;\n    footerClass =\n      ThemeOptions?.value?.options?.footer?.footer_style === \"dark_mode\"\n        ? \"footer-section-2 footer-color-3\"\n        : \"\";\n  }\n  return {\n    header_logo: headerLogo,\n    footer: { footer_logo: footerLogo, footer_class: footerClass },\n  };\n}\n\nwatch(\n  () => router,\n  () => {\n    loading.value = true;\n    setTimeout(() => {\n      loading.value = false;\n    }, 4000);\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  setLogo();\n  router.afterEach(() => {\n    setLogo();\n  });\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsLoader = _resolveComponent(\"WidgetsLoader\")\n  const _component_Header = _resolveComponent(\"Header\")\n  const _component_WidgetsMobileCart = _resolveComponent(\"WidgetsMobileCart\")\n  const _component_Footer = _resolveComponent(\"Footer\")\n  const _component_WidgetsCookie = _resolveComponent(\"WidgetsCookie\")\n  const _component_WidgetsRecentlyPurchasePoppup = _resolveComponent(\"WidgetsRecentlyPurchasePoppup\")\n  const _component_WidgetsStickyCart = _resolveComponent(\"WidgetsStickyCart\")\n  const _component_WidgetsStickyCompare = _resolveComponent(\"WidgetsStickyCompare\")\n  const _component_WidgetsThemeCustomizer = _resolveComponent(\"WidgetsThemeCustomizer\")\n  const _component_WidgetsBackToTop = _resolveComponent(\"WidgetsBackToTop\")\n  const _component_WidgetsModalsNewsletterModal = _resolveComponent(\"WidgetsModalsNewsletterModal\")\n  const _component_WidgetsModalsExitModal = _resolveComponent(\"WidgetsModalsExitModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (_unref(loading)) {\n    _push(_ssrRenderComponent(_component_WidgetsLoader, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_Header, {\n    logo: setLogo().header_logo\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsMobileCart, null, null, _parent))\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  _push(_ssrRenderComponent(_component_Footer, {\n    footer: setLogo().footer\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsCookie, null, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsRecentlyPurchasePoppup, null, null, _parent))\n  if (_unref(ThemeOptions)?.options?.general?.cart_style == 'cart_mini') {\n    _push(_ssrRenderComponent(_component_WidgetsStickyCart, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsStickyCompare, null, null, _parent))\n  _push(`<div class=\"theme-option\">`)\n  _push(_ssrRenderComponent(_component_WidgetsThemeCustomizer, null, null, _parent))\n  if (_unref(ThemeOptions)?.options?.general?.back_to_top_enable) {\n    _push(_ssrRenderComponent(_component_WidgetsBackToTop, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsNewsletterModal, null, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsExitModal, null, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"layouts/default.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343803,
+      "end": 1716056343804,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343804,
+      "end": 1716056343804,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343804,
+      "end": 1716056343804,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343804,
+      "end": 1716056343804,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343804,
+      "end": 1716056343804,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056343804,
+      "end": 1716056343804,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Loader/index.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/MobileCart/index.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Footer/index.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Cookie/index.vue\";\nimport { default as __nuxt_component_5 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/RecentlyPurchasePoppup/index.vue\";\nimport { default as __nuxt_component_6 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/StickyCart/index.vue\";\nimport { default as __nuxt_component_7 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/StickyCompare/index.vue\";\nimport { default as __nuxt_component_8 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ThemeCustomizer/index.vue\";\nimport { default as __nuxt_component_9 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/BackToTop/index.vue\";\nimport { default as __nuxt_component_10 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/NewsletterModal/index.vue\";\nimport { default as __nuxt_component_11 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/ExitModal/index.vue\";\nimport { ref, watch, onMounted } from 'vue';\nimport { useRoute, useRouter } from '#app/composables/router';\nimport { unref as _unref, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nimport { useUserStore } from \"@/store/user\";\n\n\nconst _sfc_main = {\n  __name: 'default',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet loading = ref(false);\nconst route = useRoute();\nconst router = useRouter();\n\nuseDataStore().GetProduct();\nuseDataStore().GetCategory();\n// useDataStore().GetCurrency();\n// useDataStore().GetBlog();\nuseDataStore().GetThemeoption();\nuseDataStore().GetNotifications();\nuseDataStore().GetSettings();\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nfunction setLogo() {\n  var headerLogo;\n  var footerLogo;\n  var footerClass;\n  if (route.path == \"/theme/paris\" || route.path == \"/theme/osaka\") {\n    headerLogo = \"/images/logo/1.png\";\n    footerLogo = \"/images/logo/1.png\";\n  } else if (route.path == \"/theme/tokyo\") {\n    headerLogo = \"/images/logo/2.png\";\n    footerLogo = \"/images/logo/2.png\";\n  } else if (route.path == \"/theme/rome\") {\n    headerLogo = \"/images/logo/3.png\";\n    footerLogo = \"/images/logo/3.png\";\n  } else if (route.path == \"/theme/madrid\") {\n    headerLogo = \"/images/logo/4.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-2\";\n  } else if (route.path == \"/theme/berlin\" || route.path == \"/theme/denver\") {\n    headerLogo = \"/images/logo/6.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-3\";\n  } else {\n    headerLogo = ThemeOptions?.value?.options?.logo?.header_logo?.original_url;\n    footerLogo = ThemeOptions?.value?.options?.logo?.footer_logo?.original_url;\n    footerClass =\n      ThemeOptions?.value?.options?.footer?.footer_style === \"dark_mode\"\n        ? \"footer-section-2 footer-color-3\"\n        : \"\";\n  }\n  return {\n    header_logo: headerLogo,\n    footer: { footer_logo: footerLogo, footer_class: footerClass },\n  };\n}\n\nwatch(\n  () => router,\n  () => {\n    loading.value = true;\n    setTimeout(() => {\n      loading.value = false;\n    }, 4000);\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  setLogo();\n  router.afterEach(() => {\n    setLogo();\n  });\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsLoader = __nuxt_component_0\n  const _component_Header = __nuxt_component_1\n  const _component_WidgetsMobileCart = __nuxt_component_2\n  const _component_Footer = __nuxt_component_3\n  const _component_WidgetsCookie = __nuxt_component_4\n  const _component_WidgetsRecentlyPurchasePoppup = __nuxt_component_5\n  const _component_WidgetsStickyCart = __nuxt_component_6\n  const _component_WidgetsStickyCompare = __nuxt_component_7\n  const _component_WidgetsThemeCustomizer = __nuxt_component_8\n  const _component_WidgetsBackToTop = __nuxt_component_9\n  const _component_WidgetsModalsNewsletterModal = __nuxt_component_10\n  const _component_WidgetsModalsExitModal = __nuxt_component_11\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (_unref(loading)) {\n    _push(_ssrRenderComponent(_component_WidgetsLoader, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_Header, {\n    logo: setLogo().header_logo\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsMobileCart, null, null, _parent))\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  _push(_ssrRenderComponent(_component_Footer, {\n    footer: setLogo().footer\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsCookie, null, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsRecentlyPurchasePoppup, null, null, _parent))\n  if (_unref(ThemeOptions)?.options?.general?.cart_style == 'cart_mini') {\n    _push(_ssrRenderComponent(_component_WidgetsStickyCart, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsStickyCompare, null, null, _parent))\n  _push(`<div class=\"theme-option\">`)\n  _push(_ssrRenderComponent(_component_WidgetsThemeCustomizer, null, null, _parent))\n  if (_unref(ThemeOptions)?.options?.general?.back_to_top_enable) {\n    _push(_ssrRenderComponent(_component_WidgetsBackToTop, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsNewsletterModal, null, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsExitModal, null, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"layouts/default.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343804,
+      "end": 1716056343805,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Loader/index.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/MobileCart/index.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Footer/index.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Cookie/index.vue\";\nimport { default as __nuxt_component_5 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/RecentlyPurchasePoppup/index.vue\";\nimport { default as __nuxt_component_6 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/StickyCart/index.vue\";\nimport { default as __nuxt_component_7 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/StickyCompare/index.vue\";\nimport { default as __nuxt_component_8 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ThemeCustomizer/index.vue\";\nimport { default as __nuxt_component_9 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/BackToTop/index.vue\";\nimport { default as __nuxt_component_10 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/NewsletterModal/index.vue\";\nimport { default as __nuxt_component_11 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/ExitModal/index.vue\";\nimport { ref, watch, onMounted } from 'vue';\nimport { useRoute, useRouter } from '#app/composables/router';\nimport { unref as _unref, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nimport { useUserStore } from \"@/store/user\";\n\n\nconst _sfc_main = {\n  __name: 'default',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet loading = ref(false);\nconst route = useRoute();\nconst router = useRouter();\n\nuseDataStore().GetProduct();\nuseDataStore().GetCategory();\n// useDataStore().GetCurrency();\n// useDataStore().GetBlog();\nuseDataStore().GetThemeoption();\nuseDataStore().GetNotifications();\nuseDataStore().GetSettings();\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nfunction setLogo() {\n  var headerLogo;\n  var footerLogo;\n  var footerClass;\n  if (route.path == \"/theme/paris\" || route.path == \"/theme/osaka\") {\n    headerLogo = \"/images/logo/1.png\";\n    footerLogo = \"/images/logo/1.png\";\n  } else if (route.path == \"/theme/tokyo\") {\n    headerLogo = \"/images/logo/2.png\";\n    footerLogo = \"/images/logo/2.png\";\n  } else if (route.path == \"/theme/rome\") {\n    headerLogo = \"/images/logo/3.png\";\n    footerLogo = \"/images/logo/3.png\";\n  } else if (route.path == \"/theme/madrid\") {\n    headerLogo = \"/images/logo/4.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-2\";\n  } else if (route.path == \"/theme/berlin\" || route.path == \"/theme/denver\") {\n    headerLogo = \"/images/logo/6.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-3\";\n  } else {\n    headerLogo = ThemeOptions?.value?.options?.logo?.header_logo?.original_url;\n    footerLogo = ThemeOptions?.value?.options?.logo?.footer_logo?.original_url;\n    footerClass =\n      ThemeOptions?.value?.options?.footer?.footer_style === \"dark_mode\"\n        ? \"footer-section-2 footer-color-3\"\n        : \"\";\n  }\n  return {\n    header_logo: headerLogo,\n    footer: { footer_logo: footerLogo, footer_class: footerClass },\n  };\n}\n\nwatch(\n  () => router,\n  () => {\n    loading.value = true;\n    setTimeout(() => {\n      loading.value = false;\n    }, 4000);\n  },\n  { deep: true }\n);\n\n false && /*@__PURE__*/ onMounted(() => {\n  setLogo();\n  router.afterEach(() => {\n    setLogo();\n  });\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsLoader = __nuxt_component_0\n  const _component_Header = __nuxt_component_1\n  const _component_WidgetsMobileCart = __nuxt_component_2\n  const _component_Footer = __nuxt_component_3\n  const _component_WidgetsCookie = __nuxt_component_4\n  const _component_WidgetsRecentlyPurchasePoppup = __nuxt_component_5\n  const _component_WidgetsStickyCart = __nuxt_component_6\n  const _component_WidgetsStickyCompare = __nuxt_component_7\n  const _component_WidgetsThemeCustomizer = __nuxt_component_8\n  const _component_WidgetsBackToTop = __nuxt_component_9\n  const _component_WidgetsModalsNewsletterModal = __nuxt_component_10\n  const _component_WidgetsModalsExitModal = __nuxt_component_11\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (_unref(loading)) {\n    _push(_ssrRenderComponent(_component_WidgetsLoader, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_Header, {\n    logo: setLogo().header_logo\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsMobileCart, null, null, _parent))\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  _push(_ssrRenderComponent(_component_Footer, {\n    footer: setLogo().footer\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsCookie, null, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsRecentlyPurchasePoppup, null, null, _parent))\n  if (_unref(ThemeOptions)?.options?.general?.cart_style == 'cart_mini') {\n    _push(_ssrRenderComponent(_component_WidgetsStickyCart, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsStickyCompare, null, null, _parent))\n  _push(`<div class=\"theme-option\">`)\n  _push(_ssrRenderComponent(_component_WidgetsThemeCustomizer, null, null, _parent))\n  if (_unref(ThemeOptions)?.options?.general?.back_to_top_enable) {\n    _push(_ssrRenderComponent(_component_WidgetsBackToTop, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsNewsletterModal, null, null, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsExitModal, null, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"layouts/default.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343805,
+      "end": 1716056343805,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056343805,
+      "end": 1716056343806,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056343806,
+      "end": 1716056343806,
+      "order": "normal"
+    }
+  ]
+}

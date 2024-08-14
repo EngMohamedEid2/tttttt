@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/CollectionCategory/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<WidgetsCategory \n    :style=\"style\"\n    :image=\"image\"\n    :theme=\"theme\"\n    :title=\"title\"\n    :Category=\"Categories\"\n    >\n</WidgetsCategory>\n</template>\n\n<script setup>\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\n\nlet props = defineProps({\n    style: { type: [String,Object], default:'vertical'},\n    image:String,\n    theme:String,\n    title:String,\n})\n\nlet { Categories } = storeToRefs(useDataStore())\n</script>\n\n<style lang=\"scss\" scoped>\n\n</style>",
+      "start": 1716056287378,
+      "end": 1716056287535,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287535,
+      "end": 1716056287535,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287535,
+      "end": 1716056287535,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287535,
+      "end": 1716056287535,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287535,
+      "end": 1716056287535,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287535,
+      "end": 1716056287535,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287535,
+      "end": 1716056287535,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287535,
+      "end": 1716056287535,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, normalizeStyle as _normalizeStyle, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    style: { type: [String,Object], default:'vertical'},\n    image:String,\n    theme:String,\n    title:String,\n},\n  setup(__props) {\n\nlet props = __props\n\nlet { Categories } = storeToRefs(useDataStore())\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsCategory = _resolveComponent(\"WidgetsCategory\")\n\n  return (_openBlock(), _createBlock(_component_WidgetsCategory, {\n    style: _normalizeStyle(__props.style),\n    image: __props.image,\n    theme: __props.theme,\n    title: __props.title,\n    Category: _unref(Categories)\n  }, null, 8, [\"style\", \"image\", \"theme\", \"title\", \"Category\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287535,
+      "end": 1716056287535,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287535,
+      "end": 1716056287535,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287535,
+      "end": 1716056287535,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287535,
+      "end": 1716056287535,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287535,
+      "end": 1716056287535,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287535,
+      "end": 1716056287535,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287536,
+      "end": 1716056287536,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287536,
+      "end": 1716056287536,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287536,
+      "end": 1716056287536,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287536,
+      "end": 1716056287536,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287536,
+      "end": 1716056287536,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287536,
+      "end": 1716056287536,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287536,
+      "end": 1716056287536,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287536,
+      "end": 1716056287536,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287536,
+      "end": 1716056287536,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287536,
+      "end": 1716056287536,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287536,
+      "end": 1716056287536,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056287536,
+      "end": 1716056287536,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287536,
+      "end": 1716056287537,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287537,
+      "end": 1716056287537,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287537,
+      "end": 1716056287537,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287537,
+      "end": 1716056287537,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Category/index.vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, normalizeStyle as _normalizeStyle, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    style: { type: [String,Object], default:'vertical'},\n    image:String,\n    theme:String,\n    title:String,\n},\n  setup(__props) {\n\nlet props = __props\n\nlet { Categories } = storeToRefs(useDataStore())\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsCategory = __nuxt_component_0\n\n  return (_openBlock(), _createBlock(_component_WidgetsCategory, {\n    style: _normalizeStyle(__props.style),\n    image: __props.image,\n    theme: __props.theme,\n    title: __props.title,\n    Category: _unref(Categories)\n  }, null, 8, [\"style\", \"image\", \"theme\", \"title\", \"Category\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287537,
+      "end": 1716056287537,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287537,
+      "end": 1716056287537,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287537,
+      "end": 1716056287537,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287537,
+      "end": 1716056287537,
+      "order": "normal"
+    }
+  ]
+}

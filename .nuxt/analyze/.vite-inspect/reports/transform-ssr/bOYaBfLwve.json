@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/RecentlyPurchasePoppup/index.vue?nuxt_component=async&nuxt_component_name=WidgetsRecentlyPurchasePoppup",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div\n    class=\"media recently-purchase\"\n    :class=\"{ show: popup_enable ? show : popup_enable }\"\n    v-if=\"product\"\n  >\n    <img\n      :src=\"\n        product.product_thumbnail\n          ? product.product_thumbnail.original_url\n          : '/images/product.png'\n      \"\n      class=\"media-height\"\n      alt=\"product\"\n    />\n    <div class=\"media-body\">\n      <div>\n        <div class=\"title d-block mb-0\">\n          {{ $t(\"Someone Recently Purchased\") }}\n        </div>\n        <nuxt-link :to=\"`/product/${product.slug}`\">\n          <span class=\"product-name\">\n            {{ product.name }}\n          </span>\n        </nuxt-link>\n\n        <small class=\"timeAgo\">{{ min }} {{ $t(\"Minutes Ago\") }}</small>\n      </div>\n    </div>\n    <a href=\"javascript:void(0)\" @click=\"closePopup()\" class=\"close-popup\">\n      <Icon name=\"ri:close-fill\"></Icon>\n    </a>\n  </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\n\nuseDataStore().GetProduct();\nlet { Products } = storeToRefs(useDataStore());\n\nlet product = ref();\n// let relatesProduct = ref();\nlet show = ref(false);\nlet min = ref(10);\nlet popup_enable = ref(true);\nlet { data, error } = await HandleRequest(`product`, {\n  key: \"getProductTopToSave\",\n});\n\nconst randomlySelectProduct = () => {\n  if (!Products?.value?.data?.length) {\n    relatesProducts();\n  } else {\n    const randomIndex = Math.floor(Math.random() * Products.value.data.length);\n    product.value = Products.value.data[randomIndex];\n  }\n};\n\n// const relatesProducts = () => {\n//   let relatedProductsArrays = Products?.value?.data.map(\n//     (product) => product?.related_products || []\n//   );\n//   let products = Products?.value?.data?.filter((product) =>\n//     relatedProductsArrays?.includes(product.id)\n//   );\n//   let randomIndex = Math.floor(Math.random() * products?.length);\n//   product.value = products[randomIndex];\n// };\n\nfunction closePopup() {\n  popup_enable.value = false;\n}\n\nonMounted(() => {\n  // randomlySelectProduct();\n  if (popup_enable.value) {\n    const timer = setInterval(() => {\n      show.value = true;\n      min.value = Math.floor(Math.random() * 60) + 1;\n      randomlySelectProduct();\n      setTimeout(() => {\n        show.value = false;\n      }, 3000);\n    }, 20000);\n\n    return () => {\n      clearInterval(timer);\n    };\n  }\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056339946,
+      "end": 1716056340128,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340128,
+      "end": 1716056340128,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340128,
+      "end": 1716056340128,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340128,
+      "end": 1716056340128,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340128,
+      "end": 1716056340128,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056340128,
+      "end": 1716056340128,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056340128,
+      "end": 1716056340128,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056340128,
+      "end": 1716056340128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056340128,
+      "end": 1716056340128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056340128,
+      "end": 1716056340128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056340129,
+      "end": 1716056340129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nuseDataStore().GetProduct();\nlet { Products } = storeToRefs(useDataStore());\n\nlet product = ref();\n// let relatesProduct = ref();\nlet show = ref(false);\nlet min = ref(10);\nlet popup_enable = ref(true);\nlet { data, error } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(`product`, {\n  key: \"getProductTopToSave\",\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nconst randomlySelectProduct = () => {\n  if (!Products?.value?.data?.length) {\n    relatesProducts();\n  } else {\n    const randomIndex = Math.floor(Math.random() * Products.value.data.length);\n    product.value = Products.value.data[randomIndex];\n  }\n};\n\n// const relatesProducts = () => {\n//   let relatedProductsArrays = Products?.value?.data.map(\n//     (product) => product?.related_products || []\n//   );\n//   let products = Products?.value?.data?.filter((product) =>\n//     relatedProductsArrays?.includes(product.id)\n//   );\n//   let randomIndex = Math.floor(Math.random() * products?.length);\n//   product.value = products[randomIndex];\n// };\n\nfunction closePopup() {\n  popup_enable.value = false;\n}\n\nonMounted(() => {\n  // randomlySelectProduct();\n  if (popup_enable.value) {\n    const timer = setInterval(() => {\n      show.value = true;\n      min.value = Math.floor(Math.random() * 60) + 1;\n      randomlySelectProduct();\n      setTimeout(() => {\n        show.value = false;\n      }, 3000);\n    }, 20000);\n\n    return () => {\n      clearInterval(timer);\n    };\n  }\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  if (_unref(product)) {\n    _push(`<div${\n      _ssrRenderAttrs(_mergeProps({\n        class: [\"media recently-purchase\", { show: _unref(popup_enable) ? _unref(show) : _unref(popup_enable) }]\n      }, _attrs))\n    }><img${\n      _ssrRenderAttr(\"src\", \n        _unref(product).product_thumbnail\n          ? _unref(product).product_thumbnail.original_url\n          : '/images/product.png'\n      )\n    } class=\"media-height\" alt=\"product\"><div class=\"media-body\"><div><div class=\"title d-block mb-0\">${\n      _ssrInterpolate(_ctx.$t(\"Someone Recently Purchased\"))\n    }</div>`)\n    _push(_ssrRenderComponent(_component_nuxt_link, {\n      to: `/product/${_unref(product).slug}`\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(`<span class=\"product-name\"${\n            _scopeId\n          }>${\n            _ssrInterpolate(_unref(product).name)\n          }</span>`)\n        } else {\n          return [\n            _createVNode(\"span\", { class: \"product-name\" }, _toDisplayString(_unref(product).name), 1)\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`<small class=\"timeAgo\">${\n      _ssrInterpolate(_unref(min))\n    } ${\n      _ssrInterpolate(_ctx.$t(\"Minutes Ago\"))\n    }</small></div></div><a href=\"javascript:void(0)\" class=\"close-popup\">`)\n    _push(_ssrRenderComponent(_component_Icon, { name: \"ri:close-fill\" }, null, _parent))\n    _push(`</a></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/RecentlyPurchasePoppup/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340129,
+      "end": 1716056340132,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/RecentlyPurchasePoppup/index.vue\").then(r => r.default))",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056340132,
+      "end": 1716056340132,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340132,
+      "end": 1716056340133,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340132,
+      "end": 1716056340133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340133,
+      "end": 1716056340133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340133,
+      "end": 1716056340133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056340133,
+      "end": 1716056340133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056340133,
+      "end": 1716056340133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056340133,
+      "end": 1716056340133,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056340133,
+      "end": 1716056340133,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056340133,
+      "end": 1716056340133,
+      "order": "normal"
+    }
+  ]
+}

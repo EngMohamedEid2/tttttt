@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/store/checkout.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { useCartStore } from \"./cart\";\n\nexport const useCheckoutStore = defineStore(\"checkout-store\", () => {\n\n    let CheckoutData = ref({\n        products:[],\n        billing_address_id:\"\",\n        shipping_address_id:\"\",\n        delivery_interval:'1 day',\n        delivery_description:null,\n        payment_method:'cod',\n        wallet_balance:false,\n        points_amount:false,\n        coupon:null\n    }),IsCheckoutDataValid =ref(false);\n    let CheckoutInfo = ref({\n        total : {\n            convert_point_amount: -10,\n            convert_wallet_balance: -84.4,\n            coupon_total_discount: 10,\n            points: 300,\n            points_amount: 10,\n            shipping_total: 0,\n            sub_total: 35.19,\n            tax_total: 2.54,\n            total: 37.73,\n            wallet_balance: 84.4,\n          }\n    });\n    let loading=ref(false);\n    let couponError = ref('')\n    const SetCheckoutAddress = ({type='shipping',id})=>{\n        type=='billing'?CheckoutData.value.billing_address_id = id:CheckoutData.value.shipping_address_id = id\n    }\n    const allowApi = (value) => {\n        IsCheckoutDataValid.value = value\n    }\n    const getCouponCode = (value) => {\n        CheckoutData.value.coupon = value\n    }\n    const SetPaymentOption = (value)=>{\n        value && (CheckoutData.value.payment_method = value)\n\n    }\n    const setDeliveryInterval = (value) => {\n        value && (CheckoutData.value.delivery_interval = value)\n    }\n    const setDeliveryDescription = (value) => {\n        CheckoutData.value.delivery_interval = value == 'Standard Delivery | Approx 5 to 7 Days'?null:CheckoutData.value.delivery_interval\n        value && (CheckoutData.value.delivery_description = value )\n    }\n    const SetCheckoutProduct = ({value}) => {\n        CheckoutData.value.products = []\n        value.forEach(el=>{\n            CheckoutData.value.products.push({\n                product_id:el.product_id,\n                variation_id:el.variation_id,\n                quantity:el.quantity\n            })\n        })      \n    }\n    \n\n    const SetCheckoutInfo =async ()=>{\n        if(Object.keys(CheckoutInfo.value).length){\n            loading.value = true;\n            setTimeout(() => {\n             loading.value = false\n            }, 4000)\n        }else{\n            var {data,error,refresh} = await HandleRequest('order',{\n                baseURL:BaseUrl,\n                headers:GetHeaders(),\n                method:'post',\n                key:'GetCheckoutData',\n                body:CheckoutData.value,\n                cache:false,\n                onResponse({response}){\n                    CheckoutInfo.value = response._data\n                    if(!response._data.success){\n                    couponError.value = response._data.message\n                  }\n                }\n            });\n        \n        }\n    }\n\n    const PlaceOrder= async ()=>{\n        let {data,error} = await useFetch('order',{\n            baseURL:BaseUrl,\n            headers:GetHeaders(),\n            method:'post',\n            key:'PlaceOrder',\n            cache:false,\n            body:{...CheckoutData.value,\n                return_url:'http://localhost:3000/account/order/details/1000',\n                cancel_url:'http://localhost:3000',\n            }\n        })\n        if(!error.value){\n            var order_number =data.value?.order_number\n            if(data.value.is_redirect){\n                window.open(data.value.url,\"\",);\n                useRouter().push(`/account/order/details/1000`)\n            } else{\n                useRouter().push(`/account/order/details/1000`)\n            }\n            \n        }\n    }\n\n    const SetPayment = (value)=>{\n        value && (CheckoutData.value.payment_method = value)\n\n    }\n\n\n\nwatch(()=>IsCheckoutDataValid,()=>{\n    if(IsCheckoutDataValid && useCookie('uat').value){\n        SetCheckoutInfo();\n    }\n},{deep:true})\n\n  return {\n    CheckoutData,\n    CheckoutInfo,\n    SetCheckoutAddress,\n    SetPayment,\n    SetPaymentOption,\n    SetCheckoutProduct,\n    PlaceOrder,\n    loading,\n    setDeliveryInterval,\n    setDeliveryDescription,\n    getCouponCode,\n    couponError,\n    SetCheckoutInfo,\n    allowApi\n  };\n  \n});",
+      "start": 1716056343333,
+      "end": 1716056343531,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343531,
+      "end": 1716056343531,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343531,
+      "end": 1716056343531,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343531,
+      "end": 1716056343531,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343531,
+      "end": 1716056343531,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056343531,
+      "end": 1716056343532,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056343532,
+      "end": 1716056343532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { useCartStore } from \"./cart\";\nexport const useCheckoutStore = defineStore(\"checkout-store\", () => {\n  let CheckoutData = ref({\n    products: [],\n    billing_address_id: \"\",\n    shipping_address_id: \"\",\n    delivery_interval: \"1 day\",\n    delivery_description: null,\n    payment_method: \"cod\",\n    wallet_balance: false,\n    points_amount: false,\n    coupon: null\n  }), IsCheckoutDataValid = ref(false);\n  let CheckoutInfo = ref({\n    total: {\n      convert_point_amount: -10,\n      convert_wallet_balance: -84.4,\n      coupon_total_discount: 10,\n      points: 300,\n      points_amount: 10,\n      shipping_total: 0,\n      sub_total: 35.19,\n      tax_total: 2.54,\n      total: 37.73,\n      wallet_balance: 84.4\n    }\n  });\n  let loading = ref(false);\n  let couponError = ref(\"\");\n  const SetCheckoutAddress = ({ type = \"shipping\", id }) => {\n    type == \"billing\" ? CheckoutData.value.billing_address_id = id : CheckoutData.value.shipping_address_id = id;\n  };\n  const allowApi = (value) => {\n    IsCheckoutDataValid.value = value;\n  };\n  const getCouponCode = (value) => {\n    CheckoutData.value.coupon = value;\n  };\n  const SetPaymentOption = (value) => {\n    value && (CheckoutData.value.payment_method = value);\n  };\n  const setDeliveryInterval = (value) => {\n    value && (CheckoutData.value.delivery_interval = value);\n  };\n  const setDeliveryDescription = (value) => {\n    CheckoutData.value.delivery_interval = value == \"Standard Delivery | Approx 5 to 7 Days\" ? null : CheckoutData.value.delivery_interval;\n    value && (CheckoutData.value.delivery_description = value);\n  };\n  const SetCheckoutProduct = ({ value }) => {\n    CheckoutData.value.products = [];\n    value.forEach((el) => {\n      CheckoutData.value.products.push({\n        product_id: el.product_id,\n        variation_id: el.variation_id,\n        quantity: el.quantity\n      });\n    });\n  };\n  const SetCheckoutInfo = async () => {\n    if (Object.keys(CheckoutInfo.value).length) {\n      loading.value = true;\n      setTimeout(() => {\n        loading.value = false;\n      }, 4e3);\n    } else {\n      var { data, error, refresh } = await HandleRequest(\"order\", {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"post\",\n        key: \"GetCheckoutData\",\n        body: CheckoutData.value,\n        cache: false,\n        onResponse({ response }) {\n          CheckoutInfo.value = response._data;\n          if (!response._data.success) {\n            couponError.value = response._data.message;\n          }\n        }\n      });\n    }\n  };\n  const PlaceOrder = async () => {\n    let { data, error } = await useFetch(\"order\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"post\",\n      key: \"PlaceOrder\",\n      cache: false,\n      body: {\n        ...CheckoutData.value,\n        return_url: \"http://localhost:3000/account/order/details/1000\",\n        cancel_url: \"http://localhost:3000\"\n      }\n    });\n    if (!error.value) {\n      var order_number = data.value?.order_number;\n      if (data.value.is_redirect) {\n        (void 0).open(data.value.url, \"\");\n        useRouter().push(`/account/order/details/1000`);\n      } else {\n        useRouter().push(`/account/order/details/1000`);\n      }\n    }\n  };\n  const SetPayment = (value) => {\n    value && (CheckoutData.value.payment_method = value);\n  };\n  watch(() => IsCheckoutDataValid, () => {\n    if (IsCheckoutDataValid && useCookie(\"uat\").value) {\n      SetCheckoutInfo();\n    }\n  }, { deep: true });\n  return {\n    CheckoutData,\n    CheckoutInfo,\n    SetCheckoutAddress,\n    SetPayment,\n    SetPaymentOption,\n    SetCheckoutProduct,\n    PlaceOrder,\n    loading,\n    setDeliveryInterval,\n    setDeliveryDescription,\n    getCouponCode,\n    couponError,\n    SetCheckoutInfo,\n    allowApi\n  };\n});\n",
+      "start": 1716056343532,
+      "end": 1716056343570,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056343570,
+      "end": 1716056343570,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056343570,
+      "end": 1716056343570,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056343570,
+      "end": 1716056343570,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056343570,
+      "end": 1716056343570,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056343570,
+      "end": 1716056343570,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056343570,
+      "end": 1716056343570,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056343570,
+      "end": 1716056343570,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { useCartStore } from \"./cart\";\nexport const useCheckoutStore = defineStore(\"checkout-store\", () => {\n  let CheckoutData = ref({\n    products: [],\n    billing_address_id: \"\",\n    shipping_address_id: \"\",\n    delivery_interval: \"1 day\",\n    delivery_description: null,\n    payment_method: \"cod\",\n    wallet_balance: false,\n    points_amount: false,\n    coupon: null\n  }), IsCheckoutDataValid = ref(false);\n  let CheckoutInfo = ref({\n    total: {\n      convert_point_amount: -10,\n      convert_wallet_balance: -84.4,\n      coupon_total_discount: 10,\n      points: 300,\n      points_amount: 10,\n      shipping_total: 0,\n      sub_total: 35.19,\n      tax_total: 2.54,\n      total: 37.73,\n      wallet_balance: 84.4\n    }\n  });\n  let loading = ref(false);\n  let couponError = ref(\"\");\n  const SetCheckoutAddress = ({ type = \"shipping\", id }) => {\n    type == \"billing\" ? CheckoutData.value.billing_address_id = id : CheckoutData.value.shipping_address_id = id;\n  };\n  const allowApi = (value) => {\n    IsCheckoutDataValid.value = value;\n  };\n  const getCouponCode = (value) => {\n    CheckoutData.value.coupon = value;\n  };\n  const SetPaymentOption = (value) => {\n    value && (CheckoutData.value.payment_method = value);\n  };\n  const setDeliveryInterval = (value) => {\n    value && (CheckoutData.value.delivery_interval = value);\n  };\n  const setDeliveryDescription = (value) => {\n    CheckoutData.value.delivery_interval = value == \"Standard Delivery | Approx 5 to 7 Days\" ? null : CheckoutData.value.delivery_interval;\n    value && (CheckoutData.value.delivery_description = value);\n  };\n  const SetCheckoutProduct = ({ value }) => {\n    CheckoutData.value.products = [];\n    value.forEach((el) => {\n      CheckoutData.value.products.push({\n        product_id: el.product_id,\n        variation_id: el.variation_id,\n        quantity: el.quantity\n      });\n    });\n  };\n  const SetCheckoutInfo = async () => {\n    if (Object.keys(CheckoutInfo.value).length) {\n      loading.value = true;\n      setTimeout(() => {\n        loading.value = false;\n      }, 4e3);\n    } else {\n      var { data, error, refresh } = await HandleRequest(\"order\", {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"post\",\n        key: \"GetCheckoutData\",\n        body: CheckoutData.value,\n        cache: false,\n        onResponse({ response }) {\n          CheckoutInfo.value = response._data;\n          if (!response._data.success) {\n            couponError.value = response._data.message;\n          }\n        }\n      });\n    }\n  };\n  const PlaceOrder = async () => {\n    let { data, error } = await useFetch(\"order\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"post\",\n      key: \"PlaceOrder\",\n      cache: false,\n      body: {\n        ...CheckoutData.value,\n        return_url: \"http://localhost:3000/account/order/details/1000\",\n        cancel_url: \"http://localhost:3000\"\n      }\n    }, '$bx6vpCrZ4S');\n    if (!error.value) {\n      var order_number = data.value?.order_number;\n      if (data.value.is_redirect) {\n        (void 0).open(data.value.url, \"\");\n        useRouter().push(`/account/order/details/1000`);\n      } else {\n        useRouter().push(`/account/order/details/1000`);\n      }\n    }\n  };\n  const SetPayment = (value) => {\n    value && (CheckoutData.value.payment_method = value);\n  };\n  watch(() => IsCheckoutDataValid, () => {\n    if (IsCheckoutDataValid && useCookie(\"uat\").value) {\n      SetCheckoutInfo();\n    }\n  }, { deep: true });\n  return {\n    CheckoutData,\n    CheckoutInfo,\n    SetCheckoutAddress,\n    SetPayment,\n    SetPaymentOption,\n    SetCheckoutProduct,\n    PlaceOrder,\n    loading,\n    setDeliveryInterval,\n    setDeliveryDescription,\n    getCouponCode,\n    couponError,\n    SetCheckoutInfo,\n    allowApi\n  };\n});\n",
+      "start": 1716056343570,
+      "end": 1716056343572,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { useCartStore } from \"./cart\";\nexport const useCheckoutStore = defineStore(\"checkout-store\", () => {\n  let CheckoutData = ref({\n    products: [],\n    billing_address_id: \"\",\n    shipping_address_id: \"\",\n    delivery_interval: \"1 day\",\n    delivery_description: null,\n    payment_method: \"cod\",\n    wallet_balance: false,\n    points_amount: false,\n    coupon: null\n  }), IsCheckoutDataValid = ref(false);\n  let CheckoutInfo = ref({\n    total: {\n      convert_point_amount: -10,\n      convert_wallet_balance: -84.4,\n      coupon_total_discount: 10,\n      points: 300,\n      points_amount: 10,\n      shipping_total: 0,\n      sub_total: 35.19,\n      tax_total: 2.54,\n      total: 37.73,\n      wallet_balance: 84.4\n    }\n  });\n  let loading = ref(false);\n  let couponError = ref(\"\");\n  const SetCheckoutAddress = ({ type = \"shipping\", id }) => {\n    type == \"billing\" ? CheckoutData.value.billing_address_id = id : CheckoutData.value.shipping_address_id = id;\n  };\n  const allowApi = (value) => {\n    IsCheckoutDataValid.value = value;\n  };\n  const getCouponCode = (value) => {\n    CheckoutData.value.coupon = value;\n  };\n  const SetPaymentOption = (value) => {\n    value && (CheckoutData.value.payment_method = value);\n  };\n  const setDeliveryInterval = (value) => {\n    value && (CheckoutData.value.delivery_interval = value);\n  };\n  const setDeliveryDescription = (value) => {\n    CheckoutData.value.delivery_interval = value == \"Standard Delivery | Approx 5 to 7 Days\" ? null : CheckoutData.value.delivery_interval;\n    value && (CheckoutData.value.delivery_description = value);\n  };\n  const SetCheckoutProduct = ({ value }) => {\n    CheckoutData.value.products = [];\n    value.forEach((el) => {\n      CheckoutData.value.products.push({\n        product_id: el.product_id,\n        variation_id: el.variation_id,\n        quantity: el.quantity\n      });\n    });\n  };\n  const SetCheckoutInfo = async () => {\n    if (Object.keys(CheckoutInfo.value).length) {\n      loading.value = true;\n      setTimeout(() => {\n        loading.value = false;\n      }, 4e3);\n    } else {\n      var { data, error, refresh } = await HandleRequest(\"order\", {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"post\",\n        key: \"GetCheckoutData\",\n        body: CheckoutData.value,\n        cache: false,\n        onResponse({ response }) {\n          CheckoutInfo.value = response._data;\n          if (!response._data.success) {\n            couponError.value = response._data.message;\n          }\n        }\n      });\n    }\n  };\n  const PlaceOrder = async () => {\n    let { data, error } = await useFetch(\"order\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"post\",\n      key: \"PlaceOrder\",\n      cache: false,\n      body: {\n        ...CheckoutData.value,\n        return_url: \"http://localhost:3000/account/order/details/1000\",\n        cancel_url: \"http://localhost:3000\"\n      }\n    }, '$bx6vpCrZ4S');\n    if (!error.value) {\n      var order_number = data.value?.order_number;\n      if (data.value.is_redirect) {\n        (void 0).open(data.value.url, \"\");\n        useRouter().push(`/account/order/details/1000`);\n      } else {\n        useRouter().push(`/account/order/details/1000`);\n      }\n    }\n  };\n  const SetPayment = (value) => {\n    value && (CheckoutData.value.payment_method = value);\n  };\n  watch(() => IsCheckoutDataValid, () => {\n    if (IsCheckoutDataValid && useCookie(\"uat\").value) {\n      SetCheckoutInfo();\n    }\n  }, { deep: true });\n  return {\n    CheckoutData,\n    CheckoutInfo,\n    SetCheckoutAddress,\n    SetPayment,\n    SetPaymentOption,\n    SetCheckoutProduct,\n    PlaceOrder,\n    loading,\n    setDeliveryInterval,\n    setDeliveryDescription,\n    getCouponCode,\n    couponError,\n    SetCheckoutInfo,\n    allowApi\n  };\n});\n",
+      "start": 1716056343570,
+      "end": 1716056343572,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineStore } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/@pinia/nuxt/dist/runtime/composables';\nimport { ref, watch } from 'vue';\nimport { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { useFetch } from '#app/composables/fetch';\nimport { useRouter } from '#app/composables/router';\nimport { useCookie } from '#app/composables/cookie';\nimport { useCartStore } from \"./cart\";\nexport const useCheckoutStore = defineStore(\"checkout-store\", () => {\n  let CheckoutData = ref({\n    products: [],\n    billing_address_id: \"\",\n    shipping_address_id: \"\",\n    delivery_interval: \"1 day\",\n    delivery_description: null,\n    payment_method: \"cod\",\n    wallet_balance: false,\n    points_amount: false,\n    coupon: null\n  }), IsCheckoutDataValid = ref(false);\n  let CheckoutInfo = ref({\n    total: {\n      convert_point_amount: -10,\n      convert_wallet_balance: -84.4,\n      coupon_total_discount: 10,\n      points: 300,\n      points_amount: 10,\n      shipping_total: 0,\n      sub_total: 35.19,\n      tax_total: 2.54,\n      total: 37.73,\n      wallet_balance: 84.4\n    }\n  });\n  let loading = ref(false);\n  let couponError = ref(\"\");\n  const SetCheckoutAddress = ({ type = \"shipping\", id }) => {\n    type == \"billing\" ? CheckoutData.value.billing_address_id = id : CheckoutData.value.shipping_address_id = id;\n  };\n  const allowApi = (value) => {\n    IsCheckoutDataValid.value = value;\n  };\n  const getCouponCode = (value) => {\n    CheckoutData.value.coupon = value;\n  };\n  const SetPaymentOption = (value) => {\n    value && (CheckoutData.value.payment_method = value);\n  };\n  const setDeliveryInterval = (value) => {\n    value && (CheckoutData.value.delivery_interval = value);\n  };\n  const setDeliveryDescription = (value) => {\n    CheckoutData.value.delivery_interval = value == \"Standard Delivery | Approx 5 to 7 Days\" ? null : CheckoutData.value.delivery_interval;\n    value && (CheckoutData.value.delivery_description = value);\n  };\n  const SetCheckoutProduct = ({ value }) => {\n    CheckoutData.value.products = [];\n    value.forEach((el) => {\n      CheckoutData.value.products.push({\n        product_id: el.product_id,\n        variation_id: el.variation_id,\n        quantity: el.quantity\n      });\n    });\n  };\n  const SetCheckoutInfo = async () => {\n    if (Object.keys(CheckoutInfo.value).length) {\n      loading.value = true;\n      setTimeout(() => {\n        loading.value = false;\n      }, 4e3);\n    } else {\n      var { data, error, refresh } = await HandleRequest(\"order\", {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"post\",\n        key: \"GetCheckoutData\",\n        body: CheckoutData.value,\n        cache: false,\n        onResponse({ response }) {\n          CheckoutInfo.value = response._data;\n          if (!response._data.success) {\n            couponError.value = response._data.message;\n          }\n        }\n      });\n    }\n  };\n  const PlaceOrder = async () => {\n    let { data, error } = await useFetch(\"order\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"post\",\n      key: \"PlaceOrder\",\n      cache: false,\n      body: {\n        ...CheckoutData.value,\n        return_url: \"http://localhost:3000/account/order/details/1000\",\n        cancel_url: \"http://localhost:3000\"\n      }\n    }, '$bx6vpCrZ4S');\n    if (!error.value) {\n      var order_number = data.value?.order_number;\n      if (data.value.is_redirect) {\n        (void 0).open(data.value.url, \"\");\n        useRouter().push(`/account/order/details/1000`);\n      } else {\n        useRouter().push(`/account/order/details/1000`);\n      }\n    }\n  };\n  const SetPayment = (value) => {\n    value && (CheckoutData.value.payment_method = value);\n  };\n  watch(() => IsCheckoutDataValid, () => {\n    if (IsCheckoutDataValid && useCookie(\"uat\").value) {\n      SetCheckoutInfo();\n    }\n  }, { deep: true });\n  return {\n    CheckoutData,\n    CheckoutInfo,\n    SetCheckoutAddress,\n    SetPayment,\n    SetPaymentOption,\n    SetCheckoutProduct,\n    PlaceOrder,\n    loading,\n    setDeliveryInterval,\n    setDeliveryDescription,\n    getCouponCode,\n    couponError,\n    SetCheckoutInfo,\n    allowApi\n  };\n});\n",
+      "start": 1716056343572,
+      "end": 1716056343573,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineStore } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/@pinia/nuxt/dist/runtime/composables';\nimport { ref, watch } from 'vue';\nimport { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { useFetch } from '#app/composables/fetch';\nimport { useRouter } from '#app/composables/router';\nimport { useCookie } from '#app/composables/cookie';\nimport { useCartStore } from \"./cart\";\nexport const useCheckoutStore = defineStore(\"checkout-store\", () => {\n  let CheckoutData = ref({\n    products: [],\n    billing_address_id: \"\",\n    shipping_address_id: \"\",\n    delivery_interval: \"1 day\",\n    delivery_description: null,\n    payment_method: \"cod\",\n    wallet_balance: false,\n    points_amount: false,\n    coupon: null\n  }), IsCheckoutDataValid = ref(false);\n  let CheckoutInfo = ref({\n    total: {\n      convert_point_amount: -10,\n      convert_wallet_balance: -84.4,\n      coupon_total_discount: 10,\n      points: 300,\n      points_amount: 10,\n      shipping_total: 0,\n      sub_total: 35.19,\n      tax_total: 2.54,\n      total: 37.73,\n      wallet_balance: 84.4\n    }\n  });\n  let loading = ref(false);\n  let couponError = ref(\"\");\n  const SetCheckoutAddress = ({ type = \"shipping\", id }) => {\n    type == \"billing\" ? CheckoutData.value.billing_address_id = id : CheckoutData.value.shipping_address_id = id;\n  };\n  const allowApi = (value) => {\n    IsCheckoutDataValid.value = value;\n  };\n  const getCouponCode = (value) => {\n    CheckoutData.value.coupon = value;\n  };\n  const SetPaymentOption = (value) => {\n    value && (CheckoutData.value.payment_method = value);\n  };\n  const setDeliveryInterval = (value) => {\n    value && (CheckoutData.value.delivery_interval = value);\n  };\n  const setDeliveryDescription = (value) => {\n    CheckoutData.value.delivery_interval = value == \"Standard Delivery | Approx 5 to 7 Days\" ? null : CheckoutData.value.delivery_interval;\n    value && (CheckoutData.value.delivery_description = value);\n  };\n  const SetCheckoutProduct = ({ value }) => {\n    CheckoutData.value.products = [];\n    value.forEach((el) => {\n      CheckoutData.value.products.push({\n        product_id: el.product_id,\n        variation_id: el.variation_id,\n        quantity: el.quantity\n      });\n    });\n  };\n  const SetCheckoutInfo = async () => {\n    if (Object.keys(CheckoutInfo.value).length) {\n      loading.value = true;\n      setTimeout(() => {\n        loading.value = false;\n      }, 4e3);\n    } else {\n      var { data, error, refresh } = await HandleRequest(\"order\", {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"post\",\n        key: \"GetCheckoutData\",\n        body: CheckoutData.value,\n        cache: false,\n        onResponse({ response }) {\n          CheckoutInfo.value = response._data;\n          if (!response._data.success) {\n            couponError.value = response._data.message;\n          }\n        }\n      });\n    }\n  };\n  const PlaceOrder = async () => {\n    let { data, error } = await useFetch(\"order\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"post\",\n      key: \"PlaceOrder\",\n      cache: false,\n      body: {\n        ...CheckoutData.value,\n        return_url: \"http://localhost:3000/account/order/details/1000\",\n        cancel_url: \"http://localhost:3000\"\n      }\n    }, '$bx6vpCrZ4S');\n    if (!error.value) {\n      var order_number = data.value?.order_number;\n      if (data.value.is_redirect) {\n        (void 0).open(data.value.url, \"\");\n        useRouter().push(`/account/order/details/1000`);\n      } else {\n        useRouter().push(`/account/order/details/1000`);\n      }\n    }\n  };\n  const SetPayment = (value) => {\n    value && (CheckoutData.value.payment_method = value);\n  };\n  watch(() => IsCheckoutDataValid, () => {\n    if (IsCheckoutDataValid && useCookie(\"uat\").value) {\n      SetCheckoutInfo();\n    }\n  }, { deep: true });\n  return {\n    CheckoutData,\n    CheckoutInfo,\n    SetCheckoutAddress,\n    SetPayment,\n    SetPaymentOption,\n    SetCheckoutProduct,\n    PlaceOrder,\n    loading,\n    setDeliveryInterval,\n    setDeliveryDescription,\n    getCouponCode,\n    couponError,\n    SetCheckoutInfo,\n    allowApi\n  };\n});\n",
+      "start": 1716056343572,
+      "end": 1716056343573,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343573,
+      "end": 1716056343573,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343573,
+      "end": 1716056343573,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343573,
+      "end": 1716056343573,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343573,
+      "end": 1716056343573,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056343573,
+      "end": 1716056343573,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056343573,
+      "end": 1716056343573,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056343573,
+      "end": 1716056343573,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056343573,
+      "end": 1716056343573,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056343573,
+      "end": 1716056343573,
+      "order": "normal"
+    }
+  ]
+}

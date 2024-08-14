@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/StickyCart/index.vue?nuxt_component=async&nuxt_component_name=WidgetsStickyCart",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n  <div class=\"button-item\" v-if=\"cart?.length\">\n    <WidgetsButton :classes=\"'item-btn btn text-white'\" :id=\"'open_cart_btn'\" :type=\"'button'\" @onClick=\"openCart(true)\">\n      <Icon name=\"ri-shopping-cart-2-line\"></Icon>\n    </WidgetsButton>\n  </div>\n  <div class=\"item-section\" :class=\"{ active: isOpen && cart?.length }\">\n    <WidgetsButton :classes=\"'close-button'\" :id=\"'close_cart_btn'\" :type=\"'button'\" @onClick=\"openCart(false)\">\n     <Icon name=\"ri-close-line\"/>\n    </WidgetsButton>\n    <h6>\n      <Icon name=\"ri-shopping-cart-2-line\"></Icon>\n      <span>{{ cart?.length }} {{ $t(\"Items\") }}</span>\n    </h6>\n    <ul class=\"items-image\">\n      <li v-for=\"item in cart.slice(0, 2)\" :key=\"item\">\n        <img :src=\"item?.variation && item?.variation?.variation_image\n            ? item?.variation?.variation_image?.original_url\n            : item?.product?.product_thumbnail\n              ? item?.product?.product_thumbnail?.original_url\n              : '/images/product.png'\n          \" alt=\"product\" />\n      </li>\n      <li v-if=\"cart?.length > 2\">+ {{ cart?.length - 2 }}</li>\n    </ul>\n    <nuxt-link to=\"/cart\" class=\"btn item-button btn-sm fw-bold\">{{ store.currency.symbol }}\n      {{ Number(store.convertCurrency(CartTotal)).toFixed(2) }}</nuxt-link>\n  </div>\n</div>\n</template>\n\n<script setup>\nimport { useCartStore } from \"@/store/cart\";\nimport { useCurrencyStore } from \"@/store/currency\";\nlet { cart, CartTotal } = storeToRefs(useCartStore());\nlet store = useCurrencyStore();\nstore.allCurrency();\nlet isOpen = ref(false);\nfunction openCart(isOpen) {\n  isOpen = isOpen;\n}\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056285298,
+      "end": 1716056285435,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285435,
+      "end": 1716056285435,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285435,
+      "end": 1716056285435,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285435,
+      "end": 1716056285435,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285436,
+      "end": 1716056285436,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285436,
+      "end": 1716056285436,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285436,
+      "end": 1716056285436,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285436,
+      "end": 1716056285436,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"button-item\"\n}\nconst _hoisted_2 = { class: \"items-image\" }\nconst _hoisted_3 = [\"src\"]\nconst _hoisted_4 = { key: 0 }\n\nimport { useCartStore } from \"@/store/cart\";\nimport { useCurrencyStore } from \"@/store/currency\";\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet { cart, CartTotal } = storeToRefs(useCartStore());\nlet store = useCurrencyStore();\nstore.allCurrency();\nlet isOpen = ref(false);\nfunction openCart(isOpen) {\n  isOpen = isOpen;\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (_unref(cart)?.length)\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n          _createVNode(_component_WidgetsButton, {\n            classes: 'item-btn btn text-white',\n            id: 'open_cart_btn',\n            type: 'button',\n            onOnClick: _cache[0] || (_cache[0] = $event => (openCart(true)))\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_Icon, { name: \"ri-shopping-cart-2-line\" })\n            ]),\n            _: 1\n          })\n        ]))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", {\n      class: _normalizeClass([\"item-section\", { active: _unref(isOpen) && _unref(cart)?.length }])\n    }, [\n      _createVNode(_component_WidgetsButton, {\n        classes: 'close-button',\n        id: 'close_cart_btn',\n        type: 'button',\n        onOnClick: _cache[1] || (_cache[1] = $event => (openCart(false)))\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_Icon, { name: \"ri-close-line\" })\n        ]),\n        _: 1\n      }),\n      _createElementVNode(\"h6\", null, [\n        _createVNode(_component_Icon, { name: \"ri-shopping-cart-2-line\" }),\n        _createElementVNode(\"span\", null, _toDisplayString(_unref(cart)?.length) + \" \" + _toDisplayString(_ctx.$t(\"Items\")), 1)\n      ]),\n      _createElementVNode(\"ul\", _hoisted_2, [\n        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(cart).slice(0, 2), (item) => {\n          return (_openBlock(), _createElementBlock(\"li\", { key: item }, [\n            _createElementVNode(\"img\", {\n              src: item?.variation && item?.variation?.variation_image\n            ? item?.variation?.variation_image?.original_url\n            : item?.product?.product_thumbnail\n              ? item?.product?.product_thumbnail?.original_url\n              : '/images/product.png'\n          ,\n              alt: \"product\"\n            }, null, 8, _hoisted_3)\n          ]))\n        }), 128)),\n        (_unref(cart)?.length > 2)\n          ? (_openBlock(), _createElementBlock(\"li\", _hoisted_4, \"+ \" + _toDisplayString(_unref(cart)?.length - 2), 1))\n          : _createCommentVNode(\"\", true)\n      ]),\n      _createVNode(_component_nuxt_link, {\n        to: \"/cart\",\n        class: \"btn item-button btn-sm fw-bold\"\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(_unref(CartTotal))).toFixed(2)), 1)\n        ]),\n        _: 1\n      })\n    ], 2)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056285436,
+      "end": 1716056285440,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285440,
+      "end": 1716056285440,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285440,
+      "end": 1716056285440,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285440,
+      "end": 1716056285440,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285440,
+      "end": 1716056285440,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/StickyCart/index.vue\").then(r => r.default))",
+      "start": 1716056285440,
+      "end": 1716056285440,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285440,
+      "end": 1716056285440,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285441,
+      "end": 1716056285441,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285441,
+      "end": 1716056285441,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285441,
+      "end": 1716056285441,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285441,
+      "end": 1716056285441,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285441,
+      "end": 1716056285441,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285441,
+      "end": 1716056285441,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285441,
+      "end": 1716056285441,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285441,
+      "end": 1716056285441,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285441,
+      "end": 1716056285441,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285441,
+      "end": 1716056285441,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285441,
+      "end": 1716056285441,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285442,
+      "end": 1716056285442,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285442,
+      "end": 1716056285442,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285442,
+      "end": 1716056285442,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285442,
+      "end": 1716056285442,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285442,
+      "end": 1716056285442,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285442,
+      "end": 1716056285442,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/StickyCart/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285442,
+      "end": 1716056285442,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285442,
+      "end": 1716056285442,
+      "order": "normal"
+    }
+  ]
+}

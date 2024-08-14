@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Silder/Image.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n        <div class=\"row\">\n            <div class=\"col-12\">\n                <div class=\"slider-3-product product-wrapper\">\n                    <swiper :loop=\"true\" class=\"banner-slider\" :slides-per-view=\"4\" :space-between=\"15\">\n                        <swiper-slide v-for=\"(productImages, index) in Data.product_galleries\" :key=\"index\"\n                            :class=\"slideId == index ? '' : ''\">\n                            <div class=\"product-slider-image\">\n                                <img :src=\"productImages?.original_url\" :id=\"productImages.id\" class=\"img-fluid\">\n                            </div>\n                        </swiper-slide>\n                    </swiper>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    Data: Object,\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056287527,
+      "end": 1716056287695,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287695,
+      "end": 1716056287695,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287695,
+      "end": 1716056287695,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287695,
+      "end": 1716056287695,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287695,
+      "end": 1716056287695,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287695,
+      "end": 1716056287695,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287695,
+      "end": 1716056287695,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287695,
+      "end": 1716056287695,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createBlock as _createBlock, createVNode as _createVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"row\" }\nconst _hoisted_2 = { class: \"col-12\" }\nconst _hoisted_3 = { class: \"slider-3-product product-wrapper\" }\nconst _hoisted_4 = { class: \"product-slider-image\" }\nconst _hoisted_5 = [\"src\", \"id\"]\n\n\nconst _sfc_main = {\n  __name: 'Image',\n  props: {\n    Data: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_swiper_slide = _resolveComponent(\"swiper-slide\")\n  const _component_swiper = _resolveComponent(\"swiper\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createVNode(_component_swiper, {\n            loop: true,\n            class: \"banner-slider\",\n            \"slides-per-view\": 4,\n            \"space-between\": 15\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.Data.product_galleries, (productImages, index) => {\n                return (_openBlock(), _createBlock(_component_swiper_slide, {\n                  key: index,\n                  class: _normalizeClass(_ctx.slideId == index ? '' : '')\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", _hoisted_4, [\n                      _createElementVNode(\"img\", {\n                        src: productImages?.original_url,\n                        id: productImages.id,\n                        class: \"img-fluid\"\n                      }, null, 8, _hoisted_5)\n                    ])\n                  ]),\n                  _: 2\n                }, 1032, [\"class\"]))\n              }), 128))\n            ]),\n            _: 1\n          })\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287695,
+      "end": 1716056287696,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287696,
+      "end": 1716056287696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056287696,
+      "end": 1716056287698,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287698,
+      "end": 1716056287698,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287698,
+      "end": 1716056287698,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287698,
+      "end": 1716056287698,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287698,
+      "end": 1716056287698,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { SwiperSlide as __nuxt_component_0 } from \"swiper/vue\";\nimport { Swiper as __nuxt_component_1 } from \"swiper/vue\";\nimport { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createBlock as _createBlock, createVNode as _createVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"row\" }\nconst _hoisted_2 = { class: \"col-12\" }\nconst _hoisted_3 = { class: \"slider-3-product product-wrapper\" }\nconst _hoisted_4 = { class: \"product-slider-image\" }\nconst _hoisted_5 = [\"src\", \"id\"]\n\n\nconst _sfc_main = {\n  __name: 'Image',\n  props: {\n    Data: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_swiper_slide = __nuxt_component_0\n  const _component_swiper = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createVNode(_component_swiper, {\n            loop: true,\n            class: \"banner-slider\",\n            \"slides-per-view\": 4,\n            \"space-between\": 15\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.Data.product_galleries, (productImages, index) => {\n                return (_openBlock(), _createBlock(_component_swiper_slide, {\n                  key: index,\n                  class: _normalizeClass(_ctx.slideId == index ? '' : '')\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", _hoisted_4, [\n                      _createElementVNode(\"img\", {\n                        src: productImages?.original_url,\n                        id: productImages.id,\n                        class: \"img-fluid\"\n                      }, null, 8, _hoisted_5)\n                    ])\n                  ]),\n                  _: 2\n                }, 1032, [\"class\"]))\n              }), 128))\n            ]),\n            _: 1\n          })\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287698,
+      "end": 1716056287698,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287698,
+      "end": 1716056287698,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287698,
+      "end": 1716056287698,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287698,
+      "end": 1716056287698,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n        <section class=\"checkout-section-2 section-b-space\">\n            <div class=\"container-fluid-lg\">\n                <div class=\"row g-sm-4 g-3\">\n                    <div class=\"col-xxl-8 col-xl-7\">\n                        <div class=\"left-sidebar-checkout\">\n                            <div class=\"checkout-detail-box\">\n                                <ul>\n                                    <li>\n                                        <div class=\"checkout-icon\">\n                                            <Icon name=\"ri-map-pin-line\"></Icon>\n                                        </div>\n                                        <div class=\"checkout-box\">\n                                            <div href=\"javascript:void(0)\" class=\"checkout-title\">\n                                                <h4>{{ $t('Shipping Address') }}</h4>\n                                                <a href=\"javascript:void(0)\" class=\"d-flex align-items-center fw-bold\"\n                                                    @click=\"(data) => { profileModal({ data }) }\">\n                                                    <Icon name=\"ri-add-line\"></Icon> {{ 'Add New' }}\n                                                </a>\n                                            </div>\n                                            <div class=\"checkout-detail\">\n                                                <ShopCheckoutAddressBlock :addresses=\"user?.address\" :type=\"'shipping'\">\n                                                </ShopCheckoutAddressBlock>\n                                            </div>\n                                        </div>\n                                    </li>\n                                    <li>\n                                        <div class=\"checkout-icon\">\n                                            <Icon name=\"ri-map-pin-line\"></Icon>\n                                        </div>\n                                        <div class=\"checkout-box\">\n                                            <div href=\"javascript:void(0)\" class=\"checkout-title\">\n                                                <h4>{{ $t('Billing Address') }}</h4>\n                                                <a href=\"javascript:void(0)\" class=\"d-flex align-items-center fw-bold\"\n                                                    @click=\"(data) => { profileModal({ data }) }\">\n                                                    <Icon name=\"ri-add-line\"></Icon> {{ $t('Add New') }}\n                                                </a>\n                                            </div>\n                                            <div class=\"checkout-detail\">\n                                                <ShopCheckoutAddressBlock :addresses=\"user?.address\" :type=\"'billing'\">\n                                                </ShopCheckoutAddressBlock>\n                                            </div>\n                                        </div>\n                                    </li>\n                                    <li>\n                                        <div class=\"checkout-icon\">\n                                            <Icon name=\"ri-truck-line\"></Icon>\n                                        </div>\n                                        <div class=\"checkout-box\">\n                                            <div class=\"checkout-title\">\n                                                <h4>{{ $t('Delivery Options') }}</h4>\n                                            </div>\n                                            <div class=\"empty-box\" v-if=\"!user\">\n                                                <h2>{{ $t('No Delivery Options Found') }}</h2>\n                                            </div>\n                                            <ShopCheckoutDeliveryBlock :setting=\"Settings.values\" />\n                                        </div>\n                                    </li>\n                                    <li>\n                                        <div class=\"checkout-icon\">\n                                            <Icon name=\"ri-bank-card-line\"></Icon>\n                                        </div>\n                                        <div class=\"checkout-box\">\n                                            <div class=\"checkout-title\">\n                                                <h4>{{ 'Payment Options' }}</h4>\n                                            </div>\n                                            <div class=\"empty-box\" v-if=\"!user\">\n                                                <h2>{{ 'No Payment Options Found' }}</h2>\n                                            </div>\n                                            <ShopCheckoutPaymentBlock :setting=\"Settings.values\" />\n                                        </div>\n                                    </li>\n                                </ul>\n                            </div>\n                        </div>\n                    </div>\n                    <ShopCheckoutSidebar />\n                </div>\n            </div>\n        </section>\n        <WidgetsModalsCommon :showModal=\"editProfile\" @close=\"profileModal({ state: false })\">\n            <WidgetsModalsAddressModal :user=\"UserInfo\" @close=\"profileModal({ state: false })\" />\n        </WidgetsModalsCommon>\n    </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useUserStore } from \"~~/store/user\";\nimport { useCheckoutStore } from '~~/store/checkout';\nuseUserStore().GetUserInfo()\nlet { User, UserInfo } = storeToRefs(useUserStore())\nlet user = ref(UserInfo)\nlet { Settings } = storeToRefs(useDataStore());\nlet { cart } = storeToRefs(useDataStore());\n\nlet editProfile = ref(false)\n\nsetTimeout(() => {\n    useCheckoutStore().allowApi(true)\n}, 1000);\n\nfunction profileModal({ state = true, }) {\n    editProfile.value = state\n}\nonMounted(() => {\n    setTimeout(() => {\n        useCheckoutStore().allowApi(true)\n    }, 1000);\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056341480,
+      "end": 1716056341660,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341660,
+      "end": 1716056341660,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341660,
+      "end": 1716056341660,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341660,
+      "end": 1716056341660,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341660,
+      "end": 1716056341660,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, unref as _unref, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useUserStore } from \"~~/store/user\";\nimport { useCheckoutStore } from '~~/store/checkout';\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nuseUserStore().GetUserInfo()\nlet { User, UserInfo } = storeToRefs(useUserStore())\nlet user = ref(UserInfo)\nlet { Settings } = storeToRefs(useDataStore());\nlet { cart } = storeToRefs(useDataStore());\n\nlet editProfile = ref(false)\n\nsetTimeout(() => {\n    useCheckoutStore().allowApi(true)\n}, 1000);\n\nfunction profileModal({ state = true, }) {\n    editProfile.value = state\n}\nonMounted(() => {\n    setTimeout(() => {\n        useCheckoutStore().allowApi(true)\n    }, 1000);\n})\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_ShopCheckoutAddressBlock = _resolveComponent(\"ShopCheckoutAddressBlock\")\n  const _component_ShopCheckoutDeliveryBlock = _resolveComponent(\"ShopCheckoutDeliveryBlock\")\n  const _component_ShopCheckoutPaymentBlock = _resolveComponent(\"ShopCheckoutPaymentBlock\")\n  const _component_ShopCheckoutSidebar = _resolveComponent(\"ShopCheckoutSidebar\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsAddressModal = _resolveComponent(\"WidgetsModalsAddressModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}><section class=\"checkout-section-2 section-b-space\"><div class=\"container-fluid-lg\"><div class=\"row g-sm-4 g-3\"><div class=\"col-xxl-8 col-xl-7\"><div class=\"left-sidebar-checkout\"><div class=\"checkout-detail-box\"><ul><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-map-pin-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div href=\"javascript:void(0)\" class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Shipping Address'))}</h4><a href=\"javascript:void(0)\" class=\"d-flex align-items-center fw-bold\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-add-line\" }, null, _parent))\n  _push(` ${_ssrInterpolate('Add New')}</a></div><div class=\"checkout-detail\">`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutAddressBlock, {\n    addresses: _unref(user)?.address,\n    type: 'shipping'\n  }, null, _parent))\n  _push(`</div></div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-map-pin-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div href=\"javascript:void(0)\" class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Billing Address'))}</h4><a href=\"javascript:void(0)\" class=\"d-flex align-items-center fw-bold\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-add-line\" }, null, _parent))\n  _push(` ${_ssrInterpolate(_ctx.$t('Add New'))}</a></div><div class=\"checkout-detail\">`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutAddressBlock, {\n    addresses: _unref(user)?.address,\n    type: 'billing'\n  }, null, _parent))\n  _push(`</div></div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-truck-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Delivery Options'))}</h4></div>`)\n  if (!_unref(user)) {\n    _push(`<div class=\"empty-box\"><h2>${_ssrInterpolate(_ctx.$t('No Delivery Options Found'))}</h2></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_ShopCheckoutDeliveryBlock, {\n    setting: _unref(Settings).values\n  }, null, _parent))\n  _push(`</div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-bank-card-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div class=\"checkout-title\"><h4>${_ssrInterpolate('Payment Options')}</h4></div>`)\n  if (!_unref(user)) {\n    _push(`<div class=\"empty-box\"><h2>${_ssrInterpolate('No Payment Options Found')}</h2></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_ShopCheckoutPaymentBlock, {\n    setting: _unref(Settings).values\n  }, null, _parent))\n  _push(`</div></li></ul></div></div></div>`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutSidebar, null, null, _parent))\n  _push(`</div></div></section>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(editProfile),\n    onClose: $event => (profileModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsAddressModal, {\n          user: _unref(UserInfo),\n          onClose: $event => (profileModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsAddressModal, {\n            user: _unref(UserInfo),\n            onClose: $event => (profileModal({ state: false }))\n          }, null, 8, [\"user\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Checkout/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341661,
+      "end": 1716056341661,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056341661,
+      "end": 1716056341662,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056341662,
+      "end": 1716056341662,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056341662,
+      "end": 1716056341662,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056341662,
+      "end": 1716056341662,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056341662,
+      "end": 1716056341662,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056341662,
+      "end": 1716056341662,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056341662,
+      "end": 1716056341662,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056341662,
+      "end": 1716056341662,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056341662,
+      "end": 1716056341662,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341662,
+      "end": 1716056341663,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341662,
+      "end": 1716056341663,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { resolveComponent as _resolveComponent, unref as _unref, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useUserStore } from \"~~/store/user\";\nimport { useCheckoutStore } from '~~/store/checkout';\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nuseUserStore().GetUserInfo()\nlet { User, UserInfo } = storeToRefs(useUserStore())\nlet user = ref(UserInfo)\nlet { Settings } = storeToRefs(useDataStore());\nlet { cart } = storeToRefs(useDataStore());\n\nlet editProfile = ref(false)\n\nsetTimeout(() => {\n    useCheckoutStore().allowApi(true)\n}, 1000);\n\nfunction profileModal({ state = true, }) {\n    editProfile.value = state\n}\nonMounted(() => {\n    setTimeout(() => {\n        useCheckoutStore().allowApi(true)\n    }, 1000);\n})\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_ShopCheckoutAddressBlock = _resolveComponent(\"ShopCheckoutAddressBlock\")\n  const _component_ShopCheckoutDeliveryBlock = _resolveComponent(\"ShopCheckoutDeliveryBlock\")\n  const _component_ShopCheckoutPaymentBlock = _resolveComponent(\"ShopCheckoutPaymentBlock\")\n  const _component_ShopCheckoutSidebar = _resolveComponent(\"ShopCheckoutSidebar\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsAddressModal = _resolveComponent(\"WidgetsModalsAddressModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}><section class=\"checkout-section-2 section-b-space\"><div class=\"container-fluid-lg\"><div class=\"row g-sm-4 g-3\"><div class=\"col-xxl-8 col-xl-7\"><div class=\"left-sidebar-checkout\"><div class=\"checkout-detail-box\"><ul><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-map-pin-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div href=\"javascript:void(0)\" class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Shipping Address'))}</h4><a href=\"javascript:void(0)\" class=\"d-flex align-items-center fw-bold\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-add-line\" }, null, _parent))\n  _push(` ${_ssrInterpolate('Add New')}</a></div><div class=\"checkout-detail\">`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutAddressBlock, {\n    addresses: _unref(user)?.address,\n    type: 'shipping'\n  }, null, _parent))\n  _push(`</div></div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-map-pin-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div href=\"javascript:void(0)\" class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Billing Address'))}</h4><a href=\"javascript:void(0)\" class=\"d-flex align-items-center fw-bold\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-add-line\" }, null, _parent))\n  _push(` ${_ssrInterpolate(_ctx.$t('Add New'))}</a></div><div class=\"checkout-detail\">`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutAddressBlock, {\n    addresses: _unref(user)?.address,\n    type: 'billing'\n  }, null, _parent))\n  _push(`</div></div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-truck-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Delivery Options'))}</h4></div>`)\n  if (!_unref(user)) {\n    _push(`<div class=\"empty-box\"><h2>${_ssrInterpolate(_ctx.$t('No Delivery Options Found'))}</h2></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_ShopCheckoutDeliveryBlock, {\n    setting: _unref(Settings).values\n  }, null, _parent))\n  _push(`</div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-bank-card-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div class=\"checkout-title\"><h4>${_ssrInterpolate('Payment Options')}</h4></div>`)\n  if (!_unref(user)) {\n    _push(`<div class=\"empty-box\"><h2>${_ssrInterpolate('No Payment Options Found')}</h2></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_ShopCheckoutPaymentBlock, {\n    setting: _unref(Settings).values\n  }, null, _parent))\n  _push(`</div></li></ul></div></div></div>`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutSidebar, null, null, _parent))\n  _push(`</div></div></section>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(editProfile),\n    onClose: $event => (profileModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsAddressModal, {\n          user: _unref(UserInfo),\n          onClose: $event => (profileModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsAddressModal, {\n            user: _unref(UserInfo),\n            onClose: $event => (profileModal({ state: false }))\n          }, null, 8, [\"user\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Checkout/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341663,
+      "end": 1716056341665,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { resolveComponent as _resolveComponent, unref as _unref, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useUserStore } from \"~~/store/user\";\nimport { useCheckoutStore } from '~~/store/checkout';\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nuseUserStore().GetUserInfo()\nlet { User, UserInfo } = storeToRefs(useUserStore())\nlet user = ref(UserInfo)\nlet { Settings } = storeToRefs(useDataStore());\nlet { cart } = storeToRefs(useDataStore());\n\nlet editProfile = ref(false)\n\nsetTimeout(() => {\n    useCheckoutStore().allowApi(true)\n}, 1000);\n\nfunction profileModal({ state = true, }) {\n    editProfile.value = state\n}\nonMounted(() => {\n    setTimeout(() => {\n        useCheckoutStore().allowApi(true)\n    }, 1000);\n})\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_ShopCheckoutAddressBlock = _resolveComponent(\"ShopCheckoutAddressBlock\")\n  const _component_ShopCheckoutDeliveryBlock = _resolveComponent(\"ShopCheckoutDeliveryBlock\")\n  const _component_ShopCheckoutPaymentBlock = _resolveComponent(\"ShopCheckoutPaymentBlock\")\n  const _component_ShopCheckoutSidebar = _resolveComponent(\"ShopCheckoutSidebar\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsAddressModal = _resolveComponent(\"WidgetsModalsAddressModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}><section class=\"checkout-section-2 section-b-space\"><div class=\"container-fluid-lg\"><div class=\"row g-sm-4 g-3\"><div class=\"col-xxl-8 col-xl-7\"><div class=\"left-sidebar-checkout\"><div class=\"checkout-detail-box\"><ul><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-map-pin-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div href=\"javascript:void(0)\" class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Shipping Address'))}</h4><a href=\"javascript:void(0)\" class=\"d-flex align-items-center fw-bold\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-add-line\" }, null, _parent))\n  _push(` ${_ssrInterpolate('Add New')}</a></div><div class=\"checkout-detail\">`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutAddressBlock, {\n    addresses: _unref(user)?.address,\n    type: 'shipping'\n  }, null, _parent))\n  _push(`</div></div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-map-pin-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div href=\"javascript:void(0)\" class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Billing Address'))}</h4><a href=\"javascript:void(0)\" class=\"d-flex align-items-center fw-bold\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-add-line\" }, null, _parent))\n  _push(` ${_ssrInterpolate(_ctx.$t('Add New'))}</a></div><div class=\"checkout-detail\">`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutAddressBlock, {\n    addresses: _unref(user)?.address,\n    type: 'billing'\n  }, null, _parent))\n  _push(`</div></div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-truck-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Delivery Options'))}</h4></div>`)\n  if (!_unref(user)) {\n    _push(`<div class=\"empty-box\"><h2>${_ssrInterpolate(_ctx.$t('No Delivery Options Found'))}</h2></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_ShopCheckoutDeliveryBlock, {\n    setting: _unref(Settings).values\n  }, null, _parent))\n  _push(`</div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-bank-card-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div class=\"checkout-title\"><h4>${_ssrInterpolate('Payment Options')}</h4></div>`)\n  if (!_unref(user)) {\n    _push(`<div class=\"empty-box\"><h2>${_ssrInterpolate('No Payment Options Found')}</h2></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_ShopCheckoutPaymentBlock, {\n    setting: _unref(Settings).values\n  }, null, _parent))\n  _push(`</div></li></ul></div></div></div>`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutSidebar, null, null, _parent))\n  _push(`</div></div></section>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(editProfile),\n    onClose: $event => (profileModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsAddressModal, {\n          user: _unref(UserInfo),\n          onClose: $event => (profileModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsAddressModal, {\n            user: _unref(UserInfo),\n            onClose: $event => (profileModal({ state: false }))\n          }, null, 8, [\"user\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Checkout/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341663,
+      "end": 1716056341665,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341665,
+      "end": 1716056341665,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341665,
+      "end": 1716056341665,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341665,
+      "end": 1716056341665,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341665,
+      "end": 1716056341665,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056341665,
+      "end": 1716056341665,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/address-block/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/delivery-block/index.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/payment-block/index.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/sidebar/index.vue\";\nimport { default as __nuxt_component_5 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue\";\nimport { default as __nuxt_component_6 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/AddressModal/index.vue\";\nimport { ref, onMounted } from 'vue';\nimport { resolveComponent as _resolveComponent, unref as _unref, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useUserStore } from \"~~/store/user\";\nimport { useCheckoutStore } from '~~/store/checkout';\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nuseUserStore().GetUserInfo()\nlet { User, UserInfo } = storeToRefs(useUserStore())\nlet user = ref(UserInfo)\nlet { Settings } = storeToRefs(useDataStore());\nlet { cart } = storeToRefs(useDataStore());\n\nlet editProfile = ref(false)\n\nsetTimeout(() => {\n    useCheckoutStore().allowApi(true)\n}, 1000);\n\nfunction profileModal({ state = true, }) {\n    editProfile.value = state\n}\nonMounted(() => {\n    setTimeout(() => {\n        useCheckoutStore().allowApi(true)\n    }, 1000);\n})\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_ShopCheckoutAddressBlock = __nuxt_component_1\n  const _component_ShopCheckoutDeliveryBlock = __nuxt_component_2\n  const _component_ShopCheckoutPaymentBlock = __nuxt_component_3\n  const _component_ShopCheckoutSidebar = __nuxt_component_4\n  const _component_WidgetsModalsCommon = __nuxt_component_5\n  const _component_WidgetsModalsAddressModal = __nuxt_component_6\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}><section class=\"checkout-section-2 section-b-space\"><div class=\"container-fluid-lg\"><div class=\"row g-sm-4 g-3\"><div class=\"col-xxl-8 col-xl-7\"><div class=\"left-sidebar-checkout\"><div class=\"checkout-detail-box\"><ul><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-map-pin-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div href=\"javascript:void(0)\" class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Shipping Address'))}</h4><a href=\"javascript:void(0)\" class=\"d-flex align-items-center fw-bold\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-add-line\" }, null, _parent))\n  _push(` ${_ssrInterpolate('Add New')}</a></div><div class=\"checkout-detail\">`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutAddressBlock, {\n    addresses: _unref(user)?.address,\n    type: 'shipping'\n  }, null, _parent))\n  _push(`</div></div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-map-pin-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div href=\"javascript:void(0)\" class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Billing Address'))}</h4><a href=\"javascript:void(0)\" class=\"d-flex align-items-center fw-bold\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-add-line\" }, null, _parent))\n  _push(` ${_ssrInterpolate(_ctx.$t('Add New'))}</a></div><div class=\"checkout-detail\">`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutAddressBlock, {\n    addresses: _unref(user)?.address,\n    type: 'billing'\n  }, null, _parent))\n  _push(`</div></div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-truck-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Delivery Options'))}</h4></div>`)\n  if (!_unref(user)) {\n    _push(`<div class=\"empty-box\"><h2>${_ssrInterpolate(_ctx.$t('No Delivery Options Found'))}</h2></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_ShopCheckoutDeliveryBlock, {\n    setting: _unref(Settings).values\n  }, null, _parent))\n  _push(`</div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-bank-card-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div class=\"checkout-title\"><h4>${_ssrInterpolate('Payment Options')}</h4></div>`)\n  if (!_unref(user)) {\n    _push(`<div class=\"empty-box\"><h2>${_ssrInterpolate('No Payment Options Found')}</h2></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_ShopCheckoutPaymentBlock, {\n    setting: _unref(Settings).values\n  }, null, _parent))\n  _push(`</div></li></ul></div></div></div>`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutSidebar, null, null, _parent))\n  _push(`</div></div></section>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(editProfile),\n    onClose: $event => (profileModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsAddressModal, {\n          user: _unref(UserInfo),\n          onClose: $event => (profileModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsAddressModal, {\n            user: _unref(UserInfo),\n            onClose: $event => (profileModal({ state: false }))\n          }, null, 8, [\"user\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Checkout/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341665,
+      "end": 1716056341665,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/address-block/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/delivery-block/index.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/payment-block/index.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/sidebar/index.vue\";\nimport { default as __nuxt_component_5 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue\";\nimport { default as __nuxt_component_6 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/AddressModal/index.vue\";\nimport { ref, onMounted } from 'vue';\nimport { resolveComponent as _resolveComponent, unref as _unref, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useUserStore } from \"~~/store/user\";\nimport { useCheckoutStore } from '~~/store/checkout';\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nuseUserStore().GetUserInfo()\nlet { User, UserInfo } = storeToRefs(useUserStore())\nlet user = ref(UserInfo)\nlet { Settings } = storeToRefs(useDataStore());\nlet { cart } = storeToRefs(useDataStore());\n\nlet editProfile = ref(false)\n\nsetTimeout(() => {\n    useCheckoutStore().allowApi(true)\n}, 1000);\n\nfunction profileModal({ state = true, }) {\n    editProfile.value = state\n}\n false && /*@__PURE__*/ onMounted(() => {\n    setTimeout(() => {\n        useCheckoutStore().allowApi(true)\n    }, 1000);\n})\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_ShopCheckoutAddressBlock = __nuxt_component_1\n  const _component_ShopCheckoutDeliveryBlock = __nuxt_component_2\n  const _component_ShopCheckoutPaymentBlock = __nuxt_component_3\n  const _component_ShopCheckoutSidebar = __nuxt_component_4\n  const _component_WidgetsModalsCommon = __nuxt_component_5\n  const _component_WidgetsModalsAddressModal = __nuxt_component_6\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}><section class=\"checkout-section-2 section-b-space\"><div class=\"container-fluid-lg\"><div class=\"row g-sm-4 g-3\"><div class=\"col-xxl-8 col-xl-7\"><div class=\"left-sidebar-checkout\"><div class=\"checkout-detail-box\"><ul><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-map-pin-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div href=\"javascript:void(0)\" class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Shipping Address'))}</h4><a href=\"javascript:void(0)\" class=\"d-flex align-items-center fw-bold\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-add-line\" }, null, _parent))\n  _push(` ${_ssrInterpolate('Add New')}</a></div><div class=\"checkout-detail\">`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutAddressBlock, {\n    addresses: _unref(user)?.address,\n    type: 'shipping'\n  }, null, _parent))\n  _push(`</div></div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-map-pin-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div href=\"javascript:void(0)\" class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Billing Address'))}</h4><a href=\"javascript:void(0)\" class=\"d-flex align-items-center fw-bold\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-add-line\" }, null, _parent))\n  _push(` ${_ssrInterpolate(_ctx.$t('Add New'))}</a></div><div class=\"checkout-detail\">`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutAddressBlock, {\n    addresses: _unref(user)?.address,\n    type: 'billing'\n  }, null, _parent))\n  _push(`</div></div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-truck-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div class=\"checkout-title\"><h4>${_ssrInterpolate(_ctx.$t('Delivery Options'))}</h4></div>`)\n  if (!_unref(user)) {\n    _push(`<div class=\"empty-box\"><h2>${_ssrInterpolate(_ctx.$t('No Delivery Options Found'))}</h2></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_ShopCheckoutDeliveryBlock, {\n    setting: _unref(Settings).values\n  }, null, _parent))\n  _push(`</div></li><li><div class=\"checkout-icon\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-bank-card-line\" }, null, _parent))\n  _push(`</div><div class=\"checkout-box\"><div class=\"checkout-title\"><h4>${_ssrInterpolate('Payment Options')}</h4></div>`)\n  if (!_unref(user)) {\n    _push(`<div class=\"empty-box\"><h2>${_ssrInterpolate('No Payment Options Found')}</h2></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_ShopCheckoutPaymentBlock, {\n    setting: _unref(Settings).values\n  }, null, _parent))\n  _push(`</div></li></ul></div></div></div>`)\n  _push(_ssrRenderComponent(_component_ShopCheckoutSidebar, null, null, _parent))\n  _push(`</div></div></section>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(editProfile),\n    onClose: $event => (profileModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsAddressModal, {\n          user: _unref(UserInfo),\n          onClose: $event => (profileModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsAddressModal, {\n            user: _unref(UserInfo),\n            onClose: $event => (profileModal({ state: false }))\n          }, null, 8, [\"user\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Checkout/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341665,
+      "end": 1716056341666,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056341666,
+      "end": 1716056341666,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056341666,
+      "end": 1716056341666,
+      "order": "normal"
+    }
+  ]
+}

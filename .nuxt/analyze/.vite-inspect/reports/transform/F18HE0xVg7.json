@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Dashboard/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"tab-pane fade show active\">\n    <div class=\"dashboard-home\">\n      <div class=\"title-header\">\n        <div class=\"d-flex align-items-center\">\n          <h5>{{ $t(\"My Dashboard\") }}</h5>\n        </div>\n      </div>\n      <div class=\"dashboard-user-name\">\n        <h6 class=\"text-content\">\n          {{ $t(\"Hello\") }}, <b class=\"text-title\">{{ user?.name }}</b>\n        </h6>\n        <p class=\"text-content\">\n          {{\n            $t(\"Welcome to your personalized My Account Dashboard. Here, you have the power to manage your entire e-commerce  experience in one place.Whether you're exploring the latest products, checking your wallet balance, or updating  your profile, everything is at your fingertips\"\n            )\n          }}\n        </p>\n      </div>\n      <div class=\"total-box\">\n        <AccountDashboardTotalContain :user=\"user\" />\n      </div>\n      <div class=\"profile-about dashboard-bg-box\">\n        <AccountDashboardProfileInformation :user=\"user\" />\n      </div>\n    </div>\n  </div>\n</template>\n<script setup>\nlet props = defineProps({\n  user: Object,\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n\n",
+      "start": 1716056286013,
+      "end": 1716056286577,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056286577,
+      "end": 1716056286577,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056286577,
+      "end": 1716056286578,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"tab-pane fade show active\" }\nconst _hoisted_2 = { class: \"dashboard-home\" }\nconst _hoisted_3 = { class: \"title-header\" }\nconst _hoisted_4 = { class: \"d-flex align-items-center\" }\nconst _hoisted_5 = { class: \"dashboard-user-name\" }\nconst _hoisted_6 = { class: \"text-content\" }\nconst _hoisted_7 = { class: \"text-title\" }\nconst _hoisted_8 = { class: \"text-content\" }\nconst _hoisted_9 = { class: \"total-box\" }\nconst _hoisted_10 = { class: \"profile-about dashboard-bg-box\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  user: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  const _component_AccountDashboardTotalContain = _resolveComponent(\"AccountDashboardTotalContain\")\n  const _component_AccountDashboardProfileInformation = _resolveComponent(\"AccountDashboardProfileInformation\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"My Dashboard\")), 1)\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_5, [\n        _createElementVNode(\"h6\", _hoisted_6, [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Hello\")) + \", \", 1),\n          _createElementVNode(\"b\", _hoisted_7, _toDisplayString(__props.user?.name), 1)\n        ]),\n        _createElementVNode(\"p\", _hoisted_8, _toDisplayString(_ctx.$t(\"Welcome to your personalized My Account Dashboard. Here, you have the power to manage your entire e-commerce  experience in one place.Whether you're exploring the latest products, checking your wallet balance, or updating  your profile, everything is at your fingertips\"\n            )), 1)\n      ]),\n      _createElementVNode(\"div\", _hoisted_9, [\n        _createVNode(_component_AccountDashboardTotalContain, { user: __props.user }, null, 8, [\"user\"])\n      ]),\n      _createElementVNode(\"div\", _hoisted_10, [\n        _createVNode(_component_AccountDashboardProfileInformation, { user: __props.user }, null, 8, [\"user\"])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056286578,
+      "end": 1716056286578,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056286578,
+      "end": 1716056286579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056286579,
+      "end": 1716056286579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056286579,
+      "end": 1716056286579,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056286579,
+      "end": 1716056286579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056286579,
+      "end": 1716056286579,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056286579,
+      "end": 1716056286579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056286579,
+      "end": 1716056286579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056286579,
+      "end": 1716056286580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056286580,
+      "end": 1716056286580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Dashboard/TotalContain.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Dashboard/ProfileInformation.vue\";\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"tab-pane fade show active\" }\nconst _hoisted_2 = { class: \"dashboard-home\" }\nconst _hoisted_3 = { class: \"title-header\" }\nconst _hoisted_4 = { class: \"d-flex align-items-center\" }\nconst _hoisted_5 = { class: \"dashboard-user-name\" }\nconst _hoisted_6 = { class: \"text-content\" }\nconst _hoisted_7 = { class: \"text-title\" }\nconst _hoisted_8 = { class: \"text-content\" }\nconst _hoisted_9 = { class: \"total-box\" }\nconst _hoisted_10 = { class: \"profile-about dashboard-bg-box\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  user: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  const _component_AccountDashboardTotalContain = __nuxt_component_0\n  const _component_AccountDashboardProfileInformation = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"My Dashboard\")), 1)\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_5, [\n        _createElementVNode(\"h6\", _hoisted_6, [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Hello\")) + \", \", 1),\n          _createElementVNode(\"b\", _hoisted_7, _toDisplayString(__props.user?.name), 1)\n        ]),\n        _createElementVNode(\"p\", _hoisted_8, _toDisplayString(_ctx.$t(\"Welcome to your personalized My Account Dashboard. Here, you have the power to manage your entire e-commerce  experience in one place.Whether you're exploring the latest products, checking your wallet balance, or updating  your profile, everything is at your fingertips\"\n            )), 1)\n      ]),\n      _createElementVNode(\"div\", _hoisted_9, [\n        _createVNode(_component_AccountDashboardTotalContain, { user: __props.user }, null, 8, [\"user\"])\n      ]),\n      _createElementVNode(\"div\", _hoisted_10, [\n        _createVNode(_component_AccountDashboardProfileInformation, { user: __props.user }, null, 8, [\"user\"])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286580,
+      "end": 1716056286580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056286580,
+      "end": 1716056286580,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056286580,
+      "end": 1716056286580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056286580,
+      "end": 1716056286580,
+      "order": "normal"
+    }
+  ]
+}

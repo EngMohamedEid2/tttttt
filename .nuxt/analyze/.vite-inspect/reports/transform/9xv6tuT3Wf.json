@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Sticky/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <section class=\"product-section\">\n        <div class=\"container-fluid-lg\">\n            <div class=\"row\">\n                <div class=\"col-xxl-9 col-xl-8 col-lg-7\">\n                    <div class=\"row g-4\">\n                        <div class=\"col-xl-6\">\n                            <div class=\"product-left-box\">\n                                <div class=\"row g-sm-4 g-2\">\n                                    <ShopProductDetailsStickyImage :Data=\"Data\" />\n                                </div>\n                            </div>\n                        </div>\n\n                        <div class=\"col-xl-6\">\n                            <div class=\"right-box-contain p-sticky\">\n                                <ShopProductDetailsWidgetsProductView :product=\"Data\" :option=\"option\" />\n                                <ShopProductDetailsWidgetsProductContain :product=\"Data\" :option=\"option\" />\n                                <ShopProductDetailsWidgetsProductAction :product=\"Data\" :option=\"option\" />\n                                <ShopProductDetailsWidgetsProductInformation :product=\"Data\" />\n                                <ShopProductDetailsWidgetsProductDeliveryInformation :product=\"Data\" />\n                                <ShopProductDetailsWidgetsPaymentOption :product=\"Data\" :option=\"option\" />\n                                <ShopProductDetailsWidgetsProductSocialShare :product=\"Data\" :option=\"option\" />\n                            </div>\n                        </div>\n\n                        <div class=\"col-12 related-product-2\"\n                            v-if=\"Data?.cross_sell_products && Data?.cross_sell_products?.length\">\n                            <ShopProductDetailsWidgetsProductBundle :productData=\"Data\" />\n                        </div>\n\n                        <div class=\"col-12\">\n                            <ShopProductDetailsWidgetsProductDetailsTabs :product=\"Data\" :reviews=\"reviews\"\n                                :questionAnswers=\"questionAnswers\" />\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"col-xxl-3 col-xl-4 col-lg-5 d-none d-lg-block\">\n                    <ShopProductDetailsSidebar :product=\"Data\" :option=\"option\" />\n                </div>\n            </div>\n        </div>\n    </section>\n</template>\n\n<script setup>\nlet props = defineProps({\n    Data: { type: Object },\n    option: { type: Object },\n    reviews: Object,\n    questionAnswers: Object,\n})\n</script>",
+      "start": 1716056287535,
+      "end": 1716056287709,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287709,
+      "end": 1716056287709,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287709,
+      "end": 1716056287709,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287709,
+      "end": 1716056287709,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287709,
+      "end": 1716056287709,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287709,
+      "end": 1716056287709,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287709,
+      "end": 1716056287709,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287709,
+      "end": 1716056287709,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"product-section\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-xxl-9 col-xl-8 col-lg-7\" }\nconst _hoisted_5 = { class: \"row g-4\" }\nconst _hoisted_6 = { class: \"col-xl-6\" }\nconst _hoisted_7 = { class: \"product-left-box\" }\nconst _hoisted_8 = { class: \"row g-sm-4 g-2\" }\nconst _hoisted_9 = { class: \"col-xl-6\" }\nconst _hoisted_10 = { class: \"right-box-contain p-sticky\" }\nconst _hoisted_11 = {\n  key: 0,\n  class: \"col-12 related-product-2\"\n}\nconst _hoisted_12 = { class: \"col-12\" }\nconst _hoisted_13 = { class: \"col-xxl-3 col-xl-4 col-lg-5 d-none d-lg-block\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    Data: { type: Object },\n    option: { type: Object },\n    reviews: Object,\n    questionAnswers: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_ShopProductDetailsStickyImage = _resolveComponent(\"ShopProductDetailsStickyImage\")\n  const _component_ShopProductDetailsWidgetsProductView = _resolveComponent(\"ShopProductDetailsWidgetsProductView\")\n  const _component_ShopProductDetailsWidgetsProductContain = _resolveComponent(\"ShopProductDetailsWidgetsProductContain\")\n  const _component_ShopProductDetailsWidgetsProductAction = _resolveComponent(\"ShopProductDetailsWidgetsProductAction\")\n  const _component_ShopProductDetailsWidgetsProductInformation = _resolveComponent(\"ShopProductDetailsWidgetsProductInformation\")\n  const _component_ShopProductDetailsWidgetsProductDeliveryInformation = _resolveComponent(\"ShopProductDetailsWidgetsProductDeliveryInformation\")\n  const _component_ShopProductDetailsWidgetsPaymentOption = _resolveComponent(\"ShopProductDetailsWidgetsPaymentOption\")\n  const _component_ShopProductDetailsWidgetsProductSocialShare = _resolveComponent(\"ShopProductDetailsWidgetsProductSocialShare\")\n  const _component_ShopProductDetailsWidgetsProductBundle = _resolveComponent(\"ShopProductDetailsWidgetsProductBundle\")\n  const _component_ShopProductDetailsWidgetsProductDetailsTabs = _resolveComponent(\"ShopProductDetailsWidgetsProductDetailsTabs\")\n  const _component_ShopProductDetailsSidebar = _resolveComponent(\"ShopProductDetailsSidebar\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createElementVNode(\"div\", _hoisted_7, [\n                _createElementVNode(\"div\", _hoisted_8, [\n                  _createVNode(_component_ShopProductDetailsStickyImage, { Data: __props.Data }, null, 8, [\"Data\"])\n                ])\n              ])\n            ]),\n            _createElementVNode(\"div\", _hoisted_9, [\n              _createElementVNode(\"div\", _hoisted_10, [\n                _createVNode(_component_ShopProductDetailsWidgetsProductView, {\n                  product: __props.Data,\n                  option: __props.option\n                }, null, 8, [\"product\", \"option\"]),\n                _createVNode(_component_ShopProductDetailsWidgetsProductContain, {\n                  product: __props.Data,\n                  option: __props.option\n                }, null, 8, [\"product\", \"option\"]),\n                _createVNode(_component_ShopProductDetailsWidgetsProductAction, {\n                  product: __props.Data,\n                  option: __props.option\n                }, null, 8, [\"product\", \"option\"]),\n                _createVNode(_component_ShopProductDetailsWidgetsProductInformation, { product: __props.Data }, null, 8, [\"product\"]),\n                _createVNode(_component_ShopProductDetailsWidgetsProductDeliveryInformation, { product: __props.Data }, null, 8, [\"product\"]),\n                _createVNode(_component_ShopProductDetailsWidgetsPaymentOption, {\n                  product: __props.Data,\n                  option: __props.option\n                }, null, 8, [\"product\", \"option\"]),\n                _createVNode(_component_ShopProductDetailsWidgetsProductSocialShare, {\n                  product: __props.Data,\n                  option: __props.option\n                }, null, 8, [\"product\", \"option\"])\n              ])\n            ]),\n            (__props.Data?.cross_sell_products && __props.Data?.cross_sell_products?.length)\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_11, [\n                  _createVNode(_component_ShopProductDetailsWidgetsProductBundle, { productData: __props.Data }, null, 8, [\"productData\"])\n                ]))\n              : _createCommentVNode(\"\", true),\n            _createElementVNode(\"div\", _hoisted_12, [\n              _createVNode(_component_ShopProductDetailsWidgetsProductDetailsTabs, {\n                product: __props.Data,\n                reviews: __props.reviews,\n                questionAnswers: __props.questionAnswers\n              }, null, 8, [\"product\", \"reviews\", \"questionAnswers\"])\n            ])\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_13, [\n          _createVNode(_component_ShopProductDetailsSidebar, {\n            product: __props.Data,\n            option: __props.option\n          }, null, 8, [\"product\", \"option\"])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287709,
+      "end": 1716056287710,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287710,
+      "end": 1716056287710,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056287710,
+      "end": 1716056287714,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287714,
+      "end": 1716056287714,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287714,
+      "end": 1716056287714,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287714,
+      "end": 1716056287714,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287714,
+      "end": 1716056287714,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Sticky/Image.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductView/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductContain/index.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductAction/index.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductInformation/index.vue\";\nimport { default as __nuxt_component_5 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductDeliveryInformation/index.vue\";\nimport { default as __nuxt_component_6 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/PaymentOption/index.vue\";\nimport { default as __nuxt_component_7 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductSocialShare/index.vue\";\nimport { default as __nuxt_component_8 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductBundle/index.vue\";\nimport { default as __nuxt_component_9 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductDetailsTabs/index.vue\";\nimport { default as __nuxt_component_10 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Sidebar/index.vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"product-section\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-xxl-9 col-xl-8 col-lg-7\" }\nconst _hoisted_5 = { class: \"row g-4\" }\nconst _hoisted_6 = { class: \"col-xl-6\" }\nconst _hoisted_7 = { class: \"product-left-box\" }\nconst _hoisted_8 = { class: \"row g-sm-4 g-2\" }\nconst _hoisted_9 = { class: \"col-xl-6\" }\nconst _hoisted_10 = { class: \"right-box-contain p-sticky\" }\nconst _hoisted_11 = {\n  key: 0,\n  class: \"col-12 related-product-2\"\n}\nconst _hoisted_12 = { class: \"col-12\" }\nconst _hoisted_13 = { class: \"col-xxl-3 col-xl-4 col-lg-5 d-none d-lg-block\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    Data: { type: Object },\n    option: { type: Object },\n    reviews: Object,\n    questionAnswers: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_ShopProductDetailsStickyImage = __nuxt_component_0\n  const _component_ShopProductDetailsWidgetsProductView = __nuxt_component_1\n  const _component_ShopProductDetailsWidgetsProductContain = __nuxt_component_2\n  const _component_ShopProductDetailsWidgetsProductAction = __nuxt_component_3\n  const _component_ShopProductDetailsWidgetsProductInformation = __nuxt_component_4\n  const _component_ShopProductDetailsWidgetsProductDeliveryInformation = __nuxt_component_5\n  const _component_ShopProductDetailsWidgetsPaymentOption = __nuxt_component_6\n  const _component_ShopProductDetailsWidgetsProductSocialShare = __nuxt_component_7\n  const _component_ShopProductDetailsWidgetsProductBundle = __nuxt_component_8\n  const _component_ShopProductDetailsWidgetsProductDetailsTabs = __nuxt_component_9\n  const _component_ShopProductDetailsSidebar = __nuxt_component_10\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createElementVNode(\"div\", _hoisted_7, [\n                _createElementVNode(\"div\", _hoisted_8, [\n                  _createVNode(_component_ShopProductDetailsStickyImage, { Data: __props.Data }, null, 8, [\"Data\"])\n                ])\n              ])\n            ]),\n            _createElementVNode(\"div\", _hoisted_9, [\n              _createElementVNode(\"div\", _hoisted_10, [\n                _createVNode(_component_ShopProductDetailsWidgetsProductView, {\n                  product: __props.Data,\n                  option: __props.option\n                }, null, 8, [\"product\", \"option\"]),\n                _createVNode(_component_ShopProductDetailsWidgetsProductContain, {\n                  product: __props.Data,\n                  option: __props.option\n                }, null, 8, [\"product\", \"option\"]),\n                _createVNode(_component_ShopProductDetailsWidgetsProductAction, {\n                  product: __props.Data,\n                  option: __props.option\n                }, null, 8, [\"product\", \"option\"]),\n                _createVNode(_component_ShopProductDetailsWidgetsProductInformation, { product: __props.Data }, null, 8, [\"product\"]),\n                _createVNode(_component_ShopProductDetailsWidgetsProductDeliveryInformation, { product: __props.Data }, null, 8, [\"product\"]),\n                _createVNode(_component_ShopProductDetailsWidgetsPaymentOption, {\n                  product: __props.Data,\n                  option: __props.option\n                }, null, 8, [\"product\", \"option\"]),\n                _createVNode(_component_ShopProductDetailsWidgetsProductSocialShare, {\n                  product: __props.Data,\n                  option: __props.option\n                }, null, 8, [\"product\", \"option\"])\n              ])\n            ]),\n            (__props.Data?.cross_sell_products && __props.Data?.cross_sell_products?.length)\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_11, [\n                  _createVNode(_component_ShopProductDetailsWidgetsProductBundle, { productData: __props.Data }, null, 8, [\"productData\"])\n                ]))\n              : _createCommentVNode(\"\", true),\n            _createElementVNode(\"div\", _hoisted_12, [\n              _createVNode(_component_ShopProductDetailsWidgetsProductDetailsTabs, {\n                product: __props.Data,\n                reviews: __props.reviews,\n                questionAnswers: __props.questionAnswers\n              }, null, 8, [\"product\", \"reviews\", \"questionAnswers\"])\n            ])\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_13, [\n          _createVNode(_component_ShopProductDetailsSidebar, {\n            product: __props.Data,\n            option: __props.option\n          }, null, 8, [\"product\", \"option\"])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287714,
+      "end": 1716056287715,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287715,
+      "end": 1716056287715,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287715,
+      "end": 1716056287715,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287715,
+      "end": 1716056287715,
+      "order": "normal"
+    }
+  ]
+}

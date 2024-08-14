@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/filter/Attribute.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"accordion-item\" v-for=\"(attributes, index) in attribute\" :key=\"index\">\n        <h2 class=\"accordion-header\" >\n            <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"\n                :data-bs-target=\"`#attributes-dropdown${index}`\">\n                <span>{{ attributes.name }}</span>\n            </button>\n        </h2>\n        <div :id=\"`attributes-dropdown${index}`\" class=\"accordion-collapse collapse show\">\n            <div class=\"accordion-body\">\n                <ul class=\"category-list custom-padding custom-height\">\n                    <li v-for=\"(attribute_value , index) of attributes?.attribute_values\" :key=\"index\">\n                        <div class=\"form-check ps-0 m-0 category-list-box\">\n                            <input class=\"checkbox_animated\" type=\"checkbox\" :id=\"attribute_value.value\"\n                                :value=\"attribute_value.slug\" v-model=\"store.filterObject.selectedAttributes\" />\n                            <label class=\"form-check-label color-label-box\" :for=\"attribute_value.value\">\n                                <div class=\"color-box\" v-if=\"attributes.style === 'color'\"\n                                    :style=\"{ 'background-color': attribute_value.hex_color }\"></div>\n                                <span class=\"name\">{{ attribute_value.value }}</span>\n                            </label>\n                        </div>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</template>\n<script setup>\nimport { storeToRefs } from 'pinia';\nimport { useCollectionStore } from '~/store/collection';\n\nlet store = useCollectionStore()\n\nlet { filter, attribute, selectedAttributes } = storeToRefs(useCollectionStore())\nlet { data, error } = await HandleRequest('attribute', { key: 'getAllAttributeInFilter1' })\nif (!error.value) {\n    attribute.value = data?.value?.data;\n}\n\nfunction checked(item) {\n    if (selectedAttributes.value?.indexOf(item) != -1) {\n        return true;\n    }\n    return false;\n}\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056341584,
+      "end": 1716056341749,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341749,
+      "end": 1716056341749,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341749,
+      "end": 1716056341749,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341749,
+      "end": 1716056341749,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341749,
+      "end": 1716056341749,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056341749,
+      "end": 1716056341749,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056341749,
+      "end": 1716056341749,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056341749,
+      "end": 1716056341749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056341749,
+      "end": 1716056341749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056341749,
+      "end": 1716056341749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056341749,
+      "end": 1716056341749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrLooseContain as _ssrLooseContain, ssrIncludeBooleanAttr as _ssrIncludeBooleanAttr, ssrRenderStyle as _ssrRenderStyle, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from 'pinia';\nimport { useCollectionStore } from '~/store/collection';\n\n\nconst _sfc_main = {\n  __name: 'Attribute',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet store = useCollectionStore()\n\nlet { filter, attribute, selectedAttributes } = storeToRefs(useCollectionStore())\nlet { data, error } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest('attribute', { key: 'getAllAttributeInFilter1' }))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\nif (!error.value) {\n    attribute.value = data?.value?.data;\n}\n\nfunction checked(item) {\n    if (selectedAttributes.value?.indexOf(item) != -1) {\n        return true;\n    }\n    return false;\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<!--[-->`)\n  _ssrRenderList(_unref(attribute), (attributes, index) => {\n    _push(`<div class=\"accordion-item\"><h2 class=\"accordion-header\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"${\n      _ssrRenderAttr(\"data-bs-target\", `#attributes-dropdown${index}`)\n    }><span>${\n      _ssrInterpolate(attributes.name)\n    }</span></button></h2><div${\n      _ssrRenderAttr(\"id\", `attributes-dropdown${index}`)\n    } class=\"accordion-collapse collapse show\"><div class=\"accordion-body\"><ul class=\"category-list custom-padding custom-height\"><!--[-->`)\n    _ssrRenderList(attributes?.attribute_values, (attribute_value, index) => {\n      _push(`<li><div class=\"form-check ps-0 m-0 category-list-box\"><input class=\"checkbox_animated\" type=\"checkbox\"${\n        _ssrRenderAttr(\"id\", attribute_value.value)\n      }${\n        _ssrRenderAttr(\"value\", attribute_value.slug)\n      }${\n        (_ssrIncludeBooleanAttr((Array.isArray(_unref(store).filterObject.selectedAttributes))\n          ? _ssrLooseContain(_unref(store).filterObject.selectedAttributes, attribute_value.slug)\n          : _unref(store).filterObject.selectedAttributes)) ? \" checked\" : \"\"\n      }><label class=\"form-check-label color-label-box\"${\n        _ssrRenderAttr(\"for\", attribute_value.value)\n      }>`)\n      if (attributes.style === 'color') {\n        _push(`<div class=\"color-box\" style=\"${_ssrRenderStyle({ 'background-color': attribute_value.hex_color })}\"></div>`)\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<span class=\"name\">${_ssrInterpolate(attribute_value.value)}</span></label></div></li>`)\n    })\n    _push(`<!--]--></ul></div></div></div>`)\n  })\n  _push(`<!--]-->`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Collection/widgets/filter/Attribute.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341749,
+      "end": 1716056341749,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056341749,
+      "end": 1716056341749,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341750,
+      "end": 1716056341750,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341750,
+      "end": 1716056341750,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341750,
+      "end": 1716056341750,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341750,
+      "end": 1716056341750,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056341750,
+      "end": 1716056341750,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341750,
+      "end": 1716056341750,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056341750,
+      "end": 1716056341751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056341751,
+      "end": 1716056341751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056341751,
+      "end": 1716056341751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056341751,
+      "end": 1716056341751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056341751,
+      "end": 1716056341751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056341751,
+      "end": 1716056341751,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056341751,
+      "end": 1716056341751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056341751,
+      "end": 1716056341751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056341751,
+      "end": 1716056341751,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341751,
+      "end": 1716056341751,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341751,
+      "end": 1716056341751,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrLooseContain as _ssrLooseContain, ssrIncludeBooleanAttr as _ssrIncludeBooleanAttr, ssrRenderStyle as _ssrRenderStyle, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from 'pinia';\nimport { useCollectionStore } from '~/store/collection';\n\n\nconst _sfc_main = {\n  __name: 'Attribute',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet store = useCollectionStore()\n\nlet { filter, attribute, selectedAttributes } = storeToRefs(useCollectionStore())\nlet { data, error } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest('attribute', { key: 'getAllAttributeInFilter1' }))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\nif (!error.value) {\n    attribute.value = data?.value?.data;\n}\n\nfunction checked(item) {\n    if (selectedAttributes.value?.indexOf(item) != -1) {\n        return true;\n    }\n    return false;\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<!--[-->`)\n  _ssrRenderList(_unref(attribute), (attributes, index) => {\n    _push(`<div class=\"accordion-item\"><h2 class=\"accordion-header\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"${\n      _ssrRenderAttr(\"data-bs-target\", `#attributes-dropdown${index}`)\n    }><span>${\n      _ssrInterpolate(attributes.name)\n    }</span></button></h2><div${\n      _ssrRenderAttr(\"id\", `attributes-dropdown${index}`)\n    } class=\"accordion-collapse collapse show\"><div class=\"accordion-body\"><ul class=\"category-list custom-padding custom-height\"><!--[-->`)\n    _ssrRenderList(attributes?.attribute_values, (attribute_value, index) => {\n      _push(`<li><div class=\"form-check ps-0 m-0 category-list-box\"><input class=\"checkbox_animated\" type=\"checkbox\"${\n        _ssrRenderAttr(\"id\", attribute_value.value)\n      }${\n        _ssrRenderAttr(\"value\", attribute_value.slug)\n      }${\n        (_ssrIncludeBooleanAttr((Array.isArray(_unref(store).filterObject.selectedAttributes))\n          ? _ssrLooseContain(_unref(store).filterObject.selectedAttributes, attribute_value.slug)\n          : _unref(store).filterObject.selectedAttributes)) ? \" checked\" : \"\"\n      }><label class=\"form-check-label color-label-box\"${\n        _ssrRenderAttr(\"for\", attribute_value.value)\n      }>`)\n      if (attributes.style === 'color') {\n        _push(`<div class=\"color-box\" style=\"${_ssrRenderStyle({ 'background-color': attribute_value.hex_color })}\"></div>`)\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<span class=\"name\">${_ssrInterpolate(attribute_value.value)}</span></label></div></li>`)\n    })\n    _push(`<!--]--></ul></div></div></div>`)\n  })\n  _push(`<!--]-->`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Collection/widgets/filter/Attribute.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341751,
+      "end": 1716056341753,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrLooseContain as _ssrLooseContain, ssrIncludeBooleanAttr as _ssrIncludeBooleanAttr, ssrRenderStyle as _ssrRenderStyle, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from 'pinia';\nimport { useCollectionStore } from '~/store/collection';\n\n\nconst _sfc_main = {\n  __name: 'Attribute',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet store = useCollectionStore()\n\nlet { filter, attribute, selectedAttributes } = storeToRefs(useCollectionStore())\nlet { data, error } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest('attribute', { key: 'getAllAttributeInFilter1' }))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\nif (!error.value) {\n    attribute.value = data?.value?.data;\n}\n\nfunction checked(item) {\n    if (selectedAttributes.value?.indexOf(item) != -1) {\n        return true;\n    }\n    return false;\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<!--[-->`)\n  _ssrRenderList(_unref(attribute), (attributes, index) => {\n    _push(`<div class=\"accordion-item\"><h2 class=\"accordion-header\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"${\n      _ssrRenderAttr(\"data-bs-target\", `#attributes-dropdown${index}`)\n    }><span>${\n      _ssrInterpolate(attributes.name)\n    }</span></button></h2><div${\n      _ssrRenderAttr(\"id\", `attributes-dropdown${index}`)\n    } class=\"accordion-collapse collapse show\"><div class=\"accordion-body\"><ul class=\"category-list custom-padding custom-height\"><!--[-->`)\n    _ssrRenderList(attributes?.attribute_values, (attribute_value, index) => {\n      _push(`<li><div class=\"form-check ps-0 m-0 category-list-box\"><input class=\"checkbox_animated\" type=\"checkbox\"${\n        _ssrRenderAttr(\"id\", attribute_value.value)\n      }${\n        _ssrRenderAttr(\"value\", attribute_value.slug)\n      }${\n        (_ssrIncludeBooleanAttr((Array.isArray(_unref(store).filterObject.selectedAttributes))\n          ? _ssrLooseContain(_unref(store).filterObject.selectedAttributes, attribute_value.slug)\n          : _unref(store).filterObject.selectedAttributes)) ? \" checked\" : \"\"\n      }><label class=\"form-check-label color-label-box\"${\n        _ssrRenderAttr(\"for\", attribute_value.value)\n      }>`)\n      if (attributes.style === 'color') {\n        _push(`<div class=\"color-box\" style=\"${_ssrRenderStyle({ 'background-color': attribute_value.hex_color })}\"></div>`)\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<span class=\"name\">${_ssrInterpolate(attribute_value.value)}</span></label></div></li>`)\n    })\n    _push(`<!--]--></ul></div></div></div>`)\n  })\n  _push(`<!--]-->`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Collection/widgets/filter/Attribute.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341751,
+      "end": 1716056341753,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341753,
+      "end": 1716056341754,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341753,
+      "end": 1716056341754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341754,
+      "end": 1716056341754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341754,
+      "end": 1716056341754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056341754,
+      "end": 1716056341754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056341754,
+      "end": 1716056341754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056341754,
+      "end": 1716056341754,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056341754,
+      "end": 1716056341754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056341754,
+      "end": 1716056341754,
+      "order": "normal"
+    }
+  ]
+}

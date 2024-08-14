@@ -1,0 +1,260 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductView/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"product-count\"\n    v-if=\"(option?.product?.encourage_order && product?.encourage_order) || (option?.product?.encourage_view && product?.encourage_view)\">\n    <ul>\n      <li v-if=\"option?.product?.encourage_order && product?.encourage_order\">\n        <Icon name=\"ri-flashlight-line\" size=\"18\"></Icon>\n        <h6 class=\"lang\">{{ ordersCount }} {{ $t('Customers Ordered') }}</h6>\n      </li>\n      <li v-if=\"option?.product?.encourage_view && product?.encourage_view\">\n        <Icon name=\"ri-eye-line\" size=\"18\"></Icon>\n        <h6 class=\"lang\">{{ viewsCount }} {{ 'Active View in this item' }}</h6>\n      </li>\n    </ul>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  option: { type: Object },\n  product: { type: Object }\n})\n\nlet ordersCount = ref(10);\nlet viewsCount = ref(30);\nlet countsInterval = ref();\n\nconst updateViewsCount = () => {\n  const encourage_max_view_count = props.option.value?.product?.encourage_max_view_count || 100;\n  viewsCount.value = Math.floor(Math.random() * encourage_max_view_count) + 1;\n};\n\nconst updateOrdersCount = () => {\n  const encourage_max_order_count = props.option.value?.product?.encourage_max_order_count || 100;\n  ordersCount.value = Math.floor(Math.random() * encourage_max_order_count) + 1;\n};\n\nonMounted(() => {\n  updateViewsCount();\n  updateOrdersCount();\n\n  countsInterval.value = setInterval(() => {\n    updateViewsCount();\n  }, 5000);\n\n  countsInterval.value = setInterval(() => {\n    updateOrdersCount();\n  }, 60000);\n});\n\nonUnmounted(() => {\n  clearInterval(countsInterval.value);\n});\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056341903,
+      "end": 1716056342094,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342094,
+      "end": 1716056342094,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342094,
+      "end": 1716056342094,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342094,
+      "end": 1716056342094,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342094,
+      "end": 1716056342094,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342094,
+      "end": 1716056342094,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342094,
+      "end": 1716056342094,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342094,
+      "end": 1716056342094,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342094,
+      "end": 1716056342094,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342094,
+      "end": 1716056342094,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342094,
+      "end": 1716056342094,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  option: { type: Object },\n  product: { type: Object }\n},\n  setup(__props) {\n\nlet props = __props\n\nlet ordersCount = ref(10);\nlet viewsCount = ref(30);\nlet countsInterval = ref();\n\nconst updateViewsCount = () => {\n  const encourage_max_view_count = props.option.value?.product?.encourage_max_view_count || 100;\n  viewsCount.value = Math.floor(Math.random() * encourage_max_view_count) + 1;\n};\n\nconst updateOrdersCount = () => {\n  const encourage_max_order_count = props.option.value?.product?.encourage_max_order_count || 100;\n  ordersCount.value = Math.floor(Math.random() * encourage_max_order_count) + 1;\n};\n\nonMounted(() => {\n  updateViewsCount();\n  updateOrdersCount();\n\n  countsInterval.value = setInterval(() => {\n    updateViewsCount();\n  }, 5000);\n\n  countsInterval.value = setInterval(() => {\n    updateOrdersCount();\n  }, 60000);\n});\n\nonUnmounted(() => {\n  clearInterval(countsInterval.value);\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  if ((__props.option?.product?.encourage_order && __props.product?.encourage_order) || (__props.option?.product?.encourage_view && __props.product?.encourage_view)) {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"product-count\" }, _attrs))}><ul>`)\n    if (__props.option?.product?.encourage_order && __props.product?.encourage_order) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, {\n        name: \"ri-flashlight-line\",\n        size: \"18\"\n      }, null, _parent))\n      _push(`<h6 class=\"lang\">${\n        _ssrInterpolate(_unref(ordersCount))\n      } ${\n        _ssrInterpolate(_ctx.$t('Customers Ordered'))\n      }</h6></li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (__props.option?.product?.encourage_view && __props.product?.encourage_view) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, {\n        name: \"ri-eye-line\",\n        size: \"18\"\n      }, null, _parent))\n      _push(`<h6 class=\"lang\">${\n        _ssrInterpolate(_unref(viewsCount))\n      } ${\n        _ssrInterpolate('Active View in this item')\n      }</h6></li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductView/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342094,
+      "end": 1716056342095,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342095,
+      "end": 1716056342095,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342095,
+      "end": 1716056342095,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342095,
+      "end": 1716056342095,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342095,
+      "end": 1716056342095,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342095,
+      "end": 1716056342095,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342095,
+      "end": 1716056342095,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342095,
+      "end": 1716056342095,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342095,
+      "end": 1716056342096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056342096,
+      "end": 1716056342096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342096,
+      "end": 1716056342096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342096,
+      "end": 1716056342096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342096,
+      "end": 1716056342096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342096,
+      "end": 1716056342096,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342096,
+      "end": 1716056342096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342096,
+      "end": 1716056342096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342096,
+      "end": 1716056342096,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342096,
+      "end": 1716056342096,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342096,
+      "end": 1716056342096,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted, onUnmounted } from 'vue';\nimport { setInterval } from '#app/compat/interval';\nimport { resolveComponent as _resolveComponent, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  option: { type: Object },\n  product: { type: Object }\n},\n  setup(__props) {\n\nlet props = __props\n\nlet ordersCount = ref(10);\nlet viewsCount = ref(30);\nlet countsInterval = ref();\n\nconst updateViewsCount = () => {\n  const encourage_max_view_count = props.option.value?.product?.encourage_max_view_count || 100;\n  viewsCount.value = Math.floor(Math.random() * encourage_max_view_count) + 1;\n};\n\nconst updateOrdersCount = () => {\n  const encourage_max_order_count = props.option.value?.product?.encourage_max_order_count || 100;\n  ordersCount.value = Math.floor(Math.random() * encourage_max_order_count) + 1;\n};\n\nonMounted(() => {\n  updateViewsCount();\n  updateOrdersCount();\n\n  countsInterval.value = setInterval(() => {\n    updateViewsCount();\n  }, 5000);\n\n  countsInterval.value = setInterval(() => {\n    updateOrdersCount();\n  }, 60000);\n});\n\nonUnmounted(() => {\n  clearInterval(countsInterval.value);\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  if ((__props.option?.product?.encourage_order && __props.product?.encourage_order) || (__props.option?.product?.encourage_view && __props.product?.encourage_view)) {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"product-count\" }, _attrs))}><ul>`)\n    if (__props.option?.product?.encourage_order && __props.product?.encourage_order) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, {\n        name: \"ri-flashlight-line\",\n        size: \"18\"\n      }, null, _parent))\n      _push(`<h6 class=\"lang\">${\n        _ssrInterpolate(_unref(ordersCount))\n      } ${\n        _ssrInterpolate(_ctx.$t('Customers Ordered'))\n      }</h6></li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (__props.option?.product?.encourage_view && __props.product?.encourage_view) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, {\n        name: \"ri-eye-line\",\n        size: \"18\"\n      }, null, _parent))\n      _push(`<h6 class=\"lang\">${\n        _ssrInterpolate(_unref(viewsCount))\n      } ${\n        _ssrInterpolate('Active View in this item')\n      }</h6></li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductView/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342096,
+      "end": 1716056342098,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted, onUnmounted } from 'vue';\nimport { setInterval } from '#app/compat/interval';\nimport { resolveComponent as _resolveComponent, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  option: { type: Object },\n  product: { type: Object }\n},\n  setup(__props) {\n\nlet props = __props\n\nlet ordersCount = ref(10);\nlet viewsCount = ref(30);\nlet countsInterval = ref();\n\nconst updateViewsCount = () => {\n  const encourage_max_view_count = props.option.value?.product?.encourage_max_view_count || 100;\n  viewsCount.value = Math.floor(Math.random() * encourage_max_view_count) + 1;\n};\n\nconst updateOrdersCount = () => {\n  const encourage_max_order_count = props.option.value?.product?.encourage_max_order_count || 100;\n  ordersCount.value = Math.floor(Math.random() * encourage_max_order_count) + 1;\n};\n\nonMounted(() => {\n  updateViewsCount();\n  updateOrdersCount();\n\n  countsInterval.value = setInterval(() => {\n    updateViewsCount();\n  }, 5000);\n\n  countsInterval.value = setInterval(() => {\n    updateOrdersCount();\n  }, 60000);\n});\n\nonUnmounted(() => {\n  clearInterval(countsInterval.value);\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  if ((__props.option?.product?.encourage_order && __props.product?.encourage_order) || (__props.option?.product?.encourage_view && __props.product?.encourage_view)) {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"product-count\" }, _attrs))}><ul>`)\n    if (__props.option?.product?.encourage_order && __props.product?.encourage_order) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, {\n        name: \"ri-flashlight-line\",\n        size: \"18\"\n      }, null, _parent))\n      _push(`<h6 class=\"lang\">${\n        _ssrInterpolate(_unref(ordersCount))\n      } ${\n        _ssrInterpolate(_ctx.$t('Customers Ordered'))\n      }</h6></li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (__props.option?.product?.encourage_view && __props.product?.encourage_view) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, {\n        name: \"ri-eye-line\",\n        size: \"18\"\n      }, null, _parent))\n      _push(`<h6 class=\"lang\">${\n        _ssrInterpolate(_unref(viewsCount))\n      } ${\n        _ssrInterpolate('Active View in this item')\n      }</h6></li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductView/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342096,
+      "end": 1716056342098,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342098,
+      "end": 1716056342098,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342098,
+      "end": 1716056342098,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342098,
+      "end": 1716056342098,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342098,
+      "end": 1716056342098,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342098,
+      "end": 1716056342098,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { ref, onMounted, onUnmounted } from 'vue';\nimport { setInterval } from '#app/compat/interval';\nimport { resolveComponent as _resolveComponent, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  option: { type: Object },\n  product: { type: Object }\n},\n  setup(__props) {\n\nlet props = __props\n\nlet ordersCount = ref(10);\nlet viewsCount = ref(30);\nlet countsInterval = ref();\n\nconst updateViewsCount = () => {\n  const encourage_max_view_count = props.option.value?.product?.encourage_max_view_count || 100;\n  viewsCount.value = Math.floor(Math.random() * encourage_max_view_count) + 1;\n};\n\nconst updateOrdersCount = () => {\n  const encourage_max_order_count = props.option.value?.product?.encourage_max_order_count || 100;\n  ordersCount.value = Math.floor(Math.random() * encourage_max_order_count) + 1;\n};\n\nonMounted(() => {\n  updateViewsCount();\n  updateOrdersCount();\n\n  countsInterval.value = setInterval(() => {\n    updateViewsCount();\n  }, 5000);\n\n  countsInterval.value = setInterval(() => {\n    updateOrdersCount();\n  }, 60000);\n});\n\nonUnmounted(() => {\n  clearInterval(countsInterval.value);\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = __nuxt_component_0\n\n  if ((__props.option?.product?.encourage_order && __props.product?.encourage_order) || (__props.option?.product?.encourage_view && __props.product?.encourage_view)) {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"product-count\" }, _attrs))}><ul>`)\n    if (__props.option?.product?.encourage_order && __props.product?.encourage_order) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, {\n        name: \"ri-flashlight-line\",\n        size: \"18\"\n      }, null, _parent))\n      _push(`<h6 class=\"lang\">${\n        _ssrInterpolate(_unref(ordersCount))\n      } ${\n        _ssrInterpolate(_ctx.$t('Customers Ordered'))\n      }</h6></li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (__props.option?.product?.encourage_view && __props.product?.encourage_view) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, {\n        name: \"ri-eye-line\",\n        size: \"18\"\n      }, null, _parent))\n      _push(`<h6 class=\"lang\">${\n        _ssrInterpolate(_unref(viewsCount))\n      } ${\n        _ssrInterpolate('Active View in this item')\n      }</h6></li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductView/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342098,
+      "end": 1716056342098,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { ref, onMounted, onUnmounted } from 'vue';\nimport { setInterval } from '#app/compat/interval';\nimport { resolveComponent as _resolveComponent, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  option: { type: Object },\n  product: { type: Object }\n},\n  setup(__props) {\n\nlet props = __props\n\nlet ordersCount = ref(10);\nlet viewsCount = ref(30);\nlet countsInterval = ref();\n\nconst updateViewsCount = () => {\n  const encourage_max_view_count = props.option.value?.product?.encourage_max_view_count || 100;\n  viewsCount.value = Math.floor(Math.random() * encourage_max_view_count) + 1;\n};\n\nconst updateOrdersCount = () => {\n  const encourage_max_order_count = props.option.value?.product?.encourage_max_order_count || 100;\n  ordersCount.value = Math.floor(Math.random() * encourage_max_order_count) + 1;\n};\n\n false && /*@__PURE__*/ onMounted(() => {\n  updateViewsCount();\n  updateOrdersCount();\n\n  countsInterval.value = setInterval(() => {\n    updateViewsCount();\n  }, 5000);\n\n  countsInterval.value = setInterval(() => {\n    updateOrdersCount();\n  }, 60000);\n});\n\nonUnmounted(() => {\n  clearInterval(countsInterval.value);\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = __nuxt_component_0\n\n  if ((__props.option?.product?.encourage_order && __props.product?.encourage_order) || (__props.option?.product?.encourage_view && __props.product?.encourage_view)) {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"product-count\" }, _attrs))}><ul>`)\n    if (__props.option?.product?.encourage_order && __props.product?.encourage_order) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, {\n        name: \"ri-flashlight-line\",\n        size: \"18\"\n      }, null, _parent))\n      _push(`<h6 class=\"lang\">${\n        _ssrInterpolate(_unref(ordersCount))\n      } ${\n        _ssrInterpolate(_ctx.$t('Customers Ordered'))\n      }</h6></li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (__props.option?.product?.encourage_view && __props.product?.encourage_view) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, {\n        name: \"ri-eye-line\",\n        size: \"18\"\n      }, null, _parent))\n      _push(`<h6 class=\"lang\">${\n        _ssrInterpolate(_unref(viewsCount))\n      } ${\n        _ssrInterpolate('Active View in this item')\n      }</h6></li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductView/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342098,
+      "end": 1716056342099,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342099,
+      "end": 1716056342099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342099,
+      "end": 1716056342099,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Widgets/Blog/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <!-- <div class=\"slider-3-blog ratio_65 product-wrapper\">\n    <swiper :breakpoints=\"blogSlider\" :loop=\"true\" :slides-per-view=\"slidesPerView\" :space-between=\"15\">\n      <template v-if=\"skeletonLoader\">\n              <swiper-slide  v-for=\"item in skeletonItems\" :key=\"item\">\n                <ThemesWidgetsBlogSkeletonSliderBlog   />\n              </swiper-slide>\n       </template>\n      <swiper-slide v-for=\"blog in blogs\" :key=\"blog\" v-else>\n        <div class=\"blog-box ratio_65\" :class=\"{ 'sticky-blog-box': blog.is_sticky === 1 }\">\n          <div class=\"blog-label-tag\" v-if=\"blog.is_featured\">\n            <span>Featured</span>\n          </div>\n          <div class=\"blog-box-image\">\n            <NuxtLink :to=\"`/blog/${blog?.slug}`\" class=\"blog-image bg-size\"\n              :style=\"{ 'background-image': 'url(' + (blog.blog_thumbnail ? blog?.blog_thumbnail?.original_url : '/images/product.png') + ')' }\">\n            </NuxtLink>\n          </div>\n          <NuxtLink :to=\"`/blog/${blog?.slug}`\" class=\"blog-detail\">\n            <h6>{{ dateFormatter(blog.created_at) }}</h6>\n            <h5>{{ blog.title }}</h5>\n          </NuxtLink>\n        </div>\n      </swiper-slide>\n    </swiper>\n  </div> -->\n</template>\n<!-- <script setup>\nimport { dateFormatter } from \"@/utils/formators/date\";\n\nlet props = defineProps({\n  blogIds: Object,\n  Blogs: Object,\n  slidesPerView: { type: Number, default: 4 },\n});\nlet blogSlider = {\n  0: {\n    slidesPerView: 1,\n  },\n  600: {\n    slidesPerView: 2,\n  },\n  1060: {\n    slidesPerView: 3,\n  },\n  1530: {\n    slidesPerView: props.slidesPerView,\n  },\n};\n\nlet blogs = ref([]);\nblogs.value = props?.Blogs?.data?.filter((blog) =>\n  props.blogIds?.includes(blog.id)\n);\n\nconst skeletonLoader = ref(true);\nlet skeletonItems = Array.from({ length: 12 }, (_, index) => index);\nonMounted(() => {\n  setTimeout(() => {\n    skeletonLoader.value = false;\n  }, 2000);\n});\n</script>\n\n<style lang=\"scss\" scoped></style> -->\n",
+      "start": 1716056288001,
+      "end": 1716056288184,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056288184,
+      "end": 1716056288184,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056288184,
+      "end": 1716056288184,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056288184,
+      "end": 1716056288184,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056288184,
+      "end": 1716056288184,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056288184,
+      "end": 1716056288184,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056288184,
+      "end": 1716056288184,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056288184,
+      "end": 1716056288184,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\n\nfunction _sfc_render(_ctx, _cache) {\n  return null\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1716056288184,
+      "end": 1716056288185,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056288185,
+      "end": 1716056288185,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288185,
+      "end": 1716056288185,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056288185,
+      "end": 1716056288185,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056288185,
+      "end": 1716056288185,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056288185,
+      "end": 1716056288185,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288185,
+      "end": 1716056288185,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056288185,
+      "end": 1716056288185,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056288185,
+      "end": 1716056288185,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056288185,
+      "end": 1716056288185,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056288185,
+      "end": 1716056288185,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056288185,
+      "end": 1716056288185,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056288185,
+      "end": 1716056288185,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056288185,
+      "end": 1716056288186,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056288186,
+      "end": 1716056288186,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056288186,
+      "end": 1716056288186,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056288186,
+      "end": 1716056288186,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056288186,
+      "end": 1716056288186,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056288186,
+      "end": 1716056288186,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056288186,
+      "end": 1716056288186,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056288186,
+      "end": 1716056288186,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056288186,
+      "end": 1716056288186,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056288186,
+      "end": 1716056288186,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056288186,
+      "end": 1716056288186,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056288186,
+      "end": 1716056288186,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056288186,
+      "end": 1716056288186,
+      "order": "normal"
+    }
+  ]
+}

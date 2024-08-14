@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Footer/About.vue?nuxt_component=async&nuxt_component_name=FooterAbout",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"footer-logo-contain\">\n    <p v-if=\"data?.footer?.footer_about\">{{ data?.footer?.footer_about }}</p>\n    <ul class=\"address\">\n      <li v-if=\"data?.footer?.about_address\">\n        <Icon name=\"ri:home-line\" />\n        <NuxtLink>{{ data?.footer?.about_address }}</NuxtLink>\n      </li>\n      <li v-if=\"data?.footer?.about_email\">\n        <Icon name=\"ri:mail-line\" />\n        <NuxtLink>{{ data?.footer?.about_email }}</NuxtLink>\n      </li>\n    </ul>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  data: Object,\n});\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056262544,
+      "end": 1716056270705,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056270705,
+      "end": 1716056270705,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056270705,
+      "end": 1716056270705,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056270705,
+      "end": 1716056270705,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056270705,
+      "end": 1716056270705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056270705,
+      "end": 1716056270705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056270705,
+      "end": 1716056270705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056270705,
+      "end": 1716056270705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, createElementVNode as _createElementVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"footer-logo-contain\" }\nconst _hoisted_2 = { key: 0 }\nconst _hoisted_3 = { class: \"address\" }\nconst _hoisted_4 = { key: 0 }\nconst _hoisted_5 = { key: 1 }\n\n\nconst _sfc_main = {\n  __name: 'About',\n  props: {\n  data: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    (__props.data?.footer?.footer_about)\n      ? (_openBlock(), _createElementBlock(\"p\", _hoisted_2, _toDisplayString(__props.data?.footer?.footer_about), 1))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"ul\", _hoisted_3, [\n      (__props.data?.footer?.about_address)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_4, [\n            _createVNode(_component_Icon, { name: \"ri:home-line\" }),\n            _createVNode(_component_NuxtLink, null, {\n              default: _withCtx(() => [\n                _createTextVNode(_toDisplayString(__props.data?.footer?.about_address), 1)\n              ]),\n              _: 1\n            })\n          ]))\n        : _createCommentVNode(\"\", true),\n      (__props.data?.footer?.about_email)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_5, [\n            _createVNode(_component_Icon, { name: \"ri:mail-line\" }),\n            _createVNode(_component_NuxtLink, null, {\n              default: _withCtx(() => [\n                _createTextVNode(_toDisplayString(__props.data?.footer?.about_email), 1)\n              ]),\n              _: 1\n            })\n          ]))\n        : _createCommentVNode(\"\", true)\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056270705,
+      "end": 1716056270707,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Footer/About.vue\").then(r => r.default))",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Footer/About.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056270707,
+      "end": 1716056270707,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056270708,
+      "end": 1716056270708,
+      "order": "normal"
+    }
+  ]
+}

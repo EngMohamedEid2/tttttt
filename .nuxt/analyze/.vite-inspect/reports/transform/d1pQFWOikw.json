@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/Faq/index.vue?nuxt_component=async&nuxt_component_name=PagesFaq",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n        <section class=\"faq-box-contain section-b-space\">\n            <div class=\"container\">\n                <div class=\"row\">\n                    <div class=\"col-xl-5\">\n                        <div class=\"faq-contain\">\n                            <h2>{{ $t(\"Frequently Asked Questions\") }}</h2>\n                            <p>{{ $t(\"We are answering most frequent questions. No worries if you not find exact one. You can find out more by searching.\")}}</p>\n                        </div>\n                    </div>\n                    <div class=\"col-xl-7\">\n                        <div class=\"faq-accordion\">\n                            <div class=\"accordion\" id=\"accordionExample\">\n                                <div class=\"accordion shipping-accordion\" id=\"accordionExample\">\n                                    <div class=\"accordion-item\" v-for=\"(faq, index) in faq.data\" :key=\"index\">\n                                        <h2 class=\"accordion-header\" id=\"headingOne\">\n                                            <button class=\"accordion-button collapsed\" type=\"button\"\n                                                data-bs-toggle=\"collapse\" :data-bs-target=\"`#${'faq' + index + 1}`\"\n                                                :aria-expanded=\"index === 0 ? 'true' : 'false'\">\n                                                {{ faq.title }}\n                                                <Icon name=\"ri:arrow-down-s-line\"></Icon>\n                                            </button>\n                                        </h2>\n                                        <div :id=\"`${'faq' + index + 1}`\" class=\"accordion-collapse collapse\"\n                                            data-bs-parent=\"#accordionExample\" :class=\"{ 'show': index === 0 }\">\n                                            <div id=\"collapseOne\" class=\"accordion-collapse collapse show\"\n                                                data-bs-parent=\"#accordionExample\">\n                                                <div class=\"accordion-body\">\n                                                    <p>{{ faq.description }}</p>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </section>\n    </div>\n</template>\n\n<script setup>\nimport { HandleRequest } from '~~/composables/HandleRequest';\nlet { data: faq, pending } = await HandleRequest(\"faq\", {\n    key: \"getAllfaq\",\n});\n</script>\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056271146,
+      "end": 1716056271363,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = { class: \"faq-box-contain section-b-space\" }\nconst _hoisted_2 = { class: \"container\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-xl-5\" }\nconst _hoisted_5 = { class: \"faq-contain\" }\nconst _hoisted_6 = { class: \"col-xl-7\" }\nconst _hoisted_7 = { class: \"faq-accordion\" }\nconst _hoisted_8 = {\n  class: \"accordion\",\n  id: \"accordionExample\"\n}\nconst _hoisted_9 = {\n  class: \"accordion shipping-accordion\",\n  id: \"accordionExample\"\n}\nconst _hoisted_10 = {\n  class: \"accordion-header\",\n  id: \"headingOne\"\n}\nconst _hoisted_11 = [\"data-bs-target\", \"aria-expanded\"]\nconst _hoisted_12 = [\"id\"]\nconst _hoisted_13 = {\n  id: \"collapseOne\",\n  class: \"accordion-collapse collapse show\",\n  \"data-bs-parent\": \"#accordionExample\"\n}\nconst _hoisted_14 = { class: \"accordion-body\" }\n\nimport { HandleRequest } from '~~/composables/HandleRequest';\n\nconst _sfc_main = {\n  __name: 'index',\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet { data: faq, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"faq\", {\n    key: \"getAllfaq\",\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"section\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"div\", _hoisted_5, [\n              _createElementVNode(\"h2\", null, _toDisplayString(_ctx.$t(\"Frequently Asked Questions\")), 1),\n              _createElementVNode(\"p\", null, _toDisplayString(_ctx.$t(\"We are answering most frequent questions. No worries if you not find exact one. You can find out more by searching.\")), 1)\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"div\", _hoisted_8, [\n                _createElementVNode(\"div\", _hoisted_9, [\n                  (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(faq).data, (faq, index) => {\n                    return (_openBlock(), _createElementBlock(\"div\", {\n                      class: \"accordion-item\",\n                      key: index\n                    }, [\n                      _createElementVNode(\"h2\", _hoisted_10, [\n                        _createElementVNode(\"button\", {\n                          class: \"accordion-button collapsed\",\n                          type: \"button\",\n                          \"data-bs-toggle\": \"collapse\",\n                          \"data-bs-target\": `#${'faq' + index + 1}`,\n                          \"aria-expanded\": index === 0 ? 'true' : 'false'\n                        }, [\n                          _createTextVNode(_toDisplayString(faq.title) + \" \", 1),\n                          _createVNode(_component_Icon, { name: \"ri:arrow-down-s-line\" })\n                        ], 8, _hoisted_11)\n                      ]),\n                      _createElementVNode(\"div\", {\n                        id: `${'faq' + index + 1}`,\n                        class: _normalizeClass([\"accordion-collapse collapse\", { 'show': index === 0 }]),\n                        \"data-bs-parent\": \"#accordionExample\"\n                      }, [\n                        _createElementVNode(\"div\", _hoisted_13, [\n                          _createElementVNode(\"div\", _hoisted_14, [\n                            _createElementVNode(\"p\", null, _toDisplayString(faq.description), 1)\n                          ])\n                        ])\n                      ], 10, _hoisted_12)\n                    ]))\n                  }), 128))\n                ])\n              ])\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056271363,
+      "end": 1716056271365,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/Faq/index.vue\").then(r => r.default))",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271365,
+      "end": 1716056271365,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271365,
+      "end": 1716056271366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271366,
+      "end": 1716056271366,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271366,
+      "end": 1716056271366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271366,
+      "end": 1716056271366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271366,
+      "end": 1716056271366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271366,
+      "end": 1716056271366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271366,
+      "end": 1716056271366,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271366,
+      "end": 1716056271366,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/Faq/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271366,
+      "end": 1716056271366,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271366,
+      "end": 1716056271366,
+      "order": "normal"
+    }
+  ]
+}

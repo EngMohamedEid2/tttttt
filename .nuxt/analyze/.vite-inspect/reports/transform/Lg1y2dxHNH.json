@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/ExitModal/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<WidgetsModalsCommon :showModal=\"showModal\" modalClass=\"theme-modal modal-lg exit-modal\"  @close=\"closeModal({ state: false })\">\n  <div class=\"modal-header p-0\">\n    <WidgetsButton :classes=\"'btn btn-close'\"  :id=\"'profile_modal_close_btn'\"\n      @onClick=\"closeModal({ state: false })\">\n      <Icon name=\"ri-close-line\"></Icon>\n    </WidgetsButton>\n  </div>\n  <div class=\"modal-box\">\n    <div class=\"modal-image\">\n      <img src=\"/images/newsletter/3.jpg\" class=\"img-fluid\" alt=\"newsletter\">\n    </div>\n    <div class=\"modal-content\">\n      <div>\n        <img src=\"/images/logo/1.png\" class=\"modal-logo\" alt=\"logo\">\n        <h2 class=\"text-title\">{{ $t(\"Wait\") }}<span class=\"theme-color\">!</span></h2>\n        <h5>{{ $t(\"I am sorry to see you go\") }}</h5>\n        <p>{{ \"In order to earn 10 off your first purchase provide your email address\" }}</p>\n      </div>\n    </div>\n  </div>\n</WidgetsModalsCommon>\n</template>\n\n<script setup>\nimport Cookies from 'js-cookie';\nconst showModal = ref(false);\n\nconst openModal = () => {\n  showModal.value = true;\n  Cookies.set('exit', 'true');\n};\n\nconst closeModal = () => {\n  showModal.value = false;\n};\n\nconst handleMouseOut = (event) => {\n  if (event.clientY <= 0) {\n    openModal();\n    window.removeEventListener('mouseout', handleMouseOut);\n  }\n};\n\nonMounted(() => {\n  const modalShown = Cookies.get('exit');\n  if (!modalShown) {\n    window.addEventListener('mouseout', handleMouseOut);\n  }\n});\n\nonUnmounted(() => {\n  window.removeEventListener('mouseout', handleMouseOut);\n});\n</script>\n\n<style lang=\"scss\" scoped>\n\n</style>",
+      "start": 1716056288318,
+      "end": 1716056288497,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056288497,
+      "end": 1716056288497,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056288497,
+      "end": 1716056288497,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056288497,
+      "end": 1716056288497,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056288497,
+      "end": 1716056288497,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056288497,
+      "end": 1716056288497,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056288497,
+      "end": 1716056288497,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056288497,
+      "end": 1716056288497,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\nimport _imports_0 from '/images/newsletter/3.jpg'\nimport _imports_1 from '/images/logo/1.png'\n\n\nconst _hoisted_1 = { class: \"modal-header p-0\" }\nconst _hoisted_2 = { class: \"modal-box\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"modal-image\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_0,\n    class: \"img-fluid\",\n    alt: \"newsletter\"\n  })\n], -1)\nconst _hoisted_4 = { class: \"modal-content\" }\nconst _hoisted_5 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_1,\n  class: \"modal-logo\",\n  alt: \"logo\"\n}, null, -1)\nconst _hoisted_6 = { class: \"text-title\" }\nconst _hoisted_7 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"theme-color\" }, \"!\", -1)\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"p\", null, /*#__PURE__*/_toDisplayString(\"In order to earn 10 off your first purchase provide your email address\"), -1)\n\nimport Cookies from 'js-cookie';\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nconst showModal = ref(false);\n\nconst openModal = () => {\n  showModal.value = true;\n  Cookies.set('exit', 'true');\n};\n\nconst closeModal = () => {\n  showModal.value = false;\n};\n\nconst handleMouseOut = (event) => {\n  if (event.clientY <= 0) {\n    openModal();\n    window.removeEventListener('mouseout', handleMouseOut);\n  }\n};\n\nonMounted(() => {\n  const modalShown = Cookies.get('exit');\n  if (!modalShown) {\n    window.addEventListener('mouseout', handleMouseOut);\n  }\n});\n\nonUnmounted(() => {\n  window.removeEventListener('mouseout', handleMouseOut);\n});\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n\n  return (_openBlock(), _createBlock(_component_WidgetsModalsCommon, {\n    showModal: _unref(showModal),\n    modalClass: \"theme-modal modal-lg exit-modal\",\n    onClose: _cache[1] || (_cache[1] = $event => (closeModal({ state: false })))\n  }, {\n    default: _withCtx(() => [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn btn-close',\n          id: 'profile_modal_close_btn',\n          onOnClick: _cache[0] || (_cache[0] = $event => (closeModal({ state: false })))\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Icon, { name: \"ri-close-line\" })\n          ]),\n          _: 1\n        })\n      ]),\n      _createElementVNode(\"div\", _hoisted_2, [\n        _hoisted_3,\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", null, [\n            _hoisted_5,\n            _createElementVNode(\"h2\", _hoisted_6, [\n              _createTextVNode(_toDisplayString(_ctx.$t(\"Wait\")), 1),\n              _hoisted_7\n            ]),\n            _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"I am sorry to see you go\")), 1),\n            _hoisted_8\n          ])\n        ])\n      ])\n    ]),\n    _: 1\n  }, 8, [\"showModal\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288497,
+      "end": 1716056288499,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056288499,
+      "end": 1716056288499,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288499,
+      "end": 1716056288499,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056288499,
+      "end": 1716056288499,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056288499,
+      "end": 1716056288499,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056288499,
+      "end": 1716056288499,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288499,
+      "end": 1716056288499,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056288499,
+      "end": 1716056288499,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056288499,
+      "end": 1716056288499,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056288499,
+      "end": 1716056288499,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056288499,
+      "end": 1716056288500,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056288500,
+      "end": 1716056288500,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056288500,
+      "end": 1716056288500,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056288500,
+      "end": 1716056288500,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056288500,
+      "end": 1716056288500,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056288500,
+      "end": 1716056288500,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056288500,
+      "end": 1716056288500,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted, onUnmounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\nimport _imports_0 from '/images/newsletter/3.jpg'\nimport _imports_1 from '/images/logo/1.png'\n\n\nconst _hoisted_1 = { class: \"modal-header p-0\" }\nconst _hoisted_2 = { class: \"modal-box\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"modal-image\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_0,\n    class: \"img-fluid\",\n    alt: \"newsletter\"\n  })\n], -1)\nconst _hoisted_4 = { class: \"modal-content\" }\nconst _hoisted_5 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_1,\n  class: \"modal-logo\",\n  alt: \"logo\"\n}, null, -1)\nconst _hoisted_6 = { class: \"text-title\" }\nconst _hoisted_7 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"theme-color\" }, \"!\", -1)\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"p\", null, /*#__PURE__*/_toDisplayString(\"In order to earn 10 off your first purchase provide your email address\"), -1)\n\nimport Cookies from 'js-cookie';\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nconst showModal = ref(false);\n\nconst openModal = () => {\n  showModal.value = true;\n  Cookies.set('exit', 'true');\n};\n\nconst closeModal = () => {\n  showModal.value = false;\n};\n\nconst handleMouseOut = (event) => {\n  if (event.clientY <= 0) {\n    openModal();\n    window.removeEventListener('mouseout', handleMouseOut);\n  }\n};\n\nonMounted(() => {\n  const modalShown = Cookies.get('exit');\n  if (!modalShown) {\n    window.addEventListener('mouseout', handleMouseOut);\n  }\n});\n\nonUnmounted(() => {\n  window.removeEventListener('mouseout', handleMouseOut);\n});\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n\n  return (_openBlock(), _createBlock(_component_WidgetsModalsCommon, {\n    showModal: _unref(showModal),\n    modalClass: \"theme-modal modal-lg exit-modal\",\n    onClose: _cache[1] || (_cache[1] = $event => (closeModal({ state: false })))\n  }, {\n    default: _withCtx(() => [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn btn-close',\n          id: 'profile_modal_close_btn',\n          onOnClick: _cache[0] || (_cache[0] = $event => (closeModal({ state: false })))\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Icon, { name: \"ri-close-line\" })\n          ]),\n          _: 1\n        })\n      ]),\n      _createElementVNode(\"div\", _hoisted_2, [\n        _hoisted_3,\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", null, [\n            _hoisted_5,\n            _createElementVNode(\"h2\", _hoisted_6, [\n              _createTextVNode(_toDisplayString(_ctx.$t(\"Wait\")), 1),\n              _hoisted_7\n            ]),\n            _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"I am sorry to see you go\")), 1),\n            _hoisted_8\n          ])\n        ])\n      ])\n    ]),\n    _: 1\n  }, 8, [\"showModal\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288500,
+      "end": 1716056288502,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056288502,
+      "end": 1716056288502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056288502,
+      "end": 1716056288502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056288502,
+      "end": 1716056288502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056288502,
+      "end": 1716056288502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue\";\nimport { ref, onMounted, onUnmounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\nimport _imports_0 from '/images/newsletter/3.jpg'\nimport _imports_1 from '/images/logo/1.png'\n\n\nconst _hoisted_1 = { class: \"modal-header p-0\" }\nconst _hoisted_2 = { class: \"modal-box\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"modal-image\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_0,\n    class: \"img-fluid\",\n    alt: \"newsletter\"\n  })\n], -1)\nconst _hoisted_4 = { class: \"modal-content\" }\nconst _hoisted_5 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_1,\n  class: \"modal-logo\",\n  alt: \"logo\"\n}, null, -1)\nconst _hoisted_6 = { class: \"text-title\" }\nconst _hoisted_7 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"theme-color\" }, \"!\", -1)\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"p\", null, /*#__PURE__*/_toDisplayString(\"In order to earn 10 off your first purchase provide your email address\"), -1)\n\nimport Cookies from 'js-cookie';\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nconst showModal = ref(false);\n\nconst openModal = () => {\n  showModal.value = true;\n  Cookies.set('exit', 'true');\n};\n\nconst closeModal = () => {\n  showModal.value = false;\n};\n\nconst handleMouseOut = (event) => {\n  if (event.clientY <= 0) {\n    openModal();\n    window.removeEventListener('mouseout', handleMouseOut);\n  }\n};\n\nonMounted(() => {\n  const modalShown = Cookies.get('exit');\n  if (!modalShown) {\n    window.addEventListener('mouseout', handleMouseOut);\n  }\n});\n\nonUnmounted(() => {\n  window.removeEventListener('mouseout', handleMouseOut);\n});\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_WidgetsButton = __nuxt_component_1\n  const _component_WidgetsModalsCommon = __nuxt_component_2\n\n  return (_openBlock(), _createBlock(_component_WidgetsModalsCommon, {\n    showModal: _unref(showModal),\n    modalClass: \"theme-modal modal-lg exit-modal\",\n    onClose: _cache[1] || (_cache[1] = $event => (closeModal({ state: false })))\n  }, {\n    default: _withCtx(() => [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn btn-close',\n          id: 'profile_modal_close_btn',\n          onOnClick: _cache[0] || (_cache[0] = $event => (closeModal({ state: false })))\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Icon, { name: \"ri-close-line\" })\n          ]),\n          _: 1\n        })\n      ]),\n      _createElementVNode(\"div\", _hoisted_2, [\n        _hoisted_3,\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", null, [\n            _hoisted_5,\n            _createElementVNode(\"h2\", _hoisted_6, [\n              _createTextVNode(_toDisplayString(_ctx.$t(\"Wait\")), 1),\n              _hoisted_7\n            ]),\n            _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"I am sorry to see you go\")), 1),\n            _hoisted_8\n          ])\n        ])\n      ])\n    ]),\n    _: 1\n  }, 8, [\"showModal\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288502,
+      "end": 1716056288502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056288502,
+      "end": 1716056288502,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056288502,
+      "end": 1716056288502,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056288503,
+      "end": 1716056288503,
+      "order": "normal"
+    }
+  ]
+}

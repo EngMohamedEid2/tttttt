@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/SearchDropdown.vue?nuxt_component=async&nuxt_component_name=WidgetsInputFieldsSearchDropdown",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <OnClickOutside class=\"btn-group\" @trigger=\"() => { showDropDown = false; search = selectedValue }\">\n    <div class=\"custom-select-box\">\n      <input type=\"text\" :placeholder=\"placeholder\" v-model=\"search\" @input=\"updateSearch($event.target.value)\"\n        @click.prevent=\"(showDropDown = !showDropDown)\" class=\"form-control form-select\" />\n      <!-- <span  role=\"presentation\" class=\"cross\" v-if=\"!disableClearButton && modelValue.selected\" @click.prevent=\"ClearInput\">x</span> -->\n      <div class=\"box-content\" v-if=\"showDropDown\">\n        <ul v-if=\"valuesToShow.length\" class=\"custom-scroll\">\n          <li @click.prevent=\"handleSelect(option)\" v-for=\"(option, index) in valuesToShow\" :key=\"index\" class=\"w-100\">\n            <div class=\"country d-flex align-items-center justify-content-start gap-2\">\n              <div class=\"flag-box\">\n                <div class=\"iti-flag\" :class=\"option?.data?.class\"></div>\n              </div><span class=\"dial-code\">{{ option[props.displayKey] }}</span>\n            </div>\n            <!-- <a href=\"javascript:void(0)\">{{ option[props.displayKey] }}</a> -->\n          </li>\n        </ul>\n        <ul v-else>\n          <li>\n            <a href=\"javascript:void(0)\" @click.prevent=\"() => NewRecordLink && useRouter().push(NewRecordLink)\">No\n              Records Found! <span v-if=\"NewRecordLink\">click to Add New records</span></a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </OnClickOutside>\n  <p class=\"error-message\" v-if=\"formSubmitted && !isValid\">{{ errormessage }}</p>\n  <p class=\"help-text\" v-if=\"helptext\">*{{ helptext }}</p>\n</div>\n</template>\n\n<script setup>\nimport { OnClickOutside } from '@vueuse/components'\nimport { useDebounceFn } from '@vueuse/core'\nlet props = defineProps({\n  displayValue: String, modelValue: Object, options: Array, formSubmitted: Boolean, initialData: {\n    type: [Object, Boolean],\n    default: false\n  }, placeholder: { default: 'Select', type: String }, NewRecordLink: { type: String }, disableClearButton: Boolean,\n  displayKey: {\n    default: 'name',\n    type: String\n  },\n  getValueKey: String, selectFirst: [Boolean, Number, String],\n  checkValidation: { type: Boolean, default: true },\n  errormessage: String,\n  helptext: String,\n  holdKey: Boolean\n})\nlet emit = defineEmits(['update:modelValue', 'vendersearch']), selectedValue = ref('')\nlet showDropDown = ref(false), valuesToShow = ref([]), search = ref(''), isValid = ref(false);\nlet objToEmit = props.modelValue\nobjToEmit.type = 'dropdown'\nemit('update:modelValue', objToEmit)\n\n!props.initialData && props.selectFirst && props?.options?.length && handleSelect(props?.options[0])\n\nfunction handleSelect(option) {\n  isValid.value = true\n  selectedValue.value = option[props.displayKey]\n  let emitValues = props.modelValue;\n  emitValues.data = props.getValueKey ? option[props.getValueKey] : option,\n    emitValues.errorMessage = isValid.value ? 0 : 'Please Select An Option',\n    emitValues.selected = option\n  search.value = selectedValue.value\n  showDropDown.value = false\n  emit('update:modelValue', emitValues)\n}\nlet modelData = props.modelValue.selected\nmodelData && handleSelect(modelData)\nprops.initialData && handleSelect(props.initialData)\nprops.modelValue?.data && (isValid.value = true)\nvaluesToShow.value = props.options || [];\n\nconst CheckValidation = () => {\n  let objToEmit = props.modelValue;\n  (props.formSubmitted && !isValid.value) ? objToEmit.errorMessage = \"Please Select An Option\" : objToEmit.errorMessage = false\n  emit('update:modelValue', objToEmit)\n}\n\nconst ClearInput = () => {\n  selectedValue.value = '';\n  search.value = '';\n  isValid.value = false;\n  emit('update:modelValue', {})\n}\n\nconst updateSearch = useDebounceFn((value) => {\n  let valueToEmit = props.modelValue;\n  valueToEmit.search = value;\n  emit(\"update:modelValue\", valueToEmit);\n}, 500, { maxWait: 2000 })\n\nwatch(() => props.modelValue?.selected, () => {\n  props.modelValue.selected && handleSelect(props.modelValue.selected)\n}, { deep: true })\n\nwatch(() => [props.formSubmitted, props.modelValue], () => {\n  CheckValidation();\n}, { deep: true })\n\nwatch(() => props.modelValue?.displayValue, () => {\n  if (props.modelValue?.displayValue) {\n    search.value = props.modelValue?.displayValue;\n    selectedValue.value = props.modelValue?.displayValue;\n  }\n}, { deep: true })\nwatch(() => props.options, () => { valuesToShow.value = props.options; }, { deep: true })\nwatch(() => showDropDown, () => { showDropDown.value && (search.value = '') }, { deep: true })\nwatch(() => search, () => {\n  valuesToShow.value = props.options?.filter(item => item[props.displayKey]?.toLowerCase().includes(search.value?.toLowerCase()))\n}, { deep: true })\n\ndefineExpose({ ClearInput })\n\n</script>\n\n<style lang=\"scss\" scoped>\n.dropdown-menu {\n  top: 47px;\n  width: 100%;\n  max-height: 130px;\n  overflow: auto;\n}\n\n.cross {\n  position: absolute;\n  cursor: pointer;\n  right: 36px;\n  top: 50%;\n  transform: translateY(-50%);\n  font-size: 20px;\n\n}\n</style>",
+      "start": 1716056285052,
+      "end": 1716056285213,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285213,
+      "end": 1716056285213,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285213,
+      "end": 1716056285213,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285213,
+      "end": 1716056285213,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285213,
+      "end": 1716056285213,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285213,
+      "end": 1716056285213,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285213,
+      "end": 1716056285213,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285213,
+      "end": 1716056285213,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, isRef as _isRef, vModelText as _vModelText, withModifiers as _withModifiers, createElementVNode as _createElementVNode, withDirectives as _withDirectives, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, normalizeClass as _normalizeClass, toDisplayString as _toDisplayString, createCommentVNode as _createCommentVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, createVNode as _createVNode, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-c2ec5994\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"custom-select-box\" }\nconst _hoisted_2 = [\"placeholder\"]\nconst _hoisted_3 = {\n  key: 0,\n  class: \"box-content\"\n}\nconst _hoisted_4 = {\n  key: 0,\n  class: \"custom-scroll\"\n}\nconst _hoisted_5 = [\"onClick\"]\nconst _hoisted_6 = { class: \"country d-flex align-items-center justify-content-start gap-2\" }\nconst _hoisted_7 = { class: \"flag-box\" }\nconst _hoisted_8 = { class: \"dial-code\" }\nconst _hoisted_9 = { key: 1 }\nconst _hoisted_10 = { key: 0 }\nconst _hoisted_11 = {\n  key: 0,\n  class: \"error-message\"\n}\nconst _hoisted_12 = {\n  key: 1,\n  class: \"help-text\"\n}\n\nimport { OnClickOutside } from '@vueuse/components'\nimport { useDebounceFn } from '@vueuse/core'\n\nconst _sfc_main = {\n  __name: 'SearchDropdown',\n  props: {\n  displayValue: String, modelValue: Object, options: Array, formSubmitted: Boolean, initialData: {\n    type: [Object, Boolean],\n    default: false\n  }, placeholder: { default: 'Select', type: String }, NewRecordLink: { type: String }, disableClearButton: Boolean,\n  displayKey: {\n    default: 'name',\n    type: String\n  },\n  getValueKey: String, selectFirst: [Boolean, Number, String],\n  checkValidation: { type: Boolean, default: true },\n  errormessage: String,\n  helptext: String,\n  holdKey: Boolean\n},\n  emits: ['update:modelValue', 'vendersearch'],\n  setup(__props, { expose: __expose, emit: __emit }) {\n\nlet props = __props\nlet emit = __emit, selectedValue = ref('')\nlet showDropDown = ref(false), valuesToShow = ref([]), search = ref(''), isValid = ref(false);\nlet objToEmit = props.modelValue\nobjToEmit.type = 'dropdown'\nemit('update:modelValue', objToEmit)\n\n!props.initialData && props.selectFirst && props?.options?.length && handleSelect(props?.options[0])\n\nfunction handleSelect(option) {\n  isValid.value = true\n  selectedValue.value = option[props.displayKey]\n  let emitValues = props.modelValue;\n  emitValues.data = props.getValueKey ? option[props.getValueKey] : option,\n    emitValues.errorMessage = isValid.value ? 0 : 'Please Select An Option',\n    emitValues.selected = option\n  search.value = selectedValue.value\n  showDropDown.value = false\n  emit('update:modelValue', emitValues)\n}\nlet modelData = props.modelValue.selected\nmodelData && handleSelect(modelData)\nprops.initialData && handleSelect(props.initialData)\nprops.modelValue?.data && (isValid.value = true)\nvaluesToShow.value = props.options || [];\n\nconst CheckValidation = () => {\n  let objToEmit = props.modelValue;\n  (props.formSubmitted && !isValid.value) ? objToEmit.errorMessage = \"Please Select An Option\" : objToEmit.errorMessage = false\n  emit('update:modelValue', objToEmit)\n}\n\nconst ClearInput = () => {\n  selectedValue.value = '';\n  search.value = '';\n  isValid.value = false;\n  emit('update:modelValue', {})\n}\n\nconst updateSearch = useDebounceFn((value) => {\n  let valueToEmit = props.modelValue;\n  valueToEmit.search = value;\n  emit(\"update:modelValue\", valueToEmit);\n}, 500, { maxWait: 2000 })\n\nwatch(() => props.modelValue?.selected, () => {\n  props.modelValue.selected && handleSelect(props.modelValue.selected)\n}, { deep: true })\n\nwatch(() => [props.formSubmitted, props.modelValue], () => {\n  CheckValidation();\n}, { deep: true })\n\nwatch(() => props.modelValue?.displayValue, () => {\n  if (props.modelValue?.displayValue) {\n    search.value = props.modelValue?.displayValue;\n    selectedValue.value = props.modelValue?.displayValue;\n  }\n}, { deep: true })\nwatch(() => props.options, () => { valuesToShow.value = props.options; }, { deep: true })\nwatch(() => showDropDown, () => { showDropDown.value && (search.value = '') }, { deep: true })\nwatch(() => search, () => {\n  valuesToShow.value = props.options?.filter(item => item[props.displayKey]?.toLowerCase().includes(search.value?.toLowerCase()))\n}, { deep: true })\n\n__expose({ ClearInput })\n\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_unref(OnClickOutside), {\n      class: \"btn-group\",\n      onTrigger: _cache[4] || (_cache[4] = () => { _isRef(showDropDown) ? showDropDown.value = false : showDropDown = false; _isRef(search) ? search.value = _unref(selectedValue) : search = _unref(selectedValue) })\n    }, {\n      default: _withCtx(() => [\n        _createElementVNode(\"div\", _hoisted_1, [\n          _withDirectives(_createElementVNode(\"input\", {\n            type: \"text\",\n            placeholder: __props.placeholder,\n            \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => (_isRef(search) ? (search).value = $event : search = $event)),\n            onInput: _cache[1] || (_cache[1] = $event => (_unref(updateSearch)($event.target.value))),\n            onClick: _cache[2] || (_cache[2] = _withModifiers($event => ((_isRef(showDropDown) ? showDropDown.value = !_unref(showDropDown) : showDropDown = !_unref(showDropDown))), [\"prevent\"])),\n            class: \"form-control form-select\"\n          }, null, 40, _hoisted_2), [\n            [_vModelText, _unref(search)]\n          ]),\n          (_unref(showDropDown))\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n                (_unref(valuesToShow).length)\n                  ? (_openBlock(), _createElementBlock(\"ul\", _hoisted_4, [\n                      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(valuesToShow), (option, index) => {\n                        return (_openBlock(), _createElementBlock(\"li\", {\n                          onClick: _withModifiers($event => (handleSelect(option)), [\"prevent\"]),\n                          key: index,\n                          class: \"w-100\"\n                        }, [\n                          _createElementVNode(\"div\", _hoisted_6, [\n                            _createElementVNode(\"div\", _hoisted_7, [\n                              _createElementVNode(\"div\", {\n                                class: _normalizeClass([\"iti-flag\", option?.data?.class])\n                              }, null, 2)\n                            ]),\n                            _createElementVNode(\"span\", _hoisted_8, _toDisplayString(option[_unref(props).displayKey]), 1)\n                          ])\n                        ], 8, _hoisted_5))\n                      }), 128))\n                    ]))\n                  : (_openBlock(), _createElementBlock(\"ul\", _hoisted_9, [\n                      _createElementVNode(\"li\", null, [\n                        _createElementVNode(\"a\", {\n                          href: \"javascript:void(0)\",\n                          onClick: _cache[3] || (_cache[3] = _withModifiers(() => __props.NewRecordLink && _ctx.useRouter().push(__props.NewRecordLink), [\"prevent\"]))\n                        }, [\n                          _createTextVNode(\"No Records Found! \"),\n                          (__props.NewRecordLink)\n                            ? (_openBlock(), _createElementBlock(\"span\", _hoisted_10, \"click to Add New records\"))\n                            : _createCommentVNode(\"\", true)\n                        ])\n                      ])\n                    ]))\n              ]))\n            : _createCommentVNode(\"\", true)\n        ])\n      ]),\n      _: 1\n    }),\n    (__props.formSubmitted && !_unref(isValid))\n      ? (_openBlock(), _createElementBlock(\"p\", _hoisted_11, _toDisplayString(__props.errormessage), 1))\n      : _createCommentVNode(\"\", true),\n    (__props.helptext)\n      ? (_openBlock(), _createElementBlock(\"p\", _hoisted_12, \"*\" + _toDisplayString(__props.helptext), 1))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\nimport \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/SearchDropdown.vue?vue&type=style&index=0&scoped=c2ec5994&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-c2ec5994\"]])",
+      "start": 1716056285213,
+      "end": 1716056285229,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285229,
+      "end": 1716056285229,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285229,
+      "end": 1716056285229,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285229,
+      "end": 1716056285229,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285229,
+      "end": 1716056285229,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/SearchDropdown.vue\").then(r => r.default))",
+      "start": 1716056285229,
+      "end": 1716056285229,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285229,
+      "end": 1716056285230,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285230,
+      "end": 1716056285230,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/SearchDropdown.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285230,
+      "end": 1716056285231,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285231,
+      "end": 1716056285231,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Wrapper.vue?nuxt_component=async&nuxt_component_name=AccountWrapper",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <section class=\"user-dashboard-section section-b-space\">\n        <div class=\"container-fluid-lg\">\n            <div class=\"row\">\n                <div class=\"col-xxl-3 col-lg-4\">\n                    <AccountSidebar @close=\"openMenu()\" :class=\"open ? 'show' : ''\" :user=\"user\"\n                        :UserInfo=\"useUserStore().UserInfo\"></AccountSidebar>\n                </div>\n\n                <div class=\"col-xxl-9 col-lg-8\">\n                    <WidgetsButton :classes=\"'btn left-dashboard-show btn-animation btn-md fw-bold d-block mb-4 d-lg-none'\"\n                        :type=\"'button'\" :id=\"'show_menu'\" @onClick=\"openMenu()\">\n                        {{ $t('Show Menu') }}\n                    </WidgetsButton>\n                    <div class=\"dashboard-right-sidebar\">\n                        <slot />\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useUserStore } from \"~~/store/user\";\nlet { User, UserInfo } = storeToRefs(useUserStore())\nlet user = ref(UserInfo)\nlet open = ref(false);\nfunction openMenu() {\n    open.value = !open.value\n}\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056261961,
+      "end": 1716056262578,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056262578,
+      "end": 1716056262578,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056262578,
+      "end": 1716056262578,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056262578,
+      "end": 1716056262579,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056262579,
+      "end": 1716056262579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056262579,
+      "end": 1716056262579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056262579,
+      "end": 1716056262579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056262579,
+      "end": 1716056262579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, withCtx as _withCtx, renderSlot as _renderSlot, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"user-dashboard-section section-b-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-xxl-3 col-lg-4\" }\nconst _hoisted_5 = { class: \"col-xxl-9 col-lg-8\" }\nconst _hoisted_6 = { class: \"dashboard-right-sidebar\" }\n\nimport { storeToRefs } from \"pinia\";\nimport { useUserStore } from \"~~/store/user\";\n\nconst _sfc_main = {\n  __name: 'Wrapper',\n  setup(__props) {\n\nlet { User, UserInfo } = storeToRefs(useUserStore())\nlet user = ref(UserInfo)\nlet open = ref(false);\nfunction openMenu() {\n    open.value = !open.value\n}\n\nreturn (_ctx, _cache) => {\n  const _component_AccountSidebar = _resolveComponent(\"AccountSidebar\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createVNode(_component_AccountSidebar, {\n            onClose: _cache[0] || (_cache[0] = $event => (openMenu())),\n            class: _normalizeClass(_unref(open) ? 'show' : ''),\n            user: _unref(user),\n            UserInfo: _unref(useUserStore)().UserInfo\n          }, null, 8, [\"class\", \"user\", \"UserInfo\"])\n        ]),\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createVNode(_component_WidgetsButton, {\n            classes: 'btn left-dashboard-show btn-animation btn-md fw-bold d-block mb-4 d-lg-none',\n            type: 'button',\n            id: 'show_menu',\n            onOnClick: _cache[1] || (_cache[1] = $event => (openMenu()))\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(_toDisplayString(_ctx.$t('Show Menu')), 1)\n            ]),\n            _: 1\n          }),\n          _createElementVNode(\"div\", _hoisted_6, [\n            _renderSlot(_ctx.$slots, \"default\")\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056262579,
+      "end": 1716056262582,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056262582,
+      "end": 1716056262582,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056262582,
+      "end": 1716056262582,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056262582,
+      "end": 1716056262582,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056262582,
+      "end": 1716056262582,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Wrapper.vue\").then(r => r.default))",
+      "start": 1716056262582,
+      "end": 1716056262582,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056262582,
+      "end": 1716056262583,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056262583,
+      "end": 1716056262583,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056262583,
+      "end": 1716056262584,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056262584,
+      "end": 1716056262584,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Wrapper.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056262584,
+      "end": 1716056262584,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056262584,
+      "end": 1716056262584,
+      "order": "normal"
+    }
+  ]
+}

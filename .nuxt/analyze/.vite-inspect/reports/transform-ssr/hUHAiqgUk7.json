@@ -1,0 +1,265 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-rating/dist/runtime/components/NuxtRating.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { computed, ref } from 'vue'\n\n  // import type { Props } from '../types' #Regression due to https://github.com/nuxt/nuxt/issues/20936\n\n  type Props = {\n    ratingCount?: number\n    ratingSize?: string\n    activeColor?: string\n    inactiveColor?: string\n    ratingValue?: number\n    ratingContent?: string\n    readOnly?: boolean\n  }\n\n  \nexport default /*#__PURE__*/_defineComponent({\n  __name: 'NuxtRating',\n  __ssrInlineRender: true,\n  props: {\n    ratingCount: { default: 5 },\n    ratingSize: { default: '32px' },\n    activeColor: { default: '#ffc700' },\n    inactiveColor: { default: '#ddd' },\n    ratingValue: { default: 3.7 },\n    ratingContent: { default: '★' },\n    readOnly: { type: Boolean, default: true }\n  },\n  emits: [\"ratingSelected\", \"ratingHovered\"],\n  setup(__props: any, { emit: __emit }) {\n\n  const emit = __emit\n\n  const props = __props\n\n  const selectedRating = ref(props.ratingValue)\n  const hoveredRating = ref(0)\n\n  const ratingsContent = computed(() => {\n    return Array(props.ratingCount).fill(props.ratingContent).join('')\n  })\n\n  const cssVars = computed(() => ({\n    '--active-color': props.activeColor,\n    '--cursor-type': props.readOnly ? 'default' : 'pointer',\n    '--inactive-color': props.inactiveColor,\n    '--rating-value': hoveredRating.value ? hoveredRating.value : selectedRating.value,\n    '--rating-count': props.ratingCount,\n    '--rating-content': `\"${ratingsContent.value}\"`,\n    '--rating-size': props.ratingSize,\n  }))\n\n  const handleMouseMove = (event: MouseEvent) => {\n    if (props.readOnly) return\n    emit('ratingHovered', calculateRating(event))\n    hoveredRating.value = calculateRating(event)\n  }\n\n  const handleMouseLeave = () => {\n    if (props.readOnly) return\n    hoveredRating.value = selectedRating.value\n  }\n\n  const handleClick = (event: MouseEvent) => {\n    if (props.readOnly) return\n    emit('ratingSelected', calculateRating(event))\n    selectedRating.value = calculateRating(event)\n  }\n\n  function calculateRating(event: MouseEvent): number {\n    const ratingEl = document.querySelector('.average-rating')\n    if (!ratingEl) return 0\n    const beforeRatingElement = window.getComputedStyle(ratingEl, '::before')\n    const width = parseFloat(beforeRatingElement.getPropertyValue('width').replace(/[^\\d.-]/g, ''))\n    return Math.ceil((event.offsetX / width) * props.ratingCount)\n  }\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({\n    role: \"slider\",\n    \"aria-valuemin\": 0,\n    \"aria-valuemax\": props.ratingCount,\n    \"aria-valuenow\": selectedRating.value,\n    style: cssVars.value,\n    class: \"average-rating\"\n  }, _attrs))}></div>`)\n}\n}\n\n})",
+      "start": 1716056343593,
+      "end": 1716056343593
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343593,
+      "end": 1716056343593,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343593,
+      "end": 1716056343593,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343594,
+      "end": 1716056343594,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343594,
+      "end": 1716056343594,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056343594,
+      "end": 1716056343594,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056343595,
+      "end": 1716056343595,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056343595,
+      "end": 1716056343595,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nimport { computed, ref } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"NuxtRating\",\n  __ssrInlineRender: true,\n  props: {\n    ratingCount: { default: 5 },\n    ratingSize: { default: \"32px\" },\n    activeColor: { default: \"#ffc700\" },\n    inactiveColor: { default: \"#ddd\" },\n    ratingValue: { default: 3.7 },\n    ratingContent: { default: \"★\" },\n    readOnly: { type: Boolean, default: true }\n  },\n  emits: [\"ratingSelected\", \"ratingHovered\"],\n  setup(__props, { emit: __emit }) {\n    const emit = __emit;\n    const props = __props;\n    const selectedRating = ref(props.ratingValue);\n    const hoveredRating = ref(0);\n    const ratingsContent = computed(() => {\n      return Array(props.ratingCount).fill(props.ratingContent).join(\"\");\n    });\n    const cssVars = computed(() => ({\n      \"--active-color\": props.activeColor,\n      \"--cursor-type\": props.readOnly ? \"default\" : \"pointer\",\n      \"--inactive-color\": props.inactiveColor,\n      \"--rating-value\": hoveredRating.value ? hoveredRating.value : selectedRating.value,\n      \"--rating-count\": props.ratingCount,\n      \"--rating-content\": `\"${ratingsContent.value}\"`,\n      \"--rating-size\": props.ratingSize\n    }));\n    const handleMouseMove = (event) => {\n      if (props.readOnly)\n        return;\n      emit(\"ratingHovered\", calculateRating(event));\n      hoveredRating.value = calculateRating(event);\n    };\n    const handleMouseLeave = () => {\n      if (props.readOnly)\n        return;\n      hoveredRating.value = selectedRating.value;\n    };\n    const handleClick = (event) => {\n      if (props.readOnly)\n        return;\n      emit(\"ratingSelected\", calculateRating(event));\n      selectedRating.value = calculateRating(event);\n    };\n    function calculateRating(event) {\n      const ratingEl = document.querySelector(\".average-rating\");\n      if (!ratingEl)\n        return 0;\n      const beforeRatingElement = window.getComputedStyle(ratingEl, \"::before\");\n      const width = parseFloat(beforeRatingElement.getPropertyValue(\"width\").replace(/[^\\d.-]/g, \"\"));\n      return Math.ceil(event.offsetX / width * props.ratingCount);\n    }\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        role: \"slider\",\n        \"aria-valuemin\": 0,\n        \"aria-valuemax\": props.ratingCount,\n        \"aria-valuenow\": selectedRating.value,\n        style: cssVars.value,\n        class: \"average-rating\"\n      }, _attrs))}></div>`);\n    };\n  }\n});\n",
+      "start": 1716056343595,
+      "end": 1716056343746,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-rating/dist/runtime/components/NuxtRating.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { computed, ref } from 'vue'\n\n  // import type { Props } from '../types' #Regression due to https://github.com/nuxt/nuxt/issues/20936\n\n  type Props = {\n    ratingCount?: number\n    ratingSize?: string\n    activeColor?: string\n    inactiveColor?: string\n    ratingValue?: number\n    ratingContent?: string\n    readOnly?: boolean\n  }\n\n  \nexport default /*#__PURE__*/_defineComponent({\n  __name: 'NuxtRating',\n  __ssrInlineRender: true,\n  props: {\n    ratingCount: { default: 5 },\n    ratingSize: { default: '32px' },\n    activeColor: { default: '#ffc700' },\n    inactiveColor: { default: '#ddd' },\n    ratingValue: { default: 3.7 },\n    ratingContent: { default: '★' },\n    readOnly: { type: Boolean, default: true }\n  },\n  emits: [\"ratingSelected\", \"ratingHovered\"],\n  setup(__props: any, { emit: __emit }) {\n\n  const emit = __emit\n\n  const props = __props\n\n  const selectedRating = ref(props.ratingValue)\n  const hoveredRating = ref(0)\n\n  const ratingsContent = computed(() => {\n    return Array(props.ratingCount).fill(props.ratingContent).join('')\n  })\n\n  const cssVars = computed(() => ({\n    '--active-color': props.activeColor,\n    '--cursor-type': props.readOnly ? 'default' : 'pointer',\n    '--inactive-color': props.inactiveColor,\n    '--rating-value': hoveredRating.value ? hoveredRating.value : selectedRating.value,\n    '--rating-count': props.ratingCount,\n    '--rating-content': `\"${ratingsContent.value}\"`,\n    '--rating-size': props.ratingSize,\n  }))\n\n  const handleMouseMove = (event: MouseEvent) => {\n    if (props.readOnly) return\n    emit('ratingHovered', calculateRating(event))\n    hoveredRating.value = calculateRating(event)\n  }\n\n  const handleMouseLeave = () => {\n    if (props.readOnly) return\n    hoveredRating.value = selectedRating.value\n  }\n\n  const handleClick = (event: MouseEvent) => {\n    if (props.readOnly) return\n    emit('ratingSelected', calculateRating(event))\n    selectedRating.value = calculateRating(event)\n  }\n\n  function calculateRating(event: MouseEvent): number {\n    const ratingEl = document.querySelector('.average-rating')\n    if (!ratingEl) return 0\n    const beforeRatingElement = window.getComputedStyle(ratingEl, '::before')\n    const width = parseFloat(beforeRatingElement.getPropertyValue('width').replace(/[^\\d.-]/g, ''))\n    return Math.ceil((event.offsetX / width) * props.ratingCount)\n  }\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({\n    role: \"slider\",\n    \"aria-valuemin\": 0,\n    \"aria-valuemax\": props.ratingCount,\n    \"aria-valuenow\": selectedRating.value,\n    style: cssVars.value,\n    class: \"average-rating\"\n  }, _attrs))}></div>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,cAAc,mBAAmB;AAC1C,SAAS,kBAAkB,uBAAuB;AAElD,SAAS,UAAU,WAAW;AAe9B,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,OAAO;AAAA,IACL,aAAa,EAAE,SAAS,EAAE;AAAA,IAC1B,YAAY,EAAE,SAAS,OAAO;AAAA,IAC9B,aAAa,EAAE,SAAS,UAAU;AAAA,IAClC,eAAe,EAAE,SAAS,OAAO;AAAA,IACjC,aAAa,EAAE,SAAS,IAAI;AAAA,IAC5B,eAAe,EAAE,SAAS,IAAI;AAAA,IAC9B,UAAU,EAAE,MAAM,SAAS,SAAS,KAAK;AAAA,EAC3C;AAAA,EACA,OAAO,CAAC,kBAAkB,eAAe;AAAA,EACzC,MAAM,SAAc,EAAE,MAAM,OAAO,GAAG;AAEtC,UAAM,OAAO;AAEb,UAAM,QAAQ;AAEd,UAAM,iBAAiB,IAAI,MAAM,WAAW;AAC5C,UAAM,gBAAgB,IAAI,CAAC;AAE3B,UAAM,iBAAiB,SAAS,MAAM;AACpC,aAAO,MAAM,MAAM,WAAW,EAAE,KAAK,MAAM,aAAa,EAAE,KAAK,EAAE;AAAA,IACnE,CAAC;AAED,UAAM,UAAU,SAAS,OAAO;AAAA,MAC9B,kBAAkB,MAAM;AAAA,MACxB,iBAAiB,MAAM,WAAW,YAAY;AAAA,MAC9C,oBAAoB,MAAM;AAAA,MAC1B,kBAAkB,cAAc,QAAQ,cAAc,QAAQ,eAAe;AAAA,MAC7E,kBAAkB,MAAM;AAAA,MACxB,oBAAoB,IAAI,eAAe,KAAK;AAAA,MAC5C,iBAAiB,MAAM;AAAA,IACzB,EAAE;AAEF,UAAM,kBAAkB,CAAC,UAAsB;AAC7C,UAAI,MAAM;AAAU;AACpB,WAAK,iBAAiB,gBAAgB,KAAK,CAAC;AAC5C,oBAAc,QAAQ,gBAAgB,KAAK;AAAA,IAC7C;AAEA,UAAM,mBAAmB,MAAM;AAC7B,UAAI,MAAM;AAAU;AACpB,oBAAc,QAAQ,eAAe;AAAA,IACvC;AAEA,UAAM,cAAc,CAAC,UAAsB;AACzC,UAAI,MAAM;AAAU;AACpB,WAAK,kBAAkB,gBAAgB,KAAK,CAAC;AAC7C,qBAAe,QAAQ,gBAAgB,KAAK;AAAA,IAC9C;AAEA,aAAS,gBAAgB,OAA2B;AAClD,YAAM,WAAW,SAAS,cAAc,iBAAiB;AACzD,UAAI,CAAC;AAAU,eAAO;AACtB,YAAM,sBAAsB,OAAO,iBAAiB,UAAU,UAAU;AACxE,YAAM,QAAQ,WAAW,oBAAoB,iBAAiB,OAAO,EAAE,QAAQ,YAAY,EAAE,CAAC;AAC9F,aAAO,KAAK,KAAM,MAAM,UAAU,QAAS,MAAM,WAAW;AAAA,IAC9D;AAEF,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,OAAO,gBAAgB,YAAY;AAAA,QACvC,MAAM;AAAA,QACN,iBAAiB;AAAA,QACjB,iBAAiB,MAAM;AAAA,QACvB,iBAAiB,eAAe;AAAA,QAChC,OAAO,QAAQ;AAAA,QACf,OAAO;AAAA,MACT,GAAG,MAAM,CAAC,CAAC,SAAS;AAAA,IACtB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056343746,
+      "end": 1716056343746,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056343746,
+      "end": 1716056343746,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056343746,
+      "end": 1716056343746,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056343746,
+      "end": 1716056343746,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343746,
+      "end": 1716056343747,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343746,
+      "end": 1716056343747,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343747,
+      "end": 1716056343747,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343747,
+      "end": 1716056343747,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056343747,
+      "end": 1716056343747,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343747,
+      "end": 1716056343747,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056343747,
+      "end": 1716056343748,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nimport { computed, ref } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"NuxtRating\",\n  __ssrInlineRender: true,\n  props: {\n    ratingCount: { default: 5 },\n    ratingSize: { default: \"32px\" },\n    activeColor: { default: \"#ffc700\" },\n    inactiveColor: { default: \"#ddd\" },\n    ratingValue: { default: 3.7 },\n    ratingContent: { default: \"★\" },\n    readOnly: { type: Boolean, default: true }\n  },\n  emits: [\"ratingSelected\", \"ratingHovered\"],\n  setup(__props, { emit: __emit }) {\n    const emit = __emit;\n    const props = __props;\n    const selectedRating = ref(props.ratingValue);\n    const hoveredRating = ref(0);\n    const ratingsContent = computed(() => {\n      return Array(props.ratingCount).fill(props.ratingContent).join(\"\");\n    });\n    const cssVars = computed(() => ({\n      \"--active-color\": props.activeColor,\n      \"--cursor-type\": props.readOnly ? \"default\" : \"pointer\",\n      \"--inactive-color\": props.inactiveColor,\n      \"--rating-value\": hoveredRating.value ? hoveredRating.value : selectedRating.value,\n      \"--rating-count\": props.ratingCount,\n      \"--rating-content\": `\"${ratingsContent.value}\"`,\n      \"--rating-size\": props.ratingSize\n    }));\n    const handleMouseMove = (event) => {\n      if (props.readOnly)\n        return;\n      emit(\"ratingHovered\", calculateRating(event));\n      hoveredRating.value = calculateRating(event);\n    };\n    const handleMouseLeave = () => {\n      if (props.readOnly)\n        return;\n      hoveredRating.value = selectedRating.value;\n    };\n    const handleClick = (event) => {\n      if (props.readOnly)\n        return;\n      emit(\"ratingSelected\", calculateRating(event));\n      selectedRating.value = calculateRating(event);\n    };\n    function calculateRating(event) {\n      const ratingEl = (void 0).querySelector(\".average-rating\");\n      if (!ratingEl)\n        return 0;\n      const beforeRatingElement = (void 0).getComputedStyle(ratingEl, \"::before\");\n      const width = parseFloat(beforeRatingElement.getPropertyValue(\"width\").replace(/[^\\d.-]/g, \"\"));\n      return Math.ceil(event.offsetX / width * props.ratingCount);\n    }\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        role: \"slider\",\n        \"aria-valuemin\": 0,\n        \"aria-valuemax\": props.ratingCount,\n        \"aria-valuenow\": selectedRating.value,\n        style: cssVars.value,\n        class: \"average-rating\"\n      }, _attrs))}></div>`);\n    };\n  }\n});\n",
+      "start": 1716056343748,
+      "end": 1716056343783,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056343783,
+      "end": 1716056343783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056343784,
+      "end": 1716056343784,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056343784,
+      "end": 1716056343784,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056343784,
+      "end": 1716056343784,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056343784,
+      "end": 1716056343784,
+      "order": "normal"
+    }
+  ]
+}

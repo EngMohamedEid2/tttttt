@@ -1,0 +1,217 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/QuestionModal/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <div class=\"modal-header\">\n    <h3 class=\"fw-semibold\">{{ 'Ask a question' }}</h3>\n    <WidgetsButton :classes=\"'btn btn-close'\"  :id=\"'profile_modal_close_btn'\"\n    @onClick=\"() => {emit('close')}\">\n    <Icon name=\"ri-close-line\"></Icon>\n    </WidgetsButton>\n  </div>\n\n  <div class=\"modal-body\">\n    <form class=\"product-review-form\" >\n      <div class=\"product-wrapper\">\n        <div class=\"product-image\">\n          <img :src=\"product.product_thumbnail ?\n                product.product_thumbnail.original_url :\n                '/images/product.png'\" class=\"img-fluid\" :alt=\"product.name\">\n        </div>\n        <div class=\"product-content\">\n          <h5 class=\"name\">{{ product?.name }}</h5>\n          <div class=\"product-review-rating\">\n            <div class=\"product-rating\">\n              <h6 class=\"price-number\">{{ store.currency.symbol }} {{ Number(store.convertCurrency(product?.sale_price)).toFixed(2) }}</h6>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"review-box\">\n        <label class=\"form-label\" for=\"content\">{{ 'Your Questions' }} *</label>\n        <textarea placeholder=\"Your Questions'\" class=\"form-control\" id=\"content\" rows=\"3\" v-model=\"question\"></textarea>\n      </div>\n    </form>\n    <div class=\"modal-footer\">\n      <WidgetsButton :classes=\"'btn btn-theme-outline btn-md fw-bold'\" :type=\"'button'\"\n        :id=\"'cancel_profile_btn'\" @onClick=\"() => { emit('close'); }\">{{ 'Cancel'  }}</WidgetsButton>\n      <WidgetsButton :classes=\"'btn theme-bg-color btn-md fw-bold text-light'\"  :id=\"'submit_profile_btn'\" @onClick=\"submitQuestion\">\n        {{ 'Submit' }}\n      </WidgetsButton>\n    </div>\n   </div>\n  </div>\n</template>\n\n<script setup>\nimport { useCurrencyStore } from '@/store/currency'\nimport { useDataStore } from '~~/store/data';\nlet props = defineProps({\n    product:Object,\n    qna:Object\n})\n\nlet store = useCurrencyStore();\nstore.allCurrency();\nconst emit = defineEmits(['close']);\nlet question = ref('')\nprops.qna && setInitialValues(props.qna)\nfunction setInitialValues(values){\n  question.value = values.question\n}\nasync function submitQuestion(){\n  let userData = localStorage.getItem('usersAccount')\n  if(question.value != '' && userData){\n   if(props.qna){\n      let {data , error} = await useFetch('question-and-answer/'+props.qna.id,{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"put\",\n       key: \"UpdateQuestion\"\n    })\n   }\n   else{\n     let {data , error} = await useFetch('question-and-answer',{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"post\",\n       key: \"AskQuestion\"\n    })\n   }\n    useDataStore().GetAllQustionAnswer(props.product.id)\n  }\n}\n</script>\n\n<style lang=\"scss\" scoped>\n\n</style>",
+      "start": 1716056288347,
+      "end": 1716056288509,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056288509,
+      "end": 1716056288509,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056288509,
+      "end": 1716056288509,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056288509,
+      "end": 1716056288509,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056288509,
+      "end": 1716056288509,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056288509,
+      "end": 1716056288509,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056288509,
+      "end": 1716056288509,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056288509,
+      "end": 1716056288509,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, unref as _unref, isRef as _isRef, vModelText as _vModelText, withDirectives as _withDirectives, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"modal-header\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"h3\", { class: \"fw-semibold\" }, /*#__PURE__*/_toDisplayString('Ask a question'), -1)\nconst _hoisted_3 = { class: \"modal-body\" }\nconst _hoisted_4 = { class: \"product-review-form\" }\nconst _hoisted_5 = { class: \"product-wrapper\" }\nconst _hoisted_6 = { class: \"product-image\" }\nconst _hoisted_7 = [\"src\", \"alt\"]\nconst _hoisted_8 = { class: \"product-content\" }\nconst _hoisted_9 = { class: \"name\" }\nconst _hoisted_10 = { class: \"product-review-rating\" }\nconst _hoisted_11 = { class: \"product-rating\" }\nconst _hoisted_12 = { class: \"price-number\" }\nconst _hoisted_13 = { class: \"review-box\" }\nconst _hoisted_14 = /*#__PURE__*/_createElementVNode(\"label\", {\n  class: \"form-label\",\n  for: \"content\"\n}, /*#__PURE__*/_toDisplayString('Your Questions') + \" *\", -1)\nconst _hoisted_15 = { class: \"modal-footer\" }\n\nimport { useCurrencyStore } from '@/store/currency'\nimport { useDataStore } from '~~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    product:Object,\n    qna:Object\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\nconst emit = __emit;\nlet question = ref('')\nprops.qna && setInitialValues(props.qna)\nfunction setInitialValues(values){\n  question.value = values.question\n}\nasync function submitQuestion(){\n  let userData = localStorage.getItem('usersAccount')\n  if(question.value != '' && userData){\n   if(props.qna){\n      let {data , error} = await useFetch('question-and-answer/'+props.qna.id,{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"put\",\n       key: \"UpdateQuestion\"\n    })\n   }\n   else{\n     let {data , error} = await useFetch('question-and-answer',{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"post\",\n       key: \"AskQuestion\"\n    })\n   }\n    useDataStore().GetAllQustionAnswer(props.product.id)\n  }\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _hoisted_2,\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn btn-close',\n        id: 'profile_modal_close_btn',\n        onOnClick: _cache[0] || (_cache[0] = () => {emit('close')})\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_Icon, { name: \"ri-close-line\" })\n        ]),\n        _: 1\n      })\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createElementVNode(\"form\", _hoisted_4, [\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"img\", {\n              src: __props.product.product_thumbnail ?\n                __props.product.product_thumbnail.original_url :\n                '/images/product.png',\n              class: \"img-fluid\",\n              alt: __props.product.name\n            }, null, 8, _hoisted_7)\n          ]),\n          _createElementVNode(\"div\", _hoisted_8, [\n            _createElementVNode(\"h5\", _hoisted_9, _toDisplayString(__props.product?.name), 1),\n            _createElementVNode(\"div\", _hoisted_10, [\n              _createElementVNode(\"div\", _hoisted_11, [\n                _createElementVNode(\"h6\", _hoisted_12, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(__props.product?.sale_price)).toFixed(2)), 1)\n              ])\n            ])\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_13, [\n          _hoisted_14,\n          _withDirectives(_createElementVNode(\"textarea\", {\n            placeholder: \"Your Questions'\",\n            class: \"form-control\",\n            id: \"content\",\n            rows: \"3\",\n            \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => (_isRef(question) ? (question).value = $event : question = $event))\n          }, null, 512), [\n            [_vModelText, _unref(question)]\n          ])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_15, [\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn btn-theme-outline btn-md fw-bold',\n          type: 'button',\n          id: 'cancel_profile_btn',\n          onOnClick: _cache[2] || (_cache[2] = () => { emit('close'); })\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(_toDisplayString('Cancel'))\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn theme-bg-color btn-md fw-bold text-light',\n          id: 'submit_profile_btn',\n          onOnClick: submitQuestion\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(_toDisplayString('Submit'))\n          ]),\n          _: 1\n        })\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288509,
+      "end": 1716056288509,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056288509,
+      "end": 1716056288509,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056288510,
+      "end": 1716056288510,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, unref as _unref, isRef as _isRef, vModelText as _vModelText, withDirectives as _withDirectives, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"modal-header\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"h3\", { class: \"fw-semibold\" }, /*#__PURE__*/_toDisplayString('Ask a question'), -1)\nconst _hoisted_3 = { class: \"modal-body\" }\nconst _hoisted_4 = { class: \"product-review-form\" }\nconst _hoisted_5 = { class: \"product-wrapper\" }\nconst _hoisted_6 = { class: \"product-image\" }\nconst _hoisted_7 = [\"src\", \"alt\"]\nconst _hoisted_8 = { class: \"product-content\" }\nconst _hoisted_9 = { class: \"name\" }\nconst _hoisted_10 = { class: \"product-review-rating\" }\nconst _hoisted_11 = { class: \"product-rating\" }\nconst _hoisted_12 = { class: \"price-number\" }\nconst _hoisted_13 = { class: \"review-box\" }\nconst _hoisted_14 = /*#__PURE__*/_createElementVNode(\"label\", {\n  class: \"form-label\",\n  for: \"content\"\n}, /*#__PURE__*/_toDisplayString('Your Questions') + \" *\", -1)\nconst _hoisted_15 = { class: \"modal-footer\" }\n\nimport { useCurrencyStore } from '@/store/currency'\nimport { useDataStore } from '~~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    product:Object,\n    qna:Object\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\nconst emit = __emit;\nlet question = ref('')\nprops.qna && setInitialValues(props.qna)\nfunction setInitialValues(values){\n  question.value = values.question\n}\nasync function submitQuestion(){\n  let userData = localStorage.getItem('usersAccount')\n  if(question.value != '' && userData){\n   if(props.qna){\n      let {data , error} = await useFetch('question-and-answer/'+props.qna.id,{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"put\",\n       key: \"UpdateQuestion\"\n    }, '$xmbz3Tr6Gp')\n   }\n   else{\n     let {data , error} = await useFetch('question-and-answer',{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"post\",\n       key: \"AskQuestion\"\n    }, '$PFIxTvz7qg')\n   }\n    useDataStore().GetAllQustionAnswer(props.product.id)\n  }\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _hoisted_2,\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn btn-close',\n        id: 'profile_modal_close_btn',\n        onOnClick: _cache[0] || (_cache[0] = () => {emit('close')})\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_Icon, { name: \"ri-close-line\" })\n        ]),\n        _: 1\n      })\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createElementVNode(\"form\", _hoisted_4, [\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"img\", {\n              src: __props.product.product_thumbnail ?\n                __props.product.product_thumbnail.original_url :\n                '/images/product.png',\n              class: \"img-fluid\",\n              alt: __props.product.name\n            }, null, 8, _hoisted_7)\n          ]),\n          _createElementVNode(\"div\", _hoisted_8, [\n            _createElementVNode(\"h5\", _hoisted_9, _toDisplayString(__props.product?.name), 1),\n            _createElementVNode(\"div\", _hoisted_10, [\n              _createElementVNode(\"div\", _hoisted_11, [\n                _createElementVNode(\"h6\", _hoisted_12, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(__props.product?.sale_price)).toFixed(2)), 1)\n              ])\n            ])\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_13, [\n          _hoisted_14,\n          _withDirectives(_createElementVNode(\"textarea\", {\n            placeholder: \"Your Questions'\",\n            class: \"form-control\",\n            id: \"content\",\n            rows: \"3\",\n            \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => (_isRef(question) ? (question).value = $event : question = $event))\n          }, null, 512), [\n            [_vModelText, _unref(question)]\n          ])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_15, [\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn btn-theme-outline btn-md fw-bold',\n          type: 'button',\n          id: 'cancel_profile_btn',\n          onOnClick: _cache[2] || (_cache[2] = () => { emit('close'); })\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(_toDisplayString('Cancel'))\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn theme-bg-color btn-md fw-bold text-light',\n          id: 'submit_profile_btn',\n          onOnClick: submitQuestion\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(_toDisplayString('Submit'))\n          ]),\n          _: 1\n        })\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288510,
+      "end": 1716056288513,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, unref as _unref, isRef as _isRef, vModelText as _vModelText, withDirectives as _withDirectives, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"modal-header\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"h3\", { class: \"fw-semibold\" }, /*#__PURE__*/_toDisplayString('Ask a question'), -1)\nconst _hoisted_3 = { class: \"modal-body\" }\nconst _hoisted_4 = { class: \"product-review-form\" }\nconst _hoisted_5 = { class: \"product-wrapper\" }\nconst _hoisted_6 = { class: \"product-image\" }\nconst _hoisted_7 = [\"src\", \"alt\"]\nconst _hoisted_8 = { class: \"product-content\" }\nconst _hoisted_9 = { class: \"name\" }\nconst _hoisted_10 = { class: \"product-review-rating\" }\nconst _hoisted_11 = { class: \"product-rating\" }\nconst _hoisted_12 = { class: \"price-number\" }\nconst _hoisted_13 = { class: \"review-box\" }\nconst _hoisted_14 = /*#__PURE__*/_createElementVNode(\"label\", {\n  class: \"form-label\",\n  for: \"content\"\n}, /*#__PURE__*/_toDisplayString('Your Questions') + \" *\", -1)\nconst _hoisted_15 = { class: \"modal-footer\" }\n\nimport { useCurrencyStore } from '@/store/currency'\nimport { useDataStore } from '~~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    product:Object,\n    qna:Object\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\nconst emit = __emit;\nlet question = ref('')\nprops.qna && setInitialValues(props.qna)\nfunction setInitialValues(values){\n  question.value = values.question\n}\nasync function submitQuestion(){\n  let userData = localStorage.getItem('usersAccount')\n  if(question.value != '' && userData){\n   if(props.qna){\n      let {data , error} = await useFetch('question-and-answer/'+props.qna.id,{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"put\",\n       key: \"UpdateQuestion\"\n    }, '$xmbz3Tr6Gp')\n   }\n   else{\n     let {data , error} = await useFetch('question-and-answer',{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"post\",\n       key: \"AskQuestion\"\n    }, '$PFIxTvz7qg')\n   }\n    useDataStore().GetAllQustionAnswer(props.product.id)\n  }\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _hoisted_2,\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn btn-close',\n        id: 'profile_modal_close_btn',\n        onOnClick: _cache[0] || (_cache[0] = () => {emit('close')})\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_Icon, { name: \"ri-close-line\" })\n        ]),\n        _: 1\n      })\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createElementVNode(\"form\", _hoisted_4, [\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"img\", {\n              src: __props.product.product_thumbnail ?\n                __props.product.product_thumbnail.original_url :\n                '/images/product.png',\n              class: \"img-fluid\",\n              alt: __props.product.name\n            }, null, 8, _hoisted_7)\n          ]),\n          _createElementVNode(\"div\", _hoisted_8, [\n            _createElementVNode(\"h5\", _hoisted_9, _toDisplayString(__props.product?.name), 1),\n            _createElementVNode(\"div\", _hoisted_10, [\n              _createElementVNode(\"div\", _hoisted_11, [\n                _createElementVNode(\"h6\", _hoisted_12, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(__props.product?.sale_price)).toFixed(2)), 1)\n              ])\n            ])\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_13, [\n          _hoisted_14,\n          _withDirectives(_createElementVNode(\"textarea\", {\n            placeholder: \"Your Questions'\",\n            class: \"form-control\",\n            id: \"content\",\n            rows: \"3\",\n            \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => (_isRef(question) ? (question).value = $event : question = $event))\n          }, null, 512), [\n            [_vModelText, _unref(question)]\n          ])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_15, [\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn btn-theme-outline btn-md fw-bold',\n          type: 'button',\n          id: 'cancel_profile_btn',\n          onOnClick: _cache[2] || (_cache[2] = () => { emit('close'); })\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(_toDisplayString('Cancel'))\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn theme-bg-color btn-md fw-bold text-light',\n          id: 'submit_profile_btn',\n          onOnClick: submitQuestion\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(_toDisplayString('Submit'))\n          ]),\n          _: 1\n        })\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288513,
+      "end": 1716056288520,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056288520,
+      "end": 1716056288521,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056288521,
+      "end": 1716056288521,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056288521,
+      "end": 1716056288521,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056288521,
+      "end": 1716056288521,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { ref } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, unref as _unref, isRef as _isRef, vModelText as _vModelText, withDirectives as _withDirectives, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"modal-header\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"h3\", { class: \"fw-semibold\" }, /*#__PURE__*/_toDisplayString('Ask a question'), -1)\nconst _hoisted_3 = { class: \"modal-body\" }\nconst _hoisted_4 = { class: \"product-review-form\" }\nconst _hoisted_5 = { class: \"product-wrapper\" }\nconst _hoisted_6 = { class: \"product-image\" }\nconst _hoisted_7 = [\"src\", \"alt\"]\nconst _hoisted_8 = { class: \"product-content\" }\nconst _hoisted_9 = { class: \"name\" }\nconst _hoisted_10 = { class: \"product-review-rating\" }\nconst _hoisted_11 = { class: \"product-rating\" }\nconst _hoisted_12 = { class: \"price-number\" }\nconst _hoisted_13 = { class: \"review-box\" }\nconst _hoisted_14 = /*#__PURE__*/_createElementVNode(\"label\", {\n  class: \"form-label\",\n  for: \"content\"\n}, /*#__PURE__*/_toDisplayString('Your Questions') + \" *\", -1)\nconst _hoisted_15 = { class: \"modal-footer\" }\n\nimport { useCurrencyStore } from '@/store/currency'\nimport { useDataStore } from '~~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    product:Object,\n    qna:Object\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\nconst emit = __emit;\nlet question = ref('')\nprops.qna && setInitialValues(props.qna)\nfunction setInitialValues(values){\n  question.value = values.question\n}\nasync function submitQuestion(){\n  let userData = localStorage.getItem('usersAccount')\n  if(question.value != '' && userData){\n   if(props.qna){\n      let {data , error} = await useFetch('question-and-answer/'+props.qna.id,{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"put\",\n       key: \"UpdateQuestion\"\n    }, '$xmbz3Tr6Gp')\n   }\n   else{\n     let {data , error} = await useFetch('question-and-answer',{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"post\",\n       key: \"AskQuestion\"\n    }, '$PFIxTvz7qg')\n   }\n    useDataStore().GetAllQustionAnswer(props.product.id)\n  }\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_WidgetsButton = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _hoisted_2,\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn btn-close',\n        id: 'profile_modal_close_btn',\n        onOnClick: _cache[0] || (_cache[0] = () => {emit('close')})\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_Icon, { name: \"ri-close-line\" })\n        ]),\n        _: 1\n      })\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createElementVNode(\"form\", _hoisted_4, [\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"img\", {\n              src: __props.product.product_thumbnail ?\n                __props.product.product_thumbnail.original_url :\n                '/images/product.png',\n              class: \"img-fluid\",\n              alt: __props.product.name\n            }, null, 8, _hoisted_7)\n          ]),\n          _createElementVNode(\"div\", _hoisted_8, [\n            _createElementVNode(\"h5\", _hoisted_9, _toDisplayString(__props.product?.name), 1),\n            _createElementVNode(\"div\", _hoisted_10, [\n              _createElementVNode(\"div\", _hoisted_11, [\n                _createElementVNode(\"h6\", _hoisted_12, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(__props.product?.sale_price)).toFixed(2)), 1)\n              ])\n            ])\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_13, [\n          _hoisted_14,\n          _withDirectives(_createElementVNode(\"textarea\", {\n            placeholder: \"Your Questions'\",\n            class: \"form-control\",\n            id: \"content\",\n            rows: \"3\",\n            \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => (_isRef(question) ? (question).value = $event : question = $event))\n          }, null, 512), [\n            [_vModelText, _unref(question)]\n          ])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_15, [\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn btn-theme-outline btn-md fw-bold',\n          type: 'button',\n          id: 'cancel_profile_btn',\n          onOnClick: _cache[2] || (_cache[2] = () => { emit('close'); })\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(_toDisplayString('Cancel'))\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn theme-bg-color btn-md fw-bold text-light',\n          id: 'submit_profile_btn',\n          onOnClick: submitQuestion\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(_toDisplayString('Submit'))\n          ]),\n          _: 1\n        })\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288521,
+      "end": 1716056288522,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056288522,
+      "end": 1716056288522,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056288522,
+      "end": 1716056288522,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056288522,
+      "end": 1716056288522,
+      "order": "normal"
+    }
+  ]
+}

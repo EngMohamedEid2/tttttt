@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-rating/dist/runtime/components/NuxtRating.vue?nuxt_component=async&nuxt_component_name=NuxtRating",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div\n    role=\"slider\"\n    :aria-valuemin=\"0\"\n    :aria-valuemax=\"props.ratingCount\"\n    :aria-valuenow=\"selectedRating\"\n    :style=\"cssVars\"\n    class=\"average-rating\"\n    @mousemove=\"handleMouseMove\"\n    @mouseleave=\"handleMouseLeave\"\n    @click=\"handleClick\"></div>\n</template>\n\n<script lang=\"ts\" setup>\n  import { computed, ref } from 'vue'\n\n  // import type { Props } from '../types' #Regression due to https://github.com/nuxt/nuxt/issues/20936\n\n  type Props = {\n    ratingCount?: number\n    ratingSize?: string\n    activeColor?: string\n    inactiveColor?: string\n    ratingValue?: number\n    ratingContent?: string\n    readOnly?: boolean\n  }\n\n  const emit = defineEmits<{\n    ratingSelected: [rate: number]\n    ratingHovered: [event: number]\n  }>()\n\n  const props = withDefaults(defineProps<Props>(), {\n    ratingCount: 5,\n    ratingSize: '32px',\n    activeColor: '#ffc700',\n    inactiveColor: '#ddd',\n    ratingValue: 3.7,\n    ratingContent: '★',\n    readOnly: true,\n  })\n\n  const selectedRating = ref(props.ratingValue)\n  const hoveredRating = ref(0)\n\n  const ratingsContent = computed(() => {\n    return Array(props.ratingCount).fill(props.ratingContent).join('')\n  })\n\n  const cssVars = computed(() => ({\n    '--active-color': props.activeColor,\n    '--cursor-type': props.readOnly ? 'default' : 'pointer',\n    '--inactive-color': props.inactiveColor,\n    '--rating-value': hoveredRating.value ? hoveredRating.value : selectedRating.value,\n    '--rating-count': props.ratingCount,\n    '--rating-content': `\"${ratingsContent.value}\"`,\n    '--rating-size': props.ratingSize,\n  }))\n\n  const handleMouseMove = (event: MouseEvent) => {\n    if (props.readOnly) return\n    emit('ratingHovered', calculateRating(event))\n    hoveredRating.value = calculateRating(event)\n  }\n\n  const handleMouseLeave = () => {\n    if (props.readOnly) return\n    hoveredRating.value = selectedRating.value\n  }\n\n  const handleClick = (event: MouseEvent) => {\n    if (props.readOnly) return\n    emit('ratingSelected', calculateRating(event))\n    selectedRating.value = calculateRating(event)\n  }\n\n  function calculateRating(event: MouseEvent): number {\n    const ratingEl = document.querySelector('.average-rating')\n    if (!ratingEl) return 0\n    const beforeRatingElement = window.getComputedStyle(ratingEl, '::before')\n    const width = parseFloat(beforeRatingElement.getPropertyValue('width').replace(/[^\\d.-]/g, ''))\n    return Math.ceil((event.offsetX / width) * props.ratingCount)\n  }\n</script>\n\n<style>\n.average-rating {\n  height: var(--rating-size);\n  font-size: var(--rating-size);\n  cursor: var(--cursor-type);\n  white-space: nowrap;\n  display: flex;\n  align-items: center;\n}\n\n.average-rating::before {\n  --percent: calc(var(--rating-value) / var(--rating-count) * 100%);\n  content: var(--rating-content) !important;\n  position: absolute;\n  background: linear-gradient(90deg, var(--active-color) var(--percent), var(--inactive-color) var(--percent));\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n</style>\n",
+      "start": 1716056285362,
+      "end": 1716056285544,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285544,
+      "end": 1716056285544,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285544,
+      "end": 1716056285544,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285544,
+      "end": 1716056285544,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285544,
+      "end": 1716056285544,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285544,
+      "end": 1716056285545,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285545,
+      "end": 1716056285545,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285545,
+      "end": 1716056285545,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-rating/dist/runtime/components/NuxtRating.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-rating/dist/runtime/components/NuxtRating.vue?vue&type=script&setup=true&lang.ts\";\nimport \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-rating/dist/runtime/components/NuxtRating.vue?vue&type=style&index=0&lang.css\";\nexport default _sfc_main;\n",
+      "start": 1716056285545,
+      "end": 1716056285577,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285577,
+      "end": 1716056285577,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285577,
+      "end": 1716056285577,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285577,
+      "end": 1716056285577,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285577,
+      "end": 1716056285577,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-rating/dist/runtime/components/NuxtRating.vue\").then(r => r.default))",
+      "start": 1716056285577,
+      "end": 1716056285578,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-rating/dist/runtime/components/NuxtRating.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285578,
+      "end": 1716056285578,
+      "order": "normal"
+    }
+  ]
+}

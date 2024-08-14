@@ -1,0 +1,256 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/filter/Category.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <ul class=\"category-list custom-padding custom-height\">\n    <li v-for=\"(category, index) of Categories\" :key=\"index\">\n      <div class=\"form-check ps-0 m-0 category-list-box\">\n        <input\n          class=\"checkbox_animated\"\n          type=\"checkbox\"\n          :id=\"category.name\"\n          :value=\"category.id\"\n          v-model=\"store.filterObject.selectedCategories\"\n        />\n        <label class=\"form-check-label\" :for=\"category.name\">\n          <span class=\"name\">{{ category.name }}</span>\n        </label>\n      </div>\n    </li>\n  </ul>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useCollectionStore } from \"~/store/collection\";\n\nlet store = useCollectionStore();\n\nlet { filter, categories, selectedCategories } = storeToRefs(\n  useCollectionStore()\n);\n\nlet { Categories } = storeToRefs(useDataStore());\n// const { fetchProducts } = useDataStore();\n\n// categories.value = Categories?.value?.data?.filter(\n//   (category) => category.type === \"product\"\n// );\n\n// console.log(selectedCategory, selectedCategoryProducts);\n\n// console.log(Categories);\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056341578,
+      "end": 1716056341744,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341744,
+      "end": 1716056341744,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341744,
+      "end": 1716056341744,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341744,
+      "end": 1716056341744,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341744,
+      "end": 1716056341745,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056341745,
+      "end": 1716056341745,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056341745,
+      "end": 1716056341745,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056341745,
+      "end": 1716056341745,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056341745,
+      "end": 1716056341745,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056341745,
+      "end": 1716056341745,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056341745,
+      "end": 1716056341745,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrLooseContain as _ssrLooseContain, ssrIncludeBooleanAttr as _ssrIncludeBooleanAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useCollectionStore } from \"~/store/collection\";\n\n\nconst _sfc_main = {\n  __name: 'Category',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet store = useCollectionStore();\n\nlet { filter, categories, selectedCategories } = storeToRefs(\n  useCollectionStore()\n);\n\nlet { Categories } = storeToRefs(useDataStore());\n// const { fetchProducts } = useDataStore();\n\n// categories.value = Categories?.value?.data?.filter(\n//   (category) => category.type === \"product\"\n// );\n\n// console.log(selectedCategory, selectedCategoryProducts);\n\n// console.log(Categories);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<ul${_ssrRenderAttrs(_mergeProps({ class: \"category-list custom-padding custom-height\" }, _attrs))}><!--[-->`)\n  _ssrRenderList(_unref(Categories), (category, index) => {\n    _push(`<li><div class=\"form-check ps-0 m-0 category-list-box\"><input class=\"checkbox_animated\" type=\"checkbox\"${\n      _ssrRenderAttr(\"id\", category.name)\n    }${\n      _ssrRenderAttr(\"value\", category.id)\n    }${\n      (_ssrIncludeBooleanAttr((Array.isArray(_unref(store).filterObject.selectedCategories))\n        ? _ssrLooseContain(_unref(store).filterObject.selectedCategories, category.id)\n        : _unref(store).filterObject.selectedCategories)) ? \" checked\" : \"\"\n    }><label class=\"form-check-label\"${\n      _ssrRenderAttr(\"for\", category.name)\n    }><span class=\"name\">${\n      _ssrInterpolate(category.name)\n    }</span></label></div></li>`)\n  })\n  _push(`<!--]--></ul>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Collection/widgets/filter/Category.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341745,
+      "end": 1716056341745,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056341745,
+      "end": 1716056341745,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056341746,
+      "end": 1716056341746,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341747,
+      "end": 1716056341747,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341747,
+      "end": 1716056341747,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056341747,
+      "end": 1716056341748,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056341747,
+      "end": 1716056341748,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341748,
+      "end": 1716056341748,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341748,
+      "end": 1716056341748,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341748,
+      "end": 1716056341748,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341748,
+      "end": 1716056341748,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056341748,
+      "end": 1716056341748,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056341748,
+      "end": 1716056341748,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056341748,
+      "end": 1716056341748,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056341748,
+      "end": 1716056341748,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056341748,
+      "end": 1716056341748,
+      "order": "normal"
+    }
+  ]
+}

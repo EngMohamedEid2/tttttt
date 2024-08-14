@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Paris/RightContent.vue?nuxt_component=async&nuxt_component_name=ThemesParisRightContent",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div\n    :class=\"\n      data?.content?.main_content?.sidebar?.status\n        ? 'col-xxl-9 col-xl-8'\n        : 'col-xxl-12 col-xl-12'\n    \"\n  >\n    <!-- Top Save Today Section Start -->\n    <div\n      v-if=\"\n        (data?.content?.main_content?.section1_products?.status &&\n          data?.content?.main_content?.section1_products?.product_ids\n            ?.length) ||\n        0 >= 5\n      \"\n    >\n      <WidgetsTitle\n        :title=\"data?.content?.main_content?.section1_products?.title\"\n        :description=\"\n          data?.content?.main_content?.section1_products?.description\n        \"\n      />\n      <div class=\"section-b-space\">\n        <ThemesWidgetsProduct\n          :Products=\"Products\"\n          :productIds=\"\n            data?.content?.main_content?.section1_products?.product_ids || []\n          \"\n          :slider=\"true\"\n          :style=\"'horizontal'\"\n        />\n      </div>\n    </div>\n    <!-- Top Save Today Section End -->\n    <!-- Categories Section Start -->\n    <div>\n      <WidgetsTitle\n        :title=\"data?.content?.main_content?.section2_categories_list?.title\"\n        :description=\"\n          data?.content?.main_content?.section2_categories_list?.description\n        \"\n      />\n\n      <ThemesWidgetsCategories\n        :style=\"'horizontal'\"\n        :Category=\"Category\"\n        :categoryIds=\"\n          data?.content?.main_content?.section2_categories_list?.category_ids ||\n          []\n        \"\n        :image=\"\n          data?.content?.main_content?.section2_categories_list?.image_url\n        \"\n        :theme=\"'paris'\"\n      />\n    </div>\n    <!-- Categories Section End -->\n    <!-- Two Column Banner Section Start -->\n    <div\n      v-if=\"data?.content?.main_content?.section3_two_column_banners?.status\"\n    >\n      <div class=\"section-t-space section-b-space\">\n        <div class=\"row g-md-4 g-3\">\n          <div class=\"col-md-6\">\n            <div class=\"banner-contain hover-effect\">\n              <WidgetsImageLink\n                :image=\"\n                  data?.content?.main_content?.section3_two_column_banners\n                    ?.banner_1\n                \"\n                :bgImage=\"false\"\n              />\n            </div>\n          </div>\n          <div class=\"col-md-6\">\n            <div class=\"banner-contain hover-effect\">\n              <WidgetsImageLink\n                :image=\"\n                  data?.content?.main_content?.section3_two_column_banners\n                    ?.banner_2\n                \"\n                :bgImage=\"false\"\n              />\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <!-- Two Column Banner Section End -->\n    <!-- Section Start -->\n    <div\n      v-if=\"\n        (data?.content?.main_content?.section4_products?.status &&\n          data?.content?.main_content?.section4_products?.product_ids\n            ?.length) ||\n        0 >= 5\n      \"\n    >\n      <WidgetsTitle\n        :title=\"data?.content?.main_content?.section4_products?.title\"\n        :description=\"\n          data?.content?.main_content?.section4_products?.description\n        \"\n      />\n      <div class=\"section-b-space\">\n        <ThemesWidgetsProduct\n          :Products=\"Products\"\n          :productIds=\"\n            data?.content?.main_content?.section4_products?.product_ids || []\n          \"\n          :slider=\"true\"\n          :style=\"'horizontal'\"\n        />\n      </div>\n    </div>\n    <!-- Section End -->\n    <!-- Coupons Banner Section Start -->\n    <div\n      class=\"section-b-space ratio_12\"\n      v-if=\"data?.content?.main_content?.section5_coupons?.status\"\n    >\n      <ThemesWidgetsBanner\n        :saleclass=\"'sale-banner'\"\n        :banners=\"data?.content?.main_content?.section5_coupons\"\n        :style=\"'full_width'\"\n      />\n    </div>\n    <!-- Coupons Banner Section End -->\n    <!-- Two Column Banner Section Start -->\n    <div\n      v-if=\"data?.content?.main_content?.section6_two_column_banners?.status\"\n    >\n      <div\n        class=\"section-b-space\"\n        v-if=\"data?.content?.main_content?.section6_two_column_banners?.status\"\n      >\n        <div class=\"row g-md-4 g-3\">\n          <div class=\"col-xxl-8 col-xl-12 col-md-7\">\n            <div class=\"banner-contain hover-effect h-100\">\n              <WidgetsImageLink\n                :image=\"\n                  data?.content?.main_content?.section6_two_column_banners\n                    ?.banner_1\n                \"\n                :bgImage=\"false\"\n              />\n            </div>\n          </div>\n          <div class=\"col-xxl-4 col-xl-12 col-md-5\">\n            <div class=\"banner-contain hover-effect\">\n              <WidgetsImageLink\n                :image=\"\n                  data?.content?.main_content?.section6_two_column_banners\n                    ?.banner_2\n                \"\n                :bgImage=\"false\"\n              />\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <!-- Two Column Banner Section End -->\n    <!-- Our Best Seller Section Start -->\n    <div\n      v-if=\"\n        (data?.content?.main_content?.section4_products?.status &&\n          data?.content?.main_content?.section7_products?.product_ids\n            ?.length) ||\n        0 >= 3\n      \"\n    >\n      <WidgetsTitle\n        :title=\"data?.content?.main_content?.section7_products?.title\"\n        :description=\"\n          data?.content?.main_content?.section7_products?.description\n        \"\n      />\n      <ThemesWidgetsProduct\n        :Products=\"Products\"\n        :productIds=\"\n          data?.content?.main_content?.section7_products?.product_ids || []\n        \"\n        :style=\"'classic'\"\n      />\n    </div>\n    <!-- Our Best Seller Section End -->\n    <!-- Full Width Banner Section Start -->\n    <div v-if=\"data?.content?.main_content?.section8_full_width_banner?.status\">\n      <div class=\"section-b-space section-t-space\">\n        <div class=\"banner-contain hover-effect\">\n          <WidgetsImageLink\n            :image=\"data?.content?.main_content?.section8_full_width_banner\"\n            :bgImage=\"false\"\n          />\n        </div>\n      </div>\n    </div>\n    <!-- Full Width Banner Section End -->\n    <!-- Blogs Section Start -->\n    <div\n      v-if=\"\n        (data?.content?.main_content?.section9_featured_blogs?.status &&\n          data?.content?.main_content?.section9_featured_blogs?.blog_ids\n            ?.length) ||\n        0 >= 3\n      \"\n    >\n      <WidgetsTitle\n        :title=\"data?.content?.main_content?.section9_featured_blogs?.title\"\n        :description=\"\n          data?.content?.main_content?.section9_featured_blogs?.description\n        \"\n      />\n      <ThemesWidgetsBlog\n        :Blogs=\"Blogs\"\n        :blogIds=\"\n          data?.content?.main_content?.section9_featured_blogs?.blog_ids || []\n        \"\n        :slidesPerView=\"3\"\n      />\n    </div>\n    <!-- Blogs Section End -->\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  data: Object,\n  Products: Object,\n  Blogs: Object,\n  Category: Array,\n});\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056284841,
+      "end": 1716056284935,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284935,
+      "end": 1716056284935,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284935,
+      "end": 1716056284935,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284935,
+      "end": 1716056284935,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284935,
+      "end": 1716056284935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284935,
+      "end": 1716056284935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284935,
+      "end": 1716056284935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284935,
+      "end": 1716056284935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = { key: 0 }\nconst _hoisted_2 = { class: \"section-b-space\" }\nconst _hoisted_3 = { key: 1 }\nconst _hoisted_4 = { class: \"section-t-space section-b-space\" }\nconst _hoisted_5 = { class: \"row g-md-4 g-3\" }\nconst _hoisted_6 = { class: \"col-md-6\" }\nconst _hoisted_7 = { class: \"banner-contain hover-effect\" }\nconst _hoisted_8 = { class: \"col-md-6\" }\nconst _hoisted_9 = { class: \"banner-contain hover-effect\" }\nconst _hoisted_10 = { key: 2 }\nconst _hoisted_11 = { class: \"section-b-space\" }\nconst _hoisted_12 = {\n  key: 3,\n  class: \"section-b-space ratio_12\"\n}\nconst _hoisted_13 = { key: 4 }\nconst _hoisted_14 = {\n  key: 0,\n  class: \"section-b-space\"\n}\nconst _hoisted_15 = { class: \"row g-md-4 g-3\" }\nconst _hoisted_16 = { class: \"col-xxl-8 col-xl-12 col-md-7\" }\nconst _hoisted_17 = { class: \"banner-contain hover-effect h-100\" }\nconst _hoisted_18 = { class: \"col-xxl-4 col-xl-12 col-md-5\" }\nconst _hoisted_19 = { class: \"banner-contain hover-effect\" }\nconst _hoisted_20 = { key: 5 }\nconst _hoisted_21 = { key: 6 }\nconst _hoisted_22 = { class: \"section-b-space section-t-space\" }\nconst _hoisted_23 = { class: \"banner-contain hover-effect\" }\nconst _hoisted_24 = { key: 7 }\n\n\nconst _sfc_main = {\n  __name: 'RightContent',\n  props: {\n  data: Object,\n  Products: Object,\n  Blogs: Object,\n  Category: Array,\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsTitle = _resolveComponent(\"WidgetsTitle\")\n  const _component_ThemesWidgetsProduct = _resolveComponent(\"ThemesWidgetsProduct\")\n  const _component_ThemesWidgetsCategories = _resolveComponent(\"ThemesWidgetsCategories\")\n  const _component_WidgetsImageLink = _resolveComponent(\"WidgetsImageLink\")\n  const _component_ThemesWidgetsBanner = _resolveComponent(\"ThemesWidgetsBanner\")\n  const _component_ThemesWidgetsBlog = _resolveComponent(\"ThemesWidgetsBlog\")\n\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass(\n      __props.data?.content?.main_content?.sidebar?.status\n        ? 'col-xxl-9 col-xl-8'\n        : 'col-xxl-12 col-xl-12'\n    )\n  }, [\n    (\n        (__props.data?.content?.main_content?.section1_products?.status &&\n          __props.data?.content?.main_content?.section1_products?.product_ids\n            ?.length) ||\n        0 >= 5\n      )\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n          _createVNode(_component_WidgetsTitle, {\n            title: __props.data?.content?.main_content?.section1_products?.title,\n            description: \n          __props.data?.content?.main_content?.section1_products?.description\n        \n          }, null, 8, [\"title\", \"description\"]),\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: __props.Products,\n              productIds: \n            __props.data?.content?.main_content?.section1_products?.product_ids || []\n          ,\n              slider: true,\n              style: 'horizontal'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", null, [\n      _createVNode(_component_WidgetsTitle, {\n        title: __props.data?.content?.main_content?.section2_categories_list?.title,\n        description: \n          __props.data?.content?.main_content?.section2_categories_list?.description\n        \n      }, null, 8, [\"title\", \"description\"]),\n      _createVNode(_component_ThemesWidgetsCategories, {\n        style: 'horizontal',\n        Category: __props.Category,\n        categoryIds: \n          __props.data?.content?.main_content?.section2_categories_list?.category_ids ||\n          []\n        ,\n        image: \n          __props.data?.content?.main_content?.section2_categories_list?.image_url\n        ,\n        theme: 'paris'\n      }, null, 8, [\"Category\", \"categoryIds\", \"image\"])\n    ]),\n    (__props.data?.content?.main_content?.section3_two_column_banners?.status)\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"div\", _hoisted_5, [\n              _createElementVNode(\"div\", _hoisted_6, [\n                _createElementVNode(\"div\", _hoisted_7, [\n                  _createVNode(_component_WidgetsImageLink, {\n                    image: \n                  __props.data?.content?.main_content?.section3_two_column_banners\n                    ?.banner_1\n                ,\n                    bgImage: false\n                  }, null, 8, [\"image\"])\n                ])\n              ]),\n              _createElementVNode(\"div\", _hoisted_8, [\n                _createElementVNode(\"div\", _hoisted_9, [\n                  _createVNode(_component_WidgetsImageLink, {\n                    image: \n                  __props.data?.content?.main_content?.section3_two_column_banners\n                    ?.banner_2\n                ,\n                    bgImage: false\n                  }, null, 8, [\"image\"])\n                ])\n              ])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (\n        (__props.data?.content?.main_content?.section4_products?.status &&\n          __props.data?.content?.main_content?.section4_products?.product_ids\n            ?.length) ||\n        0 >= 5\n      )\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_10, [\n          _createVNode(_component_WidgetsTitle, {\n            title: __props.data?.content?.main_content?.section4_products?.title,\n            description: \n          __props.data?.content?.main_content?.section4_products?.description\n        \n          }, null, 8, [\"title\", \"description\"]),\n          _createElementVNode(\"div\", _hoisted_11, [\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: __props.Products,\n              productIds: \n            __props.data?.content?.main_content?.section4_products?.product_ids || []\n          ,\n              slider: true,\n              style: 'horizontal'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (__props.data?.content?.main_content?.section5_coupons?.status)\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_12, [\n          _createVNode(_component_ThemesWidgetsBanner, {\n            saleclass: 'sale-banner',\n            banners: __props.data?.content?.main_content?.section5_coupons,\n            style: 'full_width'\n          }, null, 8, [\"banners\"])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (__props.data?.content?.main_content?.section6_two_column_banners?.status)\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_13, [\n          (__props.data?.content?.main_content?.section6_two_column_banners?.status)\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_14, [\n                _createElementVNode(\"div\", _hoisted_15, [\n                  _createElementVNode(\"div\", _hoisted_16, [\n                    _createElementVNode(\"div\", _hoisted_17, [\n                      _createVNode(_component_WidgetsImageLink, {\n                        image: \n                  __props.data?.content?.main_content?.section6_two_column_banners\n                    ?.banner_1\n                ,\n                        bgImage: false\n                      }, null, 8, [\"image\"])\n                    ])\n                  ]),\n                  _createElementVNode(\"div\", _hoisted_18, [\n                    _createElementVNode(\"div\", _hoisted_19, [\n                      _createVNode(_component_WidgetsImageLink, {\n                        image: \n                  __props.data?.content?.main_content?.section6_two_column_banners\n                    ?.banner_2\n                ,\n                        bgImage: false\n                      }, null, 8, [\"image\"])\n                    ])\n                  ])\n                ])\n              ]))\n            : _createCommentVNode(\"\", true)\n        ]))\n      : _createCommentVNode(\"\", true),\n    (\n        (__props.data?.content?.main_content?.section4_products?.status &&\n          __props.data?.content?.main_content?.section7_products?.product_ids\n            ?.length) ||\n        0 >= 3\n      )\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_20, [\n          _createVNode(_component_WidgetsTitle, {\n            title: __props.data?.content?.main_content?.section7_products?.title,\n            description: \n          __props.data?.content?.main_content?.section7_products?.description\n        \n          }, null, 8, [\"title\", \"description\"]),\n          _createVNode(_component_ThemesWidgetsProduct, {\n            Products: __props.Products,\n            productIds: \n          __props.data?.content?.main_content?.section7_products?.product_ids || []\n        ,\n            style: 'classic'\n          }, null, 8, [\"Products\", \"productIds\"])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (__props.data?.content?.main_content?.section8_full_width_banner?.status)\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_21, [\n          _createElementVNode(\"div\", _hoisted_22, [\n            _createElementVNode(\"div\", _hoisted_23, [\n              _createVNode(_component_WidgetsImageLink, {\n                image: __props.data?.content?.main_content?.section8_full_width_banner,\n                bgImage: false\n              }, null, 8, [\"image\"])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (\n        (__props.data?.content?.main_content?.section9_featured_blogs?.status &&\n          __props.data?.content?.main_content?.section9_featured_blogs?.blog_ids\n            ?.length) ||\n        0 >= 3\n      )\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_24, [\n          _createVNode(_component_WidgetsTitle, {\n            title: __props.data?.content?.main_content?.section9_featured_blogs?.title,\n            description: \n          __props.data?.content?.main_content?.section9_featured_blogs?.description\n        \n          }, null, 8, [\"title\", \"description\"]),\n          _createVNode(_component_ThemesWidgetsBlog, {\n            Blogs: __props.Blogs,\n            blogIds: \n          __props.data?.content?.main_content?.section9_featured_blogs?.blog_ids || []\n        ,\n            slidesPerView: 3\n          }, null, 8, [\"Blogs\", \"blogIds\"])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ], 2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284935,
+      "end": 1716056284941,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284941,
+      "end": 1716056284941,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284941,
+      "end": 1716056284941,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284941,
+      "end": 1716056284941,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284941,
+      "end": 1716056284941,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Paris/RightContent.vue\").then(r => r.default))",
+      "start": 1716056284941,
+      "end": 1716056284941,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284941,
+      "end": 1716056284941,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284941,
+      "end": 1716056284941,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284941,
+      "end": 1716056284941,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284941,
+      "end": 1716056284941,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Paris/RightContent.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284942,
+      "end": 1716056284942,
+      "order": "normal"
+    }
+  ]
+}

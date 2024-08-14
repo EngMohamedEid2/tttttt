@@ -1,0 +1,214 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Compare/Skeloton.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"compare-part\">\n        <div class=\"img-section\">\n            <div>\n                <div class=\"compare-img\"></div>\n            </div>\n            <a href=\"javascript:void(0)\" tabindex=\"0\">\n                <h5 class=\"placeholder col-6\"></h5>\n            </a>\n        </div>\n        <div class=\"detail-part\">\n            <div class=\"title-detail\">\n                <h5 class=\"placeholder col-3\"></h5>\n            </div>\n            <div class=\"inner-detail\">\n                <p class=\"placeholder col-1\"></p>\n            </div>\n        </div>\n        <div class=\"detail-part\">\n            <div class=\"title-detail\">\n                <h5 class=\"placeholder col-1\"></h5>\n            </div>\n            <div class=\"inner-detail\">\n                <p class=\"placeholder col-2\"></p>\n            </div>\n        </div>\n        <div class=\"detail-part\">\n            <div class=\"title-detail\">\n                <h5 class=\"placeholder col-4\"></h5>\n            </div>\n            <div class=\"inner-detail\">\n                <p class=\"placeholder col-3\"></p>\n            </div>\n        </div>\n        <div class=\"detail-part\">\n            <div class=\"title-detail\">\n                <h5 class=\"placeholder col-1\"></h5>\n            </div>\n            <div class=\"inner-detail\">\n                <div class=\"compare-rating\">\n                    <span class=\"placeholder col-4\"></span>\n                </div>\n            </div>\n        </div>\n        <div class=\"detail-part\">\n            <div class=\"title-detail\">\n                <h5 class=\"placeholder col-1\"></h5>\n            </div>\n            <div class=\"inner-detail\">\n                <p class=\"placeholder col-3\"></p>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup></script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056287502,
+      "end": 1716056287660,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287660,
+      "end": 1716056287660,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287660,
+      "end": 1716056287660,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287660,
+      "end": 1716056287660,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287660,
+      "end": 1716056287660,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287660,
+      "end": 1716056287660,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287660,
+      "end": 1716056287660,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287665,
+      "end": 1716056287665,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { createElementVNode as _createElementVNode, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"compare-part\" }\nconst _hoisted_2 = /*#__PURE__*/_createStaticVNode(\"<div class=\\\"img-section\\\"><div><div class=\\\"compare-img\\\"></div></div><a href=\\\"javascript:void(0)\\\" tabindex=\\\"0\\\"><h5 class=\\\"placeholder col-6\\\"></h5></a></div><div class=\\\"detail-part\\\"><div class=\\\"title-detail\\\"><h5 class=\\\"placeholder col-3\\\"></h5></div><div class=\\\"inner-detail\\\"><p class=\\\"placeholder col-1\\\"></p></div></div><div class=\\\"detail-part\\\"><div class=\\\"title-detail\\\"><h5 class=\\\"placeholder col-1\\\"></h5></div><div class=\\\"inner-detail\\\"><p class=\\\"placeholder col-2\\\"></p></div></div><div class=\\\"detail-part\\\"><div class=\\\"title-detail\\\"><h5 class=\\\"placeholder col-4\\\"></h5></div><div class=\\\"inner-detail\\\"><p class=\\\"placeholder col-3\\\"></p></div></div><div class=\\\"detail-part\\\"><div class=\\\"title-detail\\\"><h5 class=\\\"placeholder col-1\\\"></h5></div><div class=\\\"inner-detail\\\"><div class=\\\"compare-rating\\\"><span class=\\\"placeholder col-4\\\"></span></div></div></div><div class=\\\"detail-part\\\"><div class=\\\"title-detail\\\"><h5 class=\\\"placeholder col-1\\\"></h5></div><div class=\\\"inner-detail\\\"><p class=\\\"placeholder col-3\\\"></p></div></div>\", 6)\nconst _hoisted_8 = [\n  _hoisted_2\n]\n\nfunction _sfc_render(_ctx, _cache) {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, _hoisted_8))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1716056287665,
+      "end": 1716056287667,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287667,
+      "end": 1716056287667,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287667,
+      "end": 1716056287667,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287668,
+      "end": 1716056287668,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056287668,
+      "end": 1716056287671,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287671,
+      "end": 1716056287671,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287671,
+      "end": 1716056287671,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287671,
+      "end": 1716056287671,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287671,
+      "end": 1716056287671,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056287671,
+      "end": 1716056287671,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287671,
+      "end": 1716056287671,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287671,
+      "end": 1716056287671,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287671,
+      "end": 1716056287671,
+      "order": "normal"
+    }
+  ]
+}

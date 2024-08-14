@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/filter/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"filter-category\" v-if=\"filters.length > 0\">\n    <div class=\"filter-title\">\n      <h2>Filters</h2>\n      <a href=\"javascript:void(0)\" @click.prevent=\"clear()\">Clear All</a>\n    </div>\n    <ul>\n      <li v-for=\"filterss of filters\" :key=\"filterss\">\n        <a href=\"javascript:void(0)\">{{ transform(filterss.replace('-',' ')) }}</a>\n        <Icon name=\"ri:close-line\" @click.prevent=\"remove(filterss)\" />\n      </li>\n    </ul>\n  </div>\n</template>\n\n<script setup>\nimport { useCollectionStore } from \"~/store/collection\";\nlet store = useCollectionStore();\nlet filtersObj = {\n  category: [],\n  tag: [],\n  rating: [],\n  price: [],\n  attribute: [],\n};\nlet filters = computed(() => {\n  filtersObj.category = useRoute().query.category\n    ? useRoute().query.category.split(\",\")\n    : [];\n  filtersObj.tag = useRoute().query.tag ? useRoute().query.tag.split(\",\") : [];\n  filtersObj.rating = useRoute().query.rating ? useRoute().query.rating.split(\",\") : [];\n  filtersObj.price = useRoute().query.price ? useRoute().query.price.split(\",\") : [];\n  filtersObj.attribute = useRoute().query.attribute\n    ? useRoute().query.attribute.split(\",\")\n    : [];\n  return [\n    ...filtersObj?.category,\n    ...filtersObj?.tag,\n    ...filtersObj?.rating.map((val) =>\n      val.startsWith(\"rating \") ? val : `rating ${val}`\n    ),\n    ...filtersObj?.price,\n    ...filtersObj?.attribute,\n  ];\n});\nfunction remove(tag) {\n  let category = useRoute().query.category ? useRoute().query.category.split(\",\") : [];\n  let attribute = useRoute().query.attribute ? useRoute().query.attribute.split(\",\") : [];\n  let price = useRoute().query.price ? useRoute().query.price.split(\",\") : [];\n  let rating = useRoute().query.rating ? useRoute().query.rating.split(\",\") : [];\n  let tags = useRoute().query.tag ? useRoute().query.tag : \"\";\n  let layout = useRoute().query.layout ? useRoute().query.layout : \"\";\n  let sortBy = useRoute().query.sortBy ? useRoute().query.sortBy : \"\";\n  let field = useRoute().query.field ? useRoute().query.field : \"\";\n  let page = useRoute().query.page ? useRoute().query.page : \"\";\n  if (category.includes(tag)) {\n    category.splice(tag, 1);\n  } else if (attribute.includes(tag)) {\n    attribute.splice(tag, 1);\n  } else if (price.includes(tag)) {\n    price.splice(tag, 1);\n  } else if (rating.includes(tag)) {\n    rating.splice(tag, 1);\n  }\n  else if(tags == tag){\n    tags = \"\"\n  }\n  useRouter().push({\n    path: useRoute().path,\n    query: {\n      layout: layout,\n      sortBy: sortBy,\n      field: field,\n      category: category.join(\",\"),\n      attribute: attribute.join(\",\"),\n      price: price.join(\",\"),\n      rating: rating.join(\",\"),\n      tag: tags,\n      page: page,\n    },\n  });\n  setTimeout(async() => {\n    store.initialCheckedValue();\n  }, 1000);\n}\nfunction clear() {\n  let layout = useRoute().query.layout ? useRoute().query.layout : \"\";\n  useRouter().push({\n    path: useRoute().path,\n    query: {\n      layout: layout,\n    },\n  });\n  setTimeout(async() => {\n    store.initialCheckedValue();\n  }, 1000);\n}\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056287409,
+      "end": 1716056287571,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287571,
+      "end": 1716056287571,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287571,
+      "end": 1716056287571,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287571,
+      "end": 1716056287571,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287571,
+      "end": 1716056287571,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287571,
+      "end": 1716056287571,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287571,
+      "end": 1716056287571,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, createElementVNode as _createElementVNode, withModifiers as _withModifiers, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, createVNode as _createVNode, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"filter-category\"\n}\nconst _hoisted_2 = { class: \"filter-title\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"h2\", null, \"Filters\", -1)\nconst _hoisted_4 = { href: \"javascript:void(0)\" }\n\nimport { useCollectionStore } from \"~/store/collection\";\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet store = useCollectionStore();\nlet filtersObj = {\n  category: [],\n  tag: [],\n  rating: [],\n  price: [],\n  attribute: [],\n};\nlet filters = computed(() => {\n  filtersObj.category = useRoute().query.category\n    ? useRoute().query.category.split(\",\")\n    : [];\n  filtersObj.tag = useRoute().query.tag ? useRoute().query.tag.split(\",\") : [];\n  filtersObj.rating = useRoute().query.rating ? useRoute().query.rating.split(\",\") : [];\n  filtersObj.price = useRoute().query.price ? useRoute().query.price.split(\",\") : [];\n  filtersObj.attribute = useRoute().query.attribute\n    ? useRoute().query.attribute.split(\",\")\n    : [];\n  return [\n    ...filtersObj?.category,\n    ...filtersObj?.tag,\n    ...filtersObj?.rating.map((val) =>\n      val.startsWith(\"rating \") ? val : `rating ${val}`\n    ),\n    ...filtersObj?.price,\n    ...filtersObj?.attribute,\n  ];\n});\nfunction remove(tag) {\n  let category = useRoute().query.category ? useRoute().query.category.split(\",\") : [];\n  let attribute = useRoute().query.attribute ? useRoute().query.attribute.split(\",\") : [];\n  let price = useRoute().query.price ? useRoute().query.price.split(\",\") : [];\n  let rating = useRoute().query.rating ? useRoute().query.rating.split(\",\") : [];\n  let tags = useRoute().query.tag ? useRoute().query.tag : \"\";\n  let layout = useRoute().query.layout ? useRoute().query.layout : \"\";\n  let sortBy = useRoute().query.sortBy ? useRoute().query.sortBy : \"\";\n  let field = useRoute().query.field ? useRoute().query.field : \"\";\n  let page = useRoute().query.page ? useRoute().query.page : \"\";\n  if (category.includes(tag)) {\n    category.splice(tag, 1);\n  } else if (attribute.includes(tag)) {\n    attribute.splice(tag, 1);\n  } else if (price.includes(tag)) {\n    price.splice(tag, 1);\n  } else if (rating.includes(tag)) {\n    rating.splice(tag, 1);\n  }\n  else if(tags == tag){\n    tags = \"\"\n  }\n  useRouter().push({\n    path: useRoute().path,\n    query: {\n      layout: layout,\n      sortBy: sortBy,\n      field: field,\n      category: category.join(\",\"),\n      attribute: attribute.join(\",\"),\n      price: price.join(\",\"),\n      rating: rating.join(\",\"),\n      tag: tags,\n      page: page,\n    },\n  });\n  setTimeout(async() => {\n    store.initialCheckedValue();\n  }, 1000);\n}\nfunction clear() {\n  let layout = useRoute().query.layout ? useRoute().query.layout : \"\";\n  useRouter().push({\n    path: useRoute().path,\n    query: {\n      layout: layout,\n    },\n  });\n  setTimeout(async() => {\n    store.initialCheckedValue();\n  }, 1000);\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_unref(filters).length > 0)\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _hoisted_3,\n          _createElementVNode(\"a\", {\n            href: \"javascript:void(0)\",\n            onClick: _cache[0] || (_cache[0] = _withModifiers($event => (clear()), [\"prevent\"]))\n          }, \"Clear All\")\n        ]),\n        _createElementVNode(\"ul\", null, [\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(filters), (filterss) => {\n            return (_openBlock(), _createElementBlock(\"li\", { key: filterss }, [\n              _createElementVNode(\"a\", _hoisted_4, _toDisplayString(_ctx.transform(filterss.replace('-',' '))), 1),\n              _createVNode(_component_Icon, {\n                name: \"ri:close-line\",\n                onClick: _withModifiers($event => (remove(filterss)), [\"prevent\"])\n              }, null, 8, [\"onClick\"])\n            ]))\n          }), 128))\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287572,
+      "end": 1716056287572,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287572,
+      "end": 1716056287573,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { computed } from 'vue';\nimport { useRoute, useRouter } from '#app/composables/router';\nimport { transform as __unimport_transform } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/formators/capital.js';\nimport { unref as __unimport_unref_ } from 'vue';import { unref as _unref, createElementVNode as _createElementVNode, withModifiers as _withModifiers, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, createVNode as _createVNode, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"filter-category\"\n}\nconst _hoisted_2 = { class: \"filter-title\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"h2\", null, \"Filters\", -1)\nconst _hoisted_4 = { href: \"javascript:void(0)\" }\n\nimport { useCollectionStore } from \"~/store/collection\";\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet store = useCollectionStore();\nlet filtersObj = {\n  category: [],\n  tag: [],\n  rating: [],\n  price: [],\n  attribute: [],\n};\nlet filters = computed(() => {\n  filtersObj.category = useRoute().query.category\n    ? useRoute().query.category.split(\",\")\n    : [];\n  filtersObj.tag = useRoute().query.tag ? useRoute().query.tag.split(\",\") : [];\n  filtersObj.rating = useRoute().query.rating ? useRoute().query.rating.split(\",\") : [];\n  filtersObj.price = useRoute().query.price ? useRoute().query.price.split(\",\") : [];\n  filtersObj.attribute = useRoute().query.attribute\n    ? useRoute().query.attribute.split(\",\")\n    : [];\n  return [\n    ...filtersObj?.category,\n    ...filtersObj?.tag,\n    ...filtersObj?.rating.map((val) =>\n      val.startsWith(\"rating \") ? val : `rating ${val}`\n    ),\n    ...filtersObj?.price,\n    ...filtersObj?.attribute,\n  ];\n});\nfunction remove(tag) {\n  let category = useRoute().query.category ? useRoute().query.category.split(\",\") : [];\n  let attribute = useRoute().query.attribute ? useRoute().query.attribute.split(\",\") : [];\n  let price = useRoute().query.price ? useRoute().query.price.split(\",\") : [];\n  let rating = useRoute().query.rating ? useRoute().query.rating.split(\",\") : [];\n  let tags = useRoute().query.tag ? useRoute().query.tag : \"\";\n  let layout = useRoute().query.layout ? useRoute().query.layout : \"\";\n  let sortBy = useRoute().query.sortBy ? useRoute().query.sortBy : \"\";\n  let field = useRoute().query.field ? useRoute().query.field : \"\";\n  let page = useRoute().query.page ? useRoute().query.page : \"\";\n  if (category.includes(tag)) {\n    category.splice(tag, 1);\n  } else if (attribute.includes(tag)) {\n    attribute.splice(tag, 1);\n  } else if (price.includes(tag)) {\n    price.splice(tag, 1);\n  } else if (rating.includes(tag)) {\n    rating.splice(tag, 1);\n  }\n  else if(tags == tag){\n    tags = \"\"\n  }\n  useRouter().push({\n    path: useRoute().path,\n    query: {\n      layout: layout,\n      sortBy: sortBy,\n      field: field,\n      category: category.join(\",\"),\n      attribute: attribute.join(\",\"),\n      price: price.join(\",\"),\n      rating: rating.join(\",\"),\n      tag: tags,\n      page: page,\n    },\n  });\n  setTimeout(async() => {\n    store.initialCheckedValue();\n  }, 1000);\n}\nfunction clear() {\n  let layout = useRoute().query.layout ? useRoute().query.layout : \"\";\n  useRouter().push({\n    path: useRoute().path,\n    query: {\n      layout: layout,\n    },\n  });\n  setTimeout(async() => {\n    store.initialCheckedValue();\n  }, 1000);\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_unref(filters).length > 0)\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _hoisted_3,\n          _createElementVNode(\"a\", {\n            href: \"javascript:void(0)\",\n            onClick: _cache[0] || (_cache[0] = _withModifiers($event => (clear()), [\"prevent\"]))\n          }, \"Clear All\")\n        ]),\n        _createElementVNode(\"ul\", null, [\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(filters), (filterss) => {\n            return (_openBlock(), _createElementBlock(\"li\", { key: filterss }, [\n              _createElementVNode(\"a\", _hoisted_4, _toDisplayString((\"transform\" in _ctx ? _ctx.transform : __unimport_unref_(__unimport_transform))(filterss.replace('-',' '))), 1),\n              _createVNode(_component_Icon, {\n                name: \"ri:close-line\",\n                onClick: _withModifiers($event => (remove(filterss)), [\"prevent\"])\n              }, null, 8, [\"onClick\"])\n            ]))\n          }), 128))\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287573,
+      "end": 1716056287575,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287575,
+      "end": 1716056287575,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287575,
+      "end": 1716056287575,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287575,
+      "end": 1716056287575,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287575,
+      "end": 1716056287575,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { computed } from 'vue';\nimport { useRoute, useRouter } from '#app/composables/router';\nimport { transform as __unimport_transform } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/formators/capital.js';\nimport { unref as __unimport_unref_ } from 'vue';import { unref as _unref, createElementVNode as _createElementVNode, withModifiers as _withModifiers, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, createVNode as _createVNode, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"filter-category\"\n}\nconst _hoisted_2 = { class: \"filter-title\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"h2\", null, \"Filters\", -1)\nconst _hoisted_4 = { href: \"javascript:void(0)\" }\n\nimport { useCollectionStore } from \"~/store/collection\";\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet store = useCollectionStore();\nlet filtersObj = {\n  category: [],\n  tag: [],\n  rating: [],\n  price: [],\n  attribute: [],\n};\nlet filters = computed(() => {\n  filtersObj.category = useRoute().query.category\n    ? useRoute().query.category.split(\",\")\n    : [];\n  filtersObj.tag = useRoute().query.tag ? useRoute().query.tag.split(\",\") : [];\n  filtersObj.rating = useRoute().query.rating ? useRoute().query.rating.split(\",\") : [];\n  filtersObj.price = useRoute().query.price ? useRoute().query.price.split(\",\") : [];\n  filtersObj.attribute = useRoute().query.attribute\n    ? useRoute().query.attribute.split(\",\")\n    : [];\n  return [\n    ...filtersObj?.category,\n    ...filtersObj?.tag,\n    ...filtersObj?.rating.map((val) =>\n      val.startsWith(\"rating \") ? val : `rating ${val}`\n    ),\n    ...filtersObj?.price,\n    ...filtersObj?.attribute,\n  ];\n});\nfunction remove(tag) {\n  let category = useRoute().query.category ? useRoute().query.category.split(\",\") : [];\n  let attribute = useRoute().query.attribute ? useRoute().query.attribute.split(\",\") : [];\n  let price = useRoute().query.price ? useRoute().query.price.split(\",\") : [];\n  let rating = useRoute().query.rating ? useRoute().query.rating.split(\",\") : [];\n  let tags = useRoute().query.tag ? useRoute().query.tag : \"\";\n  let layout = useRoute().query.layout ? useRoute().query.layout : \"\";\n  let sortBy = useRoute().query.sortBy ? useRoute().query.sortBy : \"\";\n  let field = useRoute().query.field ? useRoute().query.field : \"\";\n  let page = useRoute().query.page ? useRoute().query.page : \"\";\n  if (category.includes(tag)) {\n    category.splice(tag, 1);\n  } else if (attribute.includes(tag)) {\n    attribute.splice(tag, 1);\n  } else if (price.includes(tag)) {\n    price.splice(tag, 1);\n  } else if (rating.includes(tag)) {\n    rating.splice(tag, 1);\n  }\n  else if(tags == tag){\n    tags = \"\"\n  }\n  useRouter().push({\n    path: useRoute().path,\n    query: {\n      layout: layout,\n      sortBy: sortBy,\n      field: field,\n      category: category.join(\",\"),\n      attribute: attribute.join(\",\"),\n      price: price.join(\",\"),\n      rating: rating.join(\",\"),\n      tag: tags,\n      page: page,\n    },\n  });\n  setTimeout(async() => {\n    store.initialCheckedValue();\n  }, 1000);\n}\nfunction clear() {\n  let layout = useRoute().query.layout ? useRoute().query.layout : \"\";\n  useRouter().push({\n    path: useRoute().path,\n    query: {\n      layout: layout,\n    },\n  });\n  setTimeout(async() => {\n    store.initialCheckedValue();\n  }, 1000);\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n\n  return (_unref(filters).length > 0)\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _hoisted_3,\n          _createElementVNode(\"a\", {\n            href: \"javascript:void(0)\",\n            onClick: _cache[0] || (_cache[0] = _withModifiers($event => (clear()), [\"prevent\"]))\n          }, \"Clear All\")\n        ]),\n        _createElementVNode(\"ul\", null, [\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(filters), (filterss) => {\n            return (_openBlock(), _createElementBlock(\"li\", { key: filterss }, [\n              _createElementVNode(\"a\", _hoisted_4, _toDisplayString((\"transform\" in _ctx ? _ctx.transform : __unimport_unref_(__unimport_transform))(filterss.replace('-',' '))), 1),\n              _createVNode(_component_Icon, {\n                name: \"ri:close-line\",\n                onClick: _withModifiers($event => (remove(filterss)), [\"prevent\"])\n              }, null, 8, [\"onClick\"])\n            ]))\n          }), 128))\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287575,
+      "end": 1716056287575,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287575,
+      "end": 1716056287575,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287575,
+      "end": 1716056287575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287575,
+      "end": 1716056287575,
+      "order": "normal"
+    }
+  ]
+}

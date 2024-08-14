@@ -1,0 +1,214 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Widgets/newsletter/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <!-- <div class=\"container-fluid-lg\">\n        <div class=\"row\" v-if=\"style == 'classic'\">\n            <div class=\"col-12\">\n                <div class=\"newsletter-box hover-effect bg-size\"\n                    :style=\"{ 'background-image': 'url(' + data?.image_url + ')' }\">\n                    <div class=\"row\">\n                        <div class=\"col-xxl-8 col-xl-7\">\n                            <div class=\"newsletter-detail p-center-left text-white\">\n                                <div>\n                                    <h2>{{ data?.title }}</h2>\n                                    <h4>{{ data?.sub_title }}</h4>\n                                    <form class=\"row g-2\">\n                                        <div class=\"col-sm-10 col-12\">\n                                            <div class=\"newsletter-form\">\n                                                <input type=\"email\" class=\"form-control\" id=\"email\"\n                                                    placeholder=\"Enter your email\">\n                                                <WidgetsButton :type=\"'submit'\"\n                                                    :classes=\"'btn bg-white theme-color btn-md fw-500 submit-button'\"\n                                                    :id=\"'subscribe_btn'\">{{ $t('subscribe') }}</WidgetsButton>\n                                            </div>\n                                        </div>\n                                    </form>\n                                </div>\n                            </div>\n                        </div>\n\n                        <div class=\"col-xxl-4 col-xl-5 d-xl-block d-none\">\n                            <div class=\"shape-box\">\n                                <img src=\"/images/basket.png\" alt=\"basket\" class=\"img-fluid image-1\">\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <template v-else>\n            <div class=\"newsletter-box newsletter-box-2\" :style=\"{ 'background-image': 'url(' + data?.image_url + ')' }\">\n                <div class=\"newsletter-contain py-5\">\n                    <div class=\"container-fluid\">\n                        <div class=\"row\">\n                            <div class=\"col-xxl-4 col-lg-5 col-md-7 col-sm-9 offset-xxl-2 offset-md-1\">\n                                <div class=\"newsletter-detail\">\n                                    <h2>{{ data?.title }}</h2>\n                                    <h5>{{ data?.sub_title }}</h5>\n                                    <div class=\"input-box\">\n                                        <input type=\"email\" class=\"form-control\" placeholder=\"Enter Your Email\">\n                                        <div class=\"mail-icon\">\n                                            <Icon name=\"ri:mail-line\"></Icon>\n                                        </div>\n                                        <WidgetsButton :type=\"'submit'\" :classes=\"'sub-btn btn-animation'\"\n                                            :id=\"'newsletter_subscribe_btn'\">\n                                            <span class=\"d-sm-block d-none\">{{ $t('subscribe') }}</span>\n                                            <Icon name=\"ri:arrow-right-line\"></Icon>\n                                        </WidgetsButton>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </template>\n    </div> -->\n</template>\n\n<script setup>\nlet props = defineProps({\n  data: Object,\n  style: { type: [String, Object], default: \"basic\" },\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056288090,
+      "end": 1716056288247,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056288247,
+      "end": 1716056288247,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056288247,
+      "end": 1716056288247,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056288247,
+      "end": 1716056288248,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056288248,
+      "end": 1716056288248,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056288248,
+      "end": 1716056288248,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056288248,
+      "end": 1716056288248,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056288248,
+      "end": 1716056288248,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  data: Object,\n  style: { type: [String, Object], default: \"basic\" },\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  return null\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288248,
+      "end": 1716056288249,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056288249,
+      "end": 1716056288249,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288249,
+      "end": 1716056288249,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056288249,
+      "end": 1716056288249,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056288249,
+      "end": 1716056288249,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056288249,
+      "end": 1716056288249,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288250,
+      "end": 1716056288250,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056288250,
+      "end": 1716056288250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056288250,
+      "end": 1716056288250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056288250,
+      "end": 1716056288250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056288250,
+      "end": 1716056288250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056288250,
+      "end": 1716056288250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056288250,
+      "end": 1716056288250,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056288250,
+      "end": 1716056288250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056288250,
+      "end": 1716056288250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056288250,
+      "end": 1716056288250,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056288250,
+      "end": 1716056288250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056288250,
+      "end": 1716056288251,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056288251,
+      "end": 1716056288251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056288251,
+      "end": 1716056288251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056288251,
+      "end": 1716056288251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056288251,
+      "end": 1716056288251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056288251,
+      "end": 1716056288252,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056288252,
+      "end": 1716056288252,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056288252,
+      "end": 1716056288252,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056288252,
+      "end": 1716056288252,
+      "order": "normal"
+    }
+  ]
+}

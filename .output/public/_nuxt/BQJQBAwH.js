@@ -1,0 +1,1 @@
+import t from"./BHn3N4Dz.js";import a from"./BM0NaP4-.js";import{M as m,N as _,L as e,u as c}from"./DzwC5H-t.js";import"./DtU04-4_.js";import"./UTXkSK51.js";const x={__name:"index",setup(s){var r={page:"FAQ's",links:[{name:"FAQ's"}]};return(p,u)=>{const n=t,o=a;return m(),_("div",null,[e(n,{breadcrumbs:c(r)},null,8,["breadcrumbs"]),e(o)])}}};export{x as default};

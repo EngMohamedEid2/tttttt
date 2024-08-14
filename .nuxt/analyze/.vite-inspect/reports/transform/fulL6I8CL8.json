@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/StoreInformation/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"vendor-box\">\n    <div class=\"vendor-contain\">\n      <nuxt-link :to=\"`/seller/store/${store?.slug}`\">\n        <div class=\"vendor-image\" v-if=\"store?.store_logo\">\n          <img :src=\"store?.store_logo?.original_url\" alt=\"\">\n        </div>\n        <template v-else>\n          <h2 class=\"vendor-text\">{{ store?.store_name?.charAt(0).toString().toUpperCase() }}</h2>\n        </template>\n      </nuxt-link>\n      <div class=\"vendor-name\">\n        <nuxt-link :to=\"`/seller/store/${store?.slug}`\">\n          <h5 class=\"fw-500\">{{ store?.store_name }}</h5>\n        </nuxt-link>\n        <div class=\"product-rating\">\n          <NuxtRating :read-only=\"true\" :ratingValue=\"store.rating_count || 0\" :rating-size=\"'25px'\" />\n          <span class=\"rating-content\">({{ store?.reviews_count }} {{ $t('Review') }})</span>\n        </div>\n      </div>\n    </div>\n    <p class=\"vendor-detail\" v-html=\"store?.description\"></p>\n    <div class=\"vendor-list\" v-if=\"!store?.hide_vendor_email && !store?.hide_vendor_email\">\n      <ul>\n        <li v-if=\"!store?.hide_vendor_phone\">\n          <div class=\"address-contact\">\n            <Icon name=\"ri-smartphone-line\"></Icon>\n            <h5>{{ $t('Contact') }}: <span class=\"text-content\">+{{ store?.vendor?.country_code }} {{ store?.vendor?.phone\n            }}</span>\n            </h5>\n          </div>\n        </li>\n        <li v-if=\"!store?.hide_vendor_email\">\n          <div class=\"address-contact\">\n            <Icon name=\"ri-mail-line\"></Icon>\n            <h5>{{ $t('Email') }}: <span class=\"text-content\">{{ store?.vendor?.email }}</span></h5>\n          </div>\n        </li>\n      </ul>\n    </div>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  store: Object\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056287700,
+      "end": 1716056287862,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287862,
+      "end": 1716056287862,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287862,
+      "end": 1716056287862,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287862,
+      "end": 1716056287862,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287862,
+      "end": 1716056287862,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287862,
+      "end": 1716056287862,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287862,
+      "end": 1716056287862,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287862,
+      "end": 1716056287862,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createTextVNode as _createTextVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"vendor-box\" }\nconst _hoisted_2 = { class: \"vendor-contain\" }\nconst _hoisted_3 = {\n  key: 0,\n  class: \"vendor-image\"\n}\nconst _hoisted_4 = [\"src\"]\nconst _hoisted_5 = {\n  key: 1,\n  class: \"vendor-text\"\n}\nconst _hoisted_6 = { class: \"vendor-name\" }\nconst _hoisted_7 = { class: \"fw-500\" }\nconst _hoisted_8 = { class: \"product-rating\" }\nconst _hoisted_9 = { class: \"rating-content\" }\nconst _hoisted_10 = [\"innerHTML\"]\nconst _hoisted_11 = {\n  key: 0,\n  class: \"vendor-list\"\n}\nconst _hoisted_12 = { key: 0 }\nconst _hoisted_13 = { class: \"address-contact\" }\nconst _hoisted_14 = { class: \"text-content\" }\nconst _hoisted_15 = { key: 1 }\nconst _hoisted_16 = { class: \"address-contact\" }\nconst _hoisted_17 = { class: \"text-content\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  store: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_NuxtRating = _resolveComponent(\"NuxtRating\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(_component_nuxt_link, {\n        to: `/seller/store/${__props.store?.slug}`\n      }, {\n        default: _withCtx(() => [\n          (__props.store?.store_logo)\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n                _createElementVNode(\"img\", {\n                  src: __props.store?.store_logo?.original_url,\n                  alt: \"\"\n                }, null, 8, _hoisted_4)\n              ]))\n            : (_openBlock(), _createElementBlock(\"h2\", _hoisted_5, _toDisplayString(__props.store?.store_name?.charAt(0).toString().toUpperCase()), 1))\n        ]),\n        _: 1\n      }, 8, [\"to\"]),\n      _createElementVNode(\"div\", _hoisted_6, [\n        _createVNode(_component_nuxt_link, {\n          to: `/seller/store/${__props.store?.slug}`\n        }, {\n          default: _withCtx(() => [\n            _createElementVNode(\"h5\", _hoisted_7, _toDisplayString(__props.store?.store_name), 1)\n          ]),\n          _: 1\n        }, 8, [\"to\"]),\n        _createElementVNode(\"div\", _hoisted_8, [\n          _createVNode(_component_NuxtRating, {\n            \"read-only\": true,\n            ratingValue: __props.store.rating_count || 0,\n            \"rating-size\": '25px'\n          }, null, 8, [\"ratingValue\"]),\n          _createElementVNode(\"span\", _hoisted_9, \"(\" + _toDisplayString(__props.store?.reviews_count) + \" \" + _toDisplayString(_ctx.$t('Review')) + \")\", 1)\n        ])\n      ])\n    ]),\n    _createElementVNode(\"p\", {\n      class: \"vendor-detail\",\n      innerHTML: __props.store?.description\n    }, null, 8, _hoisted_10),\n    (!__props.store?.hide_vendor_email && !__props.store?.hide_vendor_email)\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_11, [\n          _createElementVNode(\"ul\", null, [\n            (!__props.store?.hide_vendor_phone)\n              ? (_openBlock(), _createElementBlock(\"li\", _hoisted_12, [\n                  _createElementVNode(\"div\", _hoisted_13, [\n                    _createVNode(_component_Icon, { name: \"ri-smartphone-line\" }),\n                    _createElementVNode(\"h5\", null, [\n                      _createTextVNode(_toDisplayString(_ctx.$t('Contact')) + \": \", 1),\n                      _createElementVNode(\"span\", _hoisted_14, \"+\" + _toDisplayString(__props.store?.vendor?.country_code) + \" \" + _toDisplayString(__props.store?.vendor?.phone), 1)\n                    ])\n                  ])\n                ]))\n              : _createCommentVNode(\"\", true),\n            (!__props.store?.hide_vendor_email)\n              ? (_openBlock(), _createElementBlock(\"li\", _hoisted_15, [\n                  _createElementVNode(\"div\", _hoisted_16, [\n                    _createVNode(_component_Icon, { name: \"ri-mail-line\" }),\n                    _createElementVNode(\"h5\", null, [\n                      _createTextVNode(_toDisplayString(_ctx.$t('Email')) + \": \", 1),\n                      _createElementVNode(\"span\", _hoisted_17, _toDisplayString(__props.store?.vendor?.email), 1)\n                    ])\n                  ])\n                ]))\n              : _createCommentVNode(\"\", true)\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287862,
+      "end": 1716056287863,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287863,
+      "end": 1716056287863,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056287863,
+      "end": 1716056287867,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287867,
+      "end": 1716056287867,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287867,
+      "end": 1716056287867,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287868,
+      "end": 1716056287868,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287868,
+      "end": 1716056287868,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-rating/dist/runtime/components/NuxtRating.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createTextVNode as _createTextVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"vendor-box\" }\nconst _hoisted_2 = { class: \"vendor-contain\" }\nconst _hoisted_3 = {\n  key: 0,\n  class: \"vendor-image\"\n}\nconst _hoisted_4 = [\"src\"]\nconst _hoisted_5 = {\n  key: 1,\n  class: \"vendor-text\"\n}\nconst _hoisted_6 = { class: \"vendor-name\" }\nconst _hoisted_7 = { class: \"fw-500\" }\nconst _hoisted_8 = { class: \"product-rating\" }\nconst _hoisted_9 = { class: \"rating-content\" }\nconst _hoisted_10 = [\"innerHTML\"]\nconst _hoisted_11 = {\n  key: 0,\n  class: \"vendor-list\"\n}\nconst _hoisted_12 = { key: 0 }\nconst _hoisted_13 = { class: \"address-contact\" }\nconst _hoisted_14 = { class: \"text-content\" }\nconst _hoisted_15 = { key: 1 }\nconst _hoisted_16 = { class: \"address-contact\" }\nconst _hoisted_17 = { class: \"text-content\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  store: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_nuxt_link = __nuxt_component_0\n  const _component_NuxtRating = __nuxt_component_1\n  const _component_Icon = __nuxt_component_2\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(_component_nuxt_link, {\n        to: `/seller/store/${__props.store?.slug}`\n      }, {\n        default: _withCtx(() => [\n          (__props.store?.store_logo)\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n                _createElementVNode(\"img\", {\n                  src: __props.store?.store_logo?.original_url,\n                  alt: \"\"\n                }, null, 8, _hoisted_4)\n              ]))\n            : (_openBlock(), _createElementBlock(\"h2\", _hoisted_5, _toDisplayString(__props.store?.store_name?.charAt(0).toString().toUpperCase()), 1))\n        ]),\n        _: 1\n      }, 8, [\"to\"]),\n      _createElementVNode(\"div\", _hoisted_6, [\n        _createVNode(_component_nuxt_link, {\n          to: `/seller/store/${__props.store?.slug}`\n        }, {\n          default: _withCtx(() => [\n            _createElementVNode(\"h5\", _hoisted_7, _toDisplayString(__props.store?.store_name), 1)\n          ]),\n          _: 1\n        }, 8, [\"to\"]),\n        _createElementVNode(\"div\", _hoisted_8, [\n          _createVNode(_component_NuxtRating, {\n            \"read-only\": true,\n            ratingValue: __props.store.rating_count || 0,\n            \"rating-size\": '25px'\n          }, null, 8, [\"ratingValue\"]),\n          _createElementVNode(\"span\", _hoisted_9, \"(\" + _toDisplayString(__props.store?.reviews_count) + \" \" + _toDisplayString(_ctx.$t('Review')) + \")\", 1)\n        ])\n      ])\n    ]),\n    _createElementVNode(\"p\", {\n      class: \"vendor-detail\",\n      innerHTML: __props.store?.description\n    }, null, 8, _hoisted_10),\n    (!__props.store?.hide_vendor_email && !__props.store?.hide_vendor_email)\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_11, [\n          _createElementVNode(\"ul\", null, [\n            (!__props.store?.hide_vendor_phone)\n              ? (_openBlock(), _createElementBlock(\"li\", _hoisted_12, [\n                  _createElementVNode(\"div\", _hoisted_13, [\n                    _createVNode(_component_Icon, { name: \"ri-smartphone-line\" }),\n                    _createElementVNode(\"h5\", null, [\n                      _createTextVNode(_toDisplayString(_ctx.$t('Contact')) + \": \", 1),\n                      _createElementVNode(\"span\", _hoisted_14, \"+\" + _toDisplayString(__props.store?.vendor?.country_code) + \" \" + _toDisplayString(__props.store?.vendor?.phone), 1)\n                    ])\n                  ])\n                ]))\n              : _createCommentVNode(\"\", true),\n            (!__props.store?.hide_vendor_email)\n              ? (_openBlock(), _createElementBlock(\"li\", _hoisted_15, [\n                  _createElementVNode(\"div\", _hoisted_16, [\n                    _createVNode(_component_Icon, { name: \"ri-mail-line\" }),\n                    _createElementVNode(\"h5\", null, [\n                      _createTextVNode(_toDisplayString(_ctx.$t('Email')) + \": \", 1),\n                      _createElementVNode(\"span\", _hoisted_17, _toDisplayString(__props.store?.vendor?.email), 1)\n                    ])\n                  ])\n                ]))\n              : _createCommentVNode(\"\", true)\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287868,
+      "end": 1716056287868,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287868,
+      "end": 1716056287868,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287868,
+      "end": 1716056287868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287868,
+      "end": 1716056287868,
+      "order": "normal"
+    }
+  ]
+}

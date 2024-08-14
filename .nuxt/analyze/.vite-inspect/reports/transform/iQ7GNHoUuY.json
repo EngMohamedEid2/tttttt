@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/index.vue?nuxt_component=async&nuxt_component_name=Blog",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <section class=\"blog-section section-b-space\">\n    <div class=\"container-fluid-lg\">\n      <div class=\"row g-4\">\n        <div class=\"col-xxl-9 col-xl-8 col-lg-7\" :class=\"{\n          'order-lg-2': sidebar === 'left_sidebar',\n          'col-xxl-12 col-xl-12 col-lg-12': sidebar === 'no_sidebar',\n          'col-xxl-9 col-xl-8 col-lg-7': sidebar !== 'no_sidebar',\n        }\">\n\n          <div v-if=\"skeletonLoader\">\n            <div class=\"row g-4\">\n              <div :class=\"style === 'list_view'\n                ? 'col-12 list_view'\n                : 'col-xxl-4 col-sm-6'\n\n                \" v-for=\"item in skeletonItems\" :key=\"item\">\n                <BlogSkeletonBlogs :type=\"'grid'\" />\n              </div>\n            </div>\n          </div>\n\n          <template v-else>\n            <BlogContent :blog=\"blog\" :style=\"style\" :sidebar=\"sidebar\" :filter=\"filter\" :themeOption=\"themeOption\" />\n          </template>\n        </div>\n        <div class=\"col-xxl-3 col-xl-4 col-lg-5\" :class=\"{\n          'order-lg-1': sidebar === 'left_sidebar',\n          'd-none': sidebar === 'no_sidebar',\n        }\">\n          <div class=\"left-sidebar-box\">\n            <BlogSkeletonBlogs :type=\"'sidebar'\" v-if=\"skeletonLoader\" />\n            <BlogSidebar :blogs=\"blog\" v-else />\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</template>\n\n<script setup>\nlet props = defineProps({\n  blog: Object,\n  style: [String,Object],\n  sidebar: String,\n  filter: Object,\n  themeOption: Object\n});\n\nconst skeletonLoader = ref(true)\nlet skeletonItems = Array.from({ length: 12 }, (_, index) => index);\nonMounted(() => {\n  setTimeout(() => {\n    skeletonLoader.value = false\n  }, 2000);\n})\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056262493,
+      "end": 1716056270689,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056270689,
+      "end": 1716056270689,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056270689,
+      "end": 1716056270689,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056270689,
+      "end": 1716056270689,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056270689,
+      "end": 1716056270689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056270689,
+      "end": 1716056270689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056270689,
+      "end": 1716056270689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056270689,
+      "end": 1716056270689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, createCommentVNode as _createCommentVNode, normalizeStyle as _normalizeStyle, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"blog-section section-b-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row g-4\" }\nconst _hoisted_4 = { key: 0 }\nconst _hoisted_5 = { class: \"row g-4\" }\nconst _hoisted_6 = { class: \"left-sidebar-box\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  blog: Object,\n  style: [String,Object],\n  sidebar: String,\n  filter: Object,\n  themeOption: Object\n},\n  setup(__props) {\n\nlet props = __props;\n\nconst skeletonLoader = ref(true)\nlet skeletonItems = Array.from({ length: 12 }, (_, index) => index);\nonMounted(() => {\n  setTimeout(() => {\n    skeletonLoader.value = false\n  }, 2000);\n})\n\nreturn (_ctx, _cache) => {\n  const _component_BlogSkeletonBlogs = _resolveComponent(\"BlogSkeletonBlogs\")\n  const _component_BlogContent = _resolveComponent(\"BlogContent\")\n  const _component_BlogSidebar = _resolveComponent(\"BlogSidebar\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", {\n          class: _normalizeClass([\"col-xxl-9 col-xl-8 col-lg-7\", {\n          'order-lg-2': __props.sidebar === 'left_sidebar',\n          'col-xxl-12 col-xl-12 col-lg-12': __props.sidebar === 'no_sidebar',\n          'col-xxl-9 col-xl-8 col-lg-7': __props.sidebar !== 'no_sidebar',\n        }])\n        }, [\n          (_unref(skeletonLoader))\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n                _createElementVNode(\"div\", _hoisted_5, [\n                  (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(skeletonItems), (item) => {\n                    return (_openBlock(), _createElementBlock(\"div\", {\n                      class: _normalizeClass(__props.style === 'list_view'\n                ? 'col-12 list_view'\n                : 'col-xxl-4 col-sm-6'\n\n                ),\n                      key: item\n                    }, [\n                      _createVNode(_component_BlogSkeletonBlogs, { type: 'grid' })\n                    ], 2))\n                  }), 128))\n                ])\n              ]))\n            : (_openBlock(), _createBlock(_component_BlogContent, {\n                key: 1,\n                blog: __props.blog,\n                style: _normalizeStyle(__props.style),\n                sidebar: __props.sidebar,\n                filter: __props.filter,\n                themeOption: __props.themeOption\n              }, null, 8, [\"blog\", \"style\", \"sidebar\", \"filter\", \"themeOption\"]))\n        ], 2),\n        _createElementVNode(\"div\", {\n          class: _normalizeClass([\"col-xxl-3 col-xl-4 col-lg-5\", {\n          'order-lg-1': __props.sidebar === 'left_sidebar',\n          'd-none': __props.sidebar === 'no_sidebar',\n        }])\n        }, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            (_unref(skeletonLoader))\n              ? (_openBlock(), _createBlock(_component_BlogSkeletonBlogs, {\n                  key: 0,\n                  type: 'sidebar'\n                }))\n              : (_openBlock(), _createBlock(_component_BlogSidebar, {\n                  key: 1,\n                  blogs: __props.blog\n                }, null, 8, [\"blogs\"]))\n          ])\n        ], 2)\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056270689,
+      "end": 1716056270691,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056270691,
+      "end": 1716056270691,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056270691,
+      "end": 1716056270691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056270691,
+      "end": 1716056270691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056270691,
+      "end": 1716056270691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/index.vue\").then(r => r.default))",
+      "start": 1716056270691,
+      "end": 1716056270692,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056270692,
+      "end": 1716056270692,
+      "order": "normal"
+    }
+  ]
+}

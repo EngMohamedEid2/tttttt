@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/ProductTable.vue?nuxt_component=async&nuxt_component_name=AccountOrdersDetailsProductTable",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n        <div class=\"card\" v-if=\"order?.products?.length\">\n            <div class=\"card-body\">\n                <div class=\"tracking-wrapper table-responsive\">\n                    <table class=\"table product-table\">\n                        <thead>\n                            <tr>\n                                <th scope=\"col\">{{ $t(\"Image\") }}</th>\n                                <th scope=\"col\">{{ $t(\"Name\") }}</th>\n                                <th scope=\"col\">{{ $t(\"Price\") }}</th>\n                                <th scope=\"col\">{{ $t(\"Quantity\") }}</th>\n                                <th scope=\"col\">{{ $t(\"Subtotal\") }}</th>\n                                <th scope=\"col\">{{ $t(\"Refund Status\") }}</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr v-for=\"product in order.products\" :key=\"product\">\n                                <td class=\"product-image\">\n                                    <img :src=\"product?.pivot?.variation && product?.pivot?.variation?.variation_image\n                                        ? product?.pivot?.variation?.variation_image?.original_url\n                                        : product?.product_thumbnail\n                                            ? product?.product_thumbnail?.original_url\n                                            : '/images/product.png'\" class=\"img-fluid\" alt=\"product\">\n                                </td>\n                                <td>\n                                    <h6>{{ product?.pivot?.variation ? product?.pivot?.variation?.name : product?.name }}\n                                    </h6>\n                                </td>\n                                <td>\n                                    <h6>{{ store.currency.symbol }} {{\n                                        Number(store.convertCurrency(product?.pivot?.single_price)).toFixed(2) }}</h6>\n                                </td>\n                                <td>\n                                    <h6>{{ product?.pivot?.quantity }}</h6>\n                                </td>\n                                <td>\n                                    <h6>{{ store.currency.symbol }} {{\n                                        Number(store.convertCurrency(product?.pivot?.subtotal)).toFixed(2) }}</h6>\n                                </td>\n                                <td>\n                                    <a href=\"javascript:void(0)\" v-if=\"product?.is_return === 1 &&\n                                        order?.payment_status && order?.payment_status === 'COMPLETED'\n                                        && order.order_status && order.order_status.slug == 'delivered' &&\n                                        !product?.pivot?.refund_status\" @click=\"refundModal(product)\">\n                                        {{ $t(\"Ask For Refund\") }}\n                                    </a>\n                                    <span v-else>\n                                        <div class=\"status-{{product?.pivot?.refund_status?.toLowerCase()}}\"\n                                            v-if=\"product?.pivot?.refund_status\">\n                                            <span>{{ product?.pivot?.refund_status }}</span>\n                                        </div>\n                                        <div v-if=\"!product?.pivot?.refund_status\">{{ '-' }}</div>\n                                    </span>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </div>\n            </div>\n        </div>\n\n        <WidgetsModalsCommon :showModal=\"refund\" @close=\"refund = false\">\n            <WidgetsModalsRefundModal :product=\"singleProduct\" :orderId=\"order.id\" @close=\"refund = false\" />\n        </WidgetsModalsCommon>\n    </div>\n</template>\n\n<script setup>\nimport { useCurrencyStore } from '@/store/currency'\nlet props = defineProps({\n    order: Object,\n})\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nlet refund = ref(false);\nlet singleProduct = ref({})\nfunction refundModal(product, state = true) {\n    refund.value = state;\n    singleProduct.value = product\n}\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056261545,
+      "end": 1716056262435,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056262435,
+      "end": 1716056262435,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056262435,
+      "end": 1716056262435,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056262435,
+      "end": 1716056262436,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056262436,
+      "end": 1716056262436,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056262436,
+      "end": 1716056262436,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056262436,
+      "end": 1716056262436,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056262436,
+      "end": 1716056262436,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, unref as _unref, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, isRef as _isRef, createVNode as _createVNode, withCtx as _withCtx } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"card\"\n}\nconst _hoisted_2 = { class: \"card-body\" }\nconst _hoisted_3 = { class: \"tracking-wrapper table-responsive\" }\nconst _hoisted_4 = { class: \"table product-table\" }\nconst _hoisted_5 = { scope: \"col\" }\nconst _hoisted_6 = { scope: \"col\" }\nconst _hoisted_7 = { scope: \"col\" }\nconst _hoisted_8 = { scope: \"col\" }\nconst _hoisted_9 = { scope: \"col\" }\nconst _hoisted_10 = { scope: \"col\" }\nconst _hoisted_11 = { class: \"product-image\" }\nconst _hoisted_12 = [\"src\"]\nconst _hoisted_13 = [\"onClick\"]\nconst _hoisted_14 = { key: 1 }\nconst _hoisted_15 = {\n  key: 0,\n  class: \"status-{{product?.pivot?.refund_status?.toLowerCase()}}\"\n}\nconst _hoisted_16 = { key: 1 }\n\nimport { useCurrencyStore } from '@/store/currency'\n\nconst _sfc_main = {\n  __name: 'ProductTable',\n  props: {\n    order: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nlet refund = ref(false);\nlet singleProduct = ref({})\nfunction refundModal(product, state = true) {\n    refund.value = state;\n    singleProduct.value = product\n}\n\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsModalsRefundModal = _resolveComponent(\"WidgetsModalsRefundModal\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (__props.order?.products?.length)\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createElementVNode(\"div\", _hoisted_3, [\n              _createElementVNode(\"table\", _hoisted_4, [\n                _createElementVNode(\"thead\", null, [\n                  _createElementVNode(\"tr\", null, [\n                    _createElementVNode(\"th\", _hoisted_5, _toDisplayString(_ctx.$t(\"Image\")), 1),\n                    _createElementVNode(\"th\", _hoisted_6, _toDisplayString(_ctx.$t(\"Name\")), 1),\n                    _createElementVNode(\"th\", _hoisted_7, _toDisplayString(_ctx.$t(\"Price\")), 1),\n                    _createElementVNode(\"th\", _hoisted_8, _toDisplayString(_ctx.$t(\"Quantity\")), 1),\n                    _createElementVNode(\"th\", _hoisted_9, _toDisplayString(_ctx.$t(\"Subtotal\")), 1),\n                    _createElementVNode(\"th\", _hoisted_10, _toDisplayString(_ctx.$t(\"Refund Status\")), 1)\n                  ])\n                ]),\n                _createElementVNode(\"tbody\", null, [\n                  (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.order.products, (product) => {\n                    return (_openBlock(), _createElementBlock(\"tr\", { key: product }, [\n                      _createElementVNode(\"td\", _hoisted_11, [\n                        _createElementVNode(\"img\", {\n                          src: product?.pivot?.variation && product?.pivot?.variation?.variation_image\n                                        ? product?.pivot?.variation?.variation_image?.original_url\n                                        : product?.product_thumbnail\n                                            ? product?.product_thumbnail?.original_url\n                                            : '/images/product.png',\n                          class: \"img-fluid\",\n                          alt: \"product\"\n                        }, null, 8, _hoisted_12)\n                      ]),\n                      _createElementVNode(\"td\", null, [\n                        _createElementVNode(\"h6\", null, _toDisplayString(product?.pivot?.variation ? product?.pivot?.variation?.name : product?.name), 1)\n                      ]),\n                      _createElementVNode(\"td\", null, [\n                        _createElementVNode(\"h6\", null, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(product?.pivot?.single_price)).toFixed(2)), 1)\n                      ]),\n                      _createElementVNode(\"td\", null, [\n                        _createElementVNode(\"h6\", null, _toDisplayString(product?.pivot?.quantity), 1)\n                      ]),\n                      _createElementVNode(\"td\", null, [\n                        _createElementVNode(\"h6\", null, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(product?.pivot?.subtotal)).toFixed(2)), 1)\n                      ]),\n                      _createElementVNode(\"td\", null, [\n                        (product?.is_return === 1 &&\n                                        __props.order?.payment_status && __props.order?.payment_status === 'COMPLETED'\n                                        && __props.order.order_status && __props.order.order_status.slug == 'delivered' &&\n                                        !product?.pivot?.refund_status)\n                          ? (_openBlock(), _createElementBlock(\"a\", {\n                              key: 0,\n                              href: \"javascript:void(0)\",\n                              onClick: $event => (refundModal(product))\n                            }, _toDisplayString(_ctx.$t(\"Ask For Refund\")), 9, _hoisted_13))\n                          : (_openBlock(), _createElementBlock(\"span\", _hoisted_14, [\n                              (product?.pivot?.refund_status)\n                                ? (_openBlock(), _createElementBlock(\"div\", _hoisted_15, [\n                                    _createElementVNode(\"span\", null, _toDisplayString(product?.pivot?.refund_status), 1)\n                                  ]))\n                                : _createCommentVNode(\"\", true),\n                              (!product?.pivot?.refund_status)\n                                ? (_openBlock(), _createElementBlock(\"div\", _hoisted_16, _toDisplayString('-')))\n                                : _createCommentVNode(\"\", true)\n                            ]))\n                      ])\n                    ]))\n                  }), 128))\n                ])\n              ])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_WidgetsModalsCommon, {\n      showModal: _unref(refund),\n      onClose: _cache[1] || (_cache[1] = $event => (_isRef(refund) ? refund.value = false : refund = false))\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_WidgetsModalsRefundModal, {\n          product: _unref(singleProduct),\n          orderId: __props.order.id,\n          onClose: _cache[0] || (_cache[0] = $event => (_isRef(refund) ? refund.value = false : refund = false))\n        }, null, 8, [\"product\", \"orderId\"])\n      ]),\n      _: 1\n    }, 8, [\"showModal\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056262436,
+      "end": 1716056262460,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056262460,
+      "end": 1716056262460,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056262460,
+      "end": 1716056262460,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056262460,
+      "end": 1716056262460,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056262460,
+      "end": 1716056262460,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/ProductTable.vue\").then(r => r.default))",
+      "start": 1716056262460,
+      "end": 1716056262461,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056262461,
+      "end": 1716056262461,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056262462,
+      "end": 1716056262462,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056262462,
+      "end": 1716056262462,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/ProductTable.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056262462,
+      "end": 1716056262462,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056262462,
+      "end": 1716056262462,
+      "order": "normal"
+    }
+  ]
+}

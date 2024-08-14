@@ -1,0 +1,1 @@
+import{M as n,N as s,V as t}from"./DzwC5H-t.js";const o={class:"section-b-space"},c={class:"container"},a=["innerHTML"],_={__name:"Content",props:{slug:[String,Object],ContentData:Object},setup(e){return(i,r)=>(n(),s("div",null,[t("section",o,[t("div",c,[t("div",{innerHTML:e.slug.content},null,8,a)])])]))}},u=_;export{u as default};

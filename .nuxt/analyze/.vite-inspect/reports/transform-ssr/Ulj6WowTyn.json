@@ -1,0 +1,256 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/ContactUs/Map.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <section class=\"map-section\">\n        <div class=\"container-fluid p-0\">\n            <div class=\"map-box\">\n                <iframe\n                    src=\"https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2994.3803116994895!2d55.29773782339708!3d25.222534631321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!3m2!1d25.2048493!2d55.2707828!4m0!5e1!3m2!1sen!2sin!4v1652217109535!5m2!1sen!2sin\"\n                    style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"\n                    referrerpolicy=\"no-referrer-when-downgrade\"></iframe>\n            </div>\n        </div>\n    </section>\n</template>\n\n<script setup>\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056341349,
+      "end": 1716056341512,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341512,
+      "end": 1716056341512,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341512,
+      "end": 1716056341512,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341512,
+      "end": 1716056341512,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341512,
+      "end": 1716056341512,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056341512,
+      "end": 1716056341512,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056341512,
+      "end": 1716056341512,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056341512,
+      "end": 1716056341512,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056341512,
+      "end": 1716056341512,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056341512,
+      "end": 1716056341512,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056341512,
+      "end": 1716056341512,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderStyle as _ssrRenderStyle, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs) {\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"map-section\" }, _attrs))\n  }><div class=\"container-fluid p-0\"><div class=\"map-box\"><iframe src=\"https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2994.3803116994895!2d55.29773782339708!3d25.222534631321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!3m2!1d25.2048493!2d55.2707828!4m0!5e1!3m2!1sen!2sin!4v1652217109535!5m2!1sen!2sin\" style=\"${\n    _ssrRenderStyle({\"border\":\"0\"})\n  }\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe></div></div></section>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Pages/ContactUs/Map.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
+      "start": 1716056341512,
+      "end": 1716056341513,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056341513,
+      "end": 1716056341513,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341513,
+      "end": 1716056341513,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341513,
+      "end": 1716056341513,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341513,
+      "end": 1716056341513,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341513,
+      "end": 1716056341513,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056341513,
+      "end": 1716056341513,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341513,
+      "end": 1716056341513,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056341513,
+      "end": 1716056341514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056341514,
+      "end": 1716056341514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056341514,
+      "end": 1716056341514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056341514,
+      "end": 1716056341514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056341514,
+      "end": 1716056341514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056341514,
+      "end": 1716056341514,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056341514,
+      "end": 1716056341514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056341514,
+      "end": 1716056341514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056341514,
+      "end": 1716056341514,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341514,
+      "end": 1716056341514,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341514,
+      "end": 1716056341514,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056341514,
+      "end": 1716056341515,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056341514,
+      "end": 1716056341515,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341515,
+      "end": 1716056341515,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341515,
+      "end": 1716056341515,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341515,
+      "end": 1716056341515,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341515,
+      "end": 1716056341515,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056341515,
+      "end": 1716056341515,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056341515,
+      "end": 1716056341515,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056341515,
+      "end": 1716056341515,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056341515,
+      "end": 1716056341515,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056341515,
+      "end": 1716056341515,
+      "order": "normal"
+    }
+  ]
+}

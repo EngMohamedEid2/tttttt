@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/Common/TextInput.vue?nuxt_component=async&nuxt_component_name=WidgetsInputFieldsCommonTextInput",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"mb-md-4 mb-3 custom-form\">\n        <label class=\"form-label\" :for=\"label\">{{ label }}</label>\n        <div class=\"custom-input\">\n            <input :disabled=\"disabled\" :type=\"inputType\" :value=\"modelValue.data ? modelValue.data : ''\" :id=\"label\"\n                :placeholder=\"$t(placeholder || 'Enter Value')\" v-on:input=\"updated($event.target.value)\"\n                :class=\"[props.classes, inputClasses]\" class=\"form-control\" />\n            <i :class=\"[IconClass]\"></i>\n        </div>\n        <p class=\"error-message\" v-if=\"modelValue.errorMessage\">{{ $t(modelValue.errorMessage) }}</p>\n    </div>\n</template>\n  \n<script setup>\nimport { validateNonEmptyFields } from \"@/utils/validators/inputFieldValidators\";\n\nvar props = defineProps({\n    classes: { type: String, default: 'form-control' },\n    FormSubmitted: Boolean,\n    inputId: String,\n    label: String,\n    minLength: Number,\n    disabled: Boolean,\n    modelValue: [Object, String],\n    placeholder: String,\n    IconClass: [Object, String],\n    errorMessage: String,\n    inputType: {\n        default: 'text',\n        type: String\n    },\n    checkValidation: { type: Boolean, default: true }\n});\n\nlet inputClasses = ref(\"\"),\n    validStatus = ref({}),\n    changed = ref(false);\n\nwatch(() => props.FormSubmitted, () => { props.FormSubmitted && updated(props.modelValue.data || '') }, { deep: true })\n\nconst emit = defineEmits([\"update:modelValue\"]);\n\nfunction updated(inputValue) {\n    changed.value = true;\n    validStatus.value = props.checkValidation ? validateNonEmptyFields({\n        value: String(inputValue),\n        errorMessage: props.errorMessage\n    }) : { valid: true };\n    // validStatus.value.valid\n    //     ? (inputClasses.value = `is-valid`)\n    //     : (inputClasses.value = `is-invalid`);\n    emit(\"update:modelValue\", {\n        data: props.inputType == 'number' ? Number(inputValue) : inputValue,\n        errorMessage: validStatus.value.errorMessage,\n    });\n}\n</script>\n<style  scoped>\n.error-message {\n    color: red;\n    width: 100%;\n    margin: 4px 0 0;\n    font-size: 14px;\n}\n</style>\n\n  ",
+      "start": 1716056339795,
+      "end": 1716056339874,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339875,
+      "end": 1716056339875,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339875,
+      "end": 1716056339875,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339875,
+      "end": 1716056339875,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339875,
+      "end": 1716056339875,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339875,
+      "end": 1716056339875,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339875,
+      "end": 1716056339875,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339875,
+      "end": 1716056339875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339875,
+      "end": 1716056339875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339875,
+      "end": 1716056339875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339875,
+      "end": 1716056339875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrIncludeBooleanAttr as _ssrIncludeBooleanAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { validateNonEmptyFields } from \"@/utils/validators/inputFieldValidators\";\n\n\nconst _sfc_main = {\n  __name: 'TextInput',\n  __ssrInlineRender: true,\n  props: {\n    classes: { type: String, default: 'form-control' },\n    FormSubmitted: Boolean,\n    inputId: String,\n    label: String,\n    minLength: Number,\n    disabled: Boolean,\n    modelValue: [Object, String],\n    placeholder: String,\n    IconClass: [Object, String],\n    errorMessage: String,\n    inputType: {\n        default: 'text',\n        type: String\n    },\n    checkValidation: { type: Boolean, default: true }\n},\n  emits: [\"update:modelValue\"],\n  setup(__props, { emit: __emit }) {\n\nvar props = __props;\n\nlet inputClasses = ref(\"\"),\n    validStatus = ref({}),\n    changed = ref(false);\n\nwatch(() => props.FormSubmitted, () => { props.FormSubmitted && updated(props.modelValue.data || '') }, { deep: true })\n\nconst emit = __emit;\n\nfunction updated(inputValue) {\n    changed.value = true;\n    validStatus.value = props.checkValidation ? validateNonEmptyFields({\n        value: String(inputValue),\n        errorMessage: props.errorMessage\n    }) : { valid: true };\n    // validStatus.value.valid\n    //     ? (inputClasses.value = `is-valid`)\n    //     : (inputClasses.value = `is-invalid`);\n    emit(\"update:modelValue\", {\n        data: props.inputType == 'number' ? Number(inputValue) : inputValue,\n        errorMessage: validStatus.value.errorMessage,\n    });\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"mb-md-4 mb-3 custom-form\" }, _attrs))\n  } data-v-3dfe0fd7><label class=\"form-label\"${\n    _ssrRenderAttr(\"for\", __props.label)\n  } data-v-3dfe0fd7>${\n    _ssrInterpolate(__props.label)\n  }</label><div class=\"custom-input\" data-v-3dfe0fd7><input${\n    (_ssrIncludeBooleanAttr(__props.disabled)) ? \" disabled\" : \"\"\n  }${\n    _ssrRenderAttr(\"type\", __props.inputType)\n  }${\n    _ssrRenderAttr(\"value\", __props.modelValue.data ? __props.modelValue.data : '')\n  }${\n    _ssrRenderAttr(\"id\", __props.label)\n  }${\n    _ssrRenderAttr(\"placeholder\", _ctx.$t(__props.placeholder || 'Enter Value'))\n  } class=\"${\n    _ssrRenderClass([[_unref(props).classes, _unref(inputClasses)], \"form-control\"])\n  }\" data-v-3dfe0fd7><i class=\"${\n    _ssrRenderClass([__props.IconClass])\n  }\" data-v-3dfe0fd7></i></div>`)\n  if (__props.modelValue.errorMessage) {\n    _push(`<p class=\"error-message\" data-v-3dfe0fd7>${_ssrInterpolate(_ctx.$t(__props.modelValue.errorMessage))}</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\nimport \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/Common/TextInput.vue?vue&type=style&index=0&scoped=3dfe0fd7&lang.css\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/InputFields/Common/TextInput.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-3dfe0fd7\"]])",
+      "start": 1716056339875,
+      "end": 1716056339876,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/Common/TextInput.vue\").then(r => r.default))",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339876,
+      "end": 1716056339876,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339877,
+      "end": 1716056339877,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339877,
+      "end": 1716056339877,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339877,
+      "end": 1716056339877,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339877,
+      "end": 1716056339877,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339877,
+      "end": 1716056339877,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339877,
+      "end": 1716056339877,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339877,
+      "end": 1716056339877,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339877,
+      "end": 1716056339877,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339877,
+      "end": 1716056339877,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339877,
+      "end": 1716056339877,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339877,
+      "end": 1716056339877,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339877,
+      "end": 1716056339877,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339877,
+      "end": 1716056339877,
+      "order": "normal"
+    }
+  ]
+}

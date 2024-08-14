@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/middleware/routeMiddleware.global.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { storeToRefs } from \"pinia\";\nimport { useUserStore } from \"~~/store/user\";\nconst ProtectedRoutes = [\n  \"/checkout\",\n  \"/compare\",\n  \"/wishlist\",\n  \"/account/dashboard\",\n  \"/account/notifications\",\n  \"/account/addresses\",\n  \"account/wallet\",\n  \"/account/point\",\n  \"/account/order\",\n  \"/account/refund\",\n  \"/account/bank-details\",\n];\n\nconst SetUser = async () => {\n  let { UserInfo } = storeToRefs(useUserStore());\n  let ToReturn = true;\n  let { data: user, error } = await useFetch(\"self\", {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: \"get\",\n    cache: false,\n    key: `GetSelfInfo`,\n  });\n  if (!error.value) {\n    useUserStore().SetUserInfo({ user: user.value });\n  } else {\n    ToReturn = false;\n  }\n  return ToReturn;\n};\n\nexport default defineNuxtRouteMiddleware(async (to, from) => {\n  if (ProtectedRoutes.some((paths) => to.path.includes(paths))) {\n    if (!(await SetUser())) {\n      useRouter().push(\"/auth/login\");\n    }\n  }\n  useCookie(\"uat\").value && (await SetUser());\n  if (process.client) {\n    setTimeout(() => {\n      SetBGImage();\n    }, 2000);\n  }\n});\n",
+      "start": 1716056288463,
+      "end": 1716056288636,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056288636,
+      "end": 1716056288636,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056288636,
+      "end": 1716056288636,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056288636,
+      "end": 1716056288637,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056288637,
+      "end": 1716056288637,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056288637,
+      "end": 1716056288637,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056288637,
+      "end": 1716056288637,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056288637,
+      "end": 1716056288637,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056288637,
+      "end": 1716056288637,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056288637,
+      "end": 1716056288637,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288637,
+      "end": 1716056288637,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056288637,
+      "end": 1716056288637,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056288637,
+      "end": 1716056288637,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056288637,
+      "end": 1716056288637,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288637,
+      "end": 1716056288637,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056288637,
+      "end": 1716056288637,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { storeToRefs } from \"pinia\";\nimport { useUserStore } from \"~~/store/user\";\nconst ProtectedRoutes = [\n  \"/checkout\",\n  \"/compare\",\n  \"/wishlist\",\n  \"/account/dashboard\",\n  \"/account/notifications\",\n  \"/account/addresses\",\n  \"account/wallet\",\n  \"/account/point\",\n  \"/account/order\",\n  \"/account/refund\",\n  \"/account/bank-details\"\n];\nconst SetUser = async () => {\n  let { UserInfo } = storeToRefs(useUserStore());\n  let ToReturn = true;\n  let { data: user, error } = await useFetch(\"self\", {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: \"get\",\n    cache: false,\n    key: `GetSelfInfo`\n  });\n  if (!error.value) {\n    useUserStore().SetUserInfo({ user: user.value });\n  } else {\n    ToReturn = false;\n  }\n  return ToReturn;\n};\nexport default defineNuxtRouteMiddleware(async (to, from) => {\n  if (ProtectedRoutes.some((paths) => to.path.includes(paths))) {\n    if (!await SetUser()) {\n      useRouter().push(\"/auth/login\");\n    }\n  }\n  useCookie(\"uat\").value && await SetUser();\n  if (true) {\n    setTimeout(() => {\n      SetBGImage();\n    }, 2e3);\n  }\n});\n",
+      "start": 1716056288637,
+      "end": 1716056288696,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056288696,
+      "end": 1716056288696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056288696,
+      "end": 1716056288696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056288696,
+      "end": 1716056288696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056288696,
+      "end": 1716056288696,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056288696,
+      "end": 1716056288696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056288696,
+      "end": 1716056288696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056288696,
+      "end": 1716056288696,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { storeToRefs } from \"pinia\";\nimport { useUserStore } from \"~~/store/user\";\nconst ProtectedRoutes = [\n  \"/checkout\",\n  \"/compare\",\n  \"/wishlist\",\n  \"/account/dashboard\",\n  \"/account/notifications\",\n  \"/account/addresses\",\n  \"account/wallet\",\n  \"/account/point\",\n  \"/account/order\",\n  \"/account/refund\",\n  \"/account/bank-details\"\n];\nconst SetUser = async () => {\n  let { UserInfo } = storeToRefs(useUserStore());\n  let ToReturn = true;\n  let { data: user, error } = await useFetch(\"self\", {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: \"get\",\n    cache: false,\n    key: `GetSelfInfo`\n  }, '$kvttfGUv8X');\n  if (!error.value) {\n    useUserStore().SetUserInfo({ user: user.value });\n  } else {\n    ToReturn = false;\n  }\n  return ToReturn;\n};\nexport default defineNuxtRouteMiddleware(async (to, from) => {\n  if (ProtectedRoutes.some((paths) => to.path.includes(paths))) {\n    if (!await SetUser()) {\n      useRouter().push(\"/auth/login\");\n    }\n  }\n  useCookie(\"uat\").value && await SetUser();\n  if (true) {\n    setTimeout(() => {\n      SetBGImage();\n    }, 2e3);\n  }\n});\n",
+      "start": 1716056288696,
+      "end": 1716056288697,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { defineNuxtRouteMiddleware, useRouter } from '#app/composables/router';\nimport { useCookie } from '#app/composables/cookie';\nimport { SetBGImage } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/Design.js';\nimport { storeToRefs } from \"pinia\";\nimport { useUserStore } from \"~~/store/user\";\nconst ProtectedRoutes = [\n  \"/checkout\",\n  \"/compare\",\n  \"/wishlist\",\n  \"/account/dashboard\",\n  \"/account/notifications\",\n  \"/account/addresses\",\n  \"account/wallet\",\n  \"/account/point\",\n  \"/account/order\",\n  \"/account/refund\",\n  \"/account/bank-details\"\n];\nconst SetUser = async () => {\n  let { UserInfo } = storeToRefs(useUserStore());\n  let ToReturn = true;\n  let { data: user, error } = await useFetch(\"self\", {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: \"get\",\n    cache: false,\n    key: `GetSelfInfo`\n  }, '$kvttfGUv8X');\n  if (!error.value) {\n    useUserStore().SetUserInfo({ user: user.value });\n  } else {\n    ToReturn = false;\n  }\n  return ToReturn;\n};\nexport default defineNuxtRouteMiddleware(async (to, from) => {\n  if (ProtectedRoutes.some((paths) => to.path.includes(paths))) {\n    if (!await SetUser()) {\n      useRouter().push(\"/auth/login\");\n    }\n  }\n  useCookie(\"uat\").value && await SetUser();\n  if (true) {\n    setTimeout(() => {\n      SetBGImage();\n    }, 2e3);\n  }\n});\n",
+      "start": 1716056288697,
+      "end": 1716056288698,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "result": "/* _processed_nuxt_unctx_transform */\nimport { executeAsync as __executeAsync } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/unctx/dist/index.mjs\";import { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { defineNuxtRouteMiddleware, useRouter } from '#app/composables/router';\nimport { useCookie } from '#app/composables/cookie';\nimport { SetBGImage } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/Design.js';\nimport { storeToRefs } from \"pinia\";\nimport { useUserStore } from \"~~/store/user\";\nconst ProtectedRoutes = [\n  \"/checkout\",\n  \"/compare\",\n  \"/wishlist\",\n  \"/account/dashboard\",\n  \"/account/notifications\",\n  \"/account/addresses\",\n  \"account/wallet\",\n  \"/account/point\",\n  \"/account/order\",\n  \"/account/refund\",\n  \"/account/bank-details\"\n];\nconst SetUser = async () => {\n  let { UserInfo } = storeToRefs(useUserStore());\n  let ToReturn = true;\n  let { data: user, error } = await useFetch(\"self\", {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: \"get\",\n    cache: false,\n    key: `GetSelfInfo`\n  }, '$kvttfGUv8X');\n  if (!error.value) {\n    useUserStore().SetUserInfo({ user: user.value });\n  } else {\n    ToReturn = false;\n  }\n  return ToReturn;\n};\nexport default defineNuxtRouteMiddleware(async (to, from) => {let __temp, __restore;\n  if (ProtectedRoutes.some((paths) => to.path.includes(paths))) {\n    if (!(([__temp,__restore]=__executeAsync(()=>SetUser())),__temp=await __temp,__restore(),__temp)) {\n      useRouter().push(\"/auth/login\");\n    }\n  }\n  useCookie(\"uat\").value && (([__temp,__restore]=__executeAsync(()=>SetUser())),__temp=await __temp,__restore(),__temp);\n  if (true) {\n    setTimeout(() => {\n      SetBGImage();\n    }, 2e3);\n  }\n},1);\n",
+      "start": 1716056288698,
+      "end": 1716056288700,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056288700,
+      "end": 1716056288700,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056288700,
+      "end": 1716056288700,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056288700,
+      "end": 1716056288700,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056288700,
+      "end": 1716056288700,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056288700,
+      "end": 1716056288700,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056288700,
+      "end": 1716056288701,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056288701,
+      "end": 1716056288701,
+      "order": "normal"
+    }
+  ]
+}

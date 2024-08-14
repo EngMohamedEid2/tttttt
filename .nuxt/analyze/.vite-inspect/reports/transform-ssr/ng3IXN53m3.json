@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Dashboard/index.vue?nuxt_component=async&nuxt_component_name=AccountDashboard",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"tab-pane fade show active\">\n    <div class=\"dashboard-home\">\n      <div class=\"title-header\">\n        <div class=\"d-flex align-items-center\">\n          <h5>{{ $t(\"My Dashboard\") }}</h5>\n        </div>\n      </div>\n      <div class=\"dashboard-user-name\">\n        <h6 class=\"text-content\">\n          {{ $t(\"Hello\") }}, <b class=\"text-title\">{{ user?.name }}</b>\n        </h6>\n        <p class=\"text-content\">\n          {{\n            $t(\"Welcome to your personalized My Account Dashboard. Here, you have the power to manage your entire e-commerce  experience in one place.Whether you're exploring the latest products, checking your wallet balance, or updating  your profile, everything is at your fingertips\"\n            )\n          }}\n        </p>\n      </div>\n      <div class=\"total-box\">\n        <AccountDashboardTotalContain :user=\"user\" />\n      </div>\n      <div class=\"profile-about dashboard-bg-box\">\n        <AccountDashboardProfileInformation :user=\"user\" />\n      </div>\n    </div>\n  </div>\n</template>\n<script setup>\nlet props = defineProps({\n  user: Object,\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n\n",
+      "start": 1716056305932,
+      "end": 1716056306229,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306229,
+      "end": 1716056306229,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306229,
+      "end": 1716056306229,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306229,
+      "end": 1716056306229,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306229,
+      "end": 1716056306229,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056306229,
+      "end": 1716056306229,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056306229,
+      "end": 1716056306229,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056306229,
+      "end": 1716056306229,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056306229,
+      "end": 1716056306229,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056306229,
+      "end": 1716056306229,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056306229,
+      "end": 1716056306229,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  user: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_AccountDashboardTotalContain = _resolveComponent(\"AccountDashboardTotalContain\")\n  const _component_AccountDashboardProfileInformation = _resolveComponent(\"AccountDashboardProfileInformation\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"tab-pane fade show active\" }, _attrs))\n  }><div class=\"dashboard-home\"><div class=\"title-header\"><div class=\"d-flex align-items-center\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"My Dashboard\"))\n  }</h5></div></div><div class=\"dashboard-user-name\"><h6 class=\"text-content\">${\n    _ssrInterpolate(_ctx.$t(\"Hello\"))\n  }, <b class=\"text-title\">${\n    _ssrInterpolate(__props.user?.name)\n  }</b></h6><p class=\"text-content\">${\n    _ssrInterpolate(_ctx.$t(\"Welcome to your personalized My Account Dashboard. Here, you have the power to manage your entire e-commerce  experience in one place.Whether you're exploring the latest products, checking your wallet balance, or updating  your profile, everything is at your fingertips\"\n            ))\n  }</p></div><div class=\"total-box\">`)\n  _push(_ssrRenderComponent(_component_AccountDashboardTotalContain, { user: __props.user }, null, _parent))\n  _push(`</div><div class=\"profile-about dashboard-bg-box\">`)\n  _push(_ssrRenderComponent(_component_AccountDashboardProfileInformation, { user: __props.user }, null, _parent))\n  _push(`</div></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/Dashboard/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056306229,
+      "end": 1716056306232,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056306232,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Dashboard/index.vue\").then(r => r.default))",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056306233,
+      "end": 1716056306233,
+      "order": "normal"
+    }
+  ]
+}

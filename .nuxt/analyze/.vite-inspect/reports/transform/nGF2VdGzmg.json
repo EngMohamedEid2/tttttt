@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/Content/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"row g-4\" :class=\"{ 'ratio_65': style === 'list_view' }\" v-if=\"blog?.data?.length\">\n\n    <div :class=\"style === 'list_view' ? 'col-12' : 'col-xxl-4 col-sm-6'\" v-for=\"blog of blog?.data\" :key=\"blog\">\n      <div class=\"blog-box\" :class=\"{\n        'blog-list': style === 'list_view',\n        'sticky-blog-box': blog?.is_sticky === 1,\n      }\">\n        <div class=\"blog-label-tag\" v-if=\"blog?.is_featured\">\n          <span>{{ $t(\"Featured\") }}</span>\n        </div>\n        <div class=\"blog-image\">\n          <nuxt-link :to=\"`/blog/${blog?.slug}`\">\n            <img :src=\"blog?.blog_thumbnail?.original_url\" :alt=\"blog?.title\" />\n          </nuxt-link>\n        </div>\n        <div class=\"blog-contain blog-contain-2\" :class=\"{ 'blog-contain-2': style === 'list_view' }\">\n          <div class=\"blog-label\">\n            <span class=\"time\">\n              <Icon name=\"ri-time-line\"></Icon>\n              <span>{{ dateFormatter(blog?.created_at) }}</span>\n            </span>\n            <span class=\"super\" v-if=\"themeOption?.blog?.blog_author_enable\">\n              <Icon name=\"ri-user-line\"></Icon>\n              <span>{{ blog?.created_by?.name }}</span>\n            </span>\n          </div>\n          <nuxt-link :to=\"`/blog/${blog?.slug}`\">\n            <h3>{{ blog?.title }}</h3>\n          </nuxt-link>\n          <p v-html=\"blog.description\" v-if=\"blog?.description\"></p>\n          <nuxt-link :to=\"`/blog/${blog?.slug}`\" class=\"blog-button\" v-if=\"themeOption?.blog?.read_more_enable\">\n            {{ $t(\"Read More\") }}\n            <Icon name=\"ri-arrow-right-fill\"></Icon>\n          </nuxt-link>\n        </div>\n      </div>\n    </div>\n    <div class=\"custome-pagination\" v-if=\"blog?.data?.length\">\n      <WidgetsPagination :Data=\"blog\" @change-page=\"(toPage) => {\n        ChangePage({ toPage });\n      }\" />\n    </div>\n  </div>\n  <div v-else>\n    <WidgetsNoData :classes=\"'no-data-added'\" :image=\"'/svg/empty-items.svg'\" :text=\"'No Blogs Found'\"\n      :description=\"'Oops! It seems that we could not find any blogs matching your search criteria.'\"\n      v-if=\"!blog?.data?.length\">\n    </WidgetsNoData>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  blog: Object,\n  style: [String, Object],\n  sidebar: String,\n  filter: Object,\n  themeOption: Object\n});\n\nconst ChangePage = ({ toPage }) => {\n  props.filter.page = toPage;\n};\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056286599,
+      "end": 1716056286906,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056286906,
+      "end": 1716056286906,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056286906,
+      "end": 1716056286906,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056286906,
+      "end": 1716056286906,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056286906,
+      "end": 1716056286906,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056286906,
+      "end": 1716056286906,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056286906,
+      "end": 1716056286906,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056286906,
+      "end": 1716056286906,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createTextVNode as _createTextVNode, createBlock as _createBlock, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"blog-label-tag\"\n}\nconst _hoisted_2 = { class: \"blog-image\" }\nconst _hoisted_3 = [\"src\", \"alt\"]\nconst _hoisted_4 = { class: \"blog-label\" }\nconst _hoisted_5 = { class: \"time\" }\nconst _hoisted_6 = {\n  key: 0,\n  class: \"super\"\n}\nconst _hoisted_7 = [\"innerHTML\"]\nconst _hoisted_8 = {\n  key: 0,\n  class: \"custome-pagination\"\n}\nconst _hoisted_9 = { key: 1 }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  blog: Object,\n  style: [String, Object],\n  sidebar: String,\n  filter: Object,\n  themeOption: Object\n},\n  setup(__props) {\n\nlet props = __props;\n\nconst ChangePage = ({ toPage }) => {\n  props.filter.page = toPage;\n};\n\nreturn (_ctx, _cache) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsPagination = _resolveComponent(\"WidgetsPagination\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  return (__props.blog?.data?.length)\n    ? (_openBlock(), _createElementBlock(\"div\", {\n        key: 0,\n        class: _normalizeClass([\"row g-4\", { 'ratio_65': __props.style === 'list_view' }])\n      }, [\n        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.blog?.data, (blog) => {\n          return (_openBlock(), _createElementBlock(\"div\", {\n            class: _normalizeClass(__props.style === 'list_view' ? 'col-12' : 'col-xxl-4 col-sm-6'),\n            key: blog\n          }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass([\"blog-box\", {\n        'blog-list': __props.style === 'list_view',\n        'sticky-blog-box': blog?.is_sticky === 1,\n      }])\n            }, [\n              (blog?.is_featured)\n                ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n                    _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"Featured\")), 1)\n                  ]))\n                : _createCommentVNode(\"\", true),\n              _createElementVNode(\"div\", _hoisted_2, [\n                _createVNode(_component_nuxt_link, {\n                  to: `/blog/${blog?.slug}`\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"img\", {\n                      src: blog?.blog_thumbnail?.original_url,\n                      alt: blog?.title\n                    }, null, 8, _hoisted_3)\n                  ]),\n                  _: 2\n                }, 1032, [\"to\"])\n              ]),\n              _createElementVNode(\"div\", {\n                class: _normalizeClass([\"blog-contain blog-contain-2\", { 'blog-contain-2': __props.style === 'list_view' }])\n              }, [\n                _createElementVNode(\"div\", _hoisted_4, [\n                  _createElementVNode(\"span\", _hoisted_5, [\n                    _createVNode(_component_Icon, { name: \"ri-time-line\" }),\n                    _createElementVNode(\"span\", null, _toDisplayString(_ctx.dateFormatter(blog?.created_at)), 1)\n                  ]),\n                  (__props.themeOption?.blog?.blog_author_enable)\n                    ? (_openBlock(), _createElementBlock(\"span\", _hoisted_6, [\n                        _createVNode(_component_Icon, { name: \"ri-user-line\" }),\n                        _createElementVNode(\"span\", null, _toDisplayString(blog?.created_by?.name), 1)\n                      ]))\n                    : _createCommentVNode(\"\", true)\n                ]),\n                _createVNode(_component_nuxt_link, {\n                  to: `/blog/${blog?.slug}`\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"h3\", null, _toDisplayString(blog?.title), 1)\n                  ]),\n                  _: 2\n                }, 1032, [\"to\"]),\n                (blog?.description)\n                  ? (_openBlock(), _createElementBlock(\"p\", {\n                      key: 0,\n                      innerHTML: blog.description\n                    }, null, 8, _hoisted_7))\n                  : _createCommentVNode(\"\", true),\n                (__props.themeOption?.blog?.read_more_enable)\n                  ? (_openBlock(), _createBlock(_component_nuxt_link, {\n                      key: 1,\n                      to: `/blog/${blog?.slug}`,\n                      class: \"blog-button\"\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString(_ctx.$t(\"Read More\")) + \" \", 1),\n                        _createVNode(_component_Icon, { name: \"ri-arrow-right-fill\" })\n                      ]),\n                      _: 2\n                    }, 1032, [\"to\"]))\n                  : _createCommentVNode(\"\", true)\n              ], 2)\n            ], 2)\n          ], 2))\n        }), 128)),\n        (__props.blog?.data?.length)\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_8, [\n              _createVNode(_component_WidgetsPagination, {\n                Data: __props.blog,\n                onChangePage: _cache[0] || (_cache[0] = (toPage) => {\n        ChangePage({ toPage });\n      })\n              }, null, 8, [\"Data\"])\n            ]))\n          : _createCommentVNode(\"\", true)\n      ], 2))\n    : (_openBlock(), _createElementBlock(\"div\", _hoisted_9, [\n        (!__props.blog?.data?.length)\n          ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n              key: 0,\n              classes: 'no-data-added',\n              image: '/svg/empty-items.svg',\n              text: 'No Blogs Found',\n              description: 'Oops! It seems that we could not find any blogs matching your search criteria.'\n            }, null, 8, [\"image\", \"description\"]))\n          : _createCommentVNode(\"\", true)\n      ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286906,
+      "end": 1716056286907,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056286907,
+      "end": 1716056286907,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { dateFormatter as __unimport_dateFormatter } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/formators/date.js';\nimport { unref as __unimport_unref_ } from 'vue';import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createTextVNode as _createTextVNode, createBlock as _createBlock, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"blog-label-tag\"\n}\nconst _hoisted_2 = { class: \"blog-image\" }\nconst _hoisted_3 = [\"src\", \"alt\"]\nconst _hoisted_4 = { class: \"blog-label\" }\nconst _hoisted_5 = { class: \"time\" }\nconst _hoisted_6 = {\n  key: 0,\n  class: \"super\"\n}\nconst _hoisted_7 = [\"innerHTML\"]\nconst _hoisted_8 = {\n  key: 0,\n  class: \"custome-pagination\"\n}\nconst _hoisted_9 = { key: 1 }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  blog: Object,\n  style: [String, Object],\n  sidebar: String,\n  filter: Object,\n  themeOption: Object\n},\n  setup(__props) {\n\nlet props = __props;\n\nconst ChangePage = ({ toPage }) => {\n  props.filter.page = toPage;\n};\n\nreturn (_ctx, _cache) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsPagination = _resolveComponent(\"WidgetsPagination\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  return (__props.blog?.data?.length)\n    ? (_openBlock(), _createElementBlock(\"div\", {\n        key: 0,\n        class: _normalizeClass([\"row g-4\", { 'ratio_65': __props.style === 'list_view' }])\n      }, [\n        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.blog?.data, (blog) => {\n          return (_openBlock(), _createElementBlock(\"div\", {\n            class: _normalizeClass(__props.style === 'list_view' ? 'col-12' : 'col-xxl-4 col-sm-6'),\n            key: blog\n          }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass([\"blog-box\", {\n        'blog-list': __props.style === 'list_view',\n        'sticky-blog-box': blog?.is_sticky === 1,\n      }])\n            }, [\n              (blog?.is_featured)\n                ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n                    _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"Featured\")), 1)\n                  ]))\n                : _createCommentVNode(\"\", true),\n              _createElementVNode(\"div\", _hoisted_2, [\n                _createVNode(_component_nuxt_link, {\n                  to: `/blog/${blog?.slug}`\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"img\", {\n                      src: blog?.blog_thumbnail?.original_url,\n                      alt: blog?.title\n                    }, null, 8, _hoisted_3)\n                  ]),\n                  _: 2\n                }, 1032, [\"to\"])\n              ]),\n              _createElementVNode(\"div\", {\n                class: _normalizeClass([\"blog-contain blog-contain-2\", { 'blog-contain-2': __props.style === 'list_view' }])\n              }, [\n                _createElementVNode(\"div\", _hoisted_4, [\n                  _createElementVNode(\"span\", _hoisted_5, [\n                    _createVNode(_component_Icon, { name: \"ri-time-line\" }),\n                    _createElementVNode(\"span\", null, _toDisplayString((\"dateFormatter\" in _ctx ? _ctx.dateFormatter : __unimport_unref_(__unimport_dateFormatter))(blog?.created_at)), 1)\n                  ]),\n                  (__props.themeOption?.blog?.blog_author_enable)\n                    ? (_openBlock(), _createElementBlock(\"span\", _hoisted_6, [\n                        _createVNode(_component_Icon, { name: \"ri-user-line\" }),\n                        _createElementVNode(\"span\", null, _toDisplayString(blog?.created_by?.name), 1)\n                      ]))\n                    : _createCommentVNode(\"\", true)\n                ]),\n                _createVNode(_component_nuxt_link, {\n                  to: `/blog/${blog?.slug}`\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"h3\", null, _toDisplayString(blog?.title), 1)\n                  ]),\n                  _: 2\n                }, 1032, [\"to\"]),\n                (blog?.description)\n                  ? (_openBlock(), _createElementBlock(\"p\", {\n                      key: 0,\n                      innerHTML: blog.description\n                    }, null, 8, _hoisted_7))\n                  : _createCommentVNode(\"\", true),\n                (__props.themeOption?.blog?.read_more_enable)\n                  ? (_openBlock(), _createBlock(_component_nuxt_link, {\n                      key: 1,\n                      to: `/blog/${blog?.slug}`,\n                      class: \"blog-button\"\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString(_ctx.$t(\"Read More\")) + \" \", 1),\n                        _createVNode(_component_Icon, { name: \"ri-arrow-right-fill\" })\n                      ]),\n                      _: 2\n                    }, 1032, [\"to\"]))\n                  : _createCommentVNode(\"\", true)\n              ], 2)\n            ], 2)\n          ], 2))\n        }), 128)),\n        (__props.blog?.data?.length)\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_8, [\n              _createVNode(_component_WidgetsPagination, {\n                Data: __props.blog,\n                onChangePage: _cache[0] || (_cache[0] = (toPage) => {\n        ChangePage({ toPage });\n      })\n              }, null, 8, [\"Data\"])\n            ]))\n          : _createCommentVNode(\"\", true)\n      ], 2))\n    : (_openBlock(), _createElementBlock(\"div\", _hoisted_9, [\n        (!__props.blog?.data?.length)\n          ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n              key: 0,\n              classes: 'no-data-added',\n              image: '/svg/empty-items.svg',\n              text: 'No Blogs Found',\n              description: 'Oops! It seems that we could not find any blogs matching your search criteria.'\n            }, null, 8, [\"image\", \"description\"]))\n          : _createCommentVNode(\"\", true)\n      ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286908,
+      "end": 1716056286910,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056286910,
+      "end": 1716056286910,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056286910,
+      "end": 1716056286910,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056286910,
+      "end": 1716056286910,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056286911,
+      "end": 1716056286911,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Pagination/index.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/NoData/index.vue\";\nimport { dateFormatter as __unimport_dateFormatter } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/formators/date.js';\nimport { unref as __unimport_unref_ } from 'vue';import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createTextVNode as _createTextVNode, createBlock as _createBlock, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"blog-label-tag\"\n}\nconst _hoisted_2 = { class: \"blog-image\" }\nconst _hoisted_3 = [\"src\", \"alt\"]\nconst _hoisted_4 = { class: \"blog-label\" }\nconst _hoisted_5 = { class: \"time\" }\nconst _hoisted_6 = {\n  key: 0,\n  class: \"super\"\n}\nconst _hoisted_7 = [\"innerHTML\"]\nconst _hoisted_8 = {\n  key: 0,\n  class: \"custome-pagination\"\n}\nconst _hoisted_9 = { key: 1 }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  blog: Object,\n  style: [String, Object],\n  sidebar: String,\n  filter: Object,\n  themeOption: Object\n},\n  setup(__props) {\n\nlet props = __props;\n\nconst ChangePage = ({ toPage }) => {\n  props.filter.page = toPage;\n};\n\nreturn (_ctx, _cache) => {\n  const _component_nuxt_link = __nuxt_component_0\n  const _component_Icon = __nuxt_component_1\n  const _component_WidgetsPagination = __nuxt_component_2\n  const _component_WidgetsNoData = __nuxt_component_3\n\n  return (__props.blog?.data?.length)\n    ? (_openBlock(), _createElementBlock(\"div\", {\n        key: 0,\n        class: _normalizeClass([\"row g-4\", { 'ratio_65': __props.style === 'list_view' }])\n      }, [\n        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.blog?.data, (blog) => {\n          return (_openBlock(), _createElementBlock(\"div\", {\n            class: _normalizeClass(__props.style === 'list_view' ? 'col-12' : 'col-xxl-4 col-sm-6'),\n            key: blog\n          }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass([\"blog-box\", {\n        'blog-list': __props.style === 'list_view',\n        'sticky-blog-box': blog?.is_sticky === 1,\n      }])\n            }, [\n              (blog?.is_featured)\n                ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n                    _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"Featured\")), 1)\n                  ]))\n                : _createCommentVNode(\"\", true),\n              _createElementVNode(\"div\", _hoisted_2, [\n                _createVNode(_component_nuxt_link, {\n                  to: `/blog/${blog?.slug}`\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"img\", {\n                      src: blog?.blog_thumbnail?.original_url,\n                      alt: blog?.title\n                    }, null, 8, _hoisted_3)\n                  ]),\n                  _: 2\n                }, 1032, [\"to\"])\n              ]),\n              _createElementVNode(\"div\", {\n                class: _normalizeClass([\"blog-contain blog-contain-2\", { 'blog-contain-2': __props.style === 'list_view' }])\n              }, [\n                _createElementVNode(\"div\", _hoisted_4, [\n                  _createElementVNode(\"span\", _hoisted_5, [\n                    _createVNode(_component_Icon, { name: \"ri-time-line\" }),\n                    _createElementVNode(\"span\", null, _toDisplayString((\"dateFormatter\" in _ctx ? _ctx.dateFormatter : __unimport_unref_(__unimport_dateFormatter))(blog?.created_at)), 1)\n                  ]),\n                  (__props.themeOption?.blog?.blog_author_enable)\n                    ? (_openBlock(), _createElementBlock(\"span\", _hoisted_6, [\n                        _createVNode(_component_Icon, { name: \"ri-user-line\" }),\n                        _createElementVNode(\"span\", null, _toDisplayString(blog?.created_by?.name), 1)\n                      ]))\n                    : _createCommentVNode(\"\", true)\n                ]),\n                _createVNode(_component_nuxt_link, {\n                  to: `/blog/${blog?.slug}`\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"h3\", null, _toDisplayString(blog?.title), 1)\n                  ]),\n                  _: 2\n                }, 1032, [\"to\"]),\n                (blog?.description)\n                  ? (_openBlock(), _createElementBlock(\"p\", {\n                      key: 0,\n                      innerHTML: blog.description\n                    }, null, 8, _hoisted_7))\n                  : _createCommentVNode(\"\", true),\n                (__props.themeOption?.blog?.read_more_enable)\n                  ? (_openBlock(), _createBlock(_component_nuxt_link, {\n                      key: 1,\n                      to: `/blog/${blog?.slug}`,\n                      class: \"blog-button\"\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString(_ctx.$t(\"Read More\")) + \" \", 1),\n                        _createVNode(_component_Icon, { name: \"ri-arrow-right-fill\" })\n                      ]),\n                      _: 2\n                    }, 1032, [\"to\"]))\n                  : _createCommentVNode(\"\", true)\n              ], 2)\n            ], 2)\n          ], 2))\n        }), 128)),\n        (__props.blog?.data?.length)\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_8, [\n              _createVNode(_component_WidgetsPagination, {\n                Data: __props.blog,\n                onChangePage: _cache[0] || (_cache[0] = (toPage) => {\n        ChangePage({ toPage });\n      })\n              }, null, 8, [\"Data\"])\n            ]))\n          : _createCommentVNode(\"\", true)\n      ], 2))\n    : (_openBlock(), _createElementBlock(\"div\", _hoisted_9, [\n        (!__props.blog?.data?.length)\n          ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n              key: 0,\n              classes: 'no-data-added',\n              image: '/svg/empty-items.svg',\n              text: 'No Blogs Found',\n              description: 'Oops! It seems that we could not find any blogs matching your search criteria.'\n            }, null, 8, [\"image\", \"description\"]))\n          : _createCommentVNode(\"\", true)\n      ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286911,
+      "end": 1716056286911,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056286911,
+      "end": 1716056286911,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056286911,
+      "end": 1716056286911,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056286911,
+      "end": 1716056286911,
+      "order": "normal"
+    }
+  ]
+}

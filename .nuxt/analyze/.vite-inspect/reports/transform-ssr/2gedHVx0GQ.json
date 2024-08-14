@@ -1,0 +1,257 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/TopHeader.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div\n    class=\"header-top\"\n    :class=\"{ 'bg-dark': themeOptions?.header?.page_top_bar_dark }\"\n  >\n    <div class=\"container-fluid-lg\">\n      <div class=\"row\">\n        <div class=\"col-xxl-3 d-xxl-block d-none\">\n          <div class=\"top-left-header\">\n            <NuxtLink class=\"text-white\" to=\"\" target=\"_blank\">\n              <span class=\"text-white\">{{ $t(\"Become a Seller\") }}</span>\n            </NuxtLink>\n          </div>\n        </div>\n\n        <div class=\"col-xxl-6 col-lg-9 d-lg-block d-none pt-1\">\n          <div class=\"header-offer\">\n            <HeaderElementsTopContent :themeOptions=\"themeOptions\" />\n          </div>\n        </div>\n\n        <div class=\"col-lg-3\">\n          <ul class=\"about-list right-nav-about\">\n            <li class=\"right-nav-list\">\n              <div class=\"dropdown theme-form-select\">\n                <HeaderElementsLanguage />\n              </div>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nlet prop = defineProps({\n  themeOptions: Object,\n});\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056341176,
+      "end": 1716056341377,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341377,
+      "end": 1716056341377,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341377,
+      "end": 1716056341377,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341377,
+      "end": 1716056341377,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341377,
+      "end": 1716056341377,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056341377,
+      "end": 1716056341377,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056341377,
+      "end": 1716056341377,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056341377,
+      "end": 1716056341377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056341377,
+      "end": 1716056341377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056341377,
+      "end": 1716056341377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056341377,
+      "end": 1716056341377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'TopHeader',\n  __ssrInlineRender: true,\n  props: {\n  themeOptions: Object,\n},\n  setup(__props) {\n\nlet prop = __props;\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n  const _component_HeaderElementsTopContent = _resolveComponent(\"HeaderElementsTopContent\")\n  const _component_HeaderElementsLanguage = _resolveComponent(\"HeaderElementsLanguage\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({\n    class: [\"header-top\", { 'bg-dark': __props.themeOptions?.header?.page_top_bar_dark }]\n  }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-xxl-3 d-xxl-block d-none\"><div class=\"top-left-header\">`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    class: \"text-white\",\n    to: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<span class=\"text-white\"${\n          _scopeId\n        }>${\n          _ssrInterpolate(_ctx.$t(\"Become a Seller\"))\n        }</span>`)\n      } else {\n        return [\n          _createVNode(\"span\", { class: \"text-white\" }, _toDisplayString(_ctx.$t(\"Become a Seller\")), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div><div class=\"col-xxl-6 col-lg-9 d-lg-block d-none pt-1\"><div class=\"header-offer\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsTopContent, { themeOptions: __props.themeOptions }, null, _parent))\n  _push(`</div></div><div class=\"col-lg-3\"><ul class=\"about-list right-nav-about\"><li class=\"right-nav-list\"><div class=\"dropdown theme-form-select\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsLanguage, null, null, _parent))\n  _push(`</div></li></ul></div></div></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Header/Elements/TopHeader.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341377,
+      "end": 1716056341378,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056341378,
+      "end": 1716056341378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056341379,
+      "end": 1716056341379,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056341379,
+      "end": 1716056341379,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341379,
+      "end": 1716056341379,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341379,
+      "end": 1716056341379,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056341379,
+      "end": 1716056341380,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056341379,
+      "end": 1716056341380,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341380,
+      "end": 1716056341380,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341380,
+      "end": 1716056341380,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341380,
+      "end": 1716056341380,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341380,
+      "end": 1716056341380,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056341380,
+      "end": 1716056341380,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/TopContent.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Language.vue\";\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'TopHeader',\n  __ssrInlineRender: true,\n  props: {\n  themeOptions: Object,\n},\n  setup(__props) {\n\nlet prop = __props;\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_NuxtLink = __nuxt_component_0\n  const _component_HeaderElementsTopContent = __nuxt_component_1\n  const _component_HeaderElementsLanguage = __nuxt_component_2\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({\n    class: [\"header-top\", { 'bg-dark': __props.themeOptions?.header?.page_top_bar_dark }]\n  }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-xxl-3 d-xxl-block d-none\"><div class=\"top-left-header\">`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    class: \"text-white\",\n    to: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<span class=\"text-white\"${\n          _scopeId\n        }>${\n          _ssrInterpolate(_ctx.$t(\"Become a Seller\"))\n        }</span>`)\n      } else {\n        return [\n          _createVNode(\"span\", { class: \"text-white\" }, _toDisplayString(_ctx.$t(\"Become a Seller\")), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div><div class=\"col-xxl-6 col-lg-9 d-lg-block d-none pt-1\"><div class=\"header-offer\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsTopContent, { themeOptions: __props.themeOptions }, null, _parent))\n  _push(`</div></div><div class=\"col-lg-3\"><ul class=\"about-list right-nav-about\"><li class=\"right-nav-list\"><div class=\"dropdown theme-form-select\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsLanguage, null, null, _parent))\n  _push(`</div></li></ul></div></div></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Header/Elements/TopHeader.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341380,
+      "end": 1716056341380,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056341380,
+      "end": 1716056341380,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056341380,
+      "end": 1716056341380,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056341380,
+      "end": 1716056341380,
+      "order": "normal"
+    }
+  ]
+}

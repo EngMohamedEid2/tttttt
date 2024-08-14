@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/StickyCheckout/index.vue?nuxt_component=async&nuxt_component_name=ShopProductDetailsWidgetsStickyCheckout",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"sticky-bottom-cart\">\n        <div class=\"container-fluid-lg\">\n            <div class=\"row\">\n                <div class=\"col-12\">\n                    <div class=\"cart-content\">\n                        <div class=\"product-image\">\n                            <img :src=\"selectedVariation && selectedVariation.variation_image\n                                ? selectedVariation.variation_image.original_url\n                                : product.product_thumbnail\n                                    ? product.product_thumbnail.original_url\n                                    : '/images/product.png'\" class=\"img-fluid\" alt=\"product\">\n                            <div class=\"content\">\n                                <h5>{{ selectedVariation ? selectedVariation.name : product?.name }}</h5>\n                                <h6>{{ store.currency.symbol }} {{ store.convertCurrency(selectedVariation ?\n                                    selectedVariation.sale_price : product.sale_price) }}\n                                    <del class=\"text-danger\"\n                                        v-if=\"selectedVariation ? selectedVariation.discount : product.discount\">\n                                        {{ store.currency.symbol }} {{ store.convertCurrency(selectedVariation ?\n                                            selectedVariation.price : product.price) }}\n                                    </del>\n                                    <span v-if=\"selectedVariation ? selectedVariation.discount : product.discount\">\n                                        {{ store.currency.symbol }} {{ store.convertCurrency(selectedVariation ?\n                                            selectedVariation.discount : product.discount) }}% {{ 'off' }}\n                                    </span>\n                                </h6>\n                            </div>\n                        </div> \n                        <div class=\"selection-section\">\n                            <div class=\"form-group mb-0 choose-product\">\n                                <WidgetsVariantAttributes :product=\"product\" :attributes=\"product?.attributes || []\"\n                                    @selectVariation=\"selectVariation($event)\" :isAllVariantStyleDropdown=\"true\"  />\n                            </div>\n                            <div class=\"cart_qty qty-box product-qty m-0\">\n                                <div class=\"input-group h-100\">\n                                    <WidgetsButton :classes=\"'btn qty-left-minus'\" :id=\"'add-to-cart' + product.id\"\n                                        @onClick=\"updateQuantity(-1)\">\n                                        <Icon name=\"ri-subtract-fill\"></Icon>\n                                    </WidgetsButton>\n                                    <input class=\"form-control input-number qty-input border-0\" type=\"text\" name=\"quantity\"\n                                        :value=\"productQty\" readonly>\n                                    <WidgetsButton :classes=\"'btn qty-left-minus'\" :id=\"'qty-left-minus' + product.id\"\n                                        @onClick=\"updateQuantity(1)\">\n                                        <Icon name=\"ri-add-line\"></Icon>\n                                    </WidgetsButton>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"add-btn\">\n                            <WidgetsButton :id=\"'addcartbtnVariationsticky' + product.id\"\n                                :classes=\"'btn theme-bg-color text-white'\" @onClick=\"handleAddProduct()\" v-if=\"(selectedVariation && selectedVariation?.stock_status == 'in_stock'\n                                    || product?.stock_status == 'in_stock' && product.type === 'simple')\">\n                                <i class=\"ri-shopping-cart-line me-1\"></i> {{ 'Add to Cart' }}\n                            </WidgetsButton>\n                            <div v-else>\n                                <WidgetsButton :class=\"'btn theme-bg-color text-white'\" :id=\"'soldoutbtncheckout'\"\n                                    :disabled=\"true\">\n                                    {{ ((selectedVariation?.stock_status == 'out_of_stock' ||\n                                        product.stock_status == 'out_of_stock') ? $t(\"Sold Out\") : $t(\"Add to Cart\")) }}\n                                </WidgetsButton>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { useCurrencyStore } from \"@/store/currency\"\nimport { useCartStore } from \"@/store/cart\";\nlet props = defineProps({\n    selectedVariation: Object,\n    product: Object\n})\n\n\nlet productQty = ref(1)\nlet selectedVariation = ref(null);\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nfunction selectVariation(variation) {\n    selectedVariation.value = variation;\n}\n\nfunction updateQuantity(qty) {\n    if (1 > productQty.value + (qty)) return;   \n    productQty.value = productQty.value + (qty);\n}\n\nfunction handleAddProduct() {\n    useCartStore().addToCartProduct({ product: props.product, quantity: productQty?.value, variation_id: selectedVariation?.value?.id, variation:selectedVariation?.value });\n}\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056284655,
+      "end": 1716056284809,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284809,
+      "end": 1716056284809,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284809,
+      "end": 1716056284809,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284809,
+      "end": 1716056284809,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284809,
+      "end": 1716056284809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284809,
+      "end": 1716056284809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284809,
+      "end": 1716056284809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284809,
+      "end": 1716056284809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createBlock as _createBlock, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = { class: \"sticky-bottom-cart\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-12\" }\nconst _hoisted_5 = { class: \"cart-content\" }\nconst _hoisted_6 = { class: \"product-image\" }\nconst _hoisted_7 = [\"src\"]\nconst _hoisted_8 = { class: \"content\" }\nconst _hoisted_9 = {\n  key: 0,\n  class: \"text-danger\"\n}\nconst _hoisted_10 = { key: 1 }\nconst _hoisted_11 = { class: \"selection-section\" }\nconst _hoisted_12 = { class: \"form-group mb-0 choose-product\" }\nconst _hoisted_13 = { class: \"cart_qty qty-box product-qty m-0\" }\nconst _hoisted_14 = { class: \"input-group h-100\" }\nconst _hoisted_15 = [\"value\"]\nconst _hoisted_16 = { class: \"add-btn\" }\nconst _hoisted_17 = /*#__PURE__*/_createElementVNode(\"i\", { class: \"ri-shopping-cart-line me-1\" }, null, -1)\nconst _hoisted_18 = { key: 1 }\n\nimport { useCurrencyStore } from \"@/store/currency\"\nimport { useCartStore } from \"@/store/cart\";\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    selectedVariation: Object,\n    product: Object\n},\n  setup(__props) {\n\nlet props = __props\n\n\nlet productQty = ref(1)\nlet selectedVariation = ref(null);\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nfunction selectVariation(variation) {\n    selectedVariation.value = variation;\n}\n\nfunction updateQuantity(qty) {\n    if (1 > productQty.value + (qty)) return;   \n    productQty.value = productQty.value + (qty);\n}\n\nfunction handleAddProduct() {\n    useCartStore().addToCartProduct({ product: props.product, quantity: productQty?.value, variation_id: selectedVariation?.value?.id, variation:selectedVariation?.value });\n}\n\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsVariantAttributes = _resolveComponent(\"WidgetsVariantAttributes\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createElementVNode(\"img\", {\n                src: _unref(selectedVariation) && _unref(selectedVariation).variation_image\n                                ? _unref(selectedVariation).variation_image.original_url\n                                : __props.product.product_thumbnail\n                                    ? __props.product.product_thumbnail.original_url\n                                    : '/images/product.png',\n                class: \"img-fluid\",\n                alt: \"product\"\n              }, null, 8, _hoisted_7),\n              _createElementVNode(\"div\", _hoisted_8, [\n                _createElementVNode(\"h5\", null, _toDisplayString(_unref(selectedVariation) ? _unref(selectedVariation).name : __props.product?.name), 1),\n                _createElementVNode(\"h6\", null, [\n                  _createTextVNode(_toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(_unref(store).convertCurrency(_unref(selectedVariation) ?\n                                    _unref(selectedVariation).sale_price : __props.product.sale_price)) + \" \", 1),\n                  (_unref(selectedVariation) ? _unref(selectedVariation).discount : __props.product.discount)\n                    ? (_openBlock(), _createElementBlock(\"del\", _hoisted_9, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(_unref(store).convertCurrency(_unref(selectedVariation) ?\n                                            _unref(selectedVariation).price : __props.product.price)), 1))\n                    : _createCommentVNode(\"\", true),\n                  (_unref(selectedVariation) ? _unref(selectedVariation).discount : __props.product.discount)\n                    ? (_openBlock(), _createElementBlock(\"span\", _hoisted_10, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(_unref(store).convertCurrency(_unref(selectedVariation) ?\n                                            _unref(selectedVariation).discount : __props.product.discount)) + \"% \" + _toDisplayString('off'), 1))\n                    : _createCommentVNode(\"\", true)\n                ])\n              ])\n            ]),\n            _createElementVNode(\"div\", _hoisted_11, [\n              _createElementVNode(\"div\", _hoisted_12, [\n                _createVNode(_component_WidgetsVariantAttributes, {\n                  product: __props.product,\n                  attributes: __props.product?.attributes || [],\n                  onSelectVariation: _cache[0] || (_cache[0] = $event => (selectVariation($event))),\n                  isAllVariantStyleDropdown: true\n                }, null, 8, [\"product\", \"attributes\"])\n              ]),\n              _createElementVNode(\"div\", _hoisted_13, [\n                _createElementVNode(\"div\", _hoisted_14, [\n                  _createVNode(_component_WidgetsButton, {\n                    classes: 'btn qty-left-minus',\n                    id: 'add-to-cart' + __props.product.id,\n                    onOnClick: _cache[1] || (_cache[1] = $event => (updateQuantity(-1)))\n                  }, {\n                    default: _withCtx(() => [\n                      _createVNode(_component_Icon, { name: \"ri-subtract-fill\" })\n                    ]),\n                    _: 1\n                  }, 8, [\"id\"]),\n                  _createElementVNode(\"input\", {\n                    class: \"form-control input-number qty-input border-0\",\n                    type: \"text\",\n                    name: \"quantity\",\n                    value: _unref(productQty),\n                    readonly: \"\"\n                  }, null, 8, _hoisted_15),\n                  _createVNode(_component_WidgetsButton, {\n                    classes: 'btn qty-left-minus',\n                    id: 'qty-left-minus' + __props.product.id,\n                    onOnClick: _cache[2] || (_cache[2] = $event => (updateQuantity(1)))\n                  }, {\n                    default: _withCtx(() => [\n                      _createVNode(_component_Icon, { name: \"ri-add-line\" })\n                    ]),\n                    _: 1\n                  }, 8, [\"id\"])\n                ])\n              ])\n            ]),\n            _createElementVNode(\"div\", _hoisted_16, [\n              ((_unref(selectedVariation) && _unref(selectedVariation)?.stock_status == 'in_stock'\n                                    || __props.product?.stock_status == 'in_stock' && __props.product.type === 'simple'))\n                ? (_openBlock(), _createBlock(_component_WidgetsButton, {\n                    key: 0,\n                    id: 'addcartbtnVariationsticky' + __props.product.id,\n                    classes: 'btn theme-bg-color text-white',\n                    onOnClick: _cache[3] || (_cache[3] = $event => (handleAddProduct()))\n                  }, {\n                    default: _withCtx(() => [\n                      _hoisted_17,\n                      _createTextVNode(\" \" + _toDisplayString('Add to Cart'))\n                    ]),\n                    _: 1\n                  }, 8, [\"id\"]))\n                : (_openBlock(), _createElementBlock(\"div\", _hoisted_18, [\n                    _createVNode(_component_WidgetsButton, {\n                      class: _normalizeClass('btn theme-bg-color text-white'),\n                      id: 'soldoutbtncheckout',\n                      disabled: true\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString(((_unref(selectedVariation)?.stock_status == 'out_of_stock' ||\n                                        __props.product.stock_status == 'out_of_stock') ? _ctx.$t(\"Sold Out\") : _ctx.$t(\"Add to Cart\"))), 1)\n                      ]),\n                      _: 1\n                    })\n                  ]))\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284809,
+      "end": 1716056284813,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284813,
+      "end": 1716056284813,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284813,
+      "end": 1716056284813,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284813,
+      "end": 1716056284813,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284813,
+      "end": 1716056284813,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/StickyCheckout/index.vue\").then(r => r.default))",
+      "start": 1716056284813,
+      "end": 1716056284813,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/StickyCheckout/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284814,
+      "end": 1716056284814,
+      "order": "normal"
+    }
+  ]
+}

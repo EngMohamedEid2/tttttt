@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/filter/Attribute.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"accordion-item\" v-for=\"(attributes, index) in attribute\" :key=\"index\">\n        <h2 class=\"accordion-header\" >\n            <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"\n                :data-bs-target=\"`#attributes-dropdown${index}`\">\n                <span>{{ attributes.name }}</span>\n            </button>\n        </h2>\n        <div :id=\"`attributes-dropdown${index}`\" class=\"accordion-collapse collapse show\">\n            <div class=\"accordion-body\">\n                <ul class=\"category-list custom-padding custom-height\">\n                    <li v-for=\"(attribute_value , index) of attributes?.attribute_values\" :key=\"index\">\n                        <div class=\"form-check ps-0 m-0 category-list-box\">\n                            <input class=\"checkbox_animated\" type=\"checkbox\" :id=\"attribute_value.value\"\n                                :value=\"attribute_value.slug\" v-model=\"store.filterObject.selectedAttributes\" />\n                            <label class=\"form-check-label color-label-box\" :for=\"attribute_value.value\">\n                                <div class=\"color-box\" v-if=\"attributes.style === 'color'\"\n                                    :style=\"{ 'background-color': attribute_value.hex_color }\"></div>\n                                <span class=\"name\">{{ attribute_value.value }}</span>\n                            </label>\n                        </div>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</template>\n<script setup>\nimport { storeToRefs } from 'pinia';\nimport { useCollectionStore } from '~/store/collection';\n\nlet store = useCollectionStore()\n\nlet { filter, attribute, selectedAttributes } = storeToRefs(useCollectionStore())\nlet { data, error } = await HandleRequest('attribute', { key: 'getAllAttributeInFilter1' })\nif (!error.value) {\n    attribute.value = data?.value?.data;\n}\n\nfunction checked(item) {\n    if (selectedAttributes.value?.indexOf(item) != -1) {\n        return true;\n    }\n    return false;\n}\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056287393,
+      "end": 1716056287557,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287557,
+      "end": 1716056287557,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287557,
+      "end": 1716056287557,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287557,
+      "end": 1716056287557,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287557,
+      "end": 1716056287557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287557,
+      "end": 1716056287557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287557,
+      "end": 1716056287557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287557,
+      "end": 1716056287557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, vModelCheckbox as _vModelCheckbox, withDirectives as _withDirectives, normalizeStyle as _normalizeStyle, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"accordion-header\" }\nconst _hoisted_2 = [\"data-bs-target\"]\nconst _hoisted_3 = [\"id\"]\nconst _hoisted_4 = { class: \"accordion-body\" }\nconst _hoisted_5 = { class: \"category-list custom-padding custom-height\" }\nconst _hoisted_6 = { class: \"form-check ps-0 m-0 category-list-box\" }\nconst _hoisted_7 = [\"id\", \"value\"]\nconst _hoisted_8 = [\"for\"]\nconst _hoisted_9 = { class: \"name\" }\n\nimport { storeToRefs } from 'pinia';\nimport { useCollectionStore } from '~/store/collection';\n\n\nconst _sfc_main = {\n  __name: 'Attribute',\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet store = useCollectionStore()\n\nlet { filter, attribute, selectedAttributes } = storeToRefs(useCollectionStore())\nlet { data, error } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest('attribute', { key: 'getAllAttributeInFilter1' }))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\nif (!error.value) {\n    attribute.value = data?.value?.data;\n}\n\nfunction checked(item) {\n    if (selectedAttributes.value?.indexOf(item) != -1) {\n        return true;\n    }\n    return false;\n}\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(attribute), (attributes, index) => {\n    return (_openBlock(), _createElementBlock(\"div\", {\n      class: \"accordion-item\",\n      key: index\n    }, [\n      _createElementVNode(\"h2\", _hoisted_1, [\n        _createElementVNode(\"button\", {\n          class: \"accordion-button collapsed\",\n          type: \"button\",\n          \"data-bs-toggle\": \"collapse\",\n          \"data-bs-target\": `#attributes-dropdown${index}`\n        }, [\n          _createElementVNode(\"span\", null, _toDisplayString(attributes.name), 1)\n        ], 8, _hoisted_2)\n      ]),\n      _createElementVNode(\"div\", {\n        id: `attributes-dropdown${index}`,\n        class: \"accordion-collapse collapse show\"\n      }, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"ul\", _hoisted_5, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(attributes?.attribute_values, (attribute_value, index) => {\n              return (_openBlock(), _createElementBlock(\"li\", { key: index }, [\n                _createElementVNode(\"div\", _hoisted_6, [\n                  _withDirectives(_createElementVNode(\"input\", {\n                    class: \"checkbox_animated\",\n                    type: \"checkbox\",\n                    id: attribute_value.value,\n                    value: attribute_value.slug,\n                    \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_unref(store).filterObject.selectedAttributes) = $event))\n                  }, null, 8, _hoisted_7), [\n                    [_vModelCheckbox, _unref(store).filterObject.selectedAttributes]\n                  ]),\n                  _createElementVNode(\"label\", {\n                    class: \"form-check-label color-label-box\",\n                    for: attribute_value.value\n                  }, [\n                    (attributes.style === 'color')\n                      ? (_openBlock(), _createElementBlock(\"div\", {\n                          key: 0,\n                          class: \"color-box\",\n                          style: _normalizeStyle({ 'background-color': attribute_value.hex_color })\n                        }, null, 4))\n                      : _createCommentVNode(\"\", true),\n                    _createElementVNode(\"span\", _hoisted_9, _toDisplayString(attribute_value.value), 1)\n                  ], 8, _hoisted_8)\n                ])\n              ]))\n            }), 128))\n          ])\n        ])\n      ], 8, _hoisted_3)\n    ]))\n  }), 128))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287557,
+      "end": 1716056287558,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287558,
+      "end": 1716056287558,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287558,
+      "end": 1716056287558,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287558,
+      "end": 1716056287558,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287558,
+      "end": 1716056287558,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287558,
+      "end": 1716056287559,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287559,
+      "end": 1716056287559,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287559,
+      "end": 1716056287559,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287559,
+      "end": 1716056287559,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287559,
+      "end": 1716056287559,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287559,
+      "end": 1716056287559,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287559,
+      "end": 1716056287559,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287559,
+      "end": 1716056287559,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287559,
+      "end": 1716056287559,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287559,
+      "end": 1716056287559,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287559,
+      "end": 1716056287559,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287559,
+      "end": 1716056287559,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, vModelCheckbox as _vModelCheckbox, withDirectives as _withDirectives, normalizeStyle as _normalizeStyle, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"accordion-header\" }\nconst _hoisted_2 = [\"data-bs-target\"]\nconst _hoisted_3 = [\"id\"]\nconst _hoisted_4 = { class: \"accordion-body\" }\nconst _hoisted_5 = { class: \"category-list custom-padding custom-height\" }\nconst _hoisted_6 = { class: \"form-check ps-0 m-0 category-list-box\" }\nconst _hoisted_7 = [\"id\", \"value\"]\nconst _hoisted_8 = [\"for\"]\nconst _hoisted_9 = { class: \"name\" }\n\nimport { storeToRefs } from 'pinia';\nimport { useCollectionStore } from '~/store/collection';\n\n\nconst _sfc_main = {\n  __name: 'Attribute',\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet store = useCollectionStore()\n\nlet { filter, attribute, selectedAttributes } = storeToRefs(useCollectionStore())\nlet { data, error } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest('attribute', { key: 'getAllAttributeInFilter1' }))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\nif (!error.value) {\n    attribute.value = data?.value?.data;\n}\n\nfunction checked(item) {\n    if (selectedAttributes.value?.indexOf(item) != -1) {\n        return true;\n    }\n    return false;\n}\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(attribute), (attributes, index) => {\n    return (_openBlock(), _createElementBlock(\"div\", {\n      class: \"accordion-item\",\n      key: index\n    }, [\n      _createElementVNode(\"h2\", _hoisted_1, [\n        _createElementVNode(\"button\", {\n          class: \"accordion-button collapsed\",\n          type: \"button\",\n          \"data-bs-toggle\": \"collapse\",\n          \"data-bs-target\": `#attributes-dropdown${index}`\n        }, [\n          _createElementVNode(\"span\", null, _toDisplayString(attributes.name), 1)\n        ], 8, _hoisted_2)\n      ]),\n      _createElementVNode(\"div\", {\n        id: `attributes-dropdown${index}`,\n        class: \"accordion-collapse collapse show\"\n      }, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"ul\", _hoisted_5, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(attributes?.attribute_values, (attribute_value, index) => {\n              return (_openBlock(), _createElementBlock(\"li\", { key: index }, [\n                _createElementVNode(\"div\", _hoisted_6, [\n                  _withDirectives(_createElementVNode(\"input\", {\n                    class: \"checkbox_animated\",\n                    type: \"checkbox\",\n                    id: attribute_value.value,\n                    value: attribute_value.slug,\n                    \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_unref(store).filterObject.selectedAttributes) = $event))\n                  }, null, 8, _hoisted_7), [\n                    [_vModelCheckbox, _unref(store).filterObject.selectedAttributes]\n                  ]),\n                  _createElementVNode(\"label\", {\n                    class: \"form-check-label color-label-box\",\n                    for: attribute_value.value\n                  }, [\n                    (attributes.style === 'color')\n                      ? (_openBlock(), _createElementBlock(\"div\", {\n                          key: 0,\n                          class: \"color-box\",\n                          style: _normalizeStyle({ 'background-color': attribute_value.hex_color })\n                        }, null, 4))\n                      : _createCommentVNode(\"\", true),\n                    _createElementVNode(\"span\", _hoisted_9, _toDisplayString(attribute_value.value), 1)\n                  ], 8, _hoisted_8)\n                ])\n              ]))\n            }), 128))\n          ])\n        ])\n      ], 8, _hoisted_3)\n    ]))\n  }), 128))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287559,
+      "end": 1716056287561,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287561,
+      "end": 1716056287561,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287561,
+      "end": 1716056287561,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287561,
+      "end": 1716056287561,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287561,
+      "end": 1716056287561,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056287561,
+      "end": 1716056287561,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287561,
+      "end": 1716056287561,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287561,
+      "end": 1716056287561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287561,
+      "end": 1716056287563,
+      "order": "normal"
+    }
+  ]
+}

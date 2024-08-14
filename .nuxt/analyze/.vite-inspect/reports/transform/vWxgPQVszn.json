@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/app.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script :src=\"code.jquery.com / jquery - x.x.x.min.js\"></script>\n\n<template>\n  <div>\n    <NuxtLayout>\n      <NuxtPage />\n    </NuxtLayout>\n    <WidgetsModalsProductModal\n      :Data=\"modals.quickView\"\n      @close=\"\n        () => {\n          useCartStore().ToggleModal({ value: false });\n        }\n      \"\n    />\n  </div>\n</template>\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useCartStore } from \"./store/cart\";\nimport { useSiteStore } from \"./store/site\";\nimport { useDataStore } from \"./store/data\";\nlet { modals, cart } = storeToRefs(useCartStore());\nlet { Settings, ThemeOptions } = storeToRefs(useDataStore());\nlet { data, error, pending } = await HandleRequest(\"settings\", {\n  key: \"getSettingsInApp\",\n});\n\n// let meta = useMeta()\n\nconst favIcon = ref(null);\nconst isTabInFocus = ref(true);\nconst timeoutId = ref(null);\nconst currentMessageIndex = ref(0);\nconst messages = ref([\"⚡ Come Back !!\", \"🎉 Offers for you...\"]);\nconst currentMessage = ref(\"\");\nconst delay = ref(1000); // Delay between messages in milliseconds\n\nwatch(\n  () => ThemeOptions.value.options,\n  (theme) => {\n    if (theme?.general?.mode === \"dark\") {\n      if (process.client) {\n        document.documentElement.classList.add(\n          theme?.general && theme?.general?.mode\n        );\n      }\n    } else {\n      if (process.client) {\n        document.documentElement.classList.remove(\"dark\");\n      }\n    }\n\n    // Set Direction\n    if (theme?.general?.language_direction === \"rtl\") {\n      if (process.client) {\n        document.documentElement.setAttribute(\"dir\", \"rtl\");\n        document.body.classList.add(\"rtl\");\n      }\n    } else {\n      if (process.client) {\n        document.documentElement.removeAttribute(\"dir\");\n        document.body.classList.remove(\"rtl\");\n      }\n    }\n\n    if (process.client) {\n      favIcon.value = document.querySelector(\"#appIcon\");\n      if (favIcon.value) {\n        favIcon.value.href = theme?.logo?.favicon_icon?.original_url;\n      }\n    }\n  }\n);\n\nuseHead({\n  link: [\n    {\n      rel: \"icon\",\n      id: \"appIcon\",\n      type: \"image/png\",\n      href: ThemeOptions?.value?.options?.logo?.favicon_icon?.original_url,\n    },\n  ],\n  meta: [\n    {\n      property: \"og:title\",\n      content: ThemeOptions?.value?.options?.seo?.og_title,\n    },\n  ],\n  meta: [\n    {\n      property: \"og:description\",\n      content: ThemeOptions?.value.options?.seo?.og_description,\n    },\n  ],\n  meta: [\n    {\n      property: \"og:image\",\n      content: ThemeOptions?.value?.options?.seo?.og_image?.original_url,\n    },\n  ],\n  meta: [\n    {\n      property: \"og:title\",\n      content: ThemeOptions?.value?.options?.seo?.og_title,\n    },\n  ],\n  meta: [\n    {\n      property: \"description\",\n      content: ThemeOptions?.value?.options?.seo?.meta_description,\n    },\n  ],\n  meta: [\n    {\n      property: \"keywords\",\n      content: ThemeOptions?.value?.options?.seo?.meta_tags,\n    },\n  ],\n});\n\nfunction updateTitle(theme) {\n  const title =\n    theme?.general?.site_title && theme?.general?.site_tagline\n      ? `${theme.general.site_title} | ${theme.general.site_tagline}`\n      : \"FastKart Marketplace: Where Vendors Shine Together\";\n  document.title = title;\n}\n\nfunction updateMessage() {\n  clearTimeout(timeoutId.value);\n\n  currentMessage.value = messages.value[currentMessageIndex.value];\n  document.title = currentMessage.value;\n\n  currentMessageIndex.value =\n    (currentMessageIndex.value + 1) % messages.value.length;\n\n  timeoutId.value = setTimeout(updateMessage, delay.value);\n}\n\nonMounted(async () => {\n  document.addEventListener(\"visibilitychange\", () => {\n    isTabInFocus.value = !document.hidden;\n    if (isTabInFocus.value) {\n      clearTimeout(timeoutId.value);\n      updateTitle(ThemeOptions.value.options);\n    } else {\n      updateMessage();\n    }\n  });\n\n  window.addEventListener(\"beforeunload\", (event) => {\n    localStorage.setItem(\"cart\", JSON.stringify(cart.value));\n  });\n  let localCart = JSON.parse(localStorage.getItem(\"cart\"));\n  if (localCart?.length) {\n    useCartStore().SetCart({ Cart: localCart });\n  }\n});\n\nonUnmounted(() => {\n  clearTimeout(timeoutId.value);\n});\n\nif (!error.value) {\n  useSiteStore().SetSiteSettings({ settings: data.value });\n}\n</script>\n<style lang=\"scss\">\n.page-enter-active,\n.page-leave-active {\n  transition: all 0.2s;\n}\n\n.page-enter-from,\n.page-leave-to {\n  opacity: 0;\n  filter: blur(1rem);\n}\n\n.layout-enter-active,\n.layout-leave-active {\n  transition: all 0.2s;\n}\n\n.layout-enter-from,\n.layout-leave-to {\n  filter: grayscale(1);\n}\n</style>\n",
+      "start": 1716056289208,
+      "end": 1716056289379,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056289380,
+      "end": 1716056289380,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056289380,
+      "end": 1716056289380,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056289380,
+      "end": 1716056289380,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056289380,
+      "end": 1716056289380,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056289380,
+      "end": 1716056289380,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056289380,
+      "end": 1716056289380,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056289380,
+      "end": 1716056289380,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, unref as _unref, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useCartStore } from \"./store/cart\";\nimport { useSiteStore } from \"./store/site\";\nimport { useDataStore } from \"./store/data\";\n\nconst _sfc_main = {\n  __name: 'app',\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet { modals, cart } = storeToRefs(useCartStore());\nlet { Settings, ThemeOptions } = storeToRefs(useDataStore());\nlet { data, error, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"settings\", {\n  key: \"getSettingsInApp\",\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\n// let meta = useMeta()\n\nconst favIcon = ref(null);\nconst isTabInFocus = ref(true);\nconst timeoutId = ref(null);\nconst currentMessageIndex = ref(0);\nconst messages = ref([\"⚡ Come Back !!\", \"🎉 Offers for you...\"]);\nconst currentMessage = ref(\"\");\nconst delay = ref(1000); // Delay between messages in milliseconds\n\nwatch(\n  () => ThemeOptions.value.options,\n  (theme) => {\n    if (theme?.general?.mode === \"dark\") {\n      if (process.client) {\n        document.documentElement.classList.add(\n          theme?.general && theme?.general?.mode\n        );\n      }\n    } else {\n      if (process.client) {\n        document.documentElement.classList.remove(\"dark\");\n      }\n    }\n\n    // Set Direction\n    if (theme?.general?.language_direction === \"rtl\") {\n      if (process.client) {\n        document.documentElement.setAttribute(\"dir\", \"rtl\");\n        document.body.classList.add(\"rtl\");\n      }\n    } else {\n      if (process.client) {\n        document.documentElement.removeAttribute(\"dir\");\n        document.body.classList.remove(\"rtl\");\n      }\n    }\n\n    if (process.client) {\n      favIcon.value = document.querySelector(\"#appIcon\");\n      if (favIcon.value) {\n        favIcon.value.href = theme?.logo?.favicon_icon?.original_url;\n      }\n    }\n  }\n);\n\nuseHead({\n  link: [\n    {\n      rel: \"icon\",\n      id: \"appIcon\",\n      type: \"image/png\",\n      href: ThemeOptions?.value?.options?.logo?.favicon_icon?.original_url,\n    },\n  ],\n  meta: [\n    {\n      property: \"og:title\",\n      content: ThemeOptions?.value?.options?.seo?.og_title,\n    },\n  ],\n  meta: [\n    {\n      property: \"og:description\",\n      content: ThemeOptions?.value.options?.seo?.og_description,\n    },\n  ],\n  meta: [\n    {\n      property: \"og:image\",\n      content: ThemeOptions?.value?.options?.seo?.og_image?.original_url,\n    },\n  ],\n  meta: [\n    {\n      property: \"og:title\",\n      content: ThemeOptions?.value?.options?.seo?.og_title,\n    },\n  ],\n  meta: [\n    {\n      property: \"description\",\n      content: ThemeOptions?.value?.options?.seo?.meta_description,\n    },\n  ],\n  meta: [\n    {\n      property: \"keywords\",\n      content: ThemeOptions?.value?.options?.seo?.meta_tags,\n    },\n  ],\n});\n\nfunction updateTitle(theme) {\n  const title =\n    theme?.general?.site_title && theme?.general?.site_tagline\n      ? `${theme.general.site_title} | ${theme.general.site_tagline}`\n      : \"FastKart Marketplace: Where Vendors Shine Together\";\n  document.title = title;\n}\n\nfunction updateMessage() {\n  clearTimeout(timeoutId.value);\n\n  currentMessage.value = messages.value[currentMessageIndex.value];\n  document.title = currentMessage.value;\n\n  currentMessageIndex.value =\n    (currentMessageIndex.value + 1) % messages.value.length;\n\n  timeoutId.value = setTimeout(updateMessage, delay.value);\n}\n\nonMounted(async () => {\n  document.addEventListener(\"visibilitychange\", () => {\n    isTabInFocus.value = !document.hidden;\n    if (isTabInFocus.value) {\n      clearTimeout(timeoutId.value);\n      updateTitle(ThemeOptions.value.options);\n    } else {\n      updateMessage();\n    }\n  });\n\n  window.addEventListener(\"beforeunload\", (event) => {\n    localStorage.setItem(\"cart\", JSON.stringify(cart.value));\n  });\n  let localCart = JSON.parse(localStorage.getItem(\"cart\"));\n  if (localCart?.length) {\n    useCartStore().SetCart({ Cart: localCart });\n  }\n});\n\nonUnmounted(() => {\n  clearTimeout(timeoutId.value);\n});\n\nif (!error.value) {\n  useSiteStore().SetSiteSettings({ settings: data.value });\n}\n\nreturn (_ctx, _cache) => {\n  const _component_NuxtPage = _resolveComponent(\"NuxtPage\")\n  const _component_NuxtLayout = _resolveComponent(\"NuxtLayout\")\n  const _component_WidgetsModalsProductModal = _resolveComponent(\"WidgetsModalsProductModal\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_NuxtLayout, null, {\n      default: _withCtx(() => [\n        _createVNode(_component_NuxtPage)\n      ]),\n      _: 1\n    }),\n    _createVNode(_component_WidgetsModalsProductModal, {\n      Data: _unref(modals).quickView,\n      onClose: _cache[0] || (_cache[0] = \n        () => {\n          _unref(useCartStore)().ToggleModal({ value: false });\n        }\n      )\n    }, null, 8, [\"Data\"])\n  ]))\n}\n}\n\n}\n\n\nimport \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/app.vue?vue&type=style&index=0&lang.scss\"\n\nexport default _sfc_main",
+      "start": 1716056289380,
+      "end": 1716056289387,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056289387,
+      "end": 1716056289387,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289387,
+      "end": 1716056289387,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056289387,
+      "end": 1716056289387,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056289387,
+      "end": 1716056289387,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056289387,
+      "end": 1716056289387,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289387,
+      "end": 1716056289387,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056289387,
+      "end": 1716056289387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { withAsyncContext as _withAsyncContext } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, unref as _unref, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nimport { storeToRefs } from \"pinia\";\nimport { useCartStore } from \"./store/cart\";\nimport { useSiteStore } from \"./store/site\";\nimport { useDataStore } from \"./store/data\";\nconst _sfc_main = {\n  __name: \"app\",\n  async setup(__props) {\n    let __temp, __restore;\n    let { modals, cart } = storeToRefs(useCartStore());\n    let { Settings, ThemeOptions } = storeToRefs(useDataStore());\n    let { data, error, pending } = ([__temp, __restore] = _withAsyncContext(() => HandleRequest(\"settings\", {\n      key: \"getSettingsInApp\"\n    })), __temp = await __temp, __restore(), __temp);\n    const favIcon = ref(null);\n    const isTabInFocus = ref(true);\n    const timeoutId = ref(null);\n    const currentMessageIndex = ref(0);\n    const messages = ref([\"⚡ Come Back !!\", \"🎉 Offers for you...\"]);\n    const currentMessage = ref(\"\");\n    const delay = ref(1e3);\n    watch(\n      () => ThemeOptions.value.options,\n      (theme) => {\n        if (theme?.general?.mode === \"dark\") {\n          if (true) {\n            document.documentElement.classList.add(\n              theme?.general && theme?.general?.mode\n            );\n          }\n        } else {\n          if (true) {\n            document.documentElement.classList.remove(\"dark\");\n          }\n        }\n        if (theme?.general?.language_direction === \"rtl\") {\n          if (true) {\n            document.documentElement.setAttribute(\"dir\", \"rtl\");\n            document.body.classList.add(\"rtl\");\n          }\n        } else {\n          if (true) {\n            document.documentElement.removeAttribute(\"dir\");\n            document.body.classList.remove(\"rtl\");\n          }\n        }\n        if (true) {\n          favIcon.value = document.querySelector(\"#appIcon\");\n          if (favIcon.value) {\n            favIcon.value.href = theme?.logo?.favicon_icon?.original_url;\n          }\n        }\n      }\n    );\n    useHead({\n      link: [\n        {\n          rel: \"icon\",\n          id: \"appIcon\",\n          type: \"image/png\",\n          href: ThemeOptions?.value?.options?.logo?.favicon_icon?.original_url\n        }\n      ],\n      meta: [\n        {\n          property: \"og:title\",\n          content: ThemeOptions?.value?.options?.seo?.og_title\n        }\n      ],\n      meta: [\n        {\n          property: \"og:description\",\n          content: ThemeOptions?.value.options?.seo?.og_description\n        }\n      ],\n      meta: [\n        {\n          property: \"og:image\",\n          content: ThemeOptions?.value?.options?.seo?.og_image?.original_url\n        }\n      ],\n      meta: [\n        {\n          property: \"og:title\",\n          content: ThemeOptions?.value?.options?.seo?.og_title\n        }\n      ],\n      meta: [\n        {\n          property: \"description\",\n          content: ThemeOptions?.value?.options?.seo?.meta_description\n        }\n      ],\n      meta: [\n        {\n          property: \"keywords\",\n          content: ThemeOptions?.value?.options?.seo?.meta_tags\n        }\n      ]\n    });\n    function updateTitle(theme) {\n      const title = theme?.general?.site_title && theme?.general?.site_tagline ? `${theme.general.site_title} | ${theme.general.site_tagline}` : \"FastKart Marketplace: Where Vendors Shine Together\";\n      document.title = title;\n    }\n    function updateMessage() {\n      clearTimeout(timeoutId.value);\n      currentMessage.value = messages.value[currentMessageIndex.value];\n      document.title = currentMessage.value;\n      currentMessageIndex.value = (currentMessageIndex.value + 1) % messages.value.length;\n      timeoutId.value = setTimeout(updateMessage, delay.value);\n    }\n    onMounted(async () => {\n      document.addEventListener(\"visibilitychange\", () => {\n        isTabInFocus.value = !document.hidden;\n        if (isTabInFocus.value) {\n          clearTimeout(timeoutId.value);\n          updateTitle(ThemeOptions.value.options);\n        } else {\n          updateMessage();\n        }\n      });\n      window.addEventListener(\"beforeunload\", (event) => {\n        localStorage.setItem(\"cart\", JSON.stringify(cart.value));\n      });\n      let localCart = JSON.parse(localStorage.getItem(\"cart\"));\n      if (localCart?.length) {\n        useCartStore().SetCart({ Cart: localCart });\n      }\n    });\n    onUnmounted(() => {\n      clearTimeout(timeoutId.value);\n    });\n    if (!error.value) {\n      useSiteStore().SetSiteSettings({ settings: data.value });\n    }\n    return (_ctx, _cache) => {\n      const _component_NuxtPage = _resolveComponent(\"NuxtPage\");\n      const _component_NuxtLayout = _resolveComponent(\"NuxtLayout\");\n      const _component_WidgetsModalsProductModal = _resolveComponent(\"WidgetsModalsProductModal\");\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        _createVNode(_component_NuxtLayout, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_NuxtPage)\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_WidgetsModalsProductModal, {\n          Data: _unref(modals).quickView,\n          onClose: _cache[0] || (_cache[0] = () => {\n            _unref(useCartStore)().ToggleModal({ value: false });\n          })\n        }, null, 8, [\"Data\"])\n      ]);\n    };\n  }\n};\nimport \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/app.vue?vue&type=style&index=0&lang.scss\";\nexport default _sfc_main;\n",
+      "start": 1716056289387,
+      "end": 1716056289443,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056289443,
+      "end": 1716056289443,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056289443,
+      "end": 1716056289443,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056289443,
+      "end": 1716056289443,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056289443,
+      "end": 1716056289443,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056289443,
+      "end": 1716056289443,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056289443,
+      "end": 1716056289443,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056289443,
+      "end": 1716056289443,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056289443,
+      "end": 1716056289443,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { ref, watch, onMounted, onUnmounted } from 'vue';\nimport { useHead } from '@unhead/vue';\nimport { withAsyncContext as _withAsyncContext } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, unref as _unref, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nimport { storeToRefs } from \"pinia\";\nimport { useCartStore } from \"./store/cart\";\nimport { useSiteStore } from \"./store/site\";\nimport { useDataStore } from \"./store/data\";\nconst _sfc_main = {\n  __name: \"app\",\n  async setup(__props) {\n    let __temp, __restore;\n    let { modals, cart } = storeToRefs(useCartStore());\n    let { Settings, ThemeOptions } = storeToRefs(useDataStore());\n    let { data, error, pending } = ([__temp, __restore] = _withAsyncContext(() => HandleRequest(\"settings\", {\n      key: \"getSettingsInApp\"\n    })), __temp = await __temp, __restore(), __temp);\n    const favIcon = ref(null);\n    const isTabInFocus = ref(true);\n    const timeoutId = ref(null);\n    const currentMessageIndex = ref(0);\n    const messages = ref([\"⚡ Come Back !!\", \"🎉 Offers for you...\"]);\n    const currentMessage = ref(\"\");\n    const delay = ref(1e3);\n    watch(\n      () => ThemeOptions.value.options,\n      (theme) => {\n        if (theme?.general?.mode === \"dark\") {\n          if (true) {\n            document.documentElement.classList.add(\n              theme?.general && theme?.general?.mode\n            );\n          }\n        } else {\n          if (true) {\n            document.documentElement.classList.remove(\"dark\");\n          }\n        }\n        if (theme?.general?.language_direction === \"rtl\") {\n          if (true) {\n            document.documentElement.setAttribute(\"dir\", \"rtl\");\n            document.body.classList.add(\"rtl\");\n          }\n        } else {\n          if (true) {\n            document.documentElement.removeAttribute(\"dir\");\n            document.body.classList.remove(\"rtl\");\n          }\n        }\n        if (true) {\n          favIcon.value = document.querySelector(\"#appIcon\");\n          if (favIcon.value) {\n            favIcon.value.href = theme?.logo?.favicon_icon?.original_url;\n          }\n        }\n      }\n    );\n    useHead({\n      link: [\n        {\n          rel: \"icon\",\n          id: \"appIcon\",\n          type: \"image/png\",\n          href: ThemeOptions?.value?.options?.logo?.favicon_icon?.original_url\n        }\n      ],\n      meta: [\n        {\n          property: \"og:title\",\n          content: ThemeOptions?.value?.options?.seo?.og_title\n        }\n      ],\n      meta: [\n        {\n          property: \"og:description\",\n          content: ThemeOptions?.value.options?.seo?.og_description\n        }\n      ],\n      meta: [\n        {\n          property: \"og:image\",\n          content: ThemeOptions?.value?.options?.seo?.og_image?.original_url\n        }\n      ],\n      meta: [\n        {\n          property: \"og:title\",\n          content: ThemeOptions?.value?.options?.seo?.og_title\n        }\n      ],\n      meta: [\n        {\n          property: \"description\",\n          content: ThemeOptions?.value?.options?.seo?.meta_description\n        }\n      ],\n      meta: [\n        {\n          property: \"keywords\",\n          content: ThemeOptions?.value?.options?.seo?.meta_tags\n        }\n      ]\n    });\n    function updateTitle(theme) {\n      const title = theme?.general?.site_title && theme?.general?.site_tagline ? `${theme.general.site_title} | ${theme.general.site_tagline}` : \"FastKart Marketplace: Where Vendors Shine Together\";\n      document.title = title;\n    }\n    function updateMessage() {\n      clearTimeout(timeoutId.value);\n      currentMessage.value = messages.value[currentMessageIndex.value];\n      document.title = currentMessage.value;\n      currentMessageIndex.value = (currentMessageIndex.value + 1) % messages.value.length;\n      timeoutId.value = setTimeout(updateMessage, delay.value);\n    }\n    onMounted(async () => {\n      document.addEventListener(\"visibilitychange\", () => {\n        isTabInFocus.value = !document.hidden;\n        if (isTabInFocus.value) {\n          clearTimeout(timeoutId.value);\n          updateTitle(ThemeOptions.value.options);\n        } else {\n          updateMessage();\n        }\n      });\n      window.addEventListener(\"beforeunload\", (event) => {\n        localStorage.setItem(\"cart\", JSON.stringify(cart.value));\n      });\n      let localCart = JSON.parse(localStorage.getItem(\"cart\"));\n      if (localCart?.length) {\n        useCartStore().SetCart({ Cart: localCart });\n      }\n    });\n    onUnmounted(() => {\n      clearTimeout(timeoutId.value);\n    });\n    if (!error.value) {\n      useSiteStore().SetSiteSettings({ settings: data.value });\n    }\n    return (_ctx, _cache) => {\n      const _component_NuxtPage = _resolveComponent(\"NuxtPage\");\n      const _component_NuxtLayout = _resolveComponent(\"NuxtLayout\");\n      const _component_WidgetsModalsProductModal = _resolveComponent(\"WidgetsModalsProductModal\");\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        _createVNode(_component_NuxtLayout, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_NuxtPage)\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_WidgetsModalsProductModal, {\n          Data: _unref(modals).quickView,\n          onClose: _cache[0] || (_cache[0] = () => {\n            _unref(useCartStore)().ToggleModal({ value: false });\n          })\n        }, null, 8, [\"Data\"])\n      ]);\n    };\n  }\n};\nimport \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/app.vue?vue&type=style&index=0&lang.scss\";\nexport default _sfc_main;\n",
+      "start": 1716056289443,
+      "end": 1716056289446,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056289446,
+      "end": 1716056289446,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056289446,
+      "end": 1716056289446,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056289446,
+      "end": 1716056289446,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056289446,
+      "end": 1716056289446,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/pages/runtime/page\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/app/components/nuxt-layout\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/ProductModal/index.vue\";\nimport { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { ref, watch, onMounted, onUnmounted } from 'vue';\nimport { useHead } from '@unhead/vue';\nimport { withAsyncContext as _withAsyncContext } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, unref as _unref, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nimport { storeToRefs } from \"pinia\";\nimport { useCartStore } from \"./store/cart\";\nimport { useSiteStore } from \"./store/site\";\nimport { useDataStore } from \"./store/data\";\nconst _sfc_main = {\n  __name: \"app\",\n  async setup(__props) {\n    let __temp, __restore;\n    let { modals, cart } = storeToRefs(useCartStore());\n    let { Settings, ThemeOptions } = storeToRefs(useDataStore());\n    let { data, error, pending } = ([__temp, __restore] = _withAsyncContext(() => HandleRequest(\"settings\", {\n      key: \"getSettingsInApp\"\n    })), __temp = await __temp, __restore(), __temp);\n    const favIcon = ref(null);\n    const isTabInFocus = ref(true);\n    const timeoutId = ref(null);\n    const currentMessageIndex = ref(0);\n    const messages = ref([\"⚡ Come Back !!\", \"🎉 Offers for you...\"]);\n    const currentMessage = ref(\"\");\n    const delay = ref(1e3);\n    watch(\n      () => ThemeOptions.value.options,\n      (theme) => {\n        if (theme?.general?.mode === \"dark\") {\n          if (true) {\n            document.documentElement.classList.add(\n              theme?.general && theme?.general?.mode\n            );\n          }\n        } else {\n          if (true) {\n            document.documentElement.classList.remove(\"dark\");\n          }\n        }\n        if (theme?.general?.language_direction === \"rtl\") {\n          if (true) {\n            document.documentElement.setAttribute(\"dir\", \"rtl\");\n            document.body.classList.add(\"rtl\");\n          }\n        } else {\n          if (true) {\n            document.documentElement.removeAttribute(\"dir\");\n            document.body.classList.remove(\"rtl\");\n          }\n        }\n        if (true) {\n          favIcon.value = document.querySelector(\"#appIcon\");\n          if (favIcon.value) {\n            favIcon.value.href = theme?.logo?.favicon_icon?.original_url;\n          }\n        }\n      }\n    );\n    useHead({\n      link: [\n        {\n          rel: \"icon\",\n          id: \"appIcon\",\n          type: \"image/png\",\n          href: ThemeOptions?.value?.options?.logo?.favicon_icon?.original_url\n        }\n      ],\n      meta: [\n        {\n          property: \"og:title\",\n          content: ThemeOptions?.value?.options?.seo?.og_title\n        }\n      ],\n      meta: [\n        {\n          property: \"og:description\",\n          content: ThemeOptions?.value.options?.seo?.og_description\n        }\n      ],\n      meta: [\n        {\n          property: \"og:image\",\n          content: ThemeOptions?.value?.options?.seo?.og_image?.original_url\n        }\n      ],\n      meta: [\n        {\n          property: \"og:title\",\n          content: ThemeOptions?.value?.options?.seo?.og_title\n        }\n      ],\n      meta: [\n        {\n          property: \"description\",\n          content: ThemeOptions?.value?.options?.seo?.meta_description\n        }\n      ],\n      meta: [\n        {\n          property: \"keywords\",\n          content: ThemeOptions?.value?.options?.seo?.meta_tags\n        }\n      ]\n    });\n    function updateTitle(theme) {\n      const title = theme?.general?.site_title && theme?.general?.site_tagline ? `${theme.general.site_title} | ${theme.general.site_tagline}` : \"FastKart Marketplace: Where Vendors Shine Together\";\n      document.title = title;\n    }\n    function updateMessage() {\n      clearTimeout(timeoutId.value);\n      currentMessage.value = messages.value[currentMessageIndex.value];\n      document.title = currentMessage.value;\n      currentMessageIndex.value = (currentMessageIndex.value + 1) % messages.value.length;\n      timeoutId.value = setTimeout(updateMessage, delay.value);\n    }\n    onMounted(async () => {\n      document.addEventListener(\"visibilitychange\", () => {\n        isTabInFocus.value = !document.hidden;\n        if (isTabInFocus.value) {\n          clearTimeout(timeoutId.value);\n          updateTitle(ThemeOptions.value.options);\n        } else {\n          updateMessage();\n        }\n      });\n      window.addEventListener(\"beforeunload\", (event) => {\n        localStorage.setItem(\"cart\", JSON.stringify(cart.value));\n      });\n      let localCart = JSON.parse(localStorage.getItem(\"cart\"));\n      if (localCart?.length) {\n        useCartStore().SetCart({ Cart: localCart });\n      }\n    });\n    onUnmounted(() => {\n      clearTimeout(timeoutId.value);\n    });\n    if (!error.value) {\n      useSiteStore().SetSiteSettings({ settings: data.value });\n    }\n    return (_ctx, _cache) => {\n      const _component_NuxtPage = __nuxt_component_0;\n      const _component_NuxtLayout = __nuxt_component_1;\n      const _component_WidgetsModalsProductModal = __nuxt_component_2;\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        _createVNode(_component_NuxtLayout, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_NuxtPage)\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_WidgetsModalsProductModal, {\n          Data: _unref(modals).quickView,\n          onClose: _cache[0] || (_cache[0] = () => {\n            _unref(useCartStore)().ToggleModal({ value: false });\n          })\n        }, null, 8, [\"Data\"])\n      ]);\n    };\n  }\n};\nimport \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/app.vue?vue&type=style&index=0&lang.scss\";\nexport default _sfc_main;\n",
+      "start": 1716056289446,
+      "end": 1716056289446,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056289446,
+      "end": 1716056289446,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056289447,
+      "end": 1716056289447,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056289447,
+      "end": 1716056289447,
+      "order": "normal"
+    }
+  ]
+}

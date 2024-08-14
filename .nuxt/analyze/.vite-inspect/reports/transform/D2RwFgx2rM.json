@@ -1,0 +1,210 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/data/menu.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export const Menu = [\n  {\n    id: 1,\n    title: \"Home\",\n    type: \"sub\",\n    megaMenu: true,\n    megaMenuType: \"image\",\n    active: false,\n    children: [\n      // {\n      //   title: \"Paris\",\n      //   path: \"/theme/paris\",\n      //   type: \"link\",\n      //   image: \"/images/themes/01.png\",\n      // },\n      // {\n      //   title: \"Tokyo\",\n      //   path: \"/theme/tokyo\",\n      //   type: \"link\",\n      //   image: \"/images/themes/02.png\",\n      // },\n      {\n        title: \"Osaka\",\n        path: \"/theme/osaka\",\n        type: \"link\",\n        image: \"/images/themes/03.png\",\n      },\n      // {\n      //   title: \"Rome\",\n      //   path: \"/theme/rome\",\n      //   type: \"link\",\n      //   image: \"/images/themes/04.png\",\n      // },\n      // {\n      //   title: \"Madrid\",\n      //   path: \"/theme/madrid\",\n      //   type: \"link\",\n      //   image: \"/images/themes/05.png\",\n      // },\n      // {\n      //   title: \"Berlin\",\n      //   path: \"/theme/berlin\",\n      //   type: \"link\",\n      //   image: \"/images/themes/06.png\",\n      // },\n      // {\n      //   title: \"Denver\",\n      //   path: \"/theme/denver\",\n      //   type: \"link\",\n      //   image: \"/images/themes/07.png\",\n      // },\n      // {\n      //   title: \"\",\n      //   path: \"theme/paris\",\n      //   type: \"link\",\n      //   image: \"/images/themes/08.png\",\n      // },\n    ],\n  },\n  {\n    id: 2,\n    title: \"Collections\",\n    type: \"sub\",\n    megaMenu: true,\n    megaMenuType: \"link\",\n    path: \"/collections\",\n    active: false,\n    slider: \"product\",\n    children: [\n      {\n        children: [\n          {\n            title: \"Collection Layouts\",\n            type: \"sub\",\n          },\n          {\n            title: \"Collection Left Sidebar\",\n            path: \"/collections\",\n            params: { layout: \"collection_left_sidebar\" },\n            type: \"link\",\n            label: \"Hot\",\n            labelClass: \"warning-label\",\n          },\n          // {\n          //   title: \"Collection Right Sidebar\",\n          //   path: \"/collections\",\n          //   params: { layout: \"collection_right_sidebar\" },\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Collection No Sidebar\",\n          //   path: \"/collections\",\n          //   params: { layout: \"collection_no_sidebar\" },\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Collection 3 Grid\",\n          //   path: \"/collections\",\n          //   params: { layout: \"collection_3_grid\" },\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Collection 4 Grid\",\n          //   path: \"/collections\",\n          //   params: { layout: \"collection_4_grid\" },\n          //   type: \"link\",\n          //   label: \"New\",\n          // },\n          // {\n          //   title: \"Collection 5 Grid\",\n          //   path: \"/collections\",\n          //   params: { layout: \"collection_5_grid\" },\n          //   type: \"link\",\n          //   label: \"New\",\n          // },\n          // {\n          //   title: \"Collection List View\",\n          //   path: \"/collections\",\n          //   params: { layout: \"collection_list_view\" },\n          //   type: \"link\",\n          // },\n        ],\n      },\n      // {\n      //   children: [\n      //     {\n      //       title: \"Collection Layouts\",\n      //       type: \"sub\",\n      //     },\n      //     {\n      //       title: \"Category Slider\",\n      //       path: \"/collections\",\n      //       params: { layout: \"collection_category_slider\" },\n      //       type: \"link\",\n      //     },\n      //     {\n      //       title: \"Category Sidebar\",\n      //       path: \"/collections\",\n      //       params: { layout: \"collection_category_sidebar\" },\n      //       type: \"link\",\n      //       label: \"New\",\n      //     },\n      //     {\n      //       title: \"Category Banner\",\n      //       path: \"/collections\",\n      //       params: { layout: \"collection_banner\" },\n      //       type: \"link\",\n      //       labelClass: \"\",\n      //     },\n      //     {\n      //       title: \"Offcanvas Filter\",\n      //       path: \"/collections\",\n      //       params: { layout: \"collection_offcanvas_filter\" },\n      //       type: \"link\",\n      //     },\n      //   ],\n      // },\n    ],\n  },\n  {\n    id: 3,\n    title: \"Product\",\n    type: \"sub\",\n    megaMenu: true,\n    megaMenuType: \"link\",\n    slider: \"banner\",\n    active: false,\n    children: [\n      {\n        children: [\n          {\n            title: \"Product Pages\",\n            type: \"sub\",\n          },\n          {\n            title: \"Product Thumbnail\",\n            path: \"/product/deliciously-sweet-watermelon\",\n            params: { layout: \"product_thumbnail\" },\n            type: \"link\",\n          },\n          // {\n          //   title: 'Product Images',\n          //   path: '/product/deliciously-sweet-watermelon',\n          //   params: { layout: 'product_images' },\n          //   type: 'link'\n          // },\n          // {\n          //   title: 'Product Slider',\n          //   type: 'link',\n          //   path: '/product/deliciously-sweet-watermelon',\n          //   params: { layout: 'product_slider' },\n          //   labelClass: 'warning-label',\n          // },\n          // {\n          //   title: 'Product Sticky',\n          //   type: 'link',\n          //   path: '/product/deliciously-sweet-watermelon',\n          //   params: { layout: 'product_sticky' },\n          //   labelClass: 'warning-label'\n          // },\n          // {\n          //   title: 'Product Accordion',\n          //   path: '/product/deliciously-sweet-watermelon',\n          //   params: { layout: 'product_accordion' },\n          //   type: 'link'\n          // },\n          // {\n          //   title: 'Product Tab',\n          //   path: '/product/deliciously-sweet-watermelon',\n          //   type: 'link',\n          // },\n          // {\n          //   title: 'Product Features',\n          //   type: 'sub',\n          //   class: 'custom-mt'\n          // },\n          // {\n          //   title: 'Bundle (Cross Sale)',\n          //   path: '/product/high-quality-bookshelves',\n          //   type: 'link'\n          // },\n          // {\n          //   title: 'Hot Stock Progress',\n          //   path: '/product/mini-bodycon-dress',\n          //   type: 'link',\n          //   label: 'New',\n          // },\n          // {\n          //   title: 'Sold Out',\n          //   path: '/product/solid-collared-tshirts',\n          //   type: 'link'\n          // },\n          // {\n          //   title: 'Sale Countdown',\n          //   path: '/product/men-gym-co-ord-set',\n          //   type: 'link'\n          // },\n          // {\n          //   title: 'Product Zoom',\n          //   path: '/product/deliciously-sweet-watermelon',\n          //   type: 'link',\n          // },\n        ],\n      },\n      {\n        children: [\n          // {\n          //   title: \"Product Variants Style\",\n          //   type: \"sub\",\n          // },\n          // {\n          //   title: \"Variant Rectangle\",\n          //   path: \"/product/organic-oranges\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Variant Circle\",\n          //   type: \"link\",\n          //   path: \"/product/solid-hooded-sweatshirt\",\n          //   label: \"New\",\n          // },\n          // {\n          //   title: \"Variant Image Swatch\",\n          //   path: \"/product/relaxed-fit-hoodie\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Variant Color\",\n          //   path: \"/product/premium-blazer\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Variant Radio Button\",\n          //   path: \"/product/women-flared-jeans\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Variant Dropdown\",\n          //   path: \"/product/fresh-and-pure-oil\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Product Features\",\n          //   type: \"sub\",\n          //   class: \"custom-mt\",\n          // },\n          // {\n          //   title: \"Sticky Checkout\",\n          //   path: \"/product/elegant-and-durable-bed\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Dynamic Checkout\",\n          //   type: \"link\",\n          //   path: \"/product/solid-polo-tshirt\",\n          //   labelClass: \"warning-label\",\n          // },\n          // {\n          //   title: \"Secure Checkout\",\n          //   path: \"/product/premium-dumbbells\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Active Product view\",\n          //   path: \"/product/organic-long-grain-rice\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Active Last Orders\",\n          //   path: \"/product/delicious-cupcakes\",\n          //   type: \"link\",\n          // },\n        ],\n      },\n      {\n        children: [\n          // {\n          //   title: \"Product Features\",\n          //   type: \"sub\",\n          // },\n          // {\n          //   title: \"Product Simple\",\n          //   path: \"/product/deliciously-sweet-strawberry\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Product Classified\",\n          //   path: \"/product/deliciously-sweet-watermelon?layout=product_thumbnail\",\n          //   type: \"link\",\n          //   label: \"New\",\n          // },\n          // {\n          //   title: \"Size Chart\",\n          //   path: \"/product/solid-hooded-sweatshirt\",\n          //   type: \"link\",\n          //   label: \"New\",\n          // },\n          // {\n          //   title: \"Delivery & Return\",\n          //   path: \"/product/relaxed-fit-hoodie\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Product Review\",\n          //   path: \"/product/deliciously-sweet-watermelon\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Ask an Expert\",\n          //   path: \"/product/premium-blazer\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Product Features\",\n          //   type: \"sub\",\n          //   class: \"custom-mt\",\n          // },\n          // {\n          //   title: \"Product Tags\",\n          //   path: \"/product/solid-hooded-sweatshirt\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Product Information\",\n          //   path: \"/product/solid-cotton-tshirts\",\n          //   type: \"link\",\n          // },\n          // {\n          //   title: \"Social Share\",\n          //   type: \"link\",\n          //   path: \"/product/pointed-toe-kitten-heeled-sandals\",\n          //   label: \"Hot\",\n          //   labelClass: \"warning-label\",\n          // },\n          // {\n          //   title: \"Related Products\",\n          //   type: \"link\",\n          //   label: \"Hot\",\n          //   path: \"/product/delicious-biscuits\",\n          //   labelClass: \"warning-label\",\n          // },\n          // {\n          //   title: \"Wishlist & Compare\",\n          //   path: \"/product/crispy-potato-chips\",\n          //   type: \"link\",\n          // },\n        ],\n      },\n    ],\n  },\n  {\n    id: 2,\n    title: \"Mega Menu\",\n    type: \"sub\",\n    badge: \"New\",\n    megaMenu: true,\n    megaMenuType: \"link\",\n    path: \"collection\",\n    active: false,\n    slider: \"banner_landscape\",\n    children: [\n      {\n        children: [\n          {\n            title: \"Popular Categories\",\n            type: \"sub\",\n          },\n          {\n            title: \"Vegetables & Fruits\",\n            type: \"link\",\n            path: \"/collections\",\n            params: { category: \"vegetables-fruits\" },\n          },\n          {\n            title: \"Biscuits & Snacks\",\n            type: \"link\",\n            label: \"New\",\n            path: \"/collections\",\n            params: { category: \"biscuits-snacks\" },\n          },\n          {\n            title: \"Daily Breakfast\",\n            type: \"link\",\n            label: \"New\",\n            path: \"/collections\",\n            params: { category: \"daily-breakfast\" },\n          },\n          {\n            title: \"Trendy Fashion\",\n            type: \"link\",\n            path: \"/collections\",\n            params: { category: \"fashion\" },\n          },\n          {\n            title: \"Furniture & Decore\",\n            type: \"link\",\n            path: \"/collections\",\n            params: { category: \"furniture\" },\n          },\n        ],\n      },\n      {\n        children: [\n          {\n            title: \"Popular Tags\",\n            type: \"sub\",\n          },\n          {\n            title: \"Beauty Products\",\n            type: \"link\",\n            path: \"/collections\",\n            params: { tag: \"beauty\" },\n          },\n          {\n            title: \"Electronics & Accessories\",\n            type: \"link\",\n            label: \"Hot\",\n            labelClass: \"warning-label\",\n            path: \"/collections\",\n            params: { tag: \"electronics\" },\n          },\n          {\n            title: \"Pet Shop\",\n            type: \"link\",\n            path: \"/collections\",\n            params: { tag: \"pet-shop\" },\n          },\n          {\n            title: \"Milk & Dairy Products\",\n            type: \"link\",\n            path: \"/collections\",\n            params: { tag: \"milk-dairy-products\" },\n          },\n          {\n            title: \"Sports\",\n            type: \"link\",\n            path: \"/collections\",\n            params: { tag: \"sports\" },\n          },\n        ],\n      },\n      {\n        children: [\n          {\n            title: \"Email Template\",\n            type: \"sub\",\n          },\n          {\n            title: \"Welcome Template\",\n            type: \"external_link\",\n            path: \"https://themes.pixelstrap.com/fastkart/email-templete/welcome.html\",\n          },\n          {\n            title: \"Abondonment\",\n            type: \"external_link\",\n            label: \"Hot\",\n            labelClass: \"warning-label\",\n            path: \"https://themes.pixelstrap.com/fastkart/email-templete/abandonment-email.html\",\n          },\n          {\n            title: \"Offer Template\",\n            type: \"external_link\",\n            path: \"https://themes.pixelstrap.com/fastkart/email-templete/offer-template.html\",\n          },\n          {\n            title: \"Order Success\",\n            type: \"external_link\",\n            label: \"New\",\n            path: \"https://themes.pixelstrap.com/fastkart/email-templete/order-success.html\",\n          },\n          {\n            title: \"Reset Password\",\n            type: \"external_link\",\n            path: \"https://themes.pixelstrap.com/fastkart/email-templete/reset-password.html\",\n          },\n        ],\n      },\n      {\n        children: [\n          {\n            title: \"Invoice Template\",\n            type: \"sub\",\n          },\n          {\n            title: \"Invoice Template 1\",\n            type: \"external_link\",\n            path: \"https://themes.pixelstrap.com/fastkart/invoice/invoice-1.html\",\n          },\n          {\n            title: \"Invoice Template 2\",\n            type: \"external_link\",\n            label: \"Hot\",\n            path: \"https://themes.pixelstrap.com/fastkart/invoice/invoice-2.html\",\n          },\n          {\n            title: \"Invoice Template 3\",\n            type: \"external_link\",\n            path: \"https://themes.pixelstrap.com/fastkart/invoice/invoice-3.html\",\n          },\n        ],\n      },\n    ],\n  },\n  // {\n  //   id: 4,\n  //   title: \"Blog\",\n  //   type: \"sub\",\n  //   megaMenu: true,\n  //   megaMenuType: \"link\",\n  //   slider: \"blog\",\n  //   active: false,\n  //   children: [\n  //     {\n  //       children: [\n  //         {\n  //           title: \"Blog Pages\",\n  //           type: \"sub\",\n  //         },\n  //         {\n  //           title: \"Blog List\",\n  //           type: \"link\",\n  //           label: \"New\",\n  //           path: \"/blog\",\n  //           params: { style: \"list_view\", sidebar: \"left_sidebar\" },\n  //         },\n  //         {\n  //           title: \"Grid Left Sidebar\",\n  //           type: \"link\",\n  //           label: \"Hot\",\n  //           path: \"/blog\",\n  //           params: { style: \"grid_view\", sidebar: \"left_sidebar\" },\n  //           labelClass: \"warning-label\",\n  //         },\n  //         {\n  //           title: \"Grid Right Sidebar\",\n  //           type: \"link\",\n  //           path: \"/blog\",\n  //           params: { style: \"grid_view\", sidebar: \"right_sidebar\" },\n  //         },\n  //         {\n  //           title: \"Grid No Sidebar\",\n  //           type: \"link\",\n  //           path: \"/blog\",\n  //           params: { style: \"grid_view\", sidebar: \"no_sidebar\" },\n  //         },\n  //         {\n  //           title: \"Blog Details\",\n  //           type: \"link\",\n  //           path: \"/blog/supercharge-your-meals-incorporating-colorful-vegetables-and-fruits\",\n  //         },\n  //       ],\n  //     },\n  //   ],\n  // },\n  {\n    id: 5,\n    title: \"Pages\",\n    active: false,\n    type: \"sub\",\n    children: [\n      {\n        title: \"Authentication\",\n        type: \"sub\",\n        children: [\n          {\n            title: \"Sign In\",\n            path: \"/auth/login\",\n            type: \"link\",\n          },\n          {\n            title: \"Sign Up\",\n            path: \"/auth/register\",\n            type: \"link\",\n          },\n          {\n            title: \"Forgot Password\",\n            path: \"/auth/forgot-password\",\n            type: \"link\",\n          },\n          {\n            title: \"Verify OTP\",\n            path: \"/auth/otp\",\n            type: \"link\",\n          },\n          {\n            title: \"Update Password\",\n            path: \"/auth/update-password\",\n            type: \"link\",\n          },\n        ],\n      },\n      {\n        title: \"Account\",\n        type: \"sub\",\n        children: [\n          {\n            title: \"My Dashboard\",\n            path: \"/account/dashboard\",\n            type: \"link\",\n          },\n          {\n            title: \"My Notifications\",\n            path: \"/account/notifications\",\n            type: \"link\",\n          },\n          {\n            title: \"My Addresses\",\n            path: \"/account/addresses\",\n            type: \"link\",\n          },\n          {\n            title: \"My Wallet\",\n            path: \"/account/wallet\",\n            type: \"link\",\n          },\n          {\n            title: \"My Points\",\n            path: \"/account/point\",\n            type: \"link\",\n          },\n          {\n            title: \"My Orders\",\n            path: \"/account/order\",\n            type: \"link\",\n          },\n          {\n            title: \"Order Details\",\n            path: \"/account/order/details/1000\",\n            type: \"link\",\n          },\n          {\n            title: \"Refund History\",\n            path: \"/account/refund\",\n            type: \"link\",\n          },\n          {\n            title: \"Payout Details\",\n            path: \"/account/bank-details\",\n            type: \"link\",\n          },\n        ],\n      },\n      {\n        title: \"About Us\",\n        type: \"link\",\n        path: \"/about-us\",\n      },\n      {\n        title: \"Browse Faqs\",\n        type: \"link\",\n        path: \"/faq\",\n        label: \"Hot\",\n        labelClass: \"warning-label\",\n      },\n      {\n        title: \"Cart\",\n        type: \"link\",\n        path: \"/cart\",\n      },\n      {\n        title: \"Checkout\",\n        type: \"link\",\n        path: \"/checkout\",\n      },\n      {\n        title: \"Compare\",\n        type: \"link\",\n        path: \"/compare\",\n      },\n      {\n        title: \"Contact Us\",\n        path: \"/contact-us\",\n        type: \"link\",\n      },\n      {\n        title: \"Maintenance\",\n        type: \"link\",\n        path: \"/maintenance\",\n      },\n      {\n        title: \"Offers\",\n        type: \"link\",\n        path: \"/offers\",\n        label: \"New\",\n      },\n      {\n        title: \"Search\",\n        type: \"link\",\n        path: \"/search\",\n        label: \"Hot\",\n        labelClass: \"warning-label\",\n      },\n      {\n        title: \"Wishlist\",\n        type: \"link\",\n        path: \"/wishlist\",\n      },\n      {\n        title: \"404\",\n        type: \"link\",\n        path: \"/404\",\n      },\n    ],\n  },\n  {\n    id: 6,\n    title: \"Seller\",\n    type: \"sub\",\n    active: false,\n    children: [\n      {\n        title: \"Become Seller\",\n        type: \"link\",\n        path: \"/seller/become-seller\",\n      },\n      {\n        title: \"Seller Stores (Basic)\",\n        type: \"link\",\n        label: \"Hot\",\n        path: \"/seller/stores\",\n        params: { layout: \"basic_store\" },\n        labelClass: \"warning-label\",\n      },\n      {\n        title: \"Seller Stores (Classic)\",\n        path: \"/seller/stores\",\n        params: { layout: \"classic_store\" },\n        type: \"link\",\n      },\n      {\n        title: \"Store Details (Basic)\",\n        path: \"/seller/store/fruits-market\",\n        params: { layout: \"basic_store_details\" },\n        type: \"link\",\n      },\n      {\n        title: \"Store Details (Classic)\",\n        path: \"/seller/store/fruits-market\",\n        params: { layout: \"classic_store_details\" },\n        type: \"link\",\n      },\n    ],\n  },\n];\n",
+      "start": 1716056289493,
+      "end": 1716056290038,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056290038,
+      "end": 1716056290038,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056290038,
+      "end": 1716056290038,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056290038,
+      "end": 1716056290038,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056290038,
+      "end": 1716056290038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056290038,
+      "end": 1716056290038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056290038,
+      "end": 1716056290038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056290038,
+      "end": 1716056290038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056290038,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056290039,
+      "end": 1716056290039,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056290039,
+      "end": 1716056290044,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056290044,
+      "end": 1716056290044,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056290044,
+      "end": 1716056290044,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056290044,
+      "end": 1716056290044,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056290044,
+      "end": 1716056290044,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056290044,
+      "end": 1716056290044,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056290044,
+      "end": 1716056290044,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056290044,
+      "end": 1716056290045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056290045,
+      "end": 1716056290045,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Addresses/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n  <div class=\"dashboard-address\">\n    <div class=\"title-header\">\n      <div class=\"d-flex align-items-center w-100 justify-content-between\">\n        <h5>{{ $t(\"Saved Address\") }}</h5>\n        <WidgetsButton :classes=\"'btn theme-bg-color text-white btn-sm fw-bold mt-lg-0 ms-auto'\" :type=\"'button'\"\n          :id=\"'add_address'\" @click=\"(data) => {\n            addressModal({ data });\n          }\n            \">\n          <Icon name=\"ri-add-line\"></Icon> {{ $t(\"Add Address\") }}\n        </WidgetsButton>\n      </div>\n    </div>\n    <div class=\"row g-sm-4 g-3\" v-if=\"user?.address?.length\">\n      <div class=\"col-xxl-4 col-xl-6 col-lg-12 col-md-6\" v-for=\"(address, index) in user?.address\" :key=\"index\">\n        <div class=\"address-box\">\n          <AccountAddressesAddressBox :address=\"address\" :user=\"user\" />\n          <div class=\"button-group\">\n            <WidgetsButton :classes=\"'btn btn-sm add-button'\" :type=\"'button'\" :id=\"'edit_address' + address.id\"\n              @click=\"addressModal(address?.id)\">\n              <Icon name=\"ri-edit-box-line\"></Icon> {{ $t(\"Edit\") }}\n            </WidgetsButton>\n            <WidgetsButton :classes=\"'btn btn-sm add-button'\" :type=\"'button'\" :id=\"'remove_address' + address.id\"\n              @click=\"deleteModal(address?.id)\">\n              <Icon name=\"ri-delete-bin-line\"></Icon> {{ $t(\"Remove\") }}\n            </WidgetsButton>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <WidgetsNoData :class=\"'no-data-added'\" :image=\"'/svg/empty-items.svg'\" :text=\"'No Address Found'\"\n    :description=\"'You have not add any address yet'\" v-if=\"!user?.address?.length\">\n  </WidgetsNoData>\n\n  <WidgetsModalsCommon :showModal=\"addresModal\" @close=\"addresModal = false\" :classes=\"'modal-lg'\">\n    <WidgetsModalsAddressModal :addressId=\"addressId\" :user=\"UserInfo\" @close=\"addresModal = false\" />\n  </WidgetsModalsCommon>\n  <WidgetsModalsCommon :showModal=\"deleteModals\" @close=\"deleteModals = false\">\n    <WidgetsModalsDeleteModal :addressId=\"addressId\" @close=\"deleteModals = false\" />\n  </WidgetsModalsCommon>\n</div>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useUserStore } from \"@/store/user\";\n\n\nlet { UserInfo } = storeToRefs(useUserStore());\nlet user = ref(UserInfo);\nlet addresModal = ref(false);\nlet deleteModals = ref(false);\nlet addressId = ref(0);\n\nfunction addressModal(id, state = true) {\n  addresModal.value = state;\n  addressId.value = id;\n}\n\nfunction deleteModal(id, state = true) {\n  deleteModals.value = state;\n  addressId.value = id;\n}\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056285919,
+      "end": 1716056286559,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056286559,
+      "end": 1716056286559,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056286559,
+      "end": 1716056286559,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056286559,
+      "end": 1716056286559,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056286559,
+      "end": 1716056286559,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056286559,
+      "end": 1716056286559,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056286559,
+      "end": 1716056286559,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056286559,
+      "end": 1716056286559,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass, createBlock as _createBlock, isRef as _isRef } from \"vue\"\n\nconst _hoisted_1 = { class: \"dashboard-address\" }\nconst _hoisted_2 = { class: \"title-header\" }\nconst _hoisted_3 = { class: \"d-flex align-items-center w-100 justify-content-between\" }\nconst _hoisted_4 = {\n  key: 0,\n  class: \"row g-sm-4 g-3\"\n}\nconst _hoisted_5 = { class: \"address-box\" }\nconst _hoisted_6 = { class: \"button-group\" }\n\nimport { storeToRefs } from \"pinia\";\nimport { useUserStore } from \"@/store/user\";\n\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet { UserInfo } = storeToRefs(useUserStore());\nlet user = ref(UserInfo);\nlet addresModal = ref(false);\nlet deleteModals = ref(false);\nlet addressId = ref(0);\n\nfunction addressModal(id, state = true) {\n  addresModal.value = state;\n  addressId.value = id;\n}\n\nfunction deleteModal(id, state = true) {\n  deleteModals.value = state;\n  addressId.value = id;\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_AccountAddressesAddressBox = _resolveComponent(\"AccountAddressesAddressBox\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n  const _component_WidgetsModalsAddressModal = _resolveComponent(\"WidgetsModalsAddressModal\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsDeleteModal = _resolveComponent(\"WidgetsModalsDeleteModal\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"Saved Address\")), 1),\n          _createVNode(_component_WidgetsButton, {\n            classes: 'btn theme-bg-color text-white btn-sm fw-bold mt-lg-0 ms-auto',\n            type: 'button',\n            id: 'add_address',\n            onClick: _cache[0] || (_cache[0] = (data) => {\n            addressModal({ data });\n          }\n            )\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_Icon, { name: \"ri-add-line\" }),\n              _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Add Address\")), 1)\n            ]),\n            _: 1\n          })\n        ])\n      ]),\n      (_unref(user)?.address?.length)\n        ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(user)?.address, (address, index) => {\n              return (_openBlock(), _createElementBlock(\"div\", {\n                class: \"col-xxl-4 col-xl-6 col-lg-12 col-md-6\",\n                key: index\n              }, [\n                _createElementVNode(\"div\", _hoisted_5, [\n                  _createVNode(_component_AccountAddressesAddressBox, {\n                    address: address,\n                    user: _unref(user)\n                  }, null, 8, [\"address\", \"user\"]),\n                  _createElementVNode(\"div\", _hoisted_6, [\n                    _createVNode(_component_WidgetsButton, {\n                      classes: 'btn btn-sm add-button',\n                      type: 'button',\n                      id: 'edit_address' + address.id,\n                      onClick: $event => (addressModal(address?.id))\n                    }, {\n                      default: _withCtx(() => [\n                        _createVNode(_component_Icon, { name: \"ri-edit-box-line\" }),\n                        _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Edit\")), 1)\n                      ]),\n                      _: 2\n                    }, 1032, [\"id\", \"onClick\"]),\n                    _createVNode(_component_WidgetsButton, {\n                      classes: 'btn btn-sm add-button',\n                      type: 'button',\n                      id: 'remove_address' + address.id,\n                      onClick: $event => (deleteModal(address?.id))\n                    }, {\n                      default: _withCtx(() => [\n                        _createVNode(_component_Icon, { name: \"ri-delete-bin-line\" }),\n                        _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Remove\")), 1)\n                      ]),\n                      _: 2\n                    }, 1032, [\"id\", \"onClick\"])\n                  ])\n                ])\n              ]))\n            }), 128))\n          ]))\n        : _createCommentVNode(\"\", true)\n    ]),\n    (!_unref(user)?.address?.length)\n      ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n          key: 0,\n          class: _normalizeClass('no-data-added'),\n          image: '/svg/empty-items.svg',\n          text: 'No Address Found',\n          description: 'You have not add any address yet'\n        }, null, 8, [\"image\"]))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_WidgetsModalsCommon, {\n      showModal: _unref(addresModal),\n      onClose: _cache[2] || (_cache[2] = $event => (_isRef(addresModal) ? addresModal.value = false : addresModal = false)),\n      classes: 'modal-lg'\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_WidgetsModalsAddressModal, {\n          addressId: _unref(addressId),\n          user: _unref(UserInfo),\n          onClose: _cache[1] || (_cache[1] = $event => (_isRef(addresModal) ? addresModal.value = false : addresModal = false))\n        }, null, 8, [\"addressId\", \"user\"])\n      ]),\n      _: 1\n    }, 8, [\"showModal\"]),\n    _createVNode(_component_WidgetsModalsCommon, {\n      showModal: _unref(deleteModals),\n      onClose: _cache[4] || (_cache[4] = $event => (_isRef(deleteModals) ? deleteModals.value = false : deleteModals = false))\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_WidgetsModalsDeleteModal, {\n          addressId: _unref(addressId),\n          onClose: _cache[3] || (_cache[3] = $event => (_isRef(deleteModals) ? deleteModals.value = false : deleteModals = false))\n        }, null, 8, [\"addressId\"])\n      ]),\n      _: 1\n    }, 8, [\"showModal\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286559,
+      "end": 1716056286560,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056286560,
+      "end": 1716056286560,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass, createBlock as _createBlock, isRef as _isRef } from \"vue\"\n\nconst _hoisted_1 = { class: \"dashboard-address\" }\nconst _hoisted_2 = { class: \"title-header\" }\nconst _hoisted_3 = { class: \"d-flex align-items-center w-100 justify-content-between\" }\nconst _hoisted_4 = {\n  key: 0,\n  class: \"row g-sm-4 g-3\"\n}\nconst _hoisted_5 = { class: \"address-box\" }\nconst _hoisted_6 = { class: \"button-group\" }\n\nimport { storeToRefs } from \"pinia\";\nimport { useUserStore } from \"@/store/user\";\n\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet { UserInfo } = storeToRefs(useUserStore());\nlet user = ref(UserInfo);\nlet addresModal = ref(false);\nlet deleteModals = ref(false);\nlet addressId = ref(0);\n\nfunction addressModal(id, state = true) {\n  addresModal.value = state;\n  addressId.value = id;\n}\n\nfunction deleteModal(id, state = true) {\n  deleteModals.value = state;\n  addressId.value = id;\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_AccountAddressesAddressBox = _resolveComponent(\"AccountAddressesAddressBox\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n  const _component_WidgetsModalsAddressModal = _resolveComponent(\"WidgetsModalsAddressModal\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsDeleteModal = _resolveComponent(\"WidgetsModalsDeleteModal\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"Saved Address\")), 1),\n          _createVNode(_component_WidgetsButton, {\n            classes: 'btn theme-bg-color text-white btn-sm fw-bold mt-lg-0 ms-auto',\n            type: 'button',\n            id: 'add_address',\n            onClick: _cache[0] || (_cache[0] = (data) => {\n            addressModal({ data });\n          }\n            )\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_Icon, { name: \"ri-add-line\" }),\n              _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Add Address\")), 1)\n            ]),\n            _: 1\n          })\n        ])\n      ]),\n      (_unref(user)?.address?.length)\n        ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(user)?.address, (address, index) => {\n              return (_openBlock(), _createElementBlock(\"div\", {\n                class: \"col-xxl-4 col-xl-6 col-lg-12 col-md-6\",\n                key: index\n              }, [\n                _createElementVNode(\"div\", _hoisted_5, [\n                  _createVNode(_component_AccountAddressesAddressBox, {\n                    address: address,\n                    user: _unref(user)\n                  }, null, 8, [\"address\", \"user\"]),\n                  _createElementVNode(\"div\", _hoisted_6, [\n                    _createVNode(_component_WidgetsButton, {\n                      classes: 'btn btn-sm add-button',\n                      type: 'button',\n                      id: 'edit_address' + address.id,\n                      onClick: $event => (addressModal(address?.id))\n                    }, {\n                      default: _withCtx(() => [\n                        _createVNode(_component_Icon, { name: \"ri-edit-box-line\" }),\n                        _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Edit\")), 1)\n                      ]),\n                      _: 2\n                    }, 1032, [\"id\", \"onClick\"]),\n                    _createVNode(_component_WidgetsButton, {\n                      classes: 'btn btn-sm add-button',\n                      type: 'button',\n                      id: 'remove_address' + address.id,\n                      onClick: $event => (deleteModal(address?.id))\n                    }, {\n                      default: _withCtx(() => [\n                        _createVNode(_component_Icon, { name: \"ri-delete-bin-line\" }),\n                        _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Remove\")), 1)\n                      ]),\n                      _: 2\n                    }, 1032, [\"id\", \"onClick\"])\n                  ])\n                ])\n              ]))\n            }), 128))\n          ]))\n        : _createCommentVNode(\"\", true)\n    ]),\n    (!_unref(user)?.address?.length)\n      ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n          key: 0,\n          class: _normalizeClass('no-data-added'),\n          image: '/svg/empty-items.svg',\n          text: 'No Address Found',\n          description: 'You have not add any address yet'\n        }, null, 8, [\"image\"]))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_WidgetsModalsCommon, {\n      showModal: _unref(addresModal),\n      onClose: _cache[2] || (_cache[2] = $event => (_isRef(addresModal) ? addresModal.value = false : addresModal = false)),\n      classes: 'modal-lg'\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_WidgetsModalsAddressModal, {\n          addressId: _unref(addressId),\n          user: _unref(UserInfo),\n          onClose: _cache[1] || (_cache[1] = $event => (_isRef(addresModal) ? addresModal.value = false : addresModal = false))\n        }, null, 8, [\"addressId\", \"user\"])\n      ]),\n      _: 1\n    }, 8, [\"showModal\"]),\n    _createVNode(_component_WidgetsModalsCommon, {\n      showModal: _unref(deleteModals),\n      onClose: _cache[4] || (_cache[4] = $event => (_isRef(deleteModals) ? deleteModals.value = false : deleteModals = false))\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_WidgetsModalsDeleteModal, {\n          addressId: _unref(addressId),\n          onClose: _cache[3] || (_cache[3] = $event => (_isRef(deleteModals) ? deleteModals.value = false : deleteModals = false))\n        }, null, 8, [\"addressId\"])\n      ]),\n      _: 1\n    }, 8, [\"showModal\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286560,
+      "end": 1716056286562,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056286562,
+      "end": 1716056286562,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056286562,
+      "end": 1716056286562,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056286562,
+      "end": 1716056286562,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056286562,
+      "end": 1716056286562,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Addresses/AddressBox.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/NoData/index.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/AddressModal/index.vue\";\nimport { default as __nuxt_component_5 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue\";\nimport { default as __nuxt_component_6 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/DeleteModal/index.vue\";\nimport { ref } from 'vue';\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass, createBlock as _createBlock, isRef as _isRef } from \"vue\"\n\nconst _hoisted_1 = { class: \"dashboard-address\" }\nconst _hoisted_2 = { class: \"title-header\" }\nconst _hoisted_3 = { class: \"d-flex align-items-center w-100 justify-content-between\" }\nconst _hoisted_4 = {\n  key: 0,\n  class: \"row g-sm-4 g-3\"\n}\nconst _hoisted_5 = { class: \"address-box\" }\nconst _hoisted_6 = { class: \"button-group\" }\n\nimport { storeToRefs } from \"pinia\";\nimport { useUserStore } from \"@/store/user\";\n\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet { UserInfo } = storeToRefs(useUserStore());\nlet user = ref(UserInfo);\nlet addresModal = ref(false);\nlet deleteModals = ref(false);\nlet addressId = ref(0);\n\nfunction addressModal(id, state = true) {\n  addresModal.value = state;\n  addressId.value = id;\n}\n\nfunction deleteModal(id, state = true) {\n  deleteModals.value = state;\n  addressId.value = id;\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_WidgetsButton = __nuxt_component_1\n  const _component_AccountAddressesAddressBox = __nuxt_component_2\n  const _component_WidgetsNoData = __nuxt_component_3\n  const _component_WidgetsModalsAddressModal = __nuxt_component_4\n  const _component_WidgetsModalsCommon = __nuxt_component_5\n  const _component_WidgetsModalsDeleteModal = __nuxt_component_6\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"Saved Address\")), 1),\n          _createVNode(_component_WidgetsButton, {\n            classes: 'btn theme-bg-color text-white btn-sm fw-bold mt-lg-0 ms-auto',\n            type: 'button',\n            id: 'add_address',\n            onClick: _cache[0] || (_cache[0] = (data) => {\n            addressModal({ data });\n          }\n            )\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_Icon, { name: \"ri-add-line\" }),\n              _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Add Address\")), 1)\n            ]),\n            _: 1\n          })\n        ])\n      ]),\n      (_unref(user)?.address?.length)\n        ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(user)?.address, (address, index) => {\n              return (_openBlock(), _createElementBlock(\"div\", {\n                class: \"col-xxl-4 col-xl-6 col-lg-12 col-md-6\",\n                key: index\n              }, [\n                _createElementVNode(\"div\", _hoisted_5, [\n                  _createVNode(_component_AccountAddressesAddressBox, {\n                    address: address,\n                    user: _unref(user)\n                  }, null, 8, [\"address\", \"user\"]),\n                  _createElementVNode(\"div\", _hoisted_6, [\n                    _createVNode(_component_WidgetsButton, {\n                      classes: 'btn btn-sm add-button',\n                      type: 'button',\n                      id: 'edit_address' + address.id,\n                      onClick: $event => (addressModal(address?.id))\n                    }, {\n                      default: _withCtx(() => [\n                        _createVNode(_component_Icon, { name: \"ri-edit-box-line\" }),\n                        _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Edit\")), 1)\n                      ]),\n                      _: 2\n                    }, 1032, [\"id\", \"onClick\"]),\n                    _createVNode(_component_WidgetsButton, {\n                      classes: 'btn btn-sm add-button',\n                      type: 'button',\n                      id: 'remove_address' + address.id,\n                      onClick: $event => (deleteModal(address?.id))\n                    }, {\n                      default: _withCtx(() => [\n                        _createVNode(_component_Icon, { name: \"ri-delete-bin-line\" }),\n                        _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Remove\")), 1)\n                      ]),\n                      _: 2\n                    }, 1032, [\"id\", \"onClick\"])\n                  ])\n                ])\n              ]))\n            }), 128))\n          ]))\n        : _createCommentVNode(\"\", true)\n    ]),\n    (!_unref(user)?.address?.length)\n      ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n          key: 0,\n          class: _normalizeClass('no-data-added'),\n          image: '/svg/empty-items.svg',\n          text: 'No Address Found',\n          description: 'You have not add any address yet'\n        }, null, 8, [\"image\"]))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_WidgetsModalsCommon, {\n      showModal: _unref(addresModal),\n      onClose: _cache[2] || (_cache[2] = $event => (_isRef(addresModal) ? addresModal.value = false : addresModal = false)),\n      classes: 'modal-lg'\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_WidgetsModalsAddressModal, {\n          addressId: _unref(addressId),\n          user: _unref(UserInfo),\n          onClose: _cache[1] || (_cache[1] = $event => (_isRef(addresModal) ? addresModal.value = false : addresModal = false))\n        }, null, 8, [\"addressId\", \"user\"])\n      ]),\n      _: 1\n    }, 8, [\"showModal\"]),\n    _createVNode(_component_WidgetsModalsCommon, {\n      showModal: _unref(deleteModals),\n      onClose: _cache[4] || (_cache[4] = $event => (_isRef(deleteModals) ? deleteModals.value = false : deleteModals = false))\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_WidgetsModalsDeleteModal, {\n          addressId: _unref(addressId),\n          onClose: _cache[3] || (_cache[3] = $event => (_isRef(deleteModals) ? deleteModals.value = false : deleteModals = false))\n        }, null, 8, [\"addressId\"])\n      ]),\n      _: 1\n    }, 8, [\"showModal\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286562,
+      "end": 1716056286562,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056286562,
+      "end": 1716056286563,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056286563,
+      "end": 1716056286563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056286563,
+      "end": 1716056286563,
+      "order": "normal"
+    }
+  ]
+}

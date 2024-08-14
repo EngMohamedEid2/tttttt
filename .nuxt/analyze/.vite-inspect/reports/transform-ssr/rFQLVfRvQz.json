@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ProductBox/SkeletonProductBox.vue?nuxt_component=async&nuxt_component_name=WidgetsProductBoxSkeletonProductBox",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n    <!-- Skeleton For Horizontal -->\n    <div class=\"skeleton-div\" v-if=\"style == 'horizontal'\">\n        <div class=\"product-box skeleton-box\">\n            <div class=\"skeleton\">\n                <div class=\"skeleton__section skeleton__section--card\">\n                    <div class=\"skeleton__img\"></div>\n                    <div>\n                        <div class=\"skeleton__header skeleton__header--long\"></div>\n                        <div class=\"skeleton__p\"></div>\n                    </div>\n                </div>\n                <div class=\"skeleton__p\"></div>\n                <div class=\"skeleton__p\"></div>\n                <div class=\"skeleton__p\"></div>\n            </div>\n        </div>\n    </div>\n\n    <!-- Skeleton For Vertical -->\n    <div class=\"offer-product skeleton-vertical\" v-if=\"style == 'vertical'\">\n        <a class=\"offer-image\"></a>\n        <div class=\"offer-detail\">\n            <div>\n                <a href=\"javascript:void(0)\" class=\"text-title\">\n                    <h6 class=\"name\"></h6>\n                </a>\n                <span></span>\n                <div class=\"vertical-price\"></div>\n            </div>\n        </div>\n    </div>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    style: {\n        type: [String,Object],\n        default: 'horizontal'\n    }\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056339934,
+      "end": 1716056340075,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340075,
+      "end": 1716056340075,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340075,
+      "end": 1716056340075,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340075,
+      "end": 1716056340075,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340075,
+      "end": 1716056340075,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056340075,
+      "end": 1716056340075,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056340075,
+      "end": 1716056340075,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056340075,
+      "end": 1716056340075,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056340075,
+      "end": 1716056340075,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056340075,
+      "end": 1716056340075,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056340075,
+      "end": 1716056340075,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'SkeletonProductBox',\n  __ssrInlineRender: true,\n  props: {\n    style: {\n        type: [String,Object],\n        default: 'horizontal'\n    }\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (__props.style == 'horizontal') {\n    _push(`<div class=\"skeleton-div\"><div class=\"product-box skeleton-box\"><div class=\"skeleton\"><div class=\"skeleton__section skeleton__section--card\"><div class=\"skeleton__img\"></div><div><div class=\"skeleton__header skeleton__header--long\"></div><div class=\"skeleton__p\"></div></div></div><div class=\"skeleton__p\"></div><div class=\"skeleton__p\"></div><div class=\"skeleton__p\"></div></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.style == 'vertical') {\n    _push(`<div class=\"offer-product skeleton-vertical\"><a class=\"offer-image\"></a><div class=\"offer-detail\"><div><a href=\"javascript:void(0)\" class=\"text-title\"><h6 class=\"name\"></h6></a><span></span><div class=\"vertical-price\"></div></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/ProductBox/SkeletonProductBox.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340075,
+      "end": 1716056340078,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056340078,
+      "end": 1716056340078,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340078,
+      "end": 1716056340078,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340078,
+      "end": 1716056340078,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340078,
+      "end": 1716056340079,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340078,
+      "end": 1716056340079,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ProductBox/SkeletonProductBox.vue\").then(r => r.default))",
+      "start": 1716056340079,
+      "end": 1716056340079,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056340079,
+      "end": 1716056340079,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056340079,
+      "end": 1716056340079,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056340079,
+      "end": 1716056340080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056340080,
+      "end": 1716056340080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056340080,
+      "end": 1716056340080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056340080,
+      "end": 1716056340080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056340080,
+      "end": 1716056340080,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056340080,
+      "end": 1716056340080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056340080,
+      "end": 1716056340080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056340080,
+      "end": 1716056340080,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340080,
+      "end": 1716056340080,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340080,
+      "end": 1716056340080,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056340080,
+      "end": 1716056340081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056340080,
+      "end": 1716056340081,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340081,
+      "end": 1716056340081,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340081,
+      "end": 1716056340081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340081,
+      "end": 1716056340081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340081,
+      "end": 1716056340081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056340081,
+      "end": 1716056340081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056340081,
+      "end": 1716056340081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056340081,
+      "end": 1716056340081,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056340081,
+      "end": 1716056340081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056340081,
+      "end": 1716056340081,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ProductBox/index.vue?nuxt_component=async&nuxt_component_name=WidgetsProductBox",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n        <WidgetsProductBoxHorizontal :product=\"product\" v-if=\"style == 'horizontal'\" :classes=\"classes\" :close=\"close\" />\n        <WidgetsProductBoxVertical :product=\"product\" v-if=\"style == 'vertical'\" />\n    </div>\n</template>\n\n<script setup>\n\nlet props = defineProps({\n    style: [String, Object],\n    classes: String,\n    close: Boolean,\n    product: Object\n})\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056285282,
+      "end": 1716056285426,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285426,
+      "end": 1716056285426,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285426,
+      "end": 1716056285426,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285426,
+      "end": 1716056285426,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285426,
+      "end": 1716056285426,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285426,
+      "end": 1716056285426,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285426,
+      "end": 1716056285426,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285426,
+      "end": 1716056285426,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    style: [String, Object],\n    classes: String,\n    close: Boolean,\n    product: Object\n},\n  setup(__props) {\n\n\nlet props = __props\n\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsProductBoxHorizontal = _resolveComponent(\"WidgetsProductBoxHorizontal\")\n  const _component_WidgetsProductBoxVertical = _resolveComponent(\"WidgetsProductBoxVertical\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (__props.style == 'horizontal')\n      ? (_openBlock(), _createBlock(_component_WidgetsProductBoxHorizontal, {\n          key: 0,\n          product: __props.product,\n          classes: __props.classes,\n          close: __props.close\n        }, null, 8, [\"product\", \"classes\", \"close\"]))\n      : _createCommentVNode(\"\", true),\n    (__props.style == 'vertical')\n      ? (_openBlock(), _createBlock(_component_WidgetsProductBoxVertical, {\n          key: 1,\n          product: __props.product\n        }, null, 8, [\"product\"]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056285426,
+      "end": 1716056285427,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285427,
+      "end": 1716056285427,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285427,
+      "end": 1716056285427,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285427,
+      "end": 1716056285427,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285427,
+      "end": 1716056285427,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ProductBox/index.vue\").then(r => r.default))",
+      "start": 1716056285427,
+      "end": 1716056285428,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ProductBox/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285428,
+      "end": 1716056285428,
+      "order": "normal"
+    }
+  ]
+}

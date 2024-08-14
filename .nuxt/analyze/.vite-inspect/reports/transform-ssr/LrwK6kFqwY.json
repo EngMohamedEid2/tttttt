@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/delivery-block/index.vue?nuxt_component=async&nuxt_component_name=ShopCheckoutDeliveryBlock",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"checkout-detail\">\n        <div class=\"row g-4\">\n            <div class=\"col-xxl-6\" v-if=\"setting?.delivery\">\n                <div class=\"delivery-option\">\n                    <div class=\"delivery-category\">\n                        <div class=\"shipment-detail w-100\">\n                            <div class=\"form-check custom-form-check hide-check-box\">\n                                <input class=\"form-check-input\" type=\"radio\" name=\"standard\" id=\"standard\" :checked=\"true\"\n                                    @change=\"useCheckoutStore().setDeliveryDescription(setting.delivery.default.title + ' | ' + setting.delivery.default.description, 'standard')\">\n                                <label class=\"form-check-label\" for=\"standard\">\n                                    {{ setting.delivery.default.title }} | {{ setting.delivery.default.description }}\n                                </label>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-xxl-6\" v-if=\"setting?.delivery?.same_day_delivery\">\n                <div class=\"delivery-option\">\n                    <div class=\"delivery-category\">\n                        <div class=\"shipment-detail w-100\">\n                            <div class=\"form-check mb-0 custom-form-check show-box-checked\">\n                                <input class=\"form-check-input\" type=\"radio\" name=\"standard\" id=\"future\"\n                                    @change=\"useCheckoutStore().setDeliveryDescription(setting.delivery.same_day.title + ' | ' + setting.delivery.same_day.description), setDeliveryDescription('same_day')\">\n                                <label class=\"form-check-label\" for=\"future\">\n                                    {{ setting.delivery.same_day.title }} | {{ setting.delivery.same_day.description }}\n                                </label>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 future-box\" :class=\"{ 'show': deliveryType && deliveryType == 'same_day' }\"\n                v-if=\"setting?.delivery?.same_day_delivery\">\n                <div class=\"future-option\">\n                    <div class=\"delivery-items\">\n                        <div>\n                            <h4>{{ $t('Select Timing Slot:') }}:</h4>\n                            <ul>\n                                <li :class=\"{ 'active': selectedTitle == intervals.title }\"\n                                    v-for=\"(intervals, i) in setting.delivery.same_day_intervals\" :key=\"i\"\n                                    @click=\"useCheckoutStore().setDeliveryInterval(intervals.description), setDeliveryInterval(intervals.description, intervals.title)\">\n                                    <a href=\"javascript:void(0)\">{{ intervals.description }}</a>\n                                </li>\n                            </ul>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { useCheckoutStore } from '~~/store/checkout';\nlet props = defineProps({\n    setting: Object,\n})\nconst emit = defineEmits(['selectDelivery']);\n\nlet selectedTitle = ref(\"\");\nlet deliveryType = ref(\"\")\nlet delivery_description = ref(\"\")\nlet delivery_interval = ref(\"\")\n\nfunction setDeliveryDescription(type) {\n    deliveryType.value = type;\n\n}\n\nfunction setDeliveryInterval(value, title) {\n    selectedTitle.value = title;\n    delivery_interval.value = value;\n    let delivery = {\n        delivery_description: delivery_description.value,\n        delivery_interval: delivery_interval.value,\n    }\n    emit(\"selectDelivery\", delivery);\n}\nif (props.setting?.delivery) {\n    let delivery = {\n        delivery_description: props.setting.delivery?.default?.title + ' | ' + props.setting.delivery?.default?.description,\n        delivery_interval: delivery_interval.value,\n    }\n    useCheckoutStore().setDeliveryDescription(props.setting?.delivery?.default?.title + ' | ' + props.setting?.delivery?.default?.description);\n    emit(\"selectDelivery\", delivery);\n}\nonMounted(() => {\n    if (props.setting?.delivery) {\n        let delivery = {\n            delivery_description: props.setting.delivery?.default?.title + ' | ' + props.setting.delivery?.default?.description,\n            delivery_interval: delivery_interval.value,\n        }\n        emit(\"selectDelivery\", delivery);\n        useCheckoutStore().setDeliveryDescription(props.setting?.delivery?.default?.title + ' | ' + props.setting?.delivery?.default?.description);\n        emit(\"selectDelivery\", delivery);\n    }\n})\n</script>",
+      "start": 1716056339304,
+      "end": 1716056339388,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339388,
+      "end": 1716056339388,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339388,
+      "end": 1716056339388,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339389,
+      "end": 1716056339389,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339389,
+      "end": 1716056339389,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339389,
+      "end": 1716056339389,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339389,
+      "end": 1716056339389,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339389,
+      "end": 1716056339389,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339389,
+      "end": 1716056339389,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339389,
+      "end": 1716056339389,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339389,
+      "end": 1716056339389,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrIncludeBooleanAttr as _ssrIncludeBooleanAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useCheckoutStore } from '~~/store/checkout';\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    setting: Object,\n},\n  emits: ['selectDelivery'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\nconst emit = __emit;\n\nlet selectedTitle = ref(\"\");\nlet deliveryType = ref(\"\")\nlet delivery_description = ref(\"\")\nlet delivery_interval = ref(\"\")\n\nfunction setDeliveryDescription(type) {\n    deliveryType.value = type;\n\n}\n\nfunction setDeliveryInterval(value, title) {\n    selectedTitle.value = title;\n    delivery_interval.value = value;\n    let delivery = {\n        delivery_description: delivery_description.value,\n        delivery_interval: delivery_interval.value,\n    }\n    emit(\"selectDelivery\", delivery);\n}\nif (props.setting?.delivery) {\n    let delivery = {\n        delivery_description: props.setting.delivery?.default?.title + ' | ' + props.setting.delivery?.default?.description,\n        delivery_interval: delivery_interval.value,\n    }\n    useCheckoutStore().setDeliveryDescription(props.setting?.delivery?.default?.title + ' | ' + props.setting?.delivery?.default?.description);\n    emit(\"selectDelivery\", delivery);\n}\nonMounted(() => {\n    if (props.setting?.delivery) {\n        let delivery = {\n            delivery_description: props.setting.delivery?.default?.title + ' | ' + props.setting.delivery?.default?.description,\n            delivery_interval: delivery_interval.value,\n        }\n        emit(\"selectDelivery\", delivery);\n        useCheckoutStore().setDeliveryDescription(props.setting?.delivery?.default?.title + ' | ' + props.setting?.delivery?.default?.description);\n        emit(\"selectDelivery\", delivery);\n    }\n})\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"checkout-detail\" }, _attrs))}><div class=\"row g-4\">`)\n  if (__props.setting?.delivery) {\n    _push(`<div class=\"col-xxl-6\"><div class=\"delivery-option\"><div class=\"delivery-category\"><div class=\"shipment-detail w-100\"><div class=\"form-check custom-form-check hide-check-box\"><input class=\"form-check-input\" type=\"radio\" name=\"standard\" id=\"standard\"${\n      (_ssrIncludeBooleanAttr(true)) ? \" checked\" : \"\"\n    }><label class=\"form-check-label\" for=\"standard\">${\n      _ssrInterpolate(__props.setting.delivery.default.title)\n    } | ${\n      _ssrInterpolate(__props.setting.delivery.default.description)\n    }</label></div></div></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.setting?.delivery?.same_day_delivery) {\n    _push(`<div class=\"col-xxl-6\"><div class=\"delivery-option\"><div class=\"delivery-category\"><div class=\"shipment-detail w-100\"><div class=\"form-check mb-0 custom-form-check show-box-checked\"><input class=\"form-check-input\" type=\"radio\" name=\"standard\" id=\"future\"><label class=\"form-check-label\" for=\"future\">${\n      _ssrInterpolate(__props.setting.delivery.same_day.title)\n    } | ${\n      _ssrInterpolate(__props.setting.delivery.same_day.description)\n    }</label></div></div></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.setting?.delivery?.same_day_delivery) {\n    _push(`<div class=\"${\n      _ssrRenderClass([{ 'show': _unref(deliveryType) && _unref(deliveryType) == 'same_day' }, \"col-12 future-box\"])\n    }\"><div class=\"future-option\"><div class=\"delivery-items\"><div><h4>${\n      _ssrInterpolate(_ctx.$t('Select Timing Slot:'))\n    }:</h4><ul><!--[-->`)\n    _ssrRenderList(__props.setting.delivery.same_day_intervals, (intervals, i) => {\n      _push(`<li class=\"${\n        _ssrRenderClass({ 'active': _unref(selectedTitle) == intervals.title })\n      }\"><a href=\"javascript:void(0)\">${\n        _ssrInterpolate(intervals.description)\n      }</a></li>`)\n    })\n    _push(`<!--]--></ul></div></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Checkout/delivery-block/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339389,
+      "end": 1716056339391,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339391,
+      "end": 1716056339391,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339391,
+      "end": 1716056339391,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339391,
+      "end": 1716056339391,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339391,
+      "end": 1716056339391,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339391,
+      "end": 1716056339391,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/delivery-block/index.vue\").then(r => r.default))",
+      "start": 1716056339391,
+      "end": 1716056339391,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339391,
+      "end": 1716056339391,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339392,
+      "end": 1716056339392,
+      "order": "normal"
+    }
+  ]
+}

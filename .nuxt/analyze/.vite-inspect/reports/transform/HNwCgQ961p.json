@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Support.vue?nuxt_component=async&nuxt_component_name=HeaderElementsSupport",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n    <!-- Call Style Basic -->\n    <a href=\"javascript:void(0)\" class=\"delivery-login-box\" v-if=\"style == 'basic'\">\n        <div class=\"delivery-icon\">\n            <Icon name=\"ri:customer-service-line\"></Icon>\n        </div>\n        <div class=\"delivery-detail\">\n            <h6>{{ $t(\"24/7 Support Center\") }}</h6>\n            <h5>{{ themeOptions?.header?.support_number }}</h5>\n        </div>\n    </a>\n    <!-- Call Style Classic -->\n    <div class=\"support-box\" v-if=\"style == 'classic'\">\n        <div class=\"support-image\">\n            <img src=\"/images/icon/support.png\" class=\"img-fluid\" alt=\"support\">\n        </div>\n        <div class=\"support-number\">\n            <h2>{{ themeOptions?.header?.support_number }}</h2>\n            <h4>{{ $t(\"24/7 Support Center\") }}</h4>\n        </div>\n    </div>\n    <!-- Call Style Standard -->\n    <div class=\"nav-number\" v-if=\"style == 'standard'\">\n        <img src=\"/images/icon/music.png\" class=\"img-fluid\" alt=\"\">\n        <span>{{ themeOptions?.header?.support_number }}</span>\n    </div>\n</div>\n</template>\n\n<script setup>\nconst props = defineProps({\n    themeOptions: Object,\n    style: { type: [String,Object], default: 'basic' }\n})\n\n</script>",
+      "start": 1716056270737,
+      "end": 1716056271142,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271142,
+      "end": 1716056271142,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271142,
+      "end": 1716056271142,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271142,
+      "end": 1716056271142,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271142,
+      "end": 1716056271142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271142,
+      "end": 1716056271142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271142,
+      "end": 1716056271142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271142,
+      "end": 1716056271142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\nimport _imports_0 from '/images/icon/support.png'\nimport _imports_1 from '/images/icon/music.png'\n\n\nconst _hoisted_1 = {\n  key: 0,\n  href: \"javascript:void(0)\",\n  class: \"delivery-login-box\"\n}\nconst _hoisted_2 = { class: \"delivery-icon\" }\nconst _hoisted_3 = { class: \"delivery-detail\" }\nconst _hoisted_4 = {\n  key: 1,\n  class: \"support-box\"\n}\nconst _hoisted_5 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"support-image\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_0,\n    class: \"img-fluid\",\n    alt: \"support\"\n  })\n], -1)\nconst _hoisted_6 = { class: \"support-number\" }\nconst _hoisted_7 = {\n  key: 2,\n  class: \"nav-number\"\n}\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_1,\n  class: \"img-fluid\",\n  alt: \"\"\n}, null, -1)\n\n\nconst _sfc_main = {\n  __name: 'Support',\n  props: {\n    themeOptions: Object,\n    style: { type: [String,Object], default: 'basic' }\n},\n  setup(__props) {\n\nconst props = __props\n\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (__props.style == 'basic')\n      ? (_openBlock(), _createElementBlock(\"a\", _hoisted_1, [\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createVNode(_component_Icon, { name: \"ri:customer-service-line\" })\n          ]),\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"h6\", null, _toDisplayString(_ctx.$t(\"24/7 Support Center\")), 1),\n            _createElementVNode(\"h5\", null, _toDisplayString(__props.themeOptions?.header?.support_number), 1)\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (__props.style == 'classic')\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n          _hoisted_5,\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"h2\", null, _toDisplayString(__props.themeOptions?.header?.support_number), 1),\n            _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"24/7 Support Center\")), 1)\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (__props.style == 'standard')\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_7, [\n          _hoisted_8,\n          _createElementVNode(\"span\", null, _toDisplayString(__props.themeOptions?.header?.support_number), 1)\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056271142,
+      "end": 1716056271144,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Support.vue\").then(r => r.default))",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271144,
+      "end": 1716056271144,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271144,
+      "end": 1716056271145,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Support.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "normal"
+    }
+  ]
+}

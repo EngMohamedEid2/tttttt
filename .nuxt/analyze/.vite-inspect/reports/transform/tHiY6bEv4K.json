@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ImageLink/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div\n    v-if=\"image?.redirect_link?.link_type === 'external_url'\"\n    :class=\"saleclass\"\n  >\n    <NuxtLink\n      :to=\"image?.redirect_link?.link\"\n      target=\"_blank\"\n      class=\"banner-contain d-block h-100\"\n    >\n      <div\n        class=\"h-100 bg-size\"\n        :class=\"classes\"\n        v-if=\"bgImage\"\n        :style=\"{ 'background-image': 'url(' + image?.image_url + ')' }\"\n      ></div>\n      <img\n        v-else\n        :src=\"image?.image_url\"\n        class=\"h-100 img-fluid w-100\"\n        alt=\"banner\"\n      />\n    </NuxtLink>\n  </div>\n\n  <div\n    v-else-if=\"image?.redirect_link?.link_type === 'collection'\"\n    :class=\"saleclass\"\n  >\n    <NuxtLink\n      :to=\"{\n        path: '/collections',\n        query: { category: image?.redirect_link?.link },\n      }\"\n      class=\"h-100 d-block\"\n    >\n      <div\n        class=\"h-100 bg-size\"\n        :class=\"classes\"\n        v-if=\"bgImage\"\n        :style=\"{ 'background-image': 'url(' + image?.image_url + ')' }\"\n      ></div>\n      <img\n        v-if=\"!bgImage\"\n        :src=\"image?.image_url\"\n        class=\"img-fluid w-100\"\n        alt=\"banner\"\n      />\n    </NuxtLink>\n  </div>\n  <div\n    v-else-if=\"image?.redirect_link?.link_type === 'product'\"\n    :class=\"saleclass\"\n  >\n    <NuxtLink to=\"javascript:void(0)\">\n      <div\n        class=\"h-100 bg-size\"\n        :class=\"classes\"\n        v-if=\"bgImage\"\n        :style=\"{ 'background-image': 'url(' + image?.image_url + ')' }\"\n      ></div>\n      <img\n        v-if=\"!bgImage\"\n        :src=\"image?.image_url\"\n        class=\"h-100 img-fluid w-100\"\n        alt=\"banner\"\n      />\n    </NuxtLink>\n  </div>\n  <div v-else>\n    <div\n      class=\"h-100 bg-size\"\n      :class=\"classes\"\n      v-if=\"bgImage\"\n      :style=\"{ 'background-image': 'url(' + image?.image_url + ')' }\"\n    ></div>\n    <img\n      v-if=\"!bgImage\"\n      :src=\"image.image_url\"\n      class=\"h-100 img-fluid w-100\"\n      alt=\"banner\"\n    />\n  </div>\n</template>\n<script setup>\nlet props = defineProps({\n  image: Object,\n  link: String,\n  bgImage: Boolean,\n  classes: String,\n  saleclass: String,\n  height: {\n    default: true,\n    type: Boolean,\n  },\n});\n</script>\n",
+      "start": 1716056288192,
+      "end": 1716056288325,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056288325,
+      "end": 1716056288325,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056288325,
+      "end": 1716056288325,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056288325,
+      "end": 1716056288325,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056288325,
+      "end": 1716056288325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056288325,
+      "end": 1716056288325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056288325,
+      "end": 1716056288325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056288325,
+      "end": 1716056288325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { normalizeClass as _normalizeClass, normalizeStyle as _normalizeStyle, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\n\nconst _hoisted_1 = [\"src\"]\nconst _hoisted_2 = [\"src\"]\nconst _hoisted_3 = [\"src\"]\nconst _hoisted_4 = { key: 3 }\nconst _hoisted_5 = [\"src\"]\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  image: Object,\n  link: String,\n  bgImage: Boolean,\n  classes: String,\n  saleclass: String,\n  height: {\n    default: true,\n    type: Boolean,\n  },\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n\n  return (__props.image?.redirect_link?.link_type === 'external_url')\n    ? (_openBlock(), _createElementBlock(\"div\", {\n        key: 0,\n        class: _normalizeClass(__props.saleclass)\n      }, [\n        _createVNode(_component_NuxtLink, {\n          to: __props.image?.redirect_link?.link,\n          target: \"_blank\",\n          class: \"banner-contain d-block h-100\"\n        }, {\n          default: _withCtx(() => [\n            (__props.bgImage)\n              ? (_openBlock(), _createElementBlock(\"div\", {\n                  key: 0,\n                  class: _normalizeClass([\"h-100 bg-size\", __props.classes]),\n                  style: _normalizeStyle({ 'background-image': 'url(' + __props.image?.image_url + ')' })\n                }, null, 6))\n              : (_openBlock(), _createElementBlock(\"img\", {\n                  key: 1,\n                  src: __props.image?.image_url,\n                  class: \"h-100 img-fluid w-100\",\n                  alt: \"banner\"\n                }, null, 8, _hoisted_1))\n          ]),\n          _: 1\n        }, 8, [\"to\"])\n      ], 2))\n    : (__props.image?.redirect_link?.link_type === 'collection')\n      ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 1,\n          class: _normalizeClass(__props.saleclass)\n        }, [\n          _createVNode(_component_NuxtLink, {\n            to: {\n        path: '/collections',\n        query: { category: __props.image?.redirect_link?.link },\n      },\n            class: \"h-100 d-block\"\n          }, {\n            default: _withCtx(() => [\n              (__props.bgImage)\n                ? (_openBlock(), _createElementBlock(\"div\", {\n                    key: 0,\n                    class: _normalizeClass([\"h-100 bg-size\", __props.classes]),\n                    style: _normalizeStyle({ 'background-image': 'url(' + __props.image?.image_url + ')' })\n                  }, null, 6))\n                : _createCommentVNode(\"\", true),\n              (!__props.bgImage)\n                ? (_openBlock(), _createElementBlock(\"img\", {\n                    key: 1,\n                    src: __props.image?.image_url,\n                    class: \"img-fluid w-100\",\n                    alt: \"banner\"\n                  }, null, 8, _hoisted_2))\n                : _createCommentVNode(\"\", true)\n            ]),\n            _: 1\n          }, 8, [\"to\"])\n        ], 2))\n      : (__props.image?.redirect_link?.link_type === 'product')\n        ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 2,\n            class: _normalizeClass(__props.saleclass)\n          }, [\n            _createVNode(_component_NuxtLink, { to: \"javascript:void(0)\" }, {\n              default: _withCtx(() => [\n                (__props.bgImage)\n                  ? (_openBlock(), _createElementBlock(\"div\", {\n                      key: 0,\n                      class: _normalizeClass([\"h-100 bg-size\", __props.classes]),\n                      style: _normalizeStyle({ 'background-image': 'url(' + __props.image?.image_url + ')' })\n                    }, null, 6))\n                  : _createCommentVNode(\"\", true),\n                (!__props.bgImage)\n                  ? (_openBlock(), _createElementBlock(\"img\", {\n                      key: 1,\n                      src: __props.image?.image_url,\n                      class: \"h-100 img-fluid w-100\",\n                      alt: \"banner\"\n                    }, null, 8, _hoisted_3))\n                  : _createCommentVNode(\"\", true)\n              ]),\n              _: 1\n            })\n          ], 2))\n        : (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n            (__props.bgImage)\n              ? (_openBlock(), _createElementBlock(\"div\", {\n                  key: 0,\n                  class: _normalizeClass([\"h-100 bg-size\", __props.classes]),\n                  style: _normalizeStyle({ 'background-image': 'url(' + __props.image?.image_url + ')' })\n                }, null, 6))\n              : _createCommentVNode(\"\", true),\n            (!__props.bgImage)\n              ? (_openBlock(), _createElementBlock(\"img\", {\n                  key: 1,\n                  src: __props.image.image_url,\n                  class: \"h-100 img-fluid w-100\",\n                  alt: \"banner\"\n                }, null, 8, _hoisted_5))\n              : _createCommentVNode(\"\", true)\n          ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288325,
+      "end": 1716056288326,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056288326,
+      "end": 1716056288326,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056288326,
+      "end": 1716056288328,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056288328,
+      "end": 1716056288328,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056288328,
+      "end": 1716056288328,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056288328,
+      "end": 1716056288328,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056288328,
+      "end": 1716056288328,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { normalizeClass as _normalizeClass, normalizeStyle as _normalizeStyle, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\n\nconst _hoisted_1 = [\"src\"]\nconst _hoisted_2 = [\"src\"]\nconst _hoisted_3 = [\"src\"]\nconst _hoisted_4 = { key: 3 }\nconst _hoisted_5 = [\"src\"]\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  image: Object,\n  link: String,\n  bgImage: Boolean,\n  classes: String,\n  saleclass: String,\n  height: {\n    default: true,\n    type: Boolean,\n  },\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  const _component_NuxtLink = __nuxt_component_0\n\n  return (__props.image?.redirect_link?.link_type === 'external_url')\n    ? (_openBlock(), _createElementBlock(\"div\", {\n        key: 0,\n        class: _normalizeClass(__props.saleclass)\n      }, [\n        _createVNode(_component_NuxtLink, {\n          to: __props.image?.redirect_link?.link,\n          target: \"_blank\",\n          class: \"banner-contain d-block h-100\"\n        }, {\n          default: _withCtx(() => [\n            (__props.bgImage)\n              ? (_openBlock(), _createElementBlock(\"div\", {\n                  key: 0,\n                  class: _normalizeClass([\"h-100 bg-size\", __props.classes]),\n                  style: _normalizeStyle({ 'background-image': 'url(' + __props.image?.image_url + ')' })\n                }, null, 6))\n              : (_openBlock(), _createElementBlock(\"img\", {\n                  key: 1,\n                  src: __props.image?.image_url,\n                  class: \"h-100 img-fluid w-100\",\n                  alt: \"banner\"\n                }, null, 8, _hoisted_1))\n          ]),\n          _: 1\n        }, 8, [\"to\"])\n      ], 2))\n    : (__props.image?.redirect_link?.link_type === 'collection')\n      ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 1,\n          class: _normalizeClass(__props.saleclass)\n        }, [\n          _createVNode(_component_NuxtLink, {\n            to: {\n        path: '/collections',\n        query: { category: __props.image?.redirect_link?.link },\n      },\n            class: \"h-100 d-block\"\n          }, {\n            default: _withCtx(() => [\n              (__props.bgImage)\n                ? (_openBlock(), _createElementBlock(\"div\", {\n                    key: 0,\n                    class: _normalizeClass([\"h-100 bg-size\", __props.classes]),\n                    style: _normalizeStyle({ 'background-image': 'url(' + __props.image?.image_url + ')' })\n                  }, null, 6))\n                : _createCommentVNode(\"\", true),\n              (!__props.bgImage)\n                ? (_openBlock(), _createElementBlock(\"img\", {\n                    key: 1,\n                    src: __props.image?.image_url,\n                    class: \"img-fluid w-100\",\n                    alt: \"banner\"\n                  }, null, 8, _hoisted_2))\n                : _createCommentVNode(\"\", true)\n            ]),\n            _: 1\n          }, 8, [\"to\"])\n        ], 2))\n      : (__props.image?.redirect_link?.link_type === 'product')\n        ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 2,\n            class: _normalizeClass(__props.saleclass)\n          }, [\n            _createVNode(_component_NuxtLink, { to: \"javascript:void(0)\" }, {\n              default: _withCtx(() => [\n                (__props.bgImage)\n                  ? (_openBlock(), _createElementBlock(\"div\", {\n                      key: 0,\n                      class: _normalizeClass([\"h-100 bg-size\", __props.classes]),\n                      style: _normalizeStyle({ 'background-image': 'url(' + __props.image?.image_url + ')' })\n                    }, null, 6))\n                  : _createCommentVNode(\"\", true),\n                (!__props.bgImage)\n                  ? (_openBlock(), _createElementBlock(\"img\", {\n                      key: 1,\n                      src: __props.image?.image_url,\n                      class: \"h-100 img-fluid w-100\",\n                      alt: \"banner\"\n                    }, null, 8, _hoisted_3))\n                  : _createCommentVNode(\"\", true)\n              ]),\n              _: 1\n            })\n          ], 2))\n        : (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n            (__props.bgImage)\n              ? (_openBlock(), _createElementBlock(\"div\", {\n                  key: 0,\n                  class: _normalizeClass([\"h-100 bg-size\", __props.classes]),\n                  style: _normalizeStyle({ 'background-image': 'url(' + __props.image?.image_url + ')' })\n                }, null, 6))\n              : _createCommentVNode(\"\", true),\n            (!__props.bgImage)\n              ? (_openBlock(), _createElementBlock(\"img\", {\n                  key: 1,\n                  src: __props.image.image_url,\n                  class: \"h-100 img-fluid w-100\",\n                  alt: \"banner\"\n                }, null, 8, _hoisted_5))\n              : _createCommentVNode(\"\", true)\n          ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288328,
+      "end": 1716056288329,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056288329,
+      "end": 1716056288329,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056288329,
+      "end": 1716056288329,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056288329,
+      "end": 1716056288329,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/SummaryDetails.vue?nuxt_component=async&nuxt_component_name=AccountOrdersDetailsSummaryDetails",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"card h-m30\">\n        <div class=\"card-body\">\n            <h3 class=\"fw-semibold mb-3\">\n                {{ $t(\"Summary\") }}\n            </h3>\n            <div class=\"tracking-total tracking-wrapper\">\n                <ul>\n                    <li>{{ $t(\"Subtotal\") }} <span>{{ store.currency.symbol }} {{ Number(store.convertCurrency(order?.amount\n                        ? order?.amount : 0)).toFixed(2) }}</span></li>\n                    <li>{{ $t(\"Shipping\") }} <span>{{ store?.currency.symbol }} {{\n                        Number(store.convertCurrency(order?.shipping_total ? order?.shipping_total : 0)).toFixed(2)\n                    }}</span></li>\n                    <li>{{ $t(\"Tax\") }} <span>{{ store?.currency.symbol }} {{ Number(store?.convertCurrency(order?.tax_total\n                        ?\n                        order?.tax_total : 0)).toFixed(2) }}</span></li>\n                    <li class=\"txt-primary fw-bold\" v-if=\"order?.points_amount != 0\">{{ $t(\"Points\") }} <span>{{\n                        order?.points_amount }}</span></li>\n                    <li class=\"txt-primary fw-bold\" v-if=\"order?.wallet_balance != 0\">{{ $t(\"Wallet Balance\") }} <span>{{\n                        store?.currency?.symbol }} {{ Number(store.convertCurrency(order?.wallet_balance)).toFixed(2)\n    }}</span></li>\n                    <li class=\"txt-primary fw-bold\" v-if=\"order?.coupon_total_discount != 0\">{{ $t(\"Coupon Discount\") }}\n                        <span>{{ store?.currency?.symbol }} {{\n                            Number(store.convertCurrency(order?.coupon_total_discount)).toFixed(2) }}</span>\n                    </li>\n                    <li>{{ $t(\"Total\") }} <span>{{ store?.currency?.symbol }} {{ (order?.total ? order.total : 0) }}</span>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { useCurrencyStore } from '@/store/currency'\nlet props = defineProps({\n    order: Object\n})\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056305961,
+      "end": 1716056306256,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306256,
+      "end": 1716056306256,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306256,
+      "end": 1716056306256,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306256,
+      "end": 1716056306256,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306256,
+      "end": 1716056306256,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056306256,
+      "end": 1716056306256,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056306256,
+      "end": 1716056306256,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056306256,
+      "end": 1716056306256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056306256,
+      "end": 1716056306256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056306256,
+      "end": 1716056306256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056306256,
+      "end": 1716056306256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { useCurrencyStore } from '@/store/currency'\n\nconst _sfc_main = {\n  __name: 'SummaryDetails',\n  __ssrInlineRender: true,\n  props: {\n    order: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"card h-m30\" }, _attrs))\n  }><div class=\"card-body\"><h3 class=\"fw-semibold mb-3\">${\n    _ssrInterpolate(_ctx.$t(\"Summary\"))\n  }</h3><div class=\"tracking-total tracking-wrapper\"><ul><li>${\n    _ssrInterpolate(_ctx.$t(\"Subtotal\"))\n  } <span>${\n    _ssrInterpolate(_unref(store).currency.symbol)\n  } ${\n    _ssrInterpolate(Number(_unref(store).convertCurrency(__props.order?.amount\n                        ? __props.order?.amount : 0)).toFixed(2))\n  }</span></li><li>${\n    _ssrInterpolate(_ctx.$t(\"Shipping\"))\n  } <span>${\n    _ssrInterpolate(_unref(store)?.currency.symbol)\n  } ${\n    _ssrInterpolate(Number(_unref(store).convertCurrency(__props.order?.shipping_total ? __props.order?.shipping_total : 0)).toFixed(2))\n  }</span></li><li>${\n    _ssrInterpolate(_ctx.$t(\"Tax\"))\n  } <span>${\n    _ssrInterpolate(_unref(store)?.currency.symbol)\n  } ${\n    _ssrInterpolate(Number(_unref(store)?.convertCurrency(__props.order?.tax_total\n                        ?\n                        __props.order?.tax_total : 0)).toFixed(2))\n  }</span></li>`)\n  if (__props.order?.points_amount != 0) {\n    _push(`<li class=\"txt-primary fw-bold\">${\n      _ssrInterpolate(_ctx.$t(\"Points\"))\n    } <span>${\n      _ssrInterpolate(__props.order?.points_amount)\n    }</span></li>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.order?.wallet_balance != 0) {\n    _push(`<li class=\"txt-primary fw-bold\">${\n      _ssrInterpolate(_ctx.$t(\"Wallet Balance\"))\n    } <span>${\n      _ssrInterpolate(_unref(store)?.currency?.symbol)\n    } ${\n      _ssrInterpolate(Number(_unref(store).convertCurrency(__props.order?.wallet_balance)).toFixed(2))\n    }</span></li>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.order?.coupon_total_discount != 0) {\n    _push(`<li class=\"txt-primary fw-bold\">${\n      _ssrInterpolate(_ctx.$t(\"Coupon Discount\"))\n    } <span>${\n      _ssrInterpolate(_unref(store)?.currency?.symbol)\n    } ${\n      _ssrInterpolate(Number(_unref(store).convertCurrency(__props.order?.coupon_total_discount)).toFixed(2))\n    }</span></li>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<li>${\n    _ssrInterpolate(_ctx.$t(\"Total\"))\n  } <span>${\n    _ssrInterpolate(_unref(store)?.currency?.symbol)\n  } ${\n    _ssrInterpolate((__props.order?.total ? __props.order.total : 0))\n  }</span></li></ul></div></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/Orders/Details/SummaryDetails.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056306256,
+      "end": 1716056306259,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056306259,
+      "end": 1716056306259,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/SummaryDetails.vue\").then(r => r.default))",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056306260,
+      "end": 1716056306260,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056306260,
+      "end": 1716056306261,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056306261,
+      "end": 1716056306261,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056306261,
+      "end": 1716056306261,
+      "order": "normal"
+    }
+  ]
+}

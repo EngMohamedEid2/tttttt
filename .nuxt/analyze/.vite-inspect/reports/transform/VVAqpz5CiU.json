@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Widgets/FourColumnProduct/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"row g-4\">\n    <div v-if=\"data?.product_slider_1?.status && data?.product_slider_1?.product_ids?.length\"\n      :class=\"col ? col : 'col-xxl-3 col-xl-4 col-sm-6'\">\n      <div class=\"category-menu\">\n        <h3>{{ data?.product_slider_1?.title }}</h3>\n        <ThemesWidgetsProduct :Products=\"Products\" :productIds=\"data?.product_slider_1?.product_ids || []\"\n          :style=\"'vertical'\" />\n      </div>\n    </div>\n\n    <div v-if=\"data?.product_slider_2?.status && data?.product_slider_2?.product_ids?.length\"\n      :class=\"col ? col : 'col-xxl-3 col-xl-4 col-sm-6'\">\n      <div class=\"category-menu\">\n        <h3>{{ data?.product_slider_2?.title }}</h3>\n        <ThemesWidgetsProduct :Products=\"Products\" :productIds=\"data?.product_slider_2?.product_ids || []\"\n          :style=\"'vertical'\" />\n      </div>\n    </div>\n\n    <div v-if=\"data?.product_slider_3?.status && data?.product_slider_3?.product_ids?.length\"\n      :class=\"col ? col : 'col-xxl-3 col-xl-4 col-sm-6'\">\n      <div class=\"category-menu\">\n        <h3>{{ data?.product_slider_3?.title }}</h3>\n        <ThemesWidgetsProduct :Products=\"Products\" :productIds=\"data?.product_slider_3?.product_ids || []\"\n          :style=\"'vertical'\" />\n      </div>\n    </div>\n\n    <div v-if=\"data?.product_slider_4?.status && data?.product_slider_4?.product_ids?.length\"\n      :class=\"col ? col : 'col-xxl-3 col-xl-4 col-sm-6'\">\n      <div class=\"category-menu\">\n        <h3>{{ data?.product_slider_4?.title }}</h3>\n        <ThemesWidgetsProduct :Products=\"Products\" :productIds=\"data?.product_slider_4?.product_ids || []\"\n          :style=\"'vertical'\" />\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  data: Object,\n  Products: Object,\n  col: String\n})\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056288013,
+      "end": 1716056288199,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056288199,
+      "end": 1716056288199,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056288199,
+      "end": 1716056288199,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056288199,
+      "end": 1716056288199,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056288199,
+      "end": 1716056288199,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056288199,
+      "end": 1716056288199,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056288199,
+      "end": 1716056288199,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056288199,
+      "end": 1716056288199,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"row g-4\" }\nconst _hoisted_2 = { class: \"category-menu\" }\nconst _hoisted_3 = { class: \"category-menu\" }\nconst _hoisted_4 = { class: \"category-menu\" }\nconst _hoisted_5 = { class: \"category-menu\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  data: Object,\n  Products: Object,\n  col: String\n},\n  setup(__props) {\n\nlet props = __props\n\n\nreturn (_ctx, _cache) => {\n  const _component_ThemesWidgetsProduct = _resolveComponent(\"ThemesWidgetsProduct\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    (__props.data?.product_slider_1?.status && __props.data?.product_slider_1?.product_ids?.length)\n      ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 0,\n          class: _normalizeClass(__props.col ? __props.col : 'col-xxl-3 col-xl-4 col-sm-6')\n        }, [\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createElementVNode(\"h3\", null, _toDisplayString(__props.data?.product_slider_1?.title), 1),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: __props.Products,\n              productIds: __props.data?.product_slider_1?.product_ids || [],\n              style: 'vertical'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ], 2))\n      : _createCommentVNode(\"\", true),\n    (__props.data?.product_slider_2?.status && __props.data?.product_slider_2?.product_ids?.length)\n      ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 1,\n          class: _normalizeClass(__props.col ? __props.col : 'col-xxl-3 col-xl-4 col-sm-6')\n        }, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"h3\", null, _toDisplayString(__props.data?.product_slider_2?.title), 1),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: __props.Products,\n              productIds: __props.data?.product_slider_2?.product_ids || [],\n              style: 'vertical'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ], 2))\n      : _createCommentVNode(\"\", true),\n    (__props.data?.product_slider_3?.status && __props.data?.product_slider_3?.product_ids?.length)\n      ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 2,\n          class: _normalizeClass(__props.col ? __props.col : 'col-xxl-3 col-xl-4 col-sm-6')\n        }, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"h3\", null, _toDisplayString(__props.data?.product_slider_3?.title), 1),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: __props.Products,\n              productIds: __props.data?.product_slider_3?.product_ids || [],\n              style: 'vertical'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ], 2))\n      : _createCommentVNode(\"\", true),\n    (__props.data?.product_slider_4?.status && __props.data?.product_slider_4?.product_ids?.length)\n      ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 3,\n          class: _normalizeClass(__props.col ? __props.col : 'col-xxl-3 col-xl-4 col-sm-6')\n        }, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"h3\", null, _toDisplayString(__props.data?.product_slider_4?.title), 1),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: __props.Products,\n              productIds: __props.data?.product_slider_4?.product_ids || [],\n              style: 'vertical'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ], 2))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288199,
+      "end": 1716056288200,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056288200,
+      "end": 1716056288200,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056288200,
+      "end": 1716056288202,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056288202,
+      "end": 1716056288202,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056288202,
+      "end": 1716056288202,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056288202,
+      "end": 1716056288202,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056288202,
+      "end": 1716056288202,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Widgets/Product/index.vue\";\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"row g-4\" }\nconst _hoisted_2 = { class: \"category-menu\" }\nconst _hoisted_3 = { class: \"category-menu\" }\nconst _hoisted_4 = { class: \"category-menu\" }\nconst _hoisted_5 = { class: \"category-menu\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  data: Object,\n  Products: Object,\n  col: String\n},\n  setup(__props) {\n\nlet props = __props\n\n\nreturn (_ctx, _cache) => {\n  const _component_ThemesWidgetsProduct = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    (__props.data?.product_slider_1?.status && __props.data?.product_slider_1?.product_ids?.length)\n      ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 0,\n          class: _normalizeClass(__props.col ? __props.col : 'col-xxl-3 col-xl-4 col-sm-6')\n        }, [\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createElementVNode(\"h3\", null, _toDisplayString(__props.data?.product_slider_1?.title), 1),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: __props.Products,\n              productIds: __props.data?.product_slider_1?.product_ids || [],\n              style: 'vertical'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ], 2))\n      : _createCommentVNode(\"\", true),\n    (__props.data?.product_slider_2?.status && __props.data?.product_slider_2?.product_ids?.length)\n      ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 1,\n          class: _normalizeClass(__props.col ? __props.col : 'col-xxl-3 col-xl-4 col-sm-6')\n        }, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"h3\", null, _toDisplayString(__props.data?.product_slider_2?.title), 1),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: __props.Products,\n              productIds: __props.data?.product_slider_2?.product_ids || [],\n              style: 'vertical'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ], 2))\n      : _createCommentVNode(\"\", true),\n    (__props.data?.product_slider_3?.status && __props.data?.product_slider_3?.product_ids?.length)\n      ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 2,\n          class: _normalizeClass(__props.col ? __props.col : 'col-xxl-3 col-xl-4 col-sm-6')\n        }, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"h3\", null, _toDisplayString(__props.data?.product_slider_3?.title), 1),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: __props.Products,\n              productIds: __props.data?.product_slider_3?.product_ids || [],\n              style: 'vertical'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ], 2))\n      : _createCommentVNode(\"\", true),\n    (__props.data?.product_slider_4?.status && __props.data?.product_slider_4?.product_ids?.length)\n      ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 3,\n          class: _normalizeClass(__props.col ? __props.col : 'col-xxl-3 col-xl-4 col-sm-6')\n        }, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"h3\", null, _toDisplayString(__props.data?.product_slider_4?.title), 1),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: __props.Products,\n              productIds: __props.data?.product_slider_4?.product_ids || [],\n              style: 'vertical'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ], 2))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288202,
+      "end": 1716056288202,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056288202,
+      "end": 1716056288202,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056288202,
+      "end": 1716056288202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056288202,
+      "end": 1716056288202,
+      "order": "normal"
+    }
+  ]
+}

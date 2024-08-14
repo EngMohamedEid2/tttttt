@@ -1,0 +1,217 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/DeleteModal/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"modal-body p-3\">\n        <Icon name=\"ri:delete-bin-line\" class=\"icon-box\" />\n        <h5 class=\"modal-title text-center\">{{ 'Delete Item' }}?</h5>\n        <p class=\"text-center\">{{ \"This Item Will Be Deleted Permanently. You Can't Undo This Action.\" }} </p>\n        <div class=\"button-box\">\n            <WidgetsButton :classes=\"'btn btn-theme-outline btn-md fw-bold'\" :id=\"'delete_no_btn'\"\n                @onClick=\"() => { emit('close') }\">\n                {{ 'No' }}\n            </WidgetsButton>\n            <WidgetsButton :classes=\"'btn theme-bg-color btn-md fw-bold text-light'\" :id=\"'delete_yes_btn'\"\n                @click=\"handleDelete()\">\n                {{ 'yes' }}\n            </WidgetsButton>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { useUserStore } from \"@/store/user\";\nlet props = defineProps({\n    addressId: Number\n})\n\nlet emit = defineEmits(['close'])\nasync function handleDelete() {\n    await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: 'delete',\n        key: 'deleteAddress'\n    })\n    useUserStore().UpdateUserInfo()\n\n}\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056288291,
+      "end": 1716056288454,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056288454,
+      "end": 1716056288454,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056288454,
+      "end": 1716056288454,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056288454,
+      "end": 1716056288454,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056288454,
+      "end": 1716056288454,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056288454,
+      "end": 1716056288454,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"modal-body p-3\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"h5\", { class: \"modal-title text-center\" }, /*#__PURE__*/_toDisplayString('Delete Item') + \"?\", -1)\nconst _hoisted_3 = { class: \"text-center\" }\nconst _hoisted_4 = { class: \"button-box\" }\n\nimport { useUserStore } from \"@/store/user\";\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    addressId: Number\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet emit = __emit\nasync function handleDelete() {\n    await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: 'delete',\n        key: 'deleteAddress'\n    })\n    useUserStore().UpdateUserInfo()\n\n}\n\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_Icon, {\n      name: \"ri:delete-bin-line\",\n      class: \"icon-box\"\n    }),\n    _hoisted_2,\n    _createElementVNode(\"p\", _hoisted_3, _toDisplayString(\"This Item Will Be Deleted Permanently. You Can't Undo This Action.\"), 1),\n    _createElementVNode(\"div\", _hoisted_4, [\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn btn-theme-outline btn-md fw-bold',\n        id: 'delete_no_btn',\n        onOnClick: _cache[0] || (_cache[0] = () => { _unref(emit)('close') })\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString('No'))\n        ]),\n        _: 1\n      }),\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn theme-bg-color btn-md fw-bold text-light',\n        id: 'delete_yes_btn',\n        onClick: _cache[1] || (_cache[1] = $event => (handleDelete()))\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString('yes'))\n        ]),\n        _: 1\n      })\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056288455,
+      "end": 1716056288455,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"modal-body p-3\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"h5\", { class: \"modal-title text-center\" }, /*#__PURE__*/_toDisplayString('Delete Item') + \"?\", -1)\nconst _hoisted_3 = { class: \"text-center\" }\nconst _hoisted_4 = { class: \"button-box\" }\n\nimport { useUserStore } from \"@/store/user\";\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    addressId: Number\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet emit = __emit\nasync function handleDelete() {\n    await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: 'delete',\n        key: 'deleteAddress'\n    }, '$m8EstQwxC0')\n    useUserStore().UpdateUserInfo()\n\n}\n\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_Icon, {\n      name: \"ri:delete-bin-line\",\n      class: \"icon-box\"\n    }),\n    _hoisted_2,\n    _createElementVNode(\"p\", _hoisted_3, _toDisplayString(\"This Item Will Be Deleted Permanently. You Can't Undo This Action.\"), 1),\n    _createElementVNode(\"div\", _hoisted_4, [\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn btn-theme-outline btn-md fw-bold',\n        id: 'delete_no_btn',\n        onOnClick: _cache[0] || (_cache[0] = () => { _unref(emit)('close') })\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString('No'))\n        ]),\n        _: 1\n      }),\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn theme-bg-color btn-md fw-bold text-light',\n        id: 'delete_yes_btn',\n        onClick: _cache[1] || (_cache[1] = $event => (handleDelete()))\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString('yes'))\n        ]),\n        _: 1\n      })\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288455,
+      "end": 1716056288457,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"modal-body p-3\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"h5\", { class: \"modal-title text-center\" }, /*#__PURE__*/_toDisplayString('Delete Item') + \"?\", -1)\nconst _hoisted_3 = { class: \"text-center\" }\nconst _hoisted_4 = { class: \"button-box\" }\n\nimport { useUserStore } from \"@/store/user\";\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    addressId: Number\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet emit = __emit\nasync function handleDelete() {\n    await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: 'delete',\n        key: 'deleteAddress'\n    }, '$m8EstQwxC0')\n    useUserStore().UpdateUserInfo()\n\n}\n\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_Icon, {\n      name: \"ri:delete-bin-line\",\n      class: \"icon-box\"\n    }),\n    _hoisted_2,\n    _createElementVNode(\"p\", _hoisted_3, _toDisplayString(\"This Item Will Be Deleted Permanently. You Can't Undo This Action.\"), 1),\n    _createElementVNode(\"div\", _hoisted_4, [\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn btn-theme-outline btn-md fw-bold',\n        id: 'delete_no_btn',\n        onOnClick: _cache[0] || (_cache[0] = () => { _unref(emit)('close') })\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString('No'))\n        ]),\n        _: 1\n      }),\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn theme-bg-color btn-md fw-bold text-light',\n        id: 'delete_yes_btn',\n        onClick: _cache[1] || (_cache[1] = $event => (handleDelete()))\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString('yes'))\n        ]),\n        _: 1\n      })\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288457,
+      "end": 1716056288458,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056288458,
+      "end": 1716056288458,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056288458,
+      "end": 1716056288458,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056288458,
+      "end": 1716056288458,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056288458,
+      "end": 1716056288458,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"modal-body p-3\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"h5\", { class: \"modal-title text-center\" }, /*#__PURE__*/_toDisplayString('Delete Item') + \"?\", -1)\nconst _hoisted_3 = { class: \"text-center\" }\nconst _hoisted_4 = { class: \"button-box\" }\n\nimport { useUserStore } from \"@/store/user\";\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    addressId: Number\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet emit = __emit\nasync function handleDelete() {\n    await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: 'delete',\n        key: 'deleteAddress'\n    }, '$m8EstQwxC0')\n    useUserStore().UpdateUserInfo()\n\n}\n\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_WidgetsButton = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_Icon, {\n      name: \"ri:delete-bin-line\",\n      class: \"icon-box\"\n    }),\n    _hoisted_2,\n    _createElementVNode(\"p\", _hoisted_3, _toDisplayString(\"This Item Will Be Deleted Permanently. You Can't Undo This Action.\"), 1),\n    _createElementVNode(\"div\", _hoisted_4, [\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn btn-theme-outline btn-md fw-bold',\n        id: 'delete_no_btn',\n        onOnClick: _cache[0] || (_cache[0] = () => { _unref(emit)('close') })\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString('No'))\n        ]),\n        _: 1\n      }),\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn theme-bg-color btn-md fw-bold text-light',\n        id: 'delete_yes_btn',\n        onClick: _cache[1] || (_cache[1] = $event => (handleDelete()))\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString('yes'))\n        ]),\n        _: 1\n      })\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288458,
+      "end": 1716056288458,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056288458,
+      "end": 1716056288459,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056288459,
+      "end": 1716056288459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056288459,
+      "end": 1716056288459,
+      "order": "normal"
+    }
+  ]
+}

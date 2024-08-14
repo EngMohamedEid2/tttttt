@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/SaleTimer/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"time deal-timer product-deal-timer mx-md-0 mx-auto\" v-if=\"remainingTime\">\n        <div class=\"product-title\">\n            <h4>{{ $t(\"Hurry up! Sales Ends In\") }}</h4>\n        </div>\n        <ul>\n            <li>\n                <div class=\"counter d-block\">\n                    <div class=\"days d-block\">\n                        <h5>{{ remainingTime.days }}</h5>\n                    </div>\n                    <h6>{{ $t(\"Days\") }}</h6>\n                </div>\n            </li>\n            <li>\n                <div class=\"counter d-block\">\n                    <div class=\"hours d-block\">\n                        <h5>{{ remainingTime.hours }}</h5>\n                    </div>\n                    <h6>{{ $t(\"Hours\") }}</h6>\n                </div>\n            </li>\n            <li>\n                <div class=\"counter d-block\">\n                    <div class=\"minutes d-block\">\n                        <h5>{{ remainingTime.minutes }}</h5>\n                    </div>\n                    <h6>{{ $t(\"Min\") }}</h6>\n                </div>\n            </li>\n            <li>\n                <div class=\"counter d-block\">\n                    <div class=\"seconds d-block\">\n                        <h5>{{ remainingTime.seconds }}</h5>\n                    </div>\n                    <h6>{{ $t(\"Sec\") }}</h6>\n                </div>\n            </li>\n        </ul>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    startDate: String,\n    endDate: String\n})\n\nlet remainingTime = ref({});\nfunction updateTimer() {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n\n        let targetDate = endDateTime;\n\n        if (now < startDateTime) {\n            targetDate = startDateTime;\n        } else if (now > endDateTime) {\n            remainingTime.value = {\n                days: 0,\n                hours: 0,\n                minutes: 0,\n                seconds: 0\n            };\n        } else {\n            calculateTimeDifference(targetDate);\n        }\n    }\n};\n\nfunction calculateTimeDifference(targetDate) {\n    const now = new Date().getTime();\n    const timeDiff = targetDate - now;\n\n    remainingTime.value = {\n        days: Math.floor(timeDiff / (1000 * 60 * 60 * 24)),\n        hours: Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),\n        minutes: Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)),\n        seconds: Math.floor((timeDiff % (1000 * 60)) / 1000)\n    };\n};\n\nonMounted(() => {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n        remainingTime.value = null;\n        if (now > startDateTime && endDateTime > now) {\n            updateTimer(); \n            // Update the timer every second\n            const timerInterval = setInterval(() => {\n                updateTimer();\n            }, 1000);\n        }\n    }\n})\n</script>\n",
+      "start": 1716056287696,
+      "end": 1716056287872,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287872,
+      "end": 1716056287872,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287872,
+      "end": 1716056287873,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287873,
+      "end": 1716056287873,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287873,
+      "end": 1716056287873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287873,
+      "end": 1716056287873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287873,
+      "end": 1716056287873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287873,
+      "end": 1716056287873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"time deal-timer product-deal-timer mx-md-0 mx-auto\"\n}\nconst _hoisted_2 = { class: \"product-title\" }\nconst _hoisted_3 = { class: \"counter d-block\" }\nconst _hoisted_4 = { class: \"days d-block\" }\nconst _hoisted_5 = { class: \"counter d-block\" }\nconst _hoisted_6 = { class: \"hours d-block\" }\nconst _hoisted_7 = { class: \"counter d-block\" }\nconst _hoisted_8 = { class: \"minutes d-block\" }\nconst _hoisted_9 = { class: \"counter d-block\" }\nconst _hoisted_10 = { class: \"seconds d-block\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    startDate: String,\n    endDate: String\n},\n  setup(__props) {\n\nlet props = __props\n\nlet remainingTime = ref({});\nfunction updateTimer() {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n\n        let targetDate = endDateTime;\n\n        if (now < startDateTime) {\n            targetDate = startDateTime;\n        } else if (now > endDateTime) {\n            remainingTime.value = {\n                days: 0,\n                hours: 0,\n                minutes: 0,\n                seconds: 0\n            };\n        } else {\n            calculateTimeDifference(targetDate);\n        }\n    }\n};\n\nfunction calculateTimeDifference(targetDate) {\n    const now = new Date().getTime();\n    const timeDiff = targetDate - now;\n\n    remainingTime.value = {\n        days: Math.floor(timeDiff / (1000 * 60 * 60 * 24)),\n        hours: Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),\n        minutes: Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)),\n        seconds: Math.floor((timeDiff % (1000 * 60)) / 1000)\n    };\n};\n\nonMounted(() => {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n        remainingTime.value = null;\n        if (now > startDateTime && endDateTime > now) {\n            updateTimer(); \n            // Update the timer every second\n            const timerInterval = setInterval(() => {\n                updateTimer();\n            }, 1000);\n        }\n    }\n})\n\nreturn (_ctx, _cache) => {\n  return (_unref(remainingTime))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Hurry up! Sales Ends In\")), 1)\n        ]),\n        _createElementVNode(\"ul\", null, [\n          _createElementVNode(\"li\", null, [\n            _createElementVNode(\"div\", _hoisted_3, [\n              _createElementVNode(\"div\", _hoisted_4, [\n                _createElementVNode(\"h5\", null, _toDisplayString(_unref(remainingTime).days), 1)\n              ]),\n              _createElementVNode(\"h6\", null, _toDisplayString(_ctx.$t(\"Days\")), 1)\n            ])\n          ]),\n          _createElementVNode(\"li\", null, [\n            _createElementVNode(\"div\", _hoisted_5, [\n              _createElementVNode(\"div\", _hoisted_6, [\n                _createElementVNode(\"h5\", null, _toDisplayString(_unref(remainingTime).hours), 1)\n              ]),\n              _createElementVNode(\"h6\", null, _toDisplayString(_ctx.$t(\"Hours\")), 1)\n            ])\n          ]),\n          _createElementVNode(\"li\", null, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"div\", _hoisted_8, [\n                _createElementVNode(\"h5\", null, _toDisplayString(_unref(remainingTime).minutes), 1)\n              ]),\n              _createElementVNode(\"h6\", null, _toDisplayString(_ctx.$t(\"Min\")), 1)\n            ])\n          ]),\n          _createElementVNode(\"li\", null, [\n            _createElementVNode(\"div\", _hoisted_9, [\n              _createElementVNode(\"div\", _hoisted_10, [\n                _createElementVNode(\"h5\", null, _toDisplayString(_unref(remainingTime).seconds), 1)\n              ]),\n              _createElementVNode(\"h6\", null, _toDisplayString(_ctx.$t(\"Sec\")), 1)\n            ])\n          ])\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287873,
+      "end": 1716056287874,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287874,
+      "end": 1716056287874,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287874,
+      "end": 1716056287875,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { setInterval } from '#app/compat/interval';\nimport { unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"time deal-timer product-deal-timer mx-md-0 mx-auto\"\n}\nconst _hoisted_2 = { class: \"product-title\" }\nconst _hoisted_3 = { class: \"counter d-block\" }\nconst _hoisted_4 = { class: \"days d-block\" }\nconst _hoisted_5 = { class: \"counter d-block\" }\nconst _hoisted_6 = { class: \"hours d-block\" }\nconst _hoisted_7 = { class: \"counter d-block\" }\nconst _hoisted_8 = { class: \"minutes d-block\" }\nconst _hoisted_9 = { class: \"counter d-block\" }\nconst _hoisted_10 = { class: \"seconds d-block\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    startDate: String,\n    endDate: String\n},\n  setup(__props) {\n\nlet props = __props\n\nlet remainingTime = ref({});\nfunction updateTimer() {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n\n        let targetDate = endDateTime;\n\n        if (now < startDateTime) {\n            targetDate = startDateTime;\n        } else if (now > endDateTime) {\n            remainingTime.value = {\n                days: 0,\n                hours: 0,\n                minutes: 0,\n                seconds: 0\n            };\n        } else {\n            calculateTimeDifference(targetDate);\n        }\n    }\n};\n\nfunction calculateTimeDifference(targetDate) {\n    const now = new Date().getTime();\n    const timeDiff = targetDate - now;\n\n    remainingTime.value = {\n        days: Math.floor(timeDiff / (1000 * 60 * 60 * 24)),\n        hours: Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),\n        minutes: Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)),\n        seconds: Math.floor((timeDiff % (1000 * 60)) / 1000)\n    };\n};\n\nonMounted(() => {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n        remainingTime.value = null;\n        if (now > startDateTime && endDateTime > now) {\n            updateTimer(); \n            // Update the timer every second\n            const timerInterval = setInterval(() => {\n                updateTimer();\n            }, 1000);\n        }\n    }\n})\n\nreturn (_ctx, _cache) => {\n  return (_unref(remainingTime))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Hurry up! Sales Ends In\")), 1)\n        ]),\n        _createElementVNode(\"ul\", null, [\n          _createElementVNode(\"li\", null, [\n            _createElementVNode(\"div\", _hoisted_3, [\n              _createElementVNode(\"div\", _hoisted_4, [\n                _createElementVNode(\"h5\", null, _toDisplayString(_unref(remainingTime).days), 1)\n              ]),\n              _createElementVNode(\"h6\", null, _toDisplayString(_ctx.$t(\"Days\")), 1)\n            ])\n          ]),\n          _createElementVNode(\"li\", null, [\n            _createElementVNode(\"div\", _hoisted_5, [\n              _createElementVNode(\"div\", _hoisted_6, [\n                _createElementVNode(\"h5\", null, _toDisplayString(_unref(remainingTime).hours), 1)\n              ]),\n              _createElementVNode(\"h6\", null, _toDisplayString(_ctx.$t(\"Hours\")), 1)\n            ])\n          ]),\n          _createElementVNode(\"li\", null, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"div\", _hoisted_8, [\n                _createElementVNode(\"h5\", null, _toDisplayString(_unref(remainingTime).minutes), 1)\n              ]),\n              _createElementVNode(\"h6\", null, _toDisplayString(_ctx.$t(\"Min\")), 1)\n            ])\n          ]),\n          _createElementVNode(\"li\", null, [\n            _createElementVNode(\"div\", _hoisted_9, [\n              _createElementVNode(\"div\", _hoisted_10, [\n                _createElementVNode(\"h5\", null, _toDisplayString(_unref(remainingTime).seconds), 1)\n              ]),\n              _createElementVNode(\"h6\", null, _toDisplayString(_ctx.$t(\"Sec\")), 1)\n            ])\n          ])\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287875,
+      "end": 1716056287877,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287877,
+      "end": 1716056287877,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287877,
+      "end": 1716056287877,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287877,
+      "end": 1716056287877,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287877,
+      "end": 1716056287877,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056287877,
+      "end": 1716056287877,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287877,
+      "end": 1716056287877,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287877,
+      "end": 1716056287877,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287877,
+      "end": 1716056287877,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Denver/index.vue?nuxt_component=async&nuxt_component_name=ThemesDenver",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <!-- Home Section Start -->\n  <section class=\"home-section-2 home-section-bg pt-md-0 pt-2 overflow-hidden\" v-if=\"data?.content?.home_banner\">\n    <ThemesWidgetsHomeBannerDenver :data=\"data?.content?.home_banner\" />\n  </section>\n  <!-- Home Section End -->\n\n  <!-- Category Section Start -->\n  <section\n    v-if=\"data?.content?.categories_icon_list?.status && data?.content?.categories_icon_list?.category_ids?.length\">\n    <div class=\"container-fluid-lg\">\n      <ThemesWidgetsCategories  :style=\"'horizontal'\" :theme=\"'paris'\"\n        :categoryIds=\"data?.content?.categories_icon_list?.category_ids || []\"\n        :image=\"data?.content?.categories_icon_list?.image_url\" />\n    </div>\n  </section>\n  <!-- Category Section End -->\n\n  <!-- Deal Section Start -->\n  <section class=\"product-section product-section-3\" v-if=\"data?.content?.products_list_1?.product_ids?.length || 0 >= 6\n    && data?.content?.products_list_1?.status\">\n    <div class=\"container-fluid-lg\">\n      <div>\n        <WidgetsTitle :title=\"data?.content?.products_list_1?.title\" :style=\"'simple'\" />\n        <ThemesWidgetsProduct :Products=\"product\" :productIds=\"data?.content?.products_list_1?.product_ids || []\"\n          :slider=\"true\" :style=\"'horizontal'\" :sliderPerView=\"6\" :productstyle=\"'product-solid'\"\n          :boxClass=\"'product-box-bg'\" />\n      </div>\n    </div>\n  </section>\n  <!-- Deal Section End -->\n\n  <!-- banner section start -->\n  <section v-if=\"data?.content?.two_column_banners?.status\">\n    <div class=\"container-fluid-lg\">\n      <div class=\"row g-4\">\n        <div class=\"col-xxl-8 col-xl-12 col-md-7\">\n          <WidgetsImageLink :image=\"data?.content?.two_column_banners?.banner_1\" :bgImage=\"false\" />\n        </div>\n        <div class=\"col-xxl-4 col-xl-12 col-md-5\">\n          <WidgetsImageLink :image=\"data?.content?.two_column_banners?.banner_2\" :bgImage=\"false\" />\n        </div>\n      </div>\n    </div>\n  </section>\n  <!-- banner section end -->\n\n  <!-- Top Selling Section Start -->\n  <section class=\"top-selling-section no-bg-category\">\n    <div class=\"container-fluid-lg\">\n      <div class=\"row\">\n        <div class=\"col-xl-3 col-lg-4 d-lg-block d-none\"\n          v-if=\"data?.content?.slider_product_with_banner?.left_side_banners?.status\">\n            <WidgetsImageLink :classes=\"'banner-contain-2 hover-effect'\"\n              :image=\"data?.content?.slider_product_with_banner?.left_side_banners?.banner_1\" :height=\"false\" :bgImage=\"false\" />\n        </div>\n        <div\n          :class=\"data?.content?.slider_product_with_banner?.left_side_banners?.status ? 'col-xl-9 col-lg-8' : 'col-xxl-12 col-lg-12'\">\n          <ThemesWidgetsFourColumnProduct :Products=\"product\" :col=\"'col-xl-4 col-lg-6 col-md-4 col-sm-6'\"\n            :data=\"data?.content?.slider_product_with_banner?.slider_products\" />\n        </div>\n      </div>\n    </div>\n  </section>\n  <!-- Top Selling Section End -->\n\n  <!-- banner section start -->\n  <section class=\"section-t-space\" v-if=\"data?.content?.coupon_banner?.status && data?.content?.coupon_banner\">\n    <div class=\"container-fluid-lg\">\n      <div class=\"banner-contain\">\n        <WidgetsImageLink :image=\"data?.content?.coupon_banner\" :bgImage=\"false\" />\n      </div>\n    </div>\n  </section>\n  <!-- banner section End -->\n\n  <!-- Top Selling Section Start -->\n  <section class=\"product-section product-section-3\" v-if=\"data?.content?.products_list_2?.product_ids?.length || 0 >= 6\n    && data?.content?.products_list_2?.status\">\n    <div class=\"container-fluid-lg\">\n      <div>\n        <WidgetsTitle :title=\"data?.content?.products_list_2?.title\" :style=\"'simple'\" />\n        <ThemesWidgetsProduct :Products=\"product\" :productIds=\"data?.content?.products_list_2?.product_ids || []\"\n          :slider=\"true\" :style=\"'horizontal'\" :sliderPerView=\"6\" :productstyle=\"'product-solid'\"\n          :boxClass=\"'product-box-bg'\" />\n      </div>\n    </div>\n  </section>\n  <!-- Top Selling Section End -->\n\n  <!-- Top Selling Section Start -->\n  <section class=\"product-section product-section-3\" v-if=\"data?.content?.products_list_3?.product_ids?.length || 0 >= 6\n    && data?.content?.products_list_3?.status\">\n    <div class=\"container-fluid-lg\">\n      <div>\n        <WidgetsTitle :title=\"data?.content?.products_list_3?.title\" :style=\"'simple'\" />\n        <ThemesWidgetsProduct :Products=\"product\" :productIds=\"data?.content?.products_list_3?.product_ids || []\"\n          :slider=\"true\" :style=\"'horizontal'\" :sliderPerView=\"6\" :productstyle=\"'product-solid'\"\n          :boxClass=\"'product-box-bg'\" />\n      </div>\n    </div>\n  </section>\n  <!-- Top Selling Section End -->\n\n  <!-- Newsletter Section Start -->\n  <section class=\"newsletter-section section-b-space\" v-if=\"data?.content?.news_letter?.status\">\n    <ThemesWidgetsNewsletter :data=\"data?.content?.news_letter\" />\n  </section>\n  <!-- Newsletter Section End -->\n</div>\n</template>\n\n<script setup>\nlet { data, pending } = await HandleRequest(\"theme/denver\", {\n  key: \"getAllDenver\",\n  params: { slug: 'denver' }\n});\n\nlet { data: product, error } = await HandleRequest(\"product\", {\n  key: \"getThemeDenverProduct\",\n  params: { status: 1, theme: 'denver', ids: data?.value?.content?.products_ids.join(',') }\n});\n\nonMounted(() => {\n  // Change color for this layout\n  document.documentElement.style.setProperty('--theme-color', '#417394')\n})\n\nonBeforeUnmount(() => {\n  // Remove the color when the component is unmounted\n  document.documentElement.style.removeProperty('--theme-color')\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056339636,
+      "end": 1716056339703,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339703,
+      "end": 1716056339703,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339703,
+      "end": 1716056339703,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339703,
+      "end": 1716056339703,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339703,
+      "end": 1716056339703,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339703,
+      "end": 1716056339704,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339704,
+      "end": 1716056339704,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339704,
+      "end": 1716056339704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339704,
+      "end": 1716056339704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339704,
+      "end": 1716056339704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339704,
+      "end": 1716056339704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet { data, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"theme/denver\", {\n  key: \"getAllDenver\",\n  params: { slug: 'denver' }\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nlet { data: product, error } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"product\", {\n  key: \"getThemeDenverProduct\",\n  params: { status: 1, theme: 'denver', ids: data?.value?.content?.products_ids.join(',') }\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nonMounted(() => {\n  // Change color for this layout\n  document.documentElement.style.setProperty('--theme-color', '#417394')\n})\n\nonBeforeUnmount(() => {\n  // Remove the color when the component is unmounted\n  document.documentElement.style.removeProperty('--theme-color')\n})\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_ThemesWidgetsHomeBannerDenver = _resolveComponent(\"ThemesWidgetsHomeBannerDenver\")\n  const _component_ThemesWidgetsCategories = _resolveComponent(\"ThemesWidgetsCategories\")\n  const _component_WidgetsTitle = _resolveComponent(\"WidgetsTitle\")\n  const _component_ThemesWidgetsProduct = _resolveComponent(\"ThemesWidgetsProduct\")\n  const _component_WidgetsImageLink = _resolveComponent(\"WidgetsImageLink\")\n  const _component_ThemesWidgetsFourColumnProduct = _resolveComponent(\"ThemesWidgetsFourColumnProduct\")\n  const _component_ThemesWidgetsNewsletter = _resolveComponent(\"ThemesWidgetsNewsletter\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (_unref(data)?.content?.home_banner) {\n    _push(`<section class=\"home-section-2 home-section-bg pt-md-0 pt-2 overflow-hidden\">`)\n    _push(_ssrRenderComponent(_component_ThemesWidgetsHomeBannerDenver, {\n      data: _unref(data)?.content?.home_banner\n    }, null, _parent))\n    _push(`</section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.content?.categories_icon_list?.status && _unref(data)?.content?.categories_icon_list?.category_ids?.length) {\n    _push(`<section><div class=\"container-fluid-lg\">`)\n    _push(_ssrRenderComponent(_component_ThemesWidgetsCategories, {\n      style: 'horizontal',\n      theme: 'paris',\n      categoryIds: _unref(data)?.content?.categories_icon_list?.category_ids || [],\n      image: _unref(data)?.content?.categories_icon_list?.image_url\n    }, null, _parent))\n    _push(`</div></section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.content?.products_list_1?.product_ids?.length || 0 >= 6\n    && _unref(data)?.content?.products_list_1?.status) {\n    _push(`<section class=\"product-section product-section-3\"><div class=\"container-fluid-lg\"><div>`)\n    _push(_ssrRenderComponent(_component_WidgetsTitle, {\n      title: _unref(data)?.content?.products_list_1?.title,\n      style: 'simple'\n    }, null, _parent))\n    _push(_ssrRenderComponent(_component_ThemesWidgetsProduct, {\n      Products: _unref(product),\n      productIds: _unref(data)?.content?.products_list_1?.product_ids || [],\n      slider: true,\n      style: 'horizontal',\n      sliderPerView: 6,\n      productstyle: 'product-solid',\n      boxClass: 'product-box-bg'\n    }, null, _parent))\n    _push(`</div></div></section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.content?.two_column_banners?.status) {\n    _push(`<section><div class=\"container-fluid-lg\"><div class=\"row g-4\"><div class=\"col-xxl-8 col-xl-12 col-md-7\">`)\n    _push(_ssrRenderComponent(_component_WidgetsImageLink, {\n      image: _unref(data)?.content?.two_column_banners?.banner_1,\n      bgImage: false\n    }, null, _parent))\n    _push(`</div><div class=\"col-xxl-4 col-xl-12 col-md-5\">`)\n    _push(_ssrRenderComponent(_component_WidgetsImageLink, {\n      image: _unref(data)?.content?.two_column_banners?.banner_2,\n      bgImage: false\n    }, null, _parent))\n    _push(`</div></div></div></section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<section class=\"top-selling-section no-bg-category\"><div class=\"container-fluid-lg\"><div class=\"row\">`)\n  if (_unref(data)?.content?.slider_product_with_banner?.left_side_banners?.status) {\n    _push(`<div class=\"col-xl-3 col-lg-4 d-lg-block d-none\">`)\n    _push(_ssrRenderComponent(_component_WidgetsImageLink, {\n      classes: 'banner-contain-2 hover-effect',\n      image: _unref(data)?.content?.slider_product_with_banner?.left_side_banners?.banner_1,\n      height: false,\n      bgImage: false\n    }, null, _parent))\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"${_ssrRenderClass(_unref(data)?.content?.slider_product_with_banner?.left_side_banners?.status ? 'col-xl-9 col-lg-8' : 'col-xxl-12 col-lg-12')}\">`)\n  _push(_ssrRenderComponent(_component_ThemesWidgetsFourColumnProduct, {\n    Products: _unref(product),\n    col: 'col-xl-4 col-lg-6 col-md-4 col-sm-6',\n    data: _unref(data)?.content?.slider_product_with_banner?.slider_products\n  }, null, _parent))\n  _push(`</div></div></div></section>`)\n  if (_unref(data)?.content?.coupon_banner?.status && _unref(data)?.content?.coupon_banner) {\n    _push(`<section class=\"section-t-space\"><div class=\"container-fluid-lg\"><div class=\"banner-contain\">`)\n    _push(_ssrRenderComponent(_component_WidgetsImageLink, {\n      image: _unref(data)?.content?.coupon_banner,\n      bgImage: false\n    }, null, _parent))\n    _push(`</div></div></section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.content?.products_list_2?.product_ids?.length || 0 >= 6\n    && _unref(data)?.content?.products_list_2?.status) {\n    _push(`<section class=\"product-section product-section-3\"><div class=\"container-fluid-lg\"><div>`)\n    _push(_ssrRenderComponent(_component_WidgetsTitle, {\n      title: _unref(data)?.content?.products_list_2?.title,\n      style: 'simple'\n    }, null, _parent))\n    _push(_ssrRenderComponent(_component_ThemesWidgetsProduct, {\n      Products: _unref(product),\n      productIds: _unref(data)?.content?.products_list_2?.product_ids || [],\n      slider: true,\n      style: 'horizontal',\n      sliderPerView: 6,\n      productstyle: 'product-solid',\n      boxClass: 'product-box-bg'\n    }, null, _parent))\n    _push(`</div></div></section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.content?.products_list_3?.product_ids?.length || 0 >= 6\n    && _unref(data)?.content?.products_list_3?.status) {\n    _push(`<section class=\"product-section product-section-3\"><div class=\"container-fluid-lg\"><div>`)\n    _push(_ssrRenderComponent(_component_WidgetsTitle, {\n      title: _unref(data)?.content?.products_list_3?.title,\n      style: 'simple'\n    }, null, _parent))\n    _push(_ssrRenderComponent(_component_ThemesWidgetsProduct, {\n      Products: _unref(product),\n      productIds: _unref(data)?.content?.products_list_3?.product_ids || [],\n      slider: true,\n      style: 'horizontal',\n      sliderPerView: 6,\n      productstyle: 'product-solid',\n      boxClass: 'product-box-bg'\n    }, null, _parent))\n    _push(`</div></div></section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.content?.news_letter?.status) {\n    _push(`<section class=\"newsletter-section section-b-space\">`)\n    _push(_ssrRenderComponent(_component_ThemesWidgetsNewsletter, {\n      data: _unref(data)?.content?.news_letter\n    }, null, _parent))\n    _push(`</section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Themes/Denver/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339704,
+      "end": 1716056339707,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Denver/index.vue\").then(r => r.default))",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339707,
+      "end": 1716056339707,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339708,
+      "end": 1716056339708,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339708,
+      "end": 1716056339708,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339708,
+      "end": 1716056339708,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339708,
+      "end": 1716056339708,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Notification/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <div class=\"title-header\">\n      <div class=\"d-flex align-items-center\">\n        <h5>{{ $t(\"Notifications\") }}</h5>\n      </div>\n    </div>\n\n    <ul class=\"notification-list\" v-if=\"Notification?.data.length\">\n      <li :class=\"{ 'unread': notification.data.read_at }\" v-for=\"notification in Notification.data\" :key=\"notification\">\n        <h4>{{ notification?.data?.message }}</h4>\n        <h5>\n          <Icon name=\"ri-time-line\"></Icon>\n          {{ dateFormatter(notification?.created_at) }}\n        </h5>\n      </li>\n    </ul>\n    <WidgetsNoData :class=\"'no-data-added'\" :image=\"'/svg/empty-items.svg'\" :text=\"'No Notifications Found'\"\n      :description=\"'You have not received any notification yet'\" v-if=\"!Notification?.data?.length\">\n      ></WidgetsNoData>\n  </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nlet { Notification } = storeToRefs(useDataStore())\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056340202,
+      "end": 1716056340782,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340782,
+      "end": 1716056340782,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340782,
+      "end": 1716056340782,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340782,
+      "end": 1716056340782,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340782,
+      "end": 1716056340782,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056340782,
+      "end": 1716056340782,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056340783,
+      "end": 1716056340783,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056340783,
+      "end": 1716056340783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056340783,
+      "end": 1716056340783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056340783,
+      "end": 1716056340783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056340783,
+      "end": 1716056340783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createTextVNode as _createTextVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet { Notification } = storeToRefs(useDataStore())\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_attrs)\n  }><div class=\"title-header\"><div class=\"d-flex align-items-center\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Notifications\"))\n  }</h5></div></div>`)\n  if (_unref(Notification)?.data.length) {\n    _push(`<ul class=\"notification-list\"><!--[-->`)\n    _ssrRenderList(_unref(Notification).data, (notification) => {\n      _push(`<li class=\"${\n        _ssrRenderClass({ 'unread': notification.data.read_at })\n      }\"><h4>${\n        _ssrInterpolate(notification?.data?.message)\n      }</h4><h5>`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri-time-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(_ctx.dateFormatter(notification?.created_at))}</h5></li>`)\n    })\n    _push(`<!--]--></ul>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (!_unref(Notification)?.data?.length) {\n    _push(_ssrRenderComponent(_component_WidgetsNoData, {\n      class: 'no-data-added',\n      image: '/svg/empty-items.svg',\n      text: 'No Notifications Found',\n      description: 'You have not received any notification yet'\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(` &gt;`)\n        } else {\n          return [\n            _createTextVNode(\" >\")\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/Notification/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340783,
+      "end": 1716056340783,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056340783,
+      "end": 1716056340783,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340783,
+      "end": 1716056340783,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340783,
+      "end": 1716056340783,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340783,
+      "end": 1716056340783,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340783,
+      "end": 1716056340783,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056340783,
+      "end": 1716056340783,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340783,
+      "end": 1716056340783,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056340783,
+      "end": 1716056340784,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056340784,
+      "end": 1716056340784,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056340784,
+      "end": 1716056340784,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056340784,
+      "end": 1716056340784,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056340784,
+      "end": 1716056340784,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056340784,
+      "end": 1716056340784,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056340784,
+      "end": 1716056340784,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056340784,
+      "end": 1716056340784,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056340784,
+      "end": 1716056340784,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340784,
+      "end": 1716056340784,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340784,
+      "end": 1716056340784,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { dateFormatter as __unimport_dateFormatter } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/formators/date.js';\nimport { unref as __unimport_unref_ } from 'vue';import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createTextVNode as _createTextVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet { Notification } = storeToRefs(useDataStore())\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_attrs)\n  }><div class=\"title-header\"><div class=\"d-flex align-items-center\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Notifications\"))\n  }</h5></div></div>`)\n  if (_unref(Notification)?.data.length) {\n    _push(`<ul class=\"notification-list\"><!--[-->`)\n    _ssrRenderList(_unref(Notification).data, (notification) => {\n      _push(`<li class=\"${\n        _ssrRenderClass({ 'unread': notification.data.read_at })\n      }\"><h4>${\n        _ssrInterpolate(notification?.data?.message)\n      }</h4><h5>`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri-time-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate((\"dateFormatter\" in _ctx ? _ctx.dateFormatter : __unimport_unref_(__unimport_dateFormatter))(notification?.created_at))}</h5></li>`)\n    })\n    _push(`<!--]--></ul>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (!_unref(Notification)?.data?.length) {\n    _push(_ssrRenderComponent(_component_WidgetsNoData, {\n      class: 'no-data-added',\n      image: '/svg/empty-items.svg',\n      text: 'No Notifications Found',\n      description: 'You have not received any notification yet'\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(` &gt;`)\n        } else {\n          return [\n            _createTextVNode(\" >\")\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/Notification/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340784,
+      "end": 1716056340786,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { dateFormatter as __unimport_dateFormatter } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/formators/date.js';\nimport { unref as __unimport_unref_ } from 'vue';import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createTextVNode as _createTextVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet { Notification } = storeToRefs(useDataStore())\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_attrs)\n  }><div class=\"title-header\"><div class=\"d-flex align-items-center\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Notifications\"))\n  }</h5></div></div>`)\n  if (_unref(Notification)?.data.length) {\n    _push(`<ul class=\"notification-list\"><!--[-->`)\n    _ssrRenderList(_unref(Notification).data, (notification) => {\n      _push(`<li class=\"${\n        _ssrRenderClass({ 'unread': notification.data.read_at })\n      }\"><h4>${\n        _ssrInterpolate(notification?.data?.message)\n      }</h4><h5>`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri-time-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate((\"dateFormatter\" in _ctx ? _ctx.dateFormatter : __unimport_unref_(__unimport_dateFormatter))(notification?.created_at))}</h5></li>`)\n    })\n    _push(`<!--]--></ul>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (!_unref(Notification)?.data?.length) {\n    _push(_ssrRenderComponent(_component_WidgetsNoData, {\n      class: 'no-data-added',\n      image: '/svg/empty-items.svg',\n      text: 'No Notifications Found',\n      description: 'You have not received any notification yet'\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(` &gt;`)\n        } else {\n          return [\n            _createTextVNode(\" >\")\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/Notification/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340784,
+      "end": 1716056340786,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340786,
+      "end": 1716056340786,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340786,
+      "end": 1716056340786,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340786,
+      "end": 1716056340786,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340786,
+      "end": 1716056340786,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056340786,
+      "end": 1716056340786,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/NoData/index.vue\";\nimport { dateFormatter as __unimport_dateFormatter } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/formators/date.js';\nimport { unref as __unimport_unref_ } from 'vue';import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createTextVNode as _createTextVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet { Notification } = storeToRefs(useDataStore())\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_WidgetsNoData = __nuxt_component_1\n\n  _push(`<div${\n    _ssrRenderAttrs(_attrs)\n  }><div class=\"title-header\"><div class=\"d-flex align-items-center\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Notifications\"))\n  }</h5></div></div>`)\n  if (_unref(Notification)?.data.length) {\n    _push(`<ul class=\"notification-list\"><!--[-->`)\n    _ssrRenderList(_unref(Notification).data, (notification) => {\n      _push(`<li class=\"${\n        _ssrRenderClass({ 'unread': notification.data.read_at })\n      }\"><h4>${\n        _ssrInterpolate(notification?.data?.message)\n      }</h4><h5>`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri-time-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate((\"dateFormatter\" in _ctx ? _ctx.dateFormatter : __unimport_unref_(__unimport_dateFormatter))(notification?.created_at))}</h5></li>`)\n    })\n    _push(`<!--]--></ul>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (!_unref(Notification)?.data?.length) {\n    _push(_ssrRenderComponent(_component_WidgetsNoData, {\n      class: 'no-data-added',\n      image: '/svg/empty-items.svg',\n      text: 'No Notifications Found',\n      description: 'You have not received any notification yet'\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(` &gt;`)\n        } else {\n          return [\n            _createTextVNode(\" >\")\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/Notification/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340786,
+      "end": 1716056340786,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056340786,
+      "end": 1716056340786,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056340786,
+      "end": 1716056340786,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056340786,
+      "end": 1716056340786,
+      "order": "normal"
+    }
+  ]
+}

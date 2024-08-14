@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Paris/LeftContent.vue?nuxt_component=async&nuxt_component_name=ThemesParisLeftContent",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div\n    class=\"col-xxl-3 col-xl-4 d-none d-xl-block\"\n    v-if=\"leftdata?.main_content?.sidebar?.status\"\n  >\n    <div class=\"p-sticky\">\n      <!-- Sidebar Category Vertical Style -->\n      <div\n        v-if=\"\n          leftdata?.main_content?.sidebar?.categories_icon_list?.category_ids\n            ?.length\n        \"\n      >\n        <ThemesWidgetsCategories\n          :Category=\"Category\"\n          :style=\"'vertical'\"\n          :categoryIds=\"\n            leftdata?.main_content?.sidebar?.categories_icon_list\n              ?.category_ids || []\n          \"\n        />\n      </div>\n      <!-- Sidebar Vertical Banner -->\n      <ThemesWidgetsBanner\n        :classes=\"'ratio_156 section-t-space'\"\n        :style=\"'vertical'\"\n        :banners=\"leftdata?.main_content?.sidebar?.left_side_banners?.banner_1\"\n      />\n      <!-- Sidebar Vertical Banner -->\n      <ThemesWidgetsBanner\n        :classes=\"'ratio_medium section-t-space'\"\n        :style=\"'vertical'\"\n        :banners=\"leftdata?.main_content?.sidebar?.left_side_banners?.banner_2\"\n      />\n      <!-- Products -->\n      <div\n        v-if=\"\n          (leftdata?.main_content?.sidebar?.sidebar_products?.status &&\n            leftdata?.main_content?.sidebar?.sidebar_products?.product_ids\n              ?.length) ||\n          0 > 3\n        \"\n      >\n        <div class=\"section-t-space\">\n          <!-- <div class=\"category-menu\">\n            <h3>{{ leftdata?.main_content?.sidebar?.sidebar_products?.title }}</h3>\n            <ThemesWidgetsProduct :Products=\"Products\" :style=\"'vertical'\"\n              :productIds=\"leftdata?.main_content?.sidebar?.sidebar_products?.product_ids || []\" />\n          </div> -->\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  leftdata: Object,\n  Category: Object,\n  Products: [Object, Array],\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056339643,
+      "end": 1716056339723,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339723,
+      "end": 1716056339723,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339723,
+      "end": 1716056339723,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339723,
+      "end": 1716056339723,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339723,
+      "end": 1716056339723,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339723,
+      "end": 1716056339723,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339723,
+      "end": 1716056339723,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339723,
+      "end": 1716056339723,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339723,
+      "end": 1716056339723,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339723,
+      "end": 1716056339723,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339723,
+      "end": 1716056339723,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'LeftContent',\n  __ssrInlineRender: true,\n  props: {\n  leftdata: Object,\n  Category: Object,\n  Products: [Object, Array],\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_ThemesWidgetsCategories = _resolveComponent(\"ThemesWidgetsCategories\")\n  const _component_ThemesWidgetsBanner = _resolveComponent(\"ThemesWidgetsBanner\")\n\n  if (__props.leftdata?.main_content?.sidebar?.status) {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"col-xxl-3 col-xl-4 d-none d-xl-block\" }, _attrs))}><div class=\"p-sticky\">`)\n    if (\n          __props.leftdata?.main_content?.sidebar?.categories_icon_list?.category_ids\n            ?.length\n        ) {\n      _push(`<div>`)\n      _push(_ssrRenderComponent(_component_ThemesWidgetsCategories, {\n        Category: __props.Category,\n        style: 'vertical',\n        categoryIds: \n            __props.leftdata?.main_content?.sidebar?.categories_icon_list\n              ?.category_ids || []\n          \n      }, null, _parent))\n      _push(`</div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(_ssrRenderComponent(_component_ThemesWidgetsBanner, {\n      classes: 'ratio_156 section-t-space',\n      style: 'vertical',\n      banners: __props.leftdata?.main_content?.sidebar?.left_side_banners?.banner_1\n    }, null, _parent))\n    _push(_ssrRenderComponent(_component_ThemesWidgetsBanner, {\n      classes: 'ratio_medium section-t-space',\n      style: 'vertical',\n      banners: __props.leftdata?.main_content?.sidebar?.left_side_banners?.banner_2\n    }, null, _parent))\n    if (\n          (__props.leftdata?.main_content?.sidebar?.sidebar_products?.status &&\n            __props.leftdata?.main_content?.sidebar?.sidebar_products?.product_ids\n              ?.length) ||\n          0 > 3\n        ) {\n      _push(`<div><div class=\"section-t-space\"></div></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Themes/Paris/LeftContent.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339723,
+      "end": 1716056339725,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339725,
+      "end": 1716056339725,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339725,
+      "end": 1716056339725,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339725,
+      "end": 1716056339725,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339725,
+      "end": 1716056339725,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339725,
+      "end": 1716056339725,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Paris/LeftContent.vue\").then(r => r.default))",
+      "start": 1716056339725,
+      "end": 1716056339725,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339725,
+      "end": 1716056339726,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339726,
+      "end": 1716056339726,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ProductBox/SkeletonProductBox.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n    <!-- Skeleton For Horizontal -->\n    <div class=\"skeleton-div\" v-if=\"style == 'horizontal'\">\n        <div class=\"product-box skeleton-box\">\n            <div class=\"skeleton\">\n                <div class=\"skeleton__section skeleton__section--card\">\n                    <div class=\"skeleton__img\"></div>\n                    <div>\n                        <div class=\"skeleton__header skeleton__header--long\"></div>\n                        <div class=\"skeleton__p\"></div>\n                    </div>\n                </div>\n                <div class=\"skeleton__p\"></div>\n                <div class=\"skeleton__p\"></div>\n                <div class=\"skeleton__p\"></div>\n            </div>\n        </div>\n    </div>\n\n    <!-- Skeleton For Vertical -->\n    <div class=\"offer-product skeleton-vertical\" v-if=\"style == 'vertical'\">\n        <a class=\"offer-image\"></a>\n        <div class=\"offer-detail\">\n            <div>\n                <a href=\"javascript:void(0)\" class=\"text-title\">\n                    <h6 class=\"name\"></h6>\n                </a>\n                <span></span>\n                <div class=\"vertical-price\"></div>\n            </div>\n        </div>\n    </div>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    style: {\n        type: [String,Object],\n        default: 'horizontal'\n    }\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056289038,
+      "end": 1716056289151,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056289151,
+      "end": 1716056289151,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056289151,
+      "end": 1716056289151,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056289151,
+      "end": 1716056289151,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056289151,
+      "end": 1716056289151,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056289151,
+      "end": 1716056289151,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056289151,
+      "end": 1716056289151,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056289151,
+      "end": 1716056289151,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createStaticVNode as _createStaticVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"skeleton-div\"\n}\nconst _hoisted_2 = /*#__PURE__*/_createStaticVNode(\"<div class=\\\"product-box skeleton-box\\\"><div class=\\\"skeleton\\\"><div class=\\\"skeleton__section skeleton__section--card\\\"><div class=\\\"skeleton__img\\\"></div><div><div class=\\\"skeleton__header skeleton__header--long\\\"></div><div class=\\\"skeleton__p\\\"></div></div></div><div class=\\\"skeleton__p\\\"></div><div class=\\\"skeleton__p\\\"></div><div class=\\\"skeleton__p\\\"></div></div></div>\", 1)\nconst _hoisted_3 = [\n  _hoisted_2\n]\nconst _hoisted_4 = {\n  key: 1,\n  class: \"offer-product skeleton-vertical\"\n}\nconst _hoisted_5 = /*#__PURE__*/_createStaticVNode(\"<a class=\\\"offer-image\\\"></a><div class=\\\"offer-detail\\\"><div><a href=\\\"javascript:void(0)\\\" class=\\\"text-title\\\"><h6 class=\\\"name\\\"></h6></a><span></span><div class=\\\"vertical-price\\\"></div></div></div>\", 2)\nconst _hoisted_7 = [\n  _hoisted_5\n]\n\n\nconst _sfc_main = {\n  __name: 'SkeletonProductBox',\n  props: {\n    style: {\n        type: [String,Object],\n        default: 'horizontal'\n    }\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (__props.style == 'horizontal')\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, _hoisted_3))\n      : _createCommentVNode(\"\", true),\n    (__props.style == 'vertical')\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, _hoisted_7))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289151,
+      "end": 1716056289152,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056289152,
+      "end": 1716056289152,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289152,
+      "end": 1716056289152,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056289152,
+      "end": 1716056289152,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056289152,
+      "end": 1716056289152,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056289152,
+      "end": 1716056289152,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289152,
+      "end": 1716056289152,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056289152,
+      "end": 1716056289152,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056289152,
+      "end": 1716056289153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056289153,
+      "end": 1716056289153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056289153,
+      "end": 1716056289153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056289153,
+      "end": 1716056289153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056289153,
+      "end": 1716056289153,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056289153,
+      "end": 1716056289153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056289153,
+      "end": 1716056289153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056289153,
+      "end": 1716056289153,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056289153,
+      "end": 1716056289153,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056289153,
+      "end": 1716056289154,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056289154,
+      "end": 1716056289154,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056289154,
+      "end": 1716056289154,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056289154,
+      "end": 1716056289154,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056289154,
+      "end": 1716056289154,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056289154,
+      "end": 1716056289154,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056289154,
+      "end": 1716056289154,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056289154,
+      "end": 1716056289154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056289154,
+      "end": 1716056289154,
+      "order": "normal"
+    }
+  ]
+}

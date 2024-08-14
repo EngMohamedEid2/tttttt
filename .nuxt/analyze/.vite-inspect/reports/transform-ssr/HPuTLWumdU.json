@@ -1,0 +1,260 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/pages/order/status/[order_number].vue?macro=true",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n        <WidgetsBreadcrumb />\n        <section class=\"section-b-space order-tracking-sec\" v-if=\"!pending\">\n            <div class=\"container-fluid-lg\">\n                <div class=\"row\">\n                    <div class=\"col-12 mb-4\">\n                        <div class=\"order-detail-title\">\n                            <h2>Your order: {{ data.order_number }}</h2>\n                            <div class=\"right-detail\">\n                                <label v-if=\"data.payment_status.toLowerCase().includes('complete')\">Status : <span\n                                        class=\"text-theme\">Completed</span></label>\n                                <a href=\"#\" class=\"btn btn-2-animation btn-animation btn-md\" v-else>Pay Now</a>\n                                <a href=\"#\" class=\"btn btn-2-animation btn-animation btn-md\">Download Invoice</a>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-9\">\n                        <div class=\"mb-4\">\n                            <div class=\"tracking-panel\">\n                                <ul>\n                                    <li :class=\"[{ active: index + 1 <= data.order_status.sequence }]\"\n                                        v-for=\"(status, index) in order_statuses\" :key=\"`OrderStatus${index}`\">\n                                        <div class=\"panel-content\">\n                                            <div class=\"icon\">\n                                                <component :is=\"status.component\" />\n                                            </div>\n                                            <div class=\"status\">\n                                                {{ status.title }}\n                                            </div>\n                                        </div>\n                                    </li>\n                                </ul>\n                            </div>\n                        </div>\n                        <div class=\"tracking-wrapper\">\n                            <OrderTable :items=\"data.products\" />\n                        </div>\n\n                    </div>\n                    <OrderStatusRightSidebar :order=\"data\" v-if=\"data\" />\n                </div>\n            </div>\n        </section>\n    </div>\n\n</template>\n\n<script setup>\nlet { data, refresh, pending } = await useFetch(`trackOrder/${useRoute().params.order_number}`, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: 'get',\n    key: `GetOrder${useRoute().params.order_number}`,\n    cache: false\n}), order_statuses = ref([\n    { title: 'Order Processed', component: \"CommonSvgOrderStatusProcessed\" },\n    { title: 'Order Shipped', component: \"CommonSvgOrderStatusShipped\" },\n    { title: 'Order Enroute', component: \"CommonSvgOrderStatusEnroute\" },\n    { title: 'Order Arrived', component: \"CommonSvgOrderStatusArrived\" },\n])\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056342897,
+      "end": 1716056342966,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342966,
+      "end": 1716056342966,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342966,
+      "end": 1716056342966,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342966,
+      "end": 1716056342966,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342966,
+      "end": 1716056342966,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342966,
+      "end": 1716056342966,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342966,
+      "end": 1716056342966,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342966,
+      "end": 1716056342966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342966,
+      "end": 1716056342966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342966,
+      "end": 1716056342966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342966,
+      "end": 1716056342966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { resolveComponent as _resolveComponent, unref as _unref, resolveDynamicComponent as _resolveDynamicComponent, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderVNode as _ssrRenderVNode, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: '[order_number]',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet { data, refresh, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => useFetch(`trackOrder/${useRoute().params.order_number}`, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: 'get',\n    key: `GetOrder${useRoute().params.order_number}`,\n    cache: false\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n), order_statuses = ref([\n    { title: 'Order Processed', component: \"CommonSvgOrderStatusProcessed\" },\n    { title: 'Order Shipped', component: \"CommonSvgOrderStatusShipped\" },\n    { title: 'Order Enroute', component: \"CommonSvgOrderStatusEnroute\" },\n    { title: 'Order Arrived', component: \"CommonSvgOrderStatusArrived\" },\n])\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_OrderTable = _resolveComponent(\"OrderTable\")\n  const _component_OrderStatusRightSidebar = _resolveComponent(\"OrderStatusRightSidebar\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  _push(_ssrRenderComponent(_component_WidgetsBreadcrumb, null, null, _parent))\n  if (!_unref(pending)) {\n    _push(`<section class=\"section-b-space order-tracking-sec\"><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12 mb-4\"><div class=\"order-detail-title\"><h2>Your order: ${_ssrInterpolate(_unref(data).order_number)}</h2><div class=\"right-detail\">`)\n    if (_unref(data).payment_status.toLowerCase().includes('complete')) {\n      _push(`<label>Status : <span class=\"text-theme\">Completed</span></label>`)\n    } else {\n      _push(`<a href=\"#\" class=\"btn btn-2-animation btn-animation btn-md\">Pay Now</a>`)\n    }\n    _push(`<a href=\"#\" class=\"btn btn-2-animation btn-animation btn-md\">Download Invoice</a></div></div></div><div class=\"col-9\"><div class=\"mb-4\"><div class=\"tracking-panel\"><ul><!--[-->`)\n    _ssrRenderList(_unref(order_statuses), (status, index) => {\n      _push(`<li class=\"${_ssrRenderClass([{ active: index + 1 <= _unref(data).order_status.sequence }])}\"><div class=\"panel-content\"><div class=\"icon\">`)\n      _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(status.component), null, null), _parent)\n      _push(`</div><div class=\"status\">${_ssrInterpolate(status.title)}</div></div></li>`)\n    })\n    _push(`<!--]--></ul></div></div><div class=\"tracking-wrapper\">`)\n    _push(_ssrRenderComponent(_component_OrderTable, {\n      items: _unref(data).products\n    }, null, _parent))\n    _push(`</div></div>`)\n    if (_unref(data)) {\n      _push(_ssrRenderComponent(_component_OrderStatusRightSidebar, { order: _unref(data) }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div></section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/order/status/[order_number].vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342966,
+      "end": 1716056342968,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342968,
+      "end": 1716056342968,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useFetch } from '#app/composables/fetch';\nimport { useRoute } from '#app/composables/router';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { ref } from 'vue';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { resolveComponent as _resolveComponent, unref as _unref, resolveDynamicComponent as _resolveDynamicComponent, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderVNode as _ssrRenderVNode, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: '[order_number]',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet { data, refresh, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => useFetch(`trackOrder/${useRoute().params.order_number}`, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: 'get',\n    key: `GetOrder${useRoute().params.order_number}`,\n    cache: false\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n), order_statuses = ref([\n    { title: 'Order Processed', component: \"CommonSvgOrderStatusProcessed\" },\n    { title: 'Order Shipped', component: \"CommonSvgOrderStatusShipped\" },\n    { title: 'Order Enroute', component: \"CommonSvgOrderStatusEnroute\" },\n    { title: 'Order Arrived', component: \"CommonSvgOrderStatusArrived\" },\n])\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_OrderTable = _resolveComponent(\"OrderTable\")\n  const _component_OrderStatusRightSidebar = _resolveComponent(\"OrderStatusRightSidebar\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  _push(_ssrRenderComponent(_component_WidgetsBreadcrumb, null, null, _parent))\n  if (!_unref(pending)) {\n    _push(`<section class=\"section-b-space order-tracking-sec\"><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12 mb-4\"><div class=\"order-detail-title\"><h2>Your order: ${_ssrInterpolate(_unref(data).order_number)}</h2><div class=\"right-detail\">`)\n    if (_unref(data).payment_status.toLowerCase().includes('complete')) {\n      _push(`<label>Status : <span class=\"text-theme\">Completed</span></label>`)\n    } else {\n      _push(`<a href=\"#\" class=\"btn btn-2-animation btn-animation btn-md\">Pay Now</a>`)\n    }\n    _push(`<a href=\"#\" class=\"btn btn-2-animation btn-animation btn-md\">Download Invoice</a></div></div></div><div class=\"col-9\"><div class=\"mb-4\"><div class=\"tracking-panel\"><ul><!--[-->`)\n    _ssrRenderList(_unref(order_statuses), (status, index) => {\n      _push(`<li class=\"${_ssrRenderClass([{ active: index + 1 <= _unref(data).order_status.sequence }])}\"><div class=\"panel-content\"><div class=\"icon\">`)\n      _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(status.component), null, null), _parent)\n      _push(`</div><div class=\"status\">${_ssrInterpolate(status.title)}</div></div></li>`)\n    })\n    _push(`<!--]--></ul></div></div><div class=\"tracking-wrapper\">`)\n    _push(_ssrRenderComponent(_component_OrderTable, {\n      items: _unref(data).products\n    }, null, _parent))\n    _push(`</div></div>`)\n    if (_unref(data)) {\n      _push(_ssrRenderComponent(_component_OrderStatusRightSidebar, { order: _unref(data) }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div></section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/order/status/[order_number].vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342968,
+      "end": 1716056342969,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useFetch } from '#app/composables/fetch';\nimport { useRoute } from '#app/composables/router';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { ref } from 'vue';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { resolveComponent as _resolveComponent, unref as _unref, resolveDynamicComponent as _resolveDynamicComponent, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderVNode as _ssrRenderVNode, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: '[order_number]',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet { data, refresh, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => useFetch(`trackOrder/${useRoute().params.order_number}`, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: 'get',\n    key: `GetOrder${useRoute().params.order_number}`,\n    cache: false\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n), order_statuses = ref([\n    { title: 'Order Processed', component: \"CommonSvgOrderStatusProcessed\" },\n    { title: 'Order Shipped', component: \"CommonSvgOrderStatusShipped\" },\n    { title: 'Order Enroute', component: \"CommonSvgOrderStatusEnroute\" },\n    { title: 'Order Arrived', component: \"CommonSvgOrderStatusArrived\" },\n])\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_OrderTable = _resolveComponent(\"OrderTable\")\n  const _component_OrderStatusRightSidebar = _resolveComponent(\"OrderStatusRightSidebar\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  _push(_ssrRenderComponent(_component_WidgetsBreadcrumb, null, null, _parent))\n  if (!_unref(pending)) {\n    _push(`<section class=\"section-b-space order-tracking-sec\"><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12 mb-4\"><div class=\"order-detail-title\"><h2>Your order: ${_ssrInterpolate(_unref(data).order_number)}</h2><div class=\"right-detail\">`)\n    if (_unref(data).payment_status.toLowerCase().includes('complete')) {\n      _push(`<label>Status : <span class=\"text-theme\">Completed</span></label>`)\n    } else {\n      _push(`<a href=\"#\" class=\"btn btn-2-animation btn-animation btn-md\">Pay Now</a>`)\n    }\n    _push(`<a href=\"#\" class=\"btn btn-2-animation btn-animation btn-md\">Download Invoice</a></div></div></div><div class=\"col-9\"><div class=\"mb-4\"><div class=\"tracking-panel\"><ul><!--[-->`)\n    _ssrRenderList(_unref(order_statuses), (status, index) => {\n      _push(`<li class=\"${_ssrRenderClass([{ active: index + 1 <= _unref(data).order_status.sequence }])}\"><div class=\"panel-content\"><div class=\"icon\">`)\n      _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(status.component), null, null), _parent)\n      _push(`</div><div class=\"status\">${_ssrInterpolate(status.title)}</div></div></li>`)\n    })\n    _push(`<!--]--></ul></div></div><div class=\"tracking-wrapper\">`)\n    _push(_ssrRenderComponent(_component_OrderTable, {\n      items: _unref(data).products\n    }, null, _parent))\n    _push(`</div></div>`)\n    if (_unref(data)) {\n      _push(_ssrRenderComponent(_component_OrderStatusRightSidebar, { order: _unref(data) }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div></section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/order/status/[order_number].vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342968,
+      "end": 1716056342969,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342969,
+      "end": 1716056342969,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342969,
+      "end": 1716056342969,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
+      "start": 1716056342969,
+      "end": 1716056342970,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
+      "start": 1716056342969,
+      "end": 1716056342970,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342970,
+      "end": 1716056342970,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056342970,
+      "end": 1716056342970,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056342970,
+      "end": 1716056342970,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342970,
+      "end": 1716056342970,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342970,
+      "end": 1716056342970,
+      "order": "normal"
+    }
+  ]
+}

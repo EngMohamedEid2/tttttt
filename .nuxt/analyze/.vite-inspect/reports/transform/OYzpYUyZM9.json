@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/ContactUs/ContactDetails.vue?nuxt_component=async&nuxt_component_name=PagesContactUsContactDetails",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n        <div class=\"left-sidebar-box\">\n            <div class=\"row\">\n                <div class=\"col-xl-12\">\n                    <div class=\"contact-image\">\n                        <img src=\"/images/inner-page/contact-us.png\" class=\"img-fluid\" alt=\"\">\n                    </div>\n                </div>\n                <div class=\"col-xl-12\">\n                    <div class=\"contact-title\">\n                        <h3>{{ $t(\"Get In Touch\") }}</h3>\n                    </div>\n\n                    <div class=\"contact-detail\">\n                        <div class=\"row g-4\">\n                            <div class=\"col-xxl-6 col-lg-12 col-sm-6\">\n                                <div class=\"contact-detail-box\">\n                                    <div class=\"contact-icon\">\n                                        <Icon name=\"ri:phone-fill\"></Icon>\n                                    </div>\n                                    <div class=\"contact-detail-title\">\n                                        <h4>{{ $t(\"Phone\") }}</h4>\n                                    </div>\n\n                                    <div class=\"contact-detail-contain\">\n                                        <p>(+1) 618 190 496</p>\n                                    </div>\n                                </div>\n                            </div>\n\n                            <div class=\"col-xxl-6 col-lg-12 col-sm-6\">\n                                <div class=\"contact-detail-box\">\n                                    <div class=\"contact-icon\">\n                                        <Icon name=\"ri:mail-fill\"></Icon>\n                                    </div>\n                                    <div class=\"contact-detail-title\">\n                                        <h4>{{ $t(\"Email\") }}</h4>\n                                    </div>\n\n                                    <div class=\"contact-detail-contain\">\n                                        <p>geweto9420@chokxus.com</p>\n                                    </div>\n                                </div>\n                            </div>\n\n                            <div class=\"col-xxl-6 col-lg-12 col-sm-6\">\n                                <div class=\"contact-detail-box\">\n                                    <div class=\"contact-icon\">\n                                        <icon name=\"ri:map-pin-fill\"></icon>\n                                    </div>\n                                    <div class=\"contact-detail-title\">\n                                        <h4>{{ $t(\"London Office\") }}</h4>\n                                    </div>\n\n                                    <div class=\"contact-detail-contain\">\n                                        <p>Cruce Casa de Postas 29</p>\n                                    </div>\n                                </div>\n                            </div>\n\n                            <div class=\"col-xxl-6 col-lg-12 col-sm-6\">\n                                <div class=\"contact-detail-box\">\n                                    <div class=\"contact-icon\">\n                                        <Icon name=\"ri:building-fill\"></Icon>\n                                    </div>\n                                    <div class=\"contact-detail-title\">\n                                        <h4>{{ $t(\"Bournemouth Office\") }}</h4>\n                                    </div>\n\n                                    <div class=\"contact-detail-contain\">\n                                        <p>Visitación de la Encina 22</p>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n</template>\n\n<script setup>\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056270816,
+      "end": 1716056271205,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271205,
+      "end": 1716056271205,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271205,
+      "end": 1716056271206,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271206,
+      "end": 1716056271206,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271206,
+      "end": 1716056271206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271206,
+      "end": 1716056271206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271206,
+      "end": 1716056271206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271206,
+      "end": 1716056271206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from '/images/inner-page/contact-us.png'\n\n\nconst _hoisted_1 = { class: \"left-sidebar-box\" }\nconst _hoisted_2 = { class: \"row\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-xl-12\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"contact-image\" }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_0,\n      class: \"img-fluid\",\n      alt: \"\"\n    })\n  ])\n], -1)\nconst _hoisted_4 = { class: \"col-xl-12\" }\nconst _hoisted_5 = { class: \"contact-title\" }\nconst _hoisted_6 = { class: \"contact-detail\" }\nconst _hoisted_7 = { class: \"row g-4\" }\nconst _hoisted_8 = { class: \"col-xxl-6 col-lg-12 col-sm-6\" }\nconst _hoisted_9 = { class: \"contact-detail-box\" }\nconst _hoisted_10 = { class: \"contact-icon\" }\nconst _hoisted_11 = { class: \"contact-detail-title\" }\nconst _hoisted_12 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"contact-detail-contain\" }, [\n  /*#__PURE__*/_createElementVNode(\"p\", null, \"(+1) 618 190 496\")\n], -1)\nconst _hoisted_13 = { class: \"col-xxl-6 col-lg-12 col-sm-6\" }\nconst _hoisted_14 = { class: \"contact-detail-box\" }\nconst _hoisted_15 = { class: \"contact-icon\" }\nconst _hoisted_16 = { class: \"contact-detail-title\" }\nconst _hoisted_17 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"contact-detail-contain\" }, [\n  /*#__PURE__*/_createElementVNode(\"p\", null, \"geweto9420@chokxus.com\")\n], -1)\nconst _hoisted_18 = { class: \"col-xxl-6 col-lg-12 col-sm-6\" }\nconst _hoisted_19 = { class: \"contact-detail-box\" }\nconst _hoisted_20 = { class: \"contact-icon\" }\nconst _hoisted_21 = { class: \"contact-detail-title\" }\nconst _hoisted_22 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"contact-detail-contain\" }, [\n  /*#__PURE__*/_createElementVNode(\"p\", null, \"Cruce Casa de Postas 29\")\n], -1)\nconst _hoisted_23 = { class: \"col-xxl-6 col-lg-12 col-sm-6\" }\nconst _hoisted_24 = { class: \"contact-detail-box\" }\nconst _hoisted_25 = { class: \"contact-icon\" }\nconst _hoisted_26 = { class: \"contact-detail-title\" }\nconst _hoisted_27 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"contact-detail-contain\" }, [\n  /*#__PURE__*/_createElementVNode(\"p\", null, \"Visitación de la Encina 22\")\n], -1)\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_icon = _resolveComponent(\"icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _hoisted_3,\n      _createElementVNode(\"div\", _hoisted_4, [\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"h3\", null, _toDisplayString(_ctx.$t(\"Get In Touch\")), 1)\n        ]),\n        _createElementVNode(\"div\", _hoisted_6, [\n          _createElementVNode(\"div\", _hoisted_7, [\n            _createElementVNode(\"div\", _hoisted_8, [\n              _createElementVNode(\"div\", _hoisted_9, [\n                _createElementVNode(\"div\", _hoisted_10, [\n                  _createVNode(_component_Icon, { name: \"ri:phone-fill\" })\n                ]),\n                _createElementVNode(\"div\", _hoisted_11, [\n                  _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Phone\")), 1)\n                ]),\n                _hoisted_12\n              ])\n            ]),\n            _createElementVNode(\"div\", _hoisted_13, [\n              _createElementVNode(\"div\", _hoisted_14, [\n                _createElementVNode(\"div\", _hoisted_15, [\n                  _createVNode(_component_Icon, { name: \"ri:mail-fill\" })\n                ]),\n                _createElementVNode(\"div\", _hoisted_16, [\n                  _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Email\")), 1)\n                ]),\n                _hoisted_17\n              ])\n            ]),\n            _createElementVNode(\"div\", _hoisted_18, [\n              _createElementVNode(\"div\", _hoisted_19, [\n                _createElementVNode(\"div\", _hoisted_20, [\n                  _createVNode(_component_icon, { name: \"ri:map-pin-fill\" })\n                ]),\n                _createElementVNode(\"div\", _hoisted_21, [\n                  _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"London Office\")), 1)\n                ]),\n                _hoisted_22\n              ])\n            ]),\n            _createElementVNode(\"div\", _hoisted_23, [\n              _createElementVNode(\"div\", _hoisted_24, [\n                _createElementVNode(\"div\", _hoisted_25, [\n                  _createVNode(_component_Icon, { name: \"ri:building-fill\" })\n                ]),\n                _createElementVNode(\"div\", _hoisted_26, [\n                  _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Bournemouth Office\")), 1)\n                ]),\n                _hoisted_27\n              ])\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1716056271206,
+      "end": 1716056271207,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271207,
+      "end": 1716056271207,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/ContactUs/ContactDetails.vue\").then(r => r.default))",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/ContactUs/ContactDetails.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271208,
+      "end": 1716056271208,
+      "order": "normal"
+    }
+  ]
+}

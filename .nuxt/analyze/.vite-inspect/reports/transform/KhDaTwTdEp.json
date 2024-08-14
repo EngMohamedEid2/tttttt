@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/BackToTop/index.vue?nuxt_component=async&nuxt_component_name=WidgetsBackToTop",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"back-to-top\" :class=\"{ show: show }\" @click=\"tapToTop()\">\n    <nuxt-link id=\"back-to-top\">\n      <Icon name=\"ri-arrow-up-s-line\"></Icon>\n    </nuxt-link>\n  </div>\n</template>\n\n<script setup>\nlet show = ref();\n\nconst onWindowScroll = () => {\n  let number =\n    window.pageYOffset ||\n    document.documentElement.scrollTop ||\n    document.body.scrollTop ||\n    0;\n  if (number > 600) {\n    show.value = true;\n  } else {\n    show.value = false;\n  }\n};\n\nconst tapToTop = () => {\n  window.scrollTo({ top: 0, behavior: \"smooth\" });\n};\n\nonMounted(() => {\n  window.addEventListener(\"scroll\", onWindowScroll);\n});\n\nonBeforeUnmount(() => {\n  window.removeEventListener(\"scroll\", onWindowScroll);\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056284967,
+      "end": 1716056285070,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285070,
+      "end": 1716056285070,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285070,
+      "end": 1716056285070,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285070,
+      "end": 1716056285070,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285070,
+      "end": 1716056285070,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285070,
+      "end": 1716056285070,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285070,
+      "end": 1716056285070,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285070,
+      "end": 1716056285070,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet show = ref();\n\nconst onWindowScroll = () => {\n  let number =\n    window.pageYOffset ||\n    document.documentElement.scrollTop ||\n    document.body.scrollTop ||\n    0;\n  if (number > 600) {\n    show.value = true;\n  } else {\n    show.value = false;\n  }\n};\n\nconst tapToTop = () => {\n  window.scrollTo({ top: 0, behavior: \"smooth\" });\n};\n\nonMounted(() => {\n  window.addEventListener(\"scroll\", onWindowScroll);\n});\n\nonBeforeUnmount(() => {\n  window.removeEventListener(\"scroll\", onWindowScroll);\n});\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass([\"back-to-top\", { show: _unref(show) }]),\n    onClick: _cache[0] || (_cache[0] = $event => (tapToTop()))\n  }, [\n    _createVNode(_component_nuxt_link, { id: \"back-to-top\" }, {\n      default: _withCtx(() => [\n        _createVNode(_component_Icon, { name: \"ri-arrow-up-s-line\" })\n      ]),\n      _: 1\n    })\n  ], 2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056285070,
+      "end": 1716056285071,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285071,
+      "end": 1716056285071,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285071,
+      "end": 1716056285072,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/BackToTop/index.vue\").then(r => r.default))",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/BackToTop/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285072,
+      "end": 1716056285072,
+      "order": "normal"
+    }
+  ]
+}

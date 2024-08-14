@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/ConsumerDetails.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"card\">\n        <div class=\"card-body\">\n            <h3 class=\"fw-semibold mb-3\">{{ $t(\"Consumer Details\") }}</h3>\n            <div class=\"customer-detail tracking-wrapper\">\n                <ul class=\"row g-3\">\n                    <li class=\"col-sm-6\" v-if=\"order?.billing_address\">\n                        <label>{{ $t(\"Billing Address\") }}:</label>\n                        <h4>\n                            {{ order.billing_address.street }}\n                            {{ order.billing_address.city }} {{ order.billing_address.state.name }} {{\n                                order.billing_address.country.name }}\n                            {{ order.billing_address.pincode }} <br>\n                            {{ $t(\"Phone\") }} : +{{ order.shipping_address.country_code }} {{ order.billing_address.phone }}\n                        </h4>\n                    </li>\n                    <li class=\"col-sm-6\" v-if=\"order?.shipping_address\">\n                        <label>{{ $t(\"Shipping Address\") }}:</label>\n                        <h4>\n                            {{ order.shipping_address.street }}\n                            {{ order.shipping_address.city }} {{ order.shipping_address.state.name }} {{\n                                order.shipping_address.country.name }}\n                            {{ order.shipping_address.pincode }} <br>\n                            {{ $t(\"Phone\") }} : +{{ order.shipping_address.country_code }} {{ order.shipping_address.phone\n                            }}\n                        </h4>\n                    </li>\n                    <li class=\"col-sm-6\" v-if=\"order?.delivery_description\">\n                        <label>{{ $t(\"Delivery Slot\") }}:</label>\n                        <h4>{{ order.delivery_description }}</h4>\n                    </li>\n                    <li class=\"col-sm-3\" v-if=\"order?.payment_method\">\n                        <label>{{ $t(\"Payment Mode\") }}:</label>\n                        <div class=\"d-flex align-items-center gap-2\">\n                            <h4>{{ transform(order.payment_method) }}</h4>\n                        </div>\n                    </li>\n                    <li class=\"col-sm-3\" v-if=\"order?.payment_method\">\n                        <label>{{ $t(\"Payment Status\") }}:</label>\n                        <div class=\"d-flex align-items-center gap-2\">\n                            <h4>{{ order.payment_status }}</h4>\n                        </div>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    order: Object\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056286012,
+      "end": 1716056286603,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056286603,
+      "end": 1716056286603,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056286603,
+      "end": 1716056286603,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056286603,
+      "end": 1716056286603,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056286603,
+      "end": 1716056286603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056286603,
+      "end": 1716056286603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056286604,
+      "end": 1716056286604,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056286604,
+      "end": 1716056286604,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"card\" }\nconst _hoisted_2 = { class: \"card-body\" }\nconst _hoisted_3 = { class: \"fw-semibold mb-3\" }\nconst _hoisted_4 = { class: \"customer-detail tracking-wrapper\" }\nconst _hoisted_5 = { class: \"row g-3\" }\nconst _hoisted_6 = {\n  key: 0,\n  class: \"col-sm-6\"\n}\nconst _hoisted_7 = /*#__PURE__*/_createElementVNode(\"br\", null, null, -1)\nconst _hoisted_8 = {\n  key: 1,\n  class: \"col-sm-6\"\n}\nconst _hoisted_9 = /*#__PURE__*/_createElementVNode(\"br\", null, null, -1)\nconst _hoisted_10 = {\n  key: 2,\n  class: \"col-sm-6\"\n}\nconst _hoisted_11 = {\n  key: 3,\n  class: \"col-sm-3\"\n}\nconst _hoisted_12 = { class: \"d-flex align-items-center gap-2\" }\nconst _hoisted_13 = {\n  key: 4,\n  class: \"col-sm-3\"\n}\nconst _hoisted_14 = { class: \"d-flex align-items-center gap-2\" }\n\n\nconst _sfc_main = {\n  __name: 'ConsumerDetails',\n  props: {\n    order: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"h3\", _hoisted_3, _toDisplayString(_ctx.$t(\"Consumer Details\")), 1),\n      _createElementVNode(\"div\", _hoisted_4, [\n        _createElementVNode(\"ul\", _hoisted_5, [\n          (__props.order?.billing_address)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_6, [\n                _createElementVNode(\"label\", null, _toDisplayString(_ctx.$t(\"Billing Address\")) + \":\", 1),\n                _createElementVNode(\"h4\", null, [\n                  _createTextVNode(_toDisplayString(__props.order.billing_address.street) + \" \" + _toDisplayString(__props.order.billing_address.city) + \" \" + _toDisplayString(__props.order.billing_address.state.name) + \" \" + _toDisplayString(__props.order.billing_address.country.name) + \" \" + _toDisplayString(__props.order.billing_address.pincode) + \" \", 1),\n                  _hoisted_7,\n                  _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Phone\")) + \" : +\" + _toDisplayString(__props.order.shipping_address.country_code) + \" \" + _toDisplayString(__props.order.billing_address.phone), 1)\n                ])\n              ]))\n            : _createCommentVNode(\"\", true),\n          (__props.order?.shipping_address)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_8, [\n                _createElementVNode(\"label\", null, _toDisplayString(_ctx.$t(\"Shipping Address\")) + \":\", 1),\n                _createElementVNode(\"h4\", null, [\n                  _createTextVNode(_toDisplayString(__props.order.shipping_address.street) + \" \" + _toDisplayString(__props.order.shipping_address.city) + \" \" + _toDisplayString(__props.order.shipping_address.state.name) + \" \" + _toDisplayString(__props.order.shipping_address.country.name) + \" \" + _toDisplayString(__props.order.shipping_address.pincode) + \" \", 1),\n                  _hoisted_9,\n                  _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Phone\")) + \" : +\" + _toDisplayString(__props.order.shipping_address.country_code) + \" \" + _toDisplayString(__props.order.shipping_address.phone), 1)\n                ])\n              ]))\n            : _createCommentVNode(\"\", true),\n          (__props.order?.delivery_description)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_10, [\n                _createElementVNode(\"label\", null, _toDisplayString(_ctx.$t(\"Delivery Slot\")) + \":\", 1),\n                _createElementVNode(\"h4\", null, _toDisplayString(__props.order.delivery_description), 1)\n              ]))\n            : _createCommentVNode(\"\", true),\n          (__props.order?.payment_method)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_11, [\n                _createElementVNode(\"label\", null, _toDisplayString(_ctx.$t(\"Payment Mode\")) + \":\", 1),\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createElementVNode(\"h4\", null, _toDisplayString(_ctx.transform(__props.order.payment_method)), 1)\n                ])\n              ]))\n            : _createCommentVNode(\"\", true),\n          (__props.order?.payment_method)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_13, [\n                _createElementVNode(\"label\", null, _toDisplayString(_ctx.$t(\"Payment Status\")) + \":\", 1),\n                _createElementVNode(\"div\", _hoisted_14, [\n                  _createElementVNode(\"h4\", null, _toDisplayString(__props.order.payment_status), 1)\n                ])\n              ]))\n            : _createCommentVNode(\"\", true)\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286604,
+      "end": 1716056286605,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056286605,
+      "end": 1716056286605,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286605,
+      "end": 1716056286605,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056286605,
+      "end": 1716056286605,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056286605,
+      "end": 1716056286605,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056286605,
+      "end": 1716056286606,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286606,
+      "end": 1716056286606,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056286606,
+      "end": 1716056286606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056286606,
+      "end": 1716056286606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056286606,
+      "end": 1716056286606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056286606,
+      "end": 1716056286606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056286606,
+      "end": 1716056286606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056286606,
+      "end": 1716056286606,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056286606,
+      "end": 1716056286606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056286606,
+      "end": 1716056286606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056286606,
+      "end": 1716056286606,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056286606,
+      "end": 1716056286606,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { transform as __unimport_transform } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/formators/capital.js';\nimport { unref as __unimport_unref_ } from 'vue';import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"card\" }\nconst _hoisted_2 = { class: \"card-body\" }\nconst _hoisted_3 = { class: \"fw-semibold mb-3\" }\nconst _hoisted_4 = { class: \"customer-detail tracking-wrapper\" }\nconst _hoisted_5 = { class: \"row g-3\" }\nconst _hoisted_6 = {\n  key: 0,\n  class: \"col-sm-6\"\n}\nconst _hoisted_7 = /*#__PURE__*/_createElementVNode(\"br\", null, null, -1)\nconst _hoisted_8 = {\n  key: 1,\n  class: \"col-sm-6\"\n}\nconst _hoisted_9 = /*#__PURE__*/_createElementVNode(\"br\", null, null, -1)\nconst _hoisted_10 = {\n  key: 2,\n  class: \"col-sm-6\"\n}\nconst _hoisted_11 = {\n  key: 3,\n  class: \"col-sm-3\"\n}\nconst _hoisted_12 = { class: \"d-flex align-items-center gap-2\" }\nconst _hoisted_13 = {\n  key: 4,\n  class: \"col-sm-3\"\n}\nconst _hoisted_14 = { class: \"d-flex align-items-center gap-2\" }\n\n\nconst _sfc_main = {\n  __name: 'ConsumerDetails',\n  props: {\n    order: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"h3\", _hoisted_3, _toDisplayString(_ctx.$t(\"Consumer Details\")), 1),\n      _createElementVNode(\"div\", _hoisted_4, [\n        _createElementVNode(\"ul\", _hoisted_5, [\n          (__props.order?.billing_address)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_6, [\n                _createElementVNode(\"label\", null, _toDisplayString(_ctx.$t(\"Billing Address\")) + \":\", 1),\n                _createElementVNode(\"h4\", null, [\n                  _createTextVNode(_toDisplayString(__props.order.billing_address.street) + \" \" + _toDisplayString(__props.order.billing_address.city) + \" \" + _toDisplayString(__props.order.billing_address.state.name) + \" \" + _toDisplayString(__props.order.billing_address.country.name) + \" \" + _toDisplayString(__props.order.billing_address.pincode) + \" \", 1),\n                  _hoisted_7,\n                  _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Phone\")) + \" : +\" + _toDisplayString(__props.order.shipping_address.country_code) + \" \" + _toDisplayString(__props.order.billing_address.phone), 1)\n                ])\n              ]))\n            : _createCommentVNode(\"\", true),\n          (__props.order?.shipping_address)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_8, [\n                _createElementVNode(\"label\", null, _toDisplayString(_ctx.$t(\"Shipping Address\")) + \":\", 1),\n                _createElementVNode(\"h4\", null, [\n                  _createTextVNode(_toDisplayString(__props.order.shipping_address.street) + \" \" + _toDisplayString(__props.order.shipping_address.city) + \" \" + _toDisplayString(__props.order.shipping_address.state.name) + \" \" + _toDisplayString(__props.order.shipping_address.country.name) + \" \" + _toDisplayString(__props.order.shipping_address.pincode) + \" \", 1),\n                  _hoisted_9,\n                  _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Phone\")) + \" : +\" + _toDisplayString(__props.order.shipping_address.country_code) + \" \" + _toDisplayString(__props.order.shipping_address.phone), 1)\n                ])\n              ]))\n            : _createCommentVNode(\"\", true),\n          (__props.order?.delivery_description)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_10, [\n                _createElementVNode(\"label\", null, _toDisplayString(_ctx.$t(\"Delivery Slot\")) + \":\", 1),\n                _createElementVNode(\"h4\", null, _toDisplayString(__props.order.delivery_description), 1)\n              ]))\n            : _createCommentVNode(\"\", true),\n          (__props.order?.payment_method)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_11, [\n                _createElementVNode(\"label\", null, _toDisplayString(_ctx.$t(\"Payment Mode\")) + \":\", 1),\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createElementVNode(\"h4\", null, _toDisplayString((\"transform\" in _ctx ? _ctx.transform : __unimport_unref_(__unimport_transform))(__props.order.payment_method)), 1)\n                ])\n              ]))\n            : _createCommentVNode(\"\", true),\n          (__props.order?.payment_method)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_13, [\n                _createElementVNode(\"label\", null, _toDisplayString(_ctx.$t(\"Payment Status\")) + \":\", 1),\n                _createElementVNode(\"div\", _hoisted_14, [\n                  _createElementVNode(\"h4\", null, _toDisplayString(__props.order.payment_status), 1)\n                ])\n              ]))\n            : _createCommentVNode(\"\", true)\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286606,
+      "end": 1716056286608,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056286608,
+      "end": 1716056286608,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056286608,
+      "end": 1716056286608,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056286608,
+      "end": 1716056286608,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056286608,
+      "end": 1716056286608,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056286608,
+      "end": 1716056286608,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056286608,
+      "end": 1716056286608,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056286608,
+      "end": 1716056286608,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056286608,
+      "end": 1716056286608,
+      "order": "normal"
+    }
+  ]
+}

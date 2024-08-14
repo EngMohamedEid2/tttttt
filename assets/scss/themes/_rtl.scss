@@ -1,0 +1,61 @@
+/**=====================
+    RTL css
+==========================**/
+[dir="rtl"] {
+    .pe-0 {
+        padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+        padding-left: 0 !important;
+    }
+
+    .ps-0 {
+        padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+        padding-right: 0 !important;
+    }
+
+    .ms-2 {
+        margin-left: unset !important;
+        margin-right: 0.5rem !important;
+    }
+
+    .me-2 {
+        margin-right: unset !important;
+        margin-left: 0.5rem !important;
+    }
+
+    .ms-auto {
+        margin-left: unset !important;
+        margin-right: auto !important;
+    }
+
+    ul {
+        padding-right: 0;
+    }
+
+    .skeleton {
+        * {
+            &:empty {
+                animation-direction: reverse;
+            }
+        }
+    }
+
+    .swiper {
+        direction: ltr;
+
+        .swiper-wrapper {
+            .swiper-slide {
+                >* {
+                    direction: rtl;
+                }
+            }
+        }
+    }
+
+    .newsletter-box-2 {
+        .newsletter-contain {
+            .container-fluid {
+                direction: ltr;
+            }
+        }
+    }
+}

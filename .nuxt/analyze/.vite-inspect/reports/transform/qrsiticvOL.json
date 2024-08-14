@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductDeliveryInformation/index.vue?nuxt_component=async&nuxt_component_name=ShopProductDetailsWidgetsProductDeliveryInformation",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"delivery-info\"\n        v-if=\"product?.estimated_delivery_text || (product?.return_policy_text && product?.is_return)\">\n        <div class=\"product-title\">\n            <h4>{{ $t(\"Delivery Details\") }}</h4>\n        </div>\n        <ul>\n            <li v-if=\"product?.estimated_delivery_text\">\n                <Icon name=\"ri:truck-line\"></Icon> {{ product?.estimated_delivery_text }}\n            </li>\n            <li v-if=\"product?.return_policy_text\">\n                <Icon name=\"ri:arrow-left-right-line\"></Icon> {{ product?.return_policy_text }}\n            </li>\n        </ul>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    product: Object\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056271541,
+      "end": 1716056284723,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284724,
+      "end": 1716056284724,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284724,
+      "end": 1716056284724,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284724,
+      "end": 1716056284724,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284724,
+      "end": 1716056284724,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284724,
+      "end": 1716056284724,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284724,
+      "end": 1716056284724,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284724,
+      "end": 1716056284724,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"delivery-info\"\n}\nconst _hoisted_2 = { class: \"product-title\" }\nconst _hoisted_3 = { key: 0 }\nconst _hoisted_4 = { key: 1 }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    product: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (__props.product?.estimated_delivery_text || (__props.product?.return_policy_text && __props.product?.is_return))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Delivery Details\")), 1)\n        ]),\n        _createElementVNode(\"ul\", null, [\n          (__props.product?.estimated_delivery_text)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_3, [\n                _createVNode(_component_Icon, { name: \"ri:truck-line\" }),\n                _createTextVNode(\" \" + _toDisplayString(__props.product?.estimated_delivery_text), 1)\n              ]))\n            : _createCommentVNode(\"\", true),\n          (__props.product?.return_policy_text)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_4, [\n                _createVNode(_component_Icon, { name: \"ri:arrow-left-right-line\" }),\n                _createTextVNode(\" \" + _toDisplayString(__props.product?.return_policy_text), 1)\n              ]))\n            : _createCommentVNode(\"\", true)\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284724,
+      "end": 1716056284726,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284726,
+      "end": 1716056284726,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284726,
+      "end": 1716056284726,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284726,
+      "end": 1716056284726,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284726,
+      "end": 1716056284726,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductDeliveryInformation/index.vue\").then(r => r.default))",
+      "start": 1716056284726,
+      "end": 1716056284726,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductDeliveryInformation/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284727,
+      "end": 1716056284727,
+      "order": "normal"
+    }
+  ]
+}

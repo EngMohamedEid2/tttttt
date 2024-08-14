@@ -1,0 +1,214 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Seller/BecomeSeller/Service.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <section class=\"become-service section-b-space\" v-if=\"sellerStore.status\">\n      <div class=\"container-fluid-lg\">\n        <div class=\"seller-title mb-5\">\n          <h2>{{ sellerStore.title }}</h2>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-sm-6 col-lg-4 col-xxl-3\">\n            <div class=\"service-box\">\n              <div class=\"service-svg\" v-if=\"sellerStore.service_1.image_url\">\n                <img :src=\"sellerStore.service_1.image_url\" class=\"img-fluid\" alt=\"\" />\n              </div>\n              <div class=\"service-detail\">\n                <h4>{{ sellerStore.service_1.title }}</h4>\n                <p>{{ sellerStore.service_1.description }}</p>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-sm-6 col-lg-4 col-xxl-3\">\n            <div class=\"service-box\">\n              <div class=\"service-svg\" v-if=\"sellerStore.service_2.image_url\">\n                <img :src=\"sellerStore.service_2.image_url\" class=\"img-fluid\" alt=\"\" />\n              </div>\n              <div class=\"service-detail\">\n                <h4>{{ sellerStore.service_2.title }}</h4>\n                <p>{{ sellerStore.service_2.description }}</p>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-sm-6 col-lg-4 col-xxl-3\">\n            <div class=\"service-box\">\n              <div class=\"service-svg\" v-if=\"sellerStore.service_3.image_url\">\n                <img :src=\"sellerStore.service_3.image_url\" class=\"img-fluid\" alt=\"\" />\n              </div>\n              <div class=\"service-detail\">\n                <h4>{{ sellerStore.service_3.title }}</h4>\n                <p>{{ sellerStore.service_3.description }}</p>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-sm-6 col-lg-4 col-xxl-3\">\n            <div class=\"service-box\">\n              <div class=\"service-svg\" v-if=\"sellerStore.service_4.image_url\">\n                <img :src=\"sellerStore.service_4.image_url\" class=\"img-fluid\" alt=\"\" />\n              </div>\n              <div class=\"service-detail\">\n                <h4>{{ sellerStore.service_4.title }}</h4>\n                <p>{{ sellerStore.service_4.description }}</p>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  sellerStore: Object,\n});\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056287734,
+      "end": 1716056287904,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287904,
+      "end": 1716056287904,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287904,
+      "end": 1716056287904,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287904,
+      "end": 1716056287904,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287904,
+      "end": 1716056287904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287904,
+      "end": 1716056287904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287904,
+      "end": 1716056287904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287904,
+      "end": 1716056287904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"become-service section-b-space\"\n}\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"seller-title mb-5\" }\nconst _hoisted_4 = { class: \"row\" }\nconst _hoisted_5 = { class: \"col-sm-6 col-lg-4 col-xxl-3\" }\nconst _hoisted_6 = { class: \"service-box\" }\nconst _hoisted_7 = {\n  key: 0,\n  class: \"service-svg\"\n}\nconst _hoisted_8 = [\"src\"]\nconst _hoisted_9 = { class: \"service-detail\" }\nconst _hoisted_10 = { class: \"col-sm-6 col-lg-4 col-xxl-3\" }\nconst _hoisted_11 = { class: \"service-box\" }\nconst _hoisted_12 = {\n  key: 0,\n  class: \"service-svg\"\n}\nconst _hoisted_13 = [\"src\"]\nconst _hoisted_14 = { class: \"service-detail\" }\nconst _hoisted_15 = { class: \"col-sm-6 col-lg-4 col-xxl-3\" }\nconst _hoisted_16 = { class: \"service-box\" }\nconst _hoisted_17 = {\n  key: 0,\n  class: \"service-svg\"\n}\nconst _hoisted_18 = [\"src\"]\nconst _hoisted_19 = { class: \"service-detail\" }\nconst _hoisted_20 = { class: \"col-sm-6 col-lg-4 col-xxl-3\" }\nconst _hoisted_21 = { class: \"service-box\" }\nconst _hoisted_22 = {\n  key: 0,\n  class: \"service-svg\"\n}\nconst _hoisted_23 = [\"src\"]\nconst _hoisted_24 = { class: \"service-detail\" }\n\n\nconst _sfc_main = {\n  __name: 'Service',\n  props: {\n  sellerStore: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (__props.sellerStore.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createElementVNode(\"div\", _hoisted_3, [\n              _createElementVNode(\"h2\", null, _toDisplayString(__props.sellerStore.title), 1)\n            ]),\n            _createElementVNode(\"div\", _hoisted_4, [\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createElementVNode(\"div\", _hoisted_6, [\n                  (__props.sellerStore.service_1.image_url)\n                    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_7, [\n                        _createElementVNode(\"img\", {\n                          src: __props.sellerStore.service_1.image_url,\n                          class: \"img-fluid\",\n                          alt: \"\"\n                        }, null, 8, _hoisted_8)\n                      ]))\n                    : _createCommentVNode(\"\", true),\n                  _createElementVNode(\"div\", _hoisted_9, [\n                    _createElementVNode(\"h4\", null, _toDisplayString(__props.sellerStore.service_1.title), 1),\n                    _createElementVNode(\"p\", null, _toDisplayString(__props.sellerStore.service_1.description), 1)\n                  ])\n                ])\n              ]),\n              _createElementVNode(\"div\", _hoisted_10, [\n                _createElementVNode(\"div\", _hoisted_11, [\n                  (__props.sellerStore.service_2.image_url)\n                    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_12, [\n                        _createElementVNode(\"img\", {\n                          src: __props.sellerStore.service_2.image_url,\n                          class: \"img-fluid\",\n                          alt: \"\"\n                        }, null, 8, _hoisted_13)\n                      ]))\n                    : _createCommentVNode(\"\", true),\n                  _createElementVNode(\"div\", _hoisted_14, [\n                    _createElementVNode(\"h4\", null, _toDisplayString(__props.sellerStore.service_2.title), 1),\n                    _createElementVNode(\"p\", null, _toDisplayString(__props.sellerStore.service_2.description), 1)\n                  ])\n                ])\n              ]),\n              _createElementVNode(\"div\", _hoisted_15, [\n                _createElementVNode(\"div\", _hoisted_16, [\n                  (__props.sellerStore.service_3.image_url)\n                    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_17, [\n                        _createElementVNode(\"img\", {\n                          src: __props.sellerStore.service_3.image_url,\n                          class: \"img-fluid\",\n                          alt: \"\"\n                        }, null, 8, _hoisted_18)\n                      ]))\n                    : _createCommentVNode(\"\", true),\n                  _createElementVNode(\"div\", _hoisted_19, [\n                    _createElementVNode(\"h4\", null, _toDisplayString(__props.sellerStore.service_3.title), 1),\n                    _createElementVNode(\"p\", null, _toDisplayString(__props.sellerStore.service_3.description), 1)\n                  ])\n                ])\n              ]),\n              _createElementVNode(\"div\", _hoisted_20, [\n                _createElementVNode(\"div\", _hoisted_21, [\n                  (__props.sellerStore.service_4.image_url)\n                    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_22, [\n                        _createElementVNode(\"img\", {\n                          src: __props.sellerStore.service_4.image_url,\n                          class: \"img-fluid\",\n                          alt: \"\"\n                        }, null, 8, _hoisted_23)\n                      ]))\n                    : _createCommentVNode(\"\", true),\n                  _createElementVNode(\"div\", _hoisted_24, [\n                    _createElementVNode(\"h4\", null, _toDisplayString(__props.sellerStore.service_4.title), 1),\n                    _createElementVNode(\"p\", null, _toDisplayString(__props.sellerStore.service_4.description), 1)\n                  ])\n                ])\n              ])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287904,
+      "end": 1716056287905,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287905,
+      "end": 1716056287905,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056287905,
+      "end": 1716056287907,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287907,
+      "end": 1716056287907,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287907,
+      "end": 1716056287907,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287907,
+      "end": 1716056287907,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287907,
+      "end": 1716056287907,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056287907,
+      "end": 1716056287908,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287908,
+      "end": 1716056287908,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287908,
+      "end": 1716056287908,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287908,
+      "end": 1716056287908,
+      "order": "normal"
+    }
+  ]
+}

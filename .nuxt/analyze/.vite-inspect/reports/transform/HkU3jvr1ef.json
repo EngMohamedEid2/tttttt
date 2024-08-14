@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/MenuProduct/index.vue?nuxt_component=async&nuxt_component_name=HeaderElementsMenuProduct",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"product-box\">\n    <div class=\"product-image\">\n      <nuxt-link class=\"dropdown-item\" :to=\"`/product/${product?.slug}`\">\n        <img :src=\"product.product_thumbnail ? product.product_thumbnail.original_url : '/images/product.png'\"\n          class=\"img-fluid\" alt=\"\">\n      </nuxt-link>\n\n      <ul class=\"product-option\">\n        <li>\n          <a href=\"javascript:void(0)\" @click.prevent=\"useCompareStore().ToggleFromCompare({ product })\">\n            <Icon name=\"teenyicons:git-compare-outline\"  size=\"20\"\n              v-if=\"useCompareStore().ExistsInCompare({ product })\" />\n            <Icon name=\"teenyicons:git-compare-outline\" size=\"20\" v-else />\n          </a>\n        </li>\n        <li>\n          <Icon name=\"ic:outline-remove-red-eye\" size=\"20\" />\n        </li>\n        <li>\n          <a href=\"javascript:void(0)\" @click.prevent=\"useWishlistStore().ToggleFromWishlist({ product })\">\n            <Icon name=\"fe:heart\" size=\"20\"  v-if=\"useWishlistStore().ExistsInCart({ product })\" />\n            <Icon name=\"fe:heart-o\" size=\"20\" v-else />\n          </a>\n        </li>\n      </ul>\n    </div>\n    <div class=\"product-detail\">\n      <nuxt-link class=\"dropdown-item\" :to=\"`/product/${product?.slug}`\">\n        <h6 class=\"name\">{{ product.name }}</h6>\n      </nuxt-link>\n      \n\n      <h5 class=\"sold text-content\">\n        <span class=\"theme-color price\">$ {{ Number(product.sale_price).toFixed(2) }}</span>\n        <del v-if=\"product.discount\">$ {{ Number(product.price).toFixed(2) }}</del>\n      </h5>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { useCompareStore } from \"@/store/compare\";\nimport { useWishlistStore } from \"@/store/wishlist\";\n\nlet props = defineProps({\n  product: Object\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056270704,
+      "end": 1716056270803,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056270803,
+      "end": 1716056270803,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056270803,
+      "end": 1716056270803,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056270803,
+      "end": 1716056270803,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056270803,
+      "end": 1716056270803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056270803,
+      "end": 1716056270803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056270803,
+      "end": 1716056270803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056270803,
+      "end": 1716056270803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, unref as _unref, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, withModifiers as _withModifiers, toDisplayString as _toDisplayString, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"product-box\" }\nconst _hoisted_2 = { class: \"product-image\" }\nconst _hoisted_3 = [\"src\"]\nconst _hoisted_4 = { class: \"product-option\" }\nconst _hoisted_5 = { class: \"product-detail\" }\nconst _hoisted_6 = { class: \"name\" }\nconst _hoisted_7 = { class: \"sold text-content\" }\nconst _hoisted_8 = { class: \"theme-color price\" }\nconst _hoisted_9 = { key: 0 }\n\nimport { useCompareStore } from \"@/store/compare\";\nimport { useWishlistStore } from \"@/store/wishlist\";\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  product: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(_component_nuxt_link, {\n        class: \"dropdown-item\",\n        to: `/product/${__props.product?.slug}`\n      }, {\n        default: _withCtx(() => [\n          _createElementVNode(\"img\", {\n            src: __props.product.product_thumbnail ? __props.product.product_thumbnail.original_url : '/images/product.png',\n            class: \"img-fluid\",\n            alt: \"\"\n          }, null, 8, _hoisted_3)\n        ]),\n        _: 1\n      }, 8, [\"to\"]),\n      _createElementVNode(\"ul\", _hoisted_4, [\n        _createElementVNode(\"li\", null, [\n          _createElementVNode(\"a\", {\n            href: \"javascript:void(0)\",\n            onClick: _cache[0] || (_cache[0] = _withModifiers($event => (_unref(useCompareStore)().ToggleFromCompare({ product: __props.product })), [\"prevent\"]))\n          }, [\n            (_unref(useCompareStore)().ExistsInCompare({ product: __props.product }))\n              ? (_openBlock(), _createBlock(_component_Icon, {\n                  key: 0,\n                  name: \"teenyicons:git-compare-outline\",\n                  size: \"20\"\n                }))\n              : (_openBlock(), _createBlock(_component_Icon, {\n                  key: 1,\n                  name: \"teenyicons:git-compare-outline\",\n                  size: \"20\"\n                }))\n          ])\n        ]),\n        _createElementVNode(\"li\", null, [\n          _createVNode(_component_Icon, {\n            name: \"ic:outline-remove-red-eye\",\n            size: \"20\"\n          })\n        ]),\n        _createElementVNode(\"li\", null, [\n          _createElementVNode(\"a\", {\n            href: \"javascript:void(0)\",\n            onClick: _cache[1] || (_cache[1] = _withModifiers($event => (_unref(useWishlistStore)().ToggleFromWishlist({ product: __props.product })), [\"prevent\"]))\n          }, [\n            (_unref(useWishlistStore)().ExistsInCart({ product: __props.product }))\n              ? (_openBlock(), _createBlock(_component_Icon, {\n                  key: 0,\n                  name: \"fe:heart\",\n                  size: \"20\"\n                }))\n              : (_openBlock(), _createBlock(_component_Icon, {\n                  key: 1,\n                  name: \"fe:heart-o\",\n                  size: \"20\"\n                }))\n          ])\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_5, [\n      _createVNode(_component_nuxt_link, {\n        class: \"dropdown-item\",\n        to: `/product/${__props.product?.slug}`\n      }, {\n        default: _withCtx(() => [\n          _createElementVNode(\"h6\", _hoisted_6, _toDisplayString(__props.product.name), 1)\n        ]),\n        _: 1\n      }, 8, [\"to\"]),\n      _createElementVNode(\"h5\", _hoisted_7, [\n        _createElementVNode(\"span\", _hoisted_8, \"$ \" + _toDisplayString(Number(__props.product.sale_price).toFixed(2)), 1),\n        (__props.product.discount)\n          ? (_openBlock(), _createElementBlock(\"del\", _hoisted_9, \"$ \" + _toDisplayString(Number(__props.product.price).toFixed(2)), 1))\n          : _createCommentVNode(\"\", true)\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056270803,
+      "end": 1716056270810,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/MenuProduct/index.vue\").then(r => r.default))",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/MenuProduct/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056270810,
+      "end": 1716056270810,
+      "order": "normal"
+    }
+  ]
+}

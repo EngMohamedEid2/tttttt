@@ -1,0 +1,1 @@
+import{M as l,N as o,V as a,a9 as t,W as n}from"./DzwC5H-t.js";const r=a("div",{class:"loader"},null,-1),c={__name:"index",props:{loaderClass:{type:String,default:"loader-wrapper"}},setup(e){return(s,d)=>(l(),o("div",{class:n(e.loaderClass)},[a("div",null,[r,a("h3",null,t(s.$t("Loading...")),1)])],2))}},p=c;export{p as default};

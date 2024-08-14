@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Auth/Register.vue?nuxt_component=async&nuxt_component_name=AuthRegister",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <section class=\"log-in-section section-b-space\">\n    <div class=\"container-fluid-lg w-100\">\n      <div class=\"row\">\n        <div class=\"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\">\n          <div class=\"image-contain\">\n            <img src=\"/images/inner-page/sign-up.png\" class=\"img-fluid\" alt=\"\" />\n          </div>\n        </div>\n        <div class=\"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\">\n          <div class=\"log-in-box\">\n            <div class=\"log-in-title\">\n              <h3>{{ $t(\"Welcome To Our Store\") }}</h3>\n              <h4>{{ $t(\"Create New Account\") }}</h4>\n            </div>\n            <div class=\"input-box\">\n              <AuthCommonFormRegisterForm @handleRegister=\"handleRegister()\" :input=\"input\"\n                :formSubmitted=\"formSubmitted\" />\n            </div>\n\n            <div class=\"other-log-in\">\n              <h6>{{ $t(\"or\") }}</h6>\n            </div>\n\n            <div class=\"sign-up-box\">\n              <h4>{{ $t(\"Already have an account\") }}?</h4>\n              <nuxt-link :to=\"'/auth/login'\">{{ $t(\"Log In\") }}</nuxt-link>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-xxl-7 col-xl-6 col-lg-6\"></div>\n      </div>\n    </div>\n  </section>\n</template>\n\n<script setup>\nimport isFormValid from \"@/utils/validators/formValidator\";\n\nlet input = ref({\n  name: { data: \"\" },\n  email: { data: \"\" },\n  phone: { data: \"\" },\n  password: { data: \"\" },\n  password_confirmation: { data: \"\" },\n  country_code: { data: \"\" },\n});\nlet formSubmitted = ref(false);\nasync function handleRegister() {\n  formSubmitted.value = true;\n  if (isFormValid({ formData: input.value })) {\n    let { data, error } = await HandleRequest(\"register\", {\n      headers: GetHeaders(),\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        name: input.value.name.data,\n        email: input.value.email.data,\n        phone: input.value.phone.data,\n        password: input.value.password.data,\n        password_confirmation: input.value.password_confirmation.data,\n        country_code: input.value.country_code.data,\n      },\n    });\n  }\n}\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056306244,
+      "end": 1716056306356,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306356,
+      "end": 1716056306356,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306356,
+      "end": 1716056306356,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306356,
+      "end": 1716056306356,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306356,
+      "end": 1716056306356,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056306356,
+      "end": 1716056306357,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056306357,
+      "end": 1716056306357,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056306357,
+      "end": 1716056306357,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056306357,
+      "end": 1716056306357,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056306357,
+      "end": 1716056306357,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056306357,
+      "end": 1716056306357,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/inner-page/sign-up.png'\n\n\nimport isFormValid from \"@/utils/validators/formValidator\";\n\n\nconst _sfc_main = {\n  __name: 'Register',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet input = ref({\n  name: { data: \"\" },\n  email: { data: \"\" },\n  phone: { data: \"\" },\n  password: { data: \"\" },\n  password_confirmation: { data: \"\" },\n  country_code: { data: \"\" },\n});\nlet formSubmitted = ref(false);\nasync function handleRegister() {\n  formSubmitted.value = true;\n  if (isFormValid({ formData: input.value })) {\n    let { data, error } = await HandleRequest(\"register\", {\n      headers: GetHeaders(),\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        name: input.value.name.data,\n        email: input.value.email.data,\n        phone: input.value.phone.data,\n        password: input.value.password.data,\n        password_confirmation: input.value.password_confirmation.data,\n        country_code: input.value.country_code.data,\n      },\n    });\n  }\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_AuthCommonFormRegisterForm = _resolveComponent(\"AuthCommonFormRegisterForm\")\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"log-in-section section-b-space\" }, _attrs))\n  }><div class=\"container-fluid-lg w-100\"><div class=\"row\"><div class=\"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\"><div class=\"image-contain\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } class=\"img-fluid\" alt=\"\"></div></div><div class=\"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\"><div class=\"log-in-box\"><div class=\"log-in-title\"><h3>${\n    _ssrInterpolate(_ctx.$t(\"Welcome To Our Store\"))\n  }</h3><h4>${\n    _ssrInterpolate(_ctx.$t(\"Create New Account\"))\n  }</h4></div><div class=\"input-box\">`)\n  _push(_ssrRenderComponent(_component_AuthCommonFormRegisterForm, {\n    onHandleRegister: $event => (handleRegister()),\n    input: _unref(input),\n    formSubmitted: _unref(formSubmitted)\n  }, null, _parent))\n  _push(`</div><div class=\"other-log-in\"><h6>${\n    _ssrInterpolate(_ctx.$t(\"or\"))\n  }</h6></div><div class=\"sign-up-box\"><h4>${\n    _ssrInterpolate(_ctx.$t(\"Already have an account\"))\n  }?</h4>`)\n  _push(_ssrRenderComponent(_component_nuxt_link, { to: '/auth/login' }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t(\"Log In\"))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Log In\")), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div></div><div class=\"col-xxl-7 col-xl-6 col-lg-6\"></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Auth/Register.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056306357,
+      "end": 1716056306363,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Auth/Register.vue\").then(r => r.default))",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056306363,
+      "end": 1716056306363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056306363,
+      "end": 1716056306364,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "normal"
+    }
+  ]
+}

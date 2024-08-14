@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Cookie/index.vue?nuxt_component=async&nuxt_component_name=WidgetsCookie",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"cookie-bar-box\" :class=\"checkCookies ? 'd-none' : ''\">\n    <div class=\"cookie-box\">\n      <div class=\"cookie-image\">\n        <img src=\"/images/cookie-bar.png\" alt=\"\" />\n        <h2>{{ $t(\"Cookies\") }}!</h2>\n      </div>\n      <div class=\"cookie-contain\">\n        <h5 class=\"text-content\">\n          {{ $t(\"We use cookies to make your experience better\") }}\n        </h5>\n      </div>\n    </div>\n\n    <div class=\"button-group\">\n      <button class=\"btn privacy-button\">{{ $t(\"Privacy Policy\") }}</button>\n      <button class=\"btn ok-button\" @click=\"handleCookie()\">\n        {{ $t(\"OK\") }}\n      </button>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport Cookies from 'js-cookie';\n\nconst checkCookies = ref(true);\n\nconst initializeCookies = () => {\n  const cookieAccept = Cookies.get('CookieAccept');\n  if (cookieAccept) {\n    checkCookies.value = JSON.parse(cookieAccept);\n  } else {\n    checkCookies.value = false;\n  }\n};\n\nconst handleCookie = () => {\n  Cookies.set('CookieAccept', JSON.stringify(true));\n  checkCookies.value = true;\n};\n\nonMounted(() => {\n  initializeCookies();\n});\n\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056284981,
+      "end": 1716056285093,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285094,
+      "end": 1716056285094,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285094,
+      "end": 1716056285094,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285094,
+      "end": 1716056285094,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285094,
+      "end": 1716056285094,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285094,
+      "end": 1716056285094,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285094,
+      "end": 1716056285094,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285094,
+      "end": 1716056285094,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from '/images/cookie-bar.png'\n\n\nconst _hoisted_1 = { class: \"cookie-box\" }\nconst _hoisted_2 = { class: \"cookie-image\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_0,\n  alt: \"\"\n}, null, -1)\nconst _hoisted_4 = { class: \"cookie-contain\" }\nconst _hoisted_5 = { class: \"text-content\" }\nconst _hoisted_6 = { class: \"button-group\" }\nconst _hoisted_7 = { class: \"btn privacy-button\" }\n\nimport Cookies from 'js-cookie';\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nconst checkCookies = ref(true);\n\nconst initializeCookies = () => {\n  const cookieAccept = Cookies.get('CookieAccept');\n  if (cookieAccept) {\n    checkCookies.value = JSON.parse(cookieAccept);\n  } else {\n    checkCookies.value = false;\n  }\n};\n\nconst handleCookie = () => {\n  Cookies.set('CookieAccept', JSON.stringify(true));\n  checkCookies.value = true;\n};\n\nonMounted(() => {\n  initializeCookies();\n});\n\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass([\"cookie-bar-box\", _unref(checkCookies) ? 'd-none' : ''])\n  }, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _hoisted_3,\n        _createElementVNode(\"h2\", null, _toDisplayString(_ctx.$t(\"Cookies\")) + \"!\", 1)\n      ]),\n      _createElementVNode(\"div\", _hoisted_4, [\n        _createElementVNode(\"h5\", _hoisted_5, _toDisplayString(_ctx.$t(\"We use cookies to make your experience better\")), 1)\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_6, [\n      _createElementVNode(\"button\", _hoisted_7, _toDisplayString(_ctx.$t(\"Privacy Policy\")), 1),\n      _createElementVNode(\"button\", {\n        class: \"btn ok-button\",\n        onClick: _cache[0] || (_cache[0] = $event => (handleCookie()))\n      }, _toDisplayString(_ctx.$t(\"OK\")), 1)\n    ])\n  ], 2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056285094,
+      "end": 1716056285096,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285096,
+      "end": 1716056285096,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285096,
+      "end": 1716056285096,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285096,
+      "end": 1716056285096,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285096,
+      "end": 1716056285096,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Cookie/index.vue\").then(r => r.default))",
+      "start": 1716056285096,
+      "end": 1716056285096,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285096,
+      "end": 1716056285097,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Cookie/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285097,
+      "end": 1716056285097,
+      "order": "normal"
+    }
+  ]
+}

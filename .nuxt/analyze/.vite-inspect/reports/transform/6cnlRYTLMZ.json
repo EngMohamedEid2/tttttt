@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductAction/index.vue?nuxt_component=async&nuxt_component_name=ShopProductDetailsWidgetsProductAction",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <div class=\"progress-sec\" v-if=\"product?.quantity && product.quantity <= 10\">\n    <div class=\"left-progressbar\">\n      <h6>{{ $t(\"Please hurry! only\") }} {{ product.quantity }} {{ $t(\"left in stock\") }}</h6>\n      <div class=\"progress\"\n        :class=\"{ 'danger-progress': product.quantity <= 2, 'warning-progress': product.quantity >= 3 && product.quantity <= 7 }\"\n        role=\"progressbar\">\n        <div class=\"progress-bar progress-bar-striped progress-bar-animated\"\n          :style=\"{ width: (product.quantity * 100) / 10 + '%' }\"></div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"size-delivery-info\" v-if=\"product.size_chart_image || (policy && product.is_return)\">\n    <a href=\"javascript:void(0)\" @click=\"(sizeChartData) => { sizechartModal({ sizeChartData }) }\"\n      v-if=\"product.size_chart_image\">\n      <Icon name=\"ri:ruler-line\"></Icon> {{ $t(\"Size Chart\") }}\n    </a>\n    <a href=\"javascript:void(0)\" @click=\"(policy) => { deliveryReturnModal({ policy }) }\"\n      v-if=\"policy && product.is_return\">\n      <Icon name=\"ri:truck-line\"></Icon> {{ $t(\"Delivery Return\") }}\n    </a>\n    <a href=\"javascript:void(0)\" @click=\"(product) => { askQuestionModal({ product }) }\"\n      v-if=\"policy && product.is_return\">\n      <Icon name=\"ri:questionnaire-line\"></Icon> {{ $t(\"Ask a Question\") }}\n    </a>\n  </div>\n\n  <WidgetsModalsCommon :showModal=\"sizeChartModal\" @close=\"sizechartModal({ state: false })\" :classes=\"'modal-lg'\">\n    <WidgetsModalsSizeChartModal :image=\"sizeChartData\" @close=\"sizechartModal({ state: false })\" />\n  </WidgetsModalsCommon>\n\n  <WidgetsModalsCommon :showModal=\"deliveryModal\" @close=\"deliveryReturnModal({ state: false })\" :classes=\"'modal-lg'\">\n    <WidgetsModalsDeliveryReturnModal :policy=\"policy\" @close=\"deliveryReturnModal({ state: false })\" />\n  </WidgetsModalsCommon>\n\n  <WidgetsModalsCommon :showModal=\"askQuestion\" @close=\"askQuestionModal({ state: false })\">\n    <WidgetsModalsQuestionModal :product=\"product\" @close=\"askQuestionModal({ state: false })\" />\n  </WidgetsModalsCommon>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  product: Object,\n  option: Object\n})\n\nlet policy = ref('');\n\nlet sizeChartModal = ref(false)\nlet sizeChartData = props.product.size_chart_image\nlet deliveryModal = ref(false)\nlet askQuestion = ref(false)\npolicy.value = props?.option?.product?.shipping_and_return\n\nfunction sizechartModal({ state = true, }) {\n  sizeChartModal.value = state\n}\n\nfunction deliveryReturnModal({ state = true, }) {\n  deliveryModal.value = state\n}\n\nfunction askQuestionModal({ state = true, }) {\n  askQuestion.value = state\n}\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056271517,
+      "end": 1716056284683,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284683,
+      "end": 1716056284683,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284683,
+      "end": 1716056284683,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284683,
+      "end": 1716056284683,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284683,
+      "end": 1716056284683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284683,
+      "end": 1716056284683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284683,
+      "end": 1716056284683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284683,
+      "end": 1716056284683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, normalizeStyle as _normalizeStyle, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, withCtx as _withCtx } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"progress-sec\"\n}\nconst _hoisted_2 = { class: \"left-progressbar\" }\nconst _hoisted_3 = {\n  key: 1,\n  class: \"size-delivery-info\"\n}\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  product: Object,\n  option: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nlet policy = ref('');\n\nlet sizeChartModal = ref(false)\nlet sizeChartData = props.product.size_chart_image\nlet deliveryModal = ref(false)\nlet askQuestion = ref(false)\npolicy.value = props?.option?.product?.shipping_and_return\n\nfunction sizechartModal({ state = true, }) {\n  sizeChartModal.value = state\n}\n\nfunction deliveryReturnModal({ state = true, }) {\n  deliveryModal.value = state\n}\n\nfunction askQuestionModal({ state = true, }) {\n  askQuestion.value = state\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsModalsSizeChartModal = _resolveComponent(\"WidgetsModalsSizeChartModal\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsDeliveryReturnModal = _resolveComponent(\"WidgetsModalsDeliveryReturnModal\")\n  const _component_WidgetsModalsQuestionModal = _resolveComponent(\"WidgetsModalsQuestionModal\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (__props.product?.quantity && __props.product.quantity <= 10)\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createElementVNode(\"h6\", null, _toDisplayString(_ctx.$t(\"Please hurry! only\")) + \" \" + _toDisplayString(__props.product.quantity) + \" \" + _toDisplayString(_ctx.$t(\"left in stock\")), 1),\n            _createElementVNode(\"div\", {\n              class: _normalizeClass([\"progress\", { 'danger-progress': __props.product.quantity <= 2, 'warning-progress': __props.product.quantity >= 3 && __props.product.quantity <= 7 }]),\n              role: \"progressbar\"\n            }, [\n              _createElementVNode(\"div\", {\n                class: \"progress-bar progress-bar-striped progress-bar-animated\",\n                style: _normalizeStyle({ width: (__props.product.quantity * 100) / 10 + '%' })\n              }, null, 4)\n            ], 2)\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (__props.product.size_chart_image || (_unref(policy) && __props.product.is_return))\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n          (__props.product.size_chart_image)\n            ? (_openBlock(), _createElementBlock(\"a\", {\n                key: 0,\n                href: \"javascript:void(0)\",\n                onClick: _cache[0] || (_cache[0] = (sizeChartData) => { sizechartModal({ sizeChartData }) })\n              }, [\n                _createVNode(_component_Icon, { name: \"ri:ruler-line\" }),\n                _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Size Chart\")), 1)\n              ]))\n            : _createCommentVNode(\"\", true),\n          (_unref(policy) && __props.product.is_return)\n            ? (_openBlock(), _createElementBlock(\"a\", {\n                key: 1,\n                href: \"javascript:void(0)\",\n                onClick: _cache[1] || (_cache[1] = (policy) => { deliveryReturnModal({ policy }) })\n              }, [\n                _createVNode(_component_Icon, { name: \"ri:truck-line\" }),\n                _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Delivery Return\")), 1)\n              ]))\n            : _createCommentVNode(\"\", true),\n          (_unref(policy) && __props.product.is_return)\n            ? (_openBlock(), _createElementBlock(\"a\", {\n                key: 2,\n                href: \"javascript:void(0)\",\n                onClick: _cache[2] || (_cache[2] = (product) => { askQuestionModal({ product }) })\n              }, [\n                _createVNode(_component_Icon, { name: \"ri:questionnaire-line\" }),\n                _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"Ask a Question\")), 1)\n              ]))\n            : _createCommentVNode(\"\", true)\n        ]))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_WidgetsModalsCommon, {\n      showModal: _unref(sizeChartModal),\n      onClose: _cache[4] || (_cache[4] = $event => (sizechartModal({ state: false }))),\n      classes: 'modal-lg'\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_WidgetsModalsSizeChartModal, {\n          image: _unref(sizeChartData),\n          onClose: _cache[3] || (_cache[3] = $event => (sizechartModal({ state: false })))\n        }, null, 8, [\"image\"])\n      ]),\n      _: 1\n    }, 8, [\"showModal\"]),\n    _createVNode(_component_WidgetsModalsCommon, {\n      showModal: _unref(deliveryModal),\n      onClose: _cache[6] || (_cache[6] = $event => (deliveryReturnModal({ state: false }))),\n      classes: 'modal-lg'\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_WidgetsModalsDeliveryReturnModal, {\n          policy: _unref(policy),\n          onClose: _cache[5] || (_cache[5] = $event => (deliveryReturnModal({ state: false })))\n        }, null, 8, [\"policy\"])\n      ]),\n      _: 1\n    }, 8, [\"showModal\"]),\n    _createVNode(_component_WidgetsModalsCommon, {\n      showModal: _unref(askQuestion),\n      onClose: _cache[8] || (_cache[8] = $event => (askQuestionModal({ state: false })))\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_WidgetsModalsQuestionModal, {\n          product: __props.product,\n          onClose: _cache[7] || (_cache[7] = $event => (askQuestionModal({ state: false })))\n        }, null, 8, [\"product\"])\n      ]),\n      _: 1\n    }, 8, [\"showModal\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284683,
+      "end": 1716056284694,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284694,
+      "end": 1716056284694,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284694,
+      "end": 1716056284694,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284694,
+      "end": 1716056284694,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284694,
+      "end": 1716056284694,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductAction/index.vue\").then(r => r.default))",
+      "start": 1716056284694,
+      "end": 1716056284694,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284694,
+      "end": 1716056284694,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284694,
+      "end": 1716056284694,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284694,
+      "end": 1716056284694,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284694,
+      "end": 1716056284694,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284694,
+      "end": 1716056284694,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284694,
+      "end": 1716056284694,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284694,
+      "end": 1716056284694,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284694,
+      "end": 1716056284694,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284694,
+      "end": 1716056284695,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284695,
+      "end": 1716056284695,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284695,
+      "end": 1716056284695,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284695,
+      "end": 1716056284695,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284695,
+      "end": 1716056284695,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284695,
+      "end": 1716056284695,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284695,
+      "end": 1716056284695,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284695,
+      "end": 1716056284695,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284695,
+      "end": 1716056284695,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284695,
+      "end": 1716056284695,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductAction/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284695,
+      "end": 1716056284695,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284695,
+      "end": 1716056284695,
+      "order": "normal"
+    }
+  ]
+}

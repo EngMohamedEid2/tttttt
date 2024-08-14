@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Widgets/Deal/index.vue?nuxt_component=async&nuxt_component_name=ThemesWidgetsDeal",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"product-bg-image wow fadeInUp\" :style=\"{ 'background-image': 'url(' + data?.image_url + ')' }\"\n    v-if=\"deals.length\">\n    <div class=\"product-title product-warning\">\n      <h2>{{ data?.title }}</h2>\n    </div>\n    <div class=\"product-box-4 product-box-3 rounded-0\">\n      <div class=\"deal-box\" v-if=\"data?.label\">\n        <div class=\"circle-box\">\n          <div class=\"shape-circle\">\n            <img src=\"/images/svg/circle.svg\" alt=\"circle\">\n            <div class=\"shape-text\">\n              <h6>{{ data?.label }}</h6>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"top-selling-slider product-arrow\">\n        <swiper :loop=\"true\" class=\"banner-slider\" :slides-per-view=\"1\" :space-between=\"15\">\n            <swiper-slide v-for=\"(deal, index) in deals.length\" :key=\"`product${index}`\">\n              <div  v-if=\"deals[2]?.status\">\n                <div class=\"product-image\">\n                  <a href=\"javascript:void(0)\">\n                    <img :src=\"deals[2]?.product?.product_thumbnail?.original_url\" class=\"img-fluid product-image\"\n                      :alt=\"deals[2]?.product?.name\">\n                  </a>\n                  <ul class=\"option\">\n                    <li data-bs-toggle=\"tooltip\" data-bs-placement=\"top\" title=\"Quick View\">\n                      <a href=\"javascript:void(0)\" @click.prevent=\"() => { useCartStore().ToggleModal(deals[2]); }\">\n                        <Icon name=\"ri:eye-line\"></Icon>\n                      </a>\n                    </li>\n                    <li data-bs-toggle=\"tooltip\" data-bs-placement=\"top\" title=\"Wishlist\">\n                      <a href=\"javascript:void(0)\" class=\"notifi-wishlist\"\n                        @click.prevent=\"useWishlistStore().ToggleFromWishlist(deals[2])\">\n                        <Icon name=\"ri:heart-line\" size=\"20\"  v-if=\"useWishlistStore().ExistsInCart(deals[2])\" />\n                        <Icon name=\"ri:heart-line\" size=\"20\" v-else />\n                      </a>\n                    </li>\n                    <li data-bs-toggle=\"tooltip\" data-bs-placement=\"top\" title=\"Compare\">\n                      <a href=\"javascript:void(0)\" @click.prevent=\"useCompareStore().ToggleFromCompare(deals[2])\">\n                        <Icon name=\"ri:refresh-line\"  size=\"20\"\n                          v-if=\"useCompareStore().ExistsInCompare(deals[2])\" />\n                        <Icon name=\"ri:refresh-line\" size=\"20\" v-else />\n                      </a>\n                    </li>\n                  </ul>\n                </div>\n                <div class=\"product-detail text-center\">\n                  <ul class=\"product-rating justify-content-center\">\n                    <NuxtRating :read-only=\"true\" :ratingValue=\"deals[2]?.product.rating_count || 0\" :rating-size=\"'25px'\" />\n                  </ul>\n                  <a href=\"javascript:void(0)\">\n                    <h3 class=\"name w-100 mx-auto text-center\">\n                      {{ deals[2]?.product?.name }}\n                    </h3>\n                  </a>\n                  <h3 class=\"price theme-color d-flex justify-content-center\">\n                    $ {{ Number(deals[2]?.product?.sale_price).toFixed(2) }}<del class=\"delete-price\">$ {{\n                      Number(deals[2]?.product?.price).toFixed(2) }}</del>\n                  </h3>\n                  <div class=\"progress custom-progressbar\">\n                    <div class=\"progress-bar\" :style=\"{ width: (deals[2]?.product?.quantity * 100) / 10 + '%' }\"\n                      role=\"progressbar\"></div>\n                  </div>\n                  <h5 class=\"text-content\">{{ $t('Sold') }} : <span>{{ deals[2]?.product?.quantity }} {{\n                    $t('items') }}</span>\n                    <span class=\"ms-auto text-content\">{{ 'Hurry up offer end in' }}</span>\n                  </h5>\n\n                  <div class=\"timer timer-2 ms-0 my-4\" id=\"clockdiv-1\" v-if=\"!deals[2].remainingTime?.seconds >= 0\">\n                    <ul class=\"d-flex justify-content-center\">\n                      <li>\n                        <div class=\"counter\">\n                          <div class=\"days\">\n                            <h6>{{ deals[2]?.remainingTime?.days }}</h6>\n                          </div>\n                        </div>\n                      </li>\n                      <li>\n                        <div class=\"counter\">\n                          <div class=\"hours\">\n                            <h6>{{ deals[2]?.remainingTime?.hours }}</h6>\n                          </div>\n                        </div>\n                      </li>\n                      <li>\n                        <div class=\"counter\">\n                          <div class=\"minutes\">\n                            <h6>{{ deals[2]?.remainingTime?.minutes }}</h6>\n                          </div>\n                        </div>\n                      </li>\n                      <li>\n                        <div class=\"counter\">\n                          <div class=\"seconds\">\n                            <h6>{{ deals[2]?.remainingTime?.seconds }}</h6>\n                          </div>\n                        </div>\n                      </li>\n                    </ul>\n                  </div>\n                  <div v-else>\n                    <h2 class=\"mt-3\">{{ (deals[2].remainingTime?.seconds < 0 ? 'offer_closed' : '') }}</h2>\n                  </div>\n                </div>\n              </div>\n            </swiper-slide>\n        </swiper>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { useCartStore } from \"@/store/cart\";\nimport { useCompareStore } from \"@/store/compare\";\nimport { useWishlistStore } from \"@/store/wishlist\";\nlet props = defineProps({\n  data: Object,\n  Products: Object\n})\n\nlet deals = ref([])\nfunction startTimers() {\n  for (let counterItem of deals.value) {\n    const endDate = new Date(counterItem.end_date).getTime();\n    const currentTime = new Date().getTime();\n    const timeDifference = endDate - currentTime;\n    if (timeDifference > 0) {\n      counterItem.remainingTime = calculateRemainingTime(timeDifference);\n      setInterval(() => {\n        counterItem.remainingTime = calculateRemainingTime(endDate - new Date().getTime());\n      }, 1000);\n    }\n  }\n}\n\nfunction calculateRemainingTime(timeDifference) {\n  const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));\n  const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));\n  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));\n  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);\n  return { days, hours, minutes, seconds };\n}\n\nonMounted(async () => {\n  const dealsArray = props?.data?.deals || [];\n  dealsArray.forEach((deal) => {\n    deal.product = props.Products?.data.find((product) => product.id === deal.product_id);\n  });\n  deals.value = dealsArray;\n  startTimers();\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056339684,
+      "end": 1716056339768,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339768,
+      "end": 1716056339768,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339768,
+      "end": 1716056339768,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339768,
+      "end": 1716056339768,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339768,
+      "end": 1716056339768,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339768,
+      "end": 1716056339768,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339768,
+      "end": 1716056339768,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339768,
+      "end": 1716056339768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339768,
+      "end": 1716056339768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339768,
+      "end": 1716056339768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339768,
+      "end": 1716056339768,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, withModifiers as _withModifiers, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, renderList as _renderList, Fragment as _Fragment, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderStyle as _ssrRenderStyle, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\nimport _imports_0 from '/images/svg/circle.svg'\n\n\nimport { useCartStore } from \"@/store/cart\";\nimport { useCompareStore } from \"@/store/compare\";\nimport { useWishlistStore } from \"@/store/wishlist\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  data: Object,\n  Products: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nlet deals = ref([])\nfunction startTimers() {\n  for (let counterItem of deals.value) {\n    const endDate = new Date(counterItem.end_date).getTime();\n    const currentTime = new Date().getTime();\n    const timeDifference = endDate - currentTime;\n    if (timeDifference > 0) {\n      counterItem.remainingTime = calculateRemainingTime(timeDifference);\n      setInterval(() => {\n        counterItem.remainingTime = calculateRemainingTime(endDate - new Date().getTime());\n      }, 1000);\n    }\n  }\n}\n\nfunction calculateRemainingTime(timeDifference) {\n  const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));\n  const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));\n  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));\n  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);\n  return { days, hours, minutes, seconds };\n}\n\nonMounted(async () => {\n  const dealsArray = props?.data?.deals || [];\n  dealsArray.forEach((deal) => {\n    deal.product = props.Products?.data.find((product) => product.id === deal.product_id);\n  });\n  deals.value = dealsArray;\n  startTimers();\n})\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_swiper = _resolveComponent(\"swiper\")\n  const _component_swiper_slide = _resolveComponent(\"swiper-slide\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_NuxtRating = _resolveComponent(\"NuxtRating\")\n\n  if (_unref(deals).length) {\n    _push(`<div${\n      _ssrRenderAttrs(_mergeProps({\n        class: \"product-bg-image wow fadeInUp\",\n        style: { 'background-image': 'url(' + __props.data?.image_url + ')' }\n      }, _attrs))\n    }><div class=\"product-title product-warning\"><h2>${\n      _ssrInterpolate(__props.data?.title)\n    }</h2></div><div class=\"product-box-4 product-box-3 rounded-0\">`)\n    if (__props.data?.label) {\n      _push(`<div class=\"deal-box\"><div class=\"circle-box\"><div class=\"shape-circle\"><img${\n        _ssrRenderAttr(\"src\", _imports_0)\n      } alt=\"circle\"><div class=\"shape-text\"><h6>${\n        _ssrInterpolate(__props.data?.label)\n      }</h6></div></div></div></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<div class=\"top-selling-slider product-arrow\">`)\n    _push(_ssrRenderComponent(_component_swiper, {\n      loop: true,\n      class: \"banner-slider\",\n      \"slides-per-view\": 1,\n      \"space-between\": 15\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(`<!--[-->`)\n          _ssrRenderList(_unref(deals).length, (deal, index) => {\n            _push(_ssrRenderComponent(_component_swiper_slide, {\n              key: `product${index}`\n            }, {\n              default: _withCtx((_, _push, _parent, _scopeId) => {\n                if (_push) {\n                  if (_unref(deals)[2]?.status) {\n                    _push(`<div${\n                      _scopeId\n                    }><div class=\"product-image\"${\n                      _scopeId\n                    }><a href=\"javascript:void(0)\"${\n                      _scopeId\n                    }><img${\n                      _ssrRenderAttr(\"src\", _unref(deals)[2]?.product?.product_thumbnail?.original_url)\n                    } class=\"img-fluid product-image\"${\n                      _ssrRenderAttr(\"alt\", _unref(deals)[2]?.product?.name)\n                    }${\n                      _scopeId\n                    }></a><ul class=\"option\"${\n                      _scopeId\n                    }><li data-bs-toggle=\"tooltip\" data-bs-placement=\"top\" title=\"Quick View\"${\n                      _scopeId\n                    }><a href=\"javascript:void(0)\"${\n                      _scopeId\n                    }>`)\n                    _push(_ssrRenderComponent(_component_Icon, { name: \"ri:eye-line\" }, null, _parent, _scopeId))\n                    _push(`</a></li><li data-bs-toggle=\"tooltip\" data-bs-placement=\"top\" title=\"Wishlist\"${\n                      _scopeId\n                    }><a href=\"javascript:void(0)\" class=\"notifi-wishlist\"${\n                      _scopeId\n                    }>`)\n                    if (_unref(useWishlistStore)().ExistsInCart(_unref(deals)[2])) {\n                      _push(_ssrRenderComponent(_component_Icon, {\n                        name: \"ri:heart-line\",\n                        size: \"20\"\n                      }, null, _parent, _scopeId))\n                    } else {\n                      _push(_ssrRenderComponent(_component_Icon, {\n                        name: \"ri:heart-line\",\n                        size: \"20\"\n                      }, null, _parent, _scopeId))\n                    }\n                    _push(`</a></li><li data-bs-toggle=\"tooltip\" data-bs-placement=\"top\" title=\"Compare\"${\n                      _scopeId\n                    }><a href=\"javascript:void(0)\"${\n                      _scopeId\n                    }>`)\n                    if (_unref(useCompareStore)().ExistsInCompare(_unref(deals)[2])) {\n                      _push(_ssrRenderComponent(_component_Icon, {\n                        name: \"ri:refresh-line\",\n                        size: \"20\"\n                      }, null, _parent, _scopeId))\n                    } else {\n                      _push(_ssrRenderComponent(_component_Icon, {\n                        name: \"ri:refresh-line\",\n                        size: \"20\"\n                      }, null, _parent, _scopeId))\n                    }\n                    _push(`</a></li></ul></div><div class=\"product-detail text-center\"${\n                      _scopeId\n                    }><ul class=\"product-rating justify-content-center\"${\n                      _scopeId\n                    }>`)\n                    _push(_ssrRenderComponent(_component_NuxtRating, {\n                      \"read-only\": true,\n                      ratingValue: _unref(deals)[2]?.product.rating_count || 0,\n                      \"rating-size\": '25px'\n                    }, null, _parent, _scopeId))\n                    _push(`</ul><a href=\"javascript:void(0)\"${\n                      _scopeId\n                    }><h3 class=\"name w-100 mx-auto text-center\"${\n                      _scopeId\n                    }>${\n                      _ssrInterpolate(_unref(deals)[2]?.product?.name)\n                    }</h3></a><h3 class=\"price theme-color d-flex justify-content-center\"${\n                      _scopeId\n                    }> \\$ ${\n                      _ssrInterpolate(Number(_unref(deals)[2]?.product?.sale_price).toFixed(2))\n                    }<del class=\"delete-price\"${\n                      _scopeId\n                    }>\\$ ${\n                      _ssrInterpolate(Number(_unref(deals)[2]?.product?.price).toFixed(2))\n                    }</del></h3><div class=\"progress custom-progressbar\"${\n                      _scopeId\n                    }><div class=\"progress-bar\" style=\"${\n                      _ssrRenderStyle({ width: (_unref(deals)[2]?.product?.quantity * 100) / 10 + '%' })\n                    }\" role=\"progressbar\"${\n                      _scopeId\n                    }></div></div><h5 class=\"text-content\"${\n                      _scopeId\n                    }>${\n                      _ssrInterpolate(_ctx.$t('Sold'))\n                    } : <span${\n                      _scopeId\n                    }>${\n                      _ssrInterpolate(_unref(deals)[2]?.product?.quantity)\n                    } ${\n                      _ssrInterpolate(_ctx.$t('items'))\n                    }</span><span class=\"ms-auto text-content\"${\n                      _scopeId\n                    }>${\n                      _ssrInterpolate('Hurry up offer end in')\n                    }</span></h5>`)\n                    if (!_unref(deals)[2].remainingTime?.seconds >= 0) {\n                      _push(`<div class=\"timer timer-2 ms-0 my-4\" id=\"clockdiv-1\"${\n                        _scopeId\n                      }><ul class=\"d-flex justify-content-center\"${\n                        _scopeId\n                      }><li${\n                        _scopeId\n                      }><div class=\"counter\"${\n                        _scopeId\n                      }><div class=\"days\"${\n                        _scopeId\n                      }><h6${\n                        _scopeId\n                      }>${\n                        _ssrInterpolate(_unref(deals)[2]?.remainingTime?.days)\n                      }</h6></div></div></li><li${\n                        _scopeId\n                      }><div class=\"counter\"${\n                        _scopeId\n                      }><div class=\"hours\"${\n                        _scopeId\n                      }><h6${\n                        _scopeId\n                      }>${\n                        _ssrInterpolate(_unref(deals)[2]?.remainingTime?.hours)\n                      }</h6></div></div></li><li${\n                        _scopeId\n                      }><div class=\"counter\"${\n                        _scopeId\n                      }><div class=\"minutes\"${\n                        _scopeId\n                      }><h6${\n                        _scopeId\n                      }>${\n                        _ssrInterpolate(_unref(deals)[2]?.remainingTime?.minutes)\n                      }</h6></div></div></li><li${\n                        _scopeId\n                      }><div class=\"counter\"${\n                        _scopeId\n                      }><div class=\"seconds\"${\n                        _scopeId\n                      }><h6${\n                        _scopeId\n                      }>${\n                        _ssrInterpolate(_unref(deals)[2]?.remainingTime?.seconds)\n                      }</h6></div></div></li></ul></div>`)\n                    } else {\n                      _push(`<div${\n                        _scopeId\n                      }><h2 class=\"mt-3\"${\n                        _scopeId\n                      }>${\n                        _ssrInterpolate((_unref(deals)[2].remainingTime?.seconds < 0 ? 'offer_closed' : ''))\n                      }</h2></div>`)\n                    }\n                    _push(`</div></div>`)\n                  } else {\n                    _push(`<!---->`)\n                  }\n                } else {\n                  return [\n                    (_unref(deals)[2]?.status)\n                      ? (_openBlock(), _createBlock(\"div\", { key: 0 }, [\n                          _createVNode(\"div\", { class: \"product-image\" }, [\n                            _createVNode(\"a\", { href: \"javascript:void(0)\" }, [\n                              _createVNode(\"img\", {\n                                src: _unref(deals)[2]?.product?.product_thumbnail?.original_url,\n                                class: \"img-fluid product-image\",\n                                alt: _unref(deals)[2]?.product?.name\n                              }, null, 8, [\"src\", \"alt\"])\n                            ]),\n                            _createVNode(\"ul\", { class: \"option\" }, [\n                              _createVNode(\"li\", {\n                                \"data-bs-toggle\": \"tooltip\",\n                                \"data-bs-placement\": \"top\",\n                                title: \"Quick View\"\n                              }, [\n                                _createVNode(\"a\", {\n                                  href: \"javascript:void(0)\",\n                                  onClick: _withModifiers(() => { _unref(useCartStore)().ToggleModal(_unref(deals)[2]); }, [\"prevent\"])\n                                }, [\n                                  _createVNode(_component_Icon, { name: \"ri:eye-line\" })\n                                ], 8, [\"onClick\"])\n                              ]),\n                              _createVNode(\"li\", {\n                                \"data-bs-toggle\": \"tooltip\",\n                                \"data-bs-placement\": \"top\",\n                                title: \"Wishlist\"\n                              }, [\n                                _createVNode(\"a\", {\n                                  href: \"javascript:void(0)\",\n                                  class: \"notifi-wishlist\",\n                                  onClick: _withModifiers($event => (_unref(useWishlistStore)().ToggleFromWishlist(_unref(deals)[2])), [\"prevent\"])\n                                }, [\n                                  (_unref(useWishlistStore)().ExistsInCart(_unref(deals)[2]))\n                                    ? (_openBlock(), _createBlock(_component_Icon, {\n                                        key: 0,\n                                        name: \"ri:heart-line\",\n                                        size: \"20\"\n                                      }))\n                                    : (_openBlock(), _createBlock(_component_Icon, {\n                                        key: 1,\n                                        name: \"ri:heart-line\",\n                                        size: \"20\"\n                                      }))\n                                ], 8, [\"onClick\"])\n                              ]),\n                              _createVNode(\"li\", {\n                                \"data-bs-toggle\": \"tooltip\",\n                                \"data-bs-placement\": \"top\",\n                                title: \"Compare\"\n                              }, [\n                                _createVNode(\"a\", {\n                                  href: \"javascript:void(0)\",\n                                  onClick: _withModifiers($event => (_unref(useCompareStore)().ToggleFromCompare(_unref(deals)[2])), [\"prevent\"])\n                                }, [\n                                  (_unref(useCompareStore)().ExistsInCompare(_unref(deals)[2]))\n                                    ? (_openBlock(), _createBlock(_component_Icon, {\n                                        key: 0,\n                                        name: \"ri:refresh-line\",\n                                        size: \"20\"\n                                      }))\n                                    : (_openBlock(), _createBlock(_component_Icon, {\n                                        key: 1,\n                                        name: \"ri:refresh-line\",\n                                        size: \"20\"\n                                      }))\n                                ], 8, [\"onClick\"])\n                              ])\n                            ])\n                          ]),\n                          _createVNode(\"div\", { class: \"product-detail text-center\" }, [\n                            _createVNode(\"ul\", { class: \"product-rating justify-content-center\" }, [\n                              _createVNode(_component_NuxtRating, {\n                                \"read-only\": true,\n                                ratingValue: _unref(deals)[2]?.product.rating_count || 0,\n                                \"rating-size\": '25px'\n                              }, null, 8, [\"ratingValue\"])\n                            ]),\n                            _createVNode(\"a\", { href: \"javascript:void(0)\" }, [\n                              _createVNode(\"h3\", { class: \"name w-100 mx-auto text-center\" }, _toDisplayString(_unref(deals)[2]?.product?.name), 1)\n                            ]),\n                            _createVNode(\"h3\", { class: \"price theme-color d-flex justify-content-center\" }, [\n                              _createTextVNode(\" $ \" + _toDisplayString(Number(_unref(deals)[2]?.product?.sale_price).toFixed(2)), 1),\n                              _createVNode(\"del\", { class: \"delete-price\" }, \"$ \" + _toDisplayString(Number(_unref(deals)[2]?.product?.price).toFixed(2)), 1)\n                            ]),\n                            _createVNode(\"div\", { class: \"progress custom-progressbar\" }, [\n                              _createVNode(\"div\", {\n                                class: \"progress-bar\",\n                                style: { width: (_unref(deals)[2]?.product?.quantity * 100) / 10 + '%' },\n                                role: \"progressbar\"\n                              }, null, 4)\n                            ]),\n                            _createVNode(\"h5\", { class: \"text-content\" }, [\n                              _createTextVNode(_toDisplayString(_ctx.$t('Sold')) + \" : \", 1),\n                              _createVNode(\"span\", null, _toDisplayString(_unref(deals)[2]?.product?.quantity) + \" \" + _toDisplayString(_ctx.$t('items')), 1),\n                              _createVNode(\"span\", { class: \"ms-auto text-content\" }, _toDisplayString('Hurry up offer end in'))\n                            ]),\n                            (!_unref(deals)[2].remainingTime?.seconds >= 0)\n                              ? (_openBlock(), _createBlock(\"div\", {\n                                  key: 0,\n                                  class: \"timer timer-2 ms-0 my-4\",\n                                  id: \"clockdiv-1\"\n                                }, [\n                                  _createVNode(\"ul\", { class: \"d-flex justify-content-center\" }, [\n                                    _createVNode(\"li\", null, [\n                                      _createVNode(\"div\", { class: \"counter\" }, [\n                                        _createVNode(\"div\", { class: \"days\" }, [\n                                          _createVNode(\"h6\", null, _toDisplayString(_unref(deals)[2]?.remainingTime?.days), 1)\n                                        ])\n                                      ])\n                                    ]),\n                                    _createVNode(\"li\", null, [\n                                      _createVNode(\"div\", { class: \"counter\" }, [\n                                        _createVNode(\"div\", { class: \"hours\" }, [\n                                          _createVNode(\"h6\", null, _toDisplayString(_unref(deals)[2]?.remainingTime?.hours), 1)\n                                        ])\n                                      ])\n                                    ]),\n                                    _createVNode(\"li\", null, [\n                                      _createVNode(\"div\", { class: \"counter\" }, [\n                                        _createVNode(\"div\", { class: \"minutes\" }, [\n                                          _createVNode(\"h6\", null, _toDisplayString(_unref(deals)[2]?.remainingTime?.minutes), 1)\n                                        ])\n                                      ])\n                                    ]),\n                                    _createVNode(\"li\", null, [\n                                      _createVNode(\"div\", { class: \"counter\" }, [\n                                        _createVNode(\"div\", { class: \"seconds\" }, [\n                                          _createVNode(\"h6\", null, _toDisplayString(_unref(deals)[2]?.remainingTime?.seconds), 1)\n                                        ])\n                                      ])\n                                    ])\n                                  ])\n                                ]))\n                              : (_openBlock(), _createBlock(\"div\", { key: 1 }, [\n                                  _createVNode(\"h2\", { class: \"mt-3\" }, _toDisplayString((_unref(deals)[2].remainingTime?.seconds < 0 ? 'offer_closed' : '')), 1)\n                                ]))\n                          ])\n                        ]))\n                      : _createCommentVNode(\"\", true)\n                  ]\n                }\n              }),\n              _: 2\n            }, _parent, _scopeId))\n          })\n          _push(`<!--]-->`)\n        } else {\n          return [\n            (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(deals).length, (deal, index) => {\n              return (_openBlock(), _createBlock(_component_swiper_slide, {\n                key: `product${index}`\n              }, {\n                default: _withCtx(() => [\n                  (_unref(deals)[2]?.status)\n                    ? (_openBlock(), _createBlock(\"div\", { key: 0 }, [\n                        _createVNode(\"div\", { class: \"product-image\" }, [\n                          _createVNode(\"a\", { href: \"javascript:void(0)\" }, [\n                            _createVNode(\"img\", {\n                              src: _unref(deals)[2]?.product?.product_thumbnail?.original_url,\n                              class: \"img-fluid product-image\",\n                              alt: _unref(deals)[2]?.product?.name\n                            }, null, 8, [\"src\", \"alt\"])\n                          ]),\n                          _createVNode(\"ul\", { class: \"option\" }, [\n                            _createVNode(\"li\", {\n                              \"data-bs-toggle\": \"tooltip\",\n                              \"data-bs-placement\": \"top\",\n                              title: \"Quick View\"\n                            }, [\n                              _createVNode(\"a\", {\n                                href: \"javascript:void(0)\",\n                                onClick: _withModifiers(() => { _unref(useCartStore)().ToggleModal(_unref(deals)[2]); }, [\"prevent\"])\n                              }, [\n                                _createVNode(_component_Icon, { name: \"ri:eye-line\" })\n                              ], 8, [\"onClick\"])\n                            ]),\n                            _createVNode(\"li\", {\n                              \"data-bs-toggle\": \"tooltip\",\n                              \"data-bs-placement\": \"top\",\n                              title: \"Wishlist\"\n                            }, [\n                              _createVNode(\"a\", {\n                                href: \"javascript:void(0)\",\n                                class: \"notifi-wishlist\",\n                                onClick: _withModifiers($event => (_unref(useWishlistStore)().ToggleFromWishlist(_unref(deals)[2])), [\"prevent\"])\n                              }, [\n                                (_unref(useWishlistStore)().ExistsInCart(_unref(deals)[2]))\n                                  ? (_openBlock(), _createBlock(_component_Icon, {\n                                      key: 0,\n                                      name: \"ri:heart-line\",\n                                      size: \"20\"\n                                    }))\n                                  : (_openBlock(), _createBlock(_component_Icon, {\n                                      key: 1,\n                                      name: \"ri:heart-line\",\n                                      size: \"20\"\n                                    }))\n                              ], 8, [\"onClick\"])\n                            ]),\n                            _createVNode(\"li\", {\n                              \"data-bs-toggle\": \"tooltip\",\n                              \"data-bs-placement\": \"top\",\n                              title: \"Compare\"\n                            }, [\n                              _createVNode(\"a\", {\n                                href: \"javascript:void(0)\",\n                                onClick: _withModifiers($event => (_unref(useCompareStore)().ToggleFromCompare(_unref(deals)[2])), [\"prevent\"])\n                              }, [\n                                (_unref(useCompareStore)().ExistsInCompare(_unref(deals)[2]))\n                                  ? (_openBlock(), _createBlock(_component_Icon, {\n                                      key: 0,\n                                      name: \"ri:refresh-line\",\n                                      size: \"20\"\n                                    }))\n                                  : (_openBlock(), _createBlock(_component_Icon, {\n                                      key: 1,\n                                      name: \"ri:refresh-line\",\n                                      size: \"20\"\n                                    }))\n                              ], 8, [\"onClick\"])\n                            ])\n                          ])\n                        ]),\n                        _createVNode(\"div\", { class: \"product-detail text-center\" }, [\n                          _createVNode(\"ul\", { class: \"product-rating justify-content-center\" }, [\n                            _createVNode(_component_NuxtRating, {\n                              \"read-only\": true,\n                              ratingValue: _unref(deals)[2]?.product.rating_count || 0,\n                              \"rating-size\": '25px'\n                            }, null, 8, [\"ratingValue\"])\n                          ]),\n                          _createVNode(\"a\", { href: \"javascript:void(0)\" }, [\n                            _createVNode(\"h3\", { class: \"name w-100 mx-auto text-center\" }, _toDisplayString(_unref(deals)[2]?.product?.name), 1)\n                          ]),\n                          _createVNode(\"h3\", { class: \"price theme-color d-flex justify-content-center\" }, [\n                            _createTextVNode(\" $ \" + _toDisplayString(Number(_unref(deals)[2]?.product?.sale_price).toFixed(2)), 1),\n                            _createVNode(\"del\", { class: \"delete-price\" }, \"$ \" + _toDisplayString(Number(_unref(deals)[2]?.product?.price).toFixed(2)), 1)\n                          ]),\n                          _createVNode(\"div\", { class: \"progress custom-progressbar\" }, [\n                            _createVNode(\"div\", {\n                              class: \"progress-bar\",\n                              style: { width: (_unref(deals)[2]?.product?.quantity * 100) / 10 + '%' },\n                              role: \"progressbar\"\n                            }, null, 4)\n                          ]),\n                          _createVNode(\"h5\", { class: \"text-content\" }, [\n                            _createTextVNode(_toDisplayString(_ctx.$t('Sold')) + \" : \", 1),\n                            _createVNode(\"span\", null, _toDisplayString(_unref(deals)[2]?.product?.quantity) + \" \" + _toDisplayString(_ctx.$t('items')), 1),\n                            _createVNode(\"span\", { class: \"ms-auto text-content\" }, _toDisplayString('Hurry up offer end in'))\n                          ]),\n                          (!_unref(deals)[2].remainingTime?.seconds >= 0)\n                            ? (_openBlock(), _createBlock(\"div\", {\n                                key: 0,\n                                class: \"timer timer-2 ms-0 my-4\",\n                                id: \"clockdiv-1\"\n                              }, [\n                                _createVNode(\"ul\", { class: \"d-flex justify-content-center\" }, [\n                                  _createVNode(\"li\", null, [\n                                    _createVNode(\"div\", { class: \"counter\" }, [\n                                      _createVNode(\"div\", { class: \"days\" }, [\n                                        _createVNode(\"h6\", null, _toDisplayString(_unref(deals)[2]?.remainingTime?.days), 1)\n                                      ])\n                                    ])\n                                  ]),\n                                  _createVNode(\"li\", null, [\n                                    _createVNode(\"div\", { class: \"counter\" }, [\n                                      _createVNode(\"div\", { class: \"hours\" }, [\n                                        _createVNode(\"h6\", null, _toDisplayString(_unref(deals)[2]?.remainingTime?.hours), 1)\n                                      ])\n                                    ])\n                                  ]),\n                                  _createVNode(\"li\", null, [\n                                    _createVNode(\"div\", { class: \"counter\" }, [\n                                      _createVNode(\"div\", { class: \"minutes\" }, [\n                                        _createVNode(\"h6\", null, _toDisplayString(_unref(deals)[2]?.remainingTime?.minutes), 1)\n                                      ])\n                                    ])\n                                  ]),\n                                  _createVNode(\"li\", null, [\n                                    _createVNode(\"div\", { class: \"counter\" }, [\n                                      _createVNode(\"div\", { class: \"seconds\" }, [\n                                        _createVNode(\"h6\", null, _toDisplayString(_unref(deals)[2]?.remainingTime?.seconds), 1)\n                                      ])\n                                    ])\n                                  ])\n                                ])\n                              ]))\n                            : (_openBlock(), _createBlock(\"div\", { key: 1 }, [\n                                _createVNode(\"h2\", { class: \"mt-3\" }, _toDisplayString((_unref(deals)[2].remainingTime?.seconds < 0 ? 'offer_closed' : '')), 1)\n                              ]))\n                        ])\n                      ]))\n                    : _createCommentVNode(\"\", true)\n                ]),\n                _: 2\n              }, 1024))\n            }), 128))\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`</div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Themes/Widgets/Deal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339768,
+      "end": 1716056339782,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339782,
+      "end": 1716056339782,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339782,
+      "end": 1716056339782,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339782,
+      "end": 1716056339782,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339782,
+      "end": 1716056339782,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339782,
+      "end": 1716056339782,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Widgets/Deal/index.vue\").then(r => r.default))",
+      "start": 1716056339782,
+      "end": 1716056339782,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339782,
+      "end": 1716056339782,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339782,
+      "end": 1716056339782,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339782,
+      "end": 1716056339783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339783,
+      "end": 1716056339783,
+      "order": "normal"
+    }
+  ]
+}

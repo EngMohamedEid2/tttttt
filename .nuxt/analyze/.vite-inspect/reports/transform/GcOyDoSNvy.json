@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/sidebar/BlogTag.vue?nuxt_component=async&nuxt_component_name=BlogSidebarBlogTag",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n  <div>\n    <h2 class=\"accordion-header\" id=\"panelsStayOpen-headingThree\">\n      <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"\n        data-bs-target=\"#panelsStayOpen-collapseThree\">\n        {{ $t(\"Product Tags\") }}\n      </button>\n    </h2>\n    <div id=\"panelsStayOpen-collapseThree\" class=\"accordion-collapse collapse collapse show\">\n      <div class=\"accordion-body pt-0\">\n        <div class=\"product-tags-box\">\n          <ul>\n            <li v-for=\"tag in tags?.data\" :key=\"tag\">\n              <nuxt-link :to=\"{ path: '/blog', query: { tag: tag?.slug } }\">\n                <span>{{ tag?.name }}</span>\n              </nuxt-link>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n  <WidgetsNoData :classes=\"'no-data-added bg-light'\" :text=\"'No Tag Found'\" v-if=\"!tags?.data?.length\">\n  </WidgetsNoData>\n</div>\n</template>\n  \n<script setup>\nimport { HandleRequest } from \"~~/composables/HandleRequest\";\nlet { data: tags } = HandleRequest(`tag`, {\n  key: `GetBlogTag`,\n  params: { type: \"post\" },\n});\n</script>\n  \n<style lang=\"scss\" scoped></style>\n  ",
+      "start": 1716056262513,
+      "end": 1716056270696,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056270696,
+      "end": 1716056270696,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056270696,
+      "end": 1716056270696,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056270696,
+      "end": 1716056270696,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056270696,
+      "end": 1716056270696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056270696,
+      "end": 1716056270696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056270696,
+      "end": 1716056270696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056270696,
+      "end": 1716056270696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  class: \"accordion-header\",\n  id: \"panelsStayOpen-headingThree\"\n}\nconst _hoisted_2 = {\n  class: \"accordion-button collapsed\",\n  type: \"button\",\n  \"data-bs-toggle\": \"collapse\",\n  \"data-bs-target\": \"#panelsStayOpen-collapseThree\"\n}\nconst _hoisted_3 = {\n  id: \"panelsStayOpen-collapseThree\",\n  class: \"accordion-collapse collapse collapse show\"\n}\nconst _hoisted_4 = { class: \"accordion-body pt-0\" }\nconst _hoisted_5 = { class: \"product-tags-box\" }\n\nimport { HandleRequest } from \"~~/composables/HandleRequest\";\n\nconst _sfc_main = {\n  __name: 'BlogTag',\n  setup(__props) {\n\nlet { data: tags } = HandleRequest(`tag`, {\n  key: `GetBlogTag`,\n  params: { type: \"post\" },\n});\n\nreturn (_ctx, _cache) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", null, [\n      _createElementVNode(\"h2\", _hoisted_1, [\n        _createElementVNode(\"button\", _hoisted_2, _toDisplayString(_ctx.$t(\"Product Tags\")), 1)\n      ]),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"ul\", null, [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(tags)?.data, (tag) => {\n                return (_openBlock(), _createElementBlock(\"li\", { key: tag }, [\n                  _createVNode(_component_nuxt_link, {\n                    to: { path: '/blog', query: { tag: tag?.slug } }\n                  }, {\n                    default: _withCtx(() => [\n                      _createElementVNode(\"span\", null, _toDisplayString(tag?.name), 1)\n                    ]),\n                    _: 2\n                  }, 1032, [\"to\"])\n                ]))\n              }), 128))\n            ])\n          ])\n        ])\n      ])\n    ]),\n    (!_unref(tags)?.data?.length)\n      ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n          key: 0,\n          classes: 'no-data-added bg-light',\n          text: 'No Tag Found'\n        }))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056270696,
+      "end": 1716056270698,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/sidebar/BlogTag.vue\").then(r => r.default))",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056270698,
+      "end": 1716056270698,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056270698,
+      "end": 1716056270699,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056270699,
+      "end": 1716056270699,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056270699,
+      "end": 1716056270699,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056270699,
+      "end": 1716056270699,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056270699,
+      "end": 1716056270699,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056270699,
+      "end": 1716056270699,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056270699,
+      "end": 1716056270699,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056270699,
+      "end": 1716056270699,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/sidebar/BlogTag.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056270699,
+      "end": 1716056270699,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056270699,
+      "end": 1716056270699,
+      "order": "normal"
+    }
+  ]
+}

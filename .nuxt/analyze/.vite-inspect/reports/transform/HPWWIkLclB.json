@@ -1,0 +1,210 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/validators/inputFieldValidators.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export function validateEmail(value) {\n  let result = {};\n  if (String(value).length == 0) {\n    result.valid = false;\n    result.errorMessage = \"Email is required\";\n  } else if (\n    String(value)\n      .toLowerCase()\n      .match(\n        /^(([^<>()[\\]\\\\.,;:\\s@\"]+(\\.[^<>()[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$/\n      )\n  ) {\n    result.valid = true;\n    result.errorMessage = false;\n  } else {\n    result.valid = false;\n    result.errorMessage = \"Invalid Email\";\n  }\n  return result;\n}\n\nexport function validatePassword(params) {\n  let result = {},\n    minLengthVar = params?.minLength || 5;\n  if (params.value == undefined || params.value.length == 0 ) {\n    result.valid = false;\n    result.errorMessage = params?.errorMessage?params?.errorMessage:`This Field Cannot Be Empty`;\n  } else if (params.value.length >= minLengthVar) {\n    result.valid = true;\n    result.errorMessage = false;\n  } else {\n    result.valid = false;\n    result.errorMessage = `Length Must Be More than ${minLengthVar}`;\n  }\n  return result;\n}\n\nexport function validateRePassword(params) {\n  let result = {},\n    minLengthVar = params.minLength || 5;\n  if (params.value.length == 0) {\n    result.valid = false;\n    result.errorMessage = params?.errorMessage?params?.errorMessage:`This Field Cannot Be Empty`;\n  }\n  else if (params.value.length < minLengthVar) {\n    result.valid = false;\n    result.errorMessage = `Length Must Be More than ${minLengthVar}`;\n  } else if (params.value != params.valueToCompare) {\n    result.valid = false;\n    result.errorMessage = \"Passwords do not match\";\n  } else {\n    result.valid = true;\n    result.errorMessage = false;\n  }\n\n  return result;\n}\n\nexport function validateNonEmptyFields(params) {\n  let result = {},\n    minLengthVar = params.minLength || 1;\n  if (params.value.length == 0) {\n    result.valid = false;\n    result.errorMessage = params?.errorMessage?params?.errorMessage:`This Field Cannot Be Empty`;\n  } else if (params.value.length >= minLengthVar) {\n    result.valid = true;\n    result.errorMessage = false;\n  } else {\n    result.valid = false;\n    result.errorMessage = `This Field must Contain more than ${params.minLength} characters`;\n  }\n  return result;\n}\n\nexport function validateurl(value) {\n  let result = {};\n  if (String(value.value).length == 0) {\n    result.valid = false;\n    result.errorMessage = \"This Field Cannot Be Empty\";\n  } else if (\n    String(value.value)\n      .toLowerCase()\n      .match(/^(https?:\\/\\/)?(www\\.)?(youtube\\.com\\/watch\\?v=|youtu\\.be\\/)[\\w-]{11}$/)\n  ) {\n    result.valid = true;\n    result.errorMessage = false;\n  } else {\n    result.valid = false;\n    result.errorMessage = \"Video Link is invalid\";\n  }\n  return result;\n}",
+      "start": 1716056289959,
+      "end": 1716056290194,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056290194,
+      "end": 1716056290194,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056290194,
+      "end": 1716056290194,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056290194,
+      "end": 1716056290194,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056290194,
+      "end": 1716056290194,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056290194,
+      "end": 1716056290194,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056290194,
+      "end": 1716056290194,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056290194,
+      "end": 1716056290194,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056290194,
+      "end": 1716056290194,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056290194,
+      "end": 1716056290194,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056290194,
+      "end": 1716056290194,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056290194,
+      "end": 1716056290194,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056290194,
+      "end": 1716056290194,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056290194,
+      "end": 1716056290195,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056290195,
+      "end": 1716056290195,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056290195,
+      "end": 1716056290195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056290195,
+      "end": 1716056290195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056290195,
+      "end": 1716056290195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056290195,
+      "end": 1716056290195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056290195,
+      "end": 1716056290195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056290195,
+      "end": 1716056290195,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056290195,
+      "end": 1716056290195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056290195,
+      "end": 1716056290195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056290195,
+      "end": 1716056290195,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056290195,
+      "end": 1716056290195,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056290195,
+      "end": 1716056290198,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056290198,
+      "end": 1716056290198,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056290198,
+      "end": 1716056290198,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056290198,
+      "end": 1716056290199,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056290199,
+      "end": 1716056290199,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056290199,
+      "end": 1716056290199,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056290199,
+      "end": 1716056290199,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056290199,
+      "end": 1716056290199,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056290200,
+      "end": 1716056290200,
+      "order": "normal"
+    }
+  ]
+}

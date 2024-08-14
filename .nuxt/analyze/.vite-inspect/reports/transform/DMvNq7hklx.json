@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductDetailsTabs/index.vue?nuxt_component=async&nuxt_component_name=ShopProductDetailsWidgetsProductDetailsTabs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <WidgetsWapperTab :tabs=\"tabs\">\n    <template #pills-description>\n      <div class=\"product-description\">\n        <div class=\"nav-desh ckeditor-content\" v-html=\"product?.description\"></div>\n      </div>\n    </template>\n\n    <template #pills-review>\n      <ShopProductDetailsWidgetsProductReview :product=\"product\" :reviews=\"reviews\" />\n    </template>\n\n    <template #pills-qa>\n      <ShopProductDetailsWidgetsQuestionsAnswers :product=\"product\" :questionAnswers=\"questionAnswers\" />\n    </template>\n  </WidgetsWapperTab>\n</template>\n\n<script setup>\nlet props = defineProps({\n  product: Object,\n  reviews: Object,\n  questionAnswers: Object\n});\n\nlet tabs = ref([\n  { title: \"Description\", id: \"pills-description\" },\n  { title: \"Review\", id: \"pills-review\" },\n  { title: \"Q&A\", id: \"pills-qa\" },\n]);\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056271548,
+      "end": 1716056284732,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284732,
+      "end": 1716056284732,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284732,
+      "end": 1716056284733,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284733,
+      "end": 1716056284733,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284733,
+      "end": 1716056284733,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284733,
+      "end": 1716056284733,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284733,
+      "end": 1716056284733,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284733,
+      "end": 1716056284733,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"product-description\" }\nconst _hoisted_2 = [\"innerHTML\"]\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  product: Object,\n  reviews: Object,\n  questionAnswers: Object\n},\n  setup(__props) {\n\nlet props = __props;\n\nlet tabs = ref([\n  { title: \"Description\", id: \"pills-description\" },\n  { title: \"Review\", id: \"pills-review\" },\n  { title: \"Q&A\", id: \"pills-qa\" },\n]);\n\nreturn (_ctx, _cache) => {\n  const _component_ShopProductDetailsWidgetsProductReview = _resolveComponent(\"ShopProductDetailsWidgetsProductReview\")\n  const _component_ShopProductDetailsWidgetsQuestionsAnswers = _resolveComponent(\"ShopProductDetailsWidgetsQuestionsAnswers\")\n  const _component_WidgetsWapperTab = _resolveComponent(\"WidgetsWapperTab\")\n\n  return (_openBlock(), _createBlock(_component_WidgetsWapperTab, { tabs: _unref(tabs) }, {\n    \"pills-description\": _withCtx(() => [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", {\n          class: \"nav-desh ckeditor-content\",\n          innerHTML: __props.product?.description\n        }, null, 8, _hoisted_2)\n      ])\n    ]),\n    \"pills-review\": _withCtx(() => [\n      _createVNode(_component_ShopProductDetailsWidgetsProductReview, {\n        product: __props.product,\n        reviews: __props.reviews\n      }, null, 8, [\"product\", \"reviews\"])\n    ]),\n    \"pills-qa\": _withCtx(() => [\n      _createVNode(_component_ShopProductDetailsWidgetsQuestionsAnswers, {\n        product: __props.product,\n        questionAnswers: __props.questionAnswers\n      }, null, 8, [\"product\", \"questionAnswers\"])\n    ]),\n    _: 1\n  }, 8, [\"tabs\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284733,
+      "end": 1716056284738,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284738,
+      "end": 1716056284738,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284738,
+      "end": 1716056284738,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284738,
+      "end": 1716056284738,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductDetailsTabs/index.vue\").then(r => r.default))",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductDetailsTabs/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284739,
+      "end": 1716056284739,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/@nuxt/image-edge/dist/runtime/components/nuxt-img.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { h, defineComponent, ref, computed, onMounted } from \"vue\";\nimport { appendHeader } from \"h3\";\nimport { useImage } from \"../composables.mjs\";\nimport { parseSize } from \"../utils/index.mjs\";\nimport { baseImageProps, useBaseImage } from \"./_base.mjs\";\nimport { useHead, useRequestEvent } from \"#imports\";\nexport const imgProps = {\n  ...baseImageProps,\n  placeholder: { type: [Boolean, String, Number, Array], default: void 0 }\n};\nexport default defineComponent({\n  name: \"NuxtImg\",\n  props: imgProps,\n  setup: (props, ctx) => {\n    const $img = useImage();\n    const _base = useBaseImage(props);\n    const placeholderLoaded = ref(false);\n    const sizes = computed(() => $img.getSizes(props.src, {\n      ..._base.options.value,\n      sizes: props.sizes,\n      modifiers: {\n        ..._base.modifiers.value,\n        width: parseSize(props.width),\n        height: parseSize(props.height)\n      }\n    }));\n    const attrs = computed(() => {\n      const attrs2 = _base.attrs.value;\n      if (props.sizes) {\n        attrs2.sizes = sizes.value.sizes;\n        attrs2.srcset = sizes.value.srcset;\n      }\n      return attrs2;\n    });\n    const placeholder = computed(() => {\n      let placeholder2 = props.placeholder;\n      if (placeholder2 === \"\") {\n        placeholder2 = true;\n      }\n      if (!placeholder2 || placeholderLoaded.value) {\n        return false;\n      }\n      if (typeof placeholder2 === \"string\") {\n        return placeholder2;\n      }\n      const size = Array.isArray(placeholder2) ? placeholder2 : typeof placeholder2 === \"number\" ? [placeholder2, placeholder2] : [10, 10];\n      return $img(props.src, {\n        ..._base.modifiers.value,\n        width: size[0],\n        height: size[1],\n        quality: size[2] || 50\n      }, _base.options.value);\n    });\n    const mainSrc = computed(\n      () => props.sizes ? sizes.value.src : $img(props.src, _base.modifiers.value, _base.options.value)\n    );\n    const src = computed(() => placeholder.value ? placeholder.value : mainSrc.value);\n    if (props.preload) {\n      const isResponsive = Object.values(sizes.value).every((v) => v);\n      useHead({\n        link: [{\n          rel: \"preload\",\n          as: \"image\",\n          ...!isResponsive ? { href: src.value } : {\n            href: sizes.value.src,\n            imagesizes: sizes.value.sizes,\n            imagesrcset: sizes.value.srcset\n          }\n        }]\n      });\n    }\n    if (process.server && process.env.prerender) {\n      const sources = [\n        src.value,\n        ...(sizes.value.srcset || \"\").split(\",\").map((s) => s.split(\" \")[0])\n      ].filter((s) => s && s.includes(\"/_ipx/\"));\n      appendHeader(useRequestEvent(), \"X-Nitro-Prerender\", sources.join(\",\"));\n    }\n    const imgEl = ref(null);\n    onMounted(() => {\n      if (placeholder.value) {\n        const img = new Image();\n        img.src = mainSrc.value;\n        img.onload = () => {\n          imgEl.value.src = mainSrc.value;\n          placeholderLoaded.value = true;\n        };\n      }\n    });\n    return () => h(\"img\", {\n      ref: imgEl,\n      key: src.value,\n      src: src.value,\n      ...attrs.value,\n      ...ctx.attrs\n    });\n  }\n});\n",
+      "start": 1716056290025,
+      "end": 1716056290193,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056290193,
+      "end": 1716056290193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { h, defineComponent, ref, computed, onMounted } from \"vue\";\nimport { appendHeader } from \"h3\";\nimport { useImage } from \"../composables.mjs\";\nimport { parseSize } from \"../utils/index.mjs\";\nimport { baseImageProps, useBaseImage } from \"./_base.mjs\";\nimport { useHead, useRequestEvent } from \"#imports\";\nexport const imgProps = {\n  ...baseImageProps,\n  placeholder: { type: [Boolean, String, Number, Array], default: void 0 }\n};\nexport default defineComponent({\n  name: \"NuxtImg\",\n  props: imgProps,\n  setup: (props, ctx) => {\n    const $img = useImage();\n    const _base = useBaseImage(props);\n    const placeholderLoaded = ref(false);\n    const sizes = computed(() => $img.getSizes(props.src, {\n      ..._base.options.value,\n      sizes: props.sizes,\n      modifiers: {\n        ..._base.modifiers.value,\n        width: parseSize(props.width),\n        height: parseSize(props.height)\n      }\n    }));\n    const attrs = computed(() => {\n      const attrs2 = _base.attrs.value;\n      if (props.sizes) {\n        attrs2.sizes = sizes.value.sizes;\n        attrs2.srcset = sizes.value.srcset;\n      }\n      return attrs2;\n    });\n    const placeholder = computed(() => {\n      let placeholder2 = props.placeholder;\n      if (placeholder2 === \"\") {\n        placeholder2 = true;\n      }\n      if (!placeholder2 || placeholderLoaded.value) {\n        return false;\n      }\n      if (typeof placeholder2 === \"string\") {\n        return placeholder2;\n      }\n      const size = Array.isArray(placeholder2) ? placeholder2 : typeof placeholder2 === \"number\" ? [placeholder2, placeholder2] : [10, 10];\n      return $img(props.src, {\n        ..._base.modifiers.value,\n        width: size[0],\n        height: size[1],\n        quality: size[2] || 50\n      }, _base.options.value);\n    });\n    const mainSrc = computed(\n      () => props.sizes ? sizes.value.src : $img(props.src, _base.modifiers.value, _base.options.value)\n    );\n    const src = computed(() => placeholder.value ? placeholder.value : mainSrc.value);\n    if (props.preload) {\n      const isResponsive = Object.values(sizes.value).every((v) => v);\n      useHead({\n        link: [{\n          rel: \"preload\",\n          as: \"image\",\n          ...!isResponsive ? { href: src.value } : {\n            href: sizes.value.src,\n            imagesizes: sizes.value.sizes,\n            imagesrcset: sizes.value.srcset\n          }\n        }]\n      });\n    }\n    if (false) {\n      const sources = [\n        src.value,\n        ...(sizes.value.srcset || \"\").split(\",\").map((s) => s.split(\" \")[0])\n      ].filter((s) => s && s.includes(\"/_ipx/\"));\n      appendHeader(useRequestEvent(), \"X-Nitro-Prerender\", sources.join(\",\"));\n    }\n    const imgEl = ref(null);\n    onMounted(() => {\n      if (placeholder.value) {\n        const img = new Image();\n        img.src = mainSrc.value;\n        img.onload = () => {\n          imgEl.value.src = mainSrc.value;\n          placeholderLoaded.value = true;\n        };\n      }\n    });\n    return () => h(\"img\", {\n      ref: imgEl,\n      key: src.value,\n      src: src.value,\n      ...attrs.value,\n      ...ctx.attrs\n    });\n  }\n});\n",
+      "start": 1716056290193,
+      "end": 1716056290320,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056290320,
+      "end": 1716056290320,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056290320,
+      "end": 1716056290320,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056290320,
+      "end": 1716056290320,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056290320,
+      "end": 1716056290320,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056290320,
+      "end": 1716056290320,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056290320,
+      "end": 1716056290320,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056290320,
+      "end": 1716056290320,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056290320,
+      "end": 1716056290320,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useHead } from '@unhead/vue';\nimport { useRequestEvent } from '#app/composables/ssr';\nimport { h, defineComponent, ref, computed, onMounted } from \"vue\";\nimport { appendHeader } from \"h3\";\nimport { useImage } from \"../composables.mjs\";\nimport { parseSize } from \"../utils/index.mjs\";\nimport { baseImageProps, useBaseImage } from \"./_base.mjs\";\nexport const imgProps = {\n  ...baseImageProps,\n  placeholder: { type: [Boolean, String, Number, Array], default: void 0 }\n};\nexport default defineComponent({\n  name: \"NuxtImg\",\n  props: imgProps,\n  setup: (props, ctx) => {\n    const $img = useImage();\n    const _base = useBaseImage(props);\n    const placeholderLoaded = ref(false);\n    const sizes = computed(() => $img.getSizes(props.src, {\n      ..._base.options.value,\n      sizes: props.sizes,\n      modifiers: {\n        ..._base.modifiers.value,\n        width: parseSize(props.width),\n        height: parseSize(props.height)\n      }\n    }));\n    const attrs = computed(() => {\n      const attrs2 = _base.attrs.value;\n      if (props.sizes) {\n        attrs2.sizes = sizes.value.sizes;\n        attrs2.srcset = sizes.value.srcset;\n      }\n      return attrs2;\n    });\n    const placeholder = computed(() => {\n      let placeholder2 = props.placeholder;\n      if (placeholder2 === \"\") {\n        placeholder2 = true;\n      }\n      if (!placeholder2 || placeholderLoaded.value) {\n        return false;\n      }\n      if (typeof placeholder2 === \"string\") {\n        return placeholder2;\n      }\n      const size = Array.isArray(placeholder2) ? placeholder2 : typeof placeholder2 === \"number\" ? [placeholder2, placeholder2] : [10, 10];\n      return $img(props.src, {\n        ..._base.modifiers.value,\n        width: size[0],\n        height: size[1],\n        quality: size[2] || 50\n      }, _base.options.value);\n    });\n    const mainSrc = computed(\n      () => props.sizes ? sizes.value.src : $img(props.src, _base.modifiers.value, _base.options.value)\n    );\n    const src = computed(() => placeholder.value ? placeholder.value : mainSrc.value);\n    if (props.preload) {\n      const isResponsive = Object.values(sizes.value).every((v) => v);\n      useHead({\n        link: [{\n          rel: \"preload\",\n          as: \"image\",\n          ...!isResponsive ? { href: src.value } : {\n            href: sizes.value.src,\n            imagesizes: sizes.value.sizes,\n            imagesrcset: sizes.value.srcset\n          }\n        }]\n      });\n    }\n    if (false) {\n      const sources = [\n        src.value,\n        ...(sizes.value.srcset || \"\").split(\",\").map((s) => s.split(\" \")[0])\n      ].filter((s) => s && s.includes(\"/_ipx/\"));\n      appendHeader(useRequestEvent(), \"X-Nitro-Prerender\", sources.join(\",\"));\n    }\n    const imgEl = ref(null);\n    onMounted(() => {\n      if (placeholder.value) {\n        const img = new Image();\n        img.src = mainSrc.value;\n        img.onload = () => {\n          imgEl.value.src = mainSrc.value;\n          placeholderLoaded.value = true;\n        };\n      }\n    });\n    return () => h(\"img\", {\n      ref: imgEl,\n      key: src.value,\n      src: src.value,\n      ...attrs.value,\n      ...ctx.attrs\n    });\n  }\n});\n",
+      "start": 1716056290320,
+      "end": 1716056290321,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056290321,
+      "end": 1716056290321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056290321,
+      "end": 1716056290321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056290321,
+      "end": 1716056290321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056290321,
+      "end": 1716056290321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056290321,
+      "end": 1716056290321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056290321,
+      "end": 1716056290321,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056290321,
+      "end": 1716056290321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056290321,
+      "end": 1716056290321,
+      "order": "normal"
+    }
+  ]
+}

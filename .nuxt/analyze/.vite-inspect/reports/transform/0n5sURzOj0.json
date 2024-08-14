@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Dashboard/ProfileInformation.vue?nuxt_component=async&nuxt_component_name=AccountDashboardProfileInformation",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n  <div class=\"row\">\n    <div class=\"col-xxl-7\">\n      <div class=\"dashboard-title mb-3\">\n        <h3>{{ \"Profile Information\" }}</h3>\n      </div>\n      <div class=\"table-responsive\">\n        <table class=\"table\">\n          <tbody>\n            <tr>\n              <td>{{ \"Name\" }}:</td>\n              <td>{{ user?.name }}</td>\n            </tr>\n            <tr>\n              <td>{{ \"Phone\" }}:</td>\n              <td>+{{ user?.country_code }} {{ user?.phone }}</td>\n            </tr>\n            <tr v-if=\"user.address\">\n              <td>{{ \"Address\" }}:</td>\n              <td>\n                {{ user.address[0].street }}\n                {{ user.address[0].city }}, {{ user.address[0].state.name }},\n                {{ user.address[0].country.name }} {{ user.address[0].pincode }}\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n      <div class=\"dashboard-title mb-3\">\n        <h3>{{ \"Login Details\" }}</h3>\n      </div>\n      <div class=\"table-responsive\">\n        <table class=\"table\">\n          <tbody>\n            <tr>\n              <td>{{ \"Email\" }} :</td>\n              <td>\n                {{ user?.email }}\n                <a href=\"javascript:void(0)\" @click=\"(data) => {\n                    profileModal({ data });\n                  }\n                  \">{{ \"Edit\" }}</a>\n              </td>\n            </tr>\n            <tr>\n              <td>{{ \"Password\" }} :</td>\n              <td>\n                ●●●●●●\n                <a href=\"javascript:void(0)\" @click=\"(data) => {\n                    changePasswordModal({ data });\n                  }\n                  \">{{ \"Edit\" }}</a>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </div>\n    <div class=\"col-xxl-5\">\n      <div class=\"profile-image\">\n        <img src=\"/images/inner-page/dashboard-profile.png\" class=\"img-fluid\" alt=\"dashboard-profile\" />\n      </div>\n    </div>\n  </div>\n  <WidgetsModalsCommon :showModal=\"editProfile\" @close=\"profileModal({ state: false })\">\n    <WidgetsModalsEditProdileModal :initialData=\"initialProfileData\" @close=\"profileModal({ state: false })\" />\n  </WidgetsModalsCommon>\n  <WidgetsModalsCommon :showModal=\"chnagePassword\" @close=\"changePasswordModal({ state: false })\">\n    <WidgetsModalsChnagePasswordModal @close=\"changePasswordModal({ state: false })\" />\n  </WidgetsModalsCommon>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  user: Object,\n});\nlet initialProfileData = ref({\n  name: \"\",\n  email: \"\",\n  country_code: \"\",\n  phone: \"\",\n  status: 0,\n});\nlet editProfile = ref(false);\nlet chnagePassword = ref(false);\ninitialProfileData.value.name = props.user?.name;\ninitialProfileData.value.email = props.user?.email;\ninitialProfileData.value.country_code = props.user?.country_code;\ninitialProfileData.value.phone = props.user?.phone;\ninitialProfileData.value.status = props.user?.status;\n\nfunction profileModal({ state = true }) {\n  editProfile.value = state;\n}\nfunction changePasswordModal({ state = true }) {\n  chnagePassword.value = state;\n}\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056261522,
+      "end": 1716056262077,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056262077,
+      "end": 1716056262077,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056262077,
+      "end": 1716056262077,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056262077,
+      "end": 1716056262077,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056262077,
+      "end": 1716056262077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056262077,
+      "end": 1716056262077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056262077,
+      "end": 1716056262077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056262078,
+      "end": 1716056262078,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createTextVNode as _createTextVNode, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx } from \"vue\"\nimport _imports_0 from '/images/inner-page/dashboard-profile.png'\n\n\nconst _hoisted_1 = { class: \"row\" }\nconst _hoisted_2 = { class: \"col-xxl-7\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"dashboard-title mb-3\" }, [\n  /*#__PURE__*/_createElementVNode(\"h3\", null, /*#__PURE__*/_toDisplayString(\"Profile Information\"))\n], -1)\nconst _hoisted_4 = { class: \"table-responsive\" }\nconst _hoisted_5 = { class: \"table\" }\nconst _hoisted_6 = /*#__PURE__*/_createElementVNode(\"td\", null, /*#__PURE__*/_toDisplayString(\"Name\") + \":\", -1)\nconst _hoisted_7 = /*#__PURE__*/_createElementVNode(\"td\", null, /*#__PURE__*/_toDisplayString(\"Phone\") + \":\", -1)\nconst _hoisted_8 = { key: 0 }\nconst _hoisted_9 = /*#__PURE__*/_createElementVNode(\"td\", null, /*#__PURE__*/_toDisplayString(\"Address\") + \":\", -1)\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"dashboard-title mb-3\" }, [\n  /*#__PURE__*/_createElementVNode(\"h3\", null, /*#__PURE__*/_toDisplayString(\"Login Details\"))\n], -1)\nconst _hoisted_11 = { class: \"table-responsive\" }\nconst _hoisted_12 = { class: \"table\" }\nconst _hoisted_13 = /*#__PURE__*/_createElementVNode(\"td\", null, /*#__PURE__*/_toDisplayString(\"Email\") + \" :\", -1)\nconst _hoisted_14 = /*#__PURE__*/_createElementVNode(\"td\", null, /*#__PURE__*/_toDisplayString(\"Password\") + \" :\", -1)\nconst _hoisted_15 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-xxl-5\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"profile-image\" }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_0,\n      class: \"img-fluid\",\n      alt: \"dashboard-profile\"\n    })\n  ])\n], -1)\n\n\nconst _sfc_main = {\n  __name: 'ProfileInformation',\n  props: {\n  user: Object,\n},\n  setup(__props) {\n\nlet props = __props;\nlet initialProfileData = ref({\n  name: \"\",\n  email: \"\",\n  country_code: \"\",\n  phone: \"\",\n  status: 0,\n});\nlet editProfile = ref(false);\nlet chnagePassword = ref(false);\ninitialProfileData.value.name = props.user?.name;\ninitialProfileData.value.email = props.user?.email;\ninitialProfileData.value.country_code = props.user?.country_code;\ninitialProfileData.value.phone = props.user?.phone;\ninitialProfileData.value.status = props.user?.status;\n\nfunction profileModal({ state = true }) {\n  editProfile.value = state;\n}\nfunction changePasswordModal({ state = true }) {\n  chnagePassword.value = state;\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsModalsEditProdileModal = _resolveComponent(\"WidgetsModalsEditProdileModal\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsChnagePasswordModal = _resolveComponent(\"WidgetsModalsChnagePasswordModal\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _hoisted_3,\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"table\", _hoisted_5, [\n            _createElementVNode(\"tbody\", null, [\n              _createElementVNode(\"tr\", null, [\n                _hoisted_6,\n                _createElementVNode(\"td\", null, _toDisplayString(__props.user?.name), 1)\n              ]),\n              _createElementVNode(\"tr\", null, [\n                _hoisted_7,\n                _createElementVNode(\"td\", null, \"+\" + _toDisplayString(__props.user?.country_code) + \" \" + _toDisplayString(__props.user?.phone), 1)\n              ]),\n              (__props.user.address)\n                ? (_openBlock(), _createElementBlock(\"tr\", _hoisted_8, [\n                    _hoisted_9,\n                    _createElementVNode(\"td\", null, _toDisplayString(__props.user.address[0].street) + \" \" + _toDisplayString(__props.user.address[0].city) + \", \" + _toDisplayString(__props.user.address[0].state.name) + \", \" + _toDisplayString(__props.user.address[0].country.name) + \" \" + _toDisplayString(__props.user.address[0].pincode), 1)\n                  ]))\n                : _createCommentVNode(\"\", true)\n            ])\n          ])\n        ]),\n        _hoisted_10,\n        _createElementVNode(\"div\", _hoisted_11, [\n          _createElementVNode(\"table\", _hoisted_12, [\n            _createElementVNode(\"tbody\", null, [\n              _createElementVNode(\"tr\", null, [\n                _hoisted_13,\n                _createElementVNode(\"td\", null, [\n                  _createTextVNode(_toDisplayString(__props.user?.email) + \" \", 1),\n                  _createElementVNode(\"a\", {\n                    href: \"javascript:void(0)\",\n                    onClick: _cache[0] || (_cache[0] = (data) => {\n                    profileModal({ data });\n                  }\n                  )\n                  }, _toDisplayString(\"Edit\"))\n                ])\n              ]),\n              _createElementVNode(\"tr\", null, [\n                _hoisted_14,\n                _createElementVNode(\"td\", null, [\n                  _createTextVNode(\" ●●●●●● \"),\n                  _createElementVNode(\"a\", {\n                    href: \"javascript:void(0)\",\n                    onClick: _cache[1] || (_cache[1] = (data) => {\n                    changePasswordModal({ data });\n                  }\n                  )\n                  }, _toDisplayString(\"Edit\"))\n                ])\n              ])\n            ])\n          ])\n        ])\n      ]),\n      _hoisted_15\n    ]),\n    _createVNode(_component_WidgetsModalsCommon, {\n      showModal: _unref(editProfile),\n      onClose: _cache[3] || (_cache[3] = $event => (profileModal({ state: false })))\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_WidgetsModalsEditProdileModal, {\n          initialData: _unref(initialProfileData),\n          onClose: _cache[2] || (_cache[2] = $event => (profileModal({ state: false })))\n        }, null, 8, [\"initialData\"])\n      ]),\n      _: 1\n    }, 8, [\"showModal\"]),\n    _createVNode(_component_WidgetsModalsCommon, {\n      showModal: _unref(chnagePassword),\n      onClose: _cache[5] || (_cache[5] = $event => (changePasswordModal({ state: false })))\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_WidgetsModalsChnagePasswordModal, {\n          onClose: _cache[4] || (_cache[4] = $event => (changePasswordModal({ state: false })))\n        })\n      ]),\n      _: 1\n    }, 8, [\"showModal\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056262078,
+      "end": 1716056262092,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056262092,
+      "end": 1716056262092,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056262092,
+      "end": 1716056262092,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056262092,
+      "end": 1716056262092,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056262092,
+      "end": 1716056262092,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Dashboard/ProfileInformation.vue\").then(r => r.default))",
+      "start": 1716056262092,
+      "end": 1716056262092,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056262092,
+      "end": 1716056262092,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056262093,
+      "end": 1716056262093,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Dashboard/ProfileInformation.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056262093,
+      "end": 1716056262094,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056262094,
+      "end": 1716056262094,
+      "order": "normal"
+    }
+  ]
+}

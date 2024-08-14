@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Image4/Image.vue?nuxt_component=async&nuxt_component_name=ShopProductDetailsImage4Image",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n    <div class=\"col-6 col-grid-box wow fadeInUp\" v-for=\"(productImages, index) in Data.product_galleries\" :key=\"index\">\n        <div class=\"slider-image\">\n            <img :src=\"productImages?.original_url\" class=\"img-fluid\" alt=\"\">\n        </div>\n    </div>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    Data: Object,\n    GlobalSelectedVariant: Object\n})\n</script>\n",
+      "start": 1716056271437,
+      "end": 1716056271556,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271556,
+      "end": 1716056271556,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271556,
+      "end": 1716056271556,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271556,
+      "end": 1716056271556,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271556,
+      "end": 1716056271556,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271556,
+      "end": 1716056271556,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271556,
+      "end": 1716056271556,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271556,
+      "end": 1716056271556,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"slider-image\" }\nconst _hoisted_2 = [\"src\"]\n\n\nconst _sfc_main = {\n  __name: 'Image',\n  props: {\n    Data: Object,\n    GlobalSelectedVariant: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.Data.product_galleries, (productImages, index) => {\n      return (_openBlock(), _createElementBlock(\"div\", {\n        class: \"col-6 col-grid-box wow fadeInUp\",\n        key: index\n      }, [\n        _createElementVNode(\"div\", _hoisted_1, [\n          _createElementVNode(\"img\", {\n            src: productImages?.original_url,\n            class: \"img-fluid\",\n            alt: \"\"\n          }, null, 8, _hoisted_2)\n        ])\n      ]))\n    }), 128))\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056271556,
+      "end": 1716056271557,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Image4/Image.vue\").then(r => r.default))",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271557,
+      "end": 1716056271557,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271557,
+      "end": 1716056271558,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Image4/Image.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271558,
+      "end": 1716056271558,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271558,
+      "end": 1716056271558,
+      "order": "normal"
+    }
+  ]
+}

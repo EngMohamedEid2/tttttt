@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/BankDetails/index.vue?nuxt_component=async&nuxt_component_name=AccountBankDetails",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\n<template>\n    <div>\n    <div class=\"title-header\">\n        <div class=\"d-flex align-items-center\">\n            <h5>{{ $t(\"Bank Details\") }}</h5>\n        </div>\n    </div>\n    <form class=\"themeform-auth\" @submit.prevent=\"handleSubmit()\">\n        <div class=\"row mb-3 align-items-center\">\n            <label for=\"bank_account_no\" class=\"form-label col-xxl-2 col-lg-12 col-md-3\">{{ $t(\"Bank Account No\") }}</label>\n            <div class=\"col-xxl-10 col-lg-12 col-md-9\">\n                <WidgetsInputFieldsNonEmptyField classes=\"form-control\" :validate=\"false\" :formSubmitted=\"formSubmitted\"\n                    v-model=\"input.bank_account_no\" id=\"bank_account_no\" placeholder=\"Enter Bank Account No\" />\n            </div>\n        </div>\n        <div class=\"row mb-3 align-items-center\">\n            <label for=\"bank_name\" class=\"form-label col-xxl-2 col-lg-12 col-md-3\">{{ $t(\"Bank Name\") }}</label>\n            <div class=\"col-xxl-10 col-lg-12 col-md-9\">\n                <WidgetsInputFieldsNonEmptyField classes=\"form-control\" :validate=\"false\" :formSubmitted=\"formSubmitted\"\n                    v-model=\"input.bank_name\" id=\"bank_name\" placeholder=\"Enter Bank Name\" />\n            </div>\n        </div>\n        <div class=\"row mb-3 align-items-center\">\n            <label for=\"bank_holder_name\" class=\"form-label col-xxl-2 col-lg-12 col-md-3\">{{ $t(\"Holder Name\") }}</label>\n            <div class=\"col-xxl-10 col-lg-12 col-md-9\">\n                <WidgetsInputFieldsNonEmptyField classes=\"form-control\" :validate=\"false\" :formSubmitted=\"formSubmitted\"\n                    v-model=\"input.bank_holder_name\" id=\"bank_holder_name\" placeholder=\"Enter Bank Holder Name\" />\n            </div>\n        </div>\n        <div class=\"row mb-3 align-items-center\">\n            <label for=\"swift\" class=\"form-label col-xxl-2 col-lg-12 col-md-3\">{{ $t(\"Swift\") }}</label>\n            <div class=\"col-xxl-10 col-lg-12 col-md-9\">\n                <WidgetsInputFieldsNonEmptyField classes=\"form-control\" :validate=\"false\" :formSubmitted=\"formSubmitted\"\n                    v-model=\"input.swift\" id=\"swift\" placeholder=\"Enter Swift\" />\n            </div>\n        </div>\n        <div class=\"row mb-3 align-items-center\">\n            <label for=\"ifsc\" class=\"form-label col-xxl-2 col-lg-12 col-md-3\">{{ $t(\"Ifsc\") }}</label>\n            <div class=\"col-xxl-10 col-lg-12 col-md-9\">\n                <WidgetsInputFieldsNonEmptyField classes=\"form-control\" :validate=\"false\" :formSubmitted=\"formSubmitted\"\n                    v-model=\"input.ifsc\" id=\"ifsc\" placeholder=\"Enter Ifsc\" />\n            </div>\n        </div>\n    </form>\n\n    <div class=\"mb-3 title-header border-custom\">\n        <div class=\"d-flex align-items-center\">\n            <h5>{{ $t(\"Paypal Details\") }}</h5>\n        </div>\n    </div>\n    <form class=\"themeform-auth\" @submit.prevent=\"handleSubmit()\">\n        <div class=\"row mb-3 align-items-center\">\n            <label for=\"paypal_email\" class=\"form-label col-xxl-2 col-lg-12 col-md-3\">{{ $t(\"Paypal Email\") }}</label>\n            <div class=\"col-xxl-10 col-lg-12 col-md-9\">\n                <WidgetsInputFieldsEmailField classes=\"form-control\" :validate=\"false\" :formSubmitted=\"formSubmitted\"\n                    v-model=\"input.paypal_email\" id=\"paypal_email\" placeholder=\"Enter Paypal Email\" />\n            </div>\n        </div>\n        <div class=\"text-end\">\n            <WidgetsButton :classes=\"'btn btn-animation theme-bg-color btn-md d-inline-block'\" :id=\"'payout_btn'\">{{\n                $t(\"Save\") }}</WidgetsButton>\n        </div>\n    </form>\n</div>\n</template>\n\n<script setup>\nimport isFormValid from \"@/utils/validators/formValidator\";\nlet input = ref({\n    bank_account_no: { data: null },\n    bank_name: { data: '' },\n    bank_holder_name: { data: '' },\n    swift: { data: '' },\n    ifsc: { data: '' },\n    status: { data: 1 },\n    paypal_email: { data: '' }\n})\n\nasync function handleSubmit() {\n    let ObjTOSend = { data: {} }\n    if (isFormValid({ formData: input.value })) {\n        ObjTOSend.data = convertInputData({ data: input.value })\n        let { data, error } = await useFetch('paymentAccount', {\n            baseURL: BaseUrl,\n            headers: GetHeaders(),\n            cache: false,\n            method: 'post',\n            body: ObjTOSend.data,\n            key: 'CreatePayment'\n        })\n    }\n}\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056305907,
+      "end": 1716056306234,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306234,
+      "end": 1716056306234,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306234,
+      "end": 1716056306234,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306234,
+      "end": 1716056306234,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306234,
+      "end": 1716056306234,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056306234,
+      "end": 1716056306234,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056306234,
+      "end": 1716056306234,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056306234,
+      "end": 1716056306234,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056306234,
+      "end": 1716056306234,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056306234,
+      "end": 1716056306234,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056306234,
+      "end": 1716056306234,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport isFormValid from \"@/utils/validators/formValidator\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet input = ref({\n    bank_account_no: { data: null },\n    bank_name: { data: '' },\n    bank_holder_name: { data: '' },\n    swift: { data: '' },\n    ifsc: { data: '' },\n    status: { data: 1 },\n    paypal_email: { data: '' }\n})\n\nasync function handleSubmit() {\n    let ObjTOSend = { data: {} }\n    if (isFormValid({ formData: input.value })) {\n        ObjTOSend.data = convertInputData({ data: input.value })\n        let { data, error } = await useFetch('paymentAccount', {\n            baseURL: BaseUrl,\n            headers: GetHeaders(),\n            cache: false,\n            method: 'post',\n            body: ObjTOSend.data,\n            key: 'CreatePayment'\n        })\n    }\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsInputFieldsNonEmptyField = _resolveComponent(\"WidgetsInputFieldsNonEmptyField\")\n  const _component_WidgetsInputFieldsEmailField = _resolveComponent(\"WidgetsInputFieldsEmailField\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_attrs)\n  }><div class=\"title-header\"><div class=\"d-flex align-items-center\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Bank Details\"))\n  }</h5></div></div><form class=\"themeform-auth\"><div class=\"row mb-3 align-items-center\"><label for=\"bank_account_no\" class=\"form-label col-xxl-2 col-lg-12 col-md-3\">${\n    _ssrInterpolate(_ctx.$t(\"Bank Account No\"))\n  }</label><div class=\"col-xxl-10 col-lg-12 col-md-9\">`)\n  _push(_ssrRenderComponent(_component_WidgetsInputFieldsNonEmptyField, {\n    classes: \"form-control\",\n    validate: false,\n    formSubmitted: _ctx.formSubmitted,\n    modelValue: _unref(input).bank_account_no,\n    \"onUpdate:modelValue\": $event => ((_unref(input).bank_account_no) = $event),\n    id: \"bank_account_no\",\n    placeholder: \"Enter Bank Account No\"\n  }, null, _parent))\n  _push(`</div></div><div class=\"row mb-3 align-items-center\"><label for=\"bank_name\" class=\"form-label col-xxl-2 col-lg-12 col-md-3\">${_ssrInterpolate(_ctx.$t(\"Bank Name\"))}</label><div class=\"col-xxl-10 col-lg-12 col-md-9\">`)\n  _push(_ssrRenderComponent(_component_WidgetsInputFieldsNonEmptyField, {\n    classes: \"form-control\",\n    validate: false,\n    formSubmitted: _ctx.formSubmitted,\n    modelValue: _unref(input).bank_name,\n    \"onUpdate:modelValue\": $event => ((_unref(input).bank_name) = $event),\n    id: \"bank_name\",\n    placeholder: \"Enter Bank Name\"\n  }, null, _parent))\n  _push(`</div></div><div class=\"row mb-3 align-items-center\"><label for=\"bank_holder_name\" class=\"form-label col-xxl-2 col-lg-12 col-md-3\">${_ssrInterpolate(_ctx.$t(\"Holder Name\"))}</label><div class=\"col-xxl-10 col-lg-12 col-md-9\">`)\n  _push(_ssrRenderComponent(_component_WidgetsInputFieldsNonEmptyField, {\n    classes: \"form-control\",\n    validate: false,\n    formSubmitted: _ctx.formSubmitted,\n    modelValue: _unref(input).bank_holder_name,\n    \"onUpdate:modelValue\": $event => ((_unref(input).bank_holder_name) = $event),\n    id: \"bank_holder_name\",\n    placeholder: \"Enter Bank Holder Name\"\n  }, null, _parent))\n  _push(`</div></div><div class=\"row mb-3 align-items-center\"><label for=\"swift\" class=\"form-label col-xxl-2 col-lg-12 col-md-3\">${_ssrInterpolate(_ctx.$t(\"Swift\"))}</label><div class=\"col-xxl-10 col-lg-12 col-md-9\">`)\n  _push(_ssrRenderComponent(_component_WidgetsInputFieldsNonEmptyField, {\n    classes: \"form-control\",\n    validate: false,\n    formSubmitted: _ctx.formSubmitted,\n    modelValue: _unref(input).swift,\n    \"onUpdate:modelValue\": $event => ((_unref(input).swift) = $event),\n    id: \"swift\",\n    placeholder: \"Enter Swift\"\n  }, null, _parent))\n  _push(`</div></div><div class=\"row mb-3 align-items-center\"><label for=\"ifsc\" class=\"form-label col-xxl-2 col-lg-12 col-md-3\">${_ssrInterpolate(_ctx.$t(\"Ifsc\"))}</label><div class=\"col-xxl-10 col-lg-12 col-md-9\">`)\n  _push(_ssrRenderComponent(_component_WidgetsInputFieldsNonEmptyField, {\n    classes: \"form-control\",\n    validate: false,\n    formSubmitted: _ctx.formSubmitted,\n    modelValue: _unref(input).ifsc,\n    \"onUpdate:modelValue\": $event => ((_unref(input).ifsc) = $event),\n    id: \"ifsc\",\n    placeholder: \"Enter Ifsc\"\n  }, null, _parent))\n  _push(`</div></div></form><div class=\"mb-3 title-header border-custom\"><div class=\"d-flex align-items-center\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Paypal Details\"))\n  }</h5></div></div><form class=\"themeform-auth\"><div class=\"row mb-3 align-items-center\"><label for=\"paypal_email\" class=\"form-label col-xxl-2 col-lg-12 col-md-3\">${\n    _ssrInterpolate(_ctx.$t(\"Paypal Email\"))\n  }</label><div class=\"col-xxl-10 col-lg-12 col-md-9\">`)\n  _push(_ssrRenderComponent(_component_WidgetsInputFieldsEmailField, {\n    classes: \"form-control\",\n    validate: false,\n    formSubmitted: _ctx.formSubmitted,\n    modelValue: _unref(input).paypal_email,\n    \"onUpdate:modelValue\": $event => ((_unref(input).paypal_email) = $event),\n    id: \"paypal_email\",\n    placeholder: \"Enter Paypal Email\"\n  }, null, _parent))\n  _push(`</div></div><div class=\"text-end\">`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn btn-animation theme-bg-color btn-md d-inline-block',\n    id: 'payout_btn'\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t(\"Save\"))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Save\")), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></form></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/BankDetails/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056306234,
+      "end": 1716056306238,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/BankDetails/index.vue\").then(r => r.default))",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306238,
+      "end": 1716056306238,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306238,
+      "end": 1716056306239,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306239,
+      "end": 1716056306239,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306239,
+      "end": 1716056306239,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306239,
+      "end": 1716056306239,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306239,
+      "end": 1716056306239,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306239,
+      "end": 1716056306239,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306239,
+      "end": 1716056306239,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056306239,
+      "end": 1716056306239,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056306239,
+      "end": 1716056306239,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056306239,
+      "end": 1716056306239,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056306239,
+      "end": 1716056306239,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056306239,
+      "end": 1716056306239,
+      "order": "normal"
+    }
+  ]
+}

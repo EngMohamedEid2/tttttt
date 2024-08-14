@@ -1,0 +1,260 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/NewsletterModal/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <WidgetsModalsCommon :showModal=\"showModal\" modalClass=\"newsletter-modal modal-lg\" @close=\"closeModal({ state: false })\">\n    <div class=\"modal-header p-0\">\n      <WidgetsButton :classes=\"'btn btn-close'\" :id=\"'profile_modal_close_btn'\" @onClick=\"closeModal({ state: false })\">\n        <Icon name=\"ri-close-line\"></Icon>\n      </WidgetsButton>\n    </div>\n    <div class=\"modal-box\">\n      <div class=\"modal-image\">\n        <img src=\"/images/newsletter/3.jpg\" class=\"img-fluid\" alt=\"newsletter\">\n      </div>\n      <div class=\"modal-content content-padding\">\n        <div>\n          <img src=\"/images/logo/1.png\" class=\"modal-logo\" alt=\"logo\">\n          <h2>{{ '15%' }} <span>{{ 'off' }}</span></h2>\n          <h5>{{ 'Want to make your purchase' }}?</h5>\n          <p>{{ 'Plus early access to new arrivals exclusive sales lots more' }}?</p>\n          <form class=\"modal-form\">\n            <div class=\"input-group modal-form-box\">\n              <input type=\"email\" class=\"form-control\" placeholder=\"Your email here\">\n              <WidgetsButton :classes=\"'input-group-text'\" :id=\"'submit_newsletter_btn'\" @click@=\"submit(emailVal.value)\">\n                {{ 'Submit' }}</WidgetsButton>\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </WidgetsModalsCommon>\n</template>\n  \n<script setup>\nlet showModal = ref(false)\n\nonMounted(() => {\n  if (localStorage.getItem('showModel') !== 'newsletter') {\n    showModal.value = true\n    localStorage.setItem('showModel', 'newsletter')\n  }\n})\n\nfunction closeModal() {\n  showModal.value = false\n}\n</script>\n  \n<style lang=\"scss\" scoped></style>",
+      "start": 1716056342598,
+      "end": 1716056342720,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342720,
+      "end": 1716056342720,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342720,
+      "end": 1716056342720,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342720,
+      "end": 1716056342720,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342720,
+      "end": 1716056342720,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342720,
+      "end": 1716056342720,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342720,
+      "end": 1716056342720,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342720,
+      "end": 1716056342720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342721,
+      "end": 1716056342721,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342721,
+      "end": 1716056342721,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342721,
+      "end": 1716056342721,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/newsletter/3.jpg'\nimport _imports_1 from '/images/logo/1.png'\n\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet showModal = ref(false)\n\nonMounted(() => {\n  if (localStorage.getItem('showModel') !== 'newsletter') {\n    showModal.value = true\n    localStorage.setItem('showModel', 'newsletter')\n  }\n})\n\nfunction closeModal() {\n  showModal.value = false\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, _mergeProps({\n    showModal: _unref(showModal),\n    modalClass: \"newsletter-modal modal-lg\",\n    onClose: $event => (closeModal({ state: false }))\n  }, _attrs), {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<div class=\"modal-header p-0\"${_scopeId}>`)\n        _push(_ssrRenderComponent(_component_WidgetsButton, {\n          classes: 'btn btn-close',\n          id: 'profile_modal_close_btn',\n          onOnClick: $event => (closeModal({ state: false }))\n        }, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(_ssrRenderComponent(_component_Icon, { name: \"ri-close-line\" }, null, _parent, _scopeId))\n            } else {\n              return [\n                _createVNode(_component_Icon, { name: \"ri-close-line\" })\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n        _push(`</div><div class=\"modal-box\"${\n          _scopeId\n        }><div class=\"modal-image\"${\n          _scopeId\n        }><img${\n          _ssrRenderAttr(\"src\", _imports_0)\n        } class=\"img-fluid\" alt=\"newsletter\"${\n          _scopeId\n        }></div><div class=\"modal-content content-padding\"${\n          _scopeId\n        }><div${\n          _scopeId\n        }><img${\n          _ssrRenderAttr(\"src\", _imports_1)\n        } class=\"modal-logo\" alt=\"logo\"${\n          _scopeId\n        }><h2${\n          _scopeId\n        }>${\n          _ssrInterpolate('15%')\n        } <span${\n          _scopeId\n        }>${\n          _ssrInterpolate('off')\n        }</span></h2><h5${\n          _scopeId\n        }>${\n          _ssrInterpolate('Want to make your purchase')\n        }?</h5><p${\n          _scopeId\n        }>${\n          _ssrInterpolate('Plus early access to new arrivals exclusive sales lots more')\n        }?</p><form class=\"modal-form\"${\n          _scopeId\n        }><div class=\"input-group modal-form-box\"${\n          _scopeId\n        }><input type=\"email\" class=\"form-control\" placeholder=\"Your email here\"${\n          _scopeId\n        }>`)\n        _push(_ssrRenderComponent(_component_WidgetsButton, {\n          classes: 'input-group-text',\n          id: 'submit_newsletter_btn',\n          \"onClick@\": $event => (_ctx.submit(_ctx.emailVal.value))\n        }, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(`${_ssrInterpolate('Submit')}`)\n            } else {\n              return [\n                _createTextVNode(_toDisplayString('Submit'))\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n        _push(`</div></form></div></div></div>`)\n      } else {\n        return [\n          _createVNode(\"div\", { class: \"modal-header p-0\" }, [\n            _createVNode(_component_WidgetsButton, {\n              classes: 'btn btn-close',\n              id: 'profile_modal_close_btn',\n              onOnClick: $event => (closeModal({ state: false }))\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri-close-line\" })\n              ]),\n              _: 1\n            }, 8, [\"onOnClick\"])\n          ]),\n          _createVNode(\"div\", { class: \"modal-box\" }, [\n            _createVNode(\"div\", { class: \"modal-image\" }, [\n              _createVNode(\"img\", {\n                src: _imports_0,\n                class: \"img-fluid\",\n                alt: \"newsletter\"\n              })\n            ]),\n            _createVNode(\"div\", { class: \"modal-content content-padding\" }, [\n              _createVNode(\"div\", null, [\n                _createVNode(\"img\", {\n                  src: _imports_1,\n                  class: \"modal-logo\",\n                  alt: \"logo\"\n                }),\n                _createVNode(\"h2\", null, [\n                  _createTextVNode(_toDisplayString('15%') + \" \"),\n                  _createVNode(\"span\", null, _toDisplayString('off'))\n                ]),\n                _createVNode(\"h5\", null, _toDisplayString('Want to make your purchase') + \"?\"),\n                _createVNode(\"p\", null, _toDisplayString('Plus early access to new arrivals exclusive sales lots more') + \"?\"),\n                _createVNode(\"form\", { class: \"modal-form\" }, [\n                  _createVNode(\"div\", { class: \"input-group modal-form-box\" }, [\n                    _createVNode(\"input\", {\n                      type: \"email\",\n                      class: \"form-control\",\n                      placeholder: \"Your email here\"\n                    }),\n                    _createVNode(_component_WidgetsButton, {\n                      classes: 'input-group-text',\n                      id: 'submit_newsletter_btn',\n                      \"onClick@\": $event => (_ctx.submit(_ctx.emailVal.value))\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString('Submit'))\n                      ]),\n                      _: 1\n                    }, 8, [\"onClick@\"])\n                  ])\n                ])\n              ])\n            ])\n          ])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/NewsletterModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342721,
+      "end": 1716056342721,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342721,
+      "end": 1716056342721,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342721,
+      "end": 1716056342721,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342721,
+      "end": 1716056342721,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342721,
+      "end": 1716056342721,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342721,
+      "end": 1716056342721,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342721,
+      "end": 1716056342721,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342721,
+      "end": 1716056342721,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342721,
+      "end": 1716056342722,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056342722,
+      "end": 1716056342722,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342722,
+      "end": 1716056342722,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342722,
+      "end": 1716056342722,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342722,
+      "end": 1716056342722,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342722,
+      "end": 1716056342722,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342722,
+      "end": 1716056342722,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342722,
+      "end": 1716056342723,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342723,
+      "end": 1716056342723,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342723,
+      "end": 1716056342723,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342723,
+      "end": 1716056342723,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/newsletter/3.jpg'\nimport _imports_1 from '/images/logo/1.png'\n\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet showModal = ref(false)\n\nonMounted(() => {\n  if (localStorage.getItem('showModel') !== 'newsletter') {\n    showModal.value = true\n    localStorage.setItem('showModel', 'newsletter')\n  }\n})\n\nfunction closeModal() {\n  showModal.value = false\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, _mergeProps({\n    showModal: _unref(showModal),\n    modalClass: \"newsletter-modal modal-lg\",\n    onClose: $event => (closeModal({ state: false }))\n  }, _attrs), {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<div class=\"modal-header p-0\"${_scopeId}>`)\n        _push(_ssrRenderComponent(_component_WidgetsButton, {\n          classes: 'btn btn-close',\n          id: 'profile_modal_close_btn',\n          onOnClick: $event => (closeModal({ state: false }))\n        }, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(_ssrRenderComponent(_component_Icon, { name: \"ri-close-line\" }, null, _parent, _scopeId))\n            } else {\n              return [\n                _createVNode(_component_Icon, { name: \"ri-close-line\" })\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n        _push(`</div><div class=\"modal-box\"${\n          _scopeId\n        }><div class=\"modal-image\"${\n          _scopeId\n        }><img${\n          _ssrRenderAttr(\"src\", _imports_0)\n        } class=\"img-fluid\" alt=\"newsletter\"${\n          _scopeId\n        }></div><div class=\"modal-content content-padding\"${\n          _scopeId\n        }><div${\n          _scopeId\n        }><img${\n          _ssrRenderAttr(\"src\", _imports_1)\n        } class=\"modal-logo\" alt=\"logo\"${\n          _scopeId\n        }><h2${\n          _scopeId\n        }>${\n          _ssrInterpolate('15%')\n        } <span${\n          _scopeId\n        }>${\n          _ssrInterpolate('off')\n        }</span></h2><h5${\n          _scopeId\n        }>${\n          _ssrInterpolate('Want to make your purchase')\n        }?</h5><p${\n          _scopeId\n        }>${\n          _ssrInterpolate('Plus early access to new arrivals exclusive sales lots more')\n        }?</p><form class=\"modal-form\"${\n          _scopeId\n        }><div class=\"input-group modal-form-box\"${\n          _scopeId\n        }><input type=\"email\" class=\"form-control\" placeholder=\"Your email here\"${\n          _scopeId\n        }>`)\n        _push(_ssrRenderComponent(_component_WidgetsButton, {\n          classes: 'input-group-text',\n          id: 'submit_newsletter_btn',\n          \"onClick@\": $event => (_ctx.submit(_ctx.emailVal.value))\n        }, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(`${_ssrInterpolate('Submit')}`)\n            } else {\n              return [\n                _createTextVNode(_toDisplayString('Submit'))\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n        _push(`</div></form></div></div></div>`)\n      } else {\n        return [\n          _createVNode(\"div\", { class: \"modal-header p-0\" }, [\n            _createVNode(_component_WidgetsButton, {\n              classes: 'btn btn-close',\n              id: 'profile_modal_close_btn',\n              onOnClick: $event => (closeModal({ state: false }))\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri-close-line\" })\n              ]),\n              _: 1\n            }, 8, [\"onOnClick\"])\n          ]),\n          _createVNode(\"div\", { class: \"modal-box\" }, [\n            _createVNode(\"div\", { class: \"modal-image\" }, [\n              _createVNode(\"img\", {\n                src: _imports_0,\n                class: \"img-fluid\",\n                alt: \"newsletter\"\n              })\n            ]),\n            _createVNode(\"div\", { class: \"modal-content content-padding\" }, [\n              _createVNode(\"div\", null, [\n                _createVNode(\"img\", {\n                  src: _imports_1,\n                  class: \"modal-logo\",\n                  alt: \"logo\"\n                }),\n                _createVNode(\"h2\", null, [\n                  _createTextVNode(_toDisplayString('15%') + \" \"),\n                  _createVNode(\"span\", null, _toDisplayString('off'))\n                ]),\n                _createVNode(\"h5\", null, _toDisplayString('Want to make your purchase') + \"?\"),\n                _createVNode(\"p\", null, _toDisplayString('Plus early access to new arrivals exclusive sales lots more') + \"?\"),\n                _createVNode(\"form\", { class: \"modal-form\" }, [\n                  _createVNode(\"div\", { class: \"input-group modal-form-box\" }, [\n                    _createVNode(\"input\", {\n                      type: \"email\",\n                      class: \"form-control\",\n                      placeholder: \"Your email here\"\n                    }),\n                    _createVNode(_component_WidgetsButton, {\n                      classes: 'input-group-text',\n                      id: 'submit_newsletter_btn',\n                      \"onClick@\": $event => (_ctx.submit(_ctx.emailVal.value))\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString('Submit'))\n                      ]),\n                      _: 1\n                    }, 8, [\"onClick@\"])\n                  ])\n                ])\n              ])\n            ])\n          ])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/NewsletterModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342723,
+      "end": 1716056342726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/newsletter/3.jpg'\nimport _imports_1 from '/images/logo/1.png'\n\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet showModal = ref(false)\n\nonMounted(() => {\n  if (localStorage.getItem('showModel') !== 'newsletter') {\n    showModal.value = true\n    localStorage.setItem('showModel', 'newsletter')\n  }\n})\n\nfunction closeModal() {\n  showModal.value = false\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, _mergeProps({\n    showModal: _unref(showModal),\n    modalClass: \"newsletter-modal modal-lg\",\n    onClose: $event => (closeModal({ state: false }))\n  }, _attrs), {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<div class=\"modal-header p-0\"${_scopeId}>`)\n        _push(_ssrRenderComponent(_component_WidgetsButton, {\n          classes: 'btn btn-close',\n          id: 'profile_modal_close_btn',\n          onOnClick: $event => (closeModal({ state: false }))\n        }, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(_ssrRenderComponent(_component_Icon, { name: \"ri-close-line\" }, null, _parent, _scopeId))\n            } else {\n              return [\n                _createVNode(_component_Icon, { name: \"ri-close-line\" })\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n        _push(`</div><div class=\"modal-box\"${\n          _scopeId\n        }><div class=\"modal-image\"${\n          _scopeId\n        }><img${\n          _ssrRenderAttr(\"src\", _imports_0)\n        } class=\"img-fluid\" alt=\"newsletter\"${\n          _scopeId\n        }></div><div class=\"modal-content content-padding\"${\n          _scopeId\n        }><div${\n          _scopeId\n        }><img${\n          _ssrRenderAttr(\"src\", _imports_1)\n        } class=\"modal-logo\" alt=\"logo\"${\n          _scopeId\n        }><h2${\n          _scopeId\n        }>${\n          _ssrInterpolate('15%')\n        } <span${\n          _scopeId\n        }>${\n          _ssrInterpolate('off')\n        }</span></h2><h5${\n          _scopeId\n        }>${\n          _ssrInterpolate('Want to make your purchase')\n        }?</h5><p${\n          _scopeId\n        }>${\n          _ssrInterpolate('Plus early access to new arrivals exclusive sales lots more')\n        }?</p><form class=\"modal-form\"${\n          _scopeId\n        }><div class=\"input-group modal-form-box\"${\n          _scopeId\n        }><input type=\"email\" class=\"form-control\" placeholder=\"Your email here\"${\n          _scopeId\n        }>`)\n        _push(_ssrRenderComponent(_component_WidgetsButton, {\n          classes: 'input-group-text',\n          id: 'submit_newsletter_btn',\n          \"onClick@\": $event => (_ctx.submit(_ctx.emailVal.value))\n        }, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(`${_ssrInterpolate('Submit')}`)\n            } else {\n              return [\n                _createTextVNode(_toDisplayString('Submit'))\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n        _push(`</div></form></div></div></div>`)\n      } else {\n        return [\n          _createVNode(\"div\", { class: \"modal-header p-0\" }, [\n            _createVNode(_component_WidgetsButton, {\n              classes: 'btn btn-close',\n              id: 'profile_modal_close_btn',\n              onOnClick: $event => (closeModal({ state: false }))\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri-close-line\" })\n              ]),\n              _: 1\n            }, 8, [\"onOnClick\"])\n          ]),\n          _createVNode(\"div\", { class: \"modal-box\" }, [\n            _createVNode(\"div\", { class: \"modal-image\" }, [\n              _createVNode(\"img\", {\n                src: _imports_0,\n                class: \"img-fluid\",\n                alt: \"newsletter\"\n              })\n            ]),\n            _createVNode(\"div\", { class: \"modal-content content-padding\" }, [\n              _createVNode(\"div\", null, [\n                _createVNode(\"img\", {\n                  src: _imports_1,\n                  class: \"modal-logo\",\n                  alt: \"logo\"\n                }),\n                _createVNode(\"h2\", null, [\n                  _createTextVNode(_toDisplayString('15%') + \" \"),\n                  _createVNode(\"span\", null, _toDisplayString('off'))\n                ]),\n                _createVNode(\"h5\", null, _toDisplayString('Want to make your purchase') + \"?\"),\n                _createVNode(\"p\", null, _toDisplayString('Plus early access to new arrivals exclusive sales lots more') + \"?\"),\n                _createVNode(\"form\", { class: \"modal-form\" }, [\n                  _createVNode(\"div\", { class: \"input-group modal-form-box\" }, [\n                    _createVNode(\"input\", {\n                      type: \"email\",\n                      class: \"form-control\",\n                      placeholder: \"Your email here\"\n                    }),\n                    _createVNode(_component_WidgetsButton, {\n                      classes: 'input-group-text',\n                      id: 'submit_newsletter_btn',\n                      \"onClick@\": $event => (_ctx.submit(_ctx.emailVal.value))\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString('Submit'))\n                      ]),\n                      _: 1\n                    }, 8, [\"onClick@\"])\n                  ])\n                ])\n              ])\n            ])\n          ])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/NewsletterModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342723,
+      "end": 1716056342726,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342726,
+      "end": 1716056342726,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342726,
+      "end": 1716056342726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342726,
+      "end": 1716056342726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342726,
+      "end": 1716056342726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342726,
+      "end": 1716056342726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { ref, onMounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/newsletter/3.jpg'\nimport _imports_1 from '/images/logo/1.png'\n\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet showModal = ref(false)\n\nonMounted(() => {\n  if (localStorage.getItem('showModel') !== 'newsletter') {\n    showModal.value = true\n    localStorage.setItem('showModel', 'newsletter')\n  }\n})\n\nfunction closeModal() {\n  showModal.value = false\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsCommon = __nuxt_component_0\n  const _component_WidgetsButton = __nuxt_component_1\n  const _component_Icon = __nuxt_component_2\n\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, _mergeProps({\n    showModal: _unref(showModal),\n    modalClass: \"newsletter-modal modal-lg\",\n    onClose: $event => (closeModal({ state: false }))\n  }, _attrs), {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<div class=\"modal-header p-0\"${_scopeId}>`)\n        _push(_ssrRenderComponent(_component_WidgetsButton, {\n          classes: 'btn btn-close',\n          id: 'profile_modal_close_btn',\n          onOnClick: $event => (closeModal({ state: false }))\n        }, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(_ssrRenderComponent(_component_Icon, { name: \"ri-close-line\" }, null, _parent, _scopeId))\n            } else {\n              return [\n                _createVNode(_component_Icon, { name: \"ri-close-line\" })\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n        _push(`</div><div class=\"modal-box\"${\n          _scopeId\n        }><div class=\"modal-image\"${\n          _scopeId\n        }><img${\n          _ssrRenderAttr(\"src\", _imports_0)\n        } class=\"img-fluid\" alt=\"newsletter\"${\n          _scopeId\n        }></div><div class=\"modal-content content-padding\"${\n          _scopeId\n        }><div${\n          _scopeId\n        }><img${\n          _ssrRenderAttr(\"src\", _imports_1)\n        } class=\"modal-logo\" alt=\"logo\"${\n          _scopeId\n        }><h2${\n          _scopeId\n        }>${\n          _ssrInterpolate('15%')\n        } <span${\n          _scopeId\n        }>${\n          _ssrInterpolate('off')\n        }</span></h2><h5${\n          _scopeId\n        }>${\n          _ssrInterpolate('Want to make your purchase')\n        }?</h5><p${\n          _scopeId\n        }>${\n          _ssrInterpolate('Plus early access to new arrivals exclusive sales lots more')\n        }?</p><form class=\"modal-form\"${\n          _scopeId\n        }><div class=\"input-group modal-form-box\"${\n          _scopeId\n        }><input type=\"email\" class=\"form-control\" placeholder=\"Your email here\"${\n          _scopeId\n        }>`)\n        _push(_ssrRenderComponent(_component_WidgetsButton, {\n          classes: 'input-group-text',\n          id: 'submit_newsletter_btn',\n          \"onClick@\": $event => (_ctx.submit(_ctx.emailVal.value))\n        }, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(`${_ssrInterpolate('Submit')}`)\n            } else {\n              return [\n                _createTextVNode(_toDisplayString('Submit'))\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n        _push(`</div></form></div></div></div>`)\n      } else {\n        return [\n          _createVNode(\"div\", { class: \"modal-header p-0\" }, [\n            _createVNode(_component_WidgetsButton, {\n              classes: 'btn btn-close',\n              id: 'profile_modal_close_btn',\n              onOnClick: $event => (closeModal({ state: false }))\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri-close-line\" })\n              ]),\n              _: 1\n            }, 8, [\"onOnClick\"])\n          ]),\n          _createVNode(\"div\", { class: \"modal-box\" }, [\n            _createVNode(\"div\", { class: \"modal-image\" }, [\n              _createVNode(\"img\", {\n                src: _imports_0,\n                class: \"img-fluid\",\n                alt: \"newsletter\"\n              })\n            ]),\n            _createVNode(\"div\", { class: \"modal-content content-padding\" }, [\n              _createVNode(\"div\", null, [\n                _createVNode(\"img\", {\n                  src: _imports_1,\n                  class: \"modal-logo\",\n                  alt: \"logo\"\n                }),\n                _createVNode(\"h2\", null, [\n                  _createTextVNode(_toDisplayString('15%') + \" \"),\n                  _createVNode(\"span\", null, _toDisplayString('off'))\n                ]),\n                _createVNode(\"h5\", null, _toDisplayString('Want to make your purchase') + \"?\"),\n                _createVNode(\"p\", null, _toDisplayString('Plus early access to new arrivals exclusive sales lots more') + \"?\"),\n                _createVNode(\"form\", { class: \"modal-form\" }, [\n                  _createVNode(\"div\", { class: \"input-group modal-form-box\" }, [\n                    _createVNode(\"input\", {\n                      type: \"email\",\n                      class: \"form-control\",\n                      placeholder: \"Your email here\"\n                    }),\n                    _createVNode(_component_WidgetsButton, {\n                      classes: 'input-group-text',\n                      id: 'submit_newsletter_btn',\n                      \"onClick@\": $event => (_ctx.submit(_ctx.emailVal.value))\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString('Submit'))\n                      ]),\n                      _: 1\n                    }, 8, [\"onClick@\"])\n                  ])\n                ])\n              ])\n            ])\n          ])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/NewsletterModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342726,
+      "end": 1716056342726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { ref, onMounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/newsletter/3.jpg'\nimport _imports_1 from '/images/logo/1.png'\n\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet showModal = ref(false)\n\n false && /*@__PURE__*/ onMounted(() => {\n  if (localStorage.getItem('showModel') !== 'newsletter') {\n    showModal.value = true\n    localStorage.setItem('showModel', 'newsletter')\n  }\n})\n\nfunction closeModal() {\n  showModal.value = false\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsCommon = __nuxt_component_0\n  const _component_WidgetsButton = __nuxt_component_1\n  const _component_Icon = __nuxt_component_2\n\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, _mergeProps({\n    showModal: _unref(showModal),\n    modalClass: \"newsletter-modal modal-lg\",\n    onClose: $event => (closeModal({ state: false }))\n  }, _attrs), {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<div class=\"modal-header p-0\"${_scopeId}>`)\n        _push(_ssrRenderComponent(_component_WidgetsButton, {\n          classes: 'btn btn-close',\n          id: 'profile_modal_close_btn',\n          onOnClick: $event => (closeModal({ state: false }))\n        }, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(_ssrRenderComponent(_component_Icon, { name: \"ri-close-line\" }, null, _parent, _scopeId))\n            } else {\n              return [\n                _createVNode(_component_Icon, { name: \"ri-close-line\" })\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n        _push(`</div><div class=\"modal-box\"${\n          _scopeId\n        }><div class=\"modal-image\"${\n          _scopeId\n        }><img${\n          _ssrRenderAttr(\"src\", _imports_0)\n        } class=\"img-fluid\" alt=\"newsletter\"${\n          _scopeId\n        }></div><div class=\"modal-content content-padding\"${\n          _scopeId\n        }><div${\n          _scopeId\n        }><img${\n          _ssrRenderAttr(\"src\", _imports_1)\n        } class=\"modal-logo\" alt=\"logo\"${\n          _scopeId\n        }><h2${\n          _scopeId\n        }>${\n          _ssrInterpolate('15%')\n        } <span${\n          _scopeId\n        }>${\n          _ssrInterpolate('off')\n        }</span></h2><h5${\n          _scopeId\n        }>${\n          _ssrInterpolate('Want to make your purchase')\n        }?</h5><p${\n          _scopeId\n        }>${\n          _ssrInterpolate('Plus early access to new arrivals exclusive sales lots more')\n        }?</p><form class=\"modal-form\"${\n          _scopeId\n        }><div class=\"input-group modal-form-box\"${\n          _scopeId\n        }><input type=\"email\" class=\"form-control\" placeholder=\"Your email here\"${\n          _scopeId\n        }>`)\n        _push(_ssrRenderComponent(_component_WidgetsButton, {\n          classes: 'input-group-text',\n          id: 'submit_newsletter_btn',\n          \"onClick@\": $event => (_ctx.submit(_ctx.emailVal.value))\n        }, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(`${_ssrInterpolate('Submit')}`)\n            } else {\n              return [\n                _createTextVNode(_toDisplayString('Submit'))\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n        _push(`</div></form></div></div></div>`)\n      } else {\n        return [\n          _createVNode(\"div\", { class: \"modal-header p-0\" }, [\n            _createVNode(_component_WidgetsButton, {\n              classes: 'btn btn-close',\n              id: 'profile_modal_close_btn',\n              onOnClick: $event => (closeModal({ state: false }))\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri-close-line\" })\n              ]),\n              _: 1\n            }, 8, [\"onOnClick\"])\n          ]),\n          _createVNode(\"div\", { class: \"modal-box\" }, [\n            _createVNode(\"div\", { class: \"modal-image\" }, [\n              _createVNode(\"img\", {\n                src: _imports_0,\n                class: \"img-fluid\",\n                alt: \"newsletter\"\n              })\n            ]),\n            _createVNode(\"div\", { class: \"modal-content content-padding\" }, [\n              _createVNode(\"div\", null, [\n                _createVNode(\"img\", {\n                  src: _imports_1,\n                  class: \"modal-logo\",\n                  alt: \"logo\"\n                }),\n                _createVNode(\"h2\", null, [\n                  _createTextVNode(_toDisplayString('15%') + \" \"),\n                  _createVNode(\"span\", null, _toDisplayString('off'))\n                ]),\n                _createVNode(\"h5\", null, _toDisplayString('Want to make your purchase') + \"?\"),\n                _createVNode(\"p\", null, _toDisplayString('Plus early access to new arrivals exclusive sales lots more') + \"?\"),\n                _createVNode(\"form\", { class: \"modal-form\" }, [\n                  _createVNode(\"div\", { class: \"input-group modal-form-box\" }, [\n                    _createVNode(\"input\", {\n                      type: \"email\",\n                      class: \"form-control\",\n                      placeholder: \"Your email here\"\n                    }),\n                    _createVNode(_component_WidgetsButton, {\n                      classes: 'input-group-text',\n                      id: 'submit_newsletter_btn',\n                      \"onClick@\": $event => (_ctx.submit(_ctx.emailVal.value))\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString('Submit'))\n                      ]),\n                      _: 1\n                    }, 8, [\"onClick@\"])\n                  ])\n                ])\n              ])\n            ])\n          ])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/NewsletterModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342726,
+      "end": 1716056342727,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342728,
+      "end": 1716056342728,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342728,
+      "end": 1716056342728,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Wishlist/index.vue?nuxt_component=async&nuxt_component_name=ShopWishlist",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <section class=\"wishlist-section section-b-space\">\n    <div class=\"container-fluid-lg\">\n      <div v-if=\"skeletonLoader\">\n        <div class=\"row g-sm-3 g-2\">\n          <div class=\"col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain\" v-for=\"item in skeletonItems\" :key=\"item\">\n            <WidgetsProductBoxSkeletonProductBox />\n          </div>\n        </div>\n      </div>\n      <template v-else>\n        <div class=\"row g-sm-3 g-2\">\n          <div class=\"col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain\" v-for=\"(product, index) in wishlist\"\n            :key=\"index\">\n            <WidgetsProductBox :product=\"product\" :close=\"true\" :style=\"'horizontal'\" :classes=\"'product-box-3'\">\n            </WidgetsProductBox>\n          </div>\n        </div>\n      </template>\n      <WidgetsNoData :class=\"'no-data-added'\" :image=\"'/svg/empty-items.svg'\" :text=\"'No Items Added'\"\n        :description=\"'It appears that nothing has been added to your wishlist. Explore categories if you want to.'\"\n        v-if=\"!wishlist?.length\">\n      </WidgetsNoData>\n    </div>\n  </section>\n</template>\n\n<script setup>\nimport { storeToRefs } from 'pinia';\nimport { useWishlistStore } from '~~/store/wishlist';\n\nlet { wishlist } = storeToRefs(useWishlistStore())\nlet skeletonLoader = ref(true)\nlet skeletonItems = Array.from({ length: 12 }, (_, index) => index);\nif (!wishlist.value.length) {\n  useWishlistStore().GetWishlist();\n}\n\nonMounted(() => {\n  setTimeout(() => {\n    skeletonLoader.value = false\n  }, 2000);\n})\n\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056284813,
+      "end": 1716056284900,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284900,
+      "end": 1716056284900,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284900,
+      "end": 1716056284900,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284900,
+      "end": 1716056284900,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284900,
+      "end": 1716056284900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284900,
+      "end": 1716056284900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284900,
+      "end": 1716056284900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284900,
+      "end": 1716056284900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"wishlist-section section-b-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { key: 0 }\nconst _hoisted_4 = { class: \"row g-sm-3 g-2\" }\nconst _hoisted_5 = {\n  key: 1,\n  class: \"row g-sm-3 g-2\"\n}\n\nimport { storeToRefs } from 'pinia';\nimport { useWishlistStore } from '~~/store/wishlist';\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet { wishlist } = storeToRefs(useWishlistStore())\nlet skeletonLoader = ref(true)\nlet skeletonItems = Array.from({ length: 12 }, (_, index) => index);\nif (!wishlist.value.length) {\n  useWishlistStore().GetWishlist();\n}\n\nonMounted(() => {\n  setTimeout(() => {\n    skeletonLoader.value = false\n  }, 2000);\n})\n\n\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsProductBoxSkeletonProductBox = _resolveComponent(\"WidgetsProductBoxSkeletonProductBox\")\n  const _component_WidgetsProductBox = _resolveComponent(\"WidgetsProductBox\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      (_unref(skeletonLoader))\n        ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n            _createElementVNode(\"div\", _hoisted_4, [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(skeletonItems), (item) => {\n                return (_openBlock(), _createElementBlock(\"div\", {\n                  class: \"col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain\",\n                  key: item\n                }, [\n                  _createVNode(_component_WidgetsProductBoxSkeletonProductBox)\n                ]))\n              }), 128))\n            ])\n          ]))\n        : (_openBlock(), _createElementBlock(\"div\", _hoisted_5, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(wishlist), (product, index) => {\n              return (_openBlock(), _createElementBlock(\"div\", {\n                class: \"col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain\",\n                key: index\n              }, [\n                _createVNode(_component_WidgetsProductBox, {\n                  product: product,\n                  close: true,\n                  style: 'horizontal',\n                  classes: 'product-box-3'\n                }, null, 8, [\"product\"])\n              ]))\n            }), 128))\n          ])),\n      (!_unref(wishlist)?.length)\n        ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n            key: 2,\n            class: _normalizeClass('no-data-added'),\n            image: '/svg/empty-items.svg',\n            text: 'No Items Added',\n            description: 'It appears that nothing has been added to your wishlist. Explore categories if you want to.'\n          }, null, 8, [\"image\", \"description\"]))\n        : _createCommentVNode(\"\", true)\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284900,
+      "end": 1716056284902,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284902,
+      "end": 1716056284902,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284902,
+      "end": 1716056284902,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284902,
+      "end": 1716056284902,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284902,
+      "end": 1716056284902,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Wishlist/index.vue\").then(r => r.default))",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Wishlist/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284903,
+      "end": 1716056284903,
+      "order": "normal"
+    }
+  ]
+}

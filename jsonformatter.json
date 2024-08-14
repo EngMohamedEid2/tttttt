@@ -1,0 +1,1713 @@
+[
+  {
+    "id": 1,
+    "content": {
+      "home_banner": {
+        "style": "theme-1",
+        "status": 1,
+        "main_banner": {
+          "title": "STAY HOME & DELIVERED YOUR",
+          "image_url": "http://localhost/frontend/images/theme-1/home_banners/1.jpg",
+          "sub_title": "DAILY NEEDS",
+          "button_text": "Show Now",
+          "description": "Earl grey latte Thai basil curry grains alfalfa sprouts banana bread ginger carrot...",
+          "offer_title": "",
+          "discount_off": ""
+        },
+        "sub_banner_1": {
+          "title": "Nut Collection",
+          "image_url": "http://localhost/frontend/images/theme-1/home_banners/2.jpg",
+          "sub_title": "DAILY NEEDS",
+          "button_text": "Show Now",
+          "description": "We deliver organic vegetables & fruits",
+          "offer_title": "",
+          "discount_off": "45"
+        },
+        "sub_banner_2": {
+          "title": "Healthy Food",
+          "image_url": "http://localhost/frontend/images/theme-1/home_banners/3.jpg",
+          "sub_title": "Organic Market",
+          "button_text": "Show Now",
+          "description": "Start your daily shopping with some Organic food",
+          "offer_title": "",
+          "discount_off": "45"
+        }
+      },
+      "news_letter": {
+        "style": "theme-1",
+        "title": "Join Our Newsletter And Get...",
+        "status": 1,
+        "image_url": "http://localhost/frontend/images/common/newsletters/1.jpg",
+        "sub_title": "$20 discount for your first order"
+      },
+      "main_content": {
+        "style": "theme-1",
+        "status": 1,
+        "sidebar": {
+          "status": 1,
+          "sidebar_products": {
+            "type": "trending",
+            "style": "theme-1",
+            "title": "Trending Products",
+            "status": 1,
+            "paginate": 9,
+            "description": "",
+            "product_ids": []
+          },
+          "left_side_banners": {
+            "style": "theme-1",
+            "status": 0,
+            "banner_1": {
+              "label": "Seafood",
+              "title": "Freshes",
+              "image_url": "http://localhost/frontend/images/theme-1/left_side_banners/1.jpg",
+              "sub_title": "Products",
+              "button_text": "Show Now",
+              "description": "every hour",
+              "discount_off": ""
+            },
+            "banner_2": {
+              "label": "Organic",
+              "title": "fresh",
+              "image_url": "http://localhost/frontend/images/theme-1/left_side_banners/2.jpg",
+              "sub_title": "Vegetables",
+              "button_text": "Show Now",
+              "description": "Super Offer to 50% Off",
+              "discount_off": ""
+            }
+          },
+          "categories_icon_list": {
+            "sort": "asc",
+            "field": "name",
+            "style": "theme-1",
+            "title": "Categories",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/categories/bg/1.jpg",
+            "description": ""
+          }
+        },
+        "section5_coupons": {
+          "style": "theme-1",
+          "title": "Get $3 Cashback! Min Order of $30",
+          "status": 0,
+          "image_url": "http://localhost/frontend/images/theme-1/coupons/1.jpg",
+          "coupon_code": "GROCERY1920"
+        },
+        "section1_products": {
+          "type": "trending",
+          "style": "theme-1",
+          "title": "Top Save Today",
+          "status": 1,
+          "paginate": 9,
+          "description": "Don't miss this opportunity at a special discount just for this week."
+        },
+        "section4_products": {
+          "type": "specific_products",
+          "style": "theme-1",
+          "title": "Food Cupboard",
+          "status": 1,
+          "paginate": 9,
+          "description": "A virtual assistant collects the products from your list.",
+          "product_ids": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "section7_products": {
+          "type": "best_selling",
+          "style": "theme-1",
+          "title": "Our Best Seller",
+          "status": 1,
+          "paginate": 15,
+          "description": "A virtual assistant collects the products from your list.",
+          "product_ids": []
+        },
+        "section9_featured_blogs": {
+          "type": "featured_blogs",
+          "style": "theme-1",
+          "title": "Featured Blog",
+          "status": 1,
+          "blog_ids": [],
+          "sub_title": ""
+        },
+        "section2_categories_list": {
+          "sort": "asc",
+          "field": "name",
+          "style": "theme-1",
+          "title": "Categories",
+          "status": 1,
+          "image_url": "http://localhost/frontend/images/common/categories/bg/1.jpg",
+          "description": "Top Categories Of The Week"
+        },
+        "section8_full_width_banner": {
+          "style": "theme-1",
+          "title": "VEGETABLE",
+          "image_url": "http://localhost/frontend/images/theme-1/full_width_banners/1.jpg",
+          "sub_title": "SUMMER",
+          "button_text": "Show Now",
+          "description": "Save up to 5% OFF",
+          "offer_title": "",
+          "discount_off": ""
+        },
+        "section3_two_column_banners": {
+          "style": "theme-1",
+          "status": 1,
+          "banner_1": {
+            "title": "Testy Mushrooms",
+            "image_url": "http://localhost/frontend/images/theme-1/two_column_banners/1/1.jpg",
+            "sub_title": "",
+            "button_text": "Show Now",
+            "description": "",
+            "offer_title": "",
+            "discount_off": "45"
+          },
+          "banner_2": {
+            "title": "Fresh MEAT",
+            "image_url": "http://localhost/frontend/images/theme-1/two_column_banners/1/2.jpg",
+            "sub_title": "",
+            "button_text": "Show Now",
+            "description": "",
+            "offer_title": "",
+            "discount_off": "45"
+          }
+        },
+        "section6_two_column_banners": {
+          "style": "theme-1",
+          "status": 1,
+          "banner_1": {
+            "title": "Get Ready To",
+            "image_url": "http://localhost/frontend/images/theme-1/two_column_banners/2/1.jpg",
+            "sub_title": "TAKE ON THE DAY!",
+            "button_text": "Show Now",
+            "description": "In publishing and graphic design, Lorem\n                                ipsum is a placeholder text commonly used to demonstrate.",
+            "offer_title": "",
+            "discount_off": ""
+          },
+          "banner_2": {
+            "title": "SUMMRY",
+            "image_url": "http://localhost/frontend/images/theme-1/two_column_banners/2/2.jpg",
+            "sub_title": "Product",
+            "button_text": "Show Now",
+            "description": "",
+            "offer_title": "",
+            "discount_off": "20"
+          }
+        }
+      },
+      "featured_banners": {
+        "style": "theme-1",
+        "status": 1,
+        "banners": [
+          {
+            "title": "STAY HOME & DELIVERED YOUR",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/theme-1/featured_banners/1.jpg",
+            "sub_title": "Daily Essentials Eggs & Dairy",
+            "button_text": "Show Now",
+            "description": "",
+            "offer_title": "",
+            "discount_off": "5"
+          },
+          {
+            "title": "Buy More & Save More",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/theme-1/featured_banners/2.jpg",
+            "sub_title": "Fresh Vegetables",
+            "button_text": "Show Now",
+            "description": "",
+            "offer_title": "",
+            "discount_off": "5"
+          },
+          {
+            "title": "Organic Meat Prepared",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/theme-1/featured_banners/3.jpg",
+            "sub_title": "Delivered to Your Home",
+            "button_text": "Show Now",
+            "description": "",
+            "offer_title": "",
+            "discount_off": "5"
+          },
+          {
+            "title": "Organic Meat Prepared",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/theme-1/featured_banners/4.jpg",
+            "sub_title": "Delivered to Your Home",
+            "button_text": "Show Now",
+            "description": "",
+            "offer_title": "",
+            "discount_off": "5"
+          }
+        ]
+      }
+    },
+    "sequence": [
+      "home_banner",
+      "featured_banners",
+      "main_content",
+      "news_letter"
+    ],
+    "slug": "theme-1"
+  },
+  {
+    "id": 2,
+    "content": {
+      "coupons": {
+        "style": "theme-2",
+        "title": "Get $3 Cashback! Min Order of $30",
+        "status": 1,
+        "image_url": "http://localhost/frontend/images/theme-2/coupons/1.jpg",
+        "coupon_code": "GROCERY1920"
+      },
+      "home_banner": {
+        "style": "theme-2",
+        "status": 1,
+        "main_banner": {
+          "title": {
+            "h1": "we'll make",
+            "span_1": "handmade",
+            "span_2": "your",
+            "span_3": "sweet"
+          },
+          "image_url": "http://localhost/frontend/images/theme-2/home_banners/2.jpg",
+          "sub_title": "",
+          "button_text": "Show Now",
+          "description": "Earl grey latte Thai basil curry grains alfalfa sprouts banana bread ginger carrot...",
+          "offer_title": "Exclusive offer",
+          "discount_off": "30"
+        },
+        "sub_banner_1": {
+          "title": "Fresh Bread",
+          "image_url": "http://localhost/frontend/images/theme-2/home_banners/1.jpg",
+          "sub_title": "Fresh & Delicious",
+          "button_text": "Show Now",
+          "description": "Bento box burritos cherry bomb pepper dark and stormy with ginger",
+          "offer_title": "",
+          "discount_off": ""
+        },
+        "sub_banner_2": {
+          "title": "Bakery Sweet",
+          "image_url": "http://localhost/frontend/images/theme-2/home_banners/3.jpg",
+          "sub_title": "Fresh & Delicious",
+          "button_text": "Show Now",
+          "description": "Peanut butter crunch chia seeds red parsley basil overflowing",
+          "offer_title": "",
+          "discount_off": "45"
+        }
+      },
+      "news_letter": {
+        "style": "theme-1",
+        "title": "Join Our Newsletter And Get...",
+        "status": 1,
+        "image_url": "http://localhost/frontend/images/common/newsletters/2.jpg",
+        "sub_title": "$20 discount for your first order"
+      },
+      "main_content": {
+        "sidebar": {
+          "status": 1,
+          "right_side_banners": {
+            "style": "theme-2",
+            "status": 1,
+            "banner_1": {
+              "label": "seafood",
+              "title": {
+                "h3": "special",
+                "span": "brand"
+              },
+              "image_url": "http://localhost/frontend/images/theme-2/right_side_banners/1.jpg",
+              "sub_title": "",
+              "button_text": "Show Now",
+              "description": "Special offer on the discount very hungry cake and sweets",
+              "offer_title": "up to",
+              "discount_off": "50"
+            },
+            "banner_2": {
+              "label": "Fresh Every Day!",
+              "title": {
+                "h3": "Delicioud",
+                "span": "Bread"
+              },
+              "image_url": "http://localhost/frontend/images/theme-2/right_side_banners/2.jpg",
+              "sub_title": "",
+              "button_text": "Show Now",
+              "description": "Delicioud Bread and Brend new fresh bread.",
+              "discount_off": ""
+            }
+          }
+        },
+        "section1_products": {
+          "type": "trending",
+          "style": "theme-2",
+          "title": "Top Save Today",
+          "status": 1,
+          "paginate": 10,
+          "description": ""
+        },
+        "section3_products": {
+          "type": "specific_products",
+          "style": "theme-2",
+          "title": "Your Daily Staples",
+          "status": 1,
+          "paginate": 10,
+          "description": "",
+          "product_ids": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "section2_slider_products": {
+          "style": "theme-2",
+          "title": "ALL KINDS OF CAKES",
+          "status": 1,
+          "description": "",
+          "product_slider_1": {
+            "type": "top_selling",
+            "style": "theme-2",
+            "title": "Top Selling",
+            "status": 1,
+            "paginate": 10,
+            "description": ""
+          },
+          "product_slider_2": {
+            "type": "specific_products",
+            "style": "theme-2",
+            "title": "Trending Products",
+            "status": 1,
+            "paginate": 10,
+            "description": "",
+            "product_ids": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "product_slider_3": {
+            "type": "recent",
+            "style": "theme-2",
+            "title": "Recently added",
+            "status": 1,
+            "paginate": 10,
+            "description": ""
+          }
+        }
+      },
+      "slider_products": {
+        "style": "theme-2",
+        "title": "",
+        "status": 1,
+        "description": "",
+        "product_slider_1": {
+          "type": "top_selling",
+          "style": "theme-2",
+          "title": "Top Selling",
+          "status": 1,
+          "paginate": 10,
+          "description": ""
+        },
+        "product_slider_2": {
+          "type": "trending",
+          "style": "theme-2",
+          "title": "Trending Products",
+          "status": 1,
+          "paginate": 10,
+          "description": ""
+        },
+        "product_slider_3": {
+          "type": "recent",
+          "style": "theme-2",
+          "title": "Recently added",
+          "status": 1,
+          "paginate": 10,
+          "description": ""
+        },
+        "product_slider_4": {
+          "type": "top_rated",
+          "style": "theme-2",
+          "title": "Top Rated",
+          "status": 1,
+          "paginate": 10,
+          "description": ""
+        }
+      },
+      "featured_banners": {
+        "style": "theme-2",
+        "status": 1,
+        "banners": [
+          {
+            "title": "New Items",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/theme-2/featured_banners/1.jpg",
+            "sub_title": "Daily Essentials",
+            "button_text": "",
+            "description": "",
+            "offer_title": "",
+            "discount_off": "5"
+          },
+          {
+            "title": "Save More",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/theme-2/featured_banners/2.jpg",
+            "sub_title": "Fresh Toast Rusk",
+            "button_text": "",
+            "description": "",
+            "offer_title": "",
+            "discount_off": "5"
+          },
+          {
+            "title": "Fresh Every Day!",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/theme-2/featured_banners/3.jpg",
+            "sub_title": "Delivered @ Home",
+            "button_text": "",
+            "description": "",
+            "offer_title": "",
+            "discount_off": "5"
+          },
+          {
+            "title": "Hot Deals",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/theme-2/featured_banners/4.jpg",
+            "sub_title": "Fresh Cake",
+            "button_text": "",
+            "description": "",
+            "offer_title": "",
+            "discount_off": "5"
+          }
+        ]
+      },
+      "full_width_banner": {
+        "style": "theme-2",
+        "title": "limited Time Offer",
+        "status": 1,
+        "website": "www.fastkart.com",
+        "image_url": "http://localhost/frontend/images/theme-2/full_width_banners/1.jpg",
+        "sub_title": "Super",
+        "button_text": "",
+        "description": "Save up to 5% OFF",
+        "offer_title": "sale",
+        "discount_off": ""
+      },
+      "categories_icon_list": {
+        "sort": "asc",
+        "field": "name",
+        "style": "theme-2",
+        "title": "",
+        "status": 1,
+        "image_url": "http://localhost/frontend/images/common/categories/bg/2.jpg",
+        "description": ""
+      }
+    },
+    "sequence": [
+      "home_banner",
+      "categories_icon_list",
+      "coupons",
+      "featured_banners",
+      "main_content",
+      "full_width_banner",
+      "slider_products",
+      "news_letter"
+    ],
+    "slug": "theme-2"
+  },
+  {
+    "id": 3,
+    "content": {
+      "coupons": {
+        "style": "theme-2",
+        "title": "Get $3 Cashback! Min Order of $30",
+        "status": 1,
+        "image_url": "http://localhost/frontend/images/theme-1/coupons/1.jpg",
+        "coupon_code": "GROCERY1920"
+      },
+      "home_banner": {
+        "style": "theme-3",
+        "status": 1,
+        "main_banner": {
+          "title": {
+            "h1": "Stay home & delivered your",
+            "span_1": "Daily Needs"
+          },
+          "image_url": "http://localhost/frontend/images/theme-3/home_banners/1.jpg",
+          "sub_title": "",
+          "button_text": "Show Now",
+          "description": "Many organizations have issued official statements encouraging people to reduce their intake of sugary drinks.",
+          "offer_title": "Exclusive offer ",
+          "discount_off": "30"
+        },
+        "sub_banner_1": {
+          "title": "Real Refresement",
+          "image_url": "http://localhost/frontend/images/theme-3/home_banners/2.jpg",
+          "sub_title": "Only this week, Don't miss",
+          "button_text": "Shop Now",
+          "description": "",
+          "offer_title": "",
+          "discount_off": "45"
+        }
+      },
+      "news_letter": {
+        "style": "theme-1",
+        "title": "Join Our Newsletter And Get...",
+        "status": 1,
+        "image_url": "http://localhost/frontend/images/common/newsletters/1.jpg",
+        "sub_title": "$20 discount for your first order"
+      },
+      "offer_banner": {
+        "style": "theme-3",
+        "title": {
+          "h2": "Special Offers ",
+          "span": "of the week!"
+        },
+        "status": 1,
+        "end_date": "2023-10-18",
+        "description": "Special offer on this discount, Hurry Up!"
+      },
+      "featured_blogs": {
+        "type": "featured_blogs",
+        "style": "theme-3",
+        "title": "Featured Blog",
+        "status": 1,
+        "blog_ids": [],
+        "sub_title": "A virtual assistant collects the products from your list"
+      },
+      "product_bundles": {
+        "style": "theme-2",
+        "status": 1,
+        "bundles": [
+          {
+            "title": "Hot Deals on New Items",
+            "status": 1,
+            "sub_title": "Daily Essentials Eggs & Dairy",
+            "button_url": "",
+            "button_text": "Shop Now",
+            "description": ""
+          },
+          {
+            "title": "Organic Meat Prepared",
+            "status": 1,
+            "sub_title": "Delivered to Your Home",
+            "button_url": "",
+            "button_text": "Shop Now",
+            "description": ""
+          },
+          {
+            "title": "Buy More & Save More",
+            "status": 1,
+            "sub_title": "Fresh Vegetables & Fruits",
+            "button_url": "",
+            "button_text": "Shop Now",
+            "description": ""
+          },
+          {
+            "title": "Fresh Fruits on Go",
+            "status": 1,
+            "sub_title": "Fresh Vegetables & Fruits",
+            "button_url": "",
+            "button_text": "Shop Now",
+            "description": ""
+          }
+        ]
+      },
+      "products_list_1": {
+        "type": "specific_products",
+        "style": "theme-3",
+        "title": "FRUIT & VEGETABLES",
+        "status": 1,
+        "paginate": 10,
+        "description": "A virtual assistant collects the products from your list",
+        "product_ids": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "products_list_2": {
+        "type": "trending",
+        "style": "theme-3",
+        "title": "BREAKFAST & DAIRY",
+        "status": 1,
+        "paginate": 10,
+        "description": "A virtual assistant collects the products from your list"
+      },
+      "slider_products": {
+        "style": "theme-3",
+        "title": "",
+        "status": 1,
+        "description": "",
+        "product_slider_1": {
+          "type": "top_selling",
+          "style": "theme-3",
+          "title": "Top Selling",
+          "status": 1,
+          "paginate": 10,
+          "description": ""
+        },
+        "product_slider_2": {
+          "type": "trending",
+          "style": "theme-2",
+          "title": "Trending Products",
+          "status": 1,
+          "paginate": 10,
+          "description": ""
+        },
+        "product_slider_3": {
+          "type": "recent",
+          "style": "theme-2",
+          "title": "Recently added",
+          "status": 1,
+          "paginate": 10,
+          "description": ""
+        },
+        "product_slider_4": {
+          "type": "top_rated",
+          "style": "theme-2",
+          "title": "Top Rated",
+          "status": 1,
+          "paginate": 10,
+          "description": ""
+        }
+      },
+      "categories_icon_list": {
+        "sort": "asc",
+        "field": "name",
+        "style": "theme-1",
+        "title": "",
+        "status": 1,
+        "image_url": "http://localhost/frontend/images/common/categories/bg/1.jpg",
+        "description": ""
+      }
+    },
+    "sequence": [
+      "home_banner",
+      "categories_icon_list",
+      "coupons",
+      "products_list_1",
+      "offer_banner",
+      "products_list_2",
+      "product_bundles",
+      "slider_products",
+      "featured_blogs",
+      "news_letter"
+    ],
+    "slug": "theme-3"
+  },
+  {
+    "id": 4,
+    "content": {
+      "home_banner": {
+        "style": "theme-4",
+        "status": 1,
+        "main_banner": {
+          "title": "Fruit & Vegetables",
+          "image_url": "http://localhost/frontend/images/theme-4/home_banners/1.png",
+          "sub_title": "Fresh",
+          "button_text": "Show Now",
+          "description": "Free shipping on all your order. we deliver you enjoy",
+          "offer_title": "ORGANIC",
+          "discount_off": "100"
+        },
+        "sub_banner_1": {
+          "title": "Real Refresement",
+          "image_url": "http://localhost/frontend/images/theme-4/home_banners/2.png",
+          "sub_title": "farmer's market",
+          "button_text": "Shop Now",
+          "description": "",
+          "offer_title": "",
+          "discount_off": "45"
+        },
+        "sub_banner_2": {
+          "title": "Organic Lifestyle",
+          "image_url": "http://localhost/frontend/images/theme-4/home_banners/3.png",
+          "sub_title": "Best Weekend Sales",
+          "button_text": "Shop Now",
+          "description": "",
+          "offer_title": "",
+          "discount_off": ""
+        },
+        "sub_banner_3": {
+          "title": "Safe food saves lives",
+          "image_url": "http://localhost/frontend/images/theme-4/home_banners/4.png",
+          "sub_title": "Discount Offer",
+          "button_text": "",
+          "description": "",
+          "offer_title": "",
+          "discount_off": ""
+        }
+      },
+      "news_letter": {
+        "style": "theme-4",
+        "title": "Subscribe to the newsletter",
+        "bg_url": "http://localhost/frontend/images/common/newsletters/4.png",
+        "status": 1,
+        "image_url": "http://localhost/frontend/images/common/others/basket.png",
+        "sub_title": "Join our subscribers list to get the latest news, updates and special offers\n                        delivered directly in your inbox."
+      },
+      "deal_of_days": {
+        "deals": [
+          {
+            "label": "Hot Deals",
+            "status": 1,
+            "end_date": "2023-10-18",
+            "product_id": 1,
+            "offer_title": "Hurry up offer end in"
+          },
+          {
+            "label": "Hot Deals",
+            "status": 1,
+            "end_date": "2023-10-18",
+            "product_id": 1,
+            "offer_title": "Hurry up offer end in"
+          },
+          {
+            "label": "Hot Deals",
+            "status": 1,
+            "end_date": "2023-10-18",
+            "product_id": 1,
+            "offer_title": "Hurry up offer end in"
+          }
+        ],
+        "style": "theme-4",
+        "title": "Deal Of The Day",
+        "status": 1
+      },
+      "value_banners": {
+        "style": "theme-4",
+        "title": "Best Value",
+        "status": 1,
+        "banners": [
+          {
+            "title": "Hot Deals!",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/theme-4/value/1.png",
+            "sub_title": "Fruita & Vagerables",
+            "button_url": "",
+            "button_text": "View Offer"
+          },
+          {
+            "title": "Save More!",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/theme-4/value/2.png",
+            "sub_title": "Fruita & Vagerables",
+            "button_url": "",
+            "button_text": "View Offer"
+          },
+          {
+            "title": "Buy more, Save more",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/theme-4/value/3.png",
+            "sub_title": "Fruita & Vagerables",
+            "button_url": "",
+            "button_text": "View Offer"
+          }
+        ]
+      },
+      "featured_blogs": {
+        "type": "featured_blogs",
+        "style": "theme-3",
+        "title": "Featured Blog",
+        "status": 1,
+        "blog_ids": [],
+        "sub_title": ""
+      },
+      "products_list_1": {
+        "type": "specific_products",
+        "style": "theme-4",
+        "title": "Top Products",
+        "status": 1,
+        "paginate": 10,
+        "description": "",
+        "product_ids": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "slider_products": {
+        "style": "theme-4",
+        "title": "",
+        "status": 1,
+        "description": "",
+        "product_slider_1": {
+          "type": "recent",
+          "title": "NEW PRODUCTS",
+          "status": 1,
+          "paginate": 10,
+          "description": ""
+        },
+        "product_slider_2": {
+          "type": "Featured",
+          "title": "FEATURE PRODUCT",
+          "status": 1,
+          "paginate": 10,
+          "description": ""
+        },
+        "product_slider_3": {
+          "type": "best_seller",
+          "title": "BEST SELLER",
+          "status": 1,
+          "paginate": 10,
+          "description": ""
+        },
+        "product_slider_4": {
+          "type": "on_sell",
+          "title": "ON SELL",
+          "status": 1,
+          "paginate": 10,
+          "description": ""
+        }
+      },
+      "full_width_banner": {
+        "style": "theme-4",
+        "title": "100% Organic Best Quality Best Price",
+        "status": 1,
+        "image_url": "http://localhost/frontend/images/theme-4/full_width_banners/1.png",
+        "sub_title": "Best Fastkart Food Quality",
+        "button_text": "Shop Now",
+        "description": "",
+        "offer_title": "Try Our New",
+        "discount_off": ""
+      },
+      "two_column_banners": {
+        "style": "theme-4",
+        "status": 1,
+        "banner_1": {
+          "title": "Fresh Vegetable & Daily Eating",
+          "image_url": "http://localhost/frontend/images/theme-4/two_column_banners/1.png",
+          "sub_title": "Get Extra 50% Off",
+          "button_text": "Show Now",
+          "description": "",
+          "offer_title": "PREMIUM",
+          "discount_off": ""
+        },
+        "banner_2": {
+          "title": "100% Natural & Healthy Fruits",
+          "image_url": "http://localhost/frontend/images/theme-4/two_column_banners/2.png",
+          "sub_title": "Weekend Special",
+          "button_text": "Show Now",
+          "description": "",
+          "offer_title": "AVAILABLE",
+          "discount_off": ""
+        }
+      },
+      "categories_products": {
+        "style": "theme-4",
+        "title": "Our Products",
+        "status": 1,
+        "description": "",
+        "category_ids": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "categories_image_list": {
+        "sort": "asc",
+        "field": "name",
+        "style": "theme-4",
+        "title": "Shop By Categories",
+        "status": 1,
+        "image_url": "",
+        "description": ""
+      }
+    },
+    "sequence": [
+      "home_banner",
+      "categories_image_list",
+      "value_banners",
+      "deal_of_days",
+      "categories_products",
+      "two_column_banners",
+      "slider_products",
+      "full_width_banner",
+      "products_list_1",
+      "featured_blogs",
+      "news_letter"
+    ],
+    "slug": "theme-4"
+  },
+  {
+    "id": 5,
+    "content": {
+      "home_banner": {
+        "style": "theme-5",
+        "status": 1,
+        "main_banner": {
+          "title": "Premium Quality Dry Fruits",
+          "image_url": "http://localhost/frontend/images/theme-2/home_banners/2.jpg",
+          "sub_title": "Dry-fruits shopping made Easy",
+          "button_text": "Show Now",
+          "description": "Fresh & Top Quality Dry Fruits are available here!",
+          "offer_title": "Weekend Special offer",
+          "discount_off": ""
+        }
+      },
+      "featured_blogs": {
+        "type": "featured_blogs",
+        "style": "theme-5",
+        "title": "Featured Blog",
+        "status": 1,
+        "blog_ids": [],
+        "sub_title": ""
+      },
+      "products_list_1": {
+        "type": "specific_category",
+        "style": "theme-5",
+        "title": "Fruits & Vegetables",
+        "status": 1,
+        "paginate": 10,
+        "description": "",
+        "category_ids": 3
+      },
+      "products_list_2": {
+        "type": "specific_category",
+        "style": "theme-5",
+        "title": "Breakfast & Dairy",
+        "status": 1,
+        "paginate": 10,
+        "description": "",
+        "category_ids": 3
+      },
+      "products_list_3": {
+        "type": "specific_category",
+        "style": "theme-5",
+        "title": "Chemist Store",
+        "status": 1,
+        "paginate": 10,
+        "description": "",
+        "category_ids": 3
+      },
+      "products_list_4": {
+        "type": "specific_category",
+        "style": "theme-5",
+        "title": "Drinks",
+        "status": 1,
+        "paginate": 10,
+        "description": "",
+        "category_ids": 4
+      },
+      "products_list_5": {
+        "type": "specific_category",
+        "style": "theme-5",
+        "title": "Grocery & Staples",
+        "status": 1,
+        "paginate": 10,
+        "description": "",
+        "category_ids": 3
+      },
+      "products_list_6": {
+        "type": "specific_category",
+        "style": "theme-5",
+        "title": "Personal Care",
+        "status": 1,
+        "paginate": 10,
+        "description": "",
+        "category_ids": 4
+      },
+      "products_list_7": {
+        "type": "specific_category",
+        "style": "theme-5",
+        "title": "Kitchen & Dining Needs",
+        "status": 1,
+        "paginate": 10,
+        "description": "",
+        "category_ids": 7
+      },
+      "services_banner": {
+        "style": "theme-5",
+        "title": "",
+        "status": 1,
+        "services": [
+          {
+            "title": "Free Shipping",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/others/service-icon-4.svg#shipping",
+            "sub_title": "Free Shipping world wide"
+          },
+          {
+            "title": "24 x 7 Service",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/others/service-icon-4.svg#service",
+            "sub_title": "Online Service For 24 x 7"
+          },
+          {
+            "title": "Online Pay",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/others/service-icon-4.svg#pay",
+            "sub_title": "Online Payment Available"
+          },
+          {
+            "title": "Festival Offer",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/others/service-icon-4.svg#offer",
+            "sub_title": "Super Sale Upto 50% off"
+          },
+          {
+            "title": "100% Original",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/others/service-icon-4.svg#return",
+            "sub_title": "100% Money Back"
+          }
+        ],
+        "sub_title": ""
+      },
+      "delivery_banners": {
+        "style": "theme-5",
+        "status": 1,
+        "banner_1": {
+          "title": "Safe Delivery to the door",
+          "list_1": "Get live order tracking",
+          "list_2": "Get latest feature updates",
+          "image_url": "http://localhost/frontend/images/theme-5/two_column_banners/1.jpg",
+          "sub_title": "Make money on your terms. Anytime and anyhow.",
+          "button_text": "Read More"
+        },
+        "banner_2": {
+          "title": "Healthy & Fresh Cool Breakfast",
+          "image_url": "http://localhost/frontend/images/theme-5/two_column_banners/2.jpg",
+          "sub_title": "Choose a Nutritious & Healthy Breakfast.",
+          "button_text": "Show Now",
+          "description": "",
+          "offer_title": "",
+          "discount_off": ""
+        }
+      },
+      "full_width_banner": {
+        "style": "theme-5",
+        "title": "FREE GIFT ANY ORDER",
+        "status": 1,
+        "image_url": "http://localhost/frontend/images/common/others/banners.png",
+        "sub_title": "",
+        "button_text": "",
+        "description": "",
+        "offer_title": "",
+        "discount_off": "70"
+      },
+      "bank_wallet_offers": {
+        "style": "theme-5",
+        "title": "Bank & Wallet Offers",
+        "offers": [
+          {
+            "style": "theme-5",
+            "title": "GET 10% OFF",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/bank/price/1.svg",
+            "sub_title": "When you spend $20",
+            "coupon_code": "MULTICART",
+            "valid_message": "Valid for 30 days",
+            "bank_image_url": "http://localhost/frontend/images/common/bank/name/1.png"
+          },
+          {
+            "style": "theme-5",
+            "title": "GET 10% OFF",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/bank/price/2.svg",
+            "sub_title": "When you spend $20",
+            "coupon_code": "MULTICART",
+            "valid_message": "Valid for 30 days",
+            "bank_image_url": "http://localhost/frontend/images/common/bank/name/2.png"
+          },
+          {
+            "style": "theme-5",
+            "title": "GET 10% OFF",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/bank/price/3.svg",
+            "sub_title": "When you spend $20",
+            "coupon_code": "MULTICART",
+            "valid_message": "Valid for 30 days",
+            "bank_image_url": "http://localhost/frontend/images/common/bank/name/3.png"
+          }
+        ],
+        "status": 1
+      },
+      "product_with_deals": {
+        "title": "Top Selling Items",
+        "status": 1,
+        "deal_of_days": {
+          "deals": [
+            {
+              "label": "Hot Deals",
+              "status": 1,
+              "end_date": "2023-10-18",
+              "product_id": 1,
+              "offer_title": "Hurry up offer end in"
+            },
+            {
+              "label": "Hot Deals",
+              "status": 1,
+              "end_date": "2023-10-18",
+              "product_id": 2,
+              "offer_title": "Hurry up offer end in"
+            },
+            {
+              "label": "Hot Deals",
+              "status": 1,
+              "end_date": "2023-10-18",
+              "product_id": 3,
+              "offer_title": "Hurry up offer end in"
+            }
+          ],
+          "style": "theme-5",
+          "title": "Special Offer",
+          "status": 1
+        },
+        "products_list": {
+          "type": "specific_products",
+          "style": "theme-4",
+          "title": "Top Products",
+          "status": 1,
+          "paginate": 10,
+          "description": "",
+          "product_ids": [
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      },
+      "two_column_banners": {
+        "style": "theme-5",
+        "status": 1,
+        "banner_1": {
+          "title": "Chocolate Shake Back in Stock",
+          "image_url": "http://localhost/frontend/images/theme-5/two_column_banners/1.jpg",
+          "sub_title": "Offer Of the Week!",
+          "button_text": "Show Now",
+          "description": "",
+          "offer_title": "",
+          "discount_off": ""
+        },
+        "banner_2": {
+          "title": "Healthy & Fresh Cool Breakfast",
+          "image_url": "http://localhost/frontend/images/theme-5/two_column_banners/2.jpg",
+          "sub_title": "Choose a Nutritious & Healthy Breakfast.",
+          "button_text": "Show Now",
+          "description": "",
+          "offer_title": "",
+          "discount_off": ""
+        }
+      },
+      "categories_image_list": {
+        "sort": "asc",
+        "field": "name",
+        "style": "theme-5",
+        "title": "",
+        "status": 1,
+        "image_url": "",
+        "description": ""
+      }
+    },
+    "sequence": [
+      "home_banner",
+      "categories_image_list",
+      "coupons",
+      "products_list_1",
+      "bank_wallet_offers",
+      "product_with_deals",
+      "full_width_banner",
+      "products_list_2",
+      "products_list_3",
+      "two_column_banners",
+      "products_list_4",
+      "products_list_5",
+      "delivery_banners",
+      "products_list_6",
+      "products_list_7",
+      "featured_blogs",
+      "services_banner"
+    ],
+    "slug": "theme-5"
+  },
+  {
+    "id": 6,
+    "content": {
+      "home_banner": {
+        "style": "theme-6",
+        "status": 1,
+        "main_banner": {
+          "title": {
+            "h1": "Stay home & delivered your ",
+            "span": "Daily Needs"
+          },
+          "image_url": "http://localhost/frontend/images/theme-6/home_banners/1.jpg",
+          "sub_title": "",
+          "button_text": "Show Now",
+          "description": "",
+          "offer_title": "Exclusive offer",
+          "discount_off": "30"
+        },
+        "sub_banner_1": {
+          "title": "Furniture",
+          "image_url": "http://localhost/frontend/images/theme-6/home_banners/2.jpg",
+          "sub_title": "Exclusive",
+          "button_text": "Shop Now",
+          "description": "",
+          "offer_title": "",
+          "discount_off": "45"
+        }
+      },
+      "news_letter": {
+        "style": "theme-1",
+        "title": "Join Our Newsletter And Get...",
+        "status": 1,
+        "image_url": "http://localhost/frontend/images/common/newsletters/1.jpg",
+        "sub_title": "$20 discount for your first order"
+      },
+      "main_content": {
+        "style": "theme-6",
+        "status": 1,
+        "sidebar": {
+          "status": 1,
+          "sidebar_products": {
+            "type": "trending",
+            "style": "theme-1",
+            "title": "Trending Products",
+            "status": 1,
+            "paginate": 9,
+            "description": "",
+            "product_ids": []
+          },
+          "right_side_banners": {
+            "style": "theme-1",
+            "status": 0,
+            "banner_1": {
+              "title": "DESK TABLE",
+              "image_url": "http://localhost/frontend/images/theme-6/right_side_banners/1.jpg",
+              "sub_title": "",
+              "button_text": "Show Now",
+              "description": "Top Selling Of The Week! Exclusive Offer!",
+              "discount_off": "",
+              "discount_title": "New Arrival"
+            }
+          },
+          "categories_icon_list": {
+            "sort": "asc",
+            "field": "name",
+            "style": "theme-6",
+            "title": "Shop By Product",
+            "status": 1,
+            "description": ""
+          }
+        },
+        "section1_products": {
+          "type": "trending",
+          "style": "theme-1",
+          "title": "Top Save Today",
+          "status": 1,
+          "paginate": 9,
+          "description": "Don't miss this opportunity at a special discount just for this week."
+        },
+        "section4_products": {
+          "type": "specific_products",
+          "style": "theme-1",
+          "title": "Food Cupboard",
+          "status": 1,
+          "paginate": 9,
+          "description": "A virtual assistant collects the products from your list.",
+          "product_ids": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "section3_two_column_banners": {
+          "style": "theme-1",
+          "status": 1,
+          "banner_1": {
+            "title": {
+              "h4": "Restyling",
+              "span": "your Home"
+            },
+            "image_url": "http://localhost/frontend/images/theme-6/two_column_banners/1.jpg",
+            "sub_title": "",
+            "button_text": "Show Now",
+            "description": "",
+            "offer_title": "",
+            "discount_off": "50"
+          },
+          "banner_2": {
+            "title": {
+              "h4": "New Elite",
+              "span": "Collections"
+            },
+            "image_url": "http://localhost/frontend/images/theme-6/two_column_banners/2.jpg",
+            "sub_title": "",
+            "button_text": "Show Now",
+            "description": "",
+            "offer_title": "",
+            "discount_off": "50"
+          }
+        },
+        "section2_categories_icon_list": {
+          "sort": "desc",
+          "field": "by_sales",
+          "style": "theme-6",
+          "title": "Categories",
+          "status": 1,
+          "image_url": "http://localhost/frontend/images/common/categories/bg/1.jpg",
+          "description": "Top Categories Of The Week"
+        }
+      },
+      "product_list_1": {
+        "type": "best_selling",
+        "style": "theme-6",
+        "title": "Our Best Seller",
+        "status": 1,
+        "paginate": 15,
+        "description": "A virtual assistant collects the products from your list.",
+        "product_ids": []
+      },
+      "services_banner": {
+        "style": "theme-6",
+        "title": "",
+        "status": 1,
+        "services": [
+          {
+            "title": "Free Shipping",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/others/service-icon-4.svg#shipping",
+            "sub_title": "Free Shipping world wide"
+          },
+          {
+            "title": "24 x 7 Service",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/others/service-icon-4.svg#service",
+            "sub_title": "Online Service For 24 x 7"
+          },
+          {
+            "title": "Online Pay",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/others/service-icon-4.svg#pay",
+            "sub_title": "Online Payment Available"
+          },
+          {
+            "title": "Festival Offer",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/others/service-icon-4.svg#offer",
+            "sub_title": "Super Sale Upto 50% off"
+          },
+          {
+            "title": "100% Original",
+            "status": 1,
+            "image_url": "http://localhost/frontend/images/common/others/service-icon-4.svg#return",
+            "sub_title": "100% Money Back"
+          }
+        ],
+        "sub_title": ""
+      },
+      "full_width_banner": {
+        "style": "theme-6",
+        "title": {
+          "h2": "2022",
+          "h4": "Home Decor",
+          "span": "LookBook"
+        },
+        "image_url": "http://localhost/frontend/images/theme-6/full_width_banners/1.jpg",
+        "sub_title": "",
+        "button_text": "Show Now",
+        "description": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate.",
+        "offer_title": "BEST OF COLLECTIONS",
+        "discount_off": ""
+      }
+    },
+    "sequence": [
+      "home_banner",
+      "services_banner",
+      "main_content",
+      "full_width_banner",
+      "product_list_1",
+      "news_letter"
+    ],
+    "slug": "theme-6"
+  },
+  {
+    "id": 7,
+    "content": {
+      "home_banner": {
+        "style": "theme-7",
+        "status": 1,
+        "main_banner": {
+          "title": "Get your grocery in 25 minutes",
+          "image_url": "http://localhost/frontend/images/theme-7/home_banners/1.jpg",
+          "sub_title": "Better ingredients, better food, and beverages, at low prices",
+          "button_text": "",
+          "description": "",
+          "offer_title": "",
+          "discount_off": ""
+        }
+      },
+      "main_content": {
+        "style": "theme-7",
+        "status": 1,
+        "sidebar": {
+          "status": 1,
+          "categories_icon_list": {
+            "sort": "asc",
+            "field": "name",
+            "style": "theme-1",
+            "title": "Shop By Product",
+            "status": 1,
+            "description": ""
+          }
+        },
+        "section1_products_list": {
+          "type": "specific_products",
+          "style": "theme-7",
+          "title": "Food Cupboard",
+          "status": 1,
+          "paginate": 9,
+          "description": "A virtual assistant collects the products from your list.",
+          "product_ids": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "section2_products_list": {
+          "type": "specific_products",
+          "style": "theme-7",
+          "title": "Food Cupboard",
+          "status": 1,
+          "paginate": 9,
+          "description": "A virtual assistant collects the products from your list.",
+          "product_ids": [
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      }
+    },
+    "sequence": [
+      "home_banner",
+      "main_content"
+    ],
+    "slug": "theme-7"
+  },
+  {
+    "id": 8,
+    "content": {
+      "main_content": {
+        "style": "theme-8",
+        "status": 1,
+        "sidebar": {
+          "status": 1,
+          "categories_icon_list": {
+            "sort": "asc",
+            "field": "name",
+            "style": "theme-1",
+            "title": "",
+            "status": 1,
+            "description": ""
+          }
+        },
+        "section2_products_list": {
+          "type": "specific_products",
+          "style": "theme-7",
+          "title": "Food Cupboard",
+          "status": 1,
+          "paginate": 9,
+          "description": "A virtual assistant collects the products from your list.",
+          "product_ids": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "section3_products_list": {
+          "type": "specific_products",
+          "style": "theme-7",
+          "title": "Food Cupboard",
+          "status": 1,
+          "paginate": 9,
+          "description": "A virtual assistant collects the products from your list.",
+          "product_ids": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "section1_two_column_banners": {
+          "style": "theme-1",
+          "status": 1,
+          "banner_1": {
+            "title": "TAKE ON THE DAY!",
+            "image_url": "http://localhost/frontend/images/theme-8/two_column_banners/1.jpg",
+            "sub_title": "",
+            "button_text": "Show Now",
+            "description": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate.",
+            "offer_title": "Get Ready To",
+            "discount_off": ""
+          },
+          "banner_2": {
+            "title": "Fresh",
+            "image_url": "http://localhost/frontend/images/theme-8/two_column_banners/2.jpg",
+            "sub_title": "",
+            "button_text": "Show Now",
+            "description": "Super Offer to 50% Off",
+            "offer_title": "Organic",
+            "discount_off": ""
+          }
+        }
+      }
+    },
+    "sequence": [
+      "home_banner",
+      "main_content"
+    ],
+    "slug": "theme-8"
+  },
+  {
+    "id": 9,
+    "content": {
+      "home_banner": {
+        "style": "theme-9",
+        "status": 1,
+        "main_banner": {
+          "title": "Premium Quality",
+          "image_url": "http://localhost/frontend/images/theme-9/home_banners/1.jpg",
+          "sub_title": "Fresh & Top Quality Dry Fruits are available here!",
+          "button_text": "Show Now",
+          "description": "",
+          "offer_title": "Weekend Special offer",
+          "discount_off": ""
+        }
+      },
+      "news_letter": {
+        "style": "theme-1",
+        "title": "Join Our Newsletter And Get...",
+        "status": 1,
+        "image_url": "http://localhost/frontend/images/common/newsletters/1.jpg",
+        "sub_title": "$20 discount for your first order"
+      },
+      "coupon_banner": {
+        "style": "theme-1",
+        "title": "Get $3 Cashback! Min Order of $30",
+        "status": 0,
+        "image_url": "http://localhost/frontend/images/theme-9/coupons/1.jpg",
+        "coupon_code": "GROCERY1920"
+      },
+      "products_list_1": {
+        "type": "top_selling",
+        "style": "theme-9",
+        "title": "Top Selling Items",
+        "status": 1,
+        "paginate": 10,
+        "description": ""
+      },
+      "products_list_2": {
+        "type": "top_selling",
+        "style": "theme-9",
+        "title": "Top Selling Items",
+        "status": 1,
+        "paginate": 10,
+        "description": ""
+      },
+      "products_list_3": {
+        "type": "top_selling",
+        "style": "theme-9",
+        "title": "Top Selling Items",
+        "status": 1,
+        "paginate": 10,
+        "description": ""
+      },
+      "two_column_banners": {
+        "style": "theme-5",
+        "status": 1,
+        "banner_1": {
+          "title": "TAKE ON THE DAY!",
+          "image_url": "http://localhost/frontend/images/theme-9/two_column_banners/1.jpg",
+          "sub_title": "",
+          "button_text": "Show Now",
+          "description": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate.",
+          "offer_title": "Get Ready To",
+          "discount_off": ""
+        },
+        "banner_2": {
+          "title": "SUMMARY",
+          "image_url": "http://localhost/frontend/images/theme-9/two_column_banners/2.jpg",
+          "sub_title": "Product",
+          "button_text": "Show Now",
+          "description": "",
+          "offer_title": "",
+          "discount_off": "20"
+        }
+      },
+      "categories_icon_list": {
+        "sort": "asc",
+        "field": "name",
+        "style": "theme-5",
+        "title": "",
+        "status": 1,
+        "image_url": "http://localhost/frontend/images/common/categories/bg/1.jpg",
+        "description": ""
+      },
+      "slider_product_with_banner": {
+        "slider_products": {
+          "style": "theme-9",
+          "title": "",
+          "status": 1,
+          "description": "",
+          "product_slider_1": {
+            "type": "top_selling",
+            "title": "Top Selling",
+            "status": 1,
+            "paginate": 10,
+            "description": ""
+          },
+          "product_slider_2": {
+            "type": "trending",
+            "title": "Trending Products",
+            "status": 1,
+            "paginate": 10,
+            "description": ""
+          },
+          "product_slider_3": {
+            "type": "recent",
+            "title": "Recently added",
+            "status": 1,
+            "paginate": 10,
+            "description": ""
+          }
+        },
+        "left_side_banners": {
+          "style": "theme-9",
+          "status": 0,
+          "banner_1": {
+            "label": "Seafood",
+            "title": "Freshes",
+            "image_url": "http://localhost/frontend/images/theme-1/left_side_banners/1.jpg",
+            "sub_title": "Products",
+            "button_text": "Show Now",
+            "description": "every hour",
+            "discount_off": ""
+          }
+        }
+      }
+    },
+    "sequence": [
+      "home_banner",
+      "categories_icon_list",
+      "products_list_1",
+      "two_column_banners",
+      "slider_product_with_banner",
+      "coupon_banner",
+      "products_list_2",
+      "products_list_3",
+      "news_letter"
+    ],
+    "slug": "theme-9"
+  }
+]

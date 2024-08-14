@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Seller/Store/Basic/index.vue?nuxt_component=async&nuxt_component_name=ShopSellerStoreBasic",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"container-fluid-lg\">\n        <div class=\"row g-4\">\n            <template v-if=\"skeletonLoader\">\n                <div class=\"col-xxl-4 col-md-6\" v-for=\"item in skeletonItems\" :key=\"item\">\n                    <ShopSellerStoreSekleton />\n                </div>\n            </template>\n            <template v-else>\n                <div class=\"col-xxl-4 col-md-6\" v-for=\"store in stores\" :key=\"store\">\n                    <div class=\"seller-grid-box seller-grid-box-1\">\n                        <div class=\"grid-image\">\n                            <ShopSellerWidgetsStoreLogo :store=\"store\" />\n                            <div class=\"contain-name\">\n                                <div>\n                                    <div class=\"since-number\">\n                                        <ShopSellerWidgetsStoreRating :store=\"store\" />\n                                    </div>\n                                    <ShopSellerWidgetsStoreName :store=\"store\" />\n                                </div>\n                                <ShopSellerWidgetsStoreProductCount :store=\"store\" />\n                            </div>\n                        </div>\n                        <div class=\"grid-contain\">\n                            <div class=\"seller-contact-details\">\n                                <ShopSellerWidgetsContectDetails :store=\"store\" />\n                            </div>\n                            <div class=\"seller-category\">\n                                <nuxt-link :to=\"`/seller/store/${store.slug}`\"\n                                    class=\"btn btn-sm theme-bg-color text-white fw-bold\">\n                                    {{ 'Visit Store' }}\n                                    <Icon name=\"ri-arrow-right-line\" size=\"18\"></Icon>\n                                </nuxt-link>\n                                <ShopSellerWidgetsStoreProduct :store=\"store\" />\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <WidgetsNoData :classes=\"'no-data-added collection-no-data'\" :image=\"'/svg/no-product.svg'\"\n                    :text=\"'No Store Found'\"\n                    :description=\"'I regret to inform you that the Store is currently unavailable.'\" v-if=\"!stores?.length\">\n                </WidgetsNoData>\n            </template>\n        </div>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    stores: Object,\n    skeletonLoader: Object,\n    skeletonItems: Object\n})\n\n\n</script>",
+      "start": 1716056284731,
+      "end": 1716056284848,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284848,
+      "end": 1716056284848,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284848,
+      "end": 1716056284848,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284848,
+      "end": 1716056284848,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284848,
+      "end": 1716056284848,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284848,
+      "end": 1716056284848,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284848,
+      "end": 1716056284848,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284848,
+      "end": 1716056284848,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, withCtx as _withCtx, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"container-fluid-lg\" }\nconst _hoisted_2 = { class: \"row g-4\" }\nconst _hoisted_3 = { class: \"seller-grid-box seller-grid-box-1\" }\nconst _hoisted_4 = { class: \"grid-image\" }\nconst _hoisted_5 = { class: \"contain-name\" }\nconst _hoisted_6 = { class: \"since-number\" }\nconst _hoisted_7 = { class: \"grid-contain\" }\nconst _hoisted_8 = { class: \"seller-contact-details\" }\nconst _hoisted_9 = { class: \"seller-category\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    stores: Object,\n    skeletonLoader: Object,\n    skeletonItems: Object\n},\n  setup(__props) {\n\nlet props = __props\n\n\n\nreturn (_ctx, _cache) => {\n  const _component_ShopSellerStoreSekleton = _resolveComponent(\"ShopSellerStoreSekleton\")\n  const _component_ShopSellerWidgetsStoreLogo = _resolveComponent(\"ShopSellerWidgetsStoreLogo\")\n  const _component_ShopSellerWidgetsStoreRating = _resolveComponent(\"ShopSellerWidgetsStoreRating\")\n  const _component_ShopSellerWidgetsStoreName = _resolveComponent(\"ShopSellerWidgetsStoreName\")\n  const _component_ShopSellerWidgetsStoreProductCount = _resolveComponent(\"ShopSellerWidgetsStoreProductCount\")\n  const _component_ShopSellerWidgetsContectDetails = _resolveComponent(\"ShopSellerWidgetsContectDetails\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_ShopSellerWidgetsStoreProduct = _resolveComponent(\"ShopSellerWidgetsStoreProduct\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      (__props.skeletonLoader)\n        ? (_openBlock(true), _createElementBlock(_Fragment, { key: 0 }, _renderList(__props.skeletonItems, (item) => {\n            return (_openBlock(), _createElementBlock(\"div\", {\n              class: \"col-xxl-4 col-md-6\",\n              key: item\n            }, [\n              _createVNode(_component_ShopSellerStoreSekleton)\n            ]))\n          }), 128))\n        : (_openBlock(), _createElementBlock(_Fragment, { key: 1 }, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.stores, (store) => {\n              return (_openBlock(), _createElementBlock(\"div\", {\n                class: \"col-xxl-4 col-md-6\",\n                key: store\n              }, [\n                _createElementVNode(\"div\", _hoisted_3, [\n                  _createElementVNode(\"div\", _hoisted_4, [\n                    _createVNode(_component_ShopSellerWidgetsStoreLogo, { store: store }, null, 8, [\"store\"]),\n                    _createElementVNode(\"div\", _hoisted_5, [\n                      _createElementVNode(\"div\", null, [\n                        _createElementVNode(\"div\", _hoisted_6, [\n                          _createVNode(_component_ShopSellerWidgetsStoreRating, { store: store }, null, 8, [\"store\"])\n                        ]),\n                        _createVNode(_component_ShopSellerWidgetsStoreName, { store: store }, null, 8, [\"store\"])\n                      ]),\n                      _createVNode(_component_ShopSellerWidgetsStoreProductCount, { store: store }, null, 8, [\"store\"])\n                    ])\n                  ]),\n                  _createElementVNode(\"div\", _hoisted_7, [\n                    _createElementVNode(\"div\", _hoisted_8, [\n                      _createVNode(_component_ShopSellerWidgetsContectDetails, { store: store }, null, 8, [\"store\"])\n                    ]),\n                    _createElementVNode(\"div\", _hoisted_9, [\n                      _createVNode(_component_nuxt_link, {\n                        to: `/seller/store/${store.slug}`,\n                        class: \"btn btn-sm theme-bg-color text-white fw-bold\"\n                      }, {\n                        default: _withCtx(() => [\n                          _createTextVNode(_toDisplayString('Visit Store') + \" \"),\n                          _createVNode(_component_Icon, {\n                            name: \"ri-arrow-right-line\",\n                            size: \"18\"\n                          })\n                        ]),\n                        _: 2\n                      }, 1032, [\"to\"]),\n                      _createVNode(_component_ShopSellerWidgetsStoreProduct, { store: store }, null, 8, [\"store\"])\n                    ])\n                  ])\n                ])\n              ]))\n            }), 128)),\n            (!__props.stores?.length)\n              ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n                  key: 0,\n                  classes: 'no-data-added collection-no-data',\n                  image: '/svg/no-product.svg',\n                  text: 'No Store Found',\n                  description: 'I regret to inform you that the Store is currently unavailable.'\n                }, null, 8, [\"image\", \"description\"]))\n              : _createCommentVNode(\"\", true)\n          ], 64))\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284848,
+      "end": 1716056284851,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284851,
+      "end": 1716056284851,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284851,
+      "end": 1716056284851,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284851,
+      "end": 1716056284851,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284851,
+      "end": 1716056284851,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Seller/Store/Basic/index.vue\").then(r => r.default))",
+      "start": 1716056284851,
+      "end": 1716056284852,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284852,
+      "end": 1716056284852,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Seller/Store/Basic/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284852,
+      "end": 1716056284853,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284853,
+      "end": 1716056284853,
+      "order": "normal"
+    }
+  ]
+}

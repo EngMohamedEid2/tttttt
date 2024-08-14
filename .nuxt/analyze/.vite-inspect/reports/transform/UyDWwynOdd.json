@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/SizeChartModal/index.vue?nuxt_component=async&nuxt_component_name=WidgetsModalsSizeChartModal",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <div class=\"modal-header\">\n      <h3 class=\"fw-semibold\">{{ 'Size Chart' }}</h3>\n      <WidgetsButton :classes=\"'btn btn-close'\"  :id=\"'profile_modal_close_btn'\"\n          @onClick=\"() => {emit('close');}\">\n        <Icon name=\"ri-close-line\"/>\n      </WidgetsButton>\n  </div>\n  <div class=\"modal-body\">\n    <img :src=\"image?.original_url\" class=\"img-fluid\" alt=\"chart\">\n  </div>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  image:Object\n})\nlet emit = defineEmits(['close'])\n</script>\n\n<style lang=\"scss\" scoped>\n\n</style>",
+      "start": 1716056285211,
+      "end": 1716056285383,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285383,
+      "end": 1716056285383,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285383,
+      "end": 1716056285383,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285383,
+      "end": 1716056285383,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285383,
+      "end": 1716056285383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285383,
+      "end": 1716056285383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285383,
+      "end": 1716056285383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285383,
+      "end": 1716056285383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"modal-header\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"h3\", { class: \"fw-semibold\" }, /*#__PURE__*/_toDisplayString('Size Chart'), -1)\nconst _hoisted_3 = { class: \"modal-body\" }\nconst _hoisted_4 = [\"src\"]\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  image:Object\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\nlet emit = __emit\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _hoisted_2,\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn btn-close',\n        id: 'profile_modal_close_btn',\n        onOnClick: _cache[0] || (_cache[0] = () => {_unref(emit)('close');})\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_Icon, { name: \"ri-close-line\" })\n        ]),\n        _: 1\n      })\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createElementVNode(\"img\", {\n        src: __props.image?.original_url,\n        class: \"img-fluid\",\n        alt: \"chart\"\n      }, null, 8, _hoisted_4)\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056285383,
+      "end": 1716056285384,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285384,
+      "end": 1716056285384,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285384,
+      "end": 1716056285384,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/SizeChartModal/index.vue\").then(r => r.default))",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/SizeChartModal/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285385,
+      "end": 1716056285385,
+      "order": "normal"
+    }
+  ]
+}

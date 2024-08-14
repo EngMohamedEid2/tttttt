@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Seller/Store/Basic/index.vue?nuxt_component=async&nuxt_component_name=ShopSellerStoreBasic",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"container-fluid-lg\">\n        <div class=\"row g-4\">\n            <template v-if=\"skeletonLoader\">\n                <div class=\"col-xxl-4 col-md-6\" v-for=\"item in skeletonItems\" :key=\"item\">\n                    <ShopSellerStoreSekleton />\n                </div>\n            </template>\n            <template v-else>\n                <div class=\"col-xxl-4 col-md-6\" v-for=\"store in stores\" :key=\"store\">\n                    <div class=\"seller-grid-box seller-grid-box-1\">\n                        <div class=\"grid-image\">\n                            <ShopSellerWidgetsStoreLogo :store=\"store\" />\n                            <div class=\"contain-name\">\n                                <div>\n                                    <div class=\"since-number\">\n                                        <ShopSellerWidgetsStoreRating :store=\"store\" />\n                                    </div>\n                                    <ShopSellerWidgetsStoreName :store=\"store\" />\n                                </div>\n                                <ShopSellerWidgetsStoreProductCount :store=\"store\" />\n                            </div>\n                        </div>\n                        <div class=\"grid-contain\">\n                            <div class=\"seller-contact-details\">\n                                <ShopSellerWidgetsContectDetails :store=\"store\" />\n                            </div>\n                            <div class=\"seller-category\">\n                                <nuxt-link :to=\"`/seller/store/${store.slug}`\"\n                                    class=\"btn btn-sm theme-bg-color text-white fw-bold\">\n                                    {{ 'Visit Store' }}\n                                    <Icon name=\"ri-arrow-right-line\" size=\"18\"></Icon>\n                                </nuxt-link>\n                                <ShopSellerWidgetsStoreProduct :store=\"store\" />\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <WidgetsNoData :classes=\"'no-data-added collection-no-data'\" :image=\"'/svg/no-product.svg'\"\n                    :text=\"'No Store Found'\"\n                    :description=\"'I regret to inform you that the Store is currently unavailable.'\" v-if=\"!stores?.length\">\n                </WidgetsNoData>\n            </template>\n        </div>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    stores: Object,\n    skeletonLoader: Object,\n    skeletonItems: Object\n})\n\n\n</script>",
+      "start": 1716056339584,
+      "end": 1716056339672,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339672,
+      "end": 1716056339672,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339672,
+      "end": 1716056339672,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339672,
+      "end": 1716056339672,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339672,
+      "end": 1716056339672,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339672,
+      "end": 1716056339672,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339672,
+      "end": 1716056339672,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339672,
+      "end": 1716056339672,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339672,
+      "end": 1716056339672,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339672,
+      "end": 1716056339672,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339672,
+      "end": 1716056339672,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createVNode as _createVNode, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    stores: Object,\n    skeletonLoader: Object,\n    skeletonItems: Object\n},\n  setup(__props) {\n\nlet props = __props\n\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_ShopSellerStoreSekleton = _resolveComponent(\"ShopSellerStoreSekleton\")\n  const _component_ShopSellerWidgetsStoreLogo = _resolveComponent(\"ShopSellerWidgetsStoreLogo\")\n  const _component_ShopSellerWidgetsStoreRating = _resolveComponent(\"ShopSellerWidgetsStoreRating\")\n  const _component_ShopSellerWidgetsStoreName = _resolveComponent(\"ShopSellerWidgetsStoreName\")\n  const _component_ShopSellerWidgetsStoreProductCount = _resolveComponent(\"ShopSellerWidgetsStoreProductCount\")\n  const _component_ShopSellerWidgetsContectDetails = _resolveComponent(\"ShopSellerWidgetsContectDetails\")\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_ShopSellerWidgetsStoreProduct = _resolveComponent(\"ShopSellerWidgetsStoreProduct\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"container-fluid-lg\" }, _attrs))}><div class=\"row g-4\">`)\n  if (__props.skeletonLoader) {\n    _push(`<!--[-->`)\n    _ssrRenderList(__props.skeletonItems, (item) => {\n      _push(`<div class=\"col-xxl-4 col-md-6\">`)\n      _push(_ssrRenderComponent(_component_ShopSellerStoreSekleton, null, null, _parent))\n      _push(`</div>`)\n    })\n    _push(`<!--]-->`)\n  } else {\n    _push(`<!--[--><!--[-->`)\n    _ssrRenderList(__props.stores, (store) => {\n      _push(`<div class=\"col-xxl-4 col-md-6\"><div class=\"seller-grid-box seller-grid-box-1\"><div class=\"grid-image\">`)\n      _push(_ssrRenderComponent(_component_ShopSellerWidgetsStoreLogo, { store: store }, null, _parent))\n      _push(`<div class=\"contain-name\"><div><div class=\"since-number\">`)\n      _push(_ssrRenderComponent(_component_ShopSellerWidgetsStoreRating, { store: store }, null, _parent))\n      _push(`</div>`)\n      _push(_ssrRenderComponent(_component_ShopSellerWidgetsStoreName, { store: store }, null, _parent))\n      _push(`</div>`)\n      _push(_ssrRenderComponent(_component_ShopSellerWidgetsStoreProductCount, { store: store }, null, _parent))\n      _push(`</div></div><div class=\"grid-contain\"><div class=\"seller-contact-details\">`)\n      _push(_ssrRenderComponent(_component_ShopSellerWidgetsContectDetails, { store: store }, null, _parent))\n      _push(`</div><div class=\"seller-category\">`)\n      _push(_ssrRenderComponent(_component_nuxt_link, {\n        to: `/seller/store/${store.slug}`,\n        class: \"btn btn-sm theme-bg-color text-white fw-bold\"\n      }, {\n        default: _withCtx((_, _push, _parent, _scopeId) => {\n          if (_push) {\n            _push(`${_ssrInterpolate('Visit Store')} `)\n            _push(_ssrRenderComponent(_component_Icon, {\n              name: \"ri-arrow-right-line\",\n              size: \"18\"\n            }, null, _parent, _scopeId))\n          } else {\n            return [\n              _createTextVNode(_toDisplayString('Visit Store') + \" \"),\n              _createVNode(_component_Icon, {\n                name: \"ri-arrow-right-line\",\n                size: \"18\"\n              })\n            ]\n          }\n        }),\n        _: 2\n      }, _parent))\n      _push(_ssrRenderComponent(_component_ShopSellerWidgetsStoreProduct, { store: store }, null, _parent))\n      _push(`</div></div></div></div>`)\n    })\n    _push(`<!--]-->`)\n    if (!__props.stores?.length) {\n      _push(_ssrRenderComponent(_component_WidgetsNoData, {\n        classes: 'no-data-added collection-no-data',\n        image: '/svg/no-product.svg',\n        text: 'No Store Found',\n        description: 'I regret to inform you that the Store is currently unavailable.'\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<!--]-->`)\n  }\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Seller/Store/Basic/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339672,
+      "end": 1716056339674,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Seller/Store/Basic/index.vue\").then(r => r.default))",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339674,
+      "end": 1716056339674,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339675,
+      "end": 1716056339675,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339675,
+      "end": 1716056339675,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339675,
+      "end": 1716056339675,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Auth/CommonForm/RegisterForm.vue?nuxt_component=async&nuxt_component_name=AuthCommonFormRegisterForm",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <form class=\"row g-4\" @submit.prevent=\"handleRegister()\">\n    <div class=\"col-12\">\n      <div class=\"form-floating log-in-form\">\n        <WidgetsInputFieldsNonEmptyField classes=\"form-control\" :formSubmitted=\"formSubmitted\" v-model=\"input.name\"\n          id=\"name\" placeholder=\"name\" />\n        <label for=\"name\">{{ $t(\"Full Name\") }}</label>\n      </div>\n    </div>\n    <div class=\"col-12\">\n      <div class=\"form-floating log-in-form\">\n        <WidgetsInputFieldsEmailField classes=\"form-control\" :formSubmitted=\"formSubmitted\" v-model=\"input.email\"\n          id=\"email\" placeholder=\"Email Address\" />\n        <label for=\"email\">{{ $t(\"Email Address\") }}</label>\n      </div>\n    </div>\n    <div class=\"col-12 phone-field\">\n      <div class=\"form-floating log-in-form\">\n        <div class=\"d-flex row\">\n          <span class=\"col-4 pe-0 adshjahkjsdh\">\n            <WidgetsInputFieldsSearchDropdown :formSubmitted=\"formSubmitted\" :select-first=\"true\" getValueKey=\"id\"\n              display-key=\"name\" v-model=\"input.country_code\" :form-submitted=\"formSubmitted\"\n              :options=\"AllCountryCode\" />\n          </span>\n          <span class=\"col-8 ps-0\">\n            <div class=\"form-floating\">\n              <WidgetsInputFieldsNumberField type=\"number\" :formSubmitted=\"formSubmitted\" classes=\"form-control\"\n                errorMessage=\"phone number is required.\" v-model=\"input.phone\" id=\"phone\" placeholder=\"phone\" />\n              <label for=\"phone\">{{ $t(\"Phone Number\") }}</label>\n            </div>\n          </span>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-12\">\n      <div class=\"form-floating log-in-form\">\n        <WidgetsInputFieldsPasswordField classes=\"form-control\" :formSubmitted=\"formSubmitted\" v-model=\"input.password\"\n          id=\"password\" placeholder=\"password\" />\n        <label for=\"password\">{{ $t(\"Password\") }}</label>\n      </div>\n    </div>\n    <div class=\"col-12\">\n      <div class=\"form-floating log-in-form\">\n        <WidgetsInputFieldsRePasswordField errorMessage=\"Confirm Password is required\" :formSubmitted=\"formSubmitted\"\n          v-model=\"input.password_confirmation\" classes=\"form-control\" id=\"password_confirmation\"\n          placeholder=\"password_confirmation\" :passwordToCompere=\"input.password.data\" />\n        <label for=\"password_confirmation\">{{ $t(\"Password Confirmation\") }}</label>\n      </div>\n    </div>\n    <div class=\"col-12\">\n      <div class=\"forgot-box\">\n        <div class=\"form-check ps-0 m-0 remember-box\">\n          <input class=\"checkbox_animated check-box\" type=\"checkbox\" id=\"flexCheckDefault\" />\n          <label class=\"form-check-label\" for=\"flexCheckDefault\">{{ $t(\"I agree with\") }} <span>{{ $t(\"Terms\") }}</span>\n            {{ $t(\"and\") }} <span>{{ $t(\"Privacy\") }}</span></label>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-12\">\n      <WidgetsButton :id=\"'sign_up'\">{{ $t(\"Sign Up\") }}</WidgetsButton>\n    </div>\n  </form>\n</template>\n\n<script setup>\nimport { AllCountryCode } from \"@/data/country_code\";\nlet props = defineProps({ input: Object, formSubmitted: Boolean })\nlet emit = defineEmits([\"handleRegister\"])\nfunction handleRegister() {\n  emit('handleRegister')\n}\n</script>\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056262076,
+      "end": 1716056270639,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056270639,
+      "end": 1716056270639,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056270639,
+      "end": 1716056270639,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056270639,
+      "end": 1716056270640,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056270640,
+      "end": 1716056270640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056270640,
+      "end": 1716056270640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056270640,
+      "end": 1716056270640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056270640,
+      "end": 1716056270640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, unref as _unref, createTextVNode as _createTextVNode, withCtx as _withCtx, withModifiers as _withModifiers, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"col-12\" }\nconst _hoisted_2 = { class: \"form-floating log-in-form\" }\nconst _hoisted_3 = { for: \"name\" }\nconst _hoisted_4 = { class: \"col-12\" }\nconst _hoisted_5 = { class: \"form-floating log-in-form\" }\nconst _hoisted_6 = { for: \"email\" }\nconst _hoisted_7 = { class: \"col-12 phone-field\" }\nconst _hoisted_8 = { class: \"form-floating log-in-form\" }\nconst _hoisted_9 = { class: \"d-flex row\" }\nconst _hoisted_10 = { class: \"col-4 pe-0 adshjahkjsdh\" }\nconst _hoisted_11 = { class: \"col-8 ps-0\" }\nconst _hoisted_12 = { class: \"form-floating\" }\nconst _hoisted_13 = { for: \"phone\" }\nconst _hoisted_14 = { class: \"col-12\" }\nconst _hoisted_15 = { class: \"form-floating log-in-form\" }\nconst _hoisted_16 = { for: \"password\" }\nconst _hoisted_17 = { class: \"col-12\" }\nconst _hoisted_18 = { class: \"form-floating log-in-form\" }\nconst _hoisted_19 = { for: \"password_confirmation\" }\nconst _hoisted_20 = { class: \"col-12\" }\nconst _hoisted_21 = { class: \"forgot-box\" }\nconst _hoisted_22 = { class: \"form-check ps-0 m-0 remember-box\" }\nconst _hoisted_23 = /*#__PURE__*/_createElementVNode(\"input\", {\n  class: \"checkbox_animated check-box\",\n  type: \"checkbox\",\n  id: \"flexCheckDefault\"\n}, null, -1)\nconst _hoisted_24 = {\n  class: \"form-check-label\",\n  for: \"flexCheckDefault\"\n}\nconst _hoisted_25 = { class: \"col-12\" }\n\nimport { AllCountryCode } from \"@/data/country_code\";\n\nconst _sfc_main = {\n  __name: 'RegisterForm',\n  props: { input: Object, formSubmitted: Boolean },\n  emits: [\"handleRegister\"],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\nlet emit = __emit\nfunction handleRegister() {\n  emit('handleRegister')\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsInputFieldsNonEmptyField = _resolveComponent(\"WidgetsInputFieldsNonEmptyField\")\n  const _component_WidgetsInputFieldsEmailField = _resolveComponent(\"WidgetsInputFieldsEmailField\")\n  const _component_WidgetsInputFieldsSearchDropdown = _resolveComponent(\"WidgetsInputFieldsSearchDropdown\")\n  const _component_WidgetsInputFieldsNumberField = _resolveComponent(\"WidgetsInputFieldsNumberField\")\n  const _component_WidgetsInputFieldsPasswordField = _resolveComponent(\"WidgetsInputFieldsPasswordField\")\n  const _component_WidgetsInputFieldsRePasswordField = _resolveComponent(\"WidgetsInputFieldsRePasswordField\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"form\", {\n    class: \"row g-4\",\n    onSubmit: _cache[6] || (_cache[6] = _withModifiers($event => (handleRegister()), [\"prevent\"]))\n  }, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createVNode(_component_WidgetsInputFieldsNonEmptyField, {\n          classes: \"form-control\",\n          formSubmitted: __props.formSubmitted,\n          modelValue: __props.input.name,\n          \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((__props.input.name) = $event)),\n          id: \"name\",\n          placeholder: \"name\"\n        }, null, 8, [\"formSubmitted\", \"modelValue\"]),\n        _createElementVNode(\"label\", _hoisted_3, _toDisplayString(_ctx.$t(\"Full Name\")), 1)\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_4, [\n      _createElementVNode(\"div\", _hoisted_5, [\n        _createVNode(_component_WidgetsInputFieldsEmailField, {\n          classes: \"form-control\",\n          formSubmitted: __props.formSubmitted,\n          modelValue: __props.input.email,\n          \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => ((__props.input.email) = $event)),\n          id: \"email\",\n          placeholder: \"Email Address\"\n        }, null, 8, [\"formSubmitted\", \"modelValue\"]),\n        _createElementVNode(\"label\", _hoisted_6, _toDisplayString(_ctx.$t(\"Email Address\")), 1)\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_7, [\n      _createElementVNode(\"div\", _hoisted_8, [\n        _createElementVNode(\"div\", _hoisted_9, [\n          _createElementVNode(\"span\", _hoisted_10, [\n            _createVNode(_component_WidgetsInputFieldsSearchDropdown, {\n              formSubmitted: __props.formSubmitted,\n              \"select-first\": true,\n              getValueKey: \"id\",\n              \"display-key\": \"name\",\n              modelValue: __props.input.country_code,\n              \"onUpdate:modelValue\": _cache[2] || (_cache[2] = $event => ((__props.input.country_code) = $event)),\n              \"form-submitted\": __props.formSubmitted,\n              options: _unref(AllCountryCode)\n            }, null, 8, [\"formSubmitted\", \"modelValue\", \"form-submitted\", \"options\"])\n          ]),\n          _createElementVNode(\"span\", _hoisted_11, [\n            _createElementVNode(\"div\", _hoisted_12, [\n              _createVNode(_component_WidgetsInputFieldsNumberField, {\n                type: \"number\",\n                formSubmitted: __props.formSubmitted,\n                classes: \"form-control\",\n                errorMessage: \"phone number is required.\",\n                modelValue: __props.input.phone,\n                \"onUpdate:modelValue\": _cache[3] || (_cache[3] = $event => ((__props.input.phone) = $event)),\n                id: \"phone\",\n                placeholder: \"phone\"\n              }, null, 8, [\"formSubmitted\", \"modelValue\"]),\n              _createElementVNode(\"label\", _hoisted_13, _toDisplayString(_ctx.$t(\"Phone Number\")), 1)\n            ])\n          ])\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_14, [\n      _createElementVNode(\"div\", _hoisted_15, [\n        _createVNode(_component_WidgetsInputFieldsPasswordField, {\n          classes: \"form-control\",\n          formSubmitted: __props.formSubmitted,\n          modelValue: __props.input.password,\n          \"onUpdate:modelValue\": _cache[4] || (_cache[4] = $event => ((__props.input.password) = $event)),\n          id: \"password\",\n          placeholder: \"password\"\n        }, null, 8, [\"formSubmitted\", \"modelValue\"]),\n        _createElementVNode(\"label\", _hoisted_16, _toDisplayString(_ctx.$t(\"Password\")), 1)\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_17, [\n      _createElementVNode(\"div\", _hoisted_18, [\n        _createVNode(_component_WidgetsInputFieldsRePasswordField, {\n          errorMessage: \"Confirm Password is required\",\n          formSubmitted: __props.formSubmitted,\n          modelValue: __props.input.password_confirmation,\n          \"onUpdate:modelValue\": _cache[5] || (_cache[5] = $event => ((__props.input.password_confirmation) = $event)),\n          classes: \"form-control\",\n          id: \"password_confirmation\",\n          placeholder: \"password_confirmation\",\n          passwordToCompere: __props.input.password.data\n        }, null, 8, [\"formSubmitted\", \"modelValue\", \"passwordToCompere\"]),\n        _createElementVNode(\"label\", _hoisted_19, _toDisplayString(_ctx.$t(\"Password Confirmation\")), 1)\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_20, [\n      _createElementVNode(\"div\", _hoisted_21, [\n        _createElementVNode(\"div\", _hoisted_22, [\n          _hoisted_23,\n          _createElementVNode(\"label\", _hoisted_24, [\n            _createTextVNode(_toDisplayString(_ctx.$t(\"I agree with\")) + \" \", 1),\n            _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"Terms\")), 1),\n            _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"and\")) + \" \", 1),\n            _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"Privacy\")), 1)\n          ])\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_25, [\n      _createVNode(_component_WidgetsButton, { id: 'sign_up' }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Sign Up\")), 1)\n        ]),\n        _: 1\n      })\n    ])\n  ], 32))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056270640,
+      "end": 1716056270644,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Auth/CommonForm/RegisterForm.vue\").then(r => r.default))",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056270644,
+      "end": 1716056270644,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056270644,
+      "end": 1716056270645,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056270645,
+      "end": 1716056270645,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Auth/CommonForm/RegisterForm.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056270645,
+      "end": 1716056270645,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056270645,
+      "end": 1716056270645,
+      "order": "normal"
+    }
+  ]
+}

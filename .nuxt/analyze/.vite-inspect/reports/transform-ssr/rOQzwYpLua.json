@@ -1,0 +1,259 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Cookie/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"cookie-bar-box\" :class=\"checkCookies ? 'd-none' : ''\">\n    <div class=\"cookie-box\">\n      <div class=\"cookie-image\">\n        <img src=\"/images/cookie-bar.png\" alt=\"\" />\n        <h2>{{ $t(\"Cookies\") }}!</h2>\n      </div>\n      <div class=\"cookie-contain\">\n        <h5 class=\"text-content\">\n          {{ $t(\"We use cookies to make your experience better\") }}\n        </h5>\n      </div>\n    </div>\n\n    <div class=\"button-group\">\n      <button class=\"btn privacy-button\">{{ $t(\"Privacy Policy\") }}</button>\n      <button class=\"btn ok-button\" @click=\"handleCookie()\">\n        {{ $t(\"OK\") }}\n      </button>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport Cookies from 'js-cookie';\n\nconst checkCookies = ref(true);\n\nconst initializeCookies = () => {\n  const cookieAccept = Cookies.get('CookieAccept');\n  if (cookieAccept) {\n    checkCookies.value = JSON.parse(cookieAccept);\n  } else {\n    checkCookies.value = false;\n  }\n};\n\nconst handleCookie = () => {\n  Cookies.set('CookieAccept', JSON.stringify(true));\n  checkCookies.value = true;\n};\n\nonMounted(() => {\n  initializeCookies();\n});\n\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056342396,
+      "end": 1716056342575,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342575,
+      "end": 1716056342575,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342575,
+      "end": 1716056342575,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342575,
+      "end": 1716056342575,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342575,
+      "end": 1716056342575,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342575,
+      "end": 1716056342575,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342575,
+      "end": 1716056342575,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342575,
+      "end": 1716056342576,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342576,
+      "end": 1716056342576,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342576,
+      "end": 1716056342576,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342576,
+      "end": 1716056342576,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/cookie-bar.png'\n\n\nimport Cookies from 'js-cookie';\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nconst checkCookies = ref(true);\n\nconst initializeCookies = () => {\n  const cookieAccept = Cookies.get('CookieAccept');\n  if (cookieAccept) {\n    checkCookies.value = JSON.parse(cookieAccept);\n  } else {\n    checkCookies.value = false;\n  }\n};\n\nconst handleCookie = () => {\n  Cookies.set('CookieAccept', JSON.stringify(true));\n  checkCookies.value = true;\n};\n\nonMounted(() => {\n  initializeCookies();\n});\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: [\"cookie-bar-box\", _unref(checkCookies) ? 'd-none' : '']\n    }, _attrs))\n  }><div class=\"cookie-box\"><div class=\"cookie-image\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } alt=\"\"><h2>${\n    _ssrInterpolate(_ctx.$t(\"Cookies\"))\n  }!</h2></div><div class=\"cookie-contain\"><h5 class=\"text-content\">${\n    _ssrInterpolate(_ctx.$t(\"We use cookies to make your experience better\"))\n  }</h5></div></div><div class=\"button-group\"><button class=\"btn privacy-button\">${\n    _ssrInterpolate(_ctx.$t(\"Privacy Policy\"))\n  }</button><button class=\"btn ok-button\">${\n    _ssrInterpolate(_ctx.$t(\"OK\"))\n  }</button></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Cookie/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342576,
+      "end": 1716056342576,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342576,
+      "end": 1716056342576,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342576,
+      "end": 1716056342576,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342576,
+      "end": 1716056342576,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342576,
+      "end": 1716056342576,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342576,
+      "end": 1716056342576,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342576,
+      "end": 1716056342576,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342576,
+      "end": 1716056342576,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342576,
+      "end": 1716056342577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056342577,
+      "end": 1716056342577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342577,
+      "end": 1716056342577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342577,
+      "end": 1716056342577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342577,
+      "end": 1716056342577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342577,
+      "end": 1716056342577,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342577,
+      "end": 1716056342577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342577,
+      "end": 1716056342577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342577,
+      "end": 1716056342577,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342577,
+      "end": 1716056342577,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342577,
+      "end": 1716056342577,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/cookie-bar.png'\n\n\nimport Cookies from 'js-cookie';\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nconst checkCookies = ref(true);\n\nconst initializeCookies = () => {\n  const cookieAccept = Cookies.get('CookieAccept');\n  if (cookieAccept) {\n    checkCookies.value = JSON.parse(cookieAccept);\n  } else {\n    checkCookies.value = false;\n  }\n};\n\nconst handleCookie = () => {\n  Cookies.set('CookieAccept', JSON.stringify(true));\n  checkCookies.value = true;\n};\n\nonMounted(() => {\n  initializeCookies();\n});\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: [\"cookie-bar-box\", _unref(checkCookies) ? 'd-none' : '']\n    }, _attrs))\n  }><div class=\"cookie-box\"><div class=\"cookie-image\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } alt=\"\"><h2>${\n    _ssrInterpolate(_ctx.$t(\"Cookies\"))\n  }!</h2></div><div class=\"cookie-contain\"><h5 class=\"text-content\">${\n    _ssrInterpolate(_ctx.$t(\"We use cookies to make your experience better\"))\n  }</h5></div></div><div class=\"button-group\"><button class=\"btn privacy-button\">${\n    _ssrInterpolate(_ctx.$t(\"Privacy Policy\"))\n  }</button><button class=\"btn ok-button\">${\n    _ssrInterpolate(_ctx.$t(\"OK\"))\n  }</button></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Cookie/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342577,
+      "end": 1716056342578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/cookie-bar.png'\n\n\nimport Cookies from 'js-cookie';\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nconst checkCookies = ref(true);\n\nconst initializeCookies = () => {\n  const cookieAccept = Cookies.get('CookieAccept');\n  if (cookieAccept) {\n    checkCookies.value = JSON.parse(cookieAccept);\n  } else {\n    checkCookies.value = false;\n  }\n};\n\nconst handleCookie = () => {\n  Cookies.set('CookieAccept', JSON.stringify(true));\n  checkCookies.value = true;\n};\n\nonMounted(() => {\n  initializeCookies();\n});\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: [\"cookie-bar-box\", _unref(checkCookies) ? 'd-none' : '']\n    }, _attrs))\n  }><div class=\"cookie-box\"><div class=\"cookie-image\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } alt=\"\"><h2>${\n    _ssrInterpolate(_ctx.$t(\"Cookies\"))\n  }!</h2></div><div class=\"cookie-contain\"><h5 class=\"text-content\">${\n    _ssrInterpolate(_ctx.$t(\"We use cookies to make your experience better\"))\n  }</h5></div></div><div class=\"button-group\"><button class=\"btn privacy-button\">${\n    _ssrInterpolate(_ctx.$t(\"Privacy Policy\"))\n  }</button><button class=\"btn ok-button\">${\n    _ssrInterpolate(_ctx.$t(\"OK\"))\n  }</button></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Cookie/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342577,
+      "end": 1716056342578,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342578,
+      "end": 1716056342578,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342578,
+      "end": 1716056342578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342578,
+      "end": 1716056342578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342578,
+      "end": 1716056342578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342578,
+      "end": 1716056342578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056342578,
+      "end": 1716056342578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/cookie-bar.png'\n\n\nimport Cookies from 'js-cookie';\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nconst checkCookies = ref(true);\n\nconst initializeCookies = () => {\n  const cookieAccept = Cookies.get('CookieAccept');\n  if (cookieAccept) {\n    checkCookies.value = JSON.parse(cookieAccept);\n  } else {\n    checkCookies.value = false;\n  }\n};\n\nconst handleCookie = () => {\n  Cookies.set('CookieAccept', JSON.stringify(true));\n  checkCookies.value = true;\n};\n\n false && /*@__PURE__*/ onMounted(() => {\n  initializeCookies();\n});\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: [\"cookie-bar-box\", _unref(checkCookies) ? 'd-none' : '']\n    }, _attrs))\n  }><div class=\"cookie-box\"><div class=\"cookie-image\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } alt=\"\"><h2>${\n    _ssrInterpolate(_ctx.$t(\"Cookies\"))\n  }!</h2></div><div class=\"cookie-contain\"><h5 class=\"text-content\">${\n    _ssrInterpolate(_ctx.$t(\"We use cookies to make your experience better\"))\n  }</h5></div></div><div class=\"button-group\"><button class=\"btn privacy-button\">${\n    _ssrInterpolate(_ctx.$t(\"Privacy Policy\"))\n  }</button><button class=\"btn ok-button\">${\n    _ssrInterpolate(_ctx.$t(\"OK\"))\n  }</button></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Cookie/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342578,
+      "end": 1716056342579,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342579,
+      "end": 1716056342579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342579,
+      "end": 1716056342579,
+      "order": "normal"
+    }
+  ]
+}

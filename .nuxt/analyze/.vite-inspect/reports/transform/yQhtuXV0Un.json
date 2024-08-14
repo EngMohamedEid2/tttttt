@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Seller/Widgets/ContectDetails/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <div class=\"saller-contact\">\n    <div class=\"seller-icon\">\n      <Icon name=\"ri:smartphone-line\"></Icon>\n    </div>\n    <div class=\"contact-detail\">\n      <h5>{{ 'Contact Us' }}: <span>+ {{ store.vendor.phone }}</span></h5>\n    </div>\n  </div>\n  <div class=\"saller-contact mt-2\">\n    <div class=\"seller-icon\">\n      <Icon name=\"ri:mail-line\"></Icon>\n    </div>\n    <div class=\"contact-detail\">\n      <h5>{{ 'Email' }}: <span> {{ store.vendor.email }}</span></h5>\n    </div>\n  </div>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  store: Object\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056287826,
+      "end": 1716056287995,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287995,
+      "end": 1716056287995,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287995,
+      "end": 1716056287995,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287995,
+      "end": 1716056287995,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287995,
+      "end": 1716056287995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287995,
+      "end": 1716056287995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287995,
+      "end": 1716056287995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287995,
+      "end": 1716056287995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"saller-contact\" }\nconst _hoisted_2 = { class: \"seller-icon\" }\nconst _hoisted_3 = { class: \"contact-detail\" }\nconst _hoisted_4 = { class: \"saller-contact mt-2\" }\nconst _hoisted_5 = { class: \"seller-icon\" }\nconst _hoisted_6 = { class: \"contact-detail\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  store: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createVNode(_component_Icon, { name: \"ri:smartphone-line\" })\n      ]),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"h5\", null, [\n          _createTextVNode(_toDisplayString('Contact Us') + \": \"),\n          _createElementVNode(\"span\", null, \"+ \" + _toDisplayString(__props.store.vendor.phone), 1)\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_4, [\n      _createElementVNode(\"div\", _hoisted_5, [\n        _createVNode(_component_Icon, { name: \"ri:mail-line\" })\n      ]),\n      _createElementVNode(\"div\", _hoisted_6, [\n        _createElementVNode(\"h5\", null, [\n          _createTextVNode(_toDisplayString('Email') + \": \"),\n          _createElementVNode(\"span\", null, _toDisplayString(__props.store.vendor.email), 1)\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287995,
+      "end": 1716056287995,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287996,
+      "end": 1716056287996,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056287996,
+      "end": 1716056287997,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287997,
+      "end": 1716056287997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287997,
+      "end": 1716056287997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287997,
+      "end": 1716056287997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287997,
+      "end": 1716056287997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"saller-contact\" }\nconst _hoisted_2 = { class: \"seller-icon\" }\nconst _hoisted_3 = { class: \"contact-detail\" }\nconst _hoisted_4 = { class: \"saller-contact mt-2\" }\nconst _hoisted_5 = { class: \"seller-icon\" }\nconst _hoisted_6 = { class: \"contact-detail\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  store: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createVNode(_component_Icon, { name: \"ri:smartphone-line\" })\n      ]),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"h5\", null, [\n          _createTextVNode(_toDisplayString('Contact Us') + \": \"),\n          _createElementVNode(\"span\", null, \"+ \" + _toDisplayString(__props.store.vendor.phone), 1)\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_4, [\n      _createElementVNode(\"div\", _hoisted_5, [\n        _createVNode(_component_Icon, { name: \"ri:mail-line\" })\n      ]),\n      _createElementVNode(\"div\", _hoisted_6, [\n        _createElementVNode(\"h5\", null, [\n          _createTextVNode(_toDisplayString('Email') + \": \"),\n          _createElementVNode(\"span\", null, _toDisplayString(__props.store.vendor.email), 1)\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287997,
+      "end": 1716056287998,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287998,
+      "end": 1716056287998,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287998,
+      "end": 1716056287998,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287998,
+      "end": 1716056287998,
+      "order": "normal"
+    }
+  ]
+}

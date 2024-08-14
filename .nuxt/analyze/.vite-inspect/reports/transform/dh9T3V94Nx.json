@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/OffCanvasFilter/index.vue?nuxt_component=async&nuxt_component_name=ShopCollectionOffCanvasFilter",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <section class=\"section-b-space shop-section filter-offcanvas\">\n        <div class=\"container-fluid-lg\">\n            <div class=\"row\">\n                <div class=\"col-12\">\n                    <div class=\"overlay\" :class=\"{show :offCanvasMenu}\" @click=\"closeCanvasMenu()\"></div>\n                    <div class=\"left-box top-filter\" :class=\"{show :offCanvasMenu}\">\n                        <ShopCollectionWidgetsSidebar :filter=\"filter\" />\n                    </div>\n                </div>\n                <div class=\"col-12\">\n                    <ShopCollectionWidgetsCollectionProduct  :filter=\"filter\" :activeMenu=\"offCanvasMenu\"/>\n                </div>\n            </div>\n        </div>\n    </section>\n</template>\n\n<script setup>\nimport { storeToRefs } from 'pinia';\nimport { useCollectionStore } from '~/store/collection';\nimport { useDataStore } from '~/store/data';\nlet props = defineProps({\n    filter:Object,\n    offCanvasMenu:Boolean,\n    layout:String\n})\n\nlet { offCanvasMenu } = storeToRefs(useDataStore())\n\nfunction closeCanvasMenu() {\n    offCanvasMenu.value = false\n   \n//   this.attributeService.offCanvasMenu = false;\n}\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056271210,
+      "end": 1716056271442,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271442,
+      "end": 1716056271442,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271442,
+      "end": 1716056271442,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271442,
+      "end": 1716056271442,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271442,
+      "end": 1716056271442,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271442,
+      "end": 1716056271442,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271442,
+      "end": 1716056271442,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271442,
+      "end": 1716056271442,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"section-b-space shop-section filter-offcanvas\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-12\" }\nconst _hoisted_5 = { class: \"col-12\" }\n\nimport { storeToRefs } from 'pinia';\nimport { useCollectionStore } from '~/store/collection';\nimport { useDataStore } from '~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    filter:Object,\n    offCanvasMenu:Boolean,\n    layout:String\n},\n  setup(__props) {\n\nlet props = __props\n\nlet { offCanvasMenu } = storeToRefs(useDataStore())\n\nfunction closeCanvasMenu() {\n    offCanvasMenu.value = false\n   \n//   this.attributeService.offCanvasMenu = false;\n}\n\n\nreturn (_ctx, _cache) => {\n  const _component_ShopCollectionWidgetsSidebar = _resolveComponent(\"ShopCollectionWidgetsSidebar\")\n  const _component_ShopCollectionWidgetsCollectionProduct = _resolveComponent(\"ShopCollectionWidgetsCollectionProduct\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", {\n            class: _normalizeClass([\"overlay\", {show :_unref(offCanvasMenu)}]),\n            onClick: _cache[0] || (_cache[0] = $event => (closeCanvasMenu()))\n          }, null, 2),\n          _createElementVNode(\"div\", {\n            class: _normalizeClass([\"left-box top-filter\", {show :_unref(offCanvasMenu)}])\n          }, [\n            _createVNode(_component_ShopCollectionWidgetsSidebar, { filter: __props.filter }, null, 8, [\"filter\"])\n          ], 2)\n        ]),\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createVNode(_component_ShopCollectionWidgetsCollectionProduct, {\n            filter: __props.filter,\n            activeMenu: _unref(offCanvasMenu)\n          }, null, 8, [\"filter\", \"activeMenu\"])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056271442,
+      "end": 1716056271444,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/OffCanvasFilter/index.vue\").then(r => r.default))",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271444,
+      "end": 1716056271444,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271444,
+      "end": 1716056271445,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/OffCanvasFilter/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271445,
+      "end": 1716056271445,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271445,
+      "end": 1716056271445,
+      "order": "normal"
+    }
+  ]
+}

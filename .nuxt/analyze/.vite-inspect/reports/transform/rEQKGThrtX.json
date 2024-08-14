@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Notification/index.vue?nuxt_component=async&nuxt_component_name=AccountNotification",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <div class=\"title-header\">\n      <div class=\"d-flex align-items-center\">\n        <h5>{{ $t(\"Notifications\") }}</h5>\n      </div>\n    </div>\n\n    <ul class=\"notification-list\" v-if=\"Notification?.data.length\">\n      <li :class=\"{ 'unread': notification.data.read_at }\" v-for=\"notification in Notification.data\" :key=\"notification\">\n        <h4>{{ notification?.data?.message }}</h4>\n        <h5>\n          <Icon name=\"ri-time-line\"></Icon>\n          {{ dateFormatter(notification?.created_at) }}\n        </h5>\n      </li>\n    </ul>\n    <WidgetsNoData :class=\"'no-data-added'\" :image=\"'/svg/empty-items.svg'\" :text=\"'No Notifications Found'\"\n      :description=\"'You have not received any notification yet'\" v-if=\"!Notification?.data?.length\">\n      ></WidgetsNoData>\n  </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nlet { Notification } = storeToRefs(useDataStore())\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056261544,
+      "end": 1716056262399,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056262399,
+      "end": 1716056262399,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056262399,
+      "end": 1716056262399,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056262399,
+      "end": 1716056262399,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056262399,
+      "end": 1716056262399,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056262399,
+      "end": 1716056262399,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056262399,
+      "end": 1716056262399,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056262399,
+      "end": 1716056262399,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass, createCommentVNode as _createCommentVNode, withCtx as _withCtx, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"title-header\" }\nconst _hoisted_2 = { class: \"d-flex align-items-center\" }\nconst _hoisted_3 = {\n  key: 0,\n  class: \"notification-list\"\n}\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet { Notification } = storeToRefs(useDataStore())\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"Notifications\")), 1)\n      ])\n    ]),\n    (_unref(Notification)?.data.length)\n      ? (_openBlock(), _createElementBlock(\"ul\", _hoisted_3, [\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(Notification).data, (notification) => {\n            return (_openBlock(), _createElementBlock(\"li\", {\n              class: _normalizeClass({ 'unread': notification.data.read_at }),\n              key: notification\n            }, [\n              _createElementVNode(\"h4\", null, _toDisplayString(notification?.data?.message), 1),\n              _createElementVNode(\"h5\", null, [\n                _createVNode(_component_Icon, { name: \"ri-time-line\" }),\n                _createTextVNode(\" \" + _toDisplayString(_ctx.dateFormatter(notification?.created_at)), 1)\n              ])\n            ], 2))\n          }), 128))\n        ]))\n      : _createCommentVNode(\"\", true),\n    (!_unref(Notification)?.data?.length)\n      ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n          key: 1,\n          class: _normalizeClass('no-data-added'),\n          image: '/svg/empty-items.svg',\n          text: 'No Notifications Found',\n          description: 'You have not received any notification yet'\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(\" >\")\n          ]),\n          _: 1\n        }, 8, [\"image\"]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056262399,
+      "end": 1716056262404,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056262404,
+      "end": 1716056262404,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056262404,
+      "end": 1716056262404,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056262404,
+      "end": 1716056262404,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056262404,
+      "end": 1716056262404,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Notification/index.vue\").then(r => r.default))",
+      "start": 1716056262404,
+      "end": 1716056262404,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056262404,
+      "end": 1716056262404,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056262404,
+      "end": 1716056262404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056262404,
+      "end": 1716056262404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056262405,
+      "end": 1716056262405,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Notification/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056262405,
+      "end": 1716056262406,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056262406,
+      "end": 1716056262406,
+      "order": "normal"
+    }
+  ]
+}

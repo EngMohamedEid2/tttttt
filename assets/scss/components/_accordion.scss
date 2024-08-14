@@ -1,0 +1,87 @@
+/**=====================
+     Accordion scss
+==========================**/
+.accordion-box {
+    display: grid;
+    gap: 24px;
+
+    .accordion-item {
+        border: 1px solid $border-color;
+        border-radius: 6px;
+        overflow: hidden;
+        background-color: transparent;
+
+        html.dark & {
+            border-color: rgba(119, 119, 119, 0.44);
+        }
+
+        .accordion-header {
+            &.collapsed {
+                .accordion-button {
+                    border-bottom: unset;
+                }
+            }
+
+            .accordion-button {
+                @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                color: $title-color;
+                background-color: #f8f8f8;
+                box-shadow: unset;
+                font-size: 18px;
+                font-weight: 600;
+                border-bottom: unset;
+
+                html.dark & {
+                    background-color: #1d1d22;
+                    color: #ddd;
+                }
+
+                &::after {
+                    content: unset;
+                }
+
+                &:not(.collapsed) {
+                    border-bottom: 1px solid $border-color;
+
+                    html.dark & {
+                        border-color: rgba(119, 119, 119, 0.44);
+                    }
+
+                    svg {
+                        transform: rotate(-180deg);
+                    }
+                }
+
+                &:focus {
+                    z-index: 0;
+                    border-color: transparent;
+                    outline: 0;
+                    box-shadow: 0 0 0 1px $border-color;
+
+                    html.dark & {
+                        box-shadow: 0 0 0 1px rgba(119, 119, 119, 0.44);
+                    }
+                }
+
+                svg {
+                    transition: all 0.3s ease-in-out;
+                    @include pseudowh($width: 23px, $height: 23px);
+                    line-height: 1;
+                    font-weight: 400;
+                    margin: 0;
+                    color: #777;
+                }
+            }
+        }
+
+        .accordion-body {
+            .product-description {
+                .ckeditor-content {
+                    p {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

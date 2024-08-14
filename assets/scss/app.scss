@@ -1,0 +1,8 @@
+@import "bootstrap/scss/bootstrap.scss";
+@import "../css/vendors/font-awesome.css";
+@import "style.scss";
+
+.dark {
+    @import "utils/dark_variables";
+    @import "dark.scss";
+}

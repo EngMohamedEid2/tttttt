@@ -1,0 +1,212 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/store/cart.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import _ from \"lodash\";\nimport { GetHeaders } from \"~~/services/api/handleRequest\";\nimport { useApiCartStore } from \"./CartWithApi\";\nimport { useCheckoutStore } from \"./checkout\";\nexport const useCartStore = defineStore(\"cart-store\", () => {\n  var cart = ref([]);\n  var modals = ref({ quickView: { show: false } });\n  let cartToggle = ref(false)\n\n  const GetCartDataFromApi = async () => {\n    let { data, error } = await useFetch(\"cart\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"get\",\n    });\n    if (error.value) {\n\n    } else {\n      cart.value = data?.value?.items;\n    }\n  };\n\n  const addToCart = async ({ product, quantity = 1, variation }) => {\n    if (product?.variations?.length) {\n      modals.value.quickView.item = product;\n      modals.value.quickView.show = true;\n    } else {\n      if (useCookie(\"uat\").value) {\n        await useApiCartStore().api_AddToCart({ product, quantity });\n        localStorage.setItem('cart', JSON.stringify(cart.value))\n        let localCart = JSON.parse(localStorage.getItem('cart'))\n        if (localCart.length) {\n          SetCart({ Cart: localCart })\n        }\n      } else {\n        let ItemToAdd = {\n          product_id: product?.id,\n          product,\n          variation_id: variation?.id || null,\n        };\n        let cartItemIndex = cart.value.findIndex(\n          (item) => item?.product_id == product?.id\n        );\n       \n        if (cartItemIndex < 0) {\n          ItemToAdd.quantity = 1;\n          cart.value.push(_.cloneDeep(ItemToAdd));\n          localStorage.setItem('cart', JSON.stringify(cart.value))\n          let localCart = JSON.parse(localStorage.getItem('cart'))\n          if (localCart.length) {\n            SetCart({ Cart: localCart })\n          }\n        } else {\n          if (\n            cart.value[cartItemIndex].quantity + quantity >=\n            cart.value[cartItemIndex].product?.quantity || cart.value[cartItemIndex]?.quantity + quantity <= 0\n            \n          ) {\n            useNuxtApp().$useToaster({ msg: `You cannot add this item more than ${cart.value[cartItemIndex].quantity} times`, type: 'error' })\n          } else {\n            ItemToAdd = cart.value[cartItemIndex];\n            ItemToAdd.quantity += quantity;\n          }\n        }\n      }\n    }\n  };\n\n  const addToCartProduct = async ({ product, quantity = 1, variation_id, variation }) => {\n      if (useCookie(\"uat\").value) {\n        await useApiCartStore().api_AddToCart({ product, quantity ,variation,variation_id});\n        localStorage.setItem('cart', JSON.stringify(cart.value))\n        let localCart = JSON.parse(localStorage.getItem('cart'))\n        if (localCart.length) {\n          SetCart({ Cart: localCart })\n        }\n      } else {\n        let ItemToAdd = {\n          product_id: product?.id,\n          product,\n          variation: variation || null,\n          variation_id: variation_id || null,\n        };\n        let cartItemIndex = cart.value.findIndex(\n          (item) => item?.product_id == product?.id\n        );\n        if (cartItemIndex < 0) {\n          ItemToAdd.quantity = 1;\n          cart.value.push(ItemToAdd);\n          localStorage.setItem('cart', JSON.stringify(cart.value))\n          let localCart = JSON.parse(localStorage.getItem('cart'))\n          if (localCart.length) {\n            SetCart({ Cart: localCart })\n          }\n        } else {\n          if (\n            cart.value[cartItemIndex].quantity + quantity >=\n            cart.value[cartItemIndex].product?.quantity || cart.value[cartItemIndex]?.quantity + quantity <= 0\n          ) {\n            useNuxtApp().$useToaster({ msg: `You cannot add this item more than ${cart.value[cartItemIndex].quantity} times`, type: 'error' })\n          } else {\n            ItemToAdd = cart.value[cartItemIndex];\n            ItemToAdd.quantity += quantity;\n          }\n        }\n      }\n  };\n\n  const ChangeQuantity = ({ CartItem, quantity = 1 }) => {\n    if (useCookie('uat').value) {\n      useApiCartStore().api_change_quantity({ CartItem, quantity });\n    }\n    else {\n      let ItemIndex = cart.value.findIndex(item => CartItem.variation_id ? item.product_id == CartItem.product_id && item.variation_id == CartItem.variation_id : item.product_id == CartItem.product_id)\n      if (ItemIndex > -1) {\n        let QuantityToCheck = CartItem.variation_id ? CartItem.product.variations.filter(item => item.id == CartItem.variation_id)[0].quantity : CartItem.product.quantity;\n        if (CartItem.quantity + quantity <= QuantityToCheck) {\n          if (CartItem.quantity + quantity >= 0) {\n            cart.value[ItemIndex].quantity = cart.value[ItemIndex].quantity + quantity\n          }\n          else {\n            cart.value[ItemIndex].quantity = 0\n          }\n        } else {\n        }\n        if (cart.value[ItemIndex].quantity == 0) {\n          RemoveFromCart(cart.value[ItemIndex])\n        }\n      } else {\n        CartItem.quantity > 0 ? CartItem.quantity-- : null\n      }\n    }\n  }\n\n  const removeFromCart = (product) => {\n    let itemIndex = cart.value.findIndex((item) => item.id == product.id);\n    itemIndex > -1 && cart.value.splice(itemIndex, 1);\n  };\n\n  const ToggleModal = ({ modal = \"quickView\", product, value = true }) => {\n    if (product) {\n      let priceArray = product.variations?.map((item) => Number(item.price));\n      priceArray.length &&\n        (product.CartItemPrice = `$${Math.min(...priceArray)} - $${Math.max(\n          ...priceArray\n        )}`);\n      modals.value[modal].item = product;\n    }\n    modals.value[modal].show = value;\n    !value &&\n      \"product\" in modals.value[modal] &&\n      delete modals.value[modal]?.item;\n  };\n\n  function addSelectionToCart({ product, variation, index, quantity = 1 }) {\n    let ItemIndexInCart = cart.value.findIndex(item => item.product_id == product.id && item.variation_id == variation.id)\n    if (!useCookie('uat').value) {\n      cart.value.push({ product_id: product.id, variation_id: variation.id, quantity, product })\n    } else {\n      useApiCartStore().api_AddToCart({ product, variation });\n    }\n  }\n\n  const SetCart = ({ Cart }) => {\n    cart.value = Cart\n  }\n\n  const RemoveFromCart = (CartItem) => {\n    if (useCookie('uat').value) {\n      useApiCartStore().api_RemoveFromCart({ CartItem });\n      localStorage.removeItem({ CartItem });\n    } else {\n      let ItemIndex = cart.value.findIndex(item => CartItem?.CartItem?.variation_id ? CartItem?.CartItem?.variation_id == item.variation_id && CartItem?.CartItem?.product_id == item.product_id : CartItem?.CartItem?.product_id == item.product_id)\n      ItemIndex > -1 ? cart.value.splice(ItemIndex, 1) : null\n    }\n  }\n\n  var CartTotal = computed(() => {\n    let subTotal = 0;\n    cart.value.forEach(item => {\n      var price = item.product?.variations?.filter(product => product.id == item.variation_id)[0]?.price || item.product?.price;\n      var discount = item.product?.variations?.filter(product => product.id == item.variation_id)[0]?.discount || item.product?.discount || 0;\n\n      subTotal += ((price - (price * discount / 100)) * item.quantity)\n    })\n    return subTotal\n  })\n\n  const GetProductFromCart = ({ CartItem }) => {\n    return CartItem.variation_id ? CartItem.product.variations[CartItem.product.variations?.findIndex(item => item.id == CartItem.variation_id)] : CartItem.product\n  }\n\n  const setLocalCartInDatabase = async ({ token }) => {\n    let CartToAdd = cart.value.map(item => {\n      return {\n        product_id: item.product_id,\n        variation_id: item.variation_id || \"\",\n        quantity: item.quantity || \"\",\n      }\n    });\n    if (CartToAdd.length) {\n      let { data, error } = await useFetch('cart', {\n        baseURL: BaseUrl,\n        headers: { Authorization: `Bearer ${token}` },\n        method: 'post',\n        key: 'InsertLocalCartInDatabase',\n        body: { products: CartToAdd }\n      })\n      if (!error.value) {\n        cart.value = [];\n        await GetCartDataFromApi();\n      }\n    }\n\n  }\n\n  function cartToggleValue(value) {\n    cartToggle.value = value\n  }\n\n  watch(() => cart, () => {\n    cart.value.length && useCheckoutStore().SetCheckoutProduct({ value: cart.value });\n  }, { deep: true })\n\n  return {\n    addToCart,\n    setLocalCartInDatabase,\n    CartTotal,\n    SetCart,\n    modals,\n    cart,\n    cartToggle,\n    cartToggleValue,\n    removeFromCart,\n    ChangeQuantity,\n    ToggleModal,\n    addSelectionToCart,\n    GetCartDataFromApi,\n    RemoveFromCart,\n    GetProductFromCart,\n    addToCartProduct\n  };\n});",
+      "start": 1716056289479,
+      "end": 1716056289980,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056289980,
+      "end": 1716056289980,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056289980,
+      "end": 1716056289980,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056289980,
+      "end": 1716056289981,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056289981,
+      "end": 1716056289981,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056289981,
+      "end": 1716056289981,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056289981,
+      "end": 1716056289981,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056289981,
+      "end": 1716056289981,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056289981,
+      "end": 1716056289981,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056289981,
+      "end": 1716056289981,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289981,
+      "end": 1716056289981,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056289981,
+      "end": 1716056289981,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056289990,
+      "end": 1716056289990,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056289990,
+      "end": 1716056289990,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289990,
+      "end": 1716056289990,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056289990,
+      "end": 1716056289990,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056289990,
+      "end": 1716056289990,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056289990,
+      "end": 1716056289990,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056289990,
+      "end": 1716056289990,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056289990,
+      "end": 1716056289990,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056289990,
+      "end": 1716056289990,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056289991,
+      "end": 1716056289991,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056289991,
+      "end": 1716056289991,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056289991,
+      "end": 1716056289991,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import _ from \"lodash\";\nimport { GetHeaders } from \"~~/services/api/handleRequest\";\nimport { useApiCartStore } from \"./CartWithApi\";\nimport { useCheckoutStore } from \"./checkout\";\nexport const useCartStore = defineStore(\"cart-store\", () => {\n  var cart = ref([]);\n  var modals = ref({ quickView: { show: false } });\n  let cartToggle = ref(false)\n\n  const GetCartDataFromApi = async () => {\n    let { data, error } = await useFetch(\"cart\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"get\",\n    }, '$zidwWXdRa5');\n    if (error.value) {\n\n    } else {\n      cart.value = data?.value?.items;\n    }\n  };\n\n  const addToCart = async ({ product, quantity = 1, variation }) => {\n    if (product?.variations?.length) {\n      modals.value.quickView.item = product;\n      modals.value.quickView.show = true;\n    } else {\n      if (useCookie(\"uat\").value) {\n        await useApiCartStore().api_AddToCart({ product, quantity });\n        localStorage.setItem('cart', JSON.stringify(cart.value))\n        let localCart = JSON.parse(localStorage.getItem('cart'))\n        if (localCart.length) {\n          SetCart({ Cart: localCart })\n        }\n      } else {\n        let ItemToAdd = {\n          product_id: product?.id,\n          product,\n          variation_id: variation?.id || null,\n        };\n        let cartItemIndex = cart.value.findIndex(\n          (item) => item?.product_id == product?.id\n        );\n       \n        if (cartItemIndex < 0) {\n          ItemToAdd.quantity = 1;\n          cart.value.push(_.cloneDeep(ItemToAdd));\n          localStorage.setItem('cart', JSON.stringify(cart.value))\n          let localCart = JSON.parse(localStorage.getItem('cart'))\n          if (localCart.length) {\n            SetCart({ Cart: localCart })\n          }\n        } else {\n          if (\n            cart.value[cartItemIndex].quantity + quantity >=\n            cart.value[cartItemIndex].product?.quantity || cart.value[cartItemIndex]?.quantity + quantity <= 0\n            \n          ) {\n            useNuxtApp().$useToaster({ msg: `You cannot add this item more than ${cart.value[cartItemIndex].quantity} times`, type: 'error' })\n          } else {\n            ItemToAdd = cart.value[cartItemIndex];\n            ItemToAdd.quantity += quantity;\n          }\n        }\n      }\n    }\n  };\n\n  const addToCartProduct = async ({ product, quantity = 1, variation_id, variation }) => {\n      if (useCookie(\"uat\").value) {\n        await useApiCartStore().api_AddToCart({ product, quantity ,variation,variation_id});\n        localStorage.setItem('cart', JSON.stringify(cart.value))\n        let localCart = JSON.parse(localStorage.getItem('cart'))\n        if (localCart.length) {\n          SetCart({ Cart: localCart })\n        }\n      } else {\n        let ItemToAdd = {\n          product_id: product?.id,\n          product,\n          variation: variation || null,\n          variation_id: variation_id || null,\n        };\n        let cartItemIndex = cart.value.findIndex(\n          (item) => item?.product_id == product?.id\n        );\n        if (cartItemIndex < 0) {\n          ItemToAdd.quantity = 1;\n          cart.value.push(ItemToAdd);\n          localStorage.setItem('cart', JSON.stringify(cart.value))\n          let localCart = JSON.parse(localStorage.getItem('cart'))\n          if (localCart.length) {\n            SetCart({ Cart: localCart })\n          }\n        } else {\n          if (\n            cart.value[cartItemIndex].quantity + quantity >=\n            cart.value[cartItemIndex].product?.quantity || cart.value[cartItemIndex]?.quantity + quantity <= 0\n          ) {\n            useNuxtApp().$useToaster({ msg: `You cannot add this item more than ${cart.value[cartItemIndex].quantity} times`, type: 'error' })\n          } else {\n            ItemToAdd = cart.value[cartItemIndex];\n            ItemToAdd.quantity += quantity;\n          }\n        }\n      }\n  };\n\n  const ChangeQuantity = ({ CartItem, quantity = 1 }) => {\n    if (useCookie('uat').value) {\n      useApiCartStore().api_change_quantity({ CartItem, quantity });\n    }\n    else {\n      let ItemIndex = cart.value.findIndex(item => CartItem.variation_id ? item.product_id == CartItem.product_id && item.variation_id == CartItem.variation_id : item.product_id == CartItem.product_id)\n      if (ItemIndex > -1) {\n        let QuantityToCheck = CartItem.variation_id ? CartItem.product.variations.filter(item => item.id == CartItem.variation_id)[0].quantity : CartItem.product.quantity;\n        if (CartItem.quantity + quantity <= QuantityToCheck) {\n          if (CartItem.quantity + quantity >= 0) {\n            cart.value[ItemIndex].quantity = cart.value[ItemIndex].quantity + quantity\n          }\n          else {\n            cart.value[ItemIndex].quantity = 0\n          }\n        } else {\n        }\n        if (cart.value[ItemIndex].quantity == 0) {\n          RemoveFromCart(cart.value[ItemIndex])\n        }\n      } else {\n        CartItem.quantity > 0 ? CartItem.quantity-- : null\n      }\n    }\n  }\n\n  const removeFromCart = (product) => {\n    let itemIndex = cart.value.findIndex((item) => item.id == product.id);\n    itemIndex > -1 && cart.value.splice(itemIndex, 1);\n  };\n\n  const ToggleModal = ({ modal = \"quickView\", product, value = true }) => {\n    if (product) {\n      let priceArray = product.variations?.map((item) => Number(item.price));\n      priceArray.length &&\n        (product.CartItemPrice = `$${Math.min(...priceArray)} - $${Math.max(\n          ...priceArray\n        )}`);\n      modals.value[modal].item = product;\n    }\n    modals.value[modal].show = value;\n    !value &&\n      \"product\" in modals.value[modal] &&\n      delete modals.value[modal]?.item;\n  };\n\n  function addSelectionToCart({ product, variation, index, quantity = 1 }) {\n    let ItemIndexInCart = cart.value.findIndex(item => item.product_id == product.id && item.variation_id == variation.id)\n    if (!useCookie('uat').value) {\n      cart.value.push({ product_id: product.id, variation_id: variation.id, quantity, product })\n    } else {\n      useApiCartStore().api_AddToCart({ product, variation });\n    }\n  }\n\n  const SetCart = ({ Cart }) => {\n    cart.value = Cart\n  }\n\n  const RemoveFromCart = (CartItem) => {\n    if (useCookie('uat').value) {\n      useApiCartStore().api_RemoveFromCart({ CartItem });\n      localStorage.removeItem({ CartItem });\n    } else {\n      let ItemIndex = cart.value.findIndex(item => CartItem?.CartItem?.variation_id ? CartItem?.CartItem?.variation_id == item.variation_id && CartItem?.CartItem?.product_id == item.product_id : CartItem?.CartItem?.product_id == item.product_id)\n      ItemIndex > -1 ? cart.value.splice(ItemIndex, 1) : null\n    }\n  }\n\n  var CartTotal = computed(() => {\n    let subTotal = 0;\n    cart.value.forEach(item => {\n      var price = item.product?.variations?.filter(product => product.id == item.variation_id)[0]?.price || item.product?.price;\n      var discount = item.product?.variations?.filter(product => product.id == item.variation_id)[0]?.discount || item.product?.discount || 0;\n\n      subTotal += ((price - (price * discount / 100)) * item.quantity)\n    })\n    return subTotal\n  })\n\n  const GetProductFromCart = ({ CartItem }) => {\n    return CartItem.variation_id ? CartItem.product.variations[CartItem.product.variations?.findIndex(item => item.id == CartItem.variation_id)] : CartItem.product\n  }\n\n  const setLocalCartInDatabase = async ({ token }) => {\n    let CartToAdd = cart.value.map(item => {\n      return {\n        product_id: item.product_id,\n        variation_id: item.variation_id || \"\",\n        quantity: item.quantity || \"\",\n      }\n    });\n    if (CartToAdd.length) {\n      let { data, error } = await useFetch('cart', {\n        baseURL: BaseUrl,\n        headers: { Authorization: `Bearer ${token}` },\n        method: 'post',\n        key: 'InsertLocalCartInDatabase',\n        body: { products: CartToAdd }\n      }, '$eEQB13IoVl')\n      if (!error.value) {\n        cart.value = [];\n        await GetCartDataFromApi();\n      }\n    }\n\n  }\n\n  function cartToggleValue(value) {\n    cartToggle.value = value\n  }\n\n  watch(() => cart, () => {\n    cart.value.length && useCheckoutStore().SetCheckoutProduct({ value: cart.value });\n  }, { deep: true })\n\n  return {\n    addToCart,\n    setLocalCartInDatabase,\n    CartTotal,\n    SetCart,\n    modals,\n    cart,\n    cartToggle,\n    cartToggleValue,\n    removeFromCart,\n    ChangeQuantity,\n    ToggleModal,\n    addSelectionToCart,\n    GetCartDataFromApi,\n    RemoveFromCart,\n    GetProductFromCart,\n    addToCartProduct\n  };\n});",
+      "start": 1716056289991,
+      "end": 1716056289994,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineStore } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/@pinia/nuxt/dist/runtime/composables';\nimport { ref, computed, watch } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { useCookie } from '#app/composables/cookie';\nimport { useNuxtApp } from '#app/nuxt';\nimport _ from \"lodash\";\nimport { GetHeaders } from \"~~/services/api/handleRequest\";\nimport { useApiCartStore } from \"./CartWithApi\";\nimport { useCheckoutStore } from \"./checkout\";\nexport const useCartStore = defineStore(\"cart-store\", () => {\n  var cart = ref([]);\n  var modals = ref({ quickView: { show: false } });\n  let cartToggle = ref(false)\n\n  const GetCartDataFromApi = async () => {\n    let { data, error } = await useFetch(\"cart\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"get\",\n    }, '$zidwWXdRa5');\n    if (error.value) {\n\n    } else {\n      cart.value = data?.value?.items;\n    }\n  };\n\n  const addToCart = async ({ product, quantity = 1, variation }) => {\n    if (product?.variations?.length) {\n      modals.value.quickView.item = product;\n      modals.value.quickView.show = true;\n    } else {\n      if (useCookie(\"uat\").value) {\n        await useApiCartStore().api_AddToCart({ product, quantity });\n        localStorage.setItem('cart', JSON.stringify(cart.value))\n        let localCart = JSON.parse(localStorage.getItem('cart'))\n        if (localCart.length) {\n          SetCart({ Cart: localCart })\n        }\n      } else {\n        let ItemToAdd = {\n          product_id: product?.id,\n          product,\n          variation_id: variation?.id || null,\n        };\n        let cartItemIndex = cart.value.findIndex(\n          (item) => item?.product_id == product?.id\n        );\n       \n        if (cartItemIndex < 0) {\n          ItemToAdd.quantity = 1;\n          cart.value.push(_.cloneDeep(ItemToAdd));\n          localStorage.setItem('cart', JSON.stringify(cart.value))\n          let localCart = JSON.parse(localStorage.getItem('cart'))\n          if (localCart.length) {\n            SetCart({ Cart: localCart })\n          }\n        } else {\n          if (\n            cart.value[cartItemIndex].quantity + quantity >=\n            cart.value[cartItemIndex].product?.quantity || cart.value[cartItemIndex]?.quantity + quantity <= 0\n            \n          ) {\n            useNuxtApp().$useToaster({ msg: `You cannot add this item more than ${cart.value[cartItemIndex].quantity} times`, type: 'error' })\n          } else {\n            ItemToAdd = cart.value[cartItemIndex];\n            ItemToAdd.quantity += quantity;\n          }\n        }\n      }\n    }\n  };\n\n  const addToCartProduct = async ({ product, quantity = 1, variation_id, variation }) => {\n      if (useCookie(\"uat\").value) {\n        await useApiCartStore().api_AddToCart({ product, quantity ,variation,variation_id});\n        localStorage.setItem('cart', JSON.stringify(cart.value))\n        let localCart = JSON.parse(localStorage.getItem('cart'))\n        if (localCart.length) {\n          SetCart({ Cart: localCart })\n        }\n      } else {\n        let ItemToAdd = {\n          product_id: product?.id,\n          product,\n          variation: variation || null,\n          variation_id: variation_id || null,\n        };\n        let cartItemIndex = cart.value.findIndex(\n          (item) => item?.product_id == product?.id\n        );\n        if (cartItemIndex < 0) {\n          ItemToAdd.quantity = 1;\n          cart.value.push(ItemToAdd);\n          localStorage.setItem('cart', JSON.stringify(cart.value))\n          let localCart = JSON.parse(localStorage.getItem('cart'))\n          if (localCart.length) {\n            SetCart({ Cart: localCart })\n          }\n        } else {\n          if (\n            cart.value[cartItemIndex].quantity + quantity >=\n            cart.value[cartItemIndex].product?.quantity || cart.value[cartItemIndex]?.quantity + quantity <= 0\n          ) {\n            useNuxtApp().$useToaster({ msg: `You cannot add this item more than ${cart.value[cartItemIndex].quantity} times`, type: 'error' })\n          } else {\n            ItemToAdd = cart.value[cartItemIndex];\n            ItemToAdd.quantity += quantity;\n          }\n        }\n      }\n  };\n\n  const ChangeQuantity = ({ CartItem, quantity = 1 }) => {\n    if (useCookie('uat').value) {\n      useApiCartStore().api_change_quantity({ CartItem, quantity });\n    }\n    else {\n      let ItemIndex = cart.value.findIndex(item => CartItem.variation_id ? item.product_id == CartItem.product_id && item.variation_id == CartItem.variation_id : item.product_id == CartItem.product_id)\n      if (ItemIndex > -1) {\n        let QuantityToCheck = CartItem.variation_id ? CartItem.product.variations.filter(item => item.id == CartItem.variation_id)[0].quantity : CartItem.product.quantity;\n        if (CartItem.quantity + quantity <= QuantityToCheck) {\n          if (CartItem.quantity + quantity >= 0) {\n            cart.value[ItemIndex].quantity = cart.value[ItemIndex].quantity + quantity\n          }\n          else {\n            cart.value[ItemIndex].quantity = 0\n          }\n        } else {\n        }\n        if (cart.value[ItemIndex].quantity == 0) {\n          RemoveFromCart(cart.value[ItemIndex])\n        }\n      } else {\n        CartItem.quantity > 0 ? CartItem.quantity-- : null\n      }\n    }\n  }\n\n  const removeFromCart = (product) => {\n    let itemIndex = cart.value.findIndex((item) => item.id == product.id);\n    itemIndex > -1 && cart.value.splice(itemIndex, 1);\n  };\n\n  const ToggleModal = ({ modal = \"quickView\", product, value = true }) => {\n    if (product) {\n      let priceArray = product.variations?.map((item) => Number(item.price));\n      priceArray.length &&\n        (product.CartItemPrice = `$${Math.min(...priceArray)} - $${Math.max(\n          ...priceArray\n        )}`);\n      modals.value[modal].item = product;\n    }\n    modals.value[modal].show = value;\n    !value &&\n      \"product\" in modals.value[modal] &&\n      delete modals.value[modal]?.item;\n  };\n\n  function addSelectionToCart({ product, variation, index, quantity = 1 }) {\n    let ItemIndexInCart = cart.value.findIndex(item => item.product_id == product.id && item.variation_id == variation.id)\n    if (!useCookie('uat').value) {\n      cart.value.push({ product_id: product.id, variation_id: variation.id, quantity, product })\n    } else {\n      useApiCartStore().api_AddToCart({ product, variation });\n    }\n  }\n\n  const SetCart = ({ Cart }) => {\n    cart.value = Cart\n  }\n\n  const RemoveFromCart = (CartItem) => {\n    if (useCookie('uat').value) {\n      useApiCartStore().api_RemoveFromCart({ CartItem });\n      localStorage.removeItem({ CartItem });\n    } else {\n      let ItemIndex = cart.value.findIndex(item => CartItem?.CartItem?.variation_id ? CartItem?.CartItem?.variation_id == item.variation_id && CartItem?.CartItem?.product_id == item.product_id : CartItem?.CartItem?.product_id == item.product_id)\n      ItemIndex > -1 ? cart.value.splice(ItemIndex, 1) : null\n    }\n  }\n\n  var CartTotal = computed(() => {\n    let subTotal = 0;\n    cart.value.forEach(item => {\n      var price = item.product?.variations?.filter(product => product.id == item.variation_id)[0]?.price || item.product?.price;\n      var discount = item.product?.variations?.filter(product => product.id == item.variation_id)[0]?.discount || item.product?.discount || 0;\n\n      subTotal += ((price - (price * discount / 100)) * item.quantity)\n    })\n    return subTotal\n  })\n\n  const GetProductFromCart = ({ CartItem }) => {\n    return CartItem.variation_id ? CartItem.product.variations[CartItem.product.variations?.findIndex(item => item.id == CartItem.variation_id)] : CartItem.product\n  }\n\n  const setLocalCartInDatabase = async ({ token }) => {\n    let CartToAdd = cart.value.map(item => {\n      return {\n        product_id: item.product_id,\n        variation_id: item.variation_id || \"\",\n        quantity: item.quantity || \"\",\n      }\n    });\n    if (CartToAdd.length) {\n      let { data, error } = await useFetch('cart', {\n        baseURL: BaseUrl,\n        headers: { Authorization: `Bearer ${token}` },\n        method: 'post',\n        key: 'InsertLocalCartInDatabase',\n        body: { products: CartToAdd }\n      }, '$eEQB13IoVl')\n      if (!error.value) {\n        cart.value = [];\n        await GetCartDataFromApi();\n      }\n    }\n\n  }\n\n  function cartToggleValue(value) {\n    cartToggle.value = value\n  }\n\n  watch(() => cart, () => {\n    cart.value.length && useCheckoutStore().SetCheckoutProduct({ value: cart.value });\n  }, { deep: true })\n\n  return {\n    addToCart,\n    setLocalCartInDatabase,\n    CartTotal,\n    SetCart,\n    modals,\n    cart,\n    cartToggle,\n    cartToggleValue,\n    removeFromCart,\n    ChangeQuantity,\n    ToggleModal,\n    addSelectionToCart,\n    GetCartDataFromApi,\n    RemoveFromCart,\n    GetProductFromCart,\n    addToCartProduct\n  };\n});",
+      "start": 1716056289994,
+      "end": 1716056289998,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056289998,
+      "end": 1716056289999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056289999,
+      "end": 1716056289999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056289999,
+      "end": 1716056289999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056289999,
+      "end": 1716056289999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056289999,
+      "end": 1716056289999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056289999,
+      "end": 1716056289999,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056289999,
+      "end": 1716056290000,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056290000,
+      "end": 1716056290000,
+      "order": "normal"
+    }
+  ]
+}

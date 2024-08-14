@@ -1,0 +1,259 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/SaleTimer/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"time deal-timer product-deal-timer mx-md-0 mx-auto\" v-if=\"remainingTime\">\n        <div class=\"product-title\">\n            <h4>{{ $t(\"Hurry up! Sales Ends In\") }}</h4>\n        </div>\n        <ul>\n            <li>\n                <div class=\"counter d-block\">\n                    <div class=\"days d-block\">\n                        <h5>{{ remainingTime.days }}</h5>\n                    </div>\n                    <h6>{{ $t(\"Days\") }}</h6>\n                </div>\n            </li>\n            <li>\n                <div class=\"counter d-block\">\n                    <div class=\"hours d-block\">\n                        <h5>{{ remainingTime.hours }}</h5>\n                    </div>\n                    <h6>{{ $t(\"Hours\") }}</h6>\n                </div>\n            </li>\n            <li>\n                <div class=\"counter d-block\">\n                    <div class=\"minutes d-block\">\n                        <h5>{{ remainingTime.minutes }}</h5>\n                    </div>\n                    <h6>{{ $t(\"Min\") }}</h6>\n                </div>\n            </li>\n            <li>\n                <div class=\"counter d-block\">\n                    <div class=\"seconds d-block\">\n                        <h5>{{ remainingTime.seconds }}</h5>\n                    </div>\n                    <h6>{{ $t(\"Sec\") }}</h6>\n                </div>\n            </li>\n        </ul>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    startDate: String,\n    endDate: String\n})\n\nlet remainingTime = ref({});\nfunction updateTimer() {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n\n        let targetDate = endDateTime;\n\n        if (now < startDateTime) {\n            targetDate = startDateTime;\n        } else if (now > endDateTime) {\n            remainingTime.value = {\n                days: 0,\n                hours: 0,\n                minutes: 0,\n                seconds: 0\n            };\n        } else {\n            calculateTimeDifference(targetDate);\n        }\n    }\n};\n\nfunction calculateTimeDifference(targetDate) {\n    const now = new Date().getTime();\n    const timeDiff = targetDate - now;\n\n    remainingTime.value = {\n        days: Math.floor(timeDiff / (1000 * 60 * 60 * 24)),\n        hours: Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),\n        minutes: Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)),\n        seconds: Math.floor((timeDiff % (1000 * 60)) / 1000)\n    };\n};\n\nonMounted(() => {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n        remainingTime.value = null;\n        if (now > startDateTime && endDateTime > now) {\n            updateTimer(); \n            // Update the timer every second\n            const timerInterval = setInterval(() => {\n                updateTimer();\n            }, 1000);\n        }\n    }\n})\n</script>\n",
+      "start": 1716056341900,
+      "end": 1716056342089,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    startDate: String,\n    endDate: String\n},\n  setup(__props) {\n\nlet props = __props\n\nlet remainingTime = ref({});\nfunction updateTimer() {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n\n        let targetDate = endDateTime;\n\n        if (now < startDateTime) {\n            targetDate = startDateTime;\n        } else if (now > endDateTime) {\n            remainingTime.value = {\n                days: 0,\n                hours: 0,\n                minutes: 0,\n                seconds: 0\n            };\n        } else {\n            calculateTimeDifference(targetDate);\n        }\n    }\n};\n\nfunction calculateTimeDifference(targetDate) {\n    const now = new Date().getTime();\n    const timeDiff = targetDate - now;\n\n    remainingTime.value = {\n        days: Math.floor(timeDiff / (1000 * 60 * 60 * 24)),\n        hours: Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),\n        minutes: Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)),\n        seconds: Math.floor((timeDiff % (1000 * 60)) / 1000)\n    };\n};\n\nonMounted(() => {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n        remainingTime.value = null;\n        if (now > startDateTime && endDateTime > now) {\n            updateTimer(); \n            // Update the timer every second\n            const timerInterval = setInterval(() => {\n                updateTimer();\n            }, 1000);\n        }\n    }\n})\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  if (_unref(remainingTime)) {\n    _push(`<div${\n      _ssrRenderAttrs(_mergeProps({ class: \"time deal-timer product-deal-timer mx-md-0 mx-auto\" }, _attrs))\n    }><div class=\"product-title\"><h4>${\n      _ssrInterpolate(_ctx.$t(\"Hurry up! Sales Ends In\"))\n    }</h4></div><ul><li><div class=\"counter d-block\"><div class=\"days d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).days)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Days\"))\n    }</h6></div></li><li><div class=\"counter d-block\"><div class=\"hours d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).hours)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Hours\"))\n    }</h6></div></li><li><div class=\"counter d-block\"><div class=\"minutes d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).minutes)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Min\"))\n    }</h6></div></li><li><div class=\"counter d-block\"><div class=\"seconds d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).seconds)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Sec\"))\n    }</h6></div></li></ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/SaleTimer/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342089,
+      "end": 1716056342089,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342089,
+      "end": 1716056342090,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342090,
+      "end": 1716056342090,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342090,
+      "end": 1716056342090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056342090,
+      "end": 1716056342090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342090,
+      "end": 1716056342090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342090,
+      "end": 1716056342090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342090,
+      "end": 1716056342090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342090,
+      "end": 1716056342090,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342090,
+      "end": 1716056342090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342090,
+      "end": 1716056342090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342090,
+      "end": 1716056342090,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342090,
+      "end": 1716056342090,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342090,
+      "end": 1716056342090,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { setInterval } from '#app/compat/interval';\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    startDate: String,\n    endDate: String\n},\n  setup(__props) {\n\nlet props = __props\n\nlet remainingTime = ref({});\nfunction updateTimer() {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n\n        let targetDate = endDateTime;\n\n        if (now < startDateTime) {\n            targetDate = startDateTime;\n        } else if (now > endDateTime) {\n            remainingTime.value = {\n                days: 0,\n                hours: 0,\n                minutes: 0,\n                seconds: 0\n            };\n        } else {\n            calculateTimeDifference(targetDate);\n        }\n    }\n};\n\nfunction calculateTimeDifference(targetDate) {\n    const now = new Date().getTime();\n    const timeDiff = targetDate - now;\n\n    remainingTime.value = {\n        days: Math.floor(timeDiff / (1000 * 60 * 60 * 24)),\n        hours: Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),\n        minutes: Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)),\n        seconds: Math.floor((timeDiff % (1000 * 60)) / 1000)\n    };\n};\n\nonMounted(() => {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n        remainingTime.value = null;\n        if (now > startDateTime && endDateTime > now) {\n            updateTimer(); \n            // Update the timer every second\n            const timerInterval = setInterval(() => {\n                updateTimer();\n            }, 1000);\n        }\n    }\n})\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  if (_unref(remainingTime)) {\n    _push(`<div${\n      _ssrRenderAttrs(_mergeProps({ class: \"time deal-timer product-deal-timer mx-md-0 mx-auto\" }, _attrs))\n    }><div class=\"product-title\"><h4>${\n      _ssrInterpolate(_ctx.$t(\"Hurry up! Sales Ends In\"))\n    }</h4></div><ul><li><div class=\"counter d-block\"><div class=\"days d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).days)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Days\"))\n    }</h6></div></li><li><div class=\"counter d-block\"><div class=\"hours d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).hours)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Hours\"))\n    }</h6></div></li><li><div class=\"counter d-block\"><div class=\"minutes d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).minutes)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Min\"))\n    }</h6></div></li><li><div class=\"counter d-block\"><div class=\"seconds d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).seconds)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Sec\"))\n    }</h6></div></li></ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/SaleTimer/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342090,
+      "end": 1716056342092,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { setInterval } from '#app/compat/interval';\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    startDate: String,\n    endDate: String\n},\n  setup(__props) {\n\nlet props = __props\n\nlet remainingTime = ref({});\nfunction updateTimer() {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n\n        let targetDate = endDateTime;\n\n        if (now < startDateTime) {\n            targetDate = startDateTime;\n        } else if (now > endDateTime) {\n            remainingTime.value = {\n                days: 0,\n                hours: 0,\n                minutes: 0,\n                seconds: 0\n            };\n        } else {\n            calculateTimeDifference(targetDate);\n        }\n    }\n};\n\nfunction calculateTimeDifference(targetDate) {\n    const now = new Date().getTime();\n    const timeDiff = targetDate - now;\n\n    remainingTime.value = {\n        days: Math.floor(timeDiff / (1000 * 60 * 60 * 24)),\n        hours: Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),\n        minutes: Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)),\n        seconds: Math.floor((timeDiff % (1000 * 60)) / 1000)\n    };\n};\n\nonMounted(() => {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n        remainingTime.value = null;\n        if (now > startDateTime && endDateTime > now) {\n            updateTimer(); \n            // Update the timer every second\n            const timerInterval = setInterval(() => {\n                updateTimer();\n            }, 1000);\n        }\n    }\n})\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  if (_unref(remainingTime)) {\n    _push(`<div${\n      _ssrRenderAttrs(_mergeProps({ class: \"time deal-timer product-deal-timer mx-md-0 mx-auto\" }, _attrs))\n    }><div class=\"product-title\"><h4>${\n      _ssrInterpolate(_ctx.$t(\"Hurry up! Sales Ends In\"))\n    }</h4></div><ul><li><div class=\"counter d-block\"><div class=\"days d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).days)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Days\"))\n    }</h6></div></li><li><div class=\"counter d-block\"><div class=\"hours d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).hours)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Hours\"))\n    }</h6></div></li><li><div class=\"counter d-block\"><div class=\"minutes d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).minutes)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Min\"))\n    }</h6></div></li><li><div class=\"counter d-block\"><div class=\"seconds d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).seconds)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Sec\"))\n    }</h6></div></li></ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/SaleTimer/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342090,
+      "end": 1716056342092,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342092,
+      "end": 1716056342092,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342092,
+      "end": 1716056342092,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342092,
+      "end": 1716056342093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342092,
+      "end": 1716056342093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342093,
+      "end": 1716056342093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056342093,
+      "end": 1716056342093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { setInterval } from '#app/compat/interval';\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    startDate: String,\n    endDate: String\n},\n  setup(__props) {\n\nlet props = __props\n\nlet remainingTime = ref({});\nfunction updateTimer() {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n\n        let targetDate = endDateTime;\n\n        if (now < startDateTime) {\n            targetDate = startDateTime;\n        } else if (now > endDateTime) {\n            remainingTime.value = {\n                days: 0,\n                hours: 0,\n                minutes: 0,\n                seconds: 0\n            };\n        } else {\n            calculateTimeDifference(targetDate);\n        }\n    }\n};\n\nfunction calculateTimeDifference(targetDate) {\n    const now = new Date().getTime();\n    const timeDiff = targetDate - now;\n\n    remainingTime.value = {\n        days: Math.floor(timeDiff / (1000 * 60 * 60 * 24)),\n        hours: Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),\n        minutes: Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)),\n        seconds: Math.floor((timeDiff % (1000 * 60)) / 1000)\n    };\n};\n\n false && /*@__PURE__*/ onMounted(() => {\n    if (props.startDate && props.endDate) {\n        const startDateTime = new Date(props.startDate).getTime();\n        const endDateTime = new Date(props.endDate).getTime();\n        const now = new Date().getTime();\n        remainingTime.value = null;\n        if (now > startDateTime && endDateTime > now) {\n            updateTimer(); \n            // Update the timer every second\n            const timerInterval = setInterval(() => {\n                updateTimer();\n            }, 1000);\n        }\n    }\n})\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  if (_unref(remainingTime)) {\n    _push(`<div${\n      _ssrRenderAttrs(_mergeProps({ class: \"time deal-timer product-deal-timer mx-md-0 mx-auto\" }, _attrs))\n    }><div class=\"product-title\"><h4>${\n      _ssrInterpolate(_ctx.$t(\"Hurry up! Sales Ends In\"))\n    }</h4></div><ul><li><div class=\"counter d-block\"><div class=\"days d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).days)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Days\"))\n    }</h6></div></li><li><div class=\"counter d-block\"><div class=\"hours d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).hours)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Hours\"))\n    }</h6></div></li><li><div class=\"counter d-block\"><div class=\"minutes d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).minutes)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Min\"))\n    }</h6></div></li><li><div class=\"counter d-block\"><div class=\"seconds d-block\"><h5>${\n      _ssrInterpolate(_unref(remainingTime).seconds)\n    }</h5></div><h6>${\n      _ssrInterpolate(_ctx.$t(\"Sec\"))\n    }</h6></div></li></ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/SaleTimer/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342093,
+      "end": 1716056342094,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342094,
+      "end": 1716056342094,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342094,
+      "end": 1716056342094,
+      "order": "normal"
+    }
+  ]
+}

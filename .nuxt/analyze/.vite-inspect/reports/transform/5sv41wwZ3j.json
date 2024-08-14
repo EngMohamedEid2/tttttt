@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/TopContent.vue?nuxt_component=async&nuxt_component_name=HeaderElementsTopContent",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <div class=\"mainSlider\">\n      <div>\n        <div class=\"middle-header\">\n          <div class=\"middle-content\">\n            <p>\n              <span v-html=\"topContent.content\" v-for=\"(topContent, index) in themeOptions.header.top_bar_content\"\n                :key=\"index\">\n              </span>\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\n\nconst props = defineProps({\n  themeOptions: Object,\n});\n</script>\n",
+      "start": 1716056270749,
+      "end": 1716056271145,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271145,
+      "end": 1716056271145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"mainSlider\" }\nconst _hoisted_2 = { class: \"middle-header\" }\nconst _hoisted_3 = { class: \"middle-content\" }\nconst _hoisted_4 = [\"innerHTML\"]\n\n\nconst _sfc_main = {\n  __name: 'TopContent',\n  props: {\n  themeOptions: Object,\n},\n  setup(__props) {\n\n\nconst props = __props;\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", null, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"p\", null, [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.themeOptions.header.top_bar_content, (topContent, index) => {\n                return (_openBlock(), _createElementBlock(\"span\", {\n                  innerHTML: topContent.content,\n                  key: index\n                }, null, 8, _hoisted_4))\n              }), 128))\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056271145,
+      "end": 1716056271146,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271146,
+      "end": 1716056271146,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271146,
+      "end": 1716056271146,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271146,
+      "end": 1716056271146,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271146,
+      "end": 1716056271146,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/TopContent.vue\").then(r => r.default))",
+      "start": 1716056271146,
+      "end": 1716056271146,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/TopContent.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271147,
+      "end": 1716056271147,
+      "order": "normal"
+    }
+  ]
+}

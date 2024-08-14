@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/NumberField.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <input class=\"number\" :type=\"type\" :class=\"classes\" :id=\"id\" :value=\"modelValue?.data\"\n    @input=\"updated($event.target.value)\" :placeholder=\"placeholder || 'Enter Value'\">\n  <p class=\"text-danger pt-2 m-0\" v-if=\"modelValue?.errorMessage\">{{ $t(modelValue?.errorMessage) }}</p>\n</div>\n</template>\n\n<script setup>\nimport { validateNonEmptyFields } from \"@/utils/validators/inputFieldValidators\";\nlet props = defineProps({\n  type: String,\n  classes: String,\n  id: String,\n  placeholder: String,\n  modelValue: Object,\n  errorMessage: String,\n  formSubmitted: Boolean\n})\nconst emit = defineEmits([\"update:modelValue\"]);\nlet validStatus = ref({})\nwatch(() => props.formSubmitted, () => { props.formSubmitted && updated(props.modelValue?.data) })\nfunction updated(inputValue) {\n  validStatus.value = validateNonEmptyFields({ value: String(inputValue), minLength: props.minLength, errorMessage: props.errorMessage })\n  emit(\"update:modelValue\", {\n    data: props.inputType == 'number' ? Number(inputValue) : inputValue,\n    errorMessage: validStatus.value.errorMessage,\n  });\n}\n</script>\n\n<style scoped></style>",
+      "start": 1716056342453,
+      "end": 1716056342650,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { validateNonEmptyFields } from \"@/utils/validators/inputFieldValidators\";\n\nconst _sfc_main = {\n  __name: 'NumberField',\n  __ssrInlineRender: true,\n  props: {\n  type: String,\n  classes: String,\n  id: String,\n  placeholder: String,\n  modelValue: Object,\n  errorMessage: String,\n  formSubmitted: Boolean\n},\n  emits: [\"update:modelValue\"],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\nconst emit = __emit;\nlet validStatus = ref({})\nwatch(() => props.formSubmitted, () => { props.formSubmitted && updated(props.modelValue?.data) })\nfunction updated(inputValue) {\n  validStatus.value = validateNonEmptyFields({ value: String(inputValue), minLength: props.minLength, errorMessage: props.errorMessage })\n  emit(\"update:modelValue\", {\n    data: props.inputType == 'number' ? Number(inputValue) : inputValue,\n    errorMessage: validStatus.value.errorMessage,\n  });\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${\n    _ssrRenderAttrs(_attrs)\n  }><input${\n    _ssrRenderAttr(\"type\", __props.type)\n  } class=\"${\n    _ssrRenderClass([__props.classes, \"number\"])\n  }\"${\n    _ssrRenderAttr(\"id\", __props.id)\n  }${\n    _ssrRenderAttr(\"value\", __props.modelValue?.data)\n  }${\n    _ssrRenderAttr(\"placeholder\", __props.placeholder || 'Enter Value')\n  }>`)\n  if (__props.modelValue?.errorMessage) {\n    _push(`<p class=\"text-danger pt-2 m-0\">${_ssrInterpolate(_ctx.$t(__props.modelValue?.errorMessage))}</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/InputFields/NumberField.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342650,
+      "end": 1716056342650,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342650,
+      "end": 1716056342651,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056342651,
+      "end": 1716056342651,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342651,
+      "end": 1716056342651,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342651,
+      "end": 1716056342651,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342651,
+      "end": 1716056342651,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342651,
+      "end": 1716056342651,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342651,
+      "end": 1716056342651,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342651,
+      "end": 1716056342651,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342651,
+      "end": 1716056342651,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342651,
+      "end": 1716056342651,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342651,
+      "end": 1716056342651,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, watch } from 'vue';\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { validateNonEmptyFields } from \"@/utils/validators/inputFieldValidators\";\n\nconst _sfc_main = {\n  __name: 'NumberField',\n  __ssrInlineRender: true,\n  props: {\n  type: String,\n  classes: String,\n  id: String,\n  placeholder: String,\n  modelValue: Object,\n  errorMessage: String,\n  formSubmitted: Boolean\n},\n  emits: [\"update:modelValue\"],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\nconst emit = __emit;\nlet validStatus = ref({})\nwatch(() => props.formSubmitted, () => { props.formSubmitted && updated(props.modelValue?.data) })\nfunction updated(inputValue) {\n  validStatus.value = validateNonEmptyFields({ value: String(inputValue), minLength: props.minLength, errorMessage: props.errorMessage })\n  emit(\"update:modelValue\", {\n    data: props.inputType == 'number' ? Number(inputValue) : inputValue,\n    errorMessage: validStatus.value.errorMessage,\n  });\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${\n    _ssrRenderAttrs(_attrs)\n  }><input${\n    _ssrRenderAttr(\"type\", __props.type)\n  } class=\"${\n    _ssrRenderClass([__props.classes, \"number\"])\n  }\"${\n    _ssrRenderAttr(\"id\", __props.id)\n  }${\n    _ssrRenderAttr(\"value\", __props.modelValue?.data)\n  }${\n    _ssrRenderAttr(\"placeholder\", __props.placeholder || 'Enter Value')\n  }>`)\n  if (__props.modelValue?.errorMessage) {\n    _push(`<p class=\"text-danger pt-2 m-0\">${_ssrInterpolate(_ctx.$t(__props.modelValue?.errorMessage))}</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/InputFields/NumberField.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342651,
+      "end": 1716056342652,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, watch } from 'vue';\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { validateNonEmptyFields } from \"@/utils/validators/inputFieldValidators\";\n\nconst _sfc_main = {\n  __name: 'NumberField',\n  __ssrInlineRender: true,\n  props: {\n  type: String,\n  classes: String,\n  id: String,\n  placeholder: String,\n  modelValue: Object,\n  errorMessage: String,\n  formSubmitted: Boolean\n},\n  emits: [\"update:modelValue\"],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\nconst emit = __emit;\nlet validStatus = ref({})\nwatch(() => props.formSubmitted, () => { props.formSubmitted && updated(props.modelValue?.data) })\nfunction updated(inputValue) {\n  validStatus.value = validateNonEmptyFields({ value: String(inputValue), minLength: props.minLength, errorMessage: props.errorMessage })\n  emit(\"update:modelValue\", {\n    data: props.inputType == 'number' ? Number(inputValue) : inputValue,\n    errorMessage: validStatus.value.errorMessage,\n  });\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${\n    _ssrRenderAttrs(_attrs)\n  }><input${\n    _ssrRenderAttr(\"type\", __props.type)\n  } class=\"${\n    _ssrRenderClass([__props.classes, \"number\"])\n  }\"${\n    _ssrRenderAttr(\"id\", __props.id)\n  }${\n    _ssrRenderAttr(\"value\", __props.modelValue?.data)\n  }${\n    _ssrRenderAttr(\"placeholder\", __props.placeholder || 'Enter Value')\n  }>`)\n  if (__props.modelValue?.errorMessage) {\n    _push(`<p class=\"text-danger pt-2 m-0\">${_ssrInterpolate(_ctx.$t(__props.modelValue?.errorMessage))}</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/InputFields/NumberField.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342651,
+      "end": 1716056342652,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342652,
+      "end": 1716056342652,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342652,
+      "end": 1716056342652,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342652,
+      "end": 1716056342652,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342652,
+      "end": 1716056342652,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342652,
+      "end": 1716056342652,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056342652,
+      "end": 1716056342652,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056342652,
+      "end": 1716056342652,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342652,
+      "end": 1716056342652,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342652,
+      "end": 1716056342652,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/AddressModal/index.vue?nuxt_component=async&nuxt_component_name=WidgetsModalsAddressModal",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\n<template>\n<div>\n  <div class=\"modal-header\">\n    <h3 class=\"fw-semibold\"> {{ (typeof addressId == 'number' ? 'Edit Address' : 'Add Address') }}</h3>\n    <WidgetsButton :classes=\"'btn btn-close'\" :id=\"'address_modal_close_btn'\" @onClick=\"() => { emit('close'); }\">\n      <Icon name=\"ri-close-line\" />\n    </WidgetsButton>\n  </div>\n  <form>\n    <div class=\"modal-body address-form\">\n      <div class=\"row g-4\">\n        <div class=\"col-xxl-12\">\n          <div class=\"\">\n            <label class=\"form-label\" for=\"pname\">{{ 'Title' }}</label>\n            <WidgetsInputFieldsNonEmptyField classes=\"form-control\" :formSubmitted=\"formSubmitted\" v-model=\"input.title\"\n              id=\"title\" placeholder=\"Enter Title\" />\n          </div>\n        </div>\n        <div class=\"col-12\">\n          <div class=\"\">\n            <label class=\"form-label\" for=\"address1\">{{ 'Address' }}</label>\n            <WidgetsInputFieldsNonEmptyField classes=\"form-control\" :formSubmitted=\"formSubmitted\" v-model=\"input.street\"\n              id=\"title\" placeholder=\"Enter Address\" />\n          </div>\n        </div>\n        <div class=\"col-6\">\n          <div class=\"\">\n            <label class=\"form-label me-2\" for=\"address1\">{{ 'Country' }}</label>\n            <WidgetsInputFieldsSearchDropdown get-value-key=\"id\" display-key=\"name\" :form-submitted=\"formSubmitted\"\n              v-model=\"input.country_id\" placeholder=\"Select Country\" :holdKey=\"true\"\n              :display-value=\"input.country_id?.selected?.name\" :options=\"ResponseCountries\"\n              :initialData=\"ResponseCountries.filter((item) => item.id == input.country_id.data)[0]\" />\n          </div>\n        </div>\n        <div class=\"col-6\">\n          <div class=\"\">\n            <label class=\"form-label me-2\" for=\"address1\">{{ 'State' }}</label>\n            <WidgetsInputFieldsSearchDropdown get-value-key=\"id\" placeholder=\"Select State\" display-key=\"name\"\n              :form-submitted=\"formSubmitted\" v-model=\"input.state_id\" :display-value=\"input.state_id?.selected?.name\"\n              :options=\"states\" :initialData=\"ResponseStates.filter((item) => item.id == input.state_id.data)[0]\" />\n          </div>\n        </div>\n        <div class=\"col-6\">\n          <div class=\"\">\n            <label class=\"form-label\" for=\"address1\">{{ 'City' }}</label>\n            <WidgetsInputFieldsNonEmptyField classes=\"form-control\" :formSubmitted=\"formSubmitted\" v-model=\"input.city\"\n              id=\"title\" placeholder=\"Enter City\" />\n          </div>\n        </div>\n        <div class=\"col-6\">\n          <div class=\"\">\n            <label class=\"form-label\" for=\"address1\">{{ 'Pincode' }}</label>\n            <WidgetsInputFieldsNonEmptyField classes=\"form-control\" :formSubmitted=\"formSubmitted\" v-model=\"input.pincode\"\n              id=\"title\" placeholder=\"Enter Pincode\" />\n          </div>\n        </div>\n        <div class=\"col-12 phone-field\">\n          <div class=\"\">\n            <div class=\"d-flex row\">\n              <label class=\"form-label\" for=\"phone\">{{ 'Phone Number' }}</label>\n              <span class=\"col-sm-2 col-3 pe-0\">\n                <WidgetsInputFieldsSearchDropdown :formSubmitted=\"formSubmitted\" :select-first=\"true\" getValueKey=\"id\"\n                  display-key=\"name\" v-model=\"input.country_code\" :form-submitted=\"formSubmitted\"\n                  :options=\"AllCountryCode\" />\n              </span>\n              <span class=\"col-sm-10 col-9 ps-0\">\n                <WidgetsInputFieldsNumberField type=\"number\" :formSubmitted=\"formSubmitted\" classes=\"form-control\"\n                  errorMessage=\"phone number is required.\" v-model=\"input.phone\" id=\"phone\"\n                  placeholder=\"Enter Phone Number\" />\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"modal-footer\">\n        <WidgetsButton :classes=\"'btn btn-theme-outline btn-md fw-bold'\" :type=\"'button'\" :id=\"'cancel_addres_btn'\"\n          @onClick=\"() => { emit('close') }\">\n          {{ 'Cancel' }}\n        </WidgetsButton>\n        <WidgetsButton :classes=\"'btn theme-bg-color btn-md fw-bold text-light'\" :id=\"'submit_address_btn'\"\n          @click.prevent=\"setAddressCard()\">\n          {{ 'Submit' }}\n        </WidgetsButton>\n      </div>\n    </div>\n  </form>\n</div>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { AllCountryCode } from '@/data/country_code'\nimport { useLocationStore } from \"@/store/location\";\nimport { useUserStore } from \"@/store/user\";\nimport isFormValid from \"@/utils/validators/formValidator\";\nlet props = defineProps({\n  addressId: Object,\n  user: Object\n})\nlet emit = defineEmits(['close'])\nlet { countries, states: allStates, ResponseStates, ResponseCountries } = storeToRefs(useLocationStore())\nlet input = ref({\n  title: { data: '' },\n  street: { data: '' },\n  city: { data: '' },\n  phone: { data: '' },\n  pincode: { data: '' },\n  country_id: { data: '' },\n  country_code: { data: '' },\n  state_id: { data: '' }\n})\n\nlet formSubmitted = ref(false)\nfunction getAddress() {\n  if (typeof props.addressId == 'number') {\n    let filterUser = props.user.address.filter((item) => item.id == props.addressId)[0]\n    Object.keys(input.value).forEach((key) => input.value[key].data = filterUser[key])\n  }\n}\ngetAddress()\nlet filtercountry = ResponseCountries.value.filter((item) => item.id == input.value.country_id.data)\n\nlet states = ref()\nwatch(() => input.value.country_id, () => {\n  setStatesArray();\n}, { deep: true })\n\nfunction setStatesArray() {\n  var countryId = input.value.country_id.data\n  states.value = ResponseStates.value.filter(state => state.country_id == countryId)\n}\n\nasync function setAddressCard() {\n  formSubmitted.value = true\n  if (isFormValid({ formData: input.value })) {\n    if (typeof props.addressId == 'number') {\n      await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        method: 'put',\n        headers: GetHeaders(),\n        body: {\n          title: input.value.title.data,\n          street: input.value.street.data,\n          city: input.value.city.data,\n          phone: input.value.phone.data,\n          pincode: input.value.pincode.data,\n          country_code: input.value.country_code.data,\n          country_id: input.value.country_id.data,\n          state_id: input.value.state_id.data,\n          user_id: props.user.id\n        },\n        key: 'AddAddress'\n      })\n    }\n    else {\n      await useFetch('/address', {\n        baseURL: BaseUrl,\n        method: 'post',\n        headers: GetHeaders(),\n        body: {\n          title: input.value.title.data,\n          street: input.value.street.data,\n          city: input.value.city.data,\n          phone: input.value.phone.data,\n          pincode: input.value.pincode.data,\n          country_code: input.value.country_code.data,\n          country_id: input.value.country_id.data,\n          state_id: input.value.state_id.data,\n          user_id: props.user.id\n        },\n        key: 'AddAddress'\n      })\n    }\n  }\n  useUserStore().UpdateUserInfo()\n}\n</script>\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056285066,
+      "end": 1716056285245,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285245,
+      "end": 1716056285245,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285245,
+      "end": 1716056285245,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285245,
+      "end": 1716056285245,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285245,
+      "end": 1716056285245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285245,
+      "end": 1716056285245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285245,
+      "end": 1716056285245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285245,
+      "end": 1716056285245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, withCtx as _withCtx, createTextVNode as _createTextVNode, withModifiers as _withModifiers, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"modal-header\" }\nconst _hoisted_2 = { class: \"fw-semibold\" }\nconst _hoisted_3 = { class: \"modal-body address-form\" }\nconst _hoisted_4 = { class: \"row g-4\" }\nconst _hoisted_5 = { class: \"col-xxl-12\" }\nconst _hoisted_6 = { class: \"\" }\nconst _hoisted_7 = /*#__PURE__*/_createElementVNode(\"label\", {\n  class: \"form-label\",\n  for: \"pname\"\n}, /*#__PURE__*/_toDisplayString('Title'), -1)\nconst _hoisted_8 = { class: \"col-12\" }\nconst _hoisted_9 = { class: \"\" }\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"label\", {\n  class: \"form-label\",\n  for: \"address1\"\n}, /*#__PURE__*/_toDisplayString('Address'), -1)\nconst _hoisted_11 = { class: \"col-6\" }\nconst _hoisted_12 = { class: \"\" }\nconst _hoisted_13 = /*#__PURE__*/_createElementVNode(\"label\", {\n  class: \"form-label me-2\",\n  for: \"address1\"\n}, /*#__PURE__*/_toDisplayString('Country'), -1)\nconst _hoisted_14 = { class: \"col-6\" }\nconst _hoisted_15 = { class: \"\" }\nconst _hoisted_16 = /*#__PURE__*/_createElementVNode(\"label\", {\n  class: \"form-label me-2\",\n  for: \"address1\"\n}, /*#__PURE__*/_toDisplayString('State'), -1)\nconst _hoisted_17 = { class: \"col-6\" }\nconst _hoisted_18 = { class: \"\" }\nconst _hoisted_19 = /*#__PURE__*/_createElementVNode(\"label\", {\n  class: \"form-label\",\n  for: \"address1\"\n}, /*#__PURE__*/_toDisplayString('City'), -1)\nconst _hoisted_20 = { class: \"col-6\" }\nconst _hoisted_21 = { class: \"\" }\nconst _hoisted_22 = /*#__PURE__*/_createElementVNode(\"label\", {\n  class: \"form-label\",\n  for: \"address1\"\n}, /*#__PURE__*/_toDisplayString('Pincode'), -1)\nconst _hoisted_23 = { class: \"col-12 phone-field\" }\nconst _hoisted_24 = { class: \"\" }\nconst _hoisted_25 = { class: \"d-flex row\" }\nconst _hoisted_26 = /*#__PURE__*/_createElementVNode(\"label\", {\n  class: \"form-label\",\n  for: \"phone\"\n}, /*#__PURE__*/_toDisplayString('Phone Number'), -1)\nconst _hoisted_27 = { class: \"col-sm-2 col-3 pe-0\" }\nconst _hoisted_28 = { class: \"col-sm-10 col-9 ps-0\" }\nconst _hoisted_29 = { class: \"modal-footer\" }\n\nimport { storeToRefs } from \"pinia\";\nimport { AllCountryCode } from '@/data/country_code'\nimport { useLocationStore } from \"@/store/location\";\nimport { useUserStore } from \"@/store/user\";\nimport isFormValid from \"@/utils/validators/formValidator\";\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  addressId: Object,\n  user: Object\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\nlet emit = __emit\nlet { countries, states: allStates, ResponseStates, ResponseCountries } = storeToRefs(useLocationStore())\nlet input = ref({\n  title: { data: '' },\n  street: { data: '' },\n  city: { data: '' },\n  phone: { data: '' },\n  pincode: { data: '' },\n  country_id: { data: '' },\n  country_code: { data: '' },\n  state_id: { data: '' }\n})\n\nlet formSubmitted = ref(false)\nfunction getAddress() {\n  if (typeof props.addressId == 'number') {\n    let filterUser = props.user.address.filter((item) => item.id == props.addressId)[0]\n    Object.keys(input.value).forEach((key) => input.value[key].data = filterUser[key])\n  }\n}\ngetAddress()\nlet filtercountry = ResponseCountries.value.filter((item) => item.id == input.value.country_id.data)\n\nlet states = ref()\nwatch(() => input.value.country_id, () => {\n  setStatesArray();\n}, { deep: true })\n\nfunction setStatesArray() {\n  var countryId = input.value.country_id.data\n  states.value = ResponseStates.value.filter(state => state.country_id == countryId)\n}\n\nasync function setAddressCard() {\n  formSubmitted.value = true\n  if (isFormValid({ formData: input.value })) {\n    if (typeof props.addressId == 'number') {\n      await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        method: 'put',\n        headers: GetHeaders(),\n        body: {\n          title: input.value.title.data,\n          street: input.value.street.data,\n          city: input.value.city.data,\n          phone: input.value.phone.data,\n          pincode: input.value.pincode.data,\n          country_code: input.value.country_code.data,\n          country_id: input.value.country_id.data,\n          state_id: input.value.state_id.data,\n          user_id: props.user.id\n        },\n        key: 'AddAddress'\n      })\n    }\n    else {\n      await useFetch('/address', {\n        baseURL: BaseUrl,\n        method: 'post',\n        headers: GetHeaders(),\n        body: {\n          title: input.value.title.data,\n          street: input.value.street.data,\n          city: input.value.city.data,\n          phone: input.value.phone.data,\n          pincode: input.value.pincode.data,\n          country_code: input.value.country_code.data,\n          country_id: input.value.country_id.data,\n          state_id: input.value.state_id.data,\n          user_id: props.user.id\n        },\n        key: 'AddAddress'\n      })\n    }\n  }\n  useUserStore().UpdateUserInfo()\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_WidgetsInputFieldsNonEmptyField = _resolveComponent(\"WidgetsInputFieldsNonEmptyField\")\n  const _component_WidgetsInputFieldsSearchDropdown = _resolveComponent(\"WidgetsInputFieldsSearchDropdown\")\n  const _component_WidgetsInputFieldsNumberField = _resolveComponent(\"WidgetsInputFieldsNumberField\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"h3\", _hoisted_2, _toDisplayString((typeof __props.addressId == 'number' ? 'Edit Address' : 'Add Address')), 1),\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn btn-close',\n        id: 'address_modal_close_btn',\n        onOnClick: _cache[0] || (_cache[0] = () => { _unref(emit)('close'); })\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_Icon, { name: \"ri-close-line\" })\n        ]),\n        _: 1\n      })\n    ]),\n    _createElementVNode(\"form\", null, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"div\", _hoisted_6, [\n              _hoisted_7,\n              _createVNode(_component_WidgetsInputFieldsNonEmptyField, {\n                classes: \"form-control\",\n                formSubmitted: _unref(formSubmitted),\n                modelValue: _unref(input).title,\n                \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => ((_unref(input).title) = $event)),\n                id: \"title\",\n                placeholder: \"Enter Title\"\n              }, null, 8, [\"formSubmitted\", \"modelValue\"])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_8, [\n            _createElementVNode(\"div\", _hoisted_9, [\n              _hoisted_10,\n              _createVNode(_component_WidgetsInputFieldsNonEmptyField, {\n                classes: \"form-control\",\n                formSubmitted: _unref(formSubmitted),\n                modelValue: _unref(input).street,\n                \"onUpdate:modelValue\": _cache[2] || (_cache[2] = $event => ((_unref(input).street) = $event)),\n                id: \"title\",\n                placeholder: \"Enter Address\"\n              }, null, 8, [\"formSubmitted\", \"modelValue\"])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_11, [\n            _createElementVNode(\"div\", _hoisted_12, [\n              _hoisted_13,\n              _createVNode(_component_WidgetsInputFieldsSearchDropdown, {\n                \"get-value-key\": \"id\",\n                \"display-key\": \"name\",\n                \"form-submitted\": _unref(formSubmitted),\n                modelValue: _unref(input).country_id,\n                \"onUpdate:modelValue\": _cache[3] || (_cache[3] = $event => ((_unref(input).country_id) = $event)),\n                placeholder: \"Select Country\",\n                holdKey: true,\n                \"display-value\": _unref(input).country_id?.selected?.name,\n                options: _unref(ResponseCountries),\n                initialData: _unref(ResponseCountries).filter((item) => item.id == _unref(input).country_id.data)[0]\n              }, null, 8, [\"form-submitted\", \"modelValue\", \"display-value\", \"options\", \"initialData\"])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_14, [\n            _createElementVNode(\"div\", _hoisted_15, [\n              _hoisted_16,\n              _createVNode(_component_WidgetsInputFieldsSearchDropdown, {\n                \"get-value-key\": \"id\",\n                placeholder: \"Select State\",\n                \"display-key\": \"name\",\n                \"form-submitted\": _unref(formSubmitted),\n                modelValue: _unref(input).state_id,\n                \"onUpdate:modelValue\": _cache[4] || (_cache[4] = $event => ((_unref(input).state_id) = $event)),\n                \"display-value\": _unref(input).state_id?.selected?.name,\n                options: _unref(states),\n                initialData: _unref(ResponseStates).filter((item) => item.id == _unref(input).state_id.data)[0]\n              }, null, 8, [\"form-submitted\", \"modelValue\", \"display-value\", \"options\", \"initialData\"])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_17, [\n            _createElementVNode(\"div\", _hoisted_18, [\n              _hoisted_19,\n              _createVNode(_component_WidgetsInputFieldsNonEmptyField, {\n                classes: \"form-control\",\n                formSubmitted: _unref(formSubmitted),\n                modelValue: _unref(input).city,\n                \"onUpdate:modelValue\": _cache[5] || (_cache[5] = $event => ((_unref(input).city) = $event)),\n                id: \"title\",\n                placeholder: \"Enter City\"\n              }, null, 8, [\"formSubmitted\", \"modelValue\"])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_20, [\n            _createElementVNode(\"div\", _hoisted_21, [\n              _hoisted_22,\n              _createVNode(_component_WidgetsInputFieldsNonEmptyField, {\n                classes: \"form-control\",\n                formSubmitted: _unref(formSubmitted),\n                modelValue: _unref(input).pincode,\n                \"onUpdate:modelValue\": _cache[6] || (_cache[6] = $event => ((_unref(input).pincode) = $event)),\n                id: \"title\",\n                placeholder: \"Enter Pincode\"\n              }, null, 8, [\"formSubmitted\", \"modelValue\"])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_23, [\n            _createElementVNode(\"div\", _hoisted_24, [\n              _createElementVNode(\"div\", _hoisted_25, [\n                _hoisted_26,\n                _createElementVNode(\"span\", _hoisted_27, [\n                  _createVNode(_component_WidgetsInputFieldsSearchDropdown, {\n                    formSubmitted: _unref(formSubmitted),\n                    \"select-first\": true,\n                    getValueKey: \"id\",\n                    \"display-key\": \"name\",\n                    modelValue: _unref(input).country_code,\n                    \"onUpdate:modelValue\": _cache[7] || (_cache[7] = $event => ((_unref(input).country_code) = $event)),\n                    \"form-submitted\": _unref(formSubmitted),\n                    options: _unref(AllCountryCode)\n                  }, null, 8, [\"formSubmitted\", \"modelValue\", \"form-submitted\", \"options\"])\n                ]),\n                _createElementVNode(\"span\", _hoisted_28, [\n                  _createVNode(_component_WidgetsInputFieldsNumberField, {\n                    type: \"number\",\n                    formSubmitted: _unref(formSubmitted),\n                    classes: \"form-control\",\n                    errorMessage: \"phone number is required.\",\n                    modelValue: _unref(input).phone,\n                    \"onUpdate:modelValue\": _cache[8] || (_cache[8] = $event => ((_unref(input).phone) = $event)),\n                    id: \"phone\",\n                    placeholder: \"Enter Phone Number\"\n                  }, null, 8, [\"formSubmitted\", \"modelValue\"])\n                ])\n              ])\n            ])\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_29, [\n          _createVNode(_component_WidgetsButton, {\n            classes: 'btn btn-theme-outline btn-md fw-bold',\n            type: 'button',\n            id: 'cancel_addres_btn',\n            onOnClick: _cache[9] || (_cache[9] = () => { _unref(emit)('close') })\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(_toDisplayString('Cancel'))\n            ]),\n            _: 1\n          }),\n          _createVNode(_component_WidgetsButton, {\n            classes: 'btn theme-bg-color btn-md fw-bold text-light',\n            id: 'submit_address_btn',\n            onClick: _cache[10] || (_cache[10] = _withModifiers($event => (setAddressCard()), [\"prevent\"]))\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(_toDisplayString('Submit'))\n            ]),\n            _: 1\n          })\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056285245,
+      "end": 1716056285255,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285255,
+      "end": 1716056285255,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285255,
+      "end": 1716056285255,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285255,
+      "end": 1716056285255,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285255,
+      "end": 1716056285255,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/AddressModal/index.vue\").then(r => r.default))",
+      "start": 1716056285255,
+      "end": 1716056285255,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285255,
+      "end": 1716056285256,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285256,
+      "end": 1716056285256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285256,
+      "end": 1716056285256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285256,
+      "end": 1716056285256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285256,
+      "end": 1716056285256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285256,
+      "end": 1716056285256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285256,
+      "end": 1716056285256,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285256,
+      "end": 1716056285256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285256,
+      "end": 1716056285256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285256,
+      "end": 1716056285256,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285256,
+      "end": 1716056285256,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285256,
+      "end": 1716056285256,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285256,
+      "end": 1716056285256,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285257,
+      "end": 1716056285257,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285257,
+      "end": 1716056285257,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285257,
+      "end": 1716056285257,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285257,
+      "end": 1716056285257,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285257,
+      "end": 1716056285257,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/AddressModal/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285257,
+      "end": 1716056285257,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285257,
+      "end": 1716056285257,
+      "order": "normal"
+    }
+  ]
+}

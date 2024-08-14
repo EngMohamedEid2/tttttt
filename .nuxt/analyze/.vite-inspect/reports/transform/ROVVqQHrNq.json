@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Category.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n    <!-- All Categories -->\n    <WidgetsButton :classes=\"'dropdown-category'\" :id=\"'all_categories_btn'\">\n        <Icon name=\"ri-apps-line\" class=\"f-w-600 me-2\"></Icon>\n        <span>{{ $t(\"All Categories\") }} </span>\n    </WidgetsButton>\n    <div class=\"category-dropdown\">\n        <div class=\"category-title\">\n            <h5> {{ $t(\"Categories\") }} </h5>\n            <WidgetsButton  :classes=\"'btn p-0 close-button text-content'\" :id=\"'categories_btn'\">\n                <Icon name=\"ri-close-line\"></Icon>\n            </WidgetsButton>\n        </div>\n        <ThemesWidgetsCategories :style=\"'dropdown'\" :categoryIds=\"data?.header?.category_ids\" />\n    </div>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    data: Object\n})\n</script>\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056286907,
+      "end": 1716056287059,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287059,
+      "end": 1716056287059,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287059,
+      "end": 1716056287059,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287059,
+      "end": 1716056287059,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287059,
+      "end": 1716056287059,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287059,
+      "end": 1716056287060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287060,
+      "end": 1716056287060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287060,
+      "end": 1716056287060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"category-dropdown\" }\nconst _hoisted_2 = { class: \"category-title\" }\n\n\nconst _sfc_main = {\n  __name: 'Category',\n  props: {\n    data: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_ThemesWidgetsCategories = _resolveComponent(\"ThemesWidgetsCategories\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_WidgetsButton, {\n      classes: 'dropdown-category',\n      id: 'all_categories_btn'\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_Icon, {\n          name: \"ri-apps-line\",\n          class: \"f-w-600 me-2\"\n        }),\n        _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"All Categories\")), 1)\n      ]),\n      _: 1\n    }),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"Categories\")), 1),\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn p-0 close-button text-content',\n          id: 'categories_btn'\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Icon, { name: \"ri-close-line\" })\n          ]),\n          _: 1\n        })\n      ]),\n      _createVNode(_component_ThemesWidgetsCategories, {\n        style: 'dropdown',\n        categoryIds: __props.data?.header?.category_ids\n      }, null, 8, [\"categoryIds\"])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287060,
+      "end": 1716056287060,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287060,
+      "end": 1716056287060,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287060,
+      "end": 1716056287060,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287060,
+      "end": 1716056287060,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287060,
+      "end": 1716056287060,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287060,
+      "end": 1716056287061,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287061,
+      "end": 1716056287061,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287061,
+      "end": 1716056287061,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287061,
+      "end": 1716056287061,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287061,
+      "end": 1716056287061,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287061,
+      "end": 1716056287061,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287061,
+      "end": 1716056287061,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287061,
+      "end": 1716056287061,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287061,
+      "end": 1716056287061,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287061,
+      "end": 1716056287061,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287061,
+      "end": 1716056287061,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287061,
+      "end": 1716056287061,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056287061,
+      "end": 1716056287062,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287062,
+      "end": 1716056287062,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287062,
+      "end": 1716056287062,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287062,
+      "end": 1716056287062,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287062,
+      "end": 1716056287062,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Widgets/Categories/index.vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"category-dropdown\" }\nconst _hoisted_2 = { class: \"category-title\" }\n\n\nconst _sfc_main = {\n  __name: 'Category',\n  props: {\n    data: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_WidgetsButton = __nuxt_component_1\n  const _component_ThemesWidgetsCategories = __nuxt_component_2\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_WidgetsButton, {\n      classes: 'dropdown-category',\n      id: 'all_categories_btn'\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_Icon, {\n          name: \"ri-apps-line\",\n          class: \"f-w-600 me-2\"\n        }),\n        _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"All Categories\")), 1)\n      ]),\n      _: 1\n    }),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"Categories\")), 1),\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn p-0 close-button text-content',\n          id: 'categories_btn'\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Icon, { name: \"ri-close-line\" })\n          ]),\n          _: 1\n        })\n      ]),\n      _createVNode(_component_ThemesWidgetsCategories, {\n        style: 'dropdown',\n        categoryIds: __props.data?.header?.category_ids\n      }, null, 8, [\"categoryIds\"])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287062,
+      "end": 1716056287062,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287062,
+      "end": 1716056287062,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287062,
+      "end": 1716056287062,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287062,
+      "end": 1716056287062,
+      "order": "normal"
+    }
+  ]
+}

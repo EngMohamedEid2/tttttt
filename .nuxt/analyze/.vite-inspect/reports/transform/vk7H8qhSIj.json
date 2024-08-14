@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductBundle/index.vue?nuxt_component=async&nuxt_component_name=ShopProductDetailsWidgetsProductBundle",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"related-product bundle-sec\" v-if=\"crossSellProducts?.length\">\n        <div class=\"product-title-2\">\n            <h4>{{ $t(\"Frequently bought together\") }}</h4>\n        </div>\n\n        <div class=\"related-box\">\n            <div class=\"related-image\">\n                <ul>\n                    <li v-for=\"crossSellproduct in crossSellProducts\" :key=\"crossSellproduct\">\n                        <div class=\"product-box product-box-bg wow fadeInUp\">\n                            <div class=\"product-image\">\n                                <NuxtLink :to=\"`/product/${crossSellproduct.slug}`\">\n                                    <img :src=\"crossSellproduct.product_thumbnail ? crossSellproduct?.product_thumbnail?.original_url : '/images/product.png'\"\n                                        class=\"img-fluid\" alt=\"\">\n                                </NuxtLink>\n                            </div>\n                            <div class=\"product-detail\">\n                                <NuxtLink :to=\"`/product/${crossSellproduct.slug}`\">\n                                    <h6 class=\"name\">\n                                        {{ crossSellproduct.name }}\n                                    </h6>\n                                </NuxtLink>\n\n                                <h5 class=\"sold text-content\">\n                                    <span class=\"theme-color price\">{{ store.currency.symbol }} {{\n                                        Number(store.convertCurrency(crossSellproduct.sale_price)).toFixed(2) }}</span>\n                                    <del v-if=\"crossSellproduct?.discount\">{{ store.currency.symbol }} {{\n                                        Number(store.convertCurrency(crossSellproduct.price)).toFixed(2)\n                                    }}</del>\n                                </h5>\n                            </div>\n                        </div>\n                    </li>\n                </ul>\n            </div>\n\n            <div class=\"budle-list\">\n                <ul>\n                    <li v-for=\"crossSellproduct in crossSellProducts\" :key=\"crossSellproduct\">\n                        <div class=\"form-check\">\n                            <input class=\"checkbox_animated\" type=\"checkbox\" @change=\"select($event)\"\n                                :value=\"crossSellproduct.id\" :id=\"crossSellproduct.id\">\n                            <label class=\"form-check-label\" :for=\"crossSellproduct.id\">\n                                <span class=\"color color-1\">{{ crossSellproduct.name }}\n                                    <span>{{ store.currency.symbol }} {{\n                                        Number(store.convertCurrency(crossSellproduct.sale_price)).toFixed(2)\n                                    }}</span></span>\n                            </label>\n                        </div>\n                    </li>\n\n                    <li class=\"contant\">\n                        <h5>{{ $t(\"Product Selected for\") }}</h5>\n                        <h4 class=\"theme-color\">{{ store.currency.symbol }} {{\n                            Number(store.convertCurrency(total)).toFixed(2) }}</h4>\n                        <WidgetsButton :classes=\"'btn text-white theme-bg-color btn-md mt-sm-4 mt-3 fw-bold'\"\n                            :id=\"'addcartAllbtn'\" :disabled=\"!total\" :iconClass=\"'fa-solid fa-cart-shopping ms-2'\"\n                            @onClick=\"AddToCartAll()\">\n                            {{ $t(\" Add All To Cart\") }}\n                        </WidgetsButton>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from \"@/store/data\"\nimport { useCartStore } from \"~~/store/cart\"\nimport { useCurrencyStore } from '@/store/currency'\nlet props = defineProps({\n    productData: Object\n})\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nawait useDataStore().GetProduct()\nlet { Products } = storeToRefs(useDataStore());\nlet crossSellProducts = Products?.value.data?.filter(product => props.productData?.cross_sell_products?.includes(product.id))\n\nlet total = ref(0);\nlet selectedProductIds = ref([]);\nlet crossSellproducts = ref([]);\nlet selectedProduct = ref([]);\n\nconst select = (event) => {\n    const inputValue = event?.target?.value;\n    const index = selectedProductIds?.value?.indexOf(Number(inputValue));\n    if (event?.target?.checked) {\n        selectedProductIds.value.push(Number(inputValue))\n    } else {\n        selectedProductIds.value.splice(index, 1)\n    }\n    const products = crossSellProducts;\n    selectedProduct.value = products.filter(product => selectedProductIds.value.includes(product?.id));\n    total.value = selectedProduct.value.reduce((sum, item) => sum + item.sale_price, 0);\n}\n\nconst AddToCartAll = () => {\n    selectedProduct.value.forEach(product => {\n        if (product) {\n            useCartStore().addToCartProduct({\n                product: product ? product : null,\n                quantity: 1,\n                variation: null,\n                variation_id: null,\n            });\n        }\n    })\n}\n</script>\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056271530,
+      "end": 1716056284697,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284698,
+      "end": 1716056284698,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284698,
+      "end": 1716056284698,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284698,
+      "end": 1716056284698,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284698,
+      "end": 1716056284698,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284698,
+      "end": 1716056284698,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284698,
+      "end": 1716056284698,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284698,
+      "end": 1716056284698,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createCommentVNode as _createCommentVNode, createTextVNode as _createTextVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"related-product bundle-sec\"\n}\nconst _hoisted_2 = { class: \"product-title-2\" }\nconst _hoisted_3 = { class: \"related-box\" }\nconst _hoisted_4 = { class: \"related-image\" }\nconst _hoisted_5 = { class: \"product-box product-box-bg wow fadeInUp\" }\nconst _hoisted_6 = { class: \"product-image\" }\nconst _hoisted_7 = [\"src\"]\nconst _hoisted_8 = { class: \"product-detail\" }\nconst _hoisted_9 = { class: \"name\" }\nconst _hoisted_10 = { class: \"sold text-content\" }\nconst _hoisted_11 = { class: \"theme-color price\" }\nconst _hoisted_12 = { key: 0 }\nconst _hoisted_13 = { class: \"budle-list\" }\nconst _hoisted_14 = { class: \"form-check\" }\nconst _hoisted_15 = [\"value\", \"id\"]\nconst _hoisted_16 = [\"for\"]\nconst _hoisted_17 = { class: \"color color-1\" }\nconst _hoisted_18 = { class: \"contant\" }\nconst _hoisted_19 = { class: \"theme-color\" }\n\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from \"@/store/data\"\nimport { useCartStore } from \"~~/store/cart\"\nimport { useCurrencyStore } from '@/store/currency'\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    productData: Object\n},\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n\n;(\n  ([__temp,__restore] = _withAsyncContext(() => useDataStore().GetProduct())),\n  await __temp,\n  __restore()\n)\nlet { Products } = storeToRefs(useDataStore());\nlet crossSellProducts = Products?.value.data?.filter(product => props.productData?.cross_sell_products?.includes(product.id))\n\nlet total = ref(0);\nlet selectedProductIds = ref([]);\nlet crossSellproducts = ref([]);\nlet selectedProduct = ref([]);\n\nconst select = (event) => {\n    const inputValue = event?.target?.value;\n    const index = selectedProductIds?.value?.indexOf(Number(inputValue));\n    if (event?.target?.checked) {\n        selectedProductIds.value.push(Number(inputValue))\n    } else {\n        selectedProductIds.value.splice(index, 1)\n    }\n    const products = crossSellProducts;\n    selectedProduct.value = products.filter(product => selectedProductIds.value.includes(product?.id));\n    total.value = selectedProduct.value.reduce((sum, item) => sum + item.sale_price, 0);\n}\n\nconst AddToCartAll = () => {\n    selectedProduct.value.forEach(product => {\n        if (product) {\n            useCartStore().addToCartProduct({\n                product: product ? product : null,\n                quantity: 1,\n                variation: null,\n                variation_id: null,\n            });\n        }\n    })\n}\n\nreturn (_ctx, _cache) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_unref(crossSellProducts)?.length)\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Frequently bought together\")), 1)\n        ]),\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"ul\", null, [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(crossSellProducts), (crossSellproduct) => {\n                return (_openBlock(), _createElementBlock(\"li\", { key: crossSellproduct }, [\n                  _createElementVNode(\"div\", _hoisted_5, [\n                    _createElementVNode(\"div\", _hoisted_6, [\n                      _createVNode(_component_NuxtLink, {\n                        to: `/product/${crossSellproduct.slug}`\n                      }, {\n                        default: _withCtx(() => [\n                          _createElementVNode(\"img\", {\n                            src: crossSellproduct.product_thumbnail ? crossSellproduct?.product_thumbnail?.original_url : '/images/product.png',\n                            class: \"img-fluid\",\n                            alt: \"\"\n                          }, null, 8, _hoisted_7)\n                        ]),\n                        _: 2\n                      }, 1032, [\"to\"])\n                    ]),\n                    _createElementVNode(\"div\", _hoisted_8, [\n                      _createVNode(_component_NuxtLink, {\n                        to: `/product/${crossSellproduct.slug}`\n                      }, {\n                        default: _withCtx(() => [\n                          _createElementVNode(\"h6\", _hoisted_9, _toDisplayString(crossSellproduct.name), 1)\n                        ]),\n                        _: 2\n                      }, 1032, [\"to\"]),\n                      _createElementVNode(\"h5\", _hoisted_10, [\n                        _createElementVNode(\"span\", _hoisted_11, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(crossSellproduct.sale_price)).toFixed(2)), 1),\n                        (crossSellproduct?.discount)\n                          ? (_openBlock(), _createElementBlock(\"del\", _hoisted_12, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(crossSellproduct.price)).toFixed(2)), 1))\n                          : _createCommentVNode(\"\", true)\n                      ])\n                    ])\n                  ])\n                ]))\n              }), 128))\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_13, [\n            _createElementVNode(\"ul\", null, [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(crossSellProducts), (crossSellproduct) => {\n                return (_openBlock(), _createElementBlock(\"li\", { key: crossSellproduct }, [\n                  _createElementVNode(\"div\", _hoisted_14, [\n                    _createElementVNode(\"input\", {\n                      class: \"checkbox_animated\",\n                      type: \"checkbox\",\n                      onChange: _cache[0] || (_cache[0] = $event => (select($event))),\n                      value: crossSellproduct.id,\n                      id: crossSellproduct.id\n                    }, null, 40, _hoisted_15),\n                    _createElementVNode(\"label\", {\n                      class: \"form-check-label\",\n                      for: crossSellproduct.id\n                    }, [\n                      _createElementVNode(\"span\", _hoisted_17, [\n                        _createTextVNode(_toDisplayString(crossSellproduct.name) + \" \", 1),\n                        _createElementVNode(\"span\", null, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(crossSellproduct.sale_price)).toFixed(2)), 1)\n                      ])\n                    ], 8, _hoisted_16)\n                  ])\n                ]))\n              }), 128)),\n              _createElementVNode(\"li\", _hoisted_18, [\n                _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"Product Selected for\")), 1),\n                _createElementVNode(\"h4\", _hoisted_19, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(_unref(total))).toFixed(2)), 1),\n                _createVNode(_component_WidgetsButton, {\n                  classes: 'btn text-white theme-bg-color btn-md mt-sm-4 mt-3 fw-bold',\n                  id: 'addcartAllbtn',\n                  disabled: !_unref(total),\n                  iconClass: 'fa-solid fa-cart-shopping ms-2',\n                  onOnClick: _cache[1] || (_cache[1] = $event => (AddToCartAll()))\n                }, {\n                  default: _withCtx(() => [\n                    _createTextVNode(_toDisplayString(_ctx.$t(\" Add All To Cart\")), 1)\n                  ]),\n                  _: 1\n                }, 8, [\"disabled\"])\n              ])\n            ])\n          ])\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284698,
+      "end": 1716056284705,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284705,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductBundle/index.vue\").then(r => r.default))",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284706,
+      "end": 1716056284706,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductBundle/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284706,
+      "end": 1716056284707,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284707,
+      "end": 1716056284707,
+      "order": "normal"
+    }
+  ]
+}

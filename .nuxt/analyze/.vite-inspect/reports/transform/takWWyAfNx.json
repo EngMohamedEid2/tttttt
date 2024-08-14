@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/SubOrders.vue?nuxt_component=async&nuxt_component_name=AccountOrdersDetailsSubOrders",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"card\" v-if=\"order?.sub_orders?.length\">\n        <div class=\"card-body\">\n            <div class=\"tracking-wrapper table-responsive\">\n                <table class=\"table product-table\">\n                    <thead>\n                        <tr>\n                            <th scope=\"col\">{{ $t(\"Order Number\") }}</th>\n                            <th scope=\"col\">{{ $t(\"Order Date\") }}</th>\n                            <th scope=\"col\">{{ $t(\"Total Amount\") }}</th>\n                            <th scope=\"col\">{{ $t(\"Status\") }}</th>\n                            <th scope=\"col\">{{ $t(\"Action\") }}</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr v-for=\"(subOrder, index) in order.sub_orders\" :key=\"index\">\n                            <td>\n                                <h6>{{ '#' + subOrder.order_number }}</h6>\n                            </td>\n                            <td>\n                                <h6>{{ dateFormatter(subOrder.created_at) }}</h6>\n                            </td>\n                            <td>\n                                <h6>{{ store.currency.symbol }} {{ Number(store.convertCurrency(subOrder.amount)).toFixed(2)\n                                }}</h6>\n                            </td>\n                            <td>\n                                <h6>\n                                    <div :class=\"`status-${subOrder.order_status.slug}`\">\n                                        <span>{{ transform(subOrder.order_status.name) }}</span>\n                                    </div>\n                                </h6>\n                            </td>\n                            <td>\n                                <nuxt-link href=\"javascript:void(0)\"\n                                    :to=\"`/account/order/details/${subOrder.order_number}`\">\n                                    <Icon name=\"ri-eye-line\"></Icon>\n                                </nuxt-link>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { useCurrencyStore } from '@/store/currency'\nlet props = defineProps({\n    order: Object\n})\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056261546,
+      "end": 1716056262495,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056262495,
+      "end": 1716056262495,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056262495,
+      "end": 1716056262495,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056262495,
+      "end": 1716056262496,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056262496,
+      "end": 1716056262496,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056262496,
+      "end": 1716056262496,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056262496,
+      "end": 1716056262496,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056262496,
+      "end": 1716056262496,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, unref as _unref, normalizeClass as _normalizeClass, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"card\"\n}\nconst _hoisted_2 = { class: \"card-body\" }\nconst _hoisted_3 = { class: \"tracking-wrapper table-responsive\" }\nconst _hoisted_4 = { class: \"table product-table\" }\nconst _hoisted_5 = { scope: \"col\" }\nconst _hoisted_6 = { scope: \"col\" }\nconst _hoisted_7 = { scope: \"col\" }\nconst _hoisted_8 = { scope: \"col\" }\nconst _hoisted_9 = { scope: \"col\" }\n\nimport { useCurrencyStore } from '@/store/currency'\n\nconst _sfc_main = {\n  __name: 'SubOrders',\n  props: {\n    order: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n\n  return (__props.order?.sub_orders?.length)\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"table\", _hoisted_4, [\n              _createElementVNode(\"thead\", null, [\n                _createElementVNode(\"tr\", null, [\n                  _createElementVNode(\"th\", _hoisted_5, _toDisplayString(_ctx.$t(\"Order Number\")), 1),\n                  _createElementVNode(\"th\", _hoisted_6, _toDisplayString(_ctx.$t(\"Order Date\")), 1),\n                  _createElementVNode(\"th\", _hoisted_7, _toDisplayString(_ctx.$t(\"Total Amount\")), 1),\n                  _createElementVNode(\"th\", _hoisted_8, _toDisplayString(_ctx.$t(\"Status\")), 1),\n                  _createElementVNode(\"th\", _hoisted_9, _toDisplayString(_ctx.$t(\"Action\")), 1)\n                ])\n              ]),\n              _createElementVNode(\"tbody\", null, [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.order.sub_orders, (subOrder, index) => {\n                  return (_openBlock(), _createElementBlock(\"tr\", { key: index }, [\n                    _createElementVNode(\"td\", null, [\n                      _createElementVNode(\"h6\", null, _toDisplayString('#' + subOrder.order_number), 1)\n                    ]),\n                    _createElementVNode(\"td\", null, [\n                      _createElementVNode(\"h6\", null, _toDisplayString(_ctx.dateFormatter(subOrder.created_at)), 1)\n                    ]),\n                    _createElementVNode(\"td\", null, [\n                      _createElementVNode(\"h6\", null, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(subOrder.amount)).toFixed(2)), 1)\n                    ]),\n                    _createElementVNode(\"td\", null, [\n                      _createElementVNode(\"h6\", null, [\n                        _createElementVNode(\"div\", {\n                          class: _normalizeClass(`status-${subOrder.order_status.slug}`)\n                        }, [\n                          _createElementVNode(\"span\", null, _toDisplayString(_ctx.transform(subOrder.order_status.name)), 1)\n                        ], 2)\n                      ])\n                    ]),\n                    _createElementVNode(\"td\", null, [\n                      _createVNode(_component_nuxt_link, {\n                        href: \"javascript:void(0)\",\n                        to: `/account/order/details/${subOrder.order_number}`\n                      }, {\n                        default: _withCtx(() => [\n                          _createVNode(_component_Icon, { name: \"ri-eye-line\" })\n                        ]),\n                        _: 2\n                      }, 1032, [\"to\"])\n                    ])\n                  ]))\n                }), 128))\n              ])\n            ])\n          ])\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056262496,
+      "end": 1716056262503,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056262503,
+      "end": 1716056262503,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/SubOrders.vue\").then(r => r.default))",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056262504,
+      "end": 1716056262504,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056262504,
+      "end": 1716056262505,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056262505,
+      "end": 1716056262505,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056262505,
+      "end": 1716056262505,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056262505,
+      "end": 1716056262505,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056262505,
+      "end": 1716056262505,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056262505,
+      "end": 1716056262505,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/SubOrders.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056262505,
+      "end": 1716056262505,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056262505,
+      "end": 1716056262505,
+      "order": "normal"
+    }
+  ]
+}

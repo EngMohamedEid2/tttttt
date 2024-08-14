@@ -1,0 +1,214 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/filter/Category.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <ul class=\"category-list custom-padding custom-height\">\n    <li v-for=\"(category, index) of Categories\" :key=\"index\">\n      <div class=\"form-check ps-0 m-0 category-list-box\">\n        <input\n          class=\"checkbox_animated\"\n          type=\"checkbox\"\n          :id=\"category.name\"\n          :value=\"category.id\"\n          v-model=\"store.filterObject.selectedCategories\"\n        />\n        <label class=\"form-check-label\" :for=\"category.name\">\n          <span class=\"name\">{{ category.name }}</span>\n        </label>\n      </div>\n    </li>\n  </ul>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useCollectionStore } from \"~/store/collection\";\n\nlet store = useCollectionStore();\n\nlet { filter, categories, selectedCategories } = storeToRefs(\n  useCollectionStore()\n);\n\nlet { Categories } = storeToRefs(useDataStore());\n// const { fetchProducts } = useDataStore();\n\n// categories.value = Categories?.value?.data?.filter(\n//   (category) => category.type === \"product\"\n// );\n\n// console.log(selectedCategory, selectedCategoryProducts);\n\n// console.log(Categories);\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056287398,
+      "end": 1716056287563,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287563,
+      "end": 1716056287563,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287563,
+      "end": 1716056287563,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287563,
+      "end": 1716056287563,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287563,
+      "end": 1716056287563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287563,
+      "end": 1716056287563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287563,
+      "end": 1716056287563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287563,
+      "end": 1716056287563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, vModelCheckbox as _vModelCheckbox, createElementVNode as _createElementVNode, withDirectives as _withDirectives, toDisplayString as _toDisplayString } from \"vue\"\n\nconst _hoisted_1 = { class: \"category-list custom-padding custom-height\" }\nconst _hoisted_2 = { class: \"form-check ps-0 m-0 category-list-box\" }\nconst _hoisted_3 = [\"id\", \"value\"]\nconst _hoisted_4 = [\"for\"]\nconst _hoisted_5 = { class: \"name\" }\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useCollectionStore } from \"~/store/collection\";\n\n\nconst _sfc_main = {\n  __name: 'Category',\n  setup(__props) {\n\nlet store = useCollectionStore();\n\nlet { filter, categories, selectedCategories } = storeToRefs(\n  useCollectionStore()\n);\n\nlet { Categories } = storeToRefs(useDataStore());\n// const { fetchProducts } = useDataStore();\n\n// categories.value = Categories?.value?.data?.filter(\n//   (category) => category.type === \"product\"\n// );\n\n// console.log(selectedCategory, selectedCategoryProducts);\n\n// console.log(Categories);\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"ul\", _hoisted_1, [\n    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(Categories), (category, index) => {\n      return (_openBlock(), _createElementBlock(\"li\", { key: index }, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _withDirectives(_createElementVNode(\"input\", {\n            class: \"checkbox_animated\",\n            type: \"checkbox\",\n            id: category.name,\n            value: category.id,\n            \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_unref(store).filterObject.selectedCategories) = $event))\n          }, null, 8, _hoisted_3), [\n            [_vModelCheckbox, _unref(store).filterObject.selectedCategories]\n          ]),\n          _createElementVNode(\"label\", {\n            class: \"form-check-label\",\n            for: category.name\n          }, [\n            _createElementVNode(\"span\", _hoisted_5, _toDisplayString(category.name), 1)\n          ], 8, _hoisted_4)\n        ])\n      ]))\n    }), 128))\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287563,
+      "end": 1716056287564,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287564,
+      "end": 1716056287564,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287564,
+      "end": 1716056287565,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056287565,
+      "end": 1716056287566,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287566,
+      "end": 1716056287566,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287566,
+      "end": 1716056287566,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287566,
+      "end": 1716056287566,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287566,
+      "end": 1716056287566,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056287566,
+      "end": 1716056287567,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287567,
+      "end": 1716056287567,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287567,
+      "end": 1716056287567,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287567,
+      "end": 1716056287567,
+      "order": "normal"
+    }
+  ]
+}

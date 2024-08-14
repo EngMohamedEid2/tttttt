@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/sidebar/RecentPost.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <div>\n    <h2 class=\"accordion-header\" id=\"panelsStayOpen-headingOne\">\n      <button class=\"accordion-button\" type=\"button\" data-bs-toggle=\"collapse\"\n        data-bs-target=\"#panelsStayOpen-collapseOne\">\n        {{ $t(\"Recent Post\") }}\n      </button>\n    </h2>\n    <div id=\"panelsStayOpen-collapseOne\" class=\"accordion-collapse collapse show\">\n      <div class=\"accordion-body pt-0\">\n        <div class=\"recent-post-box\">\n          <div class=\"recent-box\" v-for=\"blog in blogs?.slice(1, 5)\" :key=\"blog\">\n            <NuxtLink :to=\"`/blog/${blog?.slug}`\" class=\"recent-image\">\n              <img\n                :src=\"blog?.blog_thumbnail?.original_url\"\n                class=\"bg-fluid\" :alt=\"blog?.title\" />\n            </NuxtLink>\n\n            <div class=\"recent-detail\">\n              <NuxtLink :to=\"`/blog/${blog?.slug}`\" class=\"recent-image\">\n                <h5 class=\"recent-name\">{{ blog?.title }}</h5>\n                <h6>{{ dateFormatter(blog.created_at) }}</h6>\n              </NuxtLink>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <WidgetsNoData :classes=\"'no-data-added bg-light'\" :text=\"'No Blog Found'\" v-if=\"!blogs?.length\">\n  </WidgetsNoData>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  blogs: Object,\n});\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056286798,
+      "end": 1716056286994,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056286994,
+      "end": 1716056286994,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056286994,
+      "end": 1716056286994,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056286994,
+      "end": 1716056286994,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056286994,
+      "end": 1716056286994,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056286994,
+      "end": 1716056286994,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056286994,
+      "end": 1716056286994,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056286994,
+      "end": 1716056286994,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  class: \"accordion-header\",\n  id: \"panelsStayOpen-headingOne\"\n}\nconst _hoisted_2 = {\n  class: \"accordion-button\",\n  type: \"button\",\n  \"data-bs-toggle\": \"collapse\",\n  \"data-bs-target\": \"#panelsStayOpen-collapseOne\"\n}\nconst _hoisted_3 = {\n  id: \"panelsStayOpen-collapseOne\",\n  class: \"accordion-collapse collapse show\"\n}\nconst _hoisted_4 = { class: \"accordion-body pt-0\" }\nconst _hoisted_5 = { class: \"recent-post-box\" }\nconst _hoisted_6 = [\"src\", \"alt\"]\nconst _hoisted_7 = { class: \"recent-detail\" }\nconst _hoisted_8 = { class: \"recent-name\" }\n\n\nconst _sfc_main = {\n  __name: 'RecentPost',\n  props: {\n  blogs: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", null, [\n      _createElementVNode(\"h2\", _hoisted_1, [\n        _createElementVNode(\"button\", _hoisted_2, _toDisplayString(_ctx.$t(\"Recent Post\")), 1)\n      ]),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.blogs?.slice(1, 5), (blog) => {\n              return (_openBlock(), _createElementBlock(\"div\", {\n                class: \"recent-box\",\n                key: blog\n              }, [\n                _createVNode(_component_NuxtLink, {\n                  to: `/blog/${blog?.slug}`,\n                  class: \"recent-image\"\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"img\", {\n                      src: blog?.blog_thumbnail?.original_url,\n                      class: \"bg-fluid\",\n                      alt: blog?.title\n                    }, null, 8, _hoisted_6)\n                  ]),\n                  _: 2\n                }, 1032, [\"to\"]),\n                _createElementVNode(\"div\", _hoisted_7, [\n                  _createVNode(_component_NuxtLink, {\n                    to: `/blog/${blog?.slug}`,\n                    class: \"recent-image\"\n                  }, {\n                    default: _withCtx(() => [\n                      _createElementVNode(\"h5\", _hoisted_8, _toDisplayString(blog?.title), 1),\n                      _createElementVNode(\"h6\", null, _toDisplayString(_ctx.dateFormatter(blog.created_at)), 1)\n                    ]),\n                    _: 2\n                  }, 1032, [\"to\"])\n                ])\n              ]))\n            }), 128))\n          ])\n        ])\n      ])\n    ]),\n    (!__props.blogs?.length)\n      ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n          key: 0,\n          classes: 'no-data-added bg-light',\n          text: 'No Blog Found'\n        }))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286994,
+      "end": 1716056286995,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056286995,
+      "end": 1716056286995,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { dateFormatter as __unimport_dateFormatter } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/formators/date.js';\nimport { unref as __unimport_unref_ } from 'vue';import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  class: \"accordion-header\",\n  id: \"panelsStayOpen-headingOne\"\n}\nconst _hoisted_2 = {\n  class: \"accordion-button\",\n  type: \"button\",\n  \"data-bs-toggle\": \"collapse\",\n  \"data-bs-target\": \"#panelsStayOpen-collapseOne\"\n}\nconst _hoisted_3 = {\n  id: \"panelsStayOpen-collapseOne\",\n  class: \"accordion-collapse collapse show\"\n}\nconst _hoisted_4 = { class: \"accordion-body pt-0\" }\nconst _hoisted_5 = { class: \"recent-post-box\" }\nconst _hoisted_6 = [\"src\", \"alt\"]\nconst _hoisted_7 = { class: \"recent-detail\" }\nconst _hoisted_8 = { class: \"recent-name\" }\n\n\nconst _sfc_main = {\n  __name: 'RecentPost',\n  props: {\n  blogs: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", null, [\n      _createElementVNode(\"h2\", _hoisted_1, [\n        _createElementVNode(\"button\", _hoisted_2, _toDisplayString(_ctx.$t(\"Recent Post\")), 1)\n      ]),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.blogs?.slice(1, 5), (blog) => {\n              return (_openBlock(), _createElementBlock(\"div\", {\n                class: \"recent-box\",\n                key: blog\n              }, [\n                _createVNode(_component_NuxtLink, {\n                  to: `/blog/${blog?.slug}`,\n                  class: \"recent-image\"\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"img\", {\n                      src: blog?.blog_thumbnail?.original_url,\n                      class: \"bg-fluid\",\n                      alt: blog?.title\n                    }, null, 8, _hoisted_6)\n                  ]),\n                  _: 2\n                }, 1032, [\"to\"]),\n                _createElementVNode(\"div\", _hoisted_7, [\n                  _createVNode(_component_NuxtLink, {\n                    to: `/blog/${blog?.slug}`,\n                    class: \"recent-image\"\n                  }, {\n                    default: _withCtx(() => [\n                      _createElementVNode(\"h5\", _hoisted_8, _toDisplayString(blog?.title), 1),\n                      _createElementVNode(\"h6\", null, _toDisplayString((\"dateFormatter\" in _ctx ? _ctx.dateFormatter : __unimport_unref_(__unimport_dateFormatter))(blog.created_at)), 1)\n                    ]),\n                    _: 2\n                  }, 1032, [\"to\"])\n                ])\n              ]))\n            }), 128))\n          ])\n        ])\n      ])\n    ]),\n    (!__props.blogs?.length)\n      ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n          key: 0,\n          classes: 'no-data-added bg-light',\n          text: 'No Blog Found'\n        }))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286995,
+      "end": 1716056286997,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056286997,
+      "end": 1716056286997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056286997,
+      "end": 1716056286997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056286997,
+      "end": 1716056286997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056286997,
+      "end": 1716056286997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/NoData/index.vue\";\nimport { dateFormatter as __unimport_dateFormatter } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/formators/date.js';\nimport { unref as __unimport_unref_ } from 'vue';import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  class: \"accordion-header\",\n  id: \"panelsStayOpen-headingOne\"\n}\nconst _hoisted_2 = {\n  class: \"accordion-button\",\n  type: \"button\",\n  \"data-bs-toggle\": \"collapse\",\n  \"data-bs-target\": \"#panelsStayOpen-collapseOne\"\n}\nconst _hoisted_3 = {\n  id: \"panelsStayOpen-collapseOne\",\n  class: \"accordion-collapse collapse show\"\n}\nconst _hoisted_4 = { class: \"accordion-body pt-0\" }\nconst _hoisted_5 = { class: \"recent-post-box\" }\nconst _hoisted_6 = [\"src\", \"alt\"]\nconst _hoisted_7 = { class: \"recent-detail\" }\nconst _hoisted_8 = { class: \"recent-name\" }\n\n\nconst _sfc_main = {\n  __name: 'RecentPost',\n  props: {\n  blogs: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  const _component_NuxtLink = __nuxt_component_0\n  const _component_WidgetsNoData = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", null, [\n      _createElementVNode(\"h2\", _hoisted_1, [\n        _createElementVNode(\"button\", _hoisted_2, _toDisplayString(_ctx.$t(\"Recent Post\")), 1)\n      ]),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.blogs?.slice(1, 5), (blog) => {\n              return (_openBlock(), _createElementBlock(\"div\", {\n                class: \"recent-box\",\n                key: blog\n              }, [\n                _createVNode(_component_NuxtLink, {\n                  to: `/blog/${blog?.slug}`,\n                  class: \"recent-image\"\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"img\", {\n                      src: blog?.blog_thumbnail?.original_url,\n                      class: \"bg-fluid\",\n                      alt: blog?.title\n                    }, null, 8, _hoisted_6)\n                  ]),\n                  _: 2\n                }, 1032, [\"to\"]),\n                _createElementVNode(\"div\", _hoisted_7, [\n                  _createVNode(_component_NuxtLink, {\n                    to: `/blog/${blog?.slug}`,\n                    class: \"recent-image\"\n                  }, {\n                    default: _withCtx(() => [\n                      _createElementVNode(\"h5\", _hoisted_8, _toDisplayString(blog?.title), 1),\n                      _createElementVNode(\"h6\", null, _toDisplayString((\"dateFormatter\" in _ctx ? _ctx.dateFormatter : __unimport_unref_(__unimport_dateFormatter))(blog.created_at)), 1)\n                    ]),\n                    _: 2\n                  }, 1032, [\"to\"])\n                ])\n              ]))\n            }), 128))\n          ])\n        ])\n      ])\n    ]),\n    (!__props.blogs?.length)\n      ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n          key: 0,\n          classes: 'no-data-added bg-light',\n          text: 'No Blog Found'\n        }))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286997,
+      "end": 1716056286997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056286997,
+      "end": 1716056286997,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056286997,
+      "end": 1716056286997,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056286997,
+      "end": 1716056286998,
+      "order": "normal"
+    }
+  ]
+}

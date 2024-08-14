@@ -1,0 +1,70 @@
+/**=====================
+     Slider scss
+==========================**/
+.swiper,
+.swiper-pointer-events {
+     z-index: 0 !important;
+}
+
+.product-wrapper {
+     .timer {
+          position: absolute;
+          top: 15px;
+          left: 0;
+          right: 0;
+          text-align: center;
+     }
+}
+
+.img-slider {
+     img {
+          display: initial;
+     }
+}
+
+.slider-dots {
+     .swiper-pagination {
+          position: relative;
+          inset: unset !important;
+          margin-top: 10px;
+
+          .swiper-pagination-bullet {
+               margin: 0 5px !important;
+               width: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
+               height: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
+               background: rgba(35, 35, 35, 0.2);
+               transition: all 0.5s ease;
+               border-radius: 100px;
+
+               html.dark & {
+                    background: rgba(119, 119, 119, 0.44);
+               }
+
+               &-active {
+                    width: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
+                    background-color: var(--theme-color);
+                    transition: all 0.5s ease;
+
+                    html.dark & {
+                         background-color: var(--theme-color);
+                    }
+
+                    &:hover {
+                         background-color: var(--theme-color);
+
+                         html.dark & {
+                              background-color: var(--theme-color);
+                         }
+                    }
+               }
+
+               &:hover {
+                    background: rgba(35, 35, 35, 0.2);
+
+                    html.dark & {
+                         background: rgba(119, 119, 119, 0.44);
+                    }
+               }
+          }
+     }
+}

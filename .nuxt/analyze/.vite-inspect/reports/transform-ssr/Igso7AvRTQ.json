@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/Error404/index.vue?nuxt_component=async&nuxt_component_name=PagesError404",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <section class=\"section-404 section-lg-space\">\n        <div class=\"container-fluid-lg\">\n            <div class=\"row\">\n                <div class=\"col-12\">\n                    <div class=\"image-404\">\n                        <img src=\"/images/inner-page/404.png\" class=\"img-fluid\" alt=\"\">\n                    </div>\n                </div>\n                <div class=\"col-12\" v-if=\"ThemeOptions.options?.error_page?.error_page_content\">\n                    <div class=\"contain-404\">\n                        <h3 class=\"text-content\">\n                            {{ ThemeOptions.options?.error_page?.error_page_content }}\n                        </h3>\n                        <WidgetsButton :classes=\"'btn btn-md text-white theme-bg-color mt-4 mx-auto'\" :id=\"'back_button'\"\n                            v-if=\"ThemeOptions.options?.error_page?.back_button_enable\" @onClick=\"back()\">{{\n                                ThemeOptions.options?.error_page?.back_button_text }}</WidgetsButton>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nlet { ThemeOptions } = storeToRefs(useDataStore())\n\nfunction back() {\n    useRouter().go(-1)\n}\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056339286,
+      "end": 1716056339358,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339358,
+      "end": 1716056339358,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339358,
+      "end": 1716056339358,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339358,
+      "end": 1716056339358,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339358,
+      "end": 1716056339358,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339358,
+      "end": 1716056339358,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339358,
+      "end": 1716056339358,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339358,
+      "end": 1716056339358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339358,
+      "end": 1716056339358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339358,
+      "end": 1716056339358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339358,
+      "end": 1716056339358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/inner-page/404.png'\n\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet { ThemeOptions } = storeToRefs(useDataStore())\n\nfunction back() {\n    useRouter().go(-1)\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"section-404 section-lg-space\" }, _attrs))\n  }><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12\"><div class=\"image-404\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } class=\"img-fluid\" alt=\"\"></div></div>`)\n  if (_unref(ThemeOptions).options?.error_page?.error_page_content) {\n    _push(`<div class=\"col-12\"><div class=\"contain-404\"><h3 class=\"text-content\">${_ssrInterpolate(_unref(ThemeOptions).options?.error_page?.error_page_content)}</h3>`)\n    if (_unref(ThemeOptions).options?.error_page?.back_button_enable) {\n      _push(_ssrRenderComponent(_component_WidgetsButton, {\n        classes: 'btn btn-md text-white theme-bg-color mt-4 mx-auto',\n        id: 'back_button',\n        onOnClick: $event => (back())\n      }, {\n        default: _withCtx((_, _push, _parent, _scopeId) => {\n          if (_push) {\n            _push(`${_ssrInterpolate(_unref(ThemeOptions).options?.error_page?.back_button_text)}`)\n          } else {\n            return [\n              _createTextVNode(_toDisplayString(_unref(ThemeOptions).options?.error_page?.back_button_text), 1)\n            ]\n          }\n        }),\n        _: 1\n      }, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Pages/Error404/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339358,
+      "end": 1716056339360,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/Error404/index.vue\").then(r => r.default))",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339360,
+      "end": 1716056339360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339360,
+      "end": 1716056339361,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339361,
+      "end": 1716056339361,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339361,
+      "end": 1716056339361,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339361,
+      "end": 1716056339361,
+      "order": "normal"
+    }
+  ]
+}

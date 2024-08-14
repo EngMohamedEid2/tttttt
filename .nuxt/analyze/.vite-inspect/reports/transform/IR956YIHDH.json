@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Footer/Cantact.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"footer-contact\">\n        <ul>\n            <li v-if=\"data?.footer?.support_number\">\n                <div class=\"footer-number\">\n                    <Icon name=\"ri:phone-line\" size=\"18\"></Icon>\n                    <div class=\"contact-number\">\n                        <h6 class=\"text-content\">{{ $t('Customer Support 24/7') }}</h6>\n                        <h5>{{ data?.footer?.support_number }}</h5>\n                    </div>\n                </div>\n            </li>\n\n            <li v-if=\"data?.footer?.support_email\">\n                <div class=\"footer-number\">\n                    <Icon name=\"ri:mail-line\" size=\"18\"></Icon>\n                    <div class=\"contact-number\">\n                        <h6 class=\"text-content\">{{ $t('Email Address :') }}</h6>\n                        <h5>{{ data?.footer?.support_email }}</h5>\n                    </div>\n                </div>\n            </li>\n\n            <li class=\"social-app mb-0\" v-if=\"data?.footer?.play_store_url || data?.footer?.app_store_url\">\n                <h5 class=\"mb-2 text-content\">Download App :</h5>\n                <ul>\n                    <li class=\"mb-0\" v-if=\"data?.footer?.play_store_url\">\n                        <NuxtLink :to=\"data?.footer?.play_store_url\" class=\"text-content\">\n                            <img src=\"/images/playstore.svg\" class=\"lazyload\" alt=\"\">\n                        </NuxtLink>\n\n                    </li>\n                    <li class=\"mb-0\" v-if=\"data?.footer?.app_store_url\">\n                        <NuxtLink :to=\"data?.footer?.app_store_url\" class=\"text-content\">\n                            <img src=\"/images/appstore.svg\" class=\"lazyload\" alt=\"\">\n                        </NuxtLink>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    data: Object\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056286820,
+      "end": 1716056287009,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287009,
+      "end": 1716056287009,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287009,
+      "end": 1716056287009,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287009,
+      "end": 1716056287009,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287009,
+      "end": 1716056287009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287009,
+      "end": 1716056287009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287009,
+      "end": 1716056287009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287009,
+      "end": 1716056287009,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, withCtx as _withCtx } from \"vue\"\nimport _imports_0 from '/images/playstore.svg'\nimport _imports_1 from '/images/appstore.svg'\n\n\nconst _hoisted_1 = { class: \"footer-contact\" }\nconst _hoisted_2 = { key: 0 }\nconst _hoisted_3 = { class: \"footer-number\" }\nconst _hoisted_4 = { class: \"contact-number\" }\nconst _hoisted_5 = { class: \"text-content\" }\nconst _hoisted_6 = { key: 1 }\nconst _hoisted_7 = { class: \"footer-number\" }\nconst _hoisted_8 = { class: \"contact-number\" }\nconst _hoisted_9 = { class: \"text-content\" }\nconst _hoisted_10 = {\n  key: 2,\n  class: \"social-app mb-0\"\n}\nconst _hoisted_11 = /*#__PURE__*/_createElementVNode(\"h5\", { class: \"mb-2 text-content\" }, \"Download App :\", -1)\nconst _hoisted_12 = {\n  key: 0,\n  class: \"mb-0\"\n}\nconst _hoisted_13 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_0,\n  class: \"lazyload\",\n  alt: \"\"\n}, null, -1)\nconst _hoisted_14 = {\n  key: 1,\n  class: \"mb-0\"\n}\nconst _hoisted_15 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_1,\n  class: \"lazyload\",\n  alt: \"\"\n}, null, -1)\n\n\nconst _sfc_main = {\n  __name: 'Cantact',\n  props: {\n    data: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"ul\", null, [\n      (__props.data?.footer?.support_number)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_2, [\n            _createElementVNode(\"div\", _hoisted_3, [\n              _createVNode(_component_Icon, {\n                name: \"ri:phone-line\",\n                size: \"18\"\n              }),\n              _createElementVNode(\"div\", _hoisted_4, [\n                _createElementVNode(\"h6\", _hoisted_5, _toDisplayString(_ctx.$t('Customer Support 24/7')), 1),\n                _createElementVNode(\"h5\", null, _toDisplayString(__props.data?.footer?.support_number), 1)\n              ])\n            ])\n          ]))\n        : _createCommentVNode(\"\", true),\n      (__props.data?.footer?.support_email)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_6, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createVNode(_component_Icon, {\n                name: \"ri:mail-line\",\n                size: \"18\"\n              }),\n              _createElementVNode(\"div\", _hoisted_8, [\n                _createElementVNode(\"h6\", _hoisted_9, _toDisplayString(_ctx.$t('Email Address :')), 1),\n                _createElementVNode(\"h5\", null, _toDisplayString(__props.data?.footer?.support_email), 1)\n              ])\n            ])\n          ]))\n        : _createCommentVNode(\"\", true),\n      (__props.data?.footer?.play_store_url || __props.data?.footer?.app_store_url)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_10, [\n            _hoisted_11,\n            _createElementVNode(\"ul\", null, [\n              (__props.data?.footer?.play_store_url)\n                ? (_openBlock(), _createElementBlock(\"li\", _hoisted_12, [\n                    _createVNode(_component_NuxtLink, {\n                      to: __props.data?.footer?.play_store_url,\n                      class: \"text-content\"\n                    }, {\n                      default: _withCtx(() => [\n                        _hoisted_13\n                      ]),\n                      _: 1\n                    }, 8, [\"to\"])\n                  ]))\n                : _createCommentVNode(\"\", true),\n              (__props.data?.footer?.app_store_url)\n                ? (_openBlock(), _createElementBlock(\"li\", _hoisted_14, [\n                    _createVNode(_component_NuxtLink, {\n                      to: __props.data?.footer?.app_store_url,\n                      class: \"text-content\"\n                    }, {\n                      default: _withCtx(() => [\n                        _hoisted_15\n                      ]),\n                      _: 1\n                    }, 8, [\"to\"])\n                  ]))\n                : _createCommentVNode(\"\", true)\n            ])\n          ]))\n        : _createCommentVNode(\"\", true)\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287009,
+      "end": 1716056287009,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287009,
+      "end": 1716056287009,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287009,
+      "end": 1716056287009,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287009,
+      "end": 1716056287009,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287009,
+      "end": 1716056287009,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287009,
+      "end": 1716056287010,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287010,
+      "end": 1716056287010,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287010,
+      "end": 1716056287010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287010,
+      "end": 1716056287010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287010,
+      "end": 1716056287010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287010,
+      "end": 1716056287010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287010,
+      "end": 1716056287010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287010,
+      "end": 1716056287010,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287010,
+      "end": 1716056287010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287010,
+      "end": 1716056287010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287010,
+      "end": 1716056287010,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287010,
+      "end": 1716056287010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056287010,
+      "end": 1716056287012,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287012,
+      "end": 1716056287012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287012,
+      "end": 1716056287012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287012,
+      "end": 1716056287012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287012,
+      "end": 1716056287012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, withCtx as _withCtx } from \"vue\"\nimport _imports_0 from '/images/playstore.svg'\nimport _imports_1 from '/images/appstore.svg'\n\n\nconst _hoisted_1 = { class: \"footer-contact\" }\nconst _hoisted_2 = { key: 0 }\nconst _hoisted_3 = { class: \"footer-number\" }\nconst _hoisted_4 = { class: \"contact-number\" }\nconst _hoisted_5 = { class: \"text-content\" }\nconst _hoisted_6 = { key: 1 }\nconst _hoisted_7 = { class: \"footer-number\" }\nconst _hoisted_8 = { class: \"contact-number\" }\nconst _hoisted_9 = { class: \"text-content\" }\nconst _hoisted_10 = {\n  key: 2,\n  class: \"social-app mb-0\"\n}\nconst _hoisted_11 = /*#__PURE__*/_createElementVNode(\"h5\", { class: \"mb-2 text-content\" }, \"Download App :\", -1)\nconst _hoisted_12 = {\n  key: 0,\n  class: \"mb-0\"\n}\nconst _hoisted_13 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_0,\n  class: \"lazyload\",\n  alt: \"\"\n}, null, -1)\nconst _hoisted_14 = {\n  key: 1,\n  class: \"mb-0\"\n}\nconst _hoisted_15 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_1,\n  class: \"lazyload\",\n  alt: \"\"\n}, null, -1)\n\n\nconst _sfc_main = {\n  __name: 'Cantact',\n  props: {\n    data: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_NuxtLink = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"ul\", null, [\n      (__props.data?.footer?.support_number)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_2, [\n            _createElementVNode(\"div\", _hoisted_3, [\n              _createVNode(_component_Icon, {\n                name: \"ri:phone-line\",\n                size: \"18\"\n              }),\n              _createElementVNode(\"div\", _hoisted_4, [\n                _createElementVNode(\"h6\", _hoisted_5, _toDisplayString(_ctx.$t('Customer Support 24/7')), 1),\n                _createElementVNode(\"h5\", null, _toDisplayString(__props.data?.footer?.support_number), 1)\n              ])\n            ])\n          ]))\n        : _createCommentVNode(\"\", true),\n      (__props.data?.footer?.support_email)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_6, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createVNode(_component_Icon, {\n                name: \"ri:mail-line\",\n                size: \"18\"\n              }),\n              _createElementVNode(\"div\", _hoisted_8, [\n                _createElementVNode(\"h6\", _hoisted_9, _toDisplayString(_ctx.$t('Email Address :')), 1),\n                _createElementVNode(\"h5\", null, _toDisplayString(__props.data?.footer?.support_email), 1)\n              ])\n            ])\n          ]))\n        : _createCommentVNode(\"\", true),\n      (__props.data?.footer?.play_store_url || __props.data?.footer?.app_store_url)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_10, [\n            _hoisted_11,\n            _createElementVNode(\"ul\", null, [\n              (__props.data?.footer?.play_store_url)\n                ? (_openBlock(), _createElementBlock(\"li\", _hoisted_12, [\n                    _createVNode(_component_NuxtLink, {\n                      to: __props.data?.footer?.play_store_url,\n                      class: \"text-content\"\n                    }, {\n                      default: _withCtx(() => [\n                        _hoisted_13\n                      ]),\n                      _: 1\n                    }, 8, [\"to\"])\n                  ]))\n                : _createCommentVNode(\"\", true),\n              (__props.data?.footer?.app_store_url)\n                ? (_openBlock(), _createElementBlock(\"li\", _hoisted_14, [\n                    _createVNode(_component_NuxtLink, {\n                      to: __props.data?.footer?.app_store_url,\n                      class: \"text-content\"\n                    }, {\n                      default: _withCtx(() => [\n                        _hoisted_15\n                      ]),\n                      _: 1\n                    }, 8, [\"to\"])\n                  ]))\n                : _createCommentVNode(\"\", true)\n            ])\n          ]))\n        : _createCommentVNode(\"\", true)\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287012,
+      "end": 1716056287012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287012,
+      "end": 1716056287013,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287013,
+      "end": 1716056287013,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287013,
+      "end": 1716056287013,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/@nuxt/image-edge/dist/runtime/image.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defu } from \"defu\";\nimport { hasProtocol, parseURL, joinURL, withLeadingSlash } from \"ufo\";\nimport { imageMeta } from \"./utils/meta.mjs\";\nimport { parseSize } from \"./utils/index.mjs\";\nexport function createImage(globalOptions) {\n  const ctx = {\n    options: globalOptions\n  };\n  const getImage = (input, options = {}) => {\n    const image = resolveImage(ctx, input, options);\n    return image;\n  };\n  const $img = (input, modifiers = {}, options = {}) => {\n    return getImage(input, {\n      ...options,\n      modifiers: defu(modifiers, options.modifiers || {})\n    }).url;\n  };\n  for (const presetName in globalOptions.presets) {\n    $img[presetName] = (source, modifiers, options) => $img(source, modifiers, { ...globalOptions.presets[presetName], ...options });\n  }\n  $img.options = globalOptions;\n  $img.getImage = getImage;\n  $img.getMeta = (input, options) => getMeta(ctx, input, options);\n  $img.getSizes = (input, options) => getSizes(ctx, input, options);\n  ctx.$img = $img;\n  return $img;\n}\nasync function getMeta(ctx, input, options) {\n  const image = resolveImage(ctx, input, { ...options });\n  if (typeof image.getMeta === \"function\") {\n    return await image.getMeta();\n  } else {\n    return await imageMeta(ctx, image.url);\n  }\n}\nfunction resolveImage(ctx, input, options) {\n  if (typeof input !== \"string\" || input === \"\") {\n    throw new TypeError(`input must be a string (received ${typeof input}: ${JSON.stringify(input)})`);\n  }\n  if (input.startsWith(\"data:\")) {\n    return {\n      url: input\n    };\n  }\n  const { provider, defaults } = getProvider(ctx, options.provider || ctx.options.provider);\n  const preset = getPreset(ctx, options.preset);\n  input = hasProtocol(input) ? input : withLeadingSlash(input);\n  if (!provider.supportsAlias) {\n    for (const base in ctx.options.alias) {\n      if (input.startsWith(base)) {\n        input = joinURL(ctx.options.alias[base], input.substr(base.length));\n      }\n    }\n  }\n  if (provider.validateDomains && hasProtocol(input)) {\n    const inputHost = parseURL(input).host;\n    if (!ctx.options.domains.find((d) => d === inputHost)) {\n      return {\n        url: input\n      };\n    }\n  }\n  const _options = defu(options, preset, defaults);\n  _options.modifiers = { ..._options.modifiers };\n  const expectedFormat = _options.modifiers.format;\n  if (_options.modifiers?.width) {\n    _options.modifiers.width = parseSize(_options.modifiers.width);\n  }\n  if (_options.modifiers?.height) {\n    _options.modifiers.height = parseSize(_options.modifiers.height);\n  }\n  const image = provider.getImage(input, _options, ctx);\n  image.format = image.format || expectedFormat || \"\";\n  return image;\n}\nfunction getProvider(ctx, name) {\n  const provider = ctx.options.providers[name];\n  if (!provider) {\n    throw new Error(\"Unknown provider: \" + name);\n  }\n  return provider;\n}\nfunction getPreset(ctx, name) {\n  if (!name) {\n    return {};\n  }\n  if (!ctx.options.presets[name]) {\n    throw new Error(\"Unknown preset: \" + name);\n  }\n  return ctx.options.presets[name];\n}\nfunction getSizes(ctx, input, opts) {\n  const width = parseSize(opts.modifiers?.width);\n  const height = parseSize(opts.modifiers?.height);\n  const hwRatio = width && height ? height / width : 0;\n  const variants = [];\n  const sizes = {};\n  if (typeof opts.sizes === \"string\") {\n    for (const entry of opts.sizes.split(/[\\s,]+/).filter((e) => e)) {\n      const s = entry.split(\":\");\n      if (s.length !== 2) {\n        continue;\n      }\n      sizes[s[0].trim()] = s[1].trim();\n    }\n  } else {\n    Object.assign(sizes, opts.sizes);\n  }\n  for (const key in sizes) {\n    const screenMaxWidth = ctx.options.screens && ctx.options.screens[key] || parseInt(key);\n    let size = String(sizes[key]);\n    const isFluid = size.endsWith(\"vw\");\n    if (!isFluid && /^\\d+$/.test(size)) {\n      size = size + \"px\";\n    }\n    if (!isFluid && !size.endsWith(\"px\")) {\n      continue;\n    }\n    let _cWidth = parseInt(size);\n    if (!screenMaxWidth || !_cWidth) {\n      continue;\n    }\n    if (isFluid) {\n      _cWidth = Math.round(_cWidth / 100 * screenMaxWidth);\n    }\n    const _cHeight = hwRatio ? Math.round(_cWidth * hwRatio) : height;\n    variants.push({\n      width: _cWidth,\n      size,\n      screenMaxWidth,\n      media: `(max-width: ${screenMaxWidth}px)`,\n      src: ctx.$img(input, { ...opts.modifiers, width: _cWidth, height: _cHeight }, opts)\n    });\n  }\n  variants.sort((v1, v2) => v1.screenMaxWidth - v2.screenMaxWidth);\n  const defaultVar = variants[variants.length - 1];\n  if (defaultVar) {\n    defaultVar.media = \"\";\n  }\n  return {\n    sizes: variants.map((v) => `${v.media ? v.media + \" \" : \"\"}${v.size}`).join(\", \"),\n    srcset: variants.map((v) => `${v.src} ${v.width}w`).join(\", \"),\n    src: defaultVar?.src\n  };\n}\n",
+      "start": 1716056343151,
+      "end": 1716056343244,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343244,
+      "end": 1716056343244,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056343244,
+      "end": 1716056343245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056343245,
+      "end": 1716056343245,
+      "order": "normal"
+    }
+  ]
+}

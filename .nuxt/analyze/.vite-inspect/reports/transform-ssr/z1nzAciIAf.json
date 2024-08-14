@@ -1,0 +1,259 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductReview/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <div class=\"row\">\n    <div class=\"col-xl-5\" v-if=\"product?.can_review || product?.reviews_count\">\n      <div class=\"product-rating-box\">\n        <div class=\"row\">\n          <div class=\"col-xl-12\" v-if=\"product?.reviews_count\">\n            <div class=\"product-main-rating\">\n              <h2 v-if=\"product?.rating_count\">{{ product?.rating_count?.toFixed(2) }} <Icon name=\"ri:star-fill\"></Icon>\n              </h2>\n              <h5>{{ product?.reviews_count }} {{ $t('Rating') }}</h5>\n            </div>\n          </div>\n          <div class=\"col-xl-12\">\n            <ul class=\"product-rating-list\" v-if=\"product?.reviews_count\">\n              <li v-for=\"(rate, index) of product?.review_ratings?.slice()?.reverse()\" :key=\"index\">\n                <div class=\"rating-product\">\n                  <h5>{{ (product?.review_ratings?.length - 1 - index) + 1 }}<Icon name=\"ri-star-fill\"></Icon>\n                  </h5>\n                  <div class=\"progress\">\n                    <div class=\"progress-bar\"\n                      :style=\"{ 'width': ((rate / product?.reviews_count) * 100).toFixed(0) + '%' }\">\n                    </div>\n                  </div>\n                  <h5 class=\"total\">{{ rate }}</h5>\n                </div>\n              </li>\n            </ul>\n            <div class=\"review-title-2\" v-if=\"product?.can_review\">\n              <h4 class=\"fw-bold\">{{ $t(\"Review this product\") }}</h4>\n              <p>{{ $t(\"Let other customers know what you think\") }}</p>\n              <WidgetsButton :classes=\"'btn'\" :id=\"'reviews_modal_btn'\"\n                @onClick=\"(reviewModal) => { reviewsModal({ reviewModal }) }\">\n                {{ (product?.user_review ? 'Edit Review' : 'Write a review') }}\n              </WidgetsButton>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-7\" v-if=\"product?.can_review || product?.reviews_count\">\n      <div class=\"review-people\">\n        <ul class=\"review-list\" v-if=\"reviews?.length\">\n          <li v-for=\"review of reviews\" :key=\"review\">\n            <div class=\"people-box\">\n              <div>\n                <div class=\"people-image people-text\">\n                  <img :src=\"review?.consumer?.profile_image?.original_url\" class=\"img-fluid\" alt=\"user\"\n                    v-if=\"review?.consumer?.profile_image\">\n                  <template v-else>\n                    <div class=\"user-round\">\n                      <h4>{{ review?.consumer?.name?.charAt(0)?.toString()?.toUpperCase() || 'F' }}</h4>\n                    </div>\n                  </template>\n                </div>\n              </div>\n              <div class=\"people-comment\">\n                <div class=\"people-name\">\n                  <div class=\"date-time\">\n                  <a class=\"name\" href=\"javascript:void(0)\">{{ review?.consumer?.name }}</a>\n                    <h6 class=\"text-content\">\n                      {{ review?.created_at }}\n                    </h6>\n                    \n                  </div>\n                  <div class=\"product-rating\">\n                      <NuxtRating :read-only=\"true\" :ratingValue=\"review?.rating || 0\" :rating-size=\"'25px'\" />\n                    </div>\n                </div>\n                <div class=\"reply\">\n                  <p>{{ review?.description }}</p>\n                </div>\n              </div>\n            </div>\n          </li>\n        </ul>\n        <WidgetsNoData :classes=\"'no-data-added'\" :text=\"'No Review Yet'\"\n          :description=\"'There are currently no ratings or reviews for this product'\" v-if=\"!reviews?.length\" />\n      </div>\n    </div>\n    <div class=\"col-xl-12\" v-if=\"!product?.can_review && !product?.reviews_count\">\n      <WidgetsNoData :classes=\"'no-data-added'\" :text=\"'No Review Yet'\"\n        :description=\"'There are currently no ratings or reviews for this product'\" v-if=\"!reviews?.length\" />\n    </div>\n  </div>\n  <WidgetsModalsCommon :showModal=\"reviewModal\" @close=\"reviewsModal({ state: false })\">\n    <WidgetsModalsReviewModal :product=\"product\" :reviews=\"reviews\" @close=\"reviewsModal({ state: false })\" />\n  </WidgetsModalsCommon>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  product: Object,\n  reviews: Object\n})\nlet reviewModal = ref(false)\n\nfunction reviewsModal({ state = true, }) {\n  reviewModal.value = state\n}\n</script>\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056341880,
+      "end": 1716056342051,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342051,
+      "end": 1716056342051,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342051,
+      "end": 1716056342051,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342051,
+      "end": 1716056342051,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342051,
+      "end": 1716056342051,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342051,
+      "end": 1716056342051,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342051,
+      "end": 1716056342051,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342052,
+      "end": 1716056342052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342052,
+      "end": 1716056342052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342052,
+      "end": 1716056342052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342052,
+      "end": 1716056342052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, unref as _unref, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderStyle as _ssrRenderStyle, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object,\n  reviews: Object\n},\n  setup(__props) {\n\nlet props = __props\nlet reviewModal = ref(false)\n\nfunction reviewsModal({ state = true, }) {\n  reviewModal.value = state\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_NuxtRating = _resolveComponent(\"NuxtRating\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsReviewModal = _resolveComponent(\"WidgetsModalsReviewModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}><div class=\"row\">`)\n  if (__props.product?.can_review || __props.product?.reviews_count) {\n    _push(`<div class=\"col-xl-5\"><div class=\"product-rating-box\"><div class=\"row\">`)\n    if (__props.product?.reviews_count) {\n      _push(`<div class=\"col-xl-12\"><div class=\"product-main-rating\">`)\n      if (__props.product?.rating_count) {\n        _push(`<h2>${_ssrInterpolate(__props.product?.rating_count?.toFixed(2))} `)\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:star-fill\" }, null, _parent))\n        _push(`</h2>`)\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<h5>${\n        _ssrInterpolate(__props.product?.reviews_count)\n      } ${\n        _ssrInterpolate(_ctx.$t('Rating'))\n      }</h5></div></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<div class=\"col-xl-12\">`)\n    if (__props.product?.reviews_count) {\n      _push(`<ul class=\"product-rating-list\"><!--[-->`)\n      _ssrRenderList(__props.product?.review_ratings?.slice()?.reverse(), (rate, index) => {\n        _push(`<li><div class=\"rating-product\"><h5>${_ssrInterpolate((__props.product?.review_ratings?.length - 1 - index) + 1)}`)\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri-star-fill\" }, null, _parent))\n        _push(`</h5><div class=\"progress\"><div class=\"progress-bar\" style=\"${\n          _ssrRenderStyle({ 'width': ((rate / __props.product?.reviews_count) * 100).toFixed(0) + '%' })\n        }\"></div></div><h5 class=\"total\">${\n          _ssrInterpolate(rate)\n        }</h5></div></li>`)\n      })\n      _push(`<!--]--></ul>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (__props.product?.can_review) {\n      _push(`<div class=\"review-title-2\"><h4 class=\"fw-bold\">${\n        _ssrInterpolate(_ctx.$t(\"Review this product\"))\n      }</h4><p>${\n        _ssrInterpolate(_ctx.$t(\"Let other customers know what you think\"))\n      }</p>`)\n      _push(_ssrRenderComponent(_component_WidgetsButton, {\n        classes: 'btn',\n        id: 'reviews_modal_btn',\n        onOnClick: (reviewModal) => { reviewsModal({ reviewModal }) }\n      }, {\n        default: _withCtx((_, _push, _parent, _scopeId) => {\n          if (_push) {\n            _push(`${_ssrInterpolate((__props.product?.user_review ? 'Edit Review' : 'Write a review'))}`)\n          } else {\n            return [\n              _createTextVNode(_toDisplayString((__props.product?.user_review ? 'Edit Review' : 'Write a review')), 1)\n            ]\n          }\n        }),\n        _: 1\n      }, _parent))\n      _push(`</div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.product?.can_review || __props.product?.reviews_count) {\n    _push(`<div class=\"col-xl-7\"><div class=\"review-people\">`)\n    if (__props.reviews?.length) {\n      _push(`<ul class=\"review-list\"><!--[-->`)\n      _ssrRenderList(__props.reviews, (review) => {\n        _push(`<li><div class=\"people-box\"><div><div class=\"people-image people-text\">`)\n        if (review?.consumer?.profile_image) {\n          _push(`<img${_ssrRenderAttr(\"src\", review?.consumer?.profile_image?.original_url)} class=\"img-fluid\" alt=\"user\">`)\n        } else {\n          _push(`<div class=\"user-round\"><h4>${_ssrInterpolate(review?.consumer?.name?.charAt(0)?.toString()?.toUpperCase() || 'F')}</h4></div>`)\n        }\n        _push(`</div></div><div class=\"people-comment\"><div class=\"people-name\"><div class=\"date-time\"><a class=\"name\" href=\"javascript:void(0)\">${\n          _ssrInterpolate(review?.consumer?.name)\n        }</a><h6 class=\"text-content\">${\n          _ssrInterpolate(review?.created_at)\n        }</h6></div><div class=\"product-rating\">`)\n        _push(_ssrRenderComponent(_component_NuxtRating, {\n          \"read-only\": true,\n          ratingValue: review?.rating || 0,\n          \"rating-size\": '25px'\n        }, null, _parent))\n        _push(`</div></div><div class=\"reply\"><p>${_ssrInterpolate(review?.description)}</p></div></div></div></li>`)\n      })\n      _push(`<!--]--></ul>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (!__props.reviews?.length) {\n      _push(_ssrRenderComponent(_component_WidgetsNoData, {\n        classes: 'no-data-added',\n        text: 'No Review Yet',\n        description: 'There are currently no ratings or reviews for this product'\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (!__props.product?.can_review && !__props.product?.reviews_count) {\n    _push(`<div class=\"col-xl-12\">`)\n    if (!__props.reviews?.length) {\n      _push(_ssrRenderComponent(_component_WidgetsNoData, {\n        classes: 'no-data-added',\n        text: 'No Review Yet',\n        description: 'There are currently no ratings or reviews for this product'\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(reviewModal),\n    onClose: $event => (reviewsModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsReviewModal, {\n          product: __props.product,\n          reviews: __props.reviews,\n          onClose: $event => (reviewsModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsReviewModal, {\n            product: __props.product,\n            reviews: __props.reviews,\n            onClose: $event => (reviewsModal({ state: false }))\n          }, null, 8, [\"product\", \"reviews\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductReview/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342052,
+      "end": 1716056342052,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342052,
+      "end": 1716056342052,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342052,
+      "end": 1716056342052,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342052,
+      "end": 1716056342052,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342052,
+      "end": 1716056342052,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342052,
+      "end": 1716056342052,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342052,
+      "end": 1716056342052,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342052,
+      "end": 1716056342052,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342052,
+      "end": 1716056342053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056342053,
+      "end": 1716056342053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342053,
+      "end": 1716056342053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342053,
+      "end": 1716056342053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342053,
+      "end": 1716056342053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342053,
+      "end": 1716056342053,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342053,
+      "end": 1716056342053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342053,
+      "end": 1716056342053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342054,
+      "end": 1716056342054,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342054,
+      "end": 1716056342054,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342054,
+      "end": 1716056342054,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, unref as _unref, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderStyle as _ssrRenderStyle, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object,\n  reviews: Object\n},\n  setup(__props) {\n\nlet props = __props\nlet reviewModal = ref(false)\n\nfunction reviewsModal({ state = true, }) {\n  reviewModal.value = state\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_NuxtRating = _resolveComponent(\"NuxtRating\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsReviewModal = _resolveComponent(\"WidgetsModalsReviewModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}><div class=\"row\">`)\n  if (__props.product?.can_review || __props.product?.reviews_count) {\n    _push(`<div class=\"col-xl-5\"><div class=\"product-rating-box\"><div class=\"row\">`)\n    if (__props.product?.reviews_count) {\n      _push(`<div class=\"col-xl-12\"><div class=\"product-main-rating\">`)\n      if (__props.product?.rating_count) {\n        _push(`<h2>${_ssrInterpolate(__props.product?.rating_count?.toFixed(2))} `)\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:star-fill\" }, null, _parent))\n        _push(`</h2>`)\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<h5>${\n        _ssrInterpolate(__props.product?.reviews_count)\n      } ${\n        _ssrInterpolate(_ctx.$t('Rating'))\n      }</h5></div></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<div class=\"col-xl-12\">`)\n    if (__props.product?.reviews_count) {\n      _push(`<ul class=\"product-rating-list\"><!--[-->`)\n      _ssrRenderList(__props.product?.review_ratings?.slice()?.reverse(), (rate, index) => {\n        _push(`<li><div class=\"rating-product\"><h5>${_ssrInterpolate((__props.product?.review_ratings?.length - 1 - index) + 1)}`)\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri-star-fill\" }, null, _parent))\n        _push(`</h5><div class=\"progress\"><div class=\"progress-bar\" style=\"${\n          _ssrRenderStyle({ 'width': ((rate / __props.product?.reviews_count) * 100).toFixed(0) + '%' })\n        }\"></div></div><h5 class=\"total\">${\n          _ssrInterpolate(rate)\n        }</h5></div></li>`)\n      })\n      _push(`<!--]--></ul>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (__props.product?.can_review) {\n      _push(`<div class=\"review-title-2\"><h4 class=\"fw-bold\">${\n        _ssrInterpolate(_ctx.$t(\"Review this product\"))\n      }</h4><p>${\n        _ssrInterpolate(_ctx.$t(\"Let other customers know what you think\"))\n      }</p>`)\n      _push(_ssrRenderComponent(_component_WidgetsButton, {\n        classes: 'btn',\n        id: 'reviews_modal_btn',\n        onOnClick: (reviewModal) => { reviewsModal({ reviewModal }) }\n      }, {\n        default: _withCtx((_, _push, _parent, _scopeId) => {\n          if (_push) {\n            _push(`${_ssrInterpolate((__props.product?.user_review ? 'Edit Review' : 'Write a review'))}`)\n          } else {\n            return [\n              _createTextVNode(_toDisplayString((__props.product?.user_review ? 'Edit Review' : 'Write a review')), 1)\n            ]\n          }\n        }),\n        _: 1\n      }, _parent))\n      _push(`</div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.product?.can_review || __props.product?.reviews_count) {\n    _push(`<div class=\"col-xl-7\"><div class=\"review-people\">`)\n    if (__props.reviews?.length) {\n      _push(`<ul class=\"review-list\"><!--[-->`)\n      _ssrRenderList(__props.reviews, (review) => {\n        _push(`<li><div class=\"people-box\"><div><div class=\"people-image people-text\">`)\n        if (review?.consumer?.profile_image) {\n          _push(`<img${_ssrRenderAttr(\"src\", review?.consumer?.profile_image?.original_url)} class=\"img-fluid\" alt=\"user\">`)\n        } else {\n          _push(`<div class=\"user-round\"><h4>${_ssrInterpolate(review?.consumer?.name?.charAt(0)?.toString()?.toUpperCase() || 'F')}</h4></div>`)\n        }\n        _push(`</div></div><div class=\"people-comment\"><div class=\"people-name\"><div class=\"date-time\"><a class=\"name\" href=\"javascript:void(0)\">${\n          _ssrInterpolate(review?.consumer?.name)\n        }</a><h6 class=\"text-content\">${\n          _ssrInterpolate(review?.created_at)\n        }</h6></div><div class=\"product-rating\">`)\n        _push(_ssrRenderComponent(_component_NuxtRating, {\n          \"read-only\": true,\n          ratingValue: review?.rating || 0,\n          \"rating-size\": '25px'\n        }, null, _parent))\n        _push(`</div></div><div class=\"reply\"><p>${_ssrInterpolate(review?.description)}</p></div></div></div></li>`)\n      })\n      _push(`<!--]--></ul>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (!__props.reviews?.length) {\n      _push(_ssrRenderComponent(_component_WidgetsNoData, {\n        classes: 'no-data-added',\n        text: 'No Review Yet',\n        description: 'There are currently no ratings or reviews for this product'\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (!__props.product?.can_review && !__props.product?.reviews_count) {\n    _push(`<div class=\"col-xl-12\">`)\n    if (!__props.reviews?.length) {\n      _push(_ssrRenderComponent(_component_WidgetsNoData, {\n        classes: 'no-data-added',\n        text: 'No Review Yet',\n        description: 'There are currently no ratings or reviews for this product'\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(reviewModal),\n    onClose: $event => (reviewsModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsReviewModal, {\n          product: __props.product,\n          reviews: __props.reviews,\n          onClose: $event => (reviewsModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsReviewModal, {\n            product: __props.product,\n            reviews: __props.reviews,\n            onClose: $event => (reviewsModal({ state: false }))\n          }, null, 8, [\"product\", \"reviews\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductReview/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342054,
+      "end": 1716056342056,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, unref as _unref, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderStyle as _ssrRenderStyle, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object,\n  reviews: Object\n},\n  setup(__props) {\n\nlet props = __props\nlet reviewModal = ref(false)\n\nfunction reviewsModal({ state = true, }) {\n  reviewModal.value = state\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_NuxtRating = _resolveComponent(\"NuxtRating\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsReviewModal = _resolveComponent(\"WidgetsModalsReviewModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}><div class=\"row\">`)\n  if (__props.product?.can_review || __props.product?.reviews_count) {\n    _push(`<div class=\"col-xl-5\"><div class=\"product-rating-box\"><div class=\"row\">`)\n    if (__props.product?.reviews_count) {\n      _push(`<div class=\"col-xl-12\"><div class=\"product-main-rating\">`)\n      if (__props.product?.rating_count) {\n        _push(`<h2>${_ssrInterpolate(__props.product?.rating_count?.toFixed(2))} `)\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:star-fill\" }, null, _parent))\n        _push(`</h2>`)\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<h5>${\n        _ssrInterpolate(__props.product?.reviews_count)\n      } ${\n        _ssrInterpolate(_ctx.$t('Rating'))\n      }</h5></div></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<div class=\"col-xl-12\">`)\n    if (__props.product?.reviews_count) {\n      _push(`<ul class=\"product-rating-list\"><!--[-->`)\n      _ssrRenderList(__props.product?.review_ratings?.slice()?.reverse(), (rate, index) => {\n        _push(`<li><div class=\"rating-product\"><h5>${_ssrInterpolate((__props.product?.review_ratings?.length - 1 - index) + 1)}`)\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri-star-fill\" }, null, _parent))\n        _push(`</h5><div class=\"progress\"><div class=\"progress-bar\" style=\"${\n          _ssrRenderStyle({ 'width': ((rate / __props.product?.reviews_count) * 100).toFixed(0) + '%' })\n        }\"></div></div><h5 class=\"total\">${\n          _ssrInterpolate(rate)\n        }</h5></div></li>`)\n      })\n      _push(`<!--]--></ul>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (__props.product?.can_review) {\n      _push(`<div class=\"review-title-2\"><h4 class=\"fw-bold\">${\n        _ssrInterpolate(_ctx.$t(\"Review this product\"))\n      }</h4><p>${\n        _ssrInterpolate(_ctx.$t(\"Let other customers know what you think\"))\n      }</p>`)\n      _push(_ssrRenderComponent(_component_WidgetsButton, {\n        classes: 'btn',\n        id: 'reviews_modal_btn',\n        onOnClick: (reviewModal) => { reviewsModal({ reviewModal }) }\n      }, {\n        default: _withCtx((_, _push, _parent, _scopeId) => {\n          if (_push) {\n            _push(`${_ssrInterpolate((__props.product?.user_review ? 'Edit Review' : 'Write a review'))}`)\n          } else {\n            return [\n              _createTextVNode(_toDisplayString((__props.product?.user_review ? 'Edit Review' : 'Write a review')), 1)\n            ]\n          }\n        }),\n        _: 1\n      }, _parent))\n      _push(`</div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.product?.can_review || __props.product?.reviews_count) {\n    _push(`<div class=\"col-xl-7\"><div class=\"review-people\">`)\n    if (__props.reviews?.length) {\n      _push(`<ul class=\"review-list\"><!--[-->`)\n      _ssrRenderList(__props.reviews, (review) => {\n        _push(`<li><div class=\"people-box\"><div><div class=\"people-image people-text\">`)\n        if (review?.consumer?.profile_image) {\n          _push(`<img${_ssrRenderAttr(\"src\", review?.consumer?.profile_image?.original_url)} class=\"img-fluid\" alt=\"user\">`)\n        } else {\n          _push(`<div class=\"user-round\"><h4>${_ssrInterpolate(review?.consumer?.name?.charAt(0)?.toString()?.toUpperCase() || 'F')}</h4></div>`)\n        }\n        _push(`</div></div><div class=\"people-comment\"><div class=\"people-name\"><div class=\"date-time\"><a class=\"name\" href=\"javascript:void(0)\">${\n          _ssrInterpolate(review?.consumer?.name)\n        }</a><h6 class=\"text-content\">${\n          _ssrInterpolate(review?.created_at)\n        }</h6></div><div class=\"product-rating\">`)\n        _push(_ssrRenderComponent(_component_NuxtRating, {\n          \"read-only\": true,\n          ratingValue: review?.rating || 0,\n          \"rating-size\": '25px'\n        }, null, _parent))\n        _push(`</div></div><div class=\"reply\"><p>${_ssrInterpolate(review?.description)}</p></div></div></div></li>`)\n      })\n      _push(`<!--]--></ul>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (!__props.reviews?.length) {\n      _push(_ssrRenderComponent(_component_WidgetsNoData, {\n        classes: 'no-data-added',\n        text: 'No Review Yet',\n        description: 'There are currently no ratings or reviews for this product'\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (!__props.product?.can_review && !__props.product?.reviews_count) {\n    _push(`<div class=\"col-xl-12\">`)\n    if (!__props.reviews?.length) {\n      _push(_ssrRenderComponent(_component_WidgetsNoData, {\n        classes: 'no-data-added',\n        text: 'No Review Yet',\n        description: 'There are currently no ratings or reviews for this product'\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(reviewModal),\n    onClose: $event => (reviewsModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsReviewModal, {\n          product: __props.product,\n          reviews: __props.reviews,\n          onClose: $event => (reviewsModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsReviewModal, {\n            product: __props.product,\n            reviews: __props.reviews,\n            onClose: $event => (reviewsModal({ state: false }))\n          }, null, 8, [\"product\", \"reviews\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductReview/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342054,
+      "end": 1716056342056,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342056,
+      "end": 1716056342056,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342056,
+      "end": 1716056342056,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342056,
+      "end": 1716056342056,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342056,
+      "end": 1716056342056,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342056,
+      "end": 1716056342056,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-rating/dist/runtime/components/NuxtRating.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/NoData/index.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue\";\nimport { default as __nuxt_component_5 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/ReviewModal/index.vue\";\nimport { ref } from 'vue';\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, unref as _unref, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderStyle as _ssrRenderStyle, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object,\n  reviews: Object\n},\n  setup(__props) {\n\nlet props = __props\nlet reviewModal = ref(false)\n\nfunction reviewsModal({ state = true, }) {\n  reviewModal.value = state\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_WidgetsButton = __nuxt_component_1\n  const _component_NuxtRating = __nuxt_component_2\n  const _component_WidgetsNoData = __nuxt_component_3\n  const _component_WidgetsModalsCommon = __nuxt_component_4\n  const _component_WidgetsModalsReviewModal = __nuxt_component_5\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}><div class=\"row\">`)\n  if (__props.product?.can_review || __props.product?.reviews_count) {\n    _push(`<div class=\"col-xl-5\"><div class=\"product-rating-box\"><div class=\"row\">`)\n    if (__props.product?.reviews_count) {\n      _push(`<div class=\"col-xl-12\"><div class=\"product-main-rating\">`)\n      if (__props.product?.rating_count) {\n        _push(`<h2>${_ssrInterpolate(__props.product?.rating_count?.toFixed(2))} `)\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:star-fill\" }, null, _parent))\n        _push(`</h2>`)\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<h5>${\n        _ssrInterpolate(__props.product?.reviews_count)\n      } ${\n        _ssrInterpolate(_ctx.$t('Rating'))\n      }</h5></div></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<div class=\"col-xl-12\">`)\n    if (__props.product?.reviews_count) {\n      _push(`<ul class=\"product-rating-list\"><!--[-->`)\n      _ssrRenderList(__props.product?.review_ratings?.slice()?.reverse(), (rate, index) => {\n        _push(`<li><div class=\"rating-product\"><h5>${_ssrInterpolate((__props.product?.review_ratings?.length - 1 - index) + 1)}`)\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri-star-fill\" }, null, _parent))\n        _push(`</h5><div class=\"progress\"><div class=\"progress-bar\" style=\"${\n          _ssrRenderStyle({ 'width': ((rate / __props.product?.reviews_count) * 100).toFixed(0) + '%' })\n        }\"></div></div><h5 class=\"total\">${\n          _ssrInterpolate(rate)\n        }</h5></div></li>`)\n      })\n      _push(`<!--]--></ul>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (__props.product?.can_review) {\n      _push(`<div class=\"review-title-2\"><h4 class=\"fw-bold\">${\n        _ssrInterpolate(_ctx.$t(\"Review this product\"))\n      }</h4><p>${\n        _ssrInterpolate(_ctx.$t(\"Let other customers know what you think\"))\n      }</p>`)\n      _push(_ssrRenderComponent(_component_WidgetsButton, {\n        classes: 'btn',\n        id: 'reviews_modal_btn',\n        onOnClick: (reviewModal) => { reviewsModal({ reviewModal }) }\n      }, {\n        default: _withCtx((_, _push, _parent, _scopeId) => {\n          if (_push) {\n            _push(`${_ssrInterpolate((__props.product?.user_review ? 'Edit Review' : 'Write a review'))}`)\n          } else {\n            return [\n              _createTextVNode(_toDisplayString((__props.product?.user_review ? 'Edit Review' : 'Write a review')), 1)\n            ]\n          }\n        }),\n        _: 1\n      }, _parent))\n      _push(`</div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.product?.can_review || __props.product?.reviews_count) {\n    _push(`<div class=\"col-xl-7\"><div class=\"review-people\">`)\n    if (__props.reviews?.length) {\n      _push(`<ul class=\"review-list\"><!--[-->`)\n      _ssrRenderList(__props.reviews, (review) => {\n        _push(`<li><div class=\"people-box\"><div><div class=\"people-image people-text\">`)\n        if (review?.consumer?.profile_image) {\n          _push(`<img${_ssrRenderAttr(\"src\", review?.consumer?.profile_image?.original_url)} class=\"img-fluid\" alt=\"user\">`)\n        } else {\n          _push(`<div class=\"user-round\"><h4>${_ssrInterpolate(review?.consumer?.name?.charAt(0)?.toString()?.toUpperCase() || 'F')}</h4></div>`)\n        }\n        _push(`</div></div><div class=\"people-comment\"><div class=\"people-name\"><div class=\"date-time\"><a class=\"name\" href=\"javascript:void(0)\">${\n          _ssrInterpolate(review?.consumer?.name)\n        }</a><h6 class=\"text-content\">${\n          _ssrInterpolate(review?.created_at)\n        }</h6></div><div class=\"product-rating\">`)\n        _push(_ssrRenderComponent(_component_NuxtRating, {\n          \"read-only\": true,\n          ratingValue: review?.rating || 0,\n          \"rating-size\": '25px'\n        }, null, _parent))\n        _push(`</div></div><div class=\"reply\"><p>${_ssrInterpolate(review?.description)}</p></div></div></div></li>`)\n      })\n      _push(`<!--]--></ul>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (!__props.reviews?.length) {\n      _push(_ssrRenderComponent(_component_WidgetsNoData, {\n        classes: 'no-data-added',\n        text: 'No Review Yet',\n        description: 'There are currently no ratings or reviews for this product'\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (!__props.product?.can_review && !__props.product?.reviews_count) {\n    _push(`<div class=\"col-xl-12\">`)\n    if (!__props.reviews?.length) {\n      _push(_ssrRenderComponent(_component_WidgetsNoData, {\n        classes: 'no-data-added',\n        text: 'No Review Yet',\n        description: 'There are currently no ratings or reviews for this product'\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(reviewModal),\n    onClose: $event => (reviewsModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsReviewModal, {\n          product: __props.product,\n          reviews: __props.reviews,\n          onClose: $event => (reviewsModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsReviewModal, {\n            product: __props.product,\n            reviews: __props.reviews,\n            onClose: $event => (reviewsModal({ state: false }))\n          }, null, 8, [\"product\", \"reviews\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductReview/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342056,
+      "end": 1716056342057,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056342057,
+      "end": 1716056342057,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342057,
+      "end": 1716056342057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342057,
+      "end": 1716056342057,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/Details/index.vue?nuxt_component=async&nuxt_component_name=BlogDetails",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <section class=\"blog-section section-b-space\">\n    <div class=\"container-fluid-lg\">\n      <div class=\"row g-sm-4 g-3\">\n        <div class=\"col-xxl-3 col-xl-4 col-lg-5 d-lg-block d-none\" :class=\"{\n          'order-lg-1': sidebar === 'right_sidebar',\n          'd-none': sidebar === 'no_sidebar',\n        }\">\n          <BlogSidebar :blogs=\"data\" />\n        </div>\n        <div class=\"col-xxl-9 col-xl-8 col-lg-7 ratio_50\">\n          <div class=\"blog-detail-image rounded-3 mb-4 bg-size\" :style=\"{\n            'background-image':\n              'url(' + BlogData?.blog_thumbnail?.original_url + ')',\n          }\">\n            <img :src=\"BlogData?.blog_thumbnail?.original_url\" class=\"bg-img img-fluid\" alt=\"\" />\n            <div class=\"blog-image-contain\">\n              <h2>{{ BlogData?.title }}</h2>\n              <ul class=\"contain-comment-list\">\n                <li>\n                  <div class=\"user-list\">\n                    <Icon name=\"ri:user-line\" size=\"18\"></Icon>\n                    <span>{{ BlogData?.created_by?.name }}</span>\n                  </div>\n                </li>\n\n                <li>\n                  <div class=\"user-list\">\n                    <Icon name=\"ri:time-line\" size=\"18\"></Icon>\n                    <span>{{ dateFormatter(BlogData?.created_at) }}</span>\n                  </div>\n                </li>\n              </ul>\n            </div>\n          </div>\n          <div class=\"blog-detail-contain ckeditor-content\" v-html=\"BlogData?.content\"></div>\n        </div>\n      </div>\n    </div>\n  </section>\n</template>\n\n<script setup>\nimport { HandleRequest } from \"~~/composables/HandleRequest\";\nlet props = defineProps({\n  BlogData: Object,\n});\nlet paramsBlog = { satus: 1, type: 'post', pagination: 5 }\nlet { data, pending } = await HandleRequest(\"blog\", {\n  key: \"getAllHomesInPage\",\n  params: paramsBlog\n});\n\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056306255,
+      "end": 1716056306371,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306371,
+      "end": 1716056306371,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306371,
+      "end": 1716056306371,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306371,
+      "end": 1716056306371,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306371,
+      "end": 1716056306371,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056306371,
+      "end": 1716056306371,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056306371,
+      "end": 1716056306371,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056306371,
+      "end": 1716056306371,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056306371,
+      "end": 1716056306371,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056306371,
+      "end": 1716056306371,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056306371,
+      "end": 1716056306371,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttr as _ssrRenderAttr, ssrRenderStyle as _ssrRenderStyle, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { HandleRequest } from \"~~/composables/HandleRequest\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  BlogData: Object,\n},\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet props = __props;\nlet paramsBlog = { satus: 1, type: 'post', pagination: 5 }\nlet { data, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"blog\", {\n  key: \"getAllHomesInPage\",\n  params: paramsBlog\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_BlogSidebar = _resolveComponent(\"BlogSidebar\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"blog-section section-b-space\" }, _attrs))\n  }><div class=\"container-fluid-lg\"><div class=\"row g-sm-4 g-3\"><div class=\"${\n    _ssrRenderClass([{\n          'order-lg-1': _ctx.sidebar === 'right_sidebar',\n          'd-none': _ctx.sidebar === 'no_sidebar',\n        }, \"col-xxl-3 col-xl-4 col-lg-5 d-lg-block d-none\"])\n  }\">`)\n  _push(_ssrRenderComponent(_component_BlogSidebar, { blogs: _unref(data) }, null, _parent))\n  _push(`</div><div class=\"col-xxl-9 col-xl-8 col-lg-7 ratio_50\"><div class=\"blog-detail-image rounded-3 mb-4 bg-size\" style=\"${\n    _ssrRenderStyle({\n            'background-image':\n              'url(' + __props.BlogData?.blog_thumbnail?.original_url + ')',\n          })\n  }\"><img${\n    _ssrRenderAttr(\"src\", __props.BlogData?.blog_thumbnail?.original_url)\n  } class=\"bg-img img-fluid\" alt=\"\"><div class=\"blog-image-contain\"><h2>${\n    _ssrInterpolate(__props.BlogData?.title)\n  }</h2><ul class=\"contain-comment-list\"><li><div class=\"user-list\">`)\n  _push(_ssrRenderComponent(_component_Icon, {\n    name: \"ri:user-line\",\n    size: \"18\"\n  }, null, _parent))\n  _push(`<span>${_ssrInterpolate(__props.BlogData?.created_by?.name)}</span></div></li><li><div class=\"user-list\">`)\n  _push(_ssrRenderComponent(_component_Icon, {\n    name: \"ri:time-line\",\n    size: \"18\"\n  }, null, _parent))\n  _push(`<span>${\n    _ssrInterpolate(_ctx.dateFormatter(__props.BlogData?.created_at))\n  }</span></div></li></ul></div></div><div class=\"blog-detail-contain ckeditor-content\">${\n    __props.BlogData?.content\n  }</div></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Blog/Details/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056306371,
+      "end": 1716056306373,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/Details/index.vue\").then(r => r.default))",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056306373,
+      "end": 1716056306373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056306373,
+      "end": 1716056306374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056306374,
+      "end": 1716056306374,
+      "order": "normal"
+    }
+  ]
+}

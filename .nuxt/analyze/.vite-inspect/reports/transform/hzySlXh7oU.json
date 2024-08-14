@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/TopHeader.vue?nuxt_component=async&nuxt_component_name=HeaderElementsTopHeader",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div\n    class=\"header-top\"\n    :class=\"{ 'bg-dark': themeOptions?.header?.page_top_bar_dark }\"\n  >\n    <div class=\"container-fluid-lg\">\n      <div class=\"row\">\n        <div class=\"col-xxl-3 d-xxl-block d-none\">\n          <div class=\"top-left-header\">\n            <NuxtLink class=\"text-white\" to=\"\" target=\"_blank\">\n              <span class=\"text-white\">{{ $t(\"Become a Seller\") }}</span>\n            </NuxtLink>\n          </div>\n        </div>\n\n        <div class=\"col-xxl-6 col-lg-9 d-lg-block d-none pt-1\">\n          <div class=\"header-offer\">\n            <HeaderElementsTopContent :themeOptions=\"themeOptions\" />\n          </div>\n        </div>\n\n        <div class=\"col-lg-3\">\n          <ul class=\"about-list right-nav-about\">\n            <li class=\"right-nav-list\">\n              <div class=\"dropdown theme-form-select\">\n                <HeaderElementsLanguage />\n              </div>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nlet prop = defineProps({\n  themeOptions: Object,\n});\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056270756,
+      "end": 1716056271158,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271158,
+      "end": 1716056271158,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271158,
+      "end": 1716056271158,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271158,
+      "end": 1716056271158,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271158,
+      "end": 1716056271158,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271158,
+      "end": 1716056271158,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271158,
+      "end": 1716056271158,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271158,
+      "end": 1716056271158,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"container-fluid-lg\" }\nconst _hoisted_2 = { class: \"row\" }\nconst _hoisted_3 = { class: \"col-xxl-3 d-xxl-block d-none\" }\nconst _hoisted_4 = { class: \"top-left-header\" }\nconst _hoisted_5 = { class: \"text-white\" }\nconst _hoisted_6 = { class: \"col-xxl-6 col-lg-9 d-lg-block d-none pt-1\" }\nconst _hoisted_7 = { class: \"header-offer\" }\nconst _hoisted_8 = { class: \"col-lg-3\" }\nconst _hoisted_9 = { class: \"about-list right-nav-about\" }\nconst _hoisted_10 = { class: \"right-nav-list\" }\nconst _hoisted_11 = { class: \"dropdown theme-form-select\" }\n\n\nconst _sfc_main = {\n  __name: 'TopHeader',\n  props: {\n  themeOptions: Object,\n},\n  setup(__props) {\n\nlet prop = __props;\n\nreturn (_ctx, _cache) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n  const _component_HeaderElementsTopContent = _resolveComponent(\"HeaderElementsTopContent\")\n  const _component_HeaderElementsLanguage = _resolveComponent(\"HeaderElementsLanguage\")\n\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass([\"header-top\", { 'bg-dark': __props.themeOptions?.header?.page_top_bar_dark }])\n  }, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createVNode(_component_NuxtLink, {\n              class: \"text-white\",\n              to: \"\",\n              target: \"_blank\"\n            }, {\n              default: _withCtx(() => [\n                _createElementVNode(\"span\", _hoisted_5, _toDisplayString(_ctx.$t(\"Become a Seller\")), 1)\n              ]),\n              _: 1\n            })\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_6, [\n          _createElementVNode(\"div\", _hoisted_7, [\n            _createVNode(_component_HeaderElementsTopContent, { themeOptions: __props.themeOptions }, null, 8, [\"themeOptions\"])\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_8, [\n          _createElementVNode(\"ul\", _hoisted_9, [\n            _createElementVNode(\"li\", _hoisted_10, [\n              _createElementVNode(\"div\", _hoisted_11, [\n                _createVNode(_component_HeaderElementsLanguage)\n              ])\n            ])\n          ])\n        ])\n      ])\n    ])\n  ], 2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056271158,
+      "end": 1716056271159,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271159,
+      "end": 1716056271159,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271159,
+      "end": 1716056271159,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271159,
+      "end": 1716056271159,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271159,
+      "end": 1716056271159,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/TopHeader.vue\").then(r => r.default))",
+      "start": 1716056271159,
+      "end": 1716056271159,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/TopHeader.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271160,
+      "end": 1716056271160,
+      "order": "normal"
+    }
+  ]
+}

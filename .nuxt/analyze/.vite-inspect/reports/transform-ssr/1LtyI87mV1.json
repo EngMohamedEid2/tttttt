@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/filter/index.vue?nuxt_component=async&nuxt_component_name=ShopCollectionWidgetsFilter",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"filter-category\" v-if=\"filters.length > 0\">\n    <div class=\"filter-title\">\n      <h2>Filters</h2>\n      <a href=\"javascript:void(0)\" @click.prevent=\"clear()\">Clear All</a>\n    </div>\n    <ul>\n      <li v-for=\"filterss of filters\" :key=\"filterss\">\n        <a href=\"javascript:void(0)\">{{ transform(filterss.replace('-',' ')) }}</a>\n        <Icon name=\"ri:close-line\" @click.prevent=\"remove(filterss)\" />\n      </li>\n    </ul>\n  </div>\n</template>\n\n<script setup>\nimport { useCollectionStore } from \"~/store/collection\";\nlet store = useCollectionStore();\nlet filtersObj = {\n  category: [],\n  tag: [],\n  rating: [],\n  price: [],\n  attribute: [],\n};\nlet filters = computed(() => {\n  filtersObj.category = useRoute().query.category\n    ? useRoute().query.category.split(\",\")\n    : [];\n  filtersObj.tag = useRoute().query.tag ? useRoute().query.tag.split(\",\") : [];\n  filtersObj.rating = useRoute().query.rating ? useRoute().query.rating.split(\",\") : [];\n  filtersObj.price = useRoute().query.price ? useRoute().query.price.split(\",\") : [];\n  filtersObj.attribute = useRoute().query.attribute\n    ? useRoute().query.attribute.split(\",\")\n    : [];\n  return [\n    ...filtersObj?.category,\n    ...filtersObj?.tag,\n    ...filtersObj?.rating.map((val) =>\n      val.startsWith(\"rating \") ? val : `rating ${val}`\n    ),\n    ...filtersObj?.price,\n    ...filtersObj?.attribute,\n  ];\n});\nfunction remove(tag) {\n  let category = useRoute().query.category ? useRoute().query.category.split(\",\") : [];\n  let attribute = useRoute().query.attribute ? useRoute().query.attribute.split(\",\") : [];\n  let price = useRoute().query.price ? useRoute().query.price.split(\",\") : [];\n  let rating = useRoute().query.rating ? useRoute().query.rating.split(\",\") : [];\n  let tags = useRoute().query.tag ? useRoute().query.tag : \"\";\n  let layout = useRoute().query.layout ? useRoute().query.layout : \"\";\n  let sortBy = useRoute().query.sortBy ? useRoute().query.sortBy : \"\";\n  let field = useRoute().query.field ? useRoute().query.field : \"\";\n  let page = useRoute().query.page ? useRoute().query.page : \"\";\n  if (category.includes(tag)) {\n    category.splice(tag, 1);\n  } else if (attribute.includes(tag)) {\n    attribute.splice(tag, 1);\n  } else if (price.includes(tag)) {\n    price.splice(tag, 1);\n  } else if (rating.includes(tag)) {\n    rating.splice(tag, 1);\n  }\n  else if(tags == tag){\n    tags = \"\"\n  }\n  useRouter().push({\n    path: useRoute().path,\n    query: {\n      layout: layout,\n      sortBy: sortBy,\n      field: field,\n      category: category.join(\",\"),\n      attribute: attribute.join(\",\"),\n      price: price.join(\",\"),\n      rating: rating.join(\",\"),\n      tag: tags,\n      page: page,\n    },\n  });\n  setTimeout(async() => {\n    store.initialCheckedValue();\n  }, 1000);\n}\nfunction clear() {\n  let layout = useRoute().query.layout ? useRoute().query.layout : \"\";\n  useRouter().push({\n    path: useRoute().path,\n    query: {\n      layout: layout,\n    },\n  });\n  setTimeout(async() => {\n    store.initialCheckedValue();\n  }, 1000);\n}\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056339402,
+      "end": 1716056339475,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339475,
+      "end": 1716056339475,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339475,
+      "end": 1716056339475,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339475,
+      "end": 1716056339475,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339475,
+      "end": 1716056339475,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339475,
+      "end": 1716056339475,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339475,
+      "end": 1716056339475,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339475,
+      "end": 1716056339475,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339475,
+      "end": 1716056339475,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339475,
+      "end": 1716056339475,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339475,
+      "end": 1716056339475,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useCollectionStore } from \"~/store/collection\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet store = useCollectionStore();\nlet filtersObj = {\n  category: [],\n  tag: [],\n  rating: [],\n  price: [],\n  attribute: [],\n};\nlet filters = computed(() => {\n  filtersObj.category = useRoute().query.category\n    ? useRoute().query.category.split(\",\")\n    : [];\n  filtersObj.tag = useRoute().query.tag ? useRoute().query.tag.split(\",\") : [];\n  filtersObj.rating = useRoute().query.rating ? useRoute().query.rating.split(\",\") : [];\n  filtersObj.price = useRoute().query.price ? useRoute().query.price.split(\",\") : [];\n  filtersObj.attribute = useRoute().query.attribute\n    ? useRoute().query.attribute.split(\",\")\n    : [];\n  return [\n    ...filtersObj?.category,\n    ...filtersObj?.tag,\n    ...filtersObj?.rating.map((val) =>\n      val.startsWith(\"rating \") ? val : `rating ${val}`\n    ),\n    ...filtersObj?.price,\n    ...filtersObj?.attribute,\n  ];\n});\nfunction remove(tag) {\n  let category = useRoute().query.category ? useRoute().query.category.split(\",\") : [];\n  let attribute = useRoute().query.attribute ? useRoute().query.attribute.split(\",\") : [];\n  let price = useRoute().query.price ? useRoute().query.price.split(\",\") : [];\n  let rating = useRoute().query.rating ? useRoute().query.rating.split(\",\") : [];\n  let tags = useRoute().query.tag ? useRoute().query.tag : \"\";\n  let layout = useRoute().query.layout ? useRoute().query.layout : \"\";\n  let sortBy = useRoute().query.sortBy ? useRoute().query.sortBy : \"\";\n  let field = useRoute().query.field ? useRoute().query.field : \"\";\n  let page = useRoute().query.page ? useRoute().query.page : \"\";\n  if (category.includes(tag)) {\n    category.splice(tag, 1);\n  } else if (attribute.includes(tag)) {\n    attribute.splice(tag, 1);\n  } else if (price.includes(tag)) {\n    price.splice(tag, 1);\n  } else if (rating.includes(tag)) {\n    rating.splice(tag, 1);\n  }\n  else if(tags == tag){\n    tags = \"\"\n  }\n  useRouter().push({\n    path: useRoute().path,\n    query: {\n      layout: layout,\n      sortBy: sortBy,\n      field: field,\n      category: category.join(\",\"),\n      attribute: attribute.join(\",\"),\n      price: price.join(\",\"),\n      rating: rating.join(\",\"),\n      tag: tags,\n      page: page,\n    },\n  });\n  setTimeout(async() => {\n    store.initialCheckedValue();\n  }, 1000);\n}\nfunction clear() {\n  let layout = useRoute().query.layout ? useRoute().query.layout : \"\";\n  useRouter().push({\n    path: useRoute().path,\n    query: {\n      layout: layout,\n    },\n  });\n  setTimeout(async() => {\n    store.initialCheckedValue();\n  }, 1000);\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  if (_unref(filters).length > 0) {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"filter-category\" }, _attrs))}><div class=\"filter-title\"><h2>Filters</h2><a href=\"javascript:void(0)\">Clear All</a></div><ul><!--[-->`)\n    _ssrRenderList(_unref(filters), (filterss) => {\n      _push(`<li><a href=\"javascript:void(0)\">${_ssrInterpolate(_ctx.transform(filterss.replace('-',' ')))}</a>`)\n      _push(_ssrRenderComponent(_component_Icon, {\n        name: \"ri:close-line\",\n        onClick: $event => (remove(filterss))\n      }, null, _parent))\n      _push(`</li>`)\n    })\n    _push(`<!--]--></ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Collection/widgets/filter/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339475,
+      "end": 1716056339477,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/filter/index.vue\").then(r => r.default))",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339477,
+      "end": 1716056339477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339477,
+      "end": 1716056339478,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339478,
+      "end": 1716056339478,
+      "order": "normal"
+    }
+  ]
+}

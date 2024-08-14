@@ -1,0 +1,18 @@
+/**=====================
+     Toast CSS Start
+==========================**/
+.Vue-Toastification__toast--success {
+    background: linear-gradient(-45deg, #0da487, #009289);
+    min-height: 54px !important;
+    padding: 12px 24px !important;
+    display: flex;
+    align-items: center;
+
+    .Vue-Toastification__icon {
+        margin: auto 12px auto 0px;
+    }
+}
+
+:root {
+    --toastify-color-success: black;
+}

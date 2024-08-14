@@ -1,0 +1,214 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Currency.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <!-- Currency Basic Style -->\n    <!-- <OnClickOutside class=\"modal-content\" @trigger=\" open = false\" v-if=\"style == 'basic'\">\n        <div class=\"dropdown theme-form-select\">\n            <WidgetsButton :classes=\"'btn dropdown-toggle'\" :type=\"'button'\" :id=\"'open_dropdown_basic_btn'\"\n                @onClick=\"openDropDown()\">\n                <span v-if=\"selectedCurrency.code\">{{ selectedCurrency.code }}</span>\n            </WidgetsButton>\n\n            <ul class=\"dropdown-menu dropdown-menu-end sm-dropdown-menu\" :class=\"{ 'show': open }\">\n                <li v-for=\"currencies in Currencies.data\" :key=\"currencies\">\n                    <a class=\"dropdown-item\" id=\"aud\" href=\"javascript:void(0)\" @click=\"selectCurrency(currencies)\">{{\n                        currencies.code }}</a>\n                </li>\n            </ul>\n        </div>\n    </OnClickOutside> -->\n\n    <!-- Currency Standard Style -->\n    <!-- <OnClickOutside class=\"modal-content\" @trigger=\"open = false\" v-if=\"style == 'standard'\">\n        <WidgetsButton :classes=\"'dropdown-toggle m-0'\" :type=\"'button'\" :id=\"'open_dropdown_standard_btn'\"\n            @onClick=\"openDropDown()\">\n            <span v-if=\"selectedCurrency.code\">{{ selectedCurrency.code }} <i class=\"ri-arrow-down-s-line\"></i></span>\n        </WidgetsButton>\n        <ul class=\"dropdown-menu dropdown-menu-end sm-dropdown-menu\" :class=\"{ 'show': open }\">\n            <li v-for=\"currencies in Currencies.data\" :key=\"currencies\">\n                <a class=\"dropdown-item\" id=\"usd\" href=\"javascript:void(0)\" @click=\"selectCurrency(currencies.code)\">{{\n                    currencies.code }}</a>\n            </li>\n        </ul>\n    </OnClickOutside> -->\n  </div>\n</template>\n<!-- \n<script setup>\nimport { OnClickOutside } from '@vueuse/components'\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\nimport { useCurrencyStore } from '@/store/currency'\nlet props = defineProps({\n    style: { type: [String,Object], default: 'basic' }\n})\n\nlet { Currencies } = storeToRefs(useDataStore())\nlet open = ref(false)\n\nlet selectedCurrency = ref(useCookie('currency').value ? useCookie('currency').value : Currencies?.value?.data[0])\nlet setting = ref()\nfunction openDropDown() {\n    open.value = !open.value;\n}\nfunction selectCurrency(currency) {\n    selectedCurrency.value = currency;\n    open.value = false;\n    useCurrencyStore().getCurrencyObj(currency)\n}\n</script>\n\n<style lang=\"scss\" scoped></style> -->\n",
+      "start": 1716056286899,
+      "end": 1716056287063,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287063,
+      "end": 1716056287063,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287063,
+      "end": 1716056287063,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287063,
+      "end": 1716056287063,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287063,
+      "end": 1716056287063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287063,
+      "end": 1716056287063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287063,
+      "end": 1716056287063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287063,
+      "end": 1716056287063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache) {\n  return (_openBlock(), _createElementBlock(\"div\"))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1716056287063,
+      "end": 1716056287064,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287064,
+      "end": 1716056287064,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056287064,
+      "end": 1716056287065,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287065,
+      "end": 1716056287065,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287065,
+      "end": 1716056287065,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287065,
+      "end": 1716056287065,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287065,
+      "end": 1716056287066,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056287066,
+      "end": 1716056287066,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287066,
+      "end": 1716056287066,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287066,
+      "end": 1716056287066,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287066,
+      "end": 1716056287066,
+      "order": "normal"
+    }
+  ]
+}

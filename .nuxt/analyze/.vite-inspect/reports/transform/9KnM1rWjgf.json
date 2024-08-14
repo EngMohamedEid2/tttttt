@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ProductBox/Vertical.vue?nuxt_component=async&nuxt_component_name=WidgetsProductBoxVertical",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"offer-product\">\n        <nuxt-link :to=\"`/product/${product.slug}`\" class=\"offer-image\">\n            <nuxt-img :src=\"product?.product_thumbnail ? product?.product_thumbnail?.original_url : '/images/product.png'\"\n                alt=\"product\" />\n        </nuxt-link>\n        <div class=\"offer-detail\">\n            <div>\n                <nuxt-link :to=\"`/product/${product.slug}`\" class=\"text-title\">\n                    <h6 class=\"name\">{{ product.name }}</h6>\n                </nuxt-link>\n                <span v-if=\"product.unit\">{{ product.unit }}</span>\n                <div class=\"vertical-price\">\n                    <h5 class=\"price theme-color\"> {{ store.currency.symbol }}\n                        {{ store.convertCurrency(product?.sale_price) }}</h5>\n                    <del class=\"text-content\" v-if=\"product.discount\"> {{ store.currency.symbol }}\n                        {{ store.convertCurrency(product?.price) }}</del>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { useCurrencyStore } from '@/store/currency'\nlet props = defineProps({\n    product: Object,\n    class: String\n});\nlet store = useCurrencyStore();\nstore.allCurrency();\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056285277,
+      "end": 1716056285419,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285419,
+      "end": 1716056285419,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285419,
+      "end": 1716056285419,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285419,
+      "end": 1716056285419,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285419,
+      "end": 1716056285419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285419,
+      "end": 1716056285419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285419,
+      "end": 1716056285419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285419,
+      "end": 1716056285419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, unref as _unref } from \"vue\"\n\nconst _hoisted_1 = { class: \"offer-product\" }\nconst _hoisted_2 = { class: \"offer-detail\" }\nconst _hoisted_3 = { class: \"name\" }\nconst _hoisted_4 = { key: 0 }\nconst _hoisted_5 = { class: \"vertical-price\" }\nconst _hoisted_6 = { class: \"price theme-color\" }\nconst _hoisted_7 = {\n  key: 0,\n  class: \"text-content\"\n}\n\nimport { useCurrencyStore } from '@/store/currency'\n\nconst _sfc_main = {\n  __name: 'Vertical',\n  props: {\n    product: Object,\n    class: String\n},\n  setup(__props) {\n\nlet props = __props;\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nreturn (_ctx, _cache) => {\n  const _component_nuxt_img = _resolveComponent(\"nuxt-img\")\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_nuxt_link, {\n      to: `/product/${__props.product.slug}`,\n      class: \"offer-image\"\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_nuxt_img, {\n          src: __props.product?.product_thumbnail ? __props.product?.product_thumbnail?.original_url : '/images/product.png',\n          alt: \"product\"\n        }, null, 8, [\"src\"])\n      ]),\n      _: 1\n    }, 8, [\"to\"]),\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", null, [\n        _createVNode(_component_nuxt_link, {\n          to: `/product/${__props.product.slug}`,\n          class: \"text-title\"\n        }, {\n          default: _withCtx(() => [\n            _createElementVNode(\"h6\", _hoisted_3, _toDisplayString(__props.product.name), 1)\n          ]),\n          _: 1\n        }, 8, [\"to\"]),\n        (__props.product.unit)\n          ? (_openBlock(), _createElementBlock(\"span\", _hoisted_4, _toDisplayString(__props.product.unit), 1))\n          : _createCommentVNode(\"\", true),\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"h5\", _hoisted_6, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(_unref(store).convertCurrency(__props.product?.sale_price)), 1),\n          (__props.product.discount)\n            ? (_openBlock(), _createElementBlock(\"del\", _hoisted_7, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(_unref(store).convertCurrency(__props.product?.price)), 1))\n            : _createCommentVNode(\"\", true)\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056285419,
+      "end": 1716056285420,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285420,
+      "end": 1716056285420,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285420,
+      "end": 1716056285420,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ProductBox/Vertical.vue\").then(r => r.default))",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ProductBox/Vertical.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285421,
+      "end": 1716056285421,
+      "order": "normal"
+    }
+  ]
+}

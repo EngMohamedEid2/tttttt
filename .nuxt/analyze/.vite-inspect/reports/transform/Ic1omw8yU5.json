@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductView/index.vue?nuxt_component=async&nuxt_component_name=ShopProductDetailsWidgetsProductView",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"product-count\"\n    v-if=\"(option?.product?.encourage_order && product?.encourage_order) || (option?.product?.encourage_view && product?.encourage_view)\">\n    <ul>\n      <li v-if=\"option?.product?.encourage_order && product?.encourage_order\">\n        <Icon name=\"ri-flashlight-line\" size=\"18\"></Icon>\n        <h6 class=\"lang\">{{ ordersCount }} {{ $t('Customers Ordered') }}</h6>\n      </li>\n      <li v-if=\"option?.product?.encourage_view && product?.encourage_view\">\n        <Icon name=\"ri-eye-line\" size=\"18\"></Icon>\n        <h6 class=\"lang\">{{ viewsCount }} {{ 'Active View in this item' }}</h6>\n      </li>\n    </ul>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  option: { type: Object },\n  product: { type: Object }\n})\n\nlet ordersCount = ref(10);\nlet viewsCount = ref(30);\nlet countsInterval = ref();\n\nconst updateViewsCount = () => {\n  const encourage_max_view_count = props.option.value?.product?.encourage_max_view_count || 100;\n  viewsCount.value = Math.floor(Math.random() * encourage_max_view_count) + 1;\n};\n\nconst updateOrdersCount = () => {\n  const encourage_max_order_count = props.option.value?.product?.encourage_max_order_count || 100;\n  ordersCount.value = Math.floor(Math.random() * encourage_max_order_count) + 1;\n};\n\nonMounted(() => {\n  updateViewsCount();\n  updateOrdersCount();\n\n  countsInterval.value = setInterval(() => {\n    updateViewsCount();\n  }, 5000);\n\n  countsInterval.value = setInterval(() => {\n    updateOrdersCount();\n  }, 60000);\n});\n\nonUnmounted(() => {\n  clearInterval(countsInterval.value);\n});\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056271557,
+      "end": 1716056284760,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284760,
+      "end": 1716056284760,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284760,
+      "end": 1716056284760,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284760,
+      "end": 1716056284760,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284760,
+      "end": 1716056284760,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284760,
+      "end": 1716056284760,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284760,
+      "end": 1716056284761,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284761,
+      "end": 1716056284761,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"product-count\"\n}\nconst _hoisted_2 = { key: 0 }\nconst _hoisted_3 = { class: \"lang\" }\nconst _hoisted_4 = { key: 1 }\nconst _hoisted_5 = { class: \"lang\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  option: { type: Object },\n  product: { type: Object }\n},\n  setup(__props) {\n\nlet props = __props\n\nlet ordersCount = ref(10);\nlet viewsCount = ref(30);\nlet countsInterval = ref();\n\nconst updateViewsCount = () => {\n  const encourage_max_view_count = props.option.value?.product?.encourage_max_view_count || 100;\n  viewsCount.value = Math.floor(Math.random() * encourage_max_view_count) + 1;\n};\n\nconst updateOrdersCount = () => {\n  const encourage_max_order_count = props.option.value?.product?.encourage_max_order_count || 100;\n  ordersCount.value = Math.floor(Math.random() * encourage_max_order_count) + 1;\n};\n\nonMounted(() => {\n  updateViewsCount();\n  updateOrdersCount();\n\n  countsInterval.value = setInterval(() => {\n    updateViewsCount();\n  }, 5000);\n\n  countsInterval.value = setInterval(() => {\n    updateOrdersCount();\n  }, 60000);\n});\n\nonUnmounted(() => {\n  clearInterval(countsInterval.value);\n});\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return ((__props.option?.product?.encourage_order && __props.product?.encourage_order) || (__props.option?.product?.encourage_view && __props.product?.encourage_view))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"ul\", null, [\n          (__props.option?.product?.encourage_order && __props.product?.encourage_order)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_2, [\n                _createVNode(_component_Icon, {\n                  name: \"ri-flashlight-line\",\n                  size: \"18\"\n                }),\n                _createElementVNode(\"h6\", _hoisted_3, _toDisplayString(_unref(ordersCount)) + \" \" + _toDisplayString(_ctx.$t('Customers Ordered')), 1)\n              ]))\n            : _createCommentVNode(\"\", true),\n          (__props.option?.product?.encourage_view && __props.product?.encourage_view)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_4, [\n                _createVNode(_component_Icon, {\n                  name: \"ri-eye-line\",\n                  size: \"18\"\n                }),\n                _createElementVNode(\"h6\", _hoisted_5, _toDisplayString(_unref(viewsCount)) + \" \" + _toDisplayString('Active View in this item'), 1)\n              ]))\n            : _createCommentVNode(\"\", true)\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284761,
+      "end": 1716056284763,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductView/index.vue\").then(r => r.default))",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284763,
+      "end": 1716056284763,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductView/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284763,
+      "end": 1716056284764,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284764,
+      "end": 1716056284764,
+      "order": "normal"
+    }
+  ]
+}

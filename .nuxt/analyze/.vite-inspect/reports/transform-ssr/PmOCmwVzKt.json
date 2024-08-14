@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/TrendingProducts/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"pt-25\" v-if=\"relatedProducts?.length\">\n    <!-- <div class=\"category-menu\">\n            <h3>{{ $t(\"Trending Products\") }}</h3>\n            <ul class=\"product-list border-0 p-0 sidebar-product d-flex\">\n                <li v-for=\"(product, index) in relatedProducts?.slice(0, 4)\" :key=\"index\">\n                    <WidgetsProductBox :product=\"product\" :style=\"'vertical'\" />\n                </li>\n            </ul>\n        </div> -->\n  </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nlet props = defineProps({\n  product: Object,\n  themeOptions: Object,\n});\n\nlet relatedProducts = ref([]);\nlet { Products } = storeToRefs(useDataStore());\nrelatedProducts.value = Products?.value?.data?.filter((product) =>\n  props?.product?.related_products?.includes(product.id)\n);\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056341925,
+      "end": 1716056342114,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342114,
+      "end": 1716056342114,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342114,
+      "end": 1716056342114,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342114,
+      "end": 1716056342114,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342114,
+      "end": 1716056342114,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342114,
+      "end": 1716056342114,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342114,
+      "end": 1716056342114,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342114,
+      "end": 1716056342114,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342114,
+      "end": 1716056342114,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342115,
+      "end": 1716056342115,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342115,
+      "end": 1716056342115,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object,\n  themeOptions: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nlet relatedProducts = ref([]);\nlet { Products } = storeToRefs(useDataStore());\nrelatedProducts.value = Products?.value?.data?.filter((product) =>\n  props?.product?.related_products?.includes(product.id)\n);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  if (_unref(relatedProducts)?.length) {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"pt-25\" }, _attrs))}></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/TrendingProducts/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342115,
+      "end": 1716056342115,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342115,
+      "end": 1716056342115,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342115,
+      "end": 1716056342115,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342115,
+      "end": 1716056342115,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342115,
+      "end": 1716056342115,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342115,
+      "end": 1716056342115,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342115,
+      "end": 1716056342115,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342115,
+      "end": 1716056342115,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342115,
+      "end": 1716056342116,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056342116,
+      "end": 1716056342116,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342116,
+      "end": 1716056342116,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342116,
+      "end": 1716056342116,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342116,
+      "end": 1716056342116,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342116,
+      "end": 1716056342116,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342116,
+      "end": 1716056342116,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342116,
+      "end": 1716056342116,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342116,
+      "end": 1716056342116,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342116,
+      "end": 1716056342116,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342116,
+      "end": 1716056342116,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object,\n  themeOptions: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nlet relatedProducts = ref([]);\nlet { Products } = storeToRefs(useDataStore());\nrelatedProducts.value = Products?.value?.data?.filter((product) =>\n  props?.product?.related_products?.includes(product.id)\n);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  if (_unref(relatedProducts)?.length) {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"pt-25\" }, _attrs))}></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/TrendingProducts/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342116,
+      "end": 1716056342117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object,\n  themeOptions: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nlet relatedProducts = ref([]);\nlet { Products } = storeToRefs(useDataStore());\nrelatedProducts.value = Products?.value?.data?.filter((product) =>\n  props?.product?.related_products?.includes(product.id)\n);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  if (_unref(relatedProducts)?.length) {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"pt-25\" }, _attrs))}></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/TrendingProducts/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342116,
+      "end": 1716056342117,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342117,
+      "end": 1716056342117,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342117,
+      "end": 1716056342117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342117,
+      "end": 1716056342117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342117,
+      "end": 1716056342117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342117,
+      "end": 1716056342117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056342117,
+      "end": 1716056342117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056342117,
+      "end": 1716056342117,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342117,
+      "end": 1716056342117,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342117,
+      "end": 1716056342117,
+      "order": "normal"
+    }
+  ]
+}

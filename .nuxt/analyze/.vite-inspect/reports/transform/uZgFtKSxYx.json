@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/pages/offers/index.vue?macro=true",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n       <WidgetsBreadcrumb  :breadcrumbs=\"breadcrumbs\"/>\n       <PagesOffer :coupon=\"coupon\"/>\n    </div>\n</template>\n\n<script setup>\nvar breadcrumbs = { page: \"Offer\", links: [{ name: \"Offer\" }] }\nlet { data: coupon } = await HandleRequest('coupon', { key: 'GetConpon', });\n</script>\n\n<style lang=\"scss\" scoped>\n\n</style>",
+      "start": 1716056288740,
+      "end": 1716056288841,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056288841,
+      "end": 1716056288841,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056288841,
+      "end": 1716056288841,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056288841,
+      "end": 1716056288841,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056288841,
+      "end": 1716056288841,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056288841,
+      "end": 1716056288841,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056288841,
+      "end": 1716056288841,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056288841,
+      "end": 1716056288841,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  async setup(__props) {\n\nlet __temp, __restore\n\nvar breadcrumbs = { page: \"Offer\", links: [{ name: \"Offer\" }] }\nlet { data: coupon } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest('coupon', { key: 'GetConpon', }))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_PagesOffer = _resolveComponent(\"PagesOffer\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_WidgetsBreadcrumb, { breadcrumbs: _unref(breadcrumbs) }, null, 8, [\"breadcrumbs\"]),\n    _createVNode(_component_PagesOffer, { coupon: _unref(coupon) }, null, 8, [\"coupon\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288841,
+      "end": 1716056288843,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056288843,
+      "end": 1716056288843,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288843,
+      "end": 1716056288843,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056288843,
+      "end": 1716056288843,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056288843,
+      "end": 1716056288843,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056288843,
+      "end": 1716056288843,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288843,
+      "end": 1716056288843,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056288843,
+      "end": 1716056288843,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056288843,
+      "end": 1716056288843,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056288843,
+      "end": 1716056288843,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056288843,
+      "end": 1716056288843,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056288844,
+      "end": 1716056288844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056288844,
+      "end": 1716056288844,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056288844,
+      "end": 1716056288844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056288844,
+      "end": 1716056288844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056288844,
+      "end": 1716056288844,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056288844,
+      "end": 1716056288844,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  async setup(__props) {\n\nlet __temp, __restore\n\nvar breadcrumbs = { page: \"Offer\", links: [{ name: \"Offer\" }] }\nlet { data: coupon } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest('coupon', { key: 'GetConpon', }))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_PagesOffer = _resolveComponent(\"PagesOffer\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_WidgetsBreadcrumb, { breadcrumbs: _unref(breadcrumbs) }, null, 8, [\"breadcrumbs\"]),\n    _createVNode(_component_PagesOffer, { coupon: _unref(coupon) }, null, 8, [\"coupon\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288844,
+      "end": 1716056288845,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056288845,
+      "end": 1716056288845,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
+      "start": 1716056288845,
+      "end": 1716056288846,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056288846,
+      "end": 1716056288846,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056288846,
+      "end": 1716056288846,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056288846,
+      "end": 1716056288846,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056288846,
+      "end": 1716056288846,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056288846,
+      "end": 1716056288846,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056288846,
+      "end": 1716056288846,
+      "order": "normal"
+    }
+  ]
+}

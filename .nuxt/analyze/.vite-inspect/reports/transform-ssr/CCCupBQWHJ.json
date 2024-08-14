@@ -1,0 +1,259 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/MinimalHeader/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <header :class=\"{ active: stick && sticky }\">\n    <HeaderElementsTopHeader :themeOptions=\"themeOptions\" v-if=\"themeOptions?.header?.page_top_bar_enable\" />\n    <div class=\"top-nav top-header sticky-header\">\n      <div class=\"container-fluid-lg\">\n        <div class=\"row\">\n          <div class=\"col-12\">\n            <div class=\"navbar-top\">\n              <HeaderElementsNavMenuButton @activeMenu=\"toggle($event)\" :show=\"active\" />\n              <HeaderElementsLogo :themeOptions=\"themeOptions\" :logo=\"logo\" />\n              <div class=\"header-nav-middle\">\n                <div class=\"main-nav navbar navbar-expand-xl navbar-light navbar-sticky\">\n                  <div class=\"offcanvas offcanvas-collapse order-xl-2\" id=\"primaryMenu\" :class=\"{ show: active }\">\n                    <div class=\"offcanvas-header navbar-shadow\">\n                      <h5>{{ $t(\"Menu\") }}</h5>\n                      <button :type=\"'button'\" :id=\"'toggle_menu_btn'\" @click=\"toggle(false)\" :class=\"'btn-close lead'\">\n                        <Icon name=\"ri:close-fill\" />\n                      </button>\n                    </div>\n                    <div class=\"offcanvas-body\">\n                      <ul class=\"navbar-nav\">\n                        <li v-for=\"(menu, index) in Menu\" :key=\"index\" :class=\"[\n                          menu.type == 'sub' && menu.children\n                            ? 'nav-item dropdown'\n                            : 'nav-item',\n                          menu.megaMenu ? 'dropdown-mega' : '',\n                          { 'new-nav-item': menu.badge },\n                        ]\">\n                          <HeaderElementsMenuList  :show=\"true\" :menu=\"menu\" />\n                        </li>\n                      </ul>\n                    </div>\n                  </div>\n                  <!-- <div class=\"offcanvas-backdrop fade\" v-if=\"active\" :class=\"{ show: active }\" @click=\"toggle(false)\">\n                  </div> -->\n                </div>\n              </div>\n              <div class=\"rightside-box\">\n                <ul class=\"right-side-menu\">\n                  <li class=\"right-side search-icon search-full-icon\">\n                    <HeaderElementsSearch :style=\"'berlin'\" />\n                  </li>\n                  <li class=\"right-side\">\n                    <HeaderElementsWishlist :style=\"'basic'\" />\n                  </li>\n                  <li class=\"right-side\">\n                    <div class=\"onhover-dropdown header-badge\">\n                      <HeaderElementsCart :style=\"'basic'\" />\n                    </div>\n                  </li>\n                  <li class=\"right-side onhover-dropdown\">\n                    <HeaderElementsMyAccount :style=\"'basic'\" />\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </header>\n</template>\n\n<script setup>\nimport { Menu } from \"@/data/menu\";\nlet props = defineProps({\n  themeOptions: Object,\n  logo: String,\n  sticky: Boolean,\n});\n\nlet activeMenu = defineEmits();\n\nlet stick = ref(false);\nlet active = ref(false);\n\nfunction toggle(val) {\n  active.value = val;\n}\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056341191,
+      "end": 1716056341394,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341394,
+      "end": 1716056341394,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341394,
+      "end": 1716056341394,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341394,
+      "end": 1716056341394,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341394,
+      "end": 1716056341394,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056341394,
+      "end": 1716056341394,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056341394,
+      "end": 1716056341394,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056341394,
+      "end": 1716056341394,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056341394,
+      "end": 1716056341394,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056341394,
+      "end": 1716056341394,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056341394,
+      "end": 1716056341394,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { Menu } from \"@/data/menu\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  themeOptions: Object,\n  logo: String,\n  sticky: Boolean,\n},\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\n\nlet activeMenu = __emit;\n\nlet stick = ref(false);\nlet active = ref(false);\n\nfunction toggle(val) {\n  active.value = val;\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_HeaderElementsTopHeader = _resolveComponent(\"HeaderElementsTopHeader\")\n  const _component_HeaderElementsNavMenuButton = _resolveComponent(\"HeaderElementsNavMenuButton\")\n  const _component_HeaderElementsLogo = _resolveComponent(\"HeaderElementsLogo\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_HeaderElementsMenuList = _resolveComponent(\"HeaderElementsMenuList\")\n  const _component_HeaderElementsSearch = _resolveComponent(\"HeaderElementsSearch\")\n  const _component_HeaderElementsWishlist = _resolveComponent(\"HeaderElementsWishlist\")\n  const _component_HeaderElementsCart = _resolveComponent(\"HeaderElementsCart\")\n  const _component_HeaderElementsMyAccount = _resolveComponent(\"HeaderElementsMyAccount\")\n\n  _push(`<header${_ssrRenderAttrs(_mergeProps({\n    class: { active: _unref(stick) && __props.sticky }\n  }, _attrs))}>`)\n  if (__props.themeOptions?.header?.page_top_bar_enable) {\n    _push(_ssrRenderComponent(_component_HeaderElementsTopHeader, { themeOptions: __props.themeOptions }, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"top-nav top-header sticky-header\"><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12\"><div class=\"navbar-top\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsNavMenuButton, {\n    onActiveMenu: $event => (toggle($event)),\n    show: _unref(active)\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_HeaderElementsLogo, {\n    themeOptions: __props.themeOptions,\n    logo: __props.logo\n  }, null, _parent))\n  _push(`<div class=\"header-nav-middle\"><div class=\"main-nav navbar navbar-expand-xl navbar-light navbar-sticky\"><div id=\"primaryMenu\" class=\"${\n    _ssrRenderClass([{ show: _unref(active) }, \"offcanvas offcanvas-collapse order-xl-2\"])\n  }\"><div class=\"offcanvas-header navbar-shadow\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Menu\"))\n  }</h5><button${\n    _ssrRenderAttr(\"type\", 'button')\n  }${\n    _ssrRenderAttr(\"id\", 'toggle_menu_btn')\n  } class=\"${\n    _ssrRenderClass('btn-close lead')\n  }\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri:close-fill\" }, null, _parent))\n  _push(`</button></div><div class=\"offcanvas-body\"><ul class=\"navbar-nav\"><!--[-->`)\n  _ssrRenderList(_unref(Menu), (menu, index) => {\n    _push(`<li class=\"${_ssrRenderClass([\n                          menu.type == 'sub' && menu.children\n                            ? 'nav-item dropdown'\n                            : 'nav-item',\n                          menu.megaMenu ? 'dropdown-mega' : '',\n                          { 'new-nav-item': menu.badge },\n                        ])}\">`)\n    _push(_ssrRenderComponent(_component_HeaderElementsMenuList, {\n      show: true,\n      menu: menu\n    }, null, _parent))\n    _push(`</li>`)\n  })\n  _push(`<!--]--></ul></div></div></div></div><div class=\"rightside-box\"><ul class=\"right-side-menu\"><li class=\"right-side search-icon search-full-icon\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsSearch, { style: 'berlin' }, null, _parent))\n  _push(`</li><li class=\"right-side\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsWishlist, { style: 'basic' }, null, _parent))\n  _push(`</li><li class=\"right-side\"><div class=\"onhover-dropdown header-badge\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsCart, { style: 'basic' }, null, _parent))\n  _push(`</div></li><li class=\"right-side onhover-dropdown\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsMyAccount, { style: 'basic' }, null, _parent))\n  _push(`</li></ul></div></div></div></div></div></div></header>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Header/MinimalHeader/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341394,
+      "end": 1716056341395,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056341395,
+      "end": 1716056341395,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341395,
+      "end": 1716056341395,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341395,
+      "end": 1716056341395,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341395,
+      "end": 1716056341395,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341395,
+      "end": 1716056341395,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056341395,
+      "end": 1716056341395,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341395,
+      "end": 1716056341395,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056341395,
+      "end": 1716056341396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056341396,
+      "end": 1716056341396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056341396,
+      "end": 1716056341396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056341396,
+      "end": 1716056341396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056341396,
+      "end": 1716056341396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056341396,
+      "end": 1716056341396,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056341396,
+      "end": 1716056341396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056341396,
+      "end": 1716056341396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056341396,
+      "end": 1716056341396,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341396,
+      "end": 1716056341396,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341396,
+      "end": 1716056341396,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { Menu } from \"@/data/menu\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  themeOptions: Object,\n  logo: String,\n  sticky: Boolean,\n},\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\n\nlet activeMenu = __emit;\n\nlet stick = ref(false);\nlet active = ref(false);\n\nfunction toggle(val) {\n  active.value = val;\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_HeaderElementsTopHeader = _resolveComponent(\"HeaderElementsTopHeader\")\n  const _component_HeaderElementsNavMenuButton = _resolveComponent(\"HeaderElementsNavMenuButton\")\n  const _component_HeaderElementsLogo = _resolveComponent(\"HeaderElementsLogo\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_HeaderElementsMenuList = _resolveComponent(\"HeaderElementsMenuList\")\n  const _component_HeaderElementsSearch = _resolveComponent(\"HeaderElementsSearch\")\n  const _component_HeaderElementsWishlist = _resolveComponent(\"HeaderElementsWishlist\")\n  const _component_HeaderElementsCart = _resolveComponent(\"HeaderElementsCart\")\n  const _component_HeaderElementsMyAccount = _resolveComponent(\"HeaderElementsMyAccount\")\n\n  _push(`<header${_ssrRenderAttrs(_mergeProps({\n    class: { active: _unref(stick) && __props.sticky }\n  }, _attrs))}>`)\n  if (__props.themeOptions?.header?.page_top_bar_enable) {\n    _push(_ssrRenderComponent(_component_HeaderElementsTopHeader, { themeOptions: __props.themeOptions }, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"top-nav top-header sticky-header\"><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12\"><div class=\"navbar-top\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsNavMenuButton, {\n    onActiveMenu: $event => (toggle($event)),\n    show: _unref(active)\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_HeaderElementsLogo, {\n    themeOptions: __props.themeOptions,\n    logo: __props.logo\n  }, null, _parent))\n  _push(`<div class=\"header-nav-middle\"><div class=\"main-nav navbar navbar-expand-xl navbar-light navbar-sticky\"><div id=\"primaryMenu\" class=\"${\n    _ssrRenderClass([{ show: _unref(active) }, \"offcanvas offcanvas-collapse order-xl-2\"])\n  }\"><div class=\"offcanvas-header navbar-shadow\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Menu\"))\n  }</h5><button${\n    _ssrRenderAttr(\"type\", 'button')\n  }${\n    _ssrRenderAttr(\"id\", 'toggle_menu_btn')\n  } class=\"${\n    _ssrRenderClass('btn-close lead')\n  }\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri:close-fill\" }, null, _parent))\n  _push(`</button></div><div class=\"offcanvas-body\"><ul class=\"navbar-nav\"><!--[-->`)\n  _ssrRenderList(_unref(Menu), (menu, index) => {\n    _push(`<li class=\"${_ssrRenderClass([\n                          menu.type == 'sub' && menu.children\n                            ? 'nav-item dropdown'\n                            : 'nav-item',\n                          menu.megaMenu ? 'dropdown-mega' : '',\n                          { 'new-nav-item': menu.badge },\n                        ])}\">`)\n    _push(_ssrRenderComponent(_component_HeaderElementsMenuList, {\n      show: true,\n      menu: menu\n    }, null, _parent))\n    _push(`</li>`)\n  })\n  _push(`<!--]--></ul></div></div></div></div><div class=\"rightside-box\"><ul class=\"right-side-menu\"><li class=\"right-side search-icon search-full-icon\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsSearch, { style: 'berlin' }, null, _parent))\n  _push(`</li><li class=\"right-side\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsWishlist, { style: 'basic' }, null, _parent))\n  _push(`</li><li class=\"right-side\"><div class=\"onhover-dropdown header-badge\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsCart, { style: 'basic' }, null, _parent))\n  _push(`</div></li><li class=\"right-side onhover-dropdown\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsMyAccount, { style: 'basic' }, null, _parent))\n  _push(`</li></ul></div></div></div></div></div></div></header>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Header/MinimalHeader/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341396,
+      "end": 1716056341398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { Menu } from \"@/data/menu\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  themeOptions: Object,\n  logo: String,\n  sticky: Boolean,\n},\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\n\nlet activeMenu = __emit;\n\nlet stick = ref(false);\nlet active = ref(false);\n\nfunction toggle(val) {\n  active.value = val;\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_HeaderElementsTopHeader = _resolveComponent(\"HeaderElementsTopHeader\")\n  const _component_HeaderElementsNavMenuButton = _resolveComponent(\"HeaderElementsNavMenuButton\")\n  const _component_HeaderElementsLogo = _resolveComponent(\"HeaderElementsLogo\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_HeaderElementsMenuList = _resolveComponent(\"HeaderElementsMenuList\")\n  const _component_HeaderElementsSearch = _resolveComponent(\"HeaderElementsSearch\")\n  const _component_HeaderElementsWishlist = _resolveComponent(\"HeaderElementsWishlist\")\n  const _component_HeaderElementsCart = _resolveComponent(\"HeaderElementsCart\")\n  const _component_HeaderElementsMyAccount = _resolveComponent(\"HeaderElementsMyAccount\")\n\n  _push(`<header${_ssrRenderAttrs(_mergeProps({\n    class: { active: _unref(stick) && __props.sticky }\n  }, _attrs))}>`)\n  if (__props.themeOptions?.header?.page_top_bar_enable) {\n    _push(_ssrRenderComponent(_component_HeaderElementsTopHeader, { themeOptions: __props.themeOptions }, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"top-nav top-header sticky-header\"><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12\"><div class=\"navbar-top\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsNavMenuButton, {\n    onActiveMenu: $event => (toggle($event)),\n    show: _unref(active)\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_HeaderElementsLogo, {\n    themeOptions: __props.themeOptions,\n    logo: __props.logo\n  }, null, _parent))\n  _push(`<div class=\"header-nav-middle\"><div class=\"main-nav navbar navbar-expand-xl navbar-light navbar-sticky\"><div id=\"primaryMenu\" class=\"${\n    _ssrRenderClass([{ show: _unref(active) }, \"offcanvas offcanvas-collapse order-xl-2\"])\n  }\"><div class=\"offcanvas-header navbar-shadow\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Menu\"))\n  }</h5><button${\n    _ssrRenderAttr(\"type\", 'button')\n  }${\n    _ssrRenderAttr(\"id\", 'toggle_menu_btn')\n  } class=\"${\n    _ssrRenderClass('btn-close lead')\n  }\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri:close-fill\" }, null, _parent))\n  _push(`</button></div><div class=\"offcanvas-body\"><ul class=\"navbar-nav\"><!--[-->`)\n  _ssrRenderList(_unref(Menu), (menu, index) => {\n    _push(`<li class=\"${_ssrRenderClass([\n                          menu.type == 'sub' && menu.children\n                            ? 'nav-item dropdown'\n                            : 'nav-item',\n                          menu.megaMenu ? 'dropdown-mega' : '',\n                          { 'new-nav-item': menu.badge },\n                        ])}\">`)\n    _push(_ssrRenderComponent(_component_HeaderElementsMenuList, {\n      show: true,\n      menu: menu\n    }, null, _parent))\n    _push(`</li>`)\n  })\n  _push(`<!--]--></ul></div></div></div></div><div class=\"rightside-box\"><ul class=\"right-side-menu\"><li class=\"right-side search-icon search-full-icon\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsSearch, { style: 'berlin' }, null, _parent))\n  _push(`</li><li class=\"right-side\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsWishlist, { style: 'basic' }, null, _parent))\n  _push(`</li><li class=\"right-side\"><div class=\"onhover-dropdown header-badge\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsCart, { style: 'basic' }, null, _parent))\n  _push(`</div></li><li class=\"right-side onhover-dropdown\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsMyAccount, { style: 'basic' }, null, _parent))\n  _push(`</li></ul></div></div></div></div></div></div></header>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Header/MinimalHeader/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341396,
+      "end": 1716056341398,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341398,
+      "end": 1716056341398,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341398,
+      "end": 1716056341398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341398,
+      "end": 1716056341398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341398,
+      "end": 1716056341398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056341398,
+      "end": 1716056341398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/TopHeader.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/NavMenuButton.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Logo.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/MenuList.vue\";\nimport { default as __nuxt_component_5 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Search.vue\";\nimport { default as __nuxt_component_6 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Wishlist.vue\";\nimport { default as __nuxt_component_7 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/cart.vue\";\nimport { default as __nuxt_component_8 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/MyAccount.vue\";\nimport { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { Menu } from \"@/data/menu\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  themeOptions: Object,\n  logo: String,\n  sticky: Boolean,\n},\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\n\nlet activeMenu = __emit;\n\nlet stick = ref(false);\nlet active = ref(false);\n\nfunction toggle(val) {\n  active.value = val;\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_HeaderElementsTopHeader = __nuxt_component_0\n  const _component_HeaderElementsNavMenuButton = __nuxt_component_1\n  const _component_HeaderElementsLogo = __nuxt_component_2\n  const _component_Icon = __nuxt_component_3\n  const _component_HeaderElementsMenuList = __nuxt_component_4\n  const _component_HeaderElementsSearch = __nuxt_component_5\n  const _component_HeaderElementsWishlist = __nuxt_component_6\n  const _component_HeaderElementsCart = __nuxt_component_7\n  const _component_HeaderElementsMyAccount = __nuxt_component_8\n\n  _push(`<header${_ssrRenderAttrs(_mergeProps({\n    class: { active: _unref(stick) && __props.sticky }\n  }, _attrs))}>`)\n  if (__props.themeOptions?.header?.page_top_bar_enable) {\n    _push(_ssrRenderComponent(_component_HeaderElementsTopHeader, { themeOptions: __props.themeOptions }, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"top-nav top-header sticky-header\"><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12\"><div class=\"navbar-top\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsNavMenuButton, {\n    onActiveMenu: $event => (toggle($event)),\n    show: _unref(active)\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_HeaderElementsLogo, {\n    themeOptions: __props.themeOptions,\n    logo: __props.logo\n  }, null, _parent))\n  _push(`<div class=\"header-nav-middle\"><div class=\"main-nav navbar navbar-expand-xl navbar-light navbar-sticky\"><div id=\"primaryMenu\" class=\"${\n    _ssrRenderClass([{ show: _unref(active) }, \"offcanvas offcanvas-collapse order-xl-2\"])\n  }\"><div class=\"offcanvas-header navbar-shadow\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Menu\"))\n  }</h5><button${\n    _ssrRenderAttr(\"type\", 'button')\n  }${\n    _ssrRenderAttr(\"id\", 'toggle_menu_btn')\n  } class=\"${\n    _ssrRenderClass('btn-close lead')\n  }\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri:close-fill\" }, null, _parent))\n  _push(`</button></div><div class=\"offcanvas-body\"><ul class=\"navbar-nav\"><!--[-->`)\n  _ssrRenderList(_unref(Menu), (menu, index) => {\n    _push(`<li class=\"${_ssrRenderClass([\n                          menu.type == 'sub' && menu.children\n                            ? 'nav-item dropdown'\n                            : 'nav-item',\n                          menu.megaMenu ? 'dropdown-mega' : '',\n                          { 'new-nav-item': menu.badge },\n                        ])}\">`)\n    _push(_ssrRenderComponent(_component_HeaderElementsMenuList, {\n      show: true,\n      menu: menu\n    }, null, _parent))\n    _push(`</li>`)\n  })\n  _push(`<!--]--></ul></div></div></div></div><div class=\"rightside-box\"><ul class=\"right-side-menu\"><li class=\"right-side search-icon search-full-icon\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsSearch, { style: 'berlin' }, null, _parent))\n  _push(`</li><li class=\"right-side\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsWishlist, { style: 'basic' }, null, _parent))\n  _push(`</li><li class=\"right-side\"><div class=\"onhover-dropdown header-badge\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsCart, { style: 'basic' }, null, _parent))\n  _push(`</div></li><li class=\"right-side onhover-dropdown\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsMyAccount, { style: 'basic' }, null, _parent))\n  _push(`</li></ul></div></div></div></div></div></div></header>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Header/MinimalHeader/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341398,
+      "end": 1716056341398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056341398,
+      "end": 1716056341398,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056341399,
+      "end": 1716056341399,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056341399,
+      "end": 1716056341399,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/initializers/initializer.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export function setInitialValues({initialValues,inputs}){\n    var initialData = initialValues,inputs = inputs;\n        initialData && (Object.keys(inputs).forEach(key => {\n            if(!inputs[key].ignore){\n                if(inputs[key].mapKey)\n                {\n                    let dataToStore =GetMapKeyData({initialData,mapKey:inputs[key].mapKey});\n                    inputs[key].data = dataToStore;\n                }else{\n                    inputs[key].data = initialData[key];\n                    if(inputs[key]?.type == 'multiSelect'){\n                        initialData[key]?.length && (inputs[key].data = initialData[key].map(item=>item.id)  )\n                        inputs[key].selected = initialData[key] \n                    }\n                    \n                    if (inputs[key].isImage) {\n                        if(inputs[key].multiple){\n                            inputs[key].data = initialData[key.split('_id')[0]].map(el=>el.id) || [];\n                            inputs[key].selected = initialData[key.split('_id')[0]];\n                        }else{\n                            inputs[key].data =  initialData[key]\n                            inputs[key].selected = initialData[key.split('_id')[0]];\n                        }\n                    }       \n            \n                    if (inputs[key].type && inputs[key].type=='dropdown') {\n                        inputs[key].data = initialData[key]\n                        inputs[key].selected = { name: initialData[key], value: initialData[key] }\n                        inputs[key].displayValue = initialData[key]\n                    }\n                }\n            }      \n    }));\n}\n\n\nfunction GetMapKeyData({initialData,mapKey}){\n    let mapKeyArray = mapKey.split('.')\n    let dataToReturn=_.cloneDeep(initialData);\n    mapKeyArray.forEach(key=>{\n        dataToReturn=dataToReturn[key]\n    });\n    return dataToReturn\n}",
+      "start": 1716056343512,
+      "end": 1716056343655,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056343655,
+      "end": 1716056343655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056343655,
+      "end": 1716056343656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056343656,
+      "end": 1716056343656,
+      "order": "normal"
+    }
+  ]
+}

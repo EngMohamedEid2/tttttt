@@ -1,0 +1,260 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <!-- <ShopCollectionCategorySlider\n    :filter=\"filter\"\n    :layout=\"layout\"\n    v-if=\"layout == 'collection_category_slider'\"\n  /> -->\n  <!-- <ShopCollectionCategorySidebar\n    :filter=\"filter\"\n    :layout=\"layout\"\n    v-if=\"layout == 'collection_category_sidebar'\"\n  /> -->\n  <!-- <ShopCollectionBanner\n    :filter=\"filter\"\n    :layout=\"layout\"\n    v-if=\"layout == 'collection_banner'\"\n  /> -->\n  <!-- <ShopCollectionOffCanvasFilter\n    :filter=\"filter\"\n    :layout=\"layout\"\n    v-if=\"layout == 'collection_offcanvas_filter'\"\n  /> -->\n  <ShopCollectionLeftSidebar\n    @changePage=\"clickedPage\"\n    :filter=\"filter\"\n    :layout=\"layout\"\n  />\n  <!-- <ShopCollectionRightSidebar\n    :filter=\"filter\"\n    :layout=\"layout\"\n    v-if=\"layout == 'collection_right_sidebar'\"\n  /> -->\n  <!-- <ShopCollectionNoSidebar\n    :filter=\"filter\"\n    :layout=\"layout\"\n    v-if=\"layout == 'collection_no_sidebar'\"\n  /> -->\n  <!-- <ShopCollectionList\n    :filter=\"filter\"\n    :layout=\"layout\"\n    v-if=\"\n      layout == 'collection_3_grid' ||\n      layout == 'collection_4_grid' ||\n      layout == 'collection_5_grid' ||\n      layout == 'collection_list_view'\n    \"\n  /> -->\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useCollectionStore } from \"~/store/collection\";\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nconst route = useRoute();\nconst router = useRouter();\nlet layout = ref(\"\");\nlayout.value = route?.query.layout;\nlet { filter } = storeToRefs(useCollectionStore());\nlet totalItems = ref(0);\nlet store = useCollectionStore();\nlet currentPage = ref(1);\nwatch(\n  () => route?.query?.layout,\n  () => {\n    if (route?.query?.layout) {\n      layout.value = route?.query?.layout;\n    } else {\n      //  layout.value = ThemeOptions.value.options.seller && ThemeOptions.value.options.seller.store_layout ? ThemeOptions.value.options\n    }\n  },\n  { deep: true }\n);\n\nfunction clickedPage(toPage) {\n  currentPage.value = toPage;\n  setRoute(), store.getParams();\n}\nconst setLayout = (layoutValue) => {\n  layout.value = layoutValue;\n};\n\nconst getProductLayout = () => {\n  layout.value = \"collection_left_sidebar\";\n};\nfunction setRoute() {}\nstore.getParams();\nwatch(\n  () => store.filterObject,\n  () => {\n    // setRoute()\n    router.push({\n      // path: '/collections',\n      query: {\n        layout: layout.value,\n        sortBy: store.filterObject.sort.value,\n        field: store.filterObject.field,\n        category_id: store.filterObject.selectedCategories\n          ? store.filterObject.selectedCategories.join(\",\")\n          : useRoute().query.category,\n        attribute: store.filterObject.selectedAttributes.join(\",\"),\n        price: store.filterObject.selectedPrice.join(\",\"),\n        rating: store.filterObject.selectedRating.join(\",\"),\n        tag: useRoute().query.tag,\n        page: currentPage.value,\n      },\n    });\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  route.query.layout ? setLayout(route.query.layout) : getProductLayout();\n});\n</script>\n",
+      "start": 1716056341562,
+      "end": 1716056341725,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341725,
+      "end": 1716056341725,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341725,
+      "end": 1716056341725,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341725,
+      "end": 1716056341726,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341725,
+      "end": 1716056341726,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useCollectionStore } from \"~/store/collection\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nconst route = useRoute();\nconst router = useRouter();\nlet layout = ref(\"\");\nlayout.value = route?.query.layout;\nlet { filter } = storeToRefs(useCollectionStore());\nlet totalItems = ref(0);\nlet store = useCollectionStore();\nlet currentPage = ref(1);\nwatch(\n  () => route?.query?.layout,\n  () => {\n    if (route?.query?.layout) {\n      layout.value = route?.query?.layout;\n    } else {\n      //  layout.value = ThemeOptions.value.options.seller && ThemeOptions.value.options.seller.store_layout ? ThemeOptions.value.options\n    }\n  },\n  { deep: true }\n);\n\nfunction clickedPage(toPage) {\n  currentPage.value = toPage;\n  setRoute(), store.getParams();\n}\nconst setLayout = (layoutValue) => {\n  layout.value = layoutValue;\n};\n\nconst getProductLayout = () => {\n  layout.value = \"collection_left_sidebar\";\n};\nfunction setRoute() {}\nstore.getParams();\nwatch(\n  () => store.filterObject,\n  () => {\n    // setRoute()\n    router.push({\n      // path: '/collections',\n      query: {\n        layout: layout.value,\n        sortBy: store.filterObject.sort.value,\n        field: store.filterObject.field,\n        category_id: store.filterObject.selectedCategories\n          ? store.filterObject.selectedCategories.join(\",\")\n          : useRoute().query.category,\n        attribute: store.filterObject.selectedAttributes.join(\",\"),\n        price: store.filterObject.selectedPrice.join(\",\"),\n        rating: store.filterObject.selectedRating.join(\",\"),\n        tag: useRoute().query.tag,\n        page: currentPage.value,\n      },\n    });\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  route.query.layout ? setLayout(route.query.layout) : getProductLayout();\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_ShopCollectionLeftSidebar = _resolveComponent(\"ShopCollectionLeftSidebar\")\n\n  _push(_ssrRenderComponent(_component_ShopCollectionLeftSidebar, _mergeProps({\n    onChangePage: clickedPage,\n    filter: _unref(filter),\n    layout: _unref(layout)\n  }, _attrs), null, _parent))\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Collection/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341726,
+      "end": 1716056341726,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056341726,
+      "end": 1716056341727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056341727,
+      "end": 1716056341727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056341727,
+      "end": 1716056341727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056341727,
+      "end": 1716056341727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056341727,
+      "end": 1716056341727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056341727,
+      "end": 1716056341727,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056341727,
+      "end": 1716056341727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056341727,
+      "end": 1716056341727,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056341727,
+      "end": 1716056341727,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341727,
+      "end": 1716056341727,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341727,
+      "end": 1716056341727,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useRoute, useRouter } from '#app/composables/router';\nimport { ref, watch, onMounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useCollectionStore } from \"~/store/collection\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nconst route = useRoute();\nconst router = useRouter();\nlet layout = ref(\"\");\nlayout.value = route?.query.layout;\nlet { filter } = storeToRefs(useCollectionStore());\nlet totalItems = ref(0);\nlet store = useCollectionStore();\nlet currentPage = ref(1);\nwatch(\n  () => route?.query?.layout,\n  () => {\n    if (route?.query?.layout) {\n      layout.value = route?.query?.layout;\n    } else {\n      //  layout.value = ThemeOptions.value.options.seller && ThemeOptions.value.options.seller.store_layout ? ThemeOptions.value.options\n    }\n  },\n  { deep: true }\n);\n\nfunction clickedPage(toPage) {\n  currentPage.value = toPage;\n  setRoute(), store.getParams();\n}\nconst setLayout = (layoutValue) => {\n  layout.value = layoutValue;\n};\n\nconst getProductLayout = () => {\n  layout.value = \"collection_left_sidebar\";\n};\nfunction setRoute() {}\nstore.getParams();\nwatch(\n  () => store.filterObject,\n  () => {\n    // setRoute()\n    router.push({\n      // path: '/collections',\n      query: {\n        layout: layout.value,\n        sortBy: store.filterObject.sort.value,\n        field: store.filterObject.field,\n        category_id: store.filterObject.selectedCategories\n          ? store.filterObject.selectedCategories.join(\",\")\n          : useRoute().query.category,\n        attribute: store.filterObject.selectedAttributes.join(\",\"),\n        price: store.filterObject.selectedPrice.join(\",\"),\n        rating: store.filterObject.selectedRating.join(\",\"),\n        tag: useRoute().query.tag,\n        page: currentPage.value,\n      },\n    });\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  route.query.layout ? setLayout(route.query.layout) : getProductLayout();\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_ShopCollectionLeftSidebar = _resolveComponent(\"ShopCollectionLeftSidebar\")\n\n  _push(_ssrRenderComponent(_component_ShopCollectionLeftSidebar, _mergeProps({\n    onChangePage: clickedPage,\n    filter: _unref(filter),\n    layout: _unref(layout)\n  }, _attrs), null, _parent))\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Collection/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341727,
+      "end": 1716056341732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useRoute, useRouter } from '#app/composables/router';\nimport { ref, watch, onMounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useCollectionStore } from \"~/store/collection\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nconst route = useRoute();\nconst router = useRouter();\nlet layout = ref(\"\");\nlayout.value = route?.query.layout;\nlet { filter } = storeToRefs(useCollectionStore());\nlet totalItems = ref(0);\nlet store = useCollectionStore();\nlet currentPage = ref(1);\nwatch(\n  () => route?.query?.layout,\n  () => {\n    if (route?.query?.layout) {\n      layout.value = route?.query?.layout;\n    } else {\n      //  layout.value = ThemeOptions.value.options.seller && ThemeOptions.value.options.seller.store_layout ? ThemeOptions.value.options\n    }\n  },\n  { deep: true }\n);\n\nfunction clickedPage(toPage) {\n  currentPage.value = toPage;\n  setRoute(), store.getParams();\n}\nconst setLayout = (layoutValue) => {\n  layout.value = layoutValue;\n};\n\nconst getProductLayout = () => {\n  layout.value = \"collection_left_sidebar\";\n};\nfunction setRoute() {}\nstore.getParams();\nwatch(\n  () => store.filterObject,\n  () => {\n    // setRoute()\n    router.push({\n      // path: '/collections',\n      query: {\n        layout: layout.value,\n        sortBy: store.filterObject.sort.value,\n        field: store.filterObject.field,\n        category_id: store.filterObject.selectedCategories\n          ? store.filterObject.selectedCategories.join(\",\")\n          : useRoute().query.category,\n        attribute: store.filterObject.selectedAttributes.join(\",\"),\n        price: store.filterObject.selectedPrice.join(\",\"),\n        rating: store.filterObject.selectedRating.join(\",\"),\n        tag: useRoute().query.tag,\n        page: currentPage.value,\n      },\n    });\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  route.query.layout ? setLayout(route.query.layout) : getProductLayout();\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_ShopCollectionLeftSidebar = _resolveComponent(\"ShopCollectionLeftSidebar\")\n\n  _push(_ssrRenderComponent(_component_ShopCollectionLeftSidebar, _mergeProps({\n    onChangePage: clickedPage,\n    filter: _unref(filter),\n    layout: _unref(layout)\n  }, _attrs), null, _parent))\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Collection/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341727,
+      "end": 1716056341733,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341733,
+      "end": 1716056341733,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341733,
+      "end": 1716056341733,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341733,
+      "end": 1716056341733,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341733,
+      "end": 1716056341733,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056341733,
+      "end": 1716056341733,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/LeftSidebar/index.vue\";\nimport { useRoute, useRouter } from '#app/composables/router';\nimport { ref, watch, onMounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useCollectionStore } from \"~/store/collection\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nconst route = useRoute();\nconst router = useRouter();\nlet layout = ref(\"\");\nlayout.value = route?.query.layout;\nlet { filter } = storeToRefs(useCollectionStore());\nlet totalItems = ref(0);\nlet store = useCollectionStore();\nlet currentPage = ref(1);\nwatch(\n  () => route?.query?.layout,\n  () => {\n    if (route?.query?.layout) {\n      layout.value = route?.query?.layout;\n    } else {\n      //  layout.value = ThemeOptions.value.options.seller && ThemeOptions.value.options.seller.store_layout ? ThemeOptions.value.options\n    }\n  },\n  { deep: true }\n);\n\nfunction clickedPage(toPage) {\n  currentPage.value = toPage;\n  setRoute(), store.getParams();\n}\nconst setLayout = (layoutValue) => {\n  layout.value = layoutValue;\n};\n\nconst getProductLayout = () => {\n  layout.value = \"collection_left_sidebar\";\n};\nfunction setRoute() {}\nstore.getParams();\nwatch(\n  () => store.filterObject,\n  () => {\n    // setRoute()\n    router.push({\n      // path: '/collections',\n      query: {\n        layout: layout.value,\n        sortBy: store.filterObject.sort.value,\n        field: store.filterObject.field,\n        category_id: store.filterObject.selectedCategories\n          ? store.filterObject.selectedCategories.join(\",\")\n          : useRoute().query.category,\n        attribute: store.filterObject.selectedAttributes.join(\",\"),\n        price: store.filterObject.selectedPrice.join(\",\"),\n        rating: store.filterObject.selectedRating.join(\",\"),\n        tag: useRoute().query.tag,\n        page: currentPage.value,\n      },\n    });\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  route.query.layout ? setLayout(route.query.layout) : getProductLayout();\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_ShopCollectionLeftSidebar = __nuxt_component_0\n\n  _push(_ssrRenderComponent(_component_ShopCollectionLeftSidebar, _mergeProps({\n    onChangePage: clickedPage,\n    filter: _unref(filter),\n    layout: _unref(layout)\n  }, _attrs), null, _parent))\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Collection/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341733,
+      "end": 1716056341733,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/LeftSidebar/index.vue\";\nimport { useRoute, useRouter } from '#app/composables/router';\nimport { ref, watch, onMounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useCollectionStore } from \"~/store/collection\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nconst route = useRoute();\nconst router = useRouter();\nlet layout = ref(\"\");\nlayout.value = route?.query.layout;\nlet { filter } = storeToRefs(useCollectionStore());\nlet totalItems = ref(0);\nlet store = useCollectionStore();\nlet currentPage = ref(1);\nwatch(\n  () => route?.query?.layout,\n  () => {\n    if (route?.query?.layout) {\n      layout.value = route?.query?.layout;\n    } else {\n      //  layout.value = ThemeOptions.value.options.seller && ThemeOptions.value.options.seller.store_layout ? ThemeOptions.value.options\n    }\n  },\n  { deep: true }\n);\n\nfunction clickedPage(toPage) {\n  currentPage.value = toPage;\n  setRoute(), store.getParams();\n}\nconst setLayout = (layoutValue) => {\n  layout.value = layoutValue;\n};\n\nconst getProductLayout = () => {\n  layout.value = \"collection_left_sidebar\";\n};\nfunction setRoute() {}\nstore.getParams();\nwatch(\n  () => store.filterObject,\n  () => {\n    // setRoute()\n    router.push({\n      // path: '/collections',\n      query: {\n        layout: layout.value,\n        sortBy: store.filterObject.sort.value,\n        field: store.filterObject.field,\n        category_id: store.filterObject.selectedCategories\n          ? store.filterObject.selectedCategories.join(\",\")\n          : useRoute().query.category,\n        attribute: store.filterObject.selectedAttributes.join(\",\"),\n        price: store.filterObject.selectedPrice.join(\",\"),\n        rating: store.filterObject.selectedRating.join(\",\"),\n        tag: useRoute().query.tag,\n        page: currentPage.value,\n      },\n    });\n  },\n  { deep: true }\n);\n\n false && /*@__PURE__*/ onMounted(() => {\n  route.query.layout ? setLayout(route.query.layout) : getProductLayout();\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_ShopCollectionLeftSidebar = __nuxt_component_0\n\n  _push(_ssrRenderComponent(_component_ShopCollectionLeftSidebar, _mergeProps({\n    onChangePage: clickedPage,\n    filter: _unref(filter),\n    layout: _unref(layout)\n  }, _attrs), null, _parent))\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Collection/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341733,
+      "end": 1716056341734,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056341734,
+      "end": 1716056341734,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056341734,
+      "end": 1716056341734,
+      "order": "normal"
+    }
+  ]
+}

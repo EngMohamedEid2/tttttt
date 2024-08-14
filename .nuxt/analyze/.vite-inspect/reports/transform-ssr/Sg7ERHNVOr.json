@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/AboutUs/Client.vue?nuxt_component=async&nuxt_component_name=PagesAboutUsClient",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <section class=\"client-section section-lg-space\">\n    <div class=\"container-fluid-lg\">\n      <div class=\"row\">\n        <div class=\"col-12\">\n          <div class=\"about-us-title text-center\">\n            <h4>{{ aboutClient.sub_title }}</h4>\n            <h2 class=\"center\">{{ aboutClient.title }}</h2>\n          </div>\n          <div class=\"slider-dots\">\n            <swiper :autoplay=\"{ delay: 2500, disableOnInteraction: true }\" :modules=\"modules\" :loop=\"true\"\n              :slidesPerView=\"3\" :spaceBetween=\"20\">\n              <swiper-slide v-for=\"(client, index) in aboutClient.content\" :key=\"index\">\n                <div class=\"slider-3_1 product-wrapper\">\n                  <div>\n                    <div class=\"clint-contain\">\n                      <div class=\"client-icon\">\n                        <img :src=\"client.icon\" :alt=\"client.title\" />\n                      </div>\n                      <h2>{{ client.count }}</h2>\n                      <h4>{{ client.title }}</h4>\n                      <p>{{ client.description }}</p>\n                    </div>\n                  </div>\n                </div>\n              </swiper-slide>\n            </swiper>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { Autoplay } from \"swiper\";\n\nlet modules = [Autoplay];\nlet { ThemeOptions } = storeToRefs(useDataStore());\nlet aboutClient = ref(ThemeOptions.value.options.about_us.clients);\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056326493,
+      "end": 1716056339318,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339318,
+      "end": 1716056339318,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339318,
+      "end": 1716056339318,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339318,
+      "end": 1716056339318,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339318,
+      "end": 1716056339318,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339318,
+      "end": 1716056339318,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339319,
+      "end": 1716056339319,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339319,
+      "end": 1716056339319,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339319,
+      "end": 1716056339319,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339319,
+      "end": 1716056339319,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339319,
+      "end": 1716056339319,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { Autoplay } from \"swiper\";\n\n\nconst _sfc_main = {\n  __name: 'Client',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet modules = [Autoplay];\nlet { ThemeOptions } = storeToRefs(useDataStore());\nlet aboutClient = ref(ThemeOptions.value.options.about_us.clients);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_swiper = _resolveComponent(\"swiper\")\n  const _component_swiper_slide = _resolveComponent(\"swiper-slide\")\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"client-section section-lg-space\" }, _attrs))\n  }><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12\"><div class=\"about-us-title text-center\"><h4>${\n    _ssrInterpolate(_unref(aboutClient).sub_title)\n  }</h4><h2 class=\"center\">${\n    _ssrInterpolate(_unref(aboutClient).title)\n  }</h2></div><div class=\"slider-dots\">`)\n  _push(_ssrRenderComponent(_component_swiper, {\n    autoplay: { delay: 2500, disableOnInteraction: true },\n    modules: _unref(modules),\n    loop: true,\n    slidesPerView: 3,\n    spaceBetween: 20\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<!--[-->`)\n        _ssrRenderList(_unref(aboutClient).content, (client, index) => {\n          _push(_ssrRenderComponent(_component_swiper_slide, { key: index }, {\n            default: _withCtx((_, _push, _parent, _scopeId) => {\n              if (_push) {\n                _push(`<div class=\"slider-3_1 product-wrapper\"${\n                  _scopeId\n                }><div${\n                  _scopeId\n                }><div class=\"clint-contain\"${\n                  _scopeId\n                }><div class=\"client-icon\"${\n                  _scopeId\n                }><img${\n                  _ssrRenderAttr(\"src\", client.icon)\n                }${\n                  _ssrRenderAttr(\"alt\", client.title)\n                }${\n                  _scopeId\n                }></div><h2${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(client.count)\n                }</h2><h4${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(client.title)\n                }</h4><p${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(client.description)\n                }</p></div></div></div>`)\n              } else {\n                return [\n                  _createVNode(\"div\", { class: \"slider-3_1 product-wrapper\" }, [\n                    _createVNode(\"div\", null, [\n                      _createVNode(\"div\", { class: \"clint-contain\" }, [\n                        _createVNode(\"div\", { class: \"client-icon\" }, [\n                          _createVNode(\"img\", {\n                            src: client.icon,\n                            alt: client.title\n                          }, null, 8, [\"src\", \"alt\"])\n                        ]),\n                        _createVNode(\"h2\", null, _toDisplayString(client.count), 1),\n                        _createVNode(\"h4\", null, _toDisplayString(client.title), 1),\n                        _createVNode(\"p\", null, _toDisplayString(client.description), 1)\n                      ])\n                    ])\n                  ])\n                ]\n              }\n            }),\n            _: 2\n          }, _parent, _scopeId))\n        })\n        _push(`<!--]-->`)\n      } else {\n        return [\n          (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(aboutClient).content, (client, index) => {\n            return (_openBlock(), _createBlock(_component_swiper_slide, { key: index }, {\n              default: _withCtx(() => [\n                _createVNode(\"div\", { class: \"slider-3_1 product-wrapper\" }, [\n                  _createVNode(\"div\", null, [\n                    _createVNode(\"div\", { class: \"clint-contain\" }, [\n                      _createVNode(\"div\", { class: \"client-icon\" }, [\n                        _createVNode(\"img\", {\n                          src: client.icon,\n                          alt: client.title\n                        }, null, 8, [\"src\", \"alt\"])\n                      ]),\n                      _createVNode(\"h2\", null, _toDisplayString(client.count), 1),\n                      _createVNode(\"h4\", null, _toDisplayString(client.title), 1),\n                      _createVNode(\"p\", null, _toDisplayString(client.description), 1)\n                    ])\n                  ])\n                ])\n              ]),\n              _: 2\n            }, 1024))\n          }), 128))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Pages/AboutUs/Client.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339319,
+      "end": 1716056339321,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/AboutUs/Client.vue\").then(r => r.default))",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339321,
+      "end": 1716056339321,
+      "order": "normal"
+    }
+  ]
+}

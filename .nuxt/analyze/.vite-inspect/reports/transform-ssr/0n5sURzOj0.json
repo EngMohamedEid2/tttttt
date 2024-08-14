@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Dashboard/ProfileInformation.vue?nuxt_component=async&nuxt_component_name=AccountDashboardProfileInformation",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n  <div class=\"row\">\n    <div class=\"col-xxl-7\">\n      <div class=\"dashboard-title mb-3\">\n        <h3>{{ \"Profile Information\" }}</h3>\n      </div>\n      <div class=\"table-responsive\">\n        <table class=\"table\">\n          <tbody>\n            <tr>\n              <td>{{ \"Name\" }}:</td>\n              <td>{{ user?.name }}</td>\n            </tr>\n            <tr>\n              <td>{{ \"Phone\" }}:</td>\n              <td>+{{ user?.country_code }} {{ user?.phone }}</td>\n            </tr>\n            <tr v-if=\"user.address\">\n              <td>{{ \"Address\" }}:</td>\n              <td>\n                {{ user.address[0].street }}\n                {{ user.address[0].city }}, {{ user.address[0].state.name }},\n                {{ user.address[0].country.name }} {{ user.address[0].pincode }}\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n      <div class=\"dashboard-title mb-3\">\n        <h3>{{ \"Login Details\" }}</h3>\n      </div>\n      <div class=\"table-responsive\">\n        <table class=\"table\">\n          <tbody>\n            <tr>\n              <td>{{ \"Email\" }} :</td>\n              <td>\n                {{ user?.email }}\n                <a href=\"javascript:void(0)\" @click=\"(data) => {\n                    profileModal({ data });\n                  }\n                  \">{{ \"Edit\" }}</a>\n              </td>\n            </tr>\n            <tr>\n              <td>{{ \"Password\" }} :</td>\n              <td>\n                ●●●●●●\n                <a href=\"javascript:void(0)\" @click=\"(data) => {\n                    changePasswordModal({ data });\n                  }\n                  \">{{ \"Edit\" }}</a>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </div>\n    <div class=\"col-xxl-5\">\n      <div class=\"profile-image\">\n        <img src=\"/images/inner-page/dashboard-profile.png\" class=\"img-fluid\" alt=\"dashboard-profile\" />\n      </div>\n    </div>\n  </div>\n  <WidgetsModalsCommon :showModal=\"editProfile\" @close=\"profileModal({ state: false })\">\n    <WidgetsModalsEditProdileModal :initialData=\"initialProfileData\" @close=\"profileModal({ state: false })\" />\n  </WidgetsModalsCommon>\n  <WidgetsModalsCommon :showModal=\"chnagePassword\" @close=\"changePasswordModal({ state: false })\">\n    <WidgetsModalsChnagePasswordModal @close=\"changePasswordModal({ state: false })\" />\n  </WidgetsModalsCommon>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  user: Object,\n});\nlet initialProfileData = ref({\n  name: \"\",\n  email: \"\",\n  country_code: \"\",\n  phone: \"\",\n  status: 0,\n});\nlet editProfile = ref(false);\nlet chnagePassword = ref(false);\ninitialProfileData.value.name = props.user?.name;\ninitialProfileData.value.email = props.user?.email;\ninitialProfileData.value.country_code = props.user?.country_code;\ninitialProfileData.value.phone = props.user?.phone;\ninitialProfileData.value.status = props.user?.status;\n\nfunction profileModal({ state = true }) {\n  editProfile.value = state;\n}\nfunction changePasswordModal({ state = true }) {\n  chnagePassword.value = state;\n}\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056305918,
+      "end": 1716056306220,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306220,
+      "end": 1716056306220,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306220,
+      "end": 1716056306220,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306220,
+      "end": 1716056306220,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306220,
+      "end": 1716056306220,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056306220,
+      "end": 1716056306220,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056306220,
+      "end": 1716056306220,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056306220,
+      "end": 1716056306220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056306220,
+      "end": 1716056306220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056306220,
+      "end": 1716056306220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056306220,
+      "end": 1716056306220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/inner-page/dashboard-profile.png'\n\n\n\nconst _sfc_main = {\n  __name: 'ProfileInformation',\n  __ssrInlineRender: true,\n  props: {\n  user: Object,\n},\n  setup(__props) {\n\nlet props = __props;\nlet initialProfileData = ref({\n  name: \"\",\n  email: \"\",\n  country_code: \"\",\n  phone: \"\",\n  status: 0,\n});\nlet editProfile = ref(false);\nlet chnagePassword = ref(false);\ninitialProfileData.value.name = props.user?.name;\ninitialProfileData.value.email = props.user?.email;\ninitialProfileData.value.country_code = props.user?.country_code;\ninitialProfileData.value.phone = props.user?.phone;\ninitialProfileData.value.status = props.user?.status;\n\nfunction profileModal({ state = true }) {\n  editProfile.value = state;\n}\nfunction changePasswordModal({ state = true }) {\n  chnagePassword.value = state;\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsEditProdileModal = _resolveComponent(\"WidgetsModalsEditProdileModal\")\n  const _component_WidgetsModalsChnagePasswordModal = _resolveComponent(\"WidgetsModalsChnagePasswordModal\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_attrs)\n  }><div class=\"row\"><div class=\"col-xxl-7\"><div class=\"dashboard-title mb-3\"><h3>${\n    _ssrInterpolate(\"Profile Information\")\n  }</h3></div><div class=\"table-responsive\"><table class=\"table\"><tbody><tr><td>${\n    _ssrInterpolate(\"Name\")\n  }:</td><td>${\n    _ssrInterpolate(__props.user?.name)\n  }</td></tr><tr><td>${\n    _ssrInterpolate(\"Phone\")\n  }:</td><td>+${\n    _ssrInterpolate(__props.user?.country_code)\n  } ${\n    _ssrInterpolate(__props.user?.phone)\n  }</td></tr>`)\n  if (__props.user.address) {\n    _push(`<tr><td>${\n      _ssrInterpolate(\"Address\")\n    }:</td><td>${\n      _ssrInterpolate(__props.user.address[0].street)\n    } ${\n      _ssrInterpolate(__props.user.address[0].city)\n    }, ${\n      _ssrInterpolate(__props.user.address[0].state.name)\n    }, ${\n      _ssrInterpolate(__props.user.address[0].country.name)\n    } ${\n      _ssrInterpolate(__props.user.address[0].pincode)\n    }</td></tr>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</tbody></table></div><div class=\"dashboard-title mb-3\"><h3>${\n    _ssrInterpolate(\"Login Details\")\n  }</h3></div><div class=\"table-responsive\"><table class=\"table\"><tbody><tr><td>${\n    _ssrInterpolate(\"Email\")\n  } :</td><td>${\n    _ssrInterpolate(__props.user?.email)\n  } <a href=\"javascript:void(0)\">${\n    _ssrInterpolate(\"Edit\")\n  }</a></td></tr><tr><td>${\n    _ssrInterpolate(\"Password\")\n  } :</td><td> ●●●●●● <a href=\"javascript:void(0)\">${\n    _ssrInterpolate(\"Edit\")\n  }</a></td></tr></tbody></table></div></div><div class=\"col-xxl-5\"><div class=\"profile-image\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } class=\"img-fluid\" alt=\"dashboard-profile\"></div></div></div>`)\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(editProfile),\n    onClose: $event => (profileModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsEditProdileModal, {\n          initialData: _unref(initialProfileData),\n          onClose: $event => (profileModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsEditProdileModal, {\n            initialData: _unref(initialProfileData),\n            onClose: $event => (profileModal({ state: false }))\n          }, null, 8, [\"initialData\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(chnagePassword),\n    onClose: $event => (changePasswordModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsChnagePasswordModal, {\n          onClose: $event => (changePasswordModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsChnagePasswordModal, {\n            onClose: $event => (changePasswordModal({ state: false }))\n          }, null, 8, [\"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/Dashboard/ProfileInformation.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056306220,
+      "end": 1716056306227,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056306227,
+      "end": 1716056306227,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306227,
+      "end": 1716056306227,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306227,
+      "end": 1716056306227,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306227,
+      "end": 1716056306227,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306227,
+      "end": 1716056306227,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Dashboard/ProfileInformation.vue\").then(r => r.default))",
+      "start": 1716056306227,
+      "end": 1716056306228,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056306228,
+      "end": 1716056306228,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056306228,
+      "end": 1716056306229,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056306229,
+      "end": 1716056306229,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/StandardHeader/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <header class=\"header-2\" :class=\"{ active: stick && sticky }\">\n    <HeaderElementsTopHeader :themeOptions=\"themeOptions\" v-if=\"themeOptions?.header?.page_top_bar_enable\" />\n    <div class=\"top-nav top-header sticky-header sticky-header-3\">\n      <div class=\"container-fluid-lg\">\n        <div class=\"row\">\n          <div class=\"col-12\">\n            <div class=\"navbar-top\">\n              <HeaderElementsNavMenuButton @activeMenu=\"toggle($event)\" :show=\"active\" />\n              <HeaderElementsLogo :themeOptions=\"themeOptions\" :textClass=\"'txt-theme f-w-600'\" :logo=\"logo\" />\n              <div class=\"middle-box\">\n                <div class=\"center-box\">\n                  <div class=\"searchbar-box order-xl-1 d-none d-xl-block\">\n                    <HeaderElementsSearch :style=\"'standard'\" />\n                  </div>\n                </div>\n              </div>\n              <div class=\"rightside-menu\">\n                <div class=\"option-list\">\n                  <ul>\n                    <li>\n                      <HeaderElementsMyAccount :style=\"'standard'\" />\n                    </li>\n                    <li>\n                      <HeaderElementsSearchBox :style=\"'standard'\" />\n                    </li>\n                    <li>\n                      <HeaderElementsCompare />\n                    </li>\n                    <li class=\"onhover-dropdown\">\n                      <HeaderElementsWishlist :style=\"'classic'\" />\n                    </li>\n                    <li class=\"onhover-dropdown\">\n                      <HeaderElementsCarts :style=\"'classic'\" />\n                    </li>\n                  </ul>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"container-fluid-lg\">\n      <div class=\"row\">\n        <div class=\"col-12\">\n          <div class=\"main-nav\">\n            <div class=\"header-nav-left\">\n              <HeaderElementsCategory :data=\"themeOptions\" />\n            </div>\n            <div class=\"main-nav navbar navbar-expand-xl navbar-light navbar-sticky\">\n              <div class=\"offcanvas offcanvas-collapse order-xl-2\" id=\"primaryMenu\" :class=\"{ show: active }\">\n                <div class=\"offcanvas-header navbar-shadow\">\n                  <h5>{{ $t(\"Menu\") }}</h5>\n                  <button :type=\"'button'\" :id=\"'toggle_menu_btn'\" @click=\"toggle(false)\" :class=\"'btn-close lead'\">\n                    <Icon name=\"ri:close-fill\" />\n                  </button>\n                </div>\n                <div class=\"offcanvas-body\">\n                  <ul class=\"navbar-nav\">\n                    <li v-for=\"(menu, index) in Menu\" :key=\"index\" :class=\"[\n                      menu.type == 'sub' && menu.children\n                        ? 'nav-item dropdown'\n                        : 'nav-item',\n                      menu.megaMenu ? 'dropdown-mega' : '',\n                      { 'new-nav-item': menu.badge },\n                    ]\">\n                      <HeaderElementsMenuList  :show=\"true\" :menu=\"menu\" />\n                    </li>\n                  </ul>\n                </div>\n              </div>\n              <!-- <div class=\"offcanvas-backdrop fade\" :class=\"active ? 'show' : ''\"></div> -->\n            </div>\n            <div class=\"right-nav\">\n              <HeaderElementsSupport :themeOptions=\"themeOptions\" :style=\"'standard'\" />\n              <HeaderElementsTodayDeal  :style=\"'standard'\" />\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </header>\n</template>\n\n<script setup>\nimport { Menu } from \"@/data/menu\";\nlet props = defineProps({\n  themeOptions: Object,\n  logo: String,\n  sticky: Boolean,\n});\n\nconst stick = ref(false);\nconst active = ref(false);\nconst activeMenu = defineEmits();\n</script>\n",
+      "start": 1716056287072,
+      "end": 1716056287249,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287249,
+      "end": 1716056287249,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287249,
+      "end": 1716056287249,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287249,
+      "end": 1716056287249,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287249,
+      "end": 1716056287249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287249,
+      "end": 1716056287249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287249,
+      "end": 1716056287249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287249,
+      "end": 1716056287249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, renderList as _renderList, Fragment as _Fragment, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"top-nav top-header sticky-header sticky-header-3\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-12\" }\nconst _hoisted_5 = { class: \"navbar-top\" }\nconst _hoisted_6 = { class: \"middle-box\" }\nconst _hoisted_7 = { class: \"center-box\" }\nconst _hoisted_8 = { class: \"searchbar-box order-xl-1 d-none d-xl-block\" }\nconst _hoisted_9 = { class: \"rightside-menu\" }\nconst _hoisted_10 = { class: \"option-list\" }\nconst _hoisted_11 = { class: \"onhover-dropdown\" }\nconst _hoisted_12 = { class: \"onhover-dropdown\" }\nconst _hoisted_13 = { class: \"container-fluid-lg\" }\nconst _hoisted_14 = { class: \"row\" }\nconst _hoisted_15 = { class: \"col-12\" }\nconst _hoisted_16 = { class: \"main-nav\" }\nconst _hoisted_17 = { class: \"header-nav-left\" }\nconst _hoisted_18 = { class: \"main-nav navbar navbar-expand-xl navbar-light navbar-sticky\" }\nconst _hoisted_19 = { class: \"offcanvas-header navbar-shadow\" }\nconst _hoisted_20 = { class: \"offcanvas-body\" }\nconst _hoisted_21 = { class: \"navbar-nav\" }\nconst _hoisted_22 = { class: \"right-nav\" }\n\nimport { Menu } from \"@/data/menu\";\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  themeOptions: Object,\n  logo: String,\n  sticky: Boolean,\n},\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\n\nconst stick = ref(false);\nconst active = ref(false);\nconst activeMenu = __emit;\n\nreturn (_ctx, _cache) => {\n  const _component_HeaderElementsTopHeader = _resolveComponent(\"HeaderElementsTopHeader\")\n  const _component_HeaderElementsNavMenuButton = _resolveComponent(\"HeaderElementsNavMenuButton\")\n  const _component_HeaderElementsLogo = _resolveComponent(\"HeaderElementsLogo\")\n  const _component_HeaderElementsSearch = _resolveComponent(\"HeaderElementsSearch\")\n  const _component_HeaderElementsMyAccount = _resolveComponent(\"HeaderElementsMyAccount\")\n  const _component_HeaderElementsSearchBox = _resolveComponent(\"HeaderElementsSearchBox\")\n  const _component_HeaderElementsCompare = _resolveComponent(\"HeaderElementsCompare\")\n  const _component_HeaderElementsWishlist = _resolveComponent(\"HeaderElementsWishlist\")\n  const _component_HeaderElementsCarts = _resolveComponent(\"HeaderElementsCarts\")\n  const _component_HeaderElementsCategory = _resolveComponent(\"HeaderElementsCategory\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_HeaderElementsMenuList = _resolveComponent(\"HeaderElementsMenuList\")\n  const _component_HeaderElementsSupport = _resolveComponent(\"HeaderElementsSupport\")\n  const _component_HeaderElementsTodayDeal = _resolveComponent(\"HeaderElementsTodayDeal\")\n\n  return (_openBlock(), _createElementBlock(\"header\", {\n    class: _normalizeClass([\"header-2\", { active: _unref(stick) && __props.sticky }])\n  }, [\n    (__props.themeOptions?.header?.page_top_bar_enable)\n      ? (_openBlock(), _createBlock(_component_HeaderElementsTopHeader, {\n          key: 0,\n          themeOptions: __props.themeOptions\n        }, null, 8, [\"themeOptions\"]))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"div\", _hoisted_5, [\n              _createVNode(_component_HeaderElementsNavMenuButton, {\n                onActiveMenu: _cache[0] || (_cache[0] = $event => (_ctx.toggle($event))),\n                show: _unref(active)\n              }, null, 8, [\"show\"]),\n              _createVNode(_component_HeaderElementsLogo, {\n                themeOptions: __props.themeOptions,\n                textClass: 'txt-theme f-w-600',\n                logo: __props.logo\n              }, null, 8, [\"themeOptions\", \"logo\"]),\n              _createElementVNode(\"div\", _hoisted_6, [\n                _createElementVNode(\"div\", _hoisted_7, [\n                  _createElementVNode(\"div\", _hoisted_8, [\n                    _createVNode(_component_HeaderElementsSearch, { style: 'standard' })\n                  ])\n                ])\n              ]),\n              _createElementVNode(\"div\", _hoisted_9, [\n                _createElementVNode(\"div\", _hoisted_10, [\n                  _createElementVNode(\"ul\", null, [\n                    _createElementVNode(\"li\", null, [\n                      _createVNode(_component_HeaderElementsMyAccount, { style: 'standard' })\n                    ]),\n                    _createElementVNode(\"li\", null, [\n                      _createVNode(_component_HeaderElementsSearchBox, { style: 'standard' })\n                    ]),\n                    _createElementVNode(\"li\", null, [\n                      _createVNode(_component_HeaderElementsCompare)\n                    ]),\n                    _createElementVNode(\"li\", _hoisted_11, [\n                      _createVNode(_component_HeaderElementsWishlist, { style: 'classic' })\n                    ]),\n                    _createElementVNode(\"li\", _hoisted_12, [\n                      _createVNode(_component_HeaderElementsCarts, { style: 'classic' })\n                    ])\n                  ])\n                ])\n              ])\n            ])\n          ])\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_13, [\n      _createElementVNode(\"div\", _hoisted_14, [\n        _createElementVNode(\"div\", _hoisted_15, [\n          _createElementVNode(\"div\", _hoisted_16, [\n            _createElementVNode(\"div\", _hoisted_17, [\n              _createVNode(_component_HeaderElementsCategory, { data: __props.themeOptions }, null, 8, [\"data\"])\n            ]),\n            _createElementVNode(\"div\", _hoisted_18, [\n              _createElementVNode(\"div\", {\n                class: _normalizeClass([\"offcanvas offcanvas-collapse order-xl-2\", { show: _unref(active) }]),\n                id: \"primaryMenu\"\n              }, [\n                _createElementVNode(\"div\", _hoisted_19, [\n                  _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"Menu\")), 1),\n                  _createElementVNode(\"button\", {\n                    type: 'button',\n                    id: 'toggle_menu_btn',\n                    onClick: _cache[1] || (_cache[1] = $event => (_ctx.toggle(false))),\n                    class: _normalizeClass('btn-close lead')\n                  }, [\n                    _createVNode(_component_Icon, { name: \"ri:close-fill\" })\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_20, [\n                  _createElementVNode(\"ul\", _hoisted_21, [\n                    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(Menu), (menu, index) => {\n                      return (_openBlock(), _createElementBlock(\"li\", {\n                        key: index,\n                        class: _normalizeClass([\n                      menu.type == 'sub' && menu.children\n                        ? 'nav-item dropdown'\n                        : 'nav-item',\n                      menu.megaMenu ? 'dropdown-mega' : '',\n                      { 'new-nav-item': menu.badge },\n                    ])\n                      }, [\n                        _createVNode(_component_HeaderElementsMenuList, {\n                          show: true,\n                          menu: menu\n                        }, null, 8, [\"menu\"])\n                      ], 2))\n                    }), 128))\n                  ])\n                ])\n              ], 2)\n            ]),\n            _createElementVNode(\"div\", _hoisted_22, [\n              _createVNode(_component_HeaderElementsSupport, {\n                themeOptions: __props.themeOptions,\n                style: 'standard'\n              }, null, 8, [\"themeOptions\"]),\n              _createVNode(_component_HeaderElementsTodayDeal, { style: 'standard' })\n            ])\n          ])\n        ])\n      ])\n    ])\n  ], 2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287249,
+      "end": 1716056287250,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287250,
+      "end": 1716056287250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, renderList as _renderList, Fragment as _Fragment, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"top-nav top-header sticky-header sticky-header-3\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-12\" }\nconst _hoisted_5 = { class: \"navbar-top\" }\nconst _hoisted_6 = { class: \"middle-box\" }\nconst _hoisted_7 = { class: \"center-box\" }\nconst _hoisted_8 = { class: \"searchbar-box order-xl-1 d-none d-xl-block\" }\nconst _hoisted_9 = { class: \"rightside-menu\" }\nconst _hoisted_10 = { class: \"option-list\" }\nconst _hoisted_11 = { class: \"onhover-dropdown\" }\nconst _hoisted_12 = { class: \"onhover-dropdown\" }\nconst _hoisted_13 = { class: \"container-fluid-lg\" }\nconst _hoisted_14 = { class: \"row\" }\nconst _hoisted_15 = { class: \"col-12\" }\nconst _hoisted_16 = { class: \"main-nav\" }\nconst _hoisted_17 = { class: \"header-nav-left\" }\nconst _hoisted_18 = { class: \"main-nav navbar navbar-expand-xl navbar-light navbar-sticky\" }\nconst _hoisted_19 = { class: \"offcanvas-header navbar-shadow\" }\nconst _hoisted_20 = { class: \"offcanvas-body\" }\nconst _hoisted_21 = { class: \"navbar-nav\" }\nconst _hoisted_22 = { class: \"right-nav\" }\n\nimport { Menu } from \"@/data/menu\";\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  themeOptions: Object,\n  logo: String,\n  sticky: Boolean,\n},\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\n\nconst stick = ref(false);\nconst active = ref(false);\nconst activeMenu = __emit;\n\nreturn (_ctx, _cache) => {\n  const _component_HeaderElementsTopHeader = _resolveComponent(\"HeaderElementsTopHeader\")\n  const _component_HeaderElementsNavMenuButton = _resolveComponent(\"HeaderElementsNavMenuButton\")\n  const _component_HeaderElementsLogo = _resolveComponent(\"HeaderElementsLogo\")\n  const _component_HeaderElementsSearch = _resolveComponent(\"HeaderElementsSearch\")\n  const _component_HeaderElementsMyAccount = _resolveComponent(\"HeaderElementsMyAccount\")\n  const _component_HeaderElementsSearchBox = _resolveComponent(\"HeaderElementsSearchBox\")\n  const _component_HeaderElementsCompare = _resolveComponent(\"HeaderElementsCompare\")\n  const _component_HeaderElementsWishlist = _resolveComponent(\"HeaderElementsWishlist\")\n  const _component_HeaderElementsCarts = _resolveComponent(\"HeaderElementsCarts\")\n  const _component_HeaderElementsCategory = _resolveComponent(\"HeaderElementsCategory\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_HeaderElementsMenuList = _resolveComponent(\"HeaderElementsMenuList\")\n  const _component_HeaderElementsSupport = _resolveComponent(\"HeaderElementsSupport\")\n  const _component_HeaderElementsTodayDeal = _resolveComponent(\"HeaderElementsTodayDeal\")\n\n  return (_openBlock(), _createElementBlock(\"header\", {\n    class: _normalizeClass([\"header-2\", { active: _unref(stick) && __props.sticky }])\n  }, [\n    (__props.themeOptions?.header?.page_top_bar_enable)\n      ? (_openBlock(), _createBlock(_component_HeaderElementsTopHeader, {\n          key: 0,\n          themeOptions: __props.themeOptions\n        }, null, 8, [\"themeOptions\"]))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"div\", _hoisted_5, [\n              _createVNode(_component_HeaderElementsNavMenuButton, {\n                onActiveMenu: _cache[0] || (_cache[0] = $event => (_ctx.toggle($event))),\n                show: _unref(active)\n              }, null, 8, [\"show\"]),\n              _createVNode(_component_HeaderElementsLogo, {\n                themeOptions: __props.themeOptions,\n                textClass: 'txt-theme f-w-600',\n                logo: __props.logo\n              }, null, 8, [\"themeOptions\", \"logo\"]),\n              _createElementVNode(\"div\", _hoisted_6, [\n                _createElementVNode(\"div\", _hoisted_7, [\n                  _createElementVNode(\"div\", _hoisted_8, [\n                    _createVNode(_component_HeaderElementsSearch, { style: 'standard' })\n                  ])\n                ])\n              ]),\n              _createElementVNode(\"div\", _hoisted_9, [\n                _createElementVNode(\"div\", _hoisted_10, [\n                  _createElementVNode(\"ul\", null, [\n                    _createElementVNode(\"li\", null, [\n                      _createVNode(_component_HeaderElementsMyAccount, { style: 'standard' })\n                    ]),\n                    _createElementVNode(\"li\", null, [\n                      _createVNode(_component_HeaderElementsSearchBox, { style: 'standard' })\n                    ]),\n                    _createElementVNode(\"li\", null, [\n                      _createVNode(_component_HeaderElementsCompare)\n                    ]),\n                    _createElementVNode(\"li\", _hoisted_11, [\n                      _createVNode(_component_HeaderElementsWishlist, { style: 'classic' })\n                    ]),\n                    _createElementVNode(\"li\", _hoisted_12, [\n                      _createVNode(_component_HeaderElementsCarts, { style: 'classic' })\n                    ])\n                  ])\n                ])\n              ])\n            ])\n          ])\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_13, [\n      _createElementVNode(\"div\", _hoisted_14, [\n        _createElementVNode(\"div\", _hoisted_15, [\n          _createElementVNode(\"div\", _hoisted_16, [\n            _createElementVNode(\"div\", _hoisted_17, [\n              _createVNode(_component_HeaderElementsCategory, { data: __props.themeOptions }, null, 8, [\"data\"])\n            ]),\n            _createElementVNode(\"div\", _hoisted_18, [\n              _createElementVNode(\"div\", {\n                class: _normalizeClass([\"offcanvas offcanvas-collapse order-xl-2\", { show: _unref(active) }]),\n                id: \"primaryMenu\"\n              }, [\n                _createElementVNode(\"div\", _hoisted_19, [\n                  _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"Menu\")), 1),\n                  _createElementVNode(\"button\", {\n                    type: 'button',\n                    id: 'toggle_menu_btn',\n                    onClick: _cache[1] || (_cache[1] = $event => (_ctx.toggle(false))),\n                    class: _normalizeClass('btn-close lead')\n                  }, [\n                    _createVNode(_component_Icon, { name: \"ri:close-fill\" })\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_20, [\n                  _createElementVNode(\"ul\", _hoisted_21, [\n                    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(Menu), (menu, index) => {\n                      return (_openBlock(), _createElementBlock(\"li\", {\n                        key: index,\n                        class: _normalizeClass([\n                      menu.type == 'sub' && menu.children\n                        ? 'nav-item dropdown'\n                        : 'nav-item',\n                      menu.megaMenu ? 'dropdown-mega' : '',\n                      { 'new-nav-item': menu.badge },\n                    ])\n                      }, [\n                        _createVNode(_component_HeaderElementsMenuList, {\n                          show: true,\n                          menu: menu\n                        }, null, 8, [\"menu\"])\n                      ], 2))\n                    }), 128))\n                  ])\n                ])\n              ], 2)\n            ]),\n            _createElementVNode(\"div\", _hoisted_22, [\n              _createVNode(_component_HeaderElementsSupport, {\n                themeOptions: __props.themeOptions,\n                style: 'standard'\n              }, null, 8, [\"themeOptions\"]),\n              _createVNode(_component_HeaderElementsTodayDeal, { style: 'standard' })\n            ])\n          ])\n        ])\n      ])\n    ])\n  ], 2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287250,
+      "end": 1716056287254,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287254,
+      "end": 1716056287254,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287254,
+      "end": 1716056287254,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287254,
+      "end": 1716056287254,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287254,
+      "end": 1716056287254,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/TopHeader.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/NavMenuButton.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Logo.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Search.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/MyAccount.vue\";\nimport { default as __nuxt_component_5 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/SearchBox.vue\";\nimport { default as __nuxt_component_6 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Compare.vue\";\nimport { default as __nuxt_component_7 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Wishlist.vue\";\nimport { default as __nuxt_component_8 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Carts/index.vue\";\nimport { default as __nuxt_component_9 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Category.vue\";\nimport { default as __nuxt_component_10 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_11 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/MenuList.vue\";\nimport { default as __nuxt_component_12 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Support.vue\";\nimport { default as __nuxt_component_13 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/TodayDeal.vue\";\nimport { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, renderList as _renderList, Fragment as _Fragment, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"top-nav top-header sticky-header sticky-header-3\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-12\" }\nconst _hoisted_5 = { class: \"navbar-top\" }\nconst _hoisted_6 = { class: \"middle-box\" }\nconst _hoisted_7 = { class: \"center-box\" }\nconst _hoisted_8 = { class: \"searchbar-box order-xl-1 d-none d-xl-block\" }\nconst _hoisted_9 = { class: \"rightside-menu\" }\nconst _hoisted_10 = { class: \"option-list\" }\nconst _hoisted_11 = { class: \"onhover-dropdown\" }\nconst _hoisted_12 = { class: \"onhover-dropdown\" }\nconst _hoisted_13 = { class: \"container-fluid-lg\" }\nconst _hoisted_14 = { class: \"row\" }\nconst _hoisted_15 = { class: \"col-12\" }\nconst _hoisted_16 = { class: \"main-nav\" }\nconst _hoisted_17 = { class: \"header-nav-left\" }\nconst _hoisted_18 = { class: \"main-nav navbar navbar-expand-xl navbar-light navbar-sticky\" }\nconst _hoisted_19 = { class: \"offcanvas-header navbar-shadow\" }\nconst _hoisted_20 = { class: \"offcanvas-body\" }\nconst _hoisted_21 = { class: \"navbar-nav\" }\nconst _hoisted_22 = { class: \"right-nav\" }\n\nimport { Menu } from \"@/data/menu\";\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  themeOptions: Object,\n  logo: String,\n  sticky: Boolean,\n},\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\n\nconst stick = ref(false);\nconst active = ref(false);\nconst activeMenu = __emit;\n\nreturn (_ctx, _cache) => {\n  const _component_HeaderElementsTopHeader = __nuxt_component_0\n  const _component_HeaderElementsNavMenuButton = __nuxt_component_1\n  const _component_HeaderElementsLogo = __nuxt_component_2\n  const _component_HeaderElementsSearch = __nuxt_component_3\n  const _component_HeaderElementsMyAccount = __nuxt_component_4\n  const _component_HeaderElementsSearchBox = __nuxt_component_5\n  const _component_HeaderElementsCompare = __nuxt_component_6\n  const _component_HeaderElementsWishlist = __nuxt_component_7\n  const _component_HeaderElementsCarts = __nuxt_component_8\n  const _component_HeaderElementsCategory = __nuxt_component_9\n  const _component_Icon = __nuxt_component_10\n  const _component_HeaderElementsMenuList = __nuxt_component_11\n  const _component_HeaderElementsSupport = __nuxt_component_12\n  const _component_HeaderElementsTodayDeal = __nuxt_component_13\n\n  return (_openBlock(), _createElementBlock(\"header\", {\n    class: _normalizeClass([\"header-2\", { active: _unref(stick) && __props.sticky }])\n  }, [\n    (__props.themeOptions?.header?.page_top_bar_enable)\n      ? (_openBlock(), _createBlock(_component_HeaderElementsTopHeader, {\n          key: 0,\n          themeOptions: __props.themeOptions\n        }, null, 8, [\"themeOptions\"]))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"div\", _hoisted_5, [\n              _createVNode(_component_HeaderElementsNavMenuButton, {\n                onActiveMenu: _cache[0] || (_cache[0] = $event => (_ctx.toggle($event))),\n                show: _unref(active)\n              }, null, 8, [\"show\"]),\n              _createVNode(_component_HeaderElementsLogo, {\n                themeOptions: __props.themeOptions,\n                textClass: 'txt-theme f-w-600',\n                logo: __props.logo\n              }, null, 8, [\"themeOptions\", \"logo\"]),\n              _createElementVNode(\"div\", _hoisted_6, [\n                _createElementVNode(\"div\", _hoisted_7, [\n                  _createElementVNode(\"div\", _hoisted_8, [\n                    _createVNode(_component_HeaderElementsSearch, { style: 'standard' })\n                  ])\n                ])\n              ]),\n              _createElementVNode(\"div\", _hoisted_9, [\n                _createElementVNode(\"div\", _hoisted_10, [\n                  _createElementVNode(\"ul\", null, [\n                    _createElementVNode(\"li\", null, [\n                      _createVNode(_component_HeaderElementsMyAccount, { style: 'standard' })\n                    ]),\n                    _createElementVNode(\"li\", null, [\n                      _createVNode(_component_HeaderElementsSearchBox, { style: 'standard' })\n                    ]),\n                    _createElementVNode(\"li\", null, [\n                      _createVNode(_component_HeaderElementsCompare)\n                    ]),\n                    _createElementVNode(\"li\", _hoisted_11, [\n                      _createVNode(_component_HeaderElementsWishlist, { style: 'classic' })\n                    ]),\n                    _createElementVNode(\"li\", _hoisted_12, [\n                      _createVNode(_component_HeaderElementsCarts, { style: 'classic' })\n                    ])\n                  ])\n                ])\n              ])\n            ])\n          ])\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_13, [\n      _createElementVNode(\"div\", _hoisted_14, [\n        _createElementVNode(\"div\", _hoisted_15, [\n          _createElementVNode(\"div\", _hoisted_16, [\n            _createElementVNode(\"div\", _hoisted_17, [\n              _createVNode(_component_HeaderElementsCategory, { data: __props.themeOptions }, null, 8, [\"data\"])\n            ]),\n            _createElementVNode(\"div\", _hoisted_18, [\n              _createElementVNode(\"div\", {\n                class: _normalizeClass([\"offcanvas offcanvas-collapse order-xl-2\", { show: _unref(active) }]),\n                id: \"primaryMenu\"\n              }, [\n                _createElementVNode(\"div\", _hoisted_19, [\n                  _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"Menu\")), 1),\n                  _createElementVNode(\"button\", {\n                    type: 'button',\n                    id: 'toggle_menu_btn',\n                    onClick: _cache[1] || (_cache[1] = $event => (_ctx.toggle(false))),\n                    class: _normalizeClass('btn-close lead')\n                  }, [\n                    _createVNode(_component_Icon, { name: \"ri:close-fill\" })\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_20, [\n                  _createElementVNode(\"ul\", _hoisted_21, [\n                    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(Menu), (menu, index) => {\n                      return (_openBlock(), _createElementBlock(\"li\", {\n                        key: index,\n                        class: _normalizeClass([\n                      menu.type == 'sub' && menu.children\n                        ? 'nav-item dropdown'\n                        : 'nav-item',\n                      menu.megaMenu ? 'dropdown-mega' : '',\n                      { 'new-nav-item': menu.badge },\n                    ])\n                      }, [\n                        _createVNode(_component_HeaderElementsMenuList, {\n                          show: true,\n                          menu: menu\n                        }, null, 8, [\"menu\"])\n                      ], 2))\n                    }), 128))\n                  ])\n                ])\n              ], 2)\n            ]),\n            _createElementVNode(\"div\", _hoisted_22, [\n              _createVNode(_component_HeaderElementsSupport, {\n                themeOptions: __props.themeOptions,\n                style: 'standard'\n              }, null, 8, [\"themeOptions\"]),\n              _createVNode(_component_HeaderElementsTodayDeal, { style: 'standard' })\n            ])\n          ])\n        ])\n      ])\n    ])\n  ], 2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287254,
+      "end": 1716056287255,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287255,
+      "end": 1716056287255,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287255,
+      "end": 1716056287255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287255,
+      "end": 1716056287255,
+      "order": "normal"
+    }
+  ]
+}

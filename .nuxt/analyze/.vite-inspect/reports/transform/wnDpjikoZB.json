@@ -1,0 +1,212 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/plugins/ssrPlugins.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineNuxtPlugin } from \"#app\";\nimport Slider from \"@vueform/slider\";\nimport { Swiper, SwiperSlide } from \"swiper/vue\";\nimport { VueImageZoomer } from 'vue-image-zoomer'\nimport \"swiper/css\";\nimport \"swiper/css/bundle\";\n\nimport mitt from \"mitt\";\nimport 'vue-image-zoomer/dist/style.css';\nimport Vue3Toastify, { toast } from \"vue3-toastify\";\nimport \"vue3-toastify/dist/index.css\";\nimport \"animate.css\";\nconst customAnimation = {\n  enter: \"animate__animated animate__bounceInUp\",\n  exit: \"animate__animated animate__bounceOutUp\",\n};\n\nexport default defineNuxtPlugin((nuxtApp) => {\n  nuxtApp.vueApp.component(\"Swiper\", Swiper);\n  nuxtApp.vueApp.component(\"SwiperSlide\", SwiperSlide);\n  nuxtApp.vueApp.component(\"RangeSlider\", Slider);  \n  if (process.client) {\n  nuxtApp.vueApp.component(\"vue-image-zoomer\",VueImageZoomer)\n  }\n  nuxtApp.provide(\"emitter\", mitt());\n\n  nuxtApp.provide( \"useToaster\", async ({ type = \"success\", msg = \"Your Message Here\", time = 3000, position = \"top-right\", }) => await toast[type](msg, { autoClose: time, position: position, transition: position || customAnimation, theme: \"colored\", }) );\n});\n",
+      "start": 1716056261027,
+      "end": 1716056261252,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056261252,
+      "end": 1716056261252,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056261252,
+      "end": 1716056261252,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056261252,
+      "end": 1716056261252,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056261252,
+      "end": 1716056261252,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056261252,
+      "end": 1716056261252,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056261253,
+      "end": 1716056261253,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056261253,
+      "end": 1716056261253,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056261253,
+      "end": 1716056261253,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056261253,
+      "end": 1716056261253,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056261253,
+      "end": 1716056261253,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056261253,
+      "end": 1716056261253,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056261253,
+      "end": 1716056261253,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056261253,
+      "end": 1716056261253,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056261253,
+      "end": 1716056261254,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056261254,
+      "end": 1716056261254,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { defineNuxtPlugin } from \"#app\";\nimport Slider from \"@vueform/slider\";\nimport { Swiper, SwiperSlide } from \"swiper/vue\";\nimport { VueImageZoomer } from \"vue-image-zoomer\";\nimport \"swiper/css\";\nimport \"swiper/css/bundle\";\nimport mitt from \"mitt\";\nimport \"vue-image-zoomer/dist/style.css\";\nimport Vue3Toastify, { toast } from \"vue3-toastify\";\nimport \"vue3-toastify/dist/index.css\";\nimport \"animate.css\";\nconst customAnimation = {\n  enter: \"animate__animated animate__bounceInUp\",\n  exit: \"animate__animated animate__bounceOutUp\"\n};\nexport default defineNuxtPlugin((nuxtApp) => {\n  nuxtApp.vueApp.component(\"Swiper\", Swiper);\n  nuxtApp.vueApp.component(\"SwiperSlide\", SwiperSlide);\n  nuxtApp.vueApp.component(\"RangeSlider\", Slider);\n  if (true) {\n    nuxtApp.vueApp.component(\"vue-image-zoomer\", VueImageZoomer);\n  }\n  nuxtApp.provide(\"emitter\", mitt());\n  nuxtApp.provide(\"useToaster\", async ({ type = \"success\", msg = \"Your Message Here\", time = 3e3, position = \"top-right\" }) => await toast[type](msg, { autoClose: time, position, transition: position || customAnimation, theme: \"colored\" }));\n});\n",
+      "start": 1716056261254,
+      "end": 1716056261440,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056261440,
+      "end": 1716056261440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056261440,
+      "end": 1716056261440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056261440,
+      "end": 1716056261440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056261440,
+      "end": 1716056261440,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056261440,
+      "end": 1716056261440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056261440,
+      "end": 1716056261440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056261440,
+      "end": 1716056261440,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056261440,
+      "end": 1716056261440,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056261440,
+      "end": 1716056261441,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056261441,
+      "end": 1716056261442,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056261442,
+      "end": 1716056261442,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056261442,
+      "end": 1716056261442,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056261443,
+      "end": 1716056261443,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056261443,
+      "end": 1716056261443,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056261443,
+      "end": 1716056261443,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056261443,
+      "end": 1716056261443,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056261443,
+      "end": 1716056261444,
+      "order": "normal"
+    }
+  ]
+}

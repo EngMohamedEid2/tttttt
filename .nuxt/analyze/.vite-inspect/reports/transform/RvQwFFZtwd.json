@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Sidebar/index.vue?nuxt_component=async&nuxt_component_name=AccountSidebar",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"dashboard-left-sidebar\">\n    <div class=\"close-button d-flex d-lg-none\">\n      <WidgetsButton :classes=\"'close-sidebar'\" :style=\"'button'\" :id=\"'close_sidebar_btn'\" @onClick=\"closeSidebar()\">\n        <Icon name=\"ri-close-fill\"></Icon>\n      </WidgetsButton>\n    </div>\n    <div class=\"profile-box\">\n      <div class=\"cover-image\">\n        <img src=\"/images/inner-page/cover-img.jpg\" class=\"img-fluid\" alt=\"cover-img\" />\n      </div>\n\n      <div class=\"profile-contain\">\n        <div class=\"profile-image\">\n          <div class=\"position-relative\">\n            <img :src=\"user?.profile_image?.original_url\" class=\"update_img\" alt=\"profile\"\n              v-if=\"user?.profile_image && user?.profile_image?.original_url\" />\n            <div class=\"user-round\" v-else>\n              <h4>{{ user?.name?.charAt(0)?.toString()?.toUpperCase() }}</h4>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"profile-name\">\n          <h3>{{ UserInfo.name }}</h3>\n          <h6 class=\"text-content\">{{ UserInfo.email }}</h6>\n        </div>\n      </div>\n    </div>\n    <AccountSidebarNavLink />\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  user: Object,\n  UserInfo: Object,\n});\nlet emit = defineEmits([\"close\"])\nfunction closeSidebar() {\n  emit('close')\n}\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056261925,
+      "end": 1716056262557,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056262557,
+      "end": 1716056262557,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056262557,
+      "end": 1716056262557,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056262557,
+      "end": 1716056262557,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056262557,
+      "end": 1716056262557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056262557,
+      "end": 1716056262557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056262557,
+      "end": 1716056262557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056262557,
+      "end": 1716056262557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString } from \"vue\"\nimport _imports_0 from '/images/inner-page/cover-img.jpg'\n\n\nconst _hoisted_1 = { class: \"dashboard-left-sidebar\" }\nconst _hoisted_2 = { class: \"close-button d-flex d-lg-none\" }\nconst _hoisted_3 = { class: \"profile-box\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"cover-image\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_0,\n    class: \"img-fluid\",\n    alt: \"cover-img\"\n  })\n], -1)\nconst _hoisted_5 = { class: \"profile-contain\" }\nconst _hoisted_6 = { class: \"profile-image\" }\nconst _hoisted_7 = { class: \"position-relative\" }\nconst _hoisted_8 = [\"src\"]\nconst _hoisted_9 = {\n  key: 1,\n  class: \"user-round\"\n}\nconst _hoisted_10 = { class: \"profile-name\" }\nconst _hoisted_11 = { class: \"text-content\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  user: Object,\n  UserInfo: Object,\n},\n  emits: [\"close\"],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\nlet emit = __emit\nfunction closeSidebar() {\n  emit('close')\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_AccountSidebarNavLink = _resolveComponent(\"AccountSidebarNavLink\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(_component_WidgetsButton, {\n        classes: 'close-sidebar',\n        style: 'button',\n        id: 'close_sidebar_btn',\n        onOnClick: _cache[0] || (_cache[0] = $event => (closeSidebar()))\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_Icon, { name: \"ri-close-fill\" })\n        ]),\n        _: 1\n      })\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _hoisted_4,\n      _createElementVNode(\"div\", _hoisted_5, [\n        _createElementVNode(\"div\", _hoisted_6, [\n          _createElementVNode(\"div\", _hoisted_7, [\n            (__props.user?.profile_image && __props.user?.profile_image?.original_url)\n              ? (_openBlock(), _createElementBlock(\"img\", {\n                  key: 0,\n                  src: __props.user?.profile_image?.original_url,\n                  class: \"update_img\",\n                  alt: \"profile\"\n                }, null, 8, _hoisted_8))\n              : (_openBlock(), _createElementBlock(\"div\", _hoisted_9, [\n                  _createElementVNode(\"h4\", null, _toDisplayString(__props.user?.name?.charAt(0)?.toString()?.toUpperCase()), 1)\n                ]))\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_10, [\n          _createElementVNode(\"h3\", null, _toDisplayString(__props.UserInfo.name), 1),\n          _createElementVNode(\"h6\", _hoisted_11, _toDisplayString(__props.UserInfo.email), 1)\n        ])\n      ])\n    ]),\n    _createVNode(_component_AccountSidebarNavLink)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056262557,
+      "end": 1716056262561,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056262561,
+      "end": 1716056262561,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056262561,
+      "end": 1716056262561,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Sidebar/index.vue\").then(r => r.default))",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056262562,
+      "end": 1716056262562,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056262562,
+      "end": 1716056262563,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056262563,
+      "end": 1716056262563,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056262563,
+      "end": 1716056262563,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056262566,
+      "end": 1716056262566,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Sidebar/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056262566,
+      "end": 1716056262567,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056262567,
+      "end": 1716056262567,
+      "order": "normal"
+    }
+  ]
+}

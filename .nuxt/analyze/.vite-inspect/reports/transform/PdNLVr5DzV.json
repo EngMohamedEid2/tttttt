@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n    <Teleport to=\"body\">\n        <Transition name=\"modals\">\n            <div class=\"modal fade theme-modal show d-block\" :class=\"modalClass\" v-if=\"showModal\" :id=\"modalId\" tabindex=\"-1\">\n                <div class=\"modal-dialog modal-dialog-centered\" :class=\"classes\">\n                    <OnClickOutside class=\"modal-content\" @trigger=\"() => { emit('close'); }\">\n                        <!-- <div class=\"modal-header p-0\">-->\n                        <button type=\"button\" class=\"btn-close\" @click.prevent=\"() => { emit('close') }\">\n                            <Icon name=\"ri:close-line\"></Icon>\n                        </button>\n                        <!-- </div>-->\n\n                        <div class=\"modal-body p-0\">\n                            <slot />\n                        </div>\n                    </OnClickOutside>\n                </div>\n            </div>\n        </Transition>\n    </Teleport>\n    <Teleport to=\"body\">\n        <Transition name=\"modals\">\n            <div class=\"bg-overlay show d-block\" v-if=\"showModal\"></div>\n        </Transition>\n    </Teleport>\n</div>\n</template>\n\n<script setup>\nimport { OnClickOutside } from '@vueuse/components';\nlet emit = defineEmits(['close'])\nlet props = defineProps({\n    modalClass:String,\n    modalId: String,\n    classes:String,\n    showModal: Boolean\n})\n</script>\n\n<style lang=\"scss\" scoped>\n.modals-enter-active,\n.modals-leave-active {\n    transition: all 0.25s ease;\n}\n\n.modals-enter-from,\n.modals-leave-to {\n    opacity: 0;\n    transform: scale(1.1);\n}\n</style>\n",
+      "start": 1716056288254,
+      "end": 1716056288394,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056288394,
+      "end": 1716056288394,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056288394,
+      "end": 1716056288394,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056288394,
+      "end": 1716056288394,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056288394,
+      "end": 1716056288395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056288395,
+      "end": 1716056288395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056288395,
+      "end": 1716056288395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056288395,
+      "end": 1716056288395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, withModifiers as _withModifiers, createElementVNode as _createElementVNode, renderSlot as _renderSlot, withCtx as _withCtx, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, Transition as _Transition, Teleport as _Teleport, createBlock as _createBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-9664805c\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = [\"id\"]\nconst _hoisted_2 = { class: \"modal-body p-0\" }\nconst _hoisted_3 = {\n  key: 0,\n  class: \"bg-overlay show d-block\"\n}\n\nimport { OnClickOutside } from '@vueuse/components';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    modalClass:String,\n    modalId: String,\n    classes:String,\n    showModal: Boolean\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet emit = __emit\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (_openBlock(), _createBlock(_Teleport, { to: \"body\" }, [\n      _createVNode(_Transition, { name: \"modals\" }, {\n        default: _withCtx(() => [\n          (__props.showModal)\n            ? (_openBlock(), _createElementBlock(\"div\", {\n                key: 0,\n                class: _normalizeClass([\"modal fade theme-modal show d-block\", __props.modalClass]),\n                id: __props.modalId,\n                tabindex: \"-1\"\n              }, [\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([\"modal-dialog modal-dialog-centered\", __props.classes])\n                }, [\n                  _createVNode(_unref(OnClickOutside), {\n                    class: \"modal-content\",\n                    onTrigger: _cache[1] || (_cache[1] = () => { _unref(emit)('close'); })\n                  }, {\n                    default: _withCtx(() => [\n                      _createElementVNode(\"button\", {\n                        type: \"button\",\n                        class: \"btn-close\",\n                        onClick: _cache[0] || (_cache[0] = _withModifiers(() => { _unref(emit)('close') }, [\"prevent\"]))\n                      }, [\n                        _createVNode(_component_Icon, { name: \"ri:close-line\" })\n                      ]),\n                      _createElementVNode(\"div\", _hoisted_2, [\n                        _renderSlot(_ctx.$slots, \"default\", {}, undefined, true)\n                      ])\n                    ]),\n                    _: 3\n                  })\n                ], 2)\n              ], 10, _hoisted_1))\n            : _createCommentVNode(\"\", true)\n        ]),\n        _: 3\n      })\n    ])),\n    (_openBlock(), _createBlock(_Teleport, { to: \"body\" }, [\n      _createVNode(_Transition, { name: \"modals\" }, {\n        default: _withCtx(() => [\n          (__props.showModal)\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3))\n            : _createCommentVNode(\"\", true)\n        ]),\n        _: 1\n      })\n    ]))\n  ]))\n}\n}\n\n}\n\n\nimport \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue?vue&type=style&index=0&scoped=9664805c&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-9664805c\"]])",
+      "start": 1716056288395,
+      "end": 1716056288395,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056288395,
+      "end": 1716056288395,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288395,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056288396,
+      "end": 1716056288396,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056288396,
+      "end": 1716056288398,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056288398,
+      "end": 1716056288398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056288398,
+      "end": 1716056288398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056288398,
+      "end": 1716056288398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056288398,
+      "end": 1716056288398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, withModifiers as _withModifiers, createElementVNode as _createElementVNode, renderSlot as _renderSlot, withCtx as _withCtx, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, Transition as _Transition, Teleport as _Teleport, createBlock as _createBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-9664805c\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = [\"id\"]\nconst _hoisted_2 = { class: \"modal-body p-0\" }\nconst _hoisted_3 = {\n  key: 0,\n  class: \"bg-overlay show d-block\"\n}\n\nimport { OnClickOutside } from '@vueuse/components';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    modalClass:String,\n    modalId: String,\n    classes:String,\n    showModal: Boolean\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet emit = __emit\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (_openBlock(), _createBlock(_Teleport, { to: \"body\" }, [\n      _createVNode(_Transition, { name: \"modals\" }, {\n        default: _withCtx(() => [\n          (__props.showModal)\n            ? (_openBlock(), _createElementBlock(\"div\", {\n                key: 0,\n                class: _normalizeClass([\"modal fade theme-modal show d-block\", __props.modalClass]),\n                id: __props.modalId,\n                tabindex: \"-1\"\n              }, [\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([\"modal-dialog modal-dialog-centered\", __props.classes])\n                }, [\n                  _createVNode(_unref(OnClickOutside), {\n                    class: \"modal-content\",\n                    onTrigger: _cache[1] || (_cache[1] = () => { _unref(emit)('close'); })\n                  }, {\n                    default: _withCtx(() => [\n                      _createElementVNode(\"button\", {\n                        type: \"button\",\n                        class: \"btn-close\",\n                        onClick: _cache[0] || (_cache[0] = _withModifiers(() => { _unref(emit)('close') }, [\"prevent\"]))\n                      }, [\n                        _createVNode(_component_Icon, { name: \"ri:close-line\" })\n                      ]),\n                      _createElementVNode(\"div\", _hoisted_2, [\n                        _renderSlot(_ctx.$slots, \"default\", {}, undefined, true)\n                      ])\n                    ]),\n                    _: 3\n                  })\n                ], 2)\n              ], 10, _hoisted_1))\n            : _createCommentVNode(\"\", true)\n        ]),\n        _: 3\n      })\n    ])),\n    (_openBlock(), _createBlock(_Teleport, { to: \"body\" }, [\n      _createVNode(_Transition, { name: \"modals\" }, {\n        default: _withCtx(() => [\n          (__props.showModal)\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3))\n            : _createCommentVNode(\"\", true)\n        ]),\n        _: 1\n      })\n    ]))\n  ]))\n}\n}\n\n}\n\n\nimport \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue?vue&type=style&index=0&scoped=9664805c&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-9664805c\"]])",
+      "start": 1716056288398,
+      "end": 1716056288399,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056288399,
+      "end": 1716056288399,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056288399,
+      "end": 1716056288399,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056288399,
+      "end": 1716056288399,
+      "order": "normal"
+    }
+  ]
+}

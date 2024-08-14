@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Seller/Widgets/StoreSocialLink/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"vendor-share\">\n        <h5>{{ 'Follow Us' }} :</h5>\n        <ul>\n            <li v-if=\"store.facebook\">\n                <nuxtLink :to=\"store.facebook\" target=\"_blank\">\n                    <Icon name=\"ri:facebook-fill\"></Icon>\n                </nuxtLink>\n            </li>\n            <li v-if=\"store?.twitter\">\n                <nuxtLink :to=\"store.twitter\" target=\"_blank\">\n                    <Icon name=\"ri:twitter-fill\"></Icon>\n                </nuxtLink>\n            </li>\n            <li v-if=\"store?.instagram\">\n                <nuxtLink :to=\"store.instagram\" target=\"_blank\">\n                    <Icon name=\"ri:instagram-fill\"></Icon>\n                </nuxtLink>\n            </li>\n            <li v-if=\"store?.youtube\">\n                <nuxtLink :to=\"store.youtube\" target=\"_blank\">\n                    <Icon name=\"ri:youtube-fill\"></Icon>\n                </nuxtLink>\n            </li>\n            <li v-if=\"store?.pinterest\">\n                <nuxtLink :to=\"store.pinterest\" target=\"_blank\">\n                    <Icon name=\"ri:pinterest-fill\"></Icon>\n                </nuxtLink>\n            </li>\n        </ul>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    store: Object\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056287878,
+      "end": 1716056288025,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"vendor-share\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"h5\", null, /*#__PURE__*/_toDisplayString('Follow Us') + \" :\", -1)\nconst _hoisted_3 = { key: 0 }\nconst _hoisted_4 = { key: 1 }\nconst _hoisted_5 = { key: 2 }\nconst _hoisted_6 = { key: 3 }\nconst _hoisted_7 = { key: 4 }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    store: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_nuxtLink = _resolveComponent(\"nuxtLink\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"ul\", null, [\n      (__props.store.facebook)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_3, [\n            _createVNode(_component_nuxtLink, {\n              to: __props.store.facebook,\n              target: \"_blank\"\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri:facebook-fill\" })\n              ]),\n              _: 1\n            }, 8, [\"to\"])\n          ]))\n        : _createCommentVNode(\"\", true),\n      (__props.store?.twitter)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_4, [\n            _createVNode(_component_nuxtLink, {\n              to: __props.store.twitter,\n              target: \"_blank\"\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri:twitter-fill\" })\n              ]),\n              _: 1\n            }, 8, [\"to\"])\n          ]))\n        : _createCommentVNode(\"\", true),\n      (__props.store?.instagram)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_5, [\n            _createVNode(_component_nuxtLink, {\n              to: __props.store.instagram,\n              target: \"_blank\"\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri:instagram-fill\" })\n              ]),\n              _: 1\n            }, 8, [\"to\"])\n          ]))\n        : _createCommentVNode(\"\", true),\n      (__props.store?.youtube)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_6, [\n            _createVNode(_component_nuxtLink, {\n              to: __props.store.youtube,\n              target: \"_blank\"\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri:youtube-fill\" })\n              ]),\n              _: 1\n            }, 8, [\"to\"])\n          ]))\n        : _createCommentVNode(\"\", true),\n      (__props.store?.pinterest)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_7, [\n            _createVNode(_component_nuxtLink, {\n              to: __props.store.pinterest,\n              target: \"_blank\"\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri:pinterest-fill\" })\n              ]),\n              _: 1\n            }, 8, [\"to\"])\n          ]))\n        : _createCommentVNode(\"\", true)\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056288025,
+      "end": 1716056288025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056288025,
+      "end": 1716056288026,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056288026,
+      "end": 1716056288026,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056288026,
+      "end": 1716056288026,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056288026,
+      "end": 1716056288026,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056288026,
+      "end": 1716056288026,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056288026,
+      "end": 1716056288026,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056288026,
+      "end": 1716056288027,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056288027,
+      "end": 1716056288027,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056288027,
+      "end": 1716056288027,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056288027,
+      "end": 1716056288027,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056288027,
+      "end": 1716056288027,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"vendor-share\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"h5\", null, /*#__PURE__*/_toDisplayString('Follow Us') + \" :\", -1)\nconst _hoisted_3 = { key: 0 }\nconst _hoisted_4 = { key: 1 }\nconst _hoisted_5 = { key: 2 }\nconst _hoisted_6 = { key: 3 }\nconst _hoisted_7 = { key: 4 }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    store: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_nuxtLink = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"ul\", null, [\n      (__props.store.facebook)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_3, [\n            _createVNode(_component_nuxtLink, {\n              to: __props.store.facebook,\n              target: \"_blank\"\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri:facebook-fill\" })\n              ]),\n              _: 1\n            }, 8, [\"to\"])\n          ]))\n        : _createCommentVNode(\"\", true),\n      (__props.store?.twitter)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_4, [\n            _createVNode(_component_nuxtLink, {\n              to: __props.store.twitter,\n              target: \"_blank\"\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri:twitter-fill\" })\n              ]),\n              _: 1\n            }, 8, [\"to\"])\n          ]))\n        : _createCommentVNode(\"\", true),\n      (__props.store?.instagram)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_5, [\n            _createVNode(_component_nuxtLink, {\n              to: __props.store.instagram,\n              target: \"_blank\"\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri:instagram-fill\" })\n              ]),\n              _: 1\n            }, 8, [\"to\"])\n          ]))\n        : _createCommentVNode(\"\", true),\n      (__props.store?.youtube)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_6, [\n            _createVNode(_component_nuxtLink, {\n              to: __props.store.youtube,\n              target: \"_blank\"\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri:youtube-fill\" })\n              ]),\n              _: 1\n            }, 8, [\"to\"])\n          ]))\n        : _createCommentVNode(\"\", true),\n      (__props.store?.pinterest)\n        ? (_openBlock(), _createElementBlock(\"li\", _hoisted_7, [\n            _createVNode(_component_nuxtLink, {\n              to: __props.store.pinterest,\n              target: \"_blank\"\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri:pinterest-fill\" })\n              ]),\n              _: 1\n            }, 8, [\"to\"])\n          ]))\n        : _createCommentVNode(\"\", true)\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288027,
+      "end": 1716056288027,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056288027,
+      "end": 1716056288027,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056288028,
+      "end": 1716056288028,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056288028,
+      "end": 1716056288028,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/plugins/axios.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import axios from \"axios\";\r\n\r\nexport default defineNuxtPlugin((async) => {\r\n  return {\r\n    provide: {\r\n      axios: axios,\r\n    },\r\n  };\r\n});\r\n",
+      "start": 1716056261027,
+      "end": 1716056261233,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056261233,
+      "end": 1716056261233,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056261233,
+      "end": 1716056261234,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056261234,
+      "end": 1716056261234,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056261234,
+      "end": 1716056261234,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import axios from \"axios\";\nexport default defineNuxtPlugin((async) => {\n  return {\n    provide: {\n      axios\n    }\n  };\n});\n",
+      "start": 1716056261234,
+      "end": 1716056261419,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/plugins/axios.ts"
+        ],
+        "sourcesContent": [
+          "import axios from \"axios\";\r\n\r\nexport default defineNuxtPlugin((async) => {\r\n  return {\r\n    provide: {\r\n      axios: axios,\r\n    },\r\n  };\r\n});\r\n"
+        ],
+        "mappings": "AAAA,OAAO,WAAW;AAElB,eAAe,iBAAiB,CAAC,UAAU;AACzC,SAAO;AAAA,IACL,SAAS;AAAA,MACP;AAAA,IACF;AAAA,EACF;AACF,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056261419,
+      "end": 1716056261419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056261419,
+      "end": 1716056261419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056261419,
+      "end": 1716056261419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056261419,
+      "end": 1716056261419,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056261419,
+      "end": 1716056261420,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056261420,
+      "end": 1716056261420,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056261420,
+      "end": 1716056261420,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056261421,
+      "end": 1716056261421,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056261421,
+      "end": 1716056261421,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056261421,
+      "end": 1716056261422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056261422,
+      "end": 1716056261422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056261422,
+      "end": 1716056261422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056261422,
+      "end": 1716056261422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056261422,
+      "end": 1716056261422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056261422,
+      "end": 1716056261422,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056261422,
+      "end": 1716056261422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056261422,
+      "end": 1716056261422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056261422,
+      "end": 1716056261422,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056261423,
+      "end": 1716056261423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtPlugin } from '#app/nuxt';\nimport axios from \"axios\";\nexport default defineNuxtPlugin((async) => {\n  return {\n    provide: {\n      axios\n    }\n  };\n});\n",
+      "start": 1716056261423,
+      "end": 1716056261423,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056261423,
+      "end": 1716056261423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056261423,
+      "end": 1716056261423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056261423,
+      "end": 1716056261423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056261423,
+      "end": 1716056261423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056261423,
+      "end": 1716056261424,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056261424,
+      "end": 1716056261424,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056261424,
+      "end": 1716056261424,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056261424,
+      "end": 1716056261424,
+      "order": "normal"
+    }
+  ]
+}

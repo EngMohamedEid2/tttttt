@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Widgets/Categories/index.vue?nuxt_component=async&nuxt_component_name=ThemesWidgetsCategories",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <WidgetsCategory\n :categoryIds=\"categoryIds\"\n :style=\"style\"\n :image=\"image\"\n :theme=\"theme\"\n :title=\"title\"\n :slidesPerView=\"slidesPerView\"\n :Category=\"Category\"\n :selectedCategoryId=\"selectedCategoryId\"\n @selectedCategory=\"selectCategory($event)\" />\n</template>\n\n<script setup>\nlet props = defineProps({\n  categoryIds:Array,\n  style: { type: [String,Object],default:\"vertical\"},\n  title : String,\n  image :String,\n  theme:String,\n  selectedCategoryId :Number,\n  Category:Array,\n  slidesPerView:{type:Number,default:7}\n})\n\nconst emit = defineEmits(['selectCategory'])\n\nfunction selectCategory(id) {\n  emit('selectCategory', id)\n}\n</script>\n\n<style lang=\"scss\" scoped>\n\n</style>",
+      "start": 1716056284866,
+      "end": 1716056284979,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284979,
+      "end": 1716056284979,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284979,
+      "end": 1716056284979,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284979,
+      "end": 1716056284979,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284979,
+      "end": 1716056284979,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284979,
+      "end": 1716056284979,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284979,
+      "end": 1716056284979,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284979,
+      "end": 1716056284979,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, normalizeStyle as _normalizeStyle, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  categoryIds:Array,\n  style: { type: [String,Object],default:\"vertical\"},\n  title : String,\n  image :String,\n  theme:String,\n  selectedCategoryId :Number,\n  Category:Array,\n  slidesPerView:{type:Number,default:7}\n},\n  emits: ['selectCategory'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nconst emit = __emit\n\nfunction selectCategory(id) {\n  emit('selectCategory', id)\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsCategory = _resolveComponent(\"WidgetsCategory\")\n\n  return (_openBlock(), _createBlock(_component_WidgetsCategory, {\n    categoryIds: __props.categoryIds,\n    style: _normalizeStyle(__props.style),\n    image: __props.image,\n    theme: __props.theme,\n    title: __props.title,\n    slidesPerView: __props.slidesPerView,\n    Category: __props.Category,\n    selectedCategoryId: __props.selectedCategoryId,\n    onSelectedCategory: _cache[0] || (_cache[0] = $event => (selectCategory($event)))\n  }, null, 8, [\"categoryIds\", \"style\", \"image\", \"theme\", \"title\", \"slidesPerView\", \"Category\", \"selectedCategoryId\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284979,
+      "end": 1716056284981,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284981,
+      "end": 1716056284981,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284981,
+      "end": 1716056284981,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284981,
+      "end": 1716056284981,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284981,
+      "end": 1716056284981,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Widgets/Categories/index.vue\").then(r => r.default))",
+      "start": 1716056284981,
+      "end": 1716056284981,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Widgets/Categories/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284982,
+      "end": 1716056284982,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284983,
+      "end": 1716056284983,
+      "order": "normal"
+    }
+  ]
+}

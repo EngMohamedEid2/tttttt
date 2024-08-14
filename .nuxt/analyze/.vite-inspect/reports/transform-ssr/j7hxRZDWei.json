@@ -1,0 +1,260 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/pages/blog/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <WidgetsBreadcrumb :breadcrumbs=\"breadcrumbs\" />\n    <Blog\n      :style=\"style\"\n      :sidebar=\"sidebar\"\n      :blog=\"blog\"\n      :themeOption=\"ThemeOptions.options\"\n      :filter=\"filter\"\n    />\n  </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nlet filter = ref({\n  page: 1,\n  paginate: 12,\n  status: 1,\n  category: \"\",\n  tag: \"\",\n});\nlet router = useRoute();\nlet style = ref(\"\");\nlet sidebar = ref(\"left_sidebar\");\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nlet breadcrumb = ref({\n  title: \"Blogs\",\n});\nlet breadcrumbs = ref();\n\nlet { data: blog, pending } = await HandleRequest(\"blog\", {\n  key: \"getfilterblogs\",\n  params: filter.value,\n});\n\nfunction handleBlog() {\n  const params = router.query;\n  filter.value.category = params[\"category\"] ? params[\"category\"] : \"\";\n  filter.value.tag = params[\"tag\"] ? params[\"tag\"] : \"\";\n\n  if (params[\"style\"]) {\n    style.value = params[\"style\"];\n  }\n\n  if (params[\"sidebar\"]) {\n    sidebar.value = params[\"sidebar\"];\n  }\n\n  if (!params[\"style\"] && !params[\"sidebar\"]) {\n    // Get Blog Layout\n    style.value = ThemeOptions?.value?.options?.blog?.blog_style;\n    sidebar.value = ThemeOptions?.value?.options?.blog.blog_sidebar_type;\n  }\n\n  breadcrumb.value.title = filter.value.category\n    ? `Blogs: ${filter.value.category.replaceAll(\"-\", \" \")}`\n    : filter.value.tag\n    ? `Blogs: ${filter.value.tag.replaceAll(\"-\", \" \")}`\n    : \"Blogs\";\n  breadcrumbs.value = {\n    page: breadcrumb.value.title,\n    links: [{ name: \"Blogs\" }],\n  };\n}\n\nwatch(\n  () => router.query,\n  () => {\n    handleBlog();\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  handleBlog();\n});\nconsole.log(useRoute().path);\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056343013,
+      "end": 1716056343061,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343061,
+      "end": 1716056343061,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343061,
+      "end": 1716056343061,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343061,
+      "end": 1716056343061,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343061,
+      "end": 1716056343061,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056343061,
+      "end": 1716056343061,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056343061,
+      "end": 1716056343061,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056343061,
+      "end": 1716056343061,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056343062,
+      "end": 1716056343062,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056343062,
+      "end": 1716056343062,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056343062,
+      "end": 1716056343062,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet filter = ref({\n  page: 1,\n  paginate: 12,\n  status: 1,\n  category: \"\",\n  tag: \"\",\n});\nlet router = useRoute();\nlet style = ref(\"\");\nlet sidebar = ref(\"left_sidebar\");\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nlet breadcrumb = ref({\n  title: \"Blogs\",\n});\nlet breadcrumbs = ref();\n\nlet { data: blog, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"blog\", {\n  key: \"getfilterblogs\",\n  params: filter.value,\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nfunction handleBlog() {\n  const params = router.query;\n  filter.value.category = params[\"category\"] ? params[\"category\"] : \"\";\n  filter.value.tag = params[\"tag\"] ? params[\"tag\"] : \"\";\n\n  if (params[\"style\"]) {\n    style.value = params[\"style\"];\n  }\n\n  if (params[\"sidebar\"]) {\n    sidebar.value = params[\"sidebar\"];\n  }\n\n  if (!params[\"style\"] && !params[\"sidebar\"]) {\n    // Get Blog Layout\n    style.value = ThemeOptions?.value?.options?.blog?.blog_style;\n    sidebar.value = ThemeOptions?.value?.options?.blog.blog_sidebar_type;\n  }\n\n  breadcrumb.value.title = filter.value.category\n    ? `Blogs: ${filter.value.category.replaceAll(\"-\", \" \")}`\n    : filter.value.tag\n    ? `Blogs: ${filter.value.tag.replaceAll(\"-\", \" \")}`\n    : \"Blogs\";\n  breadcrumbs.value = {\n    page: breadcrumb.value.title,\n    links: [{ name: \"Blogs\" }],\n  };\n}\n\nwatch(\n  () => router.query,\n  () => {\n    handleBlog();\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  handleBlog();\n});\nconsole.log(useRoute().path);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_Blog = _resolveComponent(\"Blog\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  _push(_ssrRenderComponent(_component_WidgetsBreadcrumb, { breadcrumbs: _unref(breadcrumbs) }, null, _parent))\n  _push(_ssrRenderComponent(_component_Blog, {\n    style: _unref(style),\n    sidebar: _unref(sidebar),\n    blog: _unref(blog),\n    themeOption: _unref(ThemeOptions).options,\n    filter: _unref(filter)\n  }, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/blog/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343062,
+      "end": 1716056343062,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056343062,
+      "end": 1716056343062,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343062,
+      "end": 1716056343062,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343062,
+      "end": 1716056343062,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343062,
+      "end": 1716056343062,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343062,
+      "end": 1716056343062,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056343062,
+      "end": 1716056343062,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343062,
+      "end": 1716056343062,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056343062,
+      "end": 1716056343063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056343063,
+      "end": 1716056343063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056343063,
+      "end": 1716056343063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056343063,
+      "end": 1716056343063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056343063,
+      "end": 1716056343063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056343063,
+      "end": 1716056343063,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056343063,
+      "end": 1716056343063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056343063,
+      "end": 1716056343063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056343063,
+      "end": 1716056343063,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343063,
+      "end": 1716056343063,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343063,
+      "end": 1716056343063,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, watch, onMounted } from 'vue';\nimport { useRoute } from '#app/composables/router';\nimport { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet filter = ref({\n  page: 1,\n  paginate: 12,\n  status: 1,\n  category: \"\",\n  tag: \"\",\n});\nlet router = useRoute();\nlet style = ref(\"\");\nlet sidebar = ref(\"left_sidebar\");\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nlet breadcrumb = ref({\n  title: \"Blogs\",\n});\nlet breadcrumbs = ref();\n\nlet { data: blog, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"blog\", {\n  key: \"getfilterblogs\",\n  params: filter.value,\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nfunction handleBlog() {\n  const params = router.query;\n  filter.value.category = params[\"category\"] ? params[\"category\"] : \"\";\n  filter.value.tag = params[\"tag\"] ? params[\"tag\"] : \"\";\n\n  if (params[\"style\"]) {\n    style.value = params[\"style\"];\n  }\n\n  if (params[\"sidebar\"]) {\n    sidebar.value = params[\"sidebar\"];\n  }\n\n  if (!params[\"style\"] && !params[\"sidebar\"]) {\n    // Get Blog Layout\n    style.value = ThemeOptions?.value?.options?.blog?.blog_style;\n    sidebar.value = ThemeOptions?.value?.options?.blog.blog_sidebar_type;\n  }\n\n  breadcrumb.value.title = filter.value.category\n    ? `Blogs: ${filter.value.category.replaceAll(\"-\", \" \")}`\n    : filter.value.tag\n    ? `Blogs: ${filter.value.tag.replaceAll(\"-\", \" \")}`\n    : \"Blogs\";\n  breadcrumbs.value = {\n    page: breadcrumb.value.title,\n    links: [{ name: \"Blogs\" }],\n  };\n}\n\nwatch(\n  () => router.query,\n  () => {\n    handleBlog();\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  handleBlog();\n});\nconsole.log(useRoute().path);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_Blog = _resolveComponent(\"Blog\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  _push(_ssrRenderComponent(_component_WidgetsBreadcrumb, { breadcrumbs: _unref(breadcrumbs) }, null, _parent))\n  _push(_ssrRenderComponent(_component_Blog, {\n    style: _unref(style),\n    sidebar: _unref(sidebar),\n    blog: _unref(blog),\n    themeOption: _unref(ThemeOptions).options,\n    filter: _unref(filter)\n  }, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/blog/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343063,
+      "end": 1716056343064,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, watch, onMounted } from 'vue';\nimport { useRoute } from '#app/composables/router';\nimport { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet filter = ref({\n  page: 1,\n  paginate: 12,\n  status: 1,\n  category: \"\",\n  tag: \"\",\n});\nlet router = useRoute();\nlet style = ref(\"\");\nlet sidebar = ref(\"left_sidebar\");\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nlet breadcrumb = ref({\n  title: \"Blogs\",\n});\nlet breadcrumbs = ref();\n\nlet { data: blog, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"blog\", {\n  key: \"getfilterblogs\",\n  params: filter.value,\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nfunction handleBlog() {\n  const params = router.query;\n  filter.value.category = params[\"category\"] ? params[\"category\"] : \"\";\n  filter.value.tag = params[\"tag\"] ? params[\"tag\"] : \"\";\n\n  if (params[\"style\"]) {\n    style.value = params[\"style\"];\n  }\n\n  if (params[\"sidebar\"]) {\n    sidebar.value = params[\"sidebar\"];\n  }\n\n  if (!params[\"style\"] && !params[\"sidebar\"]) {\n    // Get Blog Layout\n    style.value = ThemeOptions?.value?.options?.blog?.blog_style;\n    sidebar.value = ThemeOptions?.value?.options?.blog.blog_sidebar_type;\n  }\n\n  breadcrumb.value.title = filter.value.category\n    ? `Blogs: ${filter.value.category.replaceAll(\"-\", \" \")}`\n    : filter.value.tag\n    ? `Blogs: ${filter.value.tag.replaceAll(\"-\", \" \")}`\n    : \"Blogs\";\n  breadcrumbs.value = {\n    page: breadcrumb.value.title,\n    links: [{ name: \"Blogs\" }],\n  };\n}\n\nwatch(\n  () => router.query,\n  () => {\n    handleBlog();\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  handleBlog();\n});\nconsole.log(useRoute().path);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_Blog = _resolveComponent(\"Blog\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  _push(_ssrRenderComponent(_component_WidgetsBreadcrumb, { breadcrumbs: _unref(breadcrumbs) }, null, _parent))\n  _push(_ssrRenderComponent(_component_Blog, {\n    style: _unref(style),\n    sidebar: _unref(sidebar),\n    blog: _unref(blog),\n    themeOption: _unref(ThemeOptions).options,\n    filter: _unref(filter)\n  }, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/blog/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343063,
+      "end": 1716056343064,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343064,
+      "end": 1716056343064,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343064,
+      "end": 1716056343064,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343064,
+      "end": 1716056343064,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343064,
+      "end": 1716056343064,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056343064,
+      "end": 1716056343064,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Breadcrumb/index.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/index.vue\";\nimport { ref, watch, onMounted } from 'vue';\nimport { useRoute } from '#app/composables/router';\nimport { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet filter = ref({\n  page: 1,\n  paginate: 12,\n  status: 1,\n  category: \"\",\n  tag: \"\",\n});\nlet router = useRoute();\nlet style = ref(\"\");\nlet sidebar = ref(\"left_sidebar\");\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nlet breadcrumb = ref({\n  title: \"Blogs\",\n});\nlet breadcrumbs = ref();\n\nlet { data: blog, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"blog\", {\n  key: \"getfilterblogs\",\n  params: filter.value,\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nfunction handleBlog() {\n  const params = router.query;\n  filter.value.category = params[\"category\"] ? params[\"category\"] : \"\";\n  filter.value.tag = params[\"tag\"] ? params[\"tag\"] : \"\";\n\n  if (params[\"style\"]) {\n    style.value = params[\"style\"];\n  }\n\n  if (params[\"sidebar\"]) {\n    sidebar.value = params[\"sidebar\"];\n  }\n\n  if (!params[\"style\"] && !params[\"sidebar\"]) {\n    // Get Blog Layout\n    style.value = ThemeOptions?.value?.options?.blog?.blog_style;\n    sidebar.value = ThemeOptions?.value?.options?.blog.blog_sidebar_type;\n  }\n\n  breadcrumb.value.title = filter.value.category\n    ? `Blogs: ${filter.value.category.replaceAll(\"-\", \" \")}`\n    : filter.value.tag\n    ? `Blogs: ${filter.value.tag.replaceAll(\"-\", \" \")}`\n    : \"Blogs\";\n  breadcrumbs.value = {\n    page: breadcrumb.value.title,\n    links: [{ name: \"Blogs\" }],\n  };\n}\n\nwatch(\n  () => router.query,\n  () => {\n    handleBlog();\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  handleBlog();\n});\nconsole.log(useRoute().path);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsBreadcrumb = __nuxt_component_0\n  const _component_Blog = __nuxt_component_1\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  _push(_ssrRenderComponent(_component_WidgetsBreadcrumb, { breadcrumbs: _unref(breadcrumbs) }, null, _parent))\n  _push(_ssrRenderComponent(_component_Blog, {\n    style: _unref(style),\n    sidebar: _unref(sidebar),\n    blog: _unref(blog),\n    themeOption: _unref(ThemeOptions).options,\n    filter: _unref(filter)\n  }, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/blog/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343064,
+      "end": 1716056343064,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Breadcrumb/index.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/index.vue\";\nimport { ref, watch, onMounted } from 'vue';\nimport { useRoute } from '#app/composables/router';\nimport { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet filter = ref({\n  page: 1,\n  paginate: 12,\n  status: 1,\n  category: \"\",\n  tag: \"\",\n});\nlet router = useRoute();\nlet style = ref(\"\");\nlet sidebar = ref(\"left_sidebar\");\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nlet breadcrumb = ref({\n  title: \"Blogs\",\n});\nlet breadcrumbs = ref();\n\nlet { data: blog, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"blog\", {\n  key: \"getfilterblogs\",\n  params: filter.value,\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nfunction handleBlog() {\n  const params = router.query;\n  filter.value.category = params[\"category\"] ? params[\"category\"] : \"\";\n  filter.value.tag = params[\"tag\"] ? params[\"tag\"] : \"\";\n\n  if (params[\"style\"]) {\n    style.value = params[\"style\"];\n  }\n\n  if (params[\"sidebar\"]) {\n    sidebar.value = params[\"sidebar\"];\n  }\n\n  if (!params[\"style\"] && !params[\"sidebar\"]) {\n    // Get Blog Layout\n    style.value = ThemeOptions?.value?.options?.blog?.blog_style;\n    sidebar.value = ThemeOptions?.value?.options?.blog.blog_sidebar_type;\n  }\n\n  breadcrumb.value.title = filter.value.category\n    ? `Blogs: ${filter.value.category.replaceAll(\"-\", \" \")}`\n    : filter.value.tag\n    ? `Blogs: ${filter.value.tag.replaceAll(\"-\", \" \")}`\n    : \"Blogs\";\n  breadcrumbs.value = {\n    page: breadcrumb.value.title,\n    links: [{ name: \"Blogs\" }],\n  };\n}\n\nwatch(\n  () => router.query,\n  () => {\n    handleBlog();\n  },\n  { deep: true }\n);\n\n false && /*@__PURE__*/ onMounted(() => {\n  handleBlog();\n});\nconsole.log(useRoute().path);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsBreadcrumb = __nuxt_component_0\n  const _component_Blog = __nuxt_component_1\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  _push(_ssrRenderComponent(_component_WidgetsBreadcrumb, { breadcrumbs: _unref(breadcrumbs) }, null, _parent))\n  _push(_ssrRenderComponent(_component_Blog, {\n    style: _unref(style),\n    sidebar: _unref(sidebar),\n    blog: _unref(blog),\n    themeOption: _unref(ThemeOptions).options,\n    filter: _unref(filter)\n  }, null, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/blog/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343064,
+      "end": 1716056343065,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056343065,
+      "end": 1716056343065,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056343065,
+      "end": 1716056343065,
+      "order": "normal"
+    }
+  ]
+}

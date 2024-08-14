@@ -1,0 +1,255 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/store/collection.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineStore } from \"pinia\";\nexport const useCollectionStore = defineStore(\"Collection-store\", () => {\n  let filter = ref({\n    page: 1, // Current page number\n    paginate: 40, // Display per page,\n    status: 1,\n    field: \"\",\n    price: \"\",\n    category_id: \"\",\n    tag: \"\",\n    sort: \"\", // ASC, DSC\n    sortBy: \"\",\n    rating: \"\",\n    attribute: \"\",\n    store_slug: \"\",\n    current_page: \"\",\n  });\n\n  let sortingOptions = ref([\n    { display: \"Low - High Price\", value: \"low-high\" },\n    { display: \"High - Low Price\", value: \"high-low\" },\n    { display: \"A - Z Order\", value: \"a-z\" },\n    { display: \"Z - A Order\", value: \"z-a\" },\n    { display: \"Ascendind Order\", value: \"asc\" },\n    { display: \"Decendind Order\", value: \"dsc\" },\n    { display: \"%Off-High To Low\", value: \"discount-high-low\" },\n  ]);\n\n  let categories = ref([]),\n    attribute = ref([]);\n  let filterObject = ref({\n    selectedCategories: [],\n    selectedAttributes: [],\n    selectedPrice: [],\n    selectedRating: [],\n    sort: { display: \"Ascendind Order\", value: \"asc\" },\n    field: \"created_at\",\n    store_slug: {},\n  });\n  filter.value.sortBy = filterObject.value.sort;\n  filter.value.field = filterObject.value.field;\n  let allProducts = ref([]);\n  function initialCheckedValue() {\n    filterObject.value.selectedCategories = useRoute().query.category_id\n      ? useRoute().query.category_id.split(\",\")\n      : [];\n    filterObject.value.selectedAttributes = useRoute().query.attribute\n      ? useRoute().query.attribute.split(\",\")\n      : [];\n    filterObject.value.selectedRating = useRoute().query.rating\n      ? useRoute().query.rating.split(\",\")\n      : [];\n    filterObject.value.selectedPrice = useRoute().query.price\n      ? useRoute().query.price.split(\",\")\n      : [];\n  }\n  onMounted(() => {\n    initialCheckedValue();\n  });\n  function getParams() {\n    filter.value.page = useRoute().query.page ? useRoute().query.page : 1;\n    filter.value.field = useRoute().query.field\n      ? useRoute().query.field\n      : \"created_at\";\n    filter.value.price = useRoute().query.price ? useRoute().query.price : \"\";\n    filter.value.category_id = useRoute().query.category_id\n      ? useRoute().query.category_id\n      : \"\";\n    filter.value.tag = useRoute().query.tag ? useRoute().query.tag : \"\";\n    filter.value.sort = useRoute().query.sort ? useRoute().query.sort : \"\";\n    filter.value.sortBy = useRoute().query.sortBy\n      ? useRoute().query.sortBy\n      : \"\";\n    filter.value.rating = useRoute().query.rating\n      ? useRoute().query.rating\n      : \"\";\n    (filter.value.attribute = useRoute().query.attribute\n      ? useRoute().query.attribute\n      : \"\"),\n      (filter.value.store_slug = useRoute().query.store_slug\n        ? useRoute().query.store_slug\n        : \"\");\n  }\n  watchEffect(async () => {\n    getParams();\n  });\n\n  return {\n    filter,\n    categories,\n    attribute,\n    getParams,\n    filterObject,\n    allProducts,\n    initialCheckedValue,\n  };\n});\n",
+      "start": 1716056343301,
+      "end": 1716056343500,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343501,
+      "end": 1716056343501,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted, watchEffect } from 'vue';\nimport { useRoute } from '#app/composables/router';\nimport { defineStore } from \"pinia\";\nexport const useCollectionStore = defineStore(\"Collection-store\", () => {\n  let filter = ref({\n    page: 1, // Current page number\n    paginate: 40, // Display per page,\n    status: 1,\n    field: \"\",\n    price: \"\",\n    category_id: \"\",\n    tag: \"\",\n    sort: \"\", // ASC, DSC\n    sortBy: \"\",\n    rating: \"\",\n    attribute: \"\",\n    store_slug: \"\",\n    current_page: \"\",\n  });\n\n  let sortingOptions = ref([\n    { display: \"Low - High Price\", value: \"low-high\" },\n    { display: \"High - Low Price\", value: \"high-low\" },\n    { display: \"A - Z Order\", value: \"a-z\" },\n    { display: \"Z - A Order\", value: \"z-a\" },\n    { display: \"Ascendind Order\", value: \"asc\" },\n    { display: \"Decendind Order\", value: \"dsc\" },\n    { display: \"%Off-High To Low\", value: \"discount-high-low\" },\n  ]);\n\n  let categories = ref([]),\n    attribute = ref([]);\n  let filterObject = ref({\n    selectedCategories: [],\n    selectedAttributes: [],\n    selectedPrice: [],\n    selectedRating: [],\n    sort: { display: \"Ascendind Order\", value: \"asc\" },\n    field: \"created_at\",\n    store_slug: {},\n  });\n  filter.value.sortBy = filterObject.value.sort;\n  filter.value.field = filterObject.value.field;\n  let allProducts = ref([]);\n  function initialCheckedValue() {\n    filterObject.value.selectedCategories = useRoute().query.category_id\n      ? useRoute().query.category_id.split(\",\")\n      : [];\n    filterObject.value.selectedAttributes = useRoute().query.attribute\n      ? useRoute().query.attribute.split(\",\")\n      : [];\n    filterObject.value.selectedRating = useRoute().query.rating\n      ? useRoute().query.rating.split(\",\")\n      : [];\n    filterObject.value.selectedPrice = useRoute().query.price\n      ? useRoute().query.price.split(\",\")\n      : [];\n  }\n  onMounted(() => {\n    initialCheckedValue();\n  });\n  function getParams() {\n    filter.value.page = useRoute().query.page ? useRoute().query.page : 1;\n    filter.value.field = useRoute().query.field\n      ? useRoute().query.field\n      : \"created_at\";\n    filter.value.price = useRoute().query.price ? useRoute().query.price : \"\";\n    filter.value.category_id = useRoute().query.category_id\n      ? useRoute().query.category_id\n      : \"\";\n    filter.value.tag = useRoute().query.tag ? useRoute().query.tag : \"\";\n    filter.value.sort = useRoute().query.sort ? useRoute().query.sort : \"\";\n    filter.value.sortBy = useRoute().query.sortBy\n      ? useRoute().query.sortBy\n      : \"\";\n    filter.value.rating = useRoute().query.rating\n      ? useRoute().query.rating\n      : \"\";\n    (filter.value.attribute = useRoute().query.attribute\n      ? useRoute().query.attribute\n      : \"\"),\n      (filter.value.store_slug = useRoute().query.store_slug\n        ? useRoute().query.store_slug\n        : \"\");\n  }\n  watchEffect(async () => {\n    getParams();\n  });\n\n  return {\n    filter,\n    categories,\n    attribute,\n    getParams,\n    filterObject,\n    allProducts,\n    initialCheckedValue,\n  };\n});\n",
+      "start": 1716056343501,
+      "end": 1716056343502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted, watchEffect } from 'vue';\nimport { useRoute } from '#app/composables/router';\nimport { defineStore } from \"pinia\";\nexport const useCollectionStore = defineStore(\"Collection-store\", () => {\n  let filter = ref({\n    page: 1, // Current page number\n    paginate: 40, // Display per page,\n    status: 1,\n    field: \"\",\n    price: \"\",\n    category_id: \"\",\n    tag: \"\",\n    sort: \"\", // ASC, DSC\n    sortBy: \"\",\n    rating: \"\",\n    attribute: \"\",\n    store_slug: \"\",\n    current_page: \"\",\n  });\n\n  let sortingOptions = ref([\n    { display: \"Low - High Price\", value: \"low-high\" },\n    { display: \"High - Low Price\", value: \"high-low\" },\n    { display: \"A - Z Order\", value: \"a-z\" },\n    { display: \"Z - A Order\", value: \"z-a\" },\n    { display: \"Ascendind Order\", value: \"asc\" },\n    { display: \"Decendind Order\", value: \"dsc\" },\n    { display: \"%Off-High To Low\", value: \"discount-high-low\" },\n  ]);\n\n  let categories = ref([]),\n    attribute = ref([]);\n  let filterObject = ref({\n    selectedCategories: [],\n    selectedAttributes: [],\n    selectedPrice: [],\n    selectedRating: [],\n    sort: { display: \"Ascendind Order\", value: \"asc\" },\n    field: \"created_at\",\n    store_slug: {},\n  });\n  filter.value.sortBy = filterObject.value.sort;\n  filter.value.field = filterObject.value.field;\n  let allProducts = ref([]);\n  function initialCheckedValue() {\n    filterObject.value.selectedCategories = useRoute().query.category_id\n      ? useRoute().query.category_id.split(\",\")\n      : [];\n    filterObject.value.selectedAttributes = useRoute().query.attribute\n      ? useRoute().query.attribute.split(\",\")\n      : [];\n    filterObject.value.selectedRating = useRoute().query.rating\n      ? useRoute().query.rating.split(\",\")\n      : [];\n    filterObject.value.selectedPrice = useRoute().query.price\n      ? useRoute().query.price.split(\",\")\n      : [];\n  }\n  onMounted(() => {\n    initialCheckedValue();\n  });\n  function getParams() {\n    filter.value.page = useRoute().query.page ? useRoute().query.page : 1;\n    filter.value.field = useRoute().query.field\n      ? useRoute().query.field\n      : \"created_at\";\n    filter.value.price = useRoute().query.price ? useRoute().query.price : \"\";\n    filter.value.category_id = useRoute().query.category_id\n      ? useRoute().query.category_id\n      : \"\";\n    filter.value.tag = useRoute().query.tag ? useRoute().query.tag : \"\";\n    filter.value.sort = useRoute().query.sort ? useRoute().query.sort : \"\";\n    filter.value.sortBy = useRoute().query.sortBy\n      ? useRoute().query.sortBy\n      : \"\";\n    filter.value.rating = useRoute().query.rating\n      ? useRoute().query.rating\n      : \"\";\n    (filter.value.attribute = useRoute().query.attribute\n      ? useRoute().query.attribute\n      : \"\"),\n      (filter.value.store_slug = useRoute().query.store_slug\n        ? useRoute().query.store_slug\n        : \"\");\n  }\n  watchEffect(async () => {\n    getParams();\n  });\n\n  return {\n    filter,\n    categories,\n    attribute,\n    getParams,\n    filterObject,\n    allProducts,\n    initialCheckedValue,\n  };\n});\n",
+      "start": 1716056343501,
+      "end": 1716056343502,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343502,
+      "end": 1716056343502,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343502,
+      "end": 1716056343502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343502,
+      "end": 1716056343502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343502,
+      "end": 1716056343502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056343502,
+      "end": 1716056343502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056343502,
+      "end": 1716056343502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { ref, onMounted, watchEffect } from 'vue';\nimport { useRoute } from '#app/composables/router';\nimport { defineStore } from \"pinia\";\nexport const useCollectionStore = defineStore(\"Collection-store\", () => {\n  let filter = ref({\n    page: 1, // Current page number\n    paginate: 40, // Display per page,\n    status: 1,\n    field: \"\",\n    price: \"\",\n    category_id: \"\",\n    tag: \"\",\n    sort: \"\", // ASC, DSC\n    sortBy: \"\",\n    rating: \"\",\n    attribute: \"\",\n    store_slug: \"\",\n    current_page: \"\",\n  });\n\n  let sortingOptions = ref([\n    { display: \"Low - High Price\", value: \"low-high\" },\n    { display: \"High - Low Price\", value: \"high-low\" },\n    { display: \"A - Z Order\", value: \"a-z\" },\n    { display: \"Z - A Order\", value: \"z-a\" },\n    { display: \"Ascendind Order\", value: \"asc\" },\n    { display: \"Decendind Order\", value: \"dsc\" },\n    { display: \"%Off-High To Low\", value: \"discount-high-low\" },\n  ]);\n\n  let categories = ref([]),\n    attribute = ref([]);\n  let filterObject = ref({\n    selectedCategories: [],\n    selectedAttributes: [],\n    selectedPrice: [],\n    selectedRating: [],\n    sort: { display: \"Ascendind Order\", value: \"asc\" },\n    field: \"created_at\",\n    store_slug: {},\n  });\n  filter.value.sortBy = filterObject.value.sort;\n  filter.value.field = filterObject.value.field;\n  let allProducts = ref([]);\n  function initialCheckedValue() {\n    filterObject.value.selectedCategories = useRoute().query.category_id\n      ? useRoute().query.category_id.split(\",\")\n      : [];\n    filterObject.value.selectedAttributes = useRoute().query.attribute\n      ? useRoute().query.attribute.split(\",\")\n      : [];\n    filterObject.value.selectedRating = useRoute().query.rating\n      ? useRoute().query.rating.split(\",\")\n      : [];\n    filterObject.value.selectedPrice = useRoute().query.price\n      ? useRoute().query.price.split(\",\")\n      : [];\n  }\n   false && /*@__PURE__*/ onMounted(() => {\n    initialCheckedValue();\n  });\n  function getParams() {\n    filter.value.page = useRoute().query.page ? useRoute().query.page : 1;\n    filter.value.field = useRoute().query.field\n      ? useRoute().query.field\n      : \"created_at\";\n    filter.value.price = useRoute().query.price ? useRoute().query.price : \"\";\n    filter.value.category_id = useRoute().query.category_id\n      ? useRoute().query.category_id\n      : \"\";\n    filter.value.tag = useRoute().query.tag ? useRoute().query.tag : \"\";\n    filter.value.sort = useRoute().query.sort ? useRoute().query.sort : \"\";\n    filter.value.sortBy = useRoute().query.sortBy\n      ? useRoute().query.sortBy\n      : \"\";\n    filter.value.rating = useRoute().query.rating\n      ? useRoute().query.rating\n      : \"\";\n    (filter.value.attribute = useRoute().query.attribute\n      ? useRoute().query.attribute\n      : \"\"),\n      (filter.value.store_slug = useRoute().query.store_slug\n        ? useRoute().query.store_slug\n        : \"\");\n  }\n  watchEffect(async () => {\n    getParams();\n  });\n\n  return {\n    filter,\n    categories,\n    attribute,\n    getParams,\n    filterObject,\n    allProducts,\n    initialCheckedValue,\n  };\n});\n",
+      "start": 1716056343502,
+      "end": 1716056343503,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    }
+  ]
+}

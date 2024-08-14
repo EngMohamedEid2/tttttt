@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/WapperTab/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"product-section-box mt-0\">\n    <ul class=\"nav nav-tabs custom-nav\" id=\"pills-tab\">\n      <li class=\"nav-item\" role=\"presentation\" v-for=\"(tab, index) in tabs\" :key=\"'a' + index\">\n        <button class=\"nav-link\" :ref=\"`tabButton${index}`\"\n          :class=\"[{ 'tab-error': tab.errors }, { active: index == activeTab }]\" :id=\"`${tab.id}-tab`\"\n          @click=\"handleClickOnTab({ tab, index })\" type=\"button\">\n          <!-- <Icon :name=\"tab.icon\" /> -->\n          {{ $t(tab.title) }}\n        </button>\n      </li>\n    </ul>\n    <div class=\"tab-content custom-tab\" id=\"pills-tabContent\">\n      <div :class=\"[{ 'active show': index == activeTab }]\" class=\"tab-pane fade\" v-for=\"(tab, index) in tabs\"\n        :key=\"'a' + index\" :id=\"tab.id\" role=\"tabpanel\">\n        <slot :name=\"tab.id\" />\n      </div>\n      <slot name=\"bottom\" />\n    </div>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  tabs: Array,\n  activeTab: Object,\n});\nlet activeTab = ref(0);\nlet emit = defineEmits([\"handleActive\"]);\n\nfunction handleClickOnTab({ tab, index }) {\n  activeTab.value = index;\n  emit(\"handleActive\", tab);\n}\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056289119,
+      "end": 1716056289245,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056289245,
+      "end": 1716056289245,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056289245,
+      "end": 1716056289245,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056289245,
+      "end": 1716056289245,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056289245,
+      "end": 1716056289245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056289245,
+      "end": 1716056289245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056289245,
+      "end": 1716056289245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056289245,
+      "end": 1716056289245,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, unref as _unref, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, renderSlot as _renderSlot } from \"vue\"\n\nconst _hoisted_1 = { class: \"product-section-box mt-0\" }\nconst _hoisted_2 = {\n  class: \"nav nav-tabs custom-nav\",\n  id: \"pills-tab\"\n}\nconst _hoisted_3 = [\"id\", \"onClick\"]\nconst _hoisted_4 = {\n  class: \"tab-content custom-tab\",\n  id: \"pills-tabContent\"\n}\nconst _hoisted_5 = [\"id\"]\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  tabs: Array,\n  activeTab: Object,\n},\n  emits: [\"handleActive\"],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\nlet activeTab = ref(0);\nlet emit = __emit;\n\nfunction handleClickOnTab({ tab, index }) {\n  activeTab.value = index;\n  emit(\"handleActive\", tab);\n}\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"ul\", _hoisted_2, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.tabs, (tab, index) => {\n        return (_openBlock(), _createElementBlock(\"li\", {\n          class: \"nav-item\",\n          role: \"presentation\",\n          key: 'a' + index\n        }, [\n          _createElementVNode(\"button\", {\n            class: _normalizeClass([\"nav-link\", [{ 'tab-error': tab.errors }, { active: index == _unref(activeTab) }]]),\n            ref_for: true,\n            ref: `tabButton${index}`,\n            id: `${tab.id}-tab`,\n            onClick: $event => (handleClickOnTab({ tab, index })),\n            type: \"button\"\n          }, _toDisplayString(_ctx.$t(tab.title)), 11, _hoisted_3)\n        ]))\n      }), 128))\n    ]),\n    _createElementVNode(\"div\", _hoisted_4, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.tabs, (tab, index) => {\n        return (_openBlock(), _createElementBlock(\"div\", {\n          class: _normalizeClass([[{ 'active show': index == _unref(activeTab) }], \"tab-pane fade\"]),\n          key: 'a' + index,\n          id: tab.id,\n          role: \"tabpanel\"\n        }, [\n          _renderSlot(_ctx.$slots, tab.id)\n        ], 10, _hoisted_5))\n      }), 128)),\n      _renderSlot(_ctx.$slots, \"bottom\")\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289245,
+      "end": 1716056289245,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056289245,
+      "end": 1716056289245,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289245,
+      "end": 1716056289245,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056289245,
+      "end": 1716056289245,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056289245,
+      "end": 1716056289245,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056289245,
+      "end": 1716056289245,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289245,
+      "end": 1716056289246,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056289246,
+      "end": 1716056289246,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056289246,
+      "end": 1716056289246,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056289246,
+      "end": 1716056289246,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056289246,
+      "end": 1716056289246,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056289246,
+      "end": 1716056289246,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056289246,
+      "end": 1716056289246,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056289246,
+      "end": 1716056289246,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056289246,
+      "end": 1716056289246,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056289246,
+      "end": 1716056289246,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056289246,
+      "end": 1716056289246,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, unref as _unref, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, renderSlot as _renderSlot } from \"vue\"\n\nconst _hoisted_1 = { class: \"product-section-box mt-0\" }\nconst _hoisted_2 = {\n  class: \"nav nav-tabs custom-nav\",\n  id: \"pills-tab\"\n}\nconst _hoisted_3 = [\"id\", \"onClick\"]\nconst _hoisted_4 = {\n  class: \"tab-content custom-tab\",\n  id: \"pills-tabContent\"\n}\nconst _hoisted_5 = [\"id\"]\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  tabs: Array,\n  activeTab: Object,\n},\n  emits: [\"handleActive\"],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\nlet activeTab = ref(0);\nlet emit = __emit;\n\nfunction handleClickOnTab({ tab, index }) {\n  activeTab.value = index;\n  emit(\"handleActive\", tab);\n}\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"ul\", _hoisted_2, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.tabs, (tab, index) => {\n        return (_openBlock(), _createElementBlock(\"li\", {\n          class: \"nav-item\",\n          role: \"presentation\",\n          key: 'a' + index\n        }, [\n          _createElementVNode(\"button\", {\n            class: _normalizeClass([\"nav-link\", [{ 'tab-error': tab.errors }, { active: index == _unref(activeTab) }]]),\n            ref_for: true,\n            ref: `tabButton${index}`,\n            id: `${tab.id}-tab`,\n            onClick: $event => (handleClickOnTab({ tab, index })),\n            type: \"button\"\n          }, _toDisplayString(_ctx.$t(tab.title)), 11, _hoisted_3)\n        ]))\n      }), 128))\n    ]),\n    _createElementVNode(\"div\", _hoisted_4, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.tabs, (tab, index) => {\n        return (_openBlock(), _createElementBlock(\"div\", {\n          class: _normalizeClass([[{ 'active show': index == _unref(activeTab) }], \"tab-pane fade\"]),\n          key: 'a' + index,\n          id: tab.id,\n          role: \"tabpanel\"\n        }, [\n          _renderSlot(_ctx.$slots, tab.id)\n        ], 10, _hoisted_5))\n      }), 128)),\n      _renderSlot(_ctx.$slots, \"bottom\")\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289246,
+      "end": 1716056289247,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056289247,
+      "end": 1716056289247,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056289247,
+      "end": 1716056289247,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056289247,
+      "end": 1716056289247,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056289247,
+      "end": 1716056289247,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056289247,
+      "end": 1716056289247,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056289247,
+      "end": 1716056289247,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056289247,
+      "end": 1716056289247,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056289247,
+      "end": 1716056289247,
+      "order": "normal"
+    }
+  ]
+}

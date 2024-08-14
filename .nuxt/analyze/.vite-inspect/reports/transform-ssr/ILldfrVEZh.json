@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/TrackingPanel.vue?nuxt_component=async&nuxt_component_name=AccountOrdersDetailsTrackingPanel",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"mb-4\">\n        <div class=\"tracking-panel\">\n            <ul v-if=\"order && !order?.sub_orders?.length\">\n                <template v-for=\"(orderStatus,index) in orderStatus?.data\" :key=\"index\">\n                    <li :class=\"{\n                        'd-none': (orderStatus?.sequence >= order?.order_status?.sequence\n                            && (order?.order_status && order?.order_status.slug == 'cancelled')) ||\n                            orderStatus?.slug == 'cancelled', 'active': orderStatus?.sequence <= order?.order_status?.sequence\n                    }\">\n                        <div class=\"panel-content\">\n                            <div class=\"icon\">\n                                <img :src=\"`/svg/tracking/${orderStatus?.slug}.svg`\" class=\"img-fluid\" alt=\"image\">\n                            </div>\n                            <div class=\"status\">{{ transform(orderStatus?.name?.replace('_', ' ')) }}</div>\n                        </div>\n                    </li>\n                </template>\n\n                <li class=\"active cancelled-box\" v-if=\"order?.order_status && order?.order_status?.slug == 'cancelled'\">\n                    <div class=\"panel-content\" v-if=\"order?.order_status\">\n                        <div class=\"icon\">\n                            <img :src=\"`/svg/tracking/${order.order_status.slug}.svg`\" class=\"img-fluid\" alt=\"image\">\n                        </div>\n                        <div class=\"status\">{{ transform(order.order_status.name.replace('_', ' ')) }}</div>\n                    </div>\n                </li>\n            </ul>\n        </div>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    order: Object,\n    orderStatus: Object\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056306007,
+      "end": 1716056306299,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306299,
+      "end": 1716056306299,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306299,
+      "end": 1716056306299,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306299,
+      "end": 1716056306299,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306299,
+      "end": 1716056306299,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056306299,
+      "end": 1716056306299,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056306299,
+      "end": 1716056306299,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056306299,
+      "end": 1716056306299,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056306299,
+      "end": 1716056306299,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056306299,
+      "end": 1716056306299,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056306299,
+      "end": 1716056306299,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'TrackingPanel',\n  __ssrInlineRender: true,\n  props: {\n    order: Object,\n    orderStatus: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"mb-4\" }, _attrs))}><div class=\"tracking-panel\">`)\n  if (__props.order && !__props.order?.sub_orders?.length) {\n    _push(`<ul><!--[-->`)\n    _ssrRenderList(__props.orderStatus?.data, (orderStatus, index) => {\n      _push(`<li class=\"${\n        _ssrRenderClass({\n                        'd-none': (orderStatus?.sequence >= __props.order?.order_status?.sequence\n                            && (__props.order?.order_status && __props.order?.order_status.slug == 'cancelled')) ||\n                            orderStatus?.slug == 'cancelled', 'active': orderStatus?.sequence <= __props.order?.order_status?.sequence\n                    })\n      }\"><div class=\"panel-content\"><div class=\"icon\"><img${\n        _ssrRenderAttr(\"src\", `/svg/tracking/${orderStatus?.slug}.svg`)\n      } class=\"img-fluid\" alt=\"image\"></div><div class=\"status\">${\n        _ssrInterpolate(_ctx.transform(orderStatus?.name?.replace('_', ' ')))\n      }</div></div></li>`)\n    })\n    _push(`<!--]-->`)\n    if (__props.order?.order_status && __props.order?.order_status?.slug == 'cancelled') {\n      _push(`<li class=\"active cancelled-box\">`)\n      if (__props.order?.order_status) {\n        _push(`<div class=\"panel-content\"><div class=\"icon\"><img${\n          _ssrRenderAttr(\"src\", `/svg/tracking/${__props.order.order_status.slug}.svg`)\n        } class=\"img-fluid\" alt=\"image\"></div><div class=\"status\">${\n          _ssrInterpolate(_ctx.transform(__props.order.order_status.name.replace('_', ' ')))\n        }</div></div>`)\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`</li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</ul>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/Orders/Details/TrackingPanel.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056306299,
+      "end": 1716056306301,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/TrackingPanel.vue\").then(r => r.default))",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056306301,
+      "end": 1716056306301,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056306301,
+      "end": 1716056306302,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056306302,
+      "end": 1716056306302,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056306302,
+      "end": 1716056306302,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056306302,
+      "end": 1716056306302,
+      "order": "normal"
+    }
+  ]
+}

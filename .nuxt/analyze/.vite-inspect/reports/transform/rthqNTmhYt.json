@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ThemeCustomizer/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <OnClickOutside\n    @trigger=\"\n      () => {\n        open = false;\n      }\n    \"\n    class=\"setting-box\"\n  >\n    <WidgetsButton\n      :classes=\"'btn setting-button'\"\n      :id=\"'toggle_btn'\"\n      :type=\"'button'\"\n      @onClick=\"toggle()\"\n    >\n      <Icon\n        :class=\"open ? 'ri-close-fill' : 'ri-settings-3-fill'\"\n        name=\"ri:settings-4-fill\"\n      ></Icon>\n    </WidgetsButton>\n\n    <div class=\"theme-setting-2\" :class=\"[{ active: open }]\">\n      <div class=\"theme-box\">\n        <ul>\n          <li>\n            <div class=\"setting-name\">\n              <h4>{{ $t(\"Color\") }}</h4>\n            </div>\n            <div class=\"theme-setting-button color-picker\">\n              <form class=\"form-control\">\n                <label for=\"colorPick\" class=\"form-label mb-0\"\n                  >{{ $t(\"Theme Colo\") }}r</label\n                >\n                <input\n                  type=\"color\"\n                  class=\"form-control form-control-color\"\n                  id=\"colorPick\"\n                  value=\"#0da487\"\n                  title=\"Choose your color\"\n                />\n              </form>\n            </div>\n          </li>\n\n          <li>\n            <div class=\"setting-name\">\n              <h4>{{ $t(\"Dark\") }}</h4>\n            </div>\n            <div class=\"theme-setting-button\">\n              <WidgetsButton\n                :classes=\"mode === 'dark' ? 'btn btn-2 active' : 'btn btn-2'\"\n                :id=\"'dark_btn'\"\n                :type=\"'button'\"\n                @onClick=\"layoutMode('dark')\"\n              >\n                {{ $t(\"Dark\") }}\n              </WidgetsButton>\n              <WidgetsButton\n                :classes=\"mode === 'light' ? 'btn btn-2 active' : 'btn btn-2'\"\n                :id=\"'light_btn'\"\n                :type=\"'button'\"\n                @onClick=\"layoutMode('light')\"\n              >\n                {{ $t(\"Light\") }}\n              </WidgetsButton>\n            </div>\n          </li>\n\n          <!-- <li>\n            <div class=\"setting-name\">\n              <h4>{{ $t(\"RTL\") }}</h4>\n            </div>\n            <div class=\"theme-setting-button rtl\">\n              <WidgetsButton :classes=\"values === 'ltr' ? 'btn btn-2 active' : 'btn btn-2'\n                \" :id=\"'ltr_btn'\" :type=\"'button'\" @onClick=\"layout('ltr')\">\n                {{ $t(\"LTR\") }}\n              </WidgetsButton>\n              <WidgetsButton :classes=\"values === 'rtl' ? 'btn btn-2 active' : 'btn btn-2'\n                \" :id=\"'rtl_btn'\" :type=\"'button'\" @onClick=\"layout('rtl')\">\n                {{ $t(\"RTL\") }}\n              </WidgetsButton>\n            </div>\n          </li> -->\n        </ul>\n      </div>\n    </div>\n  </OnClickOutside>\n</template>\n\n<script setup>\nimport { OnClickOutside } from \"@vueuse/components\";\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\n\nlet open = ref(false);\nlet show = ref(false);\nlet mode = ref(\"\");\nlet values = ref(\"\");\nlet primary_color = ref();\n\nuseDataStore().GetThemeoption();\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nconst toggle = () => {\n  open.value = !open.value;\n};\n\nfunction layout(value) {\n  values.value = value;\n  if (value === \"rtl\") {\n    if (process.client) {\n      document.body.classList.add(\"rtl\");\n      document.documentElement.dir = \"rtl\";\n    }\n  } else {\n    if (process.client) {\n      document.body.classList.remove(\"rtl\");\n      document.documentElement.dir = \"ltr\";\n    }\n  }\n}\n\nconst layoutMode = (value) => {\n  mode.value = value;\n  if (mode.value === \"dark\") {\n    document.getElementsByTagName(\"html\")[0].classList.add(\"dark\");\n  } else {\n    document.getElementsByTagName(\"html\")[0].classList.remove(\"dark\");\n  }\n};\n\nconst customizeThemeColor = (event) => {\n  document.documentElement.style.setProperty(\n    \"--theme-color\",\n    event.target.value\n  );\n};\n\nconst closeDropdown = () => {\n  open.value = false;\n};\n\nonMounted(() => {\n  let option = ThemeOptions.options;\n  mode.value = option?.general ? option?.general?.mode : \"light\";\n  values.value = option?.general ? option?.general?.language_direction : \"ltr\";\n});\n\nonBeforeUnmount(() => {\n  document.documentElement.style.removeProperty(\"--theme-color\");\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056289107,
+      "end": 1716056289209,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056289209,
+      "end": 1716056289209,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056289209,
+      "end": 1716056289209,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056289209,
+      "end": 1716056289209,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056289209,
+      "end": 1716056289209,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056289209,
+      "end": 1716056289209,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056289209,
+      "end": 1716056289209,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056289209,
+      "end": 1716056289209,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, withCtx as _withCtx, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, isRef as _isRef, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"theme-box\" }\nconst _hoisted_2 = { class: \"setting-name\" }\nconst _hoisted_3 = { class: \"theme-setting-button color-picker\" }\nconst _hoisted_4 = { class: \"form-control\" }\nconst _hoisted_5 = {\n  for: \"colorPick\",\n  class: \"form-label mb-0\"\n}\nconst _hoisted_6 = /*#__PURE__*/_createElementVNode(\"input\", {\n  type: \"color\",\n  class: \"form-control form-control-color\",\n  id: \"colorPick\",\n  value: \"#0da487\",\n  title: \"Choose your color\"\n}, null, -1)\nconst _hoisted_7 = { class: \"setting-name\" }\nconst _hoisted_8 = { class: \"theme-setting-button\" }\n\nimport { OnClickOutside } from \"@vueuse/components\";\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet open = ref(false);\nlet show = ref(false);\nlet mode = ref(\"\");\nlet values = ref(\"\");\nlet primary_color = ref();\n\nuseDataStore().GetThemeoption();\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nconst toggle = () => {\n  open.value = !open.value;\n};\n\nfunction layout(value) {\n  values.value = value;\n  if (value === \"rtl\") {\n    if (process.client) {\n      document.body.classList.add(\"rtl\");\n      document.documentElement.dir = \"rtl\";\n    }\n  } else {\n    if (process.client) {\n      document.body.classList.remove(\"rtl\");\n      document.documentElement.dir = \"ltr\";\n    }\n  }\n}\n\nconst layoutMode = (value) => {\n  mode.value = value;\n  if (mode.value === \"dark\") {\n    document.getElementsByTagName(\"html\")[0].classList.add(\"dark\");\n  } else {\n    document.getElementsByTagName(\"html\")[0].classList.remove(\"dark\");\n  }\n};\n\nconst customizeThemeColor = (event) => {\n  document.documentElement.style.setProperty(\n    \"--theme-color\",\n    event.target.value\n  );\n};\n\nconst closeDropdown = () => {\n  open.value = false;\n};\n\nonMounted(() => {\n  let option = ThemeOptions.options;\n  mode.value = option?.general ? option?.general?.mode : \"light\";\n  values.value = option?.general ? option?.general?.language_direction : \"ltr\";\n});\n\nonBeforeUnmount(() => {\n  document.documentElement.style.removeProperty(\"--theme-color\");\n});\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createBlock(_unref(OnClickOutside), {\n    onTrigger: _cache[3] || (_cache[3] = \n      () => {\n        _isRef(open) ? open.value = false : open = false;\n      }\n    ),\n    class: \"setting-box\"\n  }, {\n    default: _withCtx(() => [\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn setting-button',\n        id: 'toggle_btn',\n        type: 'button',\n        onOnClick: _cache[0] || (_cache[0] = $event => (toggle()))\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_Icon, {\n            class: _normalizeClass(_unref(open) ? 'ri-close-fill' : 'ri-settings-3-fill'),\n            name: \"ri:settings-4-fill\"\n          }, null, 8, [\"class\"])\n        ]),\n        _: 1\n      }),\n      _createElementVNode(\"div\", {\n        class: _normalizeClass([\"theme-setting-2\", [{ active: _unref(open) }]])\n      }, [\n        _createElementVNode(\"div\", _hoisted_1, [\n          _createElementVNode(\"ul\", null, [\n            _createElementVNode(\"li\", null, [\n              _createElementVNode(\"div\", _hoisted_2, [\n                _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Color\")), 1)\n              ]),\n              _createElementVNode(\"div\", _hoisted_3, [\n                _createElementVNode(\"form\", _hoisted_4, [\n                  _createElementVNode(\"label\", _hoisted_5, _toDisplayString(_ctx.$t(\"Theme Colo\")) + \"r\", 1),\n                  _hoisted_6\n                ])\n              ])\n            ]),\n            _createElementVNode(\"li\", null, [\n              _createElementVNode(\"div\", _hoisted_7, [\n                _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Dark\")), 1)\n              ]),\n              _createElementVNode(\"div\", _hoisted_8, [\n                _createVNode(_component_WidgetsButton, {\n                  classes: _unref(mode) === 'dark' ? 'btn btn-2 active' : 'btn btn-2',\n                  id: 'dark_btn',\n                  type: 'button',\n                  onOnClick: _cache[1] || (_cache[1] = $event => (layoutMode('dark')))\n                }, {\n                  default: _withCtx(() => [\n                    _createTextVNode(_toDisplayString(_ctx.$t(\"Dark\")), 1)\n                  ]),\n                  _: 1\n                }, 8, [\"classes\"]),\n                _createVNode(_component_WidgetsButton, {\n                  classes: _unref(mode) === 'light' ? 'btn btn-2 active' : 'btn btn-2',\n                  id: 'light_btn',\n                  type: 'button',\n                  onOnClick: _cache[2] || (_cache[2] = $event => (layoutMode('light')))\n                }, {\n                  default: _withCtx(() => [\n                    _createTextVNode(_toDisplayString(_ctx.$t(\"Light\")), 1)\n                  ]),\n                  _: 1\n                }, 8, [\"classes\"])\n              ])\n            ])\n          ])\n        ])\n      ], 2)\n    ]),\n    _: 1\n  }))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289209,
+      "end": 1716056289209,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056289209,
+      "end": 1716056289209,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289210,
+      "end": 1716056289210,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056289210,
+      "end": 1716056289210,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056289210,
+      "end": 1716056289210,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056289210,
+      "end": 1716056289210,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289210,
+      "end": 1716056289210,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056289210,
+      "end": 1716056289210,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, withCtx as _withCtx, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, isRef as _isRef, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = { class: \"theme-box\" };\nconst _hoisted_2 = { class: \"setting-name\" };\nconst _hoisted_3 = { class: \"theme-setting-button color-picker\" };\nconst _hoisted_4 = { class: \"form-control\" };\nconst _hoisted_5 = {\n  for: \"colorPick\",\n  class: \"form-label mb-0\"\n};\nconst _hoisted_6 = /* @__PURE__ */ _createElementVNode(\"input\", {\n  type: \"color\",\n  class: \"form-control form-control-color\",\n  id: \"colorPick\",\n  value: \"#0da487\",\n  title: \"Choose your color\"\n}, null, -1);\nconst _hoisted_7 = { class: \"setting-name\" };\nconst _hoisted_8 = { class: \"theme-setting-button\" };\nimport { OnClickOutside } from \"@vueuse/components\";\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nconst _sfc_main = {\n  __name: \"index\",\n  setup(__props) {\n    let open = ref(false);\n    let show = ref(false);\n    let mode = ref(\"\");\n    let values = ref(\"\");\n    let primary_color = ref();\n    useDataStore().GetThemeoption();\n    let { ThemeOptions } = storeToRefs(useDataStore());\n    const toggle = () => {\n      open.value = !open.value;\n    };\n    function layout(value) {\n      values.value = value;\n      if (value === \"rtl\") {\n        if (true) {\n          document.body.classList.add(\"rtl\");\n          document.documentElement.dir = \"rtl\";\n        }\n      } else {\n        if (true) {\n          document.body.classList.remove(\"rtl\");\n          document.documentElement.dir = \"ltr\";\n        }\n      }\n    }\n    const layoutMode = (value) => {\n      mode.value = value;\n      if (mode.value === \"dark\") {\n        document.getElementsByTagName(\"html\")[0].classList.add(\"dark\");\n      } else {\n        document.getElementsByTagName(\"html\")[0].classList.remove(\"dark\");\n      }\n    };\n    const customizeThemeColor = (event) => {\n      document.documentElement.style.setProperty(\n        \"--theme-color\",\n        event.target.value\n      );\n    };\n    const closeDropdown = () => {\n      open.value = false;\n    };\n    onMounted(() => {\n      let option = ThemeOptions.options;\n      mode.value = option?.general ? option?.general?.mode : \"light\";\n      values.value = option?.general ? option?.general?.language_direction : \"ltr\";\n    });\n    onBeforeUnmount(() => {\n      document.documentElement.style.removeProperty(\"--theme-color\");\n    });\n    return (_ctx, _cache) => {\n      const _component_Icon = _resolveComponent(\"Icon\");\n      const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\");\n      return _openBlock(), _createBlock(_unref(OnClickOutside), {\n        onTrigger: _cache[3] || (_cache[3] = () => {\n          _isRef(open) ? open.value = false : open = false;\n        }),\n        class: \"setting-box\"\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_WidgetsButton, {\n            classes: \"btn setting-button\",\n            id: \"toggle_btn\",\n            type: \"button\",\n            onOnClick: _cache[0] || (_cache[0] = ($event) => toggle())\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_Icon, {\n                class: _normalizeClass(_unref(open) ? \"ri-close-fill\" : \"ri-settings-3-fill\"),\n                name: \"ri:settings-4-fill\"\n              }, null, 8, [\"class\"])\n            ]),\n            _: 1\n          }),\n          _createElementVNode(\"div\", {\n            class: _normalizeClass([\"theme-setting-2\", [{ active: _unref(open) }]])\n          }, [\n            _createElementVNode(\"div\", _hoisted_1, [\n              _createElementVNode(\"ul\", null, [\n                _createElementVNode(\"li\", null, [\n                  _createElementVNode(\"div\", _hoisted_2, [\n                    _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Color\")), 1)\n                  ]),\n                  _createElementVNode(\"div\", _hoisted_3, [\n                    _createElementVNode(\"form\", _hoisted_4, [\n                      _createElementVNode(\"label\", _hoisted_5, _toDisplayString(_ctx.$t(\"Theme Colo\")) + \"r\", 1),\n                      _hoisted_6\n                    ])\n                  ])\n                ]),\n                _createElementVNode(\"li\", null, [\n                  _createElementVNode(\"div\", _hoisted_7, [\n                    _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Dark\")), 1)\n                  ]),\n                  _createElementVNode(\"div\", _hoisted_8, [\n                    _createVNode(_component_WidgetsButton, {\n                      classes: _unref(mode) === \"dark\" ? \"btn btn-2 active\" : \"btn btn-2\",\n                      id: \"dark_btn\",\n                      type: \"button\",\n                      onOnClick: _cache[1] || (_cache[1] = ($event) => layoutMode(\"dark\"))\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString(_ctx.$t(\"Dark\")), 1)\n                      ]),\n                      _: 1\n                    }, 8, [\"classes\"]),\n                    _createVNode(_component_WidgetsButton, {\n                      classes: _unref(mode) === \"light\" ? \"btn btn-2 active\" : \"btn btn-2\",\n                      id: \"light_btn\",\n                      type: \"button\",\n                      onOnClick: _cache[2] || (_cache[2] = ($event) => layoutMode(\"light\"))\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString(_ctx.$t(\"Light\")), 1)\n                      ]),\n                      _: 1\n                    }, 8, [\"classes\"])\n                  ])\n                ])\n              ])\n            ])\n          ], 2)\n        ]),\n        _: 1\n      });\n    };\n  }\n};\nexport default _sfc_main;\n",
+      "start": 1716056289210,
+      "end": 1716056289309,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056289309,
+      "end": 1716056289309,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056289309,
+      "end": 1716056289309,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056289309,
+      "end": 1716056289309,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056289309,
+      "end": 1716056289309,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056289309,
+      "end": 1716056289309,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056289309,
+      "end": 1716056289309,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056289309,
+      "end": 1716056289309,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056289309,
+      "end": 1716056289309,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted, onBeforeUnmount } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, withCtx as _withCtx, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, isRef as _isRef, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = { class: \"theme-box\" };\nconst _hoisted_2 = { class: \"setting-name\" };\nconst _hoisted_3 = { class: \"theme-setting-button color-picker\" };\nconst _hoisted_4 = { class: \"form-control\" };\nconst _hoisted_5 = {\n  for: \"colorPick\",\n  class: \"form-label mb-0\"\n};\nconst _hoisted_6 = /* @__PURE__ */ _createElementVNode(\"input\", {\n  type: \"color\",\n  class: \"form-control form-control-color\",\n  id: \"colorPick\",\n  value: \"#0da487\",\n  title: \"Choose your color\"\n}, null, -1);\nconst _hoisted_7 = { class: \"setting-name\" };\nconst _hoisted_8 = { class: \"theme-setting-button\" };\nimport { OnClickOutside } from \"@vueuse/components\";\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nconst _sfc_main = {\n  __name: \"index\",\n  setup(__props) {\n    let open = ref(false);\n    let show = ref(false);\n    let mode = ref(\"\");\n    let values = ref(\"\");\n    let primary_color = ref();\n    useDataStore().GetThemeoption();\n    let { ThemeOptions } = storeToRefs(useDataStore());\n    const toggle = () => {\n      open.value = !open.value;\n    };\n    function layout(value) {\n      values.value = value;\n      if (value === \"rtl\") {\n        if (true) {\n          document.body.classList.add(\"rtl\");\n          document.documentElement.dir = \"rtl\";\n        }\n      } else {\n        if (true) {\n          document.body.classList.remove(\"rtl\");\n          document.documentElement.dir = \"ltr\";\n        }\n      }\n    }\n    const layoutMode = (value) => {\n      mode.value = value;\n      if (mode.value === \"dark\") {\n        document.getElementsByTagName(\"html\")[0].classList.add(\"dark\");\n      } else {\n        document.getElementsByTagName(\"html\")[0].classList.remove(\"dark\");\n      }\n    };\n    const customizeThemeColor = (event) => {\n      document.documentElement.style.setProperty(\n        \"--theme-color\",\n        event.target.value\n      );\n    };\n    const closeDropdown = () => {\n      open.value = false;\n    };\n    onMounted(() => {\n      let option = ThemeOptions.options;\n      mode.value = option?.general ? option?.general?.mode : \"light\";\n      values.value = option?.general ? option?.general?.language_direction : \"ltr\";\n    });\n    onBeforeUnmount(() => {\n      document.documentElement.style.removeProperty(\"--theme-color\");\n    });\n    return (_ctx, _cache) => {\n      const _component_Icon = _resolveComponent(\"Icon\");\n      const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\");\n      return _openBlock(), _createBlock(_unref(OnClickOutside), {\n        onTrigger: _cache[3] || (_cache[3] = () => {\n          _isRef(open) ? open.value = false : open = false;\n        }),\n        class: \"setting-box\"\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_WidgetsButton, {\n            classes: \"btn setting-button\",\n            id: \"toggle_btn\",\n            type: \"button\",\n            onOnClick: _cache[0] || (_cache[0] = ($event) => toggle())\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_Icon, {\n                class: _normalizeClass(_unref(open) ? \"ri-close-fill\" : \"ri-settings-3-fill\"),\n                name: \"ri:settings-4-fill\"\n              }, null, 8, [\"class\"])\n            ]),\n            _: 1\n          }),\n          _createElementVNode(\"div\", {\n            class: _normalizeClass([\"theme-setting-2\", [{ active: _unref(open) }]])\n          }, [\n            _createElementVNode(\"div\", _hoisted_1, [\n              _createElementVNode(\"ul\", null, [\n                _createElementVNode(\"li\", null, [\n                  _createElementVNode(\"div\", _hoisted_2, [\n                    _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Color\")), 1)\n                  ]),\n                  _createElementVNode(\"div\", _hoisted_3, [\n                    _createElementVNode(\"form\", _hoisted_4, [\n                      _createElementVNode(\"label\", _hoisted_5, _toDisplayString(_ctx.$t(\"Theme Colo\")) + \"r\", 1),\n                      _hoisted_6\n                    ])\n                  ])\n                ]),\n                _createElementVNode(\"li\", null, [\n                  _createElementVNode(\"div\", _hoisted_7, [\n                    _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Dark\")), 1)\n                  ]),\n                  _createElementVNode(\"div\", _hoisted_8, [\n                    _createVNode(_component_WidgetsButton, {\n                      classes: _unref(mode) === \"dark\" ? \"btn btn-2 active\" : \"btn btn-2\",\n                      id: \"dark_btn\",\n                      type: \"button\",\n                      onOnClick: _cache[1] || (_cache[1] = ($event) => layoutMode(\"dark\"))\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString(_ctx.$t(\"Dark\")), 1)\n                      ]),\n                      _: 1\n                    }, 8, [\"classes\"]),\n                    _createVNode(_component_WidgetsButton, {\n                      classes: _unref(mode) === \"light\" ? \"btn btn-2 active\" : \"btn btn-2\",\n                      id: \"light_btn\",\n                      type: \"button\",\n                      onOnClick: _cache[2] || (_cache[2] = ($event) => layoutMode(\"light\"))\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString(_ctx.$t(\"Light\")), 1)\n                      ]),\n                      _: 1\n                    }, 8, [\"classes\"])\n                  ])\n                ])\n              ])\n            ])\n          ], 2)\n        ]),\n        _: 1\n      });\n    };\n  }\n};\nexport default _sfc_main;\n",
+      "start": 1716056289309,
+      "end": 1716056289323,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056289324,
+      "end": 1716056289324,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056289324,
+      "end": 1716056289324,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056289324,
+      "end": 1716056289324,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056289324,
+      "end": 1716056289324,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { ref, onMounted, onBeforeUnmount } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, withCtx as _withCtx, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, isRef as _isRef, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = { class: \"theme-box\" };\nconst _hoisted_2 = { class: \"setting-name\" };\nconst _hoisted_3 = { class: \"theme-setting-button color-picker\" };\nconst _hoisted_4 = { class: \"form-control\" };\nconst _hoisted_5 = {\n  for: \"colorPick\",\n  class: \"form-label mb-0\"\n};\nconst _hoisted_6 = /* @__PURE__ */ _createElementVNode(\"input\", {\n  type: \"color\",\n  class: \"form-control form-control-color\",\n  id: \"colorPick\",\n  value: \"#0da487\",\n  title: \"Choose your color\"\n}, null, -1);\nconst _hoisted_7 = { class: \"setting-name\" };\nconst _hoisted_8 = { class: \"theme-setting-button\" };\nimport { OnClickOutside } from \"@vueuse/components\";\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nconst _sfc_main = {\n  __name: \"index\",\n  setup(__props) {\n    let open = ref(false);\n    let show = ref(false);\n    let mode = ref(\"\");\n    let values = ref(\"\");\n    let primary_color = ref();\n    useDataStore().GetThemeoption();\n    let { ThemeOptions } = storeToRefs(useDataStore());\n    const toggle = () => {\n      open.value = !open.value;\n    };\n    function layout(value) {\n      values.value = value;\n      if (value === \"rtl\") {\n        if (true) {\n          document.body.classList.add(\"rtl\");\n          document.documentElement.dir = \"rtl\";\n        }\n      } else {\n        if (true) {\n          document.body.classList.remove(\"rtl\");\n          document.documentElement.dir = \"ltr\";\n        }\n      }\n    }\n    const layoutMode = (value) => {\n      mode.value = value;\n      if (mode.value === \"dark\") {\n        document.getElementsByTagName(\"html\")[0].classList.add(\"dark\");\n      } else {\n        document.getElementsByTagName(\"html\")[0].classList.remove(\"dark\");\n      }\n    };\n    const customizeThemeColor = (event) => {\n      document.documentElement.style.setProperty(\n        \"--theme-color\",\n        event.target.value\n      );\n    };\n    const closeDropdown = () => {\n      open.value = false;\n    };\n    onMounted(() => {\n      let option = ThemeOptions.options;\n      mode.value = option?.general ? option?.general?.mode : \"light\";\n      values.value = option?.general ? option?.general?.language_direction : \"ltr\";\n    });\n    onBeforeUnmount(() => {\n      document.documentElement.style.removeProperty(\"--theme-color\");\n    });\n    return (_ctx, _cache) => {\n      const _component_Icon = __nuxt_component_0;\n      const _component_WidgetsButton = __nuxt_component_1;\n      return _openBlock(), _createBlock(_unref(OnClickOutside), {\n        onTrigger: _cache[3] || (_cache[3] = () => {\n          _isRef(open) ? open.value = false : open = false;\n        }),\n        class: \"setting-box\"\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_WidgetsButton, {\n            classes: \"btn setting-button\",\n            id: \"toggle_btn\",\n            type: \"button\",\n            onOnClick: _cache[0] || (_cache[0] = ($event) => toggle())\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_Icon, {\n                class: _normalizeClass(_unref(open) ? \"ri-close-fill\" : \"ri-settings-3-fill\"),\n                name: \"ri:settings-4-fill\"\n              }, null, 8, [\"class\"])\n            ]),\n            _: 1\n          }),\n          _createElementVNode(\"div\", {\n            class: _normalizeClass([\"theme-setting-2\", [{ active: _unref(open) }]])\n          }, [\n            _createElementVNode(\"div\", _hoisted_1, [\n              _createElementVNode(\"ul\", null, [\n                _createElementVNode(\"li\", null, [\n                  _createElementVNode(\"div\", _hoisted_2, [\n                    _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Color\")), 1)\n                  ]),\n                  _createElementVNode(\"div\", _hoisted_3, [\n                    _createElementVNode(\"form\", _hoisted_4, [\n                      _createElementVNode(\"label\", _hoisted_5, _toDisplayString(_ctx.$t(\"Theme Colo\")) + \"r\", 1),\n                      _hoisted_6\n                    ])\n                  ])\n                ]),\n                _createElementVNode(\"li\", null, [\n                  _createElementVNode(\"div\", _hoisted_7, [\n                    _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Dark\")), 1)\n                  ]),\n                  _createElementVNode(\"div\", _hoisted_8, [\n                    _createVNode(_component_WidgetsButton, {\n                      classes: _unref(mode) === \"dark\" ? \"btn btn-2 active\" : \"btn btn-2\",\n                      id: \"dark_btn\",\n                      type: \"button\",\n                      onOnClick: _cache[1] || (_cache[1] = ($event) => layoutMode(\"dark\"))\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString(_ctx.$t(\"Dark\")), 1)\n                      ]),\n                      _: 1\n                    }, 8, [\"classes\"]),\n                    _createVNode(_component_WidgetsButton, {\n                      classes: _unref(mode) === \"light\" ? \"btn btn-2 active\" : \"btn btn-2\",\n                      id: \"light_btn\",\n                      type: \"button\",\n                      onOnClick: _cache[2] || (_cache[2] = ($event) => layoutMode(\"light\"))\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString(_ctx.$t(\"Light\")), 1)\n                      ]),\n                      _: 1\n                    }, 8, [\"classes\"])\n                  ])\n                ])\n              ])\n            ])\n          ], 2)\n        ]),\n        _: 1\n      });\n    };\n  }\n};\nexport default _sfc_main;\n",
+      "start": 1716056289324,
+      "end": 1716056289324,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056289324,
+      "end": 1716056289324,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056289324,
+      "end": 1716056289325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056289325,
+      "end": 1716056289325,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/MinimalHeader/index.vue?nuxt_component=async&nuxt_component_name=HeaderMinimalHeader",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <header :class=\"{ active: stick && sticky }\">\n    <HeaderElementsTopHeader :themeOptions=\"themeOptions\" v-if=\"themeOptions?.header?.page_top_bar_enable\" />\n    <div class=\"top-nav top-header sticky-header\">\n      <div class=\"container-fluid-lg\">\n        <div class=\"row\">\n          <div class=\"col-12\">\n            <div class=\"navbar-top\">\n              <HeaderElementsNavMenuButton @activeMenu=\"toggle($event)\" :show=\"active\" />\n              <HeaderElementsLogo :themeOptions=\"themeOptions\" :logo=\"logo\" />\n              <div class=\"header-nav-middle\">\n                <div class=\"main-nav navbar navbar-expand-xl navbar-light navbar-sticky\">\n                  <div class=\"offcanvas offcanvas-collapse order-xl-2\" id=\"primaryMenu\" :class=\"{ show: active }\">\n                    <div class=\"offcanvas-header navbar-shadow\">\n                      <h5>{{ $t(\"Menu\") }}</h5>\n                      <button :type=\"'button'\" :id=\"'toggle_menu_btn'\" @click=\"toggle(false)\" :class=\"'btn-close lead'\">\n                        <Icon name=\"ri:close-fill\" />\n                      </button>\n                    </div>\n                    <div class=\"offcanvas-body\">\n                      <ul class=\"navbar-nav\">\n                        <li v-for=\"(menu, index) in Menu\" :key=\"index\" :class=\"[\n                          menu.type == 'sub' && menu.children\n                            ? 'nav-item dropdown'\n                            : 'nav-item',\n                          menu.megaMenu ? 'dropdown-mega' : '',\n                          { 'new-nav-item': menu.badge },\n                        ]\">\n                          <HeaderElementsMenuList  :show=\"true\" :menu=\"menu\" />\n                        </li>\n                      </ul>\n                    </div>\n                  </div>\n                  <!-- <div class=\"offcanvas-backdrop fade\" v-if=\"active\" :class=\"{ show: active }\" @click=\"toggle(false)\">\n                  </div> -->\n                </div>\n              </div>\n              <div class=\"rightside-box\">\n                <ul class=\"right-side-menu\">\n                  <li class=\"right-side search-icon search-full-icon\">\n                    <HeaderElementsSearch :style=\"'berlin'\" />\n                  </li>\n                  <li class=\"right-side\">\n                    <HeaderElementsWishlist :style=\"'basic'\" />\n                  </li>\n                  <li class=\"right-side\">\n                    <div class=\"onhover-dropdown header-badge\">\n                      <HeaderElementsCart :style=\"'basic'\" />\n                    </div>\n                  </li>\n                  <li class=\"right-side onhover-dropdown\">\n                    <HeaderElementsMyAccount :style=\"'basic'\" />\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </header>\n</template>\n\n<script setup>\nimport { Menu } from \"@/data/menu\";\nlet props = defineProps({\n  themeOptions: Object,\n  logo: String,\n  sticky: Boolean,\n});\n\nlet activeMenu = defineEmits();\n\nlet stick = ref(false);\nlet active = ref(false);\n\nfunction toggle(val) {\n  active.value = val;\n}\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056270768,
+      "end": 1716056271161,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271161,
+      "end": 1716056271161,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271161,
+      "end": 1716056271161,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271161,
+      "end": 1716056271161,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271161,
+      "end": 1716056271161,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271161,
+      "end": 1716056271161,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271161,
+      "end": 1716056271161,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271161,
+      "end": 1716056271161,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass, renderList as _renderList, Fragment as _Fragment, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"top-nav top-header sticky-header\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-12\" }\nconst _hoisted_5 = { class: \"navbar-top\" }\nconst _hoisted_6 = { class: \"header-nav-middle\" }\nconst _hoisted_7 = { class: \"main-nav navbar navbar-expand-xl navbar-light navbar-sticky\" }\nconst _hoisted_8 = { class: \"offcanvas-header navbar-shadow\" }\nconst _hoisted_9 = { class: \"offcanvas-body\" }\nconst _hoisted_10 = { class: \"navbar-nav\" }\nconst _hoisted_11 = { class: \"rightside-box\" }\nconst _hoisted_12 = { class: \"right-side-menu\" }\nconst _hoisted_13 = { class: \"right-side search-icon search-full-icon\" }\nconst _hoisted_14 = { class: \"right-side\" }\nconst _hoisted_15 = { class: \"right-side\" }\nconst _hoisted_16 = { class: \"onhover-dropdown header-badge\" }\nconst _hoisted_17 = { class: \"right-side onhover-dropdown\" }\n\nimport { Menu } from \"@/data/menu\";\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  themeOptions: Object,\n  logo: String,\n  sticky: Boolean,\n},\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\n\nlet activeMenu = __emit;\n\nlet stick = ref(false);\nlet active = ref(false);\n\nfunction toggle(val) {\n  active.value = val;\n}\n\nreturn (_ctx, _cache) => {\n  const _component_HeaderElementsTopHeader = _resolveComponent(\"HeaderElementsTopHeader\")\n  const _component_HeaderElementsNavMenuButton = _resolveComponent(\"HeaderElementsNavMenuButton\")\n  const _component_HeaderElementsLogo = _resolveComponent(\"HeaderElementsLogo\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_HeaderElementsMenuList = _resolveComponent(\"HeaderElementsMenuList\")\n  const _component_HeaderElementsSearch = _resolveComponent(\"HeaderElementsSearch\")\n  const _component_HeaderElementsWishlist = _resolveComponent(\"HeaderElementsWishlist\")\n  const _component_HeaderElementsCart = _resolveComponent(\"HeaderElementsCart\")\n  const _component_HeaderElementsMyAccount = _resolveComponent(\"HeaderElementsMyAccount\")\n\n  return (_openBlock(), _createElementBlock(\"header\", {\n    class: _normalizeClass({ active: _unref(stick) && __props.sticky })\n  }, [\n    (__props.themeOptions?.header?.page_top_bar_enable)\n      ? (_openBlock(), _createBlock(_component_HeaderElementsTopHeader, {\n          key: 0,\n          themeOptions: __props.themeOptions\n        }, null, 8, [\"themeOptions\"]))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"div\", _hoisted_5, [\n              _createVNode(_component_HeaderElementsNavMenuButton, {\n                onActiveMenu: _cache[0] || (_cache[0] = $event => (toggle($event))),\n                show: _unref(active)\n              }, null, 8, [\"show\"]),\n              _createVNode(_component_HeaderElementsLogo, {\n                themeOptions: __props.themeOptions,\n                logo: __props.logo\n              }, null, 8, [\"themeOptions\", \"logo\"]),\n              _createElementVNode(\"div\", _hoisted_6, [\n                _createElementVNode(\"div\", _hoisted_7, [\n                  _createElementVNode(\"div\", {\n                    class: _normalizeClass([\"offcanvas offcanvas-collapse order-xl-2\", { show: _unref(active) }]),\n                    id: \"primaryMenu\"\n                  }, [\n                    _createElementVNode(\"div\", _hoisted_8, [\n                      _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"Menu\")), 1),\n                      _createElementVNode(\"button\", {\n                        type: 'button',\n                        id: 'toggle_menu_btn',\n                        onClick: _cache[1] || (_cache[1] = $event => (toggle(false))),\n                        class: _normalizeClass('btn-close lead')\n                      }, [\n                        _createVNode(_component_Icon, { name: \"ri:close-fill\" })\n                      ])\n                    ]),\n                    _createElementVNode(\"div\", _hoisted_9, [\n                      _createElementVNode(\"ul\", _hoisted_10, [\n                        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(Menu), (menu, index) => {\n                          return (_openBlock(), _createElementBlock(\"li\", {\n                            key: index,\n                            class: _normalizeClass([\n                          menu.type == 'sub' && menu.children\n                            ? 'nav-item dropdown'\n                            : 'nav-item',\n                          menu.megaMenu ? 'dropdown-mega' : '',\n                          { 'new-nav-item': menu.badge },\n                        ])\n                          }, [\n                            _createVNode(_component_HeaderElementsMenuList, {\n                              show: true,\n                              menu: menu\n                            }, null, 8, [\"menu\"])\n                          ], 2))\n                        }), 128))\n                      ])\n                    ])\n                  ], 2)\n                ])\n              ]),\n              _createElementVNode(\"div\", _hoisted_11, [\n                _createElementVNode(\"ul\", _hoisted_12, [\n                  _createElementVNode(\"li\", _hoisted_13, [\n                    _createVNode(_component_HeaderElementsSearch, { style: 'berlin' })\n                  ]),\n                  _createElementVNode(\"li\", _hoisted_14, [\n                    _createVNode(_component_HeaderElementsWishlist, { style: 'basic' })\n                  ]),\n                  _createElementVNode(\"li\", _hoisted_15, [\n                    _createElementVNode(\"div\", _hoisted_16, [\n                      _createVNode(_component_HeaderElementsCart, { style: 'basic' })\n                    ])\n                  ]),\n                  _createElementVNode(\"li\", _hoisted_17, [\n                    _createVNode(_component_HeaderElementsMyAccount, { style: 'basic' })\n                  ])\n                ])\n              ])\n            ])\n          ])\n        ])\n      ])\n    ])\n  ], 2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056271161,
+      "end": 1716056271164,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271164,
+      "end": 1716056271164,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271164,
+      "end": 1716056271165,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271165,
+      "end": 1716056271165,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271165,
+      "end": 1716056271165,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/MinimalHeader/index.vue\").then(r => r.default))",
+      "start": 1716056271165,
+      "end": 1716056271165,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271165,
+      "end": 1716056271165,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271165,
+      "end": 1716056271165,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271165,
+      "end": 1716056271165,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271165,
+      "end": 1716056271165,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271165,
+      "end": 1716056271165,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271165,
+      "end": 1716056271165,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271165,
+      "end": 1716056271165,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271165,
+      "end": 1716056271165,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271165,
+      "end": 1716056271165,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271165,
+      "end": 1716056271165,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271165,
+      "end": 1716056271166,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271166,
+      "end": 1716056271166,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271166,
+      "end": 1716056271166,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271166,
+      "end": 1716056271166,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271166,
+      "end": 1716056271166,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271166,
+      "end": 1716056271166,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271166,
+      "end": 1716056271166,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271166,
+      "end": 1716056271166,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/MinimalHeader/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271166,
+      "end": 1716056271166,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271166,
+      "end": 1716056271166,
+      "order": "normal"
+    }
+  ]
+}

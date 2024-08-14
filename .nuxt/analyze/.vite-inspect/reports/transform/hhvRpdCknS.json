@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/QuestionsAnswers/index.vue?nuxt_component=async&nuxt_component_name=ShopProductDetailsWidgetsQuestionsAnswers",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <div class=\"question-answer skeleton-qa\" v-if=\"skeletonLoader\">\n    <ul>\n      <li v-for=\"item of skeletonItems\" :key=\"item\">\n        <div class=\"question-box\">\n          <h5></h5>\n          <h6 class=\"font-weight-bold que\"></h6>\n        </div>\n        <div class=\"answer-box\">\n          <h5></h5>\n          <div>\n            <p class=\"ans\"></p>\n            <p class=\"ans\"></p>\n          </div>\n        </div>\n      </li>\n    </ul>\n  </div>\n\n  <div class=\"post-question-box\">\n    <h4>\n      {{ \"Have Doubts Regarding This Product\" }} ?\n      <a href=\"javascript:void(0)\" @click=\"(questionanswerModal) => {\n        questionModal({ questionanswerModal });\n      }\n        \">{{ \"Post Your Question\" }}</a>\n    </h4>\n  </div>\n  <div class=\"question-answer\">\n    <ul v-if=\"questionAnswers?.length\">\n      <li v-for=\"(qna, index) of questionAnswers\" :key=\"qna\">\n        <div class=\"question-box\">\n          <h5>{{ \"q\" }}{{ index + 1 }}</h5>\n          <h6 class=\"font-weight-bold que\">{{ qna?.question }}</h6>\n          <ul class=\"link-dislike-box\">\n            <!-- -->\n            <li v-if=\"!qna?.answer\">\n\n              <a href=\"javascript:void(0)\" @click=\"(questionanswerModal) => {\n                questionModal(qna);\n              }\n                \">\n                <span>\n                  <Icon name=\"ri-edit-fill\"></Icon>\n                </span>\n              </a>\n            </li>\n            <li v-if=\"qna?.answer\">\n              <a href=\"javascript:void(0)\" @click=\"feedback(qna, 'liked'), liked = !liked\">\n                <span>\n                  <Icon :name=\"qnaID.includes(qna.id)  ? 'ri:thumb-up-fill' : 'ri:thumb-up-line'\" />\n                  {{ qnaID.includes(qna.id) ? qna.total_likes + 1 : qna.total_likes }}\n                </span>\n              </a>\n            </li>\n            <li v-if=\"qna?.answer\">\n              <a href=\"javascript:void(0)\" @click=\"feedback(qna, 'disliked'), disliked = !disliked\">\n                <span>\n                  <Icon :name=\"qnaunLikeId.includes(qna.id) ? 'ri:thumb-down-fill' : 'ri:thumb-down-line'\" />\n                  {{ qnaunLikeId.includes(qna.id) ? qna.total_likes + 1 : qna.total_likes }}\n                </span>\n              </a>\n            </li>\n          </ul>\n        </div>\n        <div class=\"answer-box\">\n          <div class=\"answer-box\" v-if=\"qna?.answer\">\n            <h5>{{ \"a\" }}{{ index + 1 }}</h5>\n            <p class=\"ans\">{{ qna?.answer }}</p>\n          </div>\n        </div>\n      </li>\n    </ul>\n    <WidgetsNoData :classes=\"'no-data-added'\" :text=\"'No Question Posted Yet'\"\n      :description=\"'There are currently no question for this productoduct'\" v-if=\"!questionAnswers?.length\" />\n  </div>\n  <WidgetsModalsCommon :showModal=\"questionanswerModal\" @close=\"questionModal({ state: false })\">\n    <WidgetsModalsQuestionModal :product=\"product\" :qna=\"qnaObject\" @close=\"questionModal({ state: false })\" />\n  </WidgetsModalsCommon>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  product: Object,\n  questionAnswers: Object,\n});\nlet likeUnliked = ref()\nlet qnaID = ref([])\nlet qnaObject = ref({})\nlet qnaunLikeId = ref([])\nlet feddbackValue = ref('')\nlet questionanswerModal = ref(false);\nconst skeletonLoader = ref(true)\nlet skeletonItems = Array.from({ length: 9 }, (_, index) => index);\n\nfunction questionModal({qna, state = true}) {\n  questionanswerModal.value = state;\n  qnaObject.value = qna\n}\nfunction feedback(qna, feedback) {\n  if (feedback == 'liked') {\n\n    if (qnaID.value.includes(qna.id)) {\n      let index = qnaID.value.indexOf(qna.id)\n      qnaID.value.splice(index, 1)\n      feddbackValue.value = ''\n    }\n    else {\n      qnaID.value.push(qna.id)\n      feddbackValue.value = feedback\n     if(qnaunLikeId.value.includes(qna.id)){\n       let index = qnaunLikeId.value.indexOf(qna.id)\n      qnaunLikeId.value.splice(index, 1)\n     }\n    }\n    sendFeedback(qna.id, feedback)\n  }\n  else if (feedback == 'disliked') {\n    if (qnaunLikeId.value.includes(qna.id)) {\n      let index = qnaunLikeId.value.indexOf(qna.id)\n      qnaunLikeId.value.splice(index, 1)\n      feddbackValue.value = ''\n    }\n    else {\n      qnaunLikeId.value.push(qna.id)\n      feddbackValue.value = feedback\n      if(qnaID.value.includes(qna.id)){\n        let index = qnaID.value.indexOf(qna.id)\n        qnaID.value.splice(index, 1)\n      }\n\n    }\n  }\n  sendFeedback(qna.id, feedback)\n}\nasync function sendFeedback(id, feedback) {\n  let userData = localStorage.getItem('usersAccount')\n  if (userData) {\n    let { data, error } = await useFetch('question-and-answer/feedback', {\n      method: 'post',\n      headers: GetHeaders(),\n      baseURL: BaseUrl,\n      body: {\n        question_and_answer_id: id,\n        reaction: feedback\n      }\n    })\n  }\n}\nonMounted(() => {\n  setTimeout(() => {\n    skeletonLoader.value = false\n  }, 2000);\n})\n\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056271559,
+      "end": 1716056284764,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284764,
+      "end": 1716056284764,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284764,
+      "end": 1716056284764,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284764,
+      "end": 1716056284764,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284764,
+      "end": 1716056284764,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284764,
+      "end": 1716056284764,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284764,
+      "end": 1716056284764,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284764,
+      "end": 1716056284764,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, createBlock as _createBlock, withCtx as _withCtx, createStaticVNode as _createStaticVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"question-answer skeleton-qa\"\n}\nconst _hoisted_2 = /*#__PURE__*/_createStaticVNode(\"<div class=\\\"question-box\\\"><h5></h5><h6 class=\\\"font-weight-bold que\\\"></h6></div><div class=\\\"answer-box\\\"><h5></h5><div><p class=\\\"ans\\\"></p><p class=\\\"ans\\\"></p></div></div>\", 2)\nconst _hoisted_4 = [\n  _hoisted_2\n]\nconst _hoisted_5 = { class: \"post-question-box\" }\nconst _hoisted_6 = { class: \"question-answer\" }\nconst _hoisted_7 = { key: 0 }\nconst _hoisted_8 = { class: \"question-box\" }\nconst _hoisted_9 = { class: \"font-weight-bold que\" }\nconst _hoisted_10 = { class: \"link-dislike-box\" }\nconst _hoisted_11 = { key: 0 }\nconst _hoisted_12 = [\"onClick\"]\nconst _hoisted_13 = { key: 1 }\nconst _hoisted_14 = [\"onClick\"]\nconst _hoisted_15 = { key: 2 }\nconst _hoisted_16 = [\"onClick\"]\nconst _hoisted_17 = { class: \"answer-box\" }\nconst _hoisted_18 = {\n  key: 0,\n  class: \"answer-box\"\n}\nconst _hoisted_19 = { class: \"ans\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  product: Object,\n  questionAnswers: Object,\n},\n  setup(__props) {\n\nlet props = __props;\nlet likeUnliked = ref()\nlet qnaID = ref([])\nlet qnaObject = ref({})\nlet qnaunLikeId = ref([])\nlet feddbackValue = ref('')\nlet questionanswerModal = ref(false);\nconst skeletonLoader = ref(true)\nlet skeletonItems = Array.from({ length: 9 }, (_, index) => index);\n\nfunction questionModal({qna, state = true}) {\n  questionanswerModal.value = state;\n  qnaObject.value = qna\n}\nfunction feedback(qna, feedback) {\n  if (feedback == 'liked') {\n\n    if (qnaID.value.includes(qna.id)) {\n      let index = qnaID.value.indexOf(qna.id)\n      qnaID.value.splice(index, 1)\n      feddbackValue.value = ''\n    }\n    else {\n      qnaID.value.push(qna.id)\n      feddbackValue.value = feedback\n     if(qnaunLikeId.value.includes(qna.id)){\n       let index = qnaunLikeId.value.indexOf(qna.id)\n      qnaunLikeId.value.splice(index, 1)\n     }\n    }\n    sendFeedback(qna.id, feedback)\n  }\n  else if (feedback == 'disliked') {\n    if (qnaunLikeId.value.includes(qna.id)) {\n      let index = qnaunLikeId.value.indexOf(qna.id)\n      qnaunLikeId.value.splice(index, 1)\n      feddbackValue.value = ''\n    }\n    else {\n      qnaunLikeId.value.push(qna.id)\n      feddbackValue.value = feedback\n      if(qnaID.value.includes(qna.id)){\n        let index = qnaID.value.indexOf(qna.id)\n        qnaID.value.splice(index, 1)\n      }\n\n    }\n  }\n  sendFeedback(qna.id, feedback)\n}\nasync function sendFeedback(id, feedback) {\n  let userData = localStorage.getItem('usersAccount')\n  if (userData) {\n    let { data, error } = await useFetch('question-and-answer/feedback', {\n      method: 'post',\n      headers: GetHeaders(),\n      baseURL: BaseUrl,\n      body: {\n        question_and_answer_id: id,\n        reaction: feedback\n      }\n    })\n  }\n}\nonMounted(() => {\n  setTimeout(() => {\n    skeletonLoader.value = false\n  }, 2000);\n})\n\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n  const _component_WidgetsModalsQuestionModal = _resolveComponent(\"WidgetsModalsQuestionModal\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (_unref(skeletonLoader))\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n          _createElementVNode(\"ul\", null, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(skeletonItems), (item) => {\n              return (_openBlock(), _createElementBlock(\"li\", { key: item }, _hoisted_4))\n            }), 128))\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", _hoisted_5, [\n      _createElementVNode(\"h4\", null, [\n        _createTextVNode(_toDisplayString(\"Have Doubts Regarding This Product\") + \" ? \"),\n        _createElementVNode(\"a\", {\n          href: \"javascript:void(0)\",\n          onClick: _cache[0] || (_cache[0] = (questionanswerModal) => {\n        questionModal({ questionanswerModal });\n      }\n        )\n        }, _toDisplayString(\"Post Your Question\"))\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_6, [\n      (__props.questionAnswers?.length)\n        ? (_openBlock(), _createElementBlock(\"ul\", _hoisted_7, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.questionAnswers, (qna, index) => {\n              return (_openBlock(), _createElementBlock(\"li\", { key: qna }, [\n                _createElementVNode(\"div\", _hoisted_8, [\n                  _createElementVNode(\"h5\", null, _toDisplayString(\"q\") + _toDisplayString(index + 1), 1),\n                  _createElementVNode(\"h6\", _hoisted_9, _toDisplayString(qna?.question), 1),\n                  _createElementVNode(\"ul\", _hoisted_10, [\n                    (!qna?.answer)\n                      ? (_openBlock(), _createElementBlock(\"li\", _hoisted_11, [\n                          _createElementVNode(\"a\", {\n                            href: \"javascript:void(0)\",\n                            onClick: (questionanswerModal) => {\n                questionModal(qna);\n              }\n                \n                          }, [\n                            _createElementVNode(\"span\", null, [\n                              _createVNode(_component_Icon, { name: \"ri-edit-fill\" })\n                            ])\n                          ], 8, _hoisted_12)\n                        ]))\n                      : _createCommentVNode(\"\", true),\n                    (qna?.answer)\n                      ? (_openBlock(), _createElementBlock(\"li\", _hoisted_13, [\n                          _createElementVNode(\"a\", {\n                            href: \"javascript:void(0)\",\n                            onClick: $event => (feedback(qna, 'liked'), _ctx.liked = !_ctx.liked)\n                          }, [\n                            _createElementVNode(\"span\", null, [\n                              _createVNode(_component_Icon, {\n                                name: _unref(qnaID).includes(qna.id)  ? 'ri:thumb-up-fill' : 'ri:thumb-up-line'\n                              }, null, 8, [\"name\"]),\n                              _createTextVNode(\" \" + _toDisplayString(_unref(qnaID).includes(qna.id) ? qna.total_likes + 1 : qna.total_likes), 1)\n                            ])\n                          ], 8, _hoisted_14)\n                        ]))\n                      : _createCommentVNode(\"\", true),\n                    (qna?.answer)\n                      ? (_openBlock(), _createElementBlock(\"li\", _hoisted_15, [\n                          _createElementVNode(\"a\", {\n                            href: \"javascript:void(0)\",\n                            onClick: $event => (feedback(qna, 'disliked'), _ctx.disliked = !_ctx.disliked)\n                          }, [\n                            _createElementVNode(\"span\", null, [\n                              _createVNode(_component_Icon, {\n                                name: _unref(qnaunLikeId).includes(qna.id) ? 'ri:thumb-down-fill' : 'ri:thumb-down-line'\n                              }, null, 8, [\"name\"]),\n                              _createTextVNode(\" \" + _toDisplayString(_unref(qnaunLikeId).includes(qna.id) ? qna.total_likes + 1 : qna.total_likes), 1)\n                            ])\n                          ], 8, _hoisted_16)\n                        ]))\n                      : _createCommentVNode(\"\", true)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_17, [\n                  (qna?.answer)\n                    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_18, [\n                        _createElementVNode(\"h5\", null, _toDisplayString(\"a\") + _toDisplayString(index + 1), 1),\n                        _createElementVNode(\"p\", _hoisted_19, _toDisplayString(qna?.answer), 1)\n                      ]))\n                    : _createCommentVNode(\"\", true)\n                ])\n              ]))\n            }), 128))\n          ]))\n        : _createCommentVNode(\"\", true),\n      (!__props.questionAnswers?.length)\n        ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n            key: 1,\n            classes: 'no-data-added',\n            text: 'No Question Posted Yet',\n            description: 'There are currently no question for this productoduct'\n          }))\n        : _createCommentVNode(\"\", true)\n    ]),\n    _createVNode(_component_WidgetsModalsCommon, {\n      showModal: _unref(questionanswerModal),\n      onClose: _cache[2] || (_cache[2] = $event => (questionModal({ state: false })))\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_WidgetsModalsQuestionModal, {\n          product: __props.product,\n          qna: _unref(qnaObject),\n          onClose: _cache[1] || (_cache[1] = $event => (questionModal({ state: false })))\n        }, null, 8, [\"product\", \"qna\"])\n      ]),\n      _: 1\n    }, 8, [\"showModal\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284764,
+      "end": 1716056284772,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284772,
+      "end": 1716056284772,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284772,
+      "end": 1716056284772,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284772,
+      "end": 1716056284772,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284772,
+      "end": 1716056284772,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/QuestionsAnswers/index.vue\").then(r => r.default))",
+      "start": 1716056284772,
+      "end": 1716056284772,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/QuestionsAnswers/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284773,
+      "end": 1716056284773,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+/**=====================
+     breadscrumb scss
+==========================**/
+.breadscrumb-section {
+    background-color: $light-gray;
+    position: relative;
+    overflow: hidden;
+
+    .breadscrumb-contain {
+        padding: calc(26px + (40 - 26) * ((100vw - 320px) / (1920 - 320))) 0;
+        text-align: center;
+        color: $title-color;
+        font-family: $public-sans;
+        display: flex;
+        align-items: center;
+
+        @include mq-max(xs) {
+            display: block;
+        }
+
+        h2 {
+            @include line;
+            max-width: 40%;
+            text-align: left;
+            font-weight: 700;
+            font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
+            margin-bottom: 0;
+
+            @include mq-max(xs) {
+                text-align: center;
+                margin-bottom: 8px;
+                margin-inline: auto;
+                max-width: 100%;
+            }
+        }
+
+        .search-box-breadscrumb {
+            position: relative;
+            width: 70%;
+            margin: 0 auto;
+
+            @include mq-max(sm) {
+                width: 90%;
+            }
+
+            @include mq-max(2xs) {
+                width: 100%;
+            }
+
+            input {
+                width: 100%;
+                border: none;
+                border-radius: 6px;
+                font-size: 15px;
+            }
+
+            svg {
+                @include center(vertical);
+                position: absolute;
+                right: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+                color: $content-color;
+                @include pseudowh($width: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320))), $height: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320))));
+            }
+        }
+
+        nav {
+            margin-left: auto;
+
+            body.rtl & {
+                margin-left: unset;
+                margin-right: auto;
+            }
+
+            .breadcrumb {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                @include mq-max(xs) {
+                    justify-content: center;
+                }
+
+                .breadcrumb-item {
+                    font-weight: 500;
+
+                    svg {
+                        color: $content-color;
+                        @include pseudowh($width: 20px, $height: 20px);
+                    }
+
+                    &.active {
+                        color: $black;
+                        margin-top: 2px;
+                    }
+
+                    +.breadcrumb-item {
+                        position: relative;
+
+                        body.rtl & {
+                            padding-left: 0;
+                            padding-right: 8px;
+                        }
+
+                        &::before {
+                            @include font-awesome;
+                            content: "\f105";
+                            color: $content-color;
+
+                            body.rtl & {
+                                float: right;
+                                padding-right: unset;
+                                padding-left: var(--bs-breadcrumb-item-padding-x);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .breadscrumb-order {
+        display: block;
+
+        .order-box {
+            .order-image {
+                @include pseudowh($width: calc(170px + (250 - 170) * ((100vw - 320px) / (1920 - 320))), $height: auto);
+                margin: 0 auto calc(16px + (28 - 16) * ((100vw - 320px) / (1920 - 320)));
+
+                .checkmark {
+                    position: relative;
+                    padding: 30px;
+                    animation: checkmark 5m cubic-bezier(0.420, 0.000, 0.275, 1.155) both;
+                    display: inline-block;
+                    transform: scale(0.8);
+                    margin: -20px;
+
+                    &__check {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        z-index: 10;
+                        transform: translate3d(-50%, -50%, 0);
+                        fill: white;
+                    }
+
+                    &__background {
+                        fill: var(--theme-color);
+                        animation: rotate 35s linear both infinite;
+                    }
+                }
+
+                .star {
+                    position: absolute;
+                    animation: grow 3s infinite;
+                    fill: var(--theme-color);
+                    opacity: 0;
+
+                    &:nth-child(1) {
+                        @include pseudowh($width: 12px, $height: 12px);
+                        left: 12px;
+                        top: 16px;
+                    }
+
+                    &:nth-child(2) {
+                        @include pseudowh($width: 18px, $height: 18px);
+                        left: 168px;
+                        top: 84px;
+                    }
+
+                    &:nth-child(3) {
+                        @include pseudowh($width: 10px, $height: 10px);
+                        left: 32px;
+                        top: 162px;
+                    }
+
+                    &:nth-child(4) {
+                        @include pseudowh($width: 20px, $height: 20px);
+                        left: 82px;
+                        top: -12px;
+                    }
+
+                    &:nth-child(5) {
+                        @include pseudowh($width: 14px, $height: 14px);
+                        left: 125px;
+                        top: 162px;
+                    }
+
+                    &:nth-child(6) {
+                        @include pseudowh($width: 10px, $height: 10px);
+                        left: 16px;
+                        top: 16px;
+                    }
+
+                    @for $i from 1 through 6 {
+                        &:nth-child(#{$i}) {
+                            animation-delay: $i*(3.0s*0.5);
+                        }
+                    }
+                }
+
+                .checkmark {
+                    position: relative;
+                    padding: 30px;
+                    animation: checkmark 5m cubic-bezier(0.420, 0.000, 0.275, 1.155) both;
+                    display: inline-block;
+                    transform: scale(0.8);
+                    margin: -20px;
+
+                    &__check {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        z-index: 10;
+                        transform: translate3d(-50%, -50%, 0);
+                        fill: white;
+                    }
+
+                    &__background {
+                        fill: var(--theme-color);
+                        animation: rotate 35s linear both infinite;
+                    }
+                }
+
+                i {
+                    font-size: 50px;
+                    color: #4ead4e;
+                }
+
+                h2 {
+                    margin-top: 10px;
+                    margin-bottom: 15px;
+                }
+
+                p {
+                    font-size: 18px;
+                    text-transform: capitalize;
+                }
+
+                &.order-fail {
+                    i {
+                        color: var(--theme-color);
+                    }
+                }
+            }
+
+            .order-contain {
+                h3 {
+                    font-size: calc(21px + (24 - 21) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 700;
+                    margin-bottom: 6px;
+                }
+
+                h5 {
+                    margin-bottom: 8px;
+                    line-height: 1.4;
+                }
+            }
+        }
+    }
+}

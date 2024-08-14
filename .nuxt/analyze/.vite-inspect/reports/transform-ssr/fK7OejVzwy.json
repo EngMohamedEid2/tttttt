@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/BasicHeader/index.vue?nuxt_component=async&nuxt_component_name=HeaderBasicHeader",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <header class=\"pb-md-4 pb-0\" :class=\"{ active: stick && sticky }\">\n    <HeaderElementsTopHeader\n      :themeOptions=\"themeOptions\"\n      v-if=\"themeOptions?.header?.page_top_bar_enable\"\n    />\n    <div class=\"top-nav top-header sticky-header\">\n      <div class=\"container-fluid-lg\">\n        <div class=\"row\">\n          <div class=\"col-12\">\n            <div class=\"navbar-top\">\n              <div class=\"d-xl-none d-inline-flex\">\n                <HeaderElementsNavMenuButton\n                  @activeMenu=\"toggle($event)\"\n                  :show=\"active\"\n                />\n              </div>\n              <HeaderElementsLogo\n                :themeOptions=\"themeOptions\"\n                :textClass=\"'txt-theme f-w-600'\"\n                :logo=\"logo\"\n              />\n              <div class=\"middle-box\">\n                <!-- <div class=\"location-box\">\n                  <ThemesWidgetsCategories :style=\"'input_dropdown'\" />\n                </div> -->\n                <div class=\"search-box\">\n                  <HeaderElementsSearch />\n                </div>\n              </div>\n              <div class=\"rightside-box\">\n                <ul class=\"right-side-menu\">\n                  <li class=\"right-side\">\n                    <HeaderElementsSearchBox />\n                  </li>\n                  <li\n                    class=\"right-side\"\n                    v-if=\"themeOptions?.header?.support_number\"\n                  >\n                    <HeaderElementsSupport :themeOptions=\"themeOptions\" />\n                  </li>\n                  <!-- <li class=\"right-side\">\n                    <HeaderElementsWishlist />\n                  </li> -->\n                  <li class=\"right-side\">\n                    <div class=\"onhover-dropdown header-badge\">\n                      <HeaderElementsCarts />\n                    </div>\n                  </li>\n                  <li class=\"right-side onhover-dropdown\">\n                    <HeaderElementsMyAccount />\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"container-fluid-lg\">\n      <div class=\"row\">\n        <div class=\"col-12\">\n          <div class=\"header-nav\">\n            <div class=\"header-nav-left\">\n              <HeaderElementsCategory :data=\"themeOptions\" />\n            </div>\n            <div class=\"header-nav-middle\">\n              <div\n                class=\"main-nav navbar navbar-expand-xl navbar-light navbar-sticky\"\n              >\n                <div\n                  class=\"offcanvas offcanvas-collapse order-xl-2\"\n                  id=\"primaryMenu\"\n                  :class=\"{ show: active }\"\n                >\n                  <div class=\"offcanvas-header navbar-shadow\">\n                    <h5>{{ $t(\"Menu\") }}</h5>\n                    <button\n                      :type=\"'button'\"\n                      :id=\"'toggle_menu_btn'\"\n                      @click=\"toggle(false)\"\n                      :class=\"'btn-close lead'\"\n                    >\n                      <Icon name=\"ri:close-fill\" />\n                    </button>\n                  </div>\n                  <div class=\"offcanvas-body\">\n                    <ul class=\"navbar-nav\">\n                      <li\n                        v-for=\"(menu, index) in Menu\"\n                        :key=\"index\"\n                        :class=\"[\n                          menu.type == 'sub' && menu.children\n                            ? 'nav-item dropdown'\n                            : 'nav-item',\n                          menu.megaMenu ? 'dropdown-mega' : '',\n                          { 'new-nav-item': menu.badge },\n                        ]\"\n                      >\n                        <HeaderElementsMenuList :show=\"true\" :menu=\"menu\" />\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div\n                  class=\"offcanvas-backdrop\"\n                  v-if=\"active\"\n                  :class=\"{ show: active }\"\n                  @click=\"toggle(false)\"\n                ></div>\n              </div>\n            </div>\n\n            <div\n              class=\"header-nav-right\"\n              v-if=\"themeOptions?.header?.today_deals.length\"\n            >\n              <HeaderElementsTodayDeal />\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </header>\n</template>\n<script setup>\nimport { Menu } from \"@/data/menu\";\nlet props = defineProps({\n  themeOptions: Object,\n  logo: String,\n  sticky: Boolean,\n});\n\nlet stick = ref(false);\nlet active = ref(false);\n\nfunction toggle(value) {\n  active.value = value;\n}\n\nconst onWindowScroll = () => {\n  let number =\n    window.pageYOffset ||\n    document.documentElement.scrollTop ||\n    document.body.scrollTop ||\n    0;\n  if (number >= 150 && window.innerWidth > 400) {\n    stick.value = true;\n  } else {\n    stick.value = false;\n  }\n};\n\nonMounted(() => {\n  window.addEventListener(\"scroll\", onWindowScroll);\n});\n</script>\n",
+      "start": 1716056306351,
+      "end": 1716056326461,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056326461,
+      "end": 1716056326461,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056326461,
+      "end": 1716056326461,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056326461,
+      "end": 1716056326461,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056326461,
+      "end": 1716056326461,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056326461,
+      "end": 1716056326461,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056326461,
+      "end": 1716056326461,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056326461,
+      "end": 1716056326461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056326461,
+      "end": 1716056326461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056326461,
+      "end": 1716056326461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056326461,
+      "end": 1716056326461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { Menu } from \"@/data/menu\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  themeOptions: Object,\n  logo: String,\n  sticky: Boolean,\n},\n  setup(__props) {\n\nlet props = __props;\n\nlet stick = ref(false);\nlet active = ref(false);\n\nfunction toggle(value) {\n  active.value = value;\n}\n\nconst onWindowScroll = () => {\n  let number =\n    window.pageYOffset ||\n    document.documentElement.scrollTop ||\n    document.body.scrollTop ||\n    0;\n  if (number >= 150 && window.innerWidth > 400) {\n    stick.value = true;\n  } else {\n    stick.value = false;\n  }\n};\n\nonMounted(() => {\n  window.addEventListener(\"scroll\", onWindowScroll);\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_HeaderElementsTopHeader = _resolveComponent(\"HeaderElementsTopHeader\")\n  const _component_HeaderElementsNavMenuButton = _resolveComponent(\"HeaderElementsNavMenuButton\")\n  const _component_HeaderElementsLogo = _resolveComponent(\"HeaderElementsLogo\")\n  const _component_HeaderElementsSearch = _resolveComponent(\"HeaderElementsSearch\")\n  const _component_HeaderElementsSearchBox = _resolveComponent(\"HeaderElementsSearchBox\")\n  const _component_HeaderElementsSupport = _resolveComponent(\"HeaderElementsSupport\")\n  const _component_HeaderElementsCarts = _resolveComponent(\"HeaderElementsCarts\")\n  const _component_HeaderElementsMyAccount = _resolveComponent(\"HeaderElementsMyAccount\")\n  const _component_HeaderElementsCategory = _resolveComponent(\"HeaderElementsCategory\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_HeaderElementsMenuList = _resolveComponent(\"HeaderElementsMenuList\")\n  const _component_HeaderElementsTodayDeal = _resolveComponent(\"HeaderElementsTodayDeal\")\n\n  _push(`<header${_ssrRenderAttrs(_mergeProps({\n    class: [\"pb-md-4 pb-0\", { active: _unref(stick) && __props.sticky }]\n  }, _attrs))}>`)\n  if (__props.themeOptions?.header?.page_top_bar_enable) {\n    _push(_ssrRenderComponent(_component_HeaderElementsTopHeader, { themeOptions: __props.themeOptions }, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"top-nav top-header sticky-header\"><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12\"><div class=\"navbar-top\"><div class=\"d-xl-none d-inline-flex\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsNavMenuButton, {\n    onActiveMenu: $event => (toggle($event)),\n    show: _unref(active)\n  }, null, _parent))\n  _push(`</div>`)\n  _push(_ssrRenderComponent(_component_HeaderElementsLogo, {\n    themeOptions: __props.themeOptions,\n    textClass: 'txt-theme f-w-600',\n    logo: __props.logo\n  }, null, _parent))\n  _push(`<div class=\"middle-box\"><div class=\"search-box\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsSearch, null, null, _parent))\n  _push(`</div></div><div class=\"rightside-box\"><ul class=\"right-side-menu\"><li class=\"right-side\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsSearchBox, null, null, _parent))\n  _push(`</li>`)\n  if (__props.themeOptions?.header?.support_number) {\n    _push(`<li class=\"right-side\">`)\n    _push(_ssrRenderComponent(_component_HeaderElementsSupport, { themeOptions: __props.themeOptions }, null, _parent))\n    _push(`</li>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<li class=\"right-side\"><div class=\"onhover-dropdown header-badge\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsCarts, null, null, _parent))\n  _push(`</div></li><li class=\"right-side onhover-dropdown\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsMyAccount, null, null, _parent))\n  _push(`</li></ul></div></div></div></div></div></div><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12\"><div class=\"header-nav\"><div class=\"header-nav-left\">`)\n  _push(_ssrRenderComponent(_component_HeaderElementsCategory, { data: __props.themeOptions }, null, _parent))\n  _push(`</div><div class=\"header-nav-middle\"><div class=\"main-nav navbar navbar-expand-xl navbar-light navbar-sticky\"><div id=\"primaryMenu\" class=\"${\n    _ssrRenderClass([{ show: _unref(active) }, \"offcanvas offcanvas-collapse order-xl-2\"])\n  }\"><div class=\"offcanvas-header navbar-shadow\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Menu\"))\n  }</h5><button${\n    _ssrRenderAttr(\"type\", 'button')\n  }${\n    _ssrRenderAttr(\"id\", 'toggle_menu_btn')\n  } class=\"${\n    _ssrRenderClass('btn-close lead')\n  }\">`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri:close-fill\" }, null, _parent))\n  _push(`</button></div><div class=\"offcanvas-body\"><ul class=\"navbar-nav\"><!--[-->`)\n  _ssrRenderList(_unref(Menu), (menu, index) => {\n    _push(`<li class=\"${_ssrRenderClass([\n                          menu.type == 'sub' && menu.children\n                            ? 'nav-item dropdown'\n                            : 'nav-item',\n                          menu.megaMenu ? 'dropdown-mega' : '',\n                          { 'new-nav-item': menu.badge },\n                        ])}\">`)\n    _push(_ssrRenderComponent(_component_HeaderElementsMenuList, {\n      show: true,\n      menu: menu\n    }, null, _parent))\n    _push(`</li>`)\n  })\n  _push(`<!--]--></ul></div></div>`)\n  if (_unref(active)) {\n    _push(`<div class=\"${_ssrRenderClass([{ show: _unref(active) }, \"offcanvas-backdrop\"])}\"></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div>`)\n  if (__props.themeOptions?.header?.today_deals.length) {\n    _push(`<div class=\"header-nav-right\">`)\n    _push(_ssrRenderComponent(_component_HeaderElementsTodayDeal, null, null, _parent))\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div></div></div></header>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Header/BasicHeader/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056326461,
+      "end": 1716056326466,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056326466,
+      "end": 1716056326466,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056326466,
+      "end": 1716056326466,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056326466,
+      "end": 1716056326466,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056326466,
+      "end": 1716056326466,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056326466,
+      "end": 1716056326466,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/BasicHeader/index.vue\").then(r => r.default))",
+      "start": 1716056326466,
+      "end": 1716056326467,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056326467,
+      "end": 1716056326467,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056326467,
+      "end": 1716056326467,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056326467,
+      "end": 1716056326467,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056326467,
+      "end": 1716056326467,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056326467,
+      "end": 1716056326467,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056326467,
+      "end": 1716056326467,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056326467,
+      "end": 1716056326467,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056326467,
+      "end": 1716056326467,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056326467,
+      "end": 1716056326467,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056326467,
+      "end": 1716056326467,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056326468,
+      "end": 1716056326468,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056326468,
+      "end": 1716056326468,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056326468,
+      "end": 1716056326468,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056326468,
+      "end": 1716056326468,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056326468,
+      "end": 1716056326468,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056326468,
+      "end": 1716056326468,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056326468,
+      "end": 1716056326468,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056326468,
+      "end": 1716056326468,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056326468,
+      "end": 1716056326468,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056326468,
+      "end": 1716056326468,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056326468,
+      "end": 1716056326468,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056326468,
+      "end": 1716056326468,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056326468,
+      "end": 1716056326468,
+      "order": "normal"
+    }
+  ]
+}

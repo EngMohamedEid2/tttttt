@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/StickyCheckout/index.vue?nuxt_component=async&nuxt_component_name=ShopProductDetailsWidgetsStickyCheckout",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"sticky-bottom-cart\">\n        <div class=\"container-fluid-lg\">\n            <div class=\"row\">\n                <div class=\"col-12\">\n                    <div class=\"cart-content\">\n                        <div class=\"product-image\">\n                            <img :src=\"selectedVariation && selectedVariation.variation_image\n                                ? selectedVariation.variation_image.original_url\n                                : product.product_thumbnail\n                                    ? product.product_thumbnail.original_url\n                                    : '/images/product.png'\" class=\"img-fluid\" alt=\"product\">\n                            <div class=\"content\">\n                                <h5>{{ selectedVariation ? selectedVariation.name : product?.name }}</h5>\n                                <h6>{{ store.currency.symbol }} {{ store.convertCurrency(selectedVariation ?\n                                    selectedVariation.sale_price : product.sale_price) }}\n                                    <del class=\"text-danger\"\n                                        v-if=\"selectedVariation ? selectedVariation.discount : product.discount\">\n                                        {{ store.currency.symbol }} {{ store.convertCurrency(selectedVariation ?\n                                            selectedVariation.price : product.price) }}\n                                    </del>\n                                    <span v-if=\"selectedVariation ? selectedVariation.discount : product.discount\">\n                                        {{ store.currency.symbol }} {{ store.convertCurrency(selectedVariation ?\n                                            selectedVariation.discount : product.discount) }}% {{ 'off' }}\n                                    </span>\n                                </h6>\n                            </div>\n                        </div> \n                        <div class=\"selection-section\">\n                            <div class=\"form-group mb-0 choose-product\">\n                                <WidgetsVariantAttributes :product=\"product\" :attributes=\"product?.attributes || []\"\n                                    @selectVariation=\"selectVariation($event)\" :isAllVariantStyleDropdown=\"true\"  />\n                            </div>\n                            <div class=\"cart_qty qty-box product-qty m-0\">\n                                <div class=\"input-group h-100\">\n                                    <WidgetsButton :classes=\"'btn qty-left-minus'\" :id=\"'add-to-cart' + product.id\"\n                                        @onClick=\"updateQuantity(-1)\">\n                                        <Icon name=\"ri-subtract-fill\"></Icon>\n                                    </WidgetsButton>\n                                    <input class=\"form-control input-number qty-input border-0\" type=\"text\" name=\"quantity\"\n                                        :value=\"productQty\" readonly>\n                                    <WidgetsButton :classes=\"'btn qty-left-minus'\" :id=\"'qty-left-minus' + product.id\"\n                                        @onClick=\"updateQuantity(1)\">\n                                        <Icon name=\"ri-add-line\"></Icon>\n                                    </WidgetsButton>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"add-btn\">\n                            <WidgetsButton :id=\"'addcartbtnVariationsticky' + product.id\"\n                                :classes=\"'btn theme-bg-color text-white'\" @onClick=\"handleAddProduct()\" v-if=\"(selectedVariation && selectedVariation?.stock_status == 'in_stock'\n                                    || product?.stock_status == 'in_stock' && product.type === 'simple')\">\n                                <i class=\"ri-shopping-cart-line me-1\"></i> {{ 'Add to Cart' }}\n                            </WidgetsButton>\n                            <div v-else>\n                                <WidgetsButton :class=\"'btn theme-bg-color text-white'\" :id=\"'soldoutbtncheckout'\"\n                                    :disabled=\"true\">\n                                    {{ ((selectedVariation?.stock_status == 'out_of_stock' ||\n                                        product.stock_status == 'out_of_stock') ? $t(\"Sold Out\") : $t(\"Add to Cart\")) }}\n                                </WidgetsButton>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { useCurrencyStore } from \"@/store/currency\"\nimport { useCartStore } from \"@/store/cart\";\nlet props = defineProps({\n    selectedVariation: Object,\n    product: Object\n})\n\n\nlet productQty = ref(1)\nlet selectedVariation = ref(null);\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nfunction selectVariation(variation) {\n    selectedVariation.value = variation;\n}\n\nfunction updateQuantity(qty) {\n    if (1 > productQty.value + (qty)) return;   \n    productQty.value = productQty.value + (qty);\n}\n\nfunction handleAddProduct() {\n    useCartStore().addToCartProduct({ product: props.product, quantity: productQty?.value, variation_id: selectedVariation?.value?.id, variation:selectedVariation?.value });\n}\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056339528,
+      "end": 1716056339612,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339612,
+      "end": 1716056339612,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339612,
+      "end": 1716056339612,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339612,
+      "end": 1716056339612,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339612,
+      "end": 1716056339612,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339612,
+      "end": 1716056339612,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339612,
+      "end": 1716056339612,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339612,
+      "end": 1716056339612,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339612,
+      "end": 1716056339612,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339613,
+      "end": 1716056339613,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339613,
+      "end": 1716056339613,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { useCurrencyStore } from \"@/store/currency\"\nimport { useCartStore } from \"@/store/cart\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    selectedVariation: Object,\n    product: Object\n},\n  setup(__props) {\n\nlet props = __props\n\n\nlet productQty = ref(1)\nlet selectedVariation = ref(null);\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nfunction selectVariation(variation) {\n    selectedVariation.value = variation;\n}\n\nfunction updateQuantity(qty) {\n    if (1 > productQty.value + (qty)) return;   \n    productQty.value = productQty.value + (qty);\n}\n\nfunction handleAddProduct() {\n    useCartStore().addToCartProduct({ product: props.product, quantity: productQty?.value, variation_id: selectedVariation?.value?.id, variation:selectedVariation?.value });\n}\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsVariantAttributes = _resolveComponent(\"WidgetsVariantAttributes\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"sticky-bottom-cart\" }, _attrs))\n  }><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12\"><div class=\"cart-content\"><div class=\"product-image\"><img${\n    _ssrRenderAttr(\"src\", _unref(selectedVariation) && _unref(selectedVariation).variation_image\n                                ? _unref(selectedVariation).variation_image.original_url\n                                : __props.product.product_thumbnail\n                                    ? __props.product.product_thumbnail.original_url\n                                    : '/images/product.png')\n  } class=\"img-fluid\" alt=\"product\"><div class=\"content\"><h5>${\n    _ssrInterpolate(_unref(selectedVariation) ? _unref(selectedVariation).name : __props.product?.name)\n  }</h5><h6>${\n    _ssrInterpolate(_unref(store).currency.symbol)\n  } ${\n    _ssrInterpolate(_unref(store).convertCurrency(_unref(selectedVariation) ?\n                                    _unref(selectedVariation).sale_price : __props.product.sale_price))\n  } `)\n  if (_unref(selectedVariation) ? _unref(selectedVariation).discount : __props.product.discount) {\n    _push(`<del class=\"text-danger\">${\n      _ssrInterpolate(_unref(store).currency.symbol)\n    } ${\n      _ssrInterpolate(_unref(store).convertCurrency(_unref(selectedVariation) ?\n                                            _unref(selectedVariation).price : __props.product.price))\n    }</del>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(selectedVariation) ? _unref(selectedVariation).discount : __props.product.discount) {\n    _push(`<span>${\n      _ssrInterpolate(_unref(store).currency.symbol)\n    } ${\n      _ssrInterpolate(_unref(store).convertCurrency(_unref(selectedVariation) ?\n                                            _unref(selectedVariation).discount : __props.product.discount))\n    }% ${\n      _ssrInterpolate('off')\n    }</span>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</h6></div></div><div class=\"selection-section\"><div class=\"form-group mb-0 choose-product\">`)\n  _push(_ssrRenderComponent(_component_WidgetsVariantAttributes, {\n    product: __props.product,\n    attributes: __props.product?.attributes || [],\n    onSelectVariation: $event => (selectVariation($event)),\n    isAllVariantStyleDropdown: true\n  }, null, _parent))\n  _push(`</div><div class=\"cart_qty qty-box product-qty m-0\"><div class=\"input-group h-100\">`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn qty-left-minus',\n    id: 'add-to-cart' + __props.product.id,\n    onOnClick: $event => (updateQuantity(-1))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri-subtract-fill\" }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_Icon, { name: \"ri-subtract-fill\" })\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`<input class=\"form-control input-number qty-input border-0\" type=\"text\" name=\"quantity\"${_ssrRenderAttr(\"value\", _unref(productQty))} readonly>`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn qty-left-minus',\n    id: 'qty-left-minus' + __props.product.id,\n    onOnClick: $event => (updateQuantity(1))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri-add-line\" }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_Icon, { name: \"ri-add-line\" })\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div></div><div class=\"add-btn\">`)\n  if ((_unref(selectedVariation) && _unref(selectedVariation)?.stock_status == 'in_stock'\n                                    || __props.product?.stock_status == 'in_stock' && __props.product.type === 'simple')) {\n    _push(_ssrRenderComponent(_component_WidgetsButton, {\n      id: 'addcartbtnVariationsticky' + __props.product.id,\n      classes: 'btn theme-bg-color text-white',\n      onOnClick: $event => (handleAddProduct())\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(`<i class=\"ri-shopping-cart-line me-1\"${\n            _scopeId\n          }></i> ${\n            _ssrInterpolate('Add to Cart')\n          }`)\n        } else {\n          return [\n            _createVNode(\"i\", { class: \"ri-shopping-cart-line me-1\" }),\n            _createTextVNode(\" \" + _toDisplayString('Add to Cart'))\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n  } else {\n    _push(`<div>`)\n    _push(_ssrRenderComponent(_component_WidgetsButton, {\n      class: 'btn theme-bg-color text-white',\n      id: 'soldoutbtncheckout',\n      disabled: true\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(`${_ssrInterpolate(((_unref(selectedVariation)?.stock_status == 'out_of_stock' ||\n                                        __props.product.stock_status == 'out_of_stock') ? _ctx.$t(\"Sold Out\") : _ctx.$t(\"Add to Cart\")))}`)\n        } else {\n          return [\n            _createTextVNode(_toDisplayString(((_unref(selectedVariation)?.stock_status == 'out_of_stock' ||\n                                        __props.product.stock_status == 'out_of_stock') ? _ctx.$t(\"Sold Out\") : _ctx.$t(\"Add to Cart\"))), 1)\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`</div>`)\n  }\n  _push(`</div></div></div></div></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/StickyCheckout/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339613,
+      "end": 1716056339622,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339622,
+      "end": 1716056339622,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339622,
+      "end": 1716056339622,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339622,
+      "end": 1716056339622,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339622,
+      "end": 1716056339622,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339622,
+      "end": 1716056339622,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/StickyCheckout/index.vue\").then(r => r.default))",
+      "start": 1716056339622,
+      "end": 1716056339623,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339623,
+      "end": 1716056339623,
+      "order": "normal"
+    }
+  ]
+}

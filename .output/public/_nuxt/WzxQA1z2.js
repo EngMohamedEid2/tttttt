@@ -1,0 +1,1 @@
+function n({FormData:s,NotRequired:f}){let e=!0;return s&&Object.keys(s).every(l=>{var i;return(i=s[l])!=null&&i.isToggle||(!f||(f==null?void 0:f.indexOf(l))<0)&&(!s[l].data||s[l].errorMessage)&&(e=!1),e}),e}export{n as i};

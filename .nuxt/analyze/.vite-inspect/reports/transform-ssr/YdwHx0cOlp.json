@@ -1,0 +1,259 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/ProductTable.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n        <div class=\"card\" v-if=\"order?.products?.length\">\n            <div class=\"card-body\">\n                <div class=\"tracking-wrapper table-responsive\">\n                    <table class=\"table product-table\">\n                        <thead>\n                            <tr>\n                                <th scope=\"col\">{{ $t(\"Image\") }}</th>\n                                <th scope=\"col\">{{ $t(\"Name\") }}</th>\n                                <th scope=\"col\">{{ $t(\"Price\") }}</th>\n                                <th scope=\"col\">{{ $t(\"Quantity\") }}</th>\n                                <th scope=\"col\">{{ $t(\"Subtotal\") }}</th>\n                                <th scope=\"col\">{{ $t(\"Refund Status\") }}</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr v-for=\"product in order.products\" :key=\"product\">\n                                <td class=\"product-image\">\n                                    <img :src=\"product?.pivot?.variation && product?.pivot?.variation?.variation_image\n                                        ? product?.pivot?.variation?.variation_image?.original_url\n                                        : product?.product_thumbnail\n                                            ? product?.product_thumbnail?.original_url\n                                            : '/images/product.png'\" class=\"img-fluid\" alt=\"product\">\n                                </td>\n                                <td>\n                                    <h6>{{ product?.pivot?.variation ? product?.pivot?.variation?.name : product?.name }}\n                                    </h6>\n                                </td>\n                                <td>\n                                    <h6>{{ store.currency.symbol }} {{\n                                        Number(store.convertCurrency(product?.pivot?.single_price)).toFixed(2) }}</h6>\n                                </td>\n                                <td>\n                                    <h6>{{ product?.pivot?.quantity }}</h6>\n                                </td>\n                                <td>\n                                    <h6>{{ store.currency.symbol }} {{\n                                        Number(store.convertCurrency(product?.pivot?.subtotal)).toFixed(2) }}</h6>\n                                </td>\n                                <td>\n                                    <a href=\"javascript:void(0)\" v-if=\"product?.is_return === 1 &&\n                                        order?.payment_status && order?.payment_status === 'COMPLETED'\n                                        && order.order_status && order.order_status.slug == 'delivered' &&\n                                        !product?.pivot?.refund_status\" @click=\"refundModal(product)\">\n                                        {{ $t(\"Ask For Refund\") }}\n                                    </a>\n                                    <span v-else>\n                                        <div class=\"status-{{product?.pivot?.refund_status?.toLowerCase()}}\"\n                                            v-if=\"product?.pivot?.refund_status\">\n                                            <span>{{ product?.pivot?.refund_status }}</span>\n                                        </div>\n                                        <div v-if=\"!product?.pivot?.refund_status\">{{ '-' }}</div>\n                                    </span>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </div>\n            </div>\n        </div>\n\n        <WidgetsModalsCommon :showModal=\"refund\" @close=\"refund = false\">\n            <WidgetsModalsRefundModal :product=\"singleProduct\" :orderId=\"order.id\" @close=\"refund = false\" />\n        </WidgetsModalsCommon>\n    </div>\n</template>\n\n<script setup>\nimport { useCurrencyStore } from '@/store/currency'\nlet props = defineProps({\n    order: Object,\n})\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nlet refund = ref(false);\nlet singleProduct = ref({})\nfunction refundModal(product, state = true) {\n    refund.value = state;\n    singleProduct.value = product\n}\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056340191,
+      "end": 1716056340771,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340771,
+      "end": 1716056340771,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340771,
+      "end": 1716056340771,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340771,
+      "end": 1716056340771,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340771,
+      "end": 1716056340771,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056340771,
+      "end": 1716056340771,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056340771,
+      "end": 1716056340771,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056340771,
+      "end": 1716056340771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056340771,
+      "end": 1716056340771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056340771,
+      "end": 1716056340771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056340771,
+      "end": 1716056340771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useCurrencyStore } from '@/store/currency'\n\nconst _sfc_main = {\n  __name: 'ProductTable',\n  __ssrInlineRender: true,\n  props: {\n    order: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nlet refund = ref(false);\nlet singleProduct = ref({})\nfunction refundModal(product, state = true) {\n    refund.value = state;\n    singleProduct.value = product\n}\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsRefundModal = _resolveComponent(\"WidgetsModalsRefundModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (__props.order?.products?.length) {\n    _push(`<div class=\"card\"><div class=\"card-body\"><div class=\"tracking-wrapper table-responsive\"><table class=\"table product-table\"><thead><tr><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Image\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Name\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Price\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Quantity\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Subtotal\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Refund Status\"))\n    }</th></tr></thead><tbody><!--[-->`)\n    _ssrRenderList(__props.order.products, (product) => {\n      _push(`<tr><td class=\"product-image\"><img${\n        _ssrRenderAttr(\"src\", product?.pivot?.variation && product?.pivot?.variation?.variation_image\n                                        ? product?.pivot?.variation?.variation_image?.original_url\n                                        : product?.product_thumbnail\n                                            ? product?.product_thumbnail?.original_url\n                                            : '/images/product.png')\n      } class=\"img-fluid\" alt=\"product\"></td><td><h6>${\n        _ssrInterpolate(product?.pivot?.variation ? product?.pivot?.variation?.name : product?.name)\n      }</h6></td><td><h6>${\n        _ssrInterpolate(_unref(store).currency.symbol)\n      } ${\n        _ssrInterpolate(Number(_unref(store).convertCurrency(product?.pivot?.single_price)).toFixed(2))\n      }</h6></td><td><h6>${\n        _ssrInterpolate(product?.pivot?.quantity)\n      }</h6></td><td><h6>${\n        _ssrInterpolate(_unref(store).currency.symbol)\n      } ${\n        _ssrInterpolate(Number(_unref(store).convertCurrency(product?.pivot?.subtotal)).toFixed(2))\n      }</h6></td><td>`)\n      if (product?.is_return === 1 &&\n                                        __props.order?.payment_status && __props.order?.payment_status === 'COMPLETED'\n                                        && __props.order.order_status && __props.order.order_status.slug == 'delivered' &&\n                                        !product?.pivot?.refund_status) {\n        _push(`<a href=\"javascript:void(0)\">${_ssrInterpolate(_ctx.$t(\"Ask For Refund\"))}</a>`)\n      } else {\n        _push(`<span>`)\n        if (product?.pivot?.refund_status) {\n          _push(`<div class=\"status-{{product?.pivot?.refund_status?.toLowerCase()}}\"><span>${_ssrInterpolate(product?.pivot?.refund_status)}</span></div>`)\n        } else {\n          _push(`<!---->`)\n        }\n        if (!product?.pivot?.refund_status) {\n          _push(`<div>${_ssrInterpolate('-')}</div>`)\n        } else {\n          _push(`<!---->`)\n        }\n        _push(`</span>`)\n      }\n      _push(`</td></tr>`)\n    })\n    _push(`<!--]--></tbody></table></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(refund),\n    onClose: $event => (_isRef(refund) ? refund.value = false : refund = false)\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsRefundModal, {\n          product: _unref(singleProduct),\n          orderId: __props.order.id,\n          onClose: $event => (_isRef(refund) ? refund.value = false : refund = false)\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsRefundModal, {\n            product: _unref(singleProduct),\n            orderId: __props.order.id,\n            onClose: $event => (_isRef(refund) ? refund.value = false : refund = false)\n          }, null, 8, [\"product\", \"orderId\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/Orders/Details/ProductTable.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340771,
+      "end": 1716056340772,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056340772,
+      "end": 1716056340772,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340772,
+      "end": 1716056340772,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340772,
+      "end": 1716056340772,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340772,
+      "end": 1716056340772,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340772,
+      "end": 1716056340772,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056340772,
+      "end": 1716056340772,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340772,
+      "end": 1716056340772,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056340772,
+      "end": 1716056340773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056340773,
+      "end": 1716056340773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056340773,
+      "end": 1716056340773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056340773,
+      "end": 1716056340773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056340773,
+      "end": 1716056340773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056340773,
+      "end": 1716056340773,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056340773,
+      "end": 1716056340773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056340773,
+      "end": 1716056340773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056340773,
+      "end": 1716056340773,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340773,
+      "end": 1716056340773,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340773,
+      "end": 1716056340773,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useCurrencyStore } from '@/store/currency'\n\nconst _sfc_main = {\n  __name: 'ProductTable',\n  __ssrInlineRender: true,\n  props: {\n    order: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nlet refund = ref(false);\nlet singleProduct = ref({})\nfunction refundModal(product, state = true) {\n    refund.value = state;\n    singleProduct.value = product\n}\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsRefundModal = _resolveComponent(\"WidgetsModalsRefundModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (__props.order?.products?.length) {\n    _push(`<div class=\"card\"><div class=\"card-body\"><div class=\"tracking-wrapper table-responsive\"><table class=\"table product-table\"><thead><tr><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Image\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Name\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Price\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Quantity\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Subtotal\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Refund Status\"))\n    }</th></tr></thead><tbody><!--[-->`)\n    _ssrRenderList(__props.order.products, (product) => {\n      _push(`<tr><td class=\"product-image\"><img${\n        _ssrRenderAttr(\"src\", product?.pivot?.variation && product?.pivot?.variation?.variation_image\n                                        ? product?.pivot?.variation?.variation_image?.original_url\n                                        : product?.product_thumbnail\n                                            ? product?.product_thumbnail?.original_url\n                                            : '/images/product.png')\n      } class=\"img-fluid\" alt=\"product\"></td><td><h6>${\n        _ssrInterpolate(product?.pivot?.variation ? product?.pivot?.variation?.name : product?.name)\n      }</h6></td><td><h6>${\n        _ssrInterpolate(_unref(store).currency.symbol)\n      } ${\n        _ssrInterpolate(Number(_unref(store).convertCurrency(product?.pivot?.single_price)).toFixed(2))\n      }</h6></td><td><h6>${\n        _ssrInterpolate(product?.pivot?.quantity)\n      }</h6></td><td><h6>${\n        _ssrInterpolate(_unref(store).currency.symbol)\n      } ${\n        _ssrInterpolate(Number(_unref(store).convertCurrency(product?.pivot?.subtotal)).toFixed(2))\n      }</h6></td><td>`)\n      if (product?.is_return === 1 &&\n                                        __props.order?.payment_status && __props.order?.payment_status === 'COMPLETED'\n                                        && __props.order.order_status && __props.order.order_status.slug == 'delivered' &&\n                                        !product?.pivot?.refund_status) {\n        _push(`<a href=\"javascript:void(0)\">${_ssrInterpolate(_ctx.$t(\"Ask For Refund\"))}</a>`)\n      } else {\n        _push(`<span>`)\n        if (product?.pivot?.refund_status) {\n          _push(`<div class=\"status-{{product?.pivot?.refund_status?.toLowerCase()}}\"><span>${_ssrInterpolate(product?.pivot?.refund_status)}</span></div>`)\n        } else {\n          _push(`<!---->`)\n        }\n        if (!product?.pivot?.refund_status) {\n          _push(`<div>${_ssrInterpolate('-')}</div>`)\n        } else {\n          _push(`<!---->`)\n        }\n        _push(`</span>`)\n      }\n      _push(`</td></tr>`)\n    })\n    _push(`<!--]--></tbody></table></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(refund),\n    onClose: $event => (_isRef(refund) ? refund.value = false : refund = false)\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsRefundModal, {\n          product: _unref(singleProduct),\n          orderId: __props.order.id,\n          onClose: $event => (_isRef(refund) ? refund.value = false : refund = false)\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsRefundModal, {\n            product: _unref(singleProduct),\n            orderId: __props.order.id,\n            onClose: $event => (_isRef(refund) ? refund.value = false : refund = false)\n          }, null, 8, [\"product\", \"orderId\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/Orders/Details/ProductTable.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340773,
+      "end": 1716056340776,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useCurrencyStore } from '@/store/currency'\n\nconst _sfc_main = {\n  __name: 'ProductTable',\n  __ssrInlineRender: true,\n  props: {\n    order: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nlet refund = ref(false);\nlet singleProduct = ref({})\nfunction refundModal(product, state = true) {\n    refund.value = state;\n    singleProduct.value = product\n}\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsRefundModal = _resolveComponent(\"WidgetsModalsRefundModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (__props.order?.products?.length) {\n    _push(`<div class=\"card\"><div class=\"card-body\"><div class=\"tracking-wrapper table-responsive\"><table class=\"table product-table\"><thead><tr><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Image\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Name\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Price\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Quantity\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Subtotal\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Refund Status\"))\n    }</th></tr></thead><tbody><!--[-->`)\n    _ssrRenderList(__props.order.products, (product) => {\n      _push(`<tr><td class=\"product-image\"><img${\n        _ssrRenderAttr(\"src\", product?.pivot?.variation && product?.pivot?.variation?.variation_image\n                                        ? product?.pivot?.variation?.variation_image?.original_url\n                                        : product?.product_thumbnail\n                                            ? product?.product_thumbnail?.original_url\n                                            : '/images/product.png')\n      } class=\"img-fluid\" alt=\"product\"></td><td><h6>${\n        _ssrInterpolate(product?.pivot?.variation ? product?.pivot?.variation?.name : product?.name)\n      }</h6></td><td><h6>${\n        _ssrInterpolate(_unref(store).currency.symbol)\n      } ${\n        _ssrInterpolate(Number(_unref(store).convertCurrency(product?.pivot?.single_price)).toFixed(2))\n      }</h6></td><td><h6>${\n        _ssrInterpolate(product?.pivot?.quantity)\n      }</h6></td><td><h6>${\n        _ssrInterpolate(_unref(store).currency.symbol)\n      } ${\n        _ssrInterpolate(Number(_unref(store).convertCurrency(product?.pivot?.subtotal)).toFixed(2))\n      }</h6></td><td>`)\n      if (product?.is_return === 1 &&\n                                        __props.order?.payment_status && __props.order?.payment_status === 'COMPLETED'\n                                        && __props.order.order_status && __props.order.order_status.slug == 'delivered' &&\n                                        !product?.pivot?.refund_status) {\n        _push(`<a href=\"javascript:void(0)\">${_ssrInterpolate(_ctx.$t(\"Ask For Refund\"))}</a>`)\n      } else {\n        _push(`<span>`)\n        if (product?.pivot?.refund_status) {\n          _push(`<div class=\"status-{{product?.pivot?.refund_status?.toLowerCase()}}\"><span>${_ssrInterpolate(product?.pivot?.refund_status)}</span></div>`)\n        } else {\n          _push(`<!---->`)\n        }\n        if (!product?.pivot?.refund_status) {\n          _push(`<div>${_ssrInterpolate('-')}</div>`)\n        } else {\n          _push(`<!---->`)\n        }\n        _push(`</span>`)\n      }\n      _push(`</td></tr>`)\n    })\n    _push(`<!--]--></tbody></table></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(refund),\n    onClose: $event => (_isRef(refund) ? refund.value = false : refund = false)\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsRefundModal, {\n          product: _unref(singleProduct),\n          orderId: __props.order.id,\n          onClose: $event => (_isRef(refund) ? refund.value = false : refund = false)\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsRefundModal, {\n            product: _unref(singleProduct),\n            orderId: __props.order.id,\n            onClose: $event => (_isRef(refund) ? refund.value = false : refund = false)\n          }, null, 8, [\"product\", \"orderId\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/Orders/Details/ProductTable.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340773,
+      "end": 1716056340776,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340776,
+      "end": 1716056340776,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340776,
+      "end": 1716056340776,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340776,
+      "end": 1716056340776,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340776,
+      "end": 1716056340776,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056340776,
+      "end": 1716056340776,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/RefundModal/index.vue\";\nimport { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useCurrencyStore } from '@/store/currency'\n\nconst _sfc_main = {\n  __name: 'ProductTable',\n  __ssrInlineRender: true,\n  props: {\n    order: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nlet refund = ref(false);\nlet singleProduct = ref({})\nfunction refundModal(product, state = true) {\n    refund.value = state;\n    singleProduct.value = product\n}\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsCommon = __nuxt_component_0\n  const _component_WidgetsModalsRefundModal = __nuxt_component_1\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (__props.order?.products?.length) {\n    _push(`<div class=\"card\"><div class=\"card-body\"><div class=\"tracking-wrapper table-responsive\"><table class=\"table product-table\"><thead><tr><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Image\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Name\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Price\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Quantity\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Subtotal\"))\n    }</th><th scope=\"col\">${\n      _ssrInterpolate(_ctx.$t(\"Refund Status\"))\n    }</th></tr></thead><tbody><!--[-->`)\n    _ssrRenderList(__props.order.products, (product) => {\n      _push(`<tr><td class=\"product-image\"><img${\n        _ssrRenderAttr(\"src\", product?.pivot?.variation && product?.pivot?.variation?.variation_image\n                                        ? product?.pivot?.variation?.variation_image?.original_url\n                                        : product?.product_thumbnail\n                                            ? product?.product_thumbnail?.original_url\n                                            : '/images/product.png')\n      } class=\"img-fluid\" alt=\"product\"></td><td><h6>${\n        _ssrInterpolate(product?.pivot?.variation ? product?.pivot?.variation?.name : product?.name)\n      }</h6></td><td><h6>${\n        _ssrInterpolate(_unref(store).currency.symbol)\n      } ${\n        _ssrInterpolate(Number(_unref(store).convertCurrency(product?.pivot?.single_price)).toFixed(2))\n      }</h6></td><td><h6>${\n        _ssrInterpolate(product?.pivot?.quantity)\n      }</h6></td><td><h6>${\n        _ssrInterpolate(_unref(store).currency.symbol)\n      } ${\n        _ssrInterpolate(Number(_unref(store).convertCurrency(product?.pivot?.subtotal)).toFixed(2))\n      }</h6></td><td>`)\n      if (product?.is_return === 1 &&\n                                        __props.order?.payment_status && __props.order?.payment_status === 'COMPLETED'\n                                        && __props.order.order_status && __props.order.order_status.slug == 'delivered' &&\n                                        !product?.pivot?.refund_status) {\n        _push(`<a href=\"javascript:void(0)\">${_ssrInterpolate(_ctx.$t(\"Ask For Refund\"))}</a>`)\n      } else {\n        _push(`<span>`)\n        if (product?.pivot?.refund_status) {\n          _push(`<div class=\"status-{{product?.pivot?.refund_status?.toLowerCase()}}\"><span>${_ssrInterpolate(product?.pivot?.refund_status)}</span></div>`)\n        } else {\n          _push(`<!---->`)\n        }\n        if (!product?.pivot?.refund_status) {\n          _push(`<div>${_ssrInterpolate('-')}</div>`)\n        } else {\n          _push(`<!---->`)\n        }\n        _push(`</span>`)\n      }\n      _push(`</td></tr>`)\n    })\n    _push(`<!--]--></tbody></table></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(refund),\n    onClose: $event => (_isRef(refund) ? refund.value = false : refund = false)\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsRefundModal, {\n          product: _unref(singleProduct),\n          orderId: __props.order.id,\n          onClose: $event => (_isRef(refund) ? refund.value = false : refund = false)\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsRefundModal, {\n            product: _unref(singleProduct),\n            orderId: __props.order.id,\n            onClose: $event => (_isRef(refund) ? refund.value = false : refund = false)\n          }, null, 8, [\"product\", \"orderId\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/Orders/Details/ProductTable.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340776,
+      "end": 1716056340777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056340777,
+      "end": 1716056340777,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056340777,
+      "end": 1716056340777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056340777,
+      "end": 1716056340777,
+      "order": "normal"
+    }
+  ]
+}

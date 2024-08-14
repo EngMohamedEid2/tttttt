@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Osaka/index.vue?nuxt_component=async&nuxt_component_name=ThemesOsaka",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"bg-effect\">\n    <!-- Home Section Start -->\n    <section class=\"home-section pt-2\">\n      <ThemesWidgetsHomeBannerOsaka :data=\"data?.content?.home_banner\" />\n    </section>\n    <!-- Home Section End -->\n\n    <!-- Category Section Start -->\n    <!-- <section v-if=\"data?.content?.categories_icon_list?.status\">\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.categories_icon_list?.title\"\n          :description=\"data?.content?.categories_icon_list?.description\"\n        />\n        <ThemesWidgetsCategories\n          :style=\"'horizontal'\"\n          :theme=\"'paris'\"\n          :categoryIds=\"data?.content?.categories_icon_list?.category_ids || []\"\n          :image=\"data?.content?.categories_icon_list?.image_url\"\n          :slidesPerView=\"9\"\n        />\n      </div>\n    </section> -->\n    <!-- Category Section End -->\n\n    <!-- Discount Section Start -->\n    <section v-if=\"data?.content?.coupons?.status\">\n      <div class=\"container-fluid-lg sale-banner\">\n        <div class=\"row\">\n          <div class=\"col-12\">\n            <ThemesWidgetsBanner\n              :banners=\"{\n                image_url: product?.data[0]?.advertisements[0].image,\n\n                redirect_link: {\n                  link: 'vegetables-fruits',\n                  link_type: 'collection',\n                },\n                status: true,\n              }\"\n              :classes=\"'banner-contain hover-effect'\"\n              :style=\"'full_width'\"\n            />\n          </div>\n        </div>\n      </div>\n    </section>\n    <!-- Discount Section End -->\n\n    <!-- Product Section Start -->\n    <section v-for=\"i in 6\" :key=\"i\">\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"product?.data[i]?.title\"\n          :description=\"product?.data[i]?.description\"\n        />\n        <ThemesWidgetsProduct\n          :products=\"product?.data[i]?.products_to_show\"\n          :productIds=\"data?.content?.products_list_1?.product_ids || []\"\n          :slider=\"true\"\n          :style=\"'horizontal'\"\n          :sliderPerView=\"6\"\n        />\n      </div>\n    </section>\n    <!-- Product Section End -->\n\n    <!-- Offer Section Start -->\n    <section v-if=\"data?.content?.offer_banner?.status\">\n      <div class=\"container-fluid-lg\">\n        <div class=\"row\">\n          <div class=\"col-12\">\n            <ThemesWidgetsBanner\n              :banners=\"{\n                image_url: product?.data[3]?.advertisements[0].image,\n\n                redirect_link: {\n                  link: 'vegetables-fruits',\n                  link_type: 'collection',\n                },\n                status: true,\n              }\"\n              :classes=\"'offer-box hover-effect'\"\n              :style=\"'full_width'\"\n            />\n          </div>\n        </div>\n      </div>\n    </section>\n    <!-- Offer Section End -->\n\n    <!-- Product Section Start -->\n    <!-- <section\n      v-if=\"\n        data?.content?.products_list_2?.product_ids?.length ||\n        (0 >= 6 && data?.content?.products_list_2?.status)\n      \"\n    >\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.products_list_2?.title\"\n          :description=\"data?.content?.products_list_2?.description\"\n        />\n        <ThemesWidgetsProduct\n          :sliderPerView=\"6\"\n          :products=\"product?.data[1]?.products_to_show\"\n          :productIds=\"data?.content?.products_list_2?.product_ids || []\"\n          :slider=\"true\"\n          :style=\"'horizontal'\"\n        />\n      </div>\n    </section> -->\n    <!-- Product Section End -->\n\n    <!-- Product Section Start -->\n    <section v-if=\"data?.content?.product_bundles?.status\">\n      <div class=\"container-fluid-lg\">\n        <div class=\"row\">\n          <div class=\"col-12\">\n            <ThemesWidgetsCollection\n              :data=\"data?.content?.product_bundles?.bundles\"\n            ></ThemesWidgetsCollection>\n          </div>\n        </div>\n      </div>\n    </section>\n    <!-- Product Section End -->\n\n    <!-- Four Product Section Start -->\n    <!-- <section class=\"top-selling-section border-box\" v-if=\"data?.content?.slider_products?.status\">\n      <div class=\"container-fluid-lg\">\n        <ThemesWidgetsFourColumnProduct :Products=\"product\" :data=\"data?.content?.slider_products\" />\n      </div>\n    </section> -->\n    <!-- Four Product Section End -->\n\n    <!-- Blog Section Start -->\n    <!-- <section\n      v-if=\"\n        data?.content?.featured_blogs?.status &&\n        data?.content?.featured_blogs?.blog_ids?.length\n      \"\n    >\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.featured_blogs?.title\"\n          :description=\"data?.content?.featured_blogs?.description\"\n        />\n        <ThemesWidgetsBlog\n          :Blogs=\"blog\"\n          :blogIds=\"data?.content?.featured_blogs?.blog_ids || []\"\n          :slidesPerView=\"4\"\n        />\n      </div>\n    </section> -->\n    <!-- Blog Section End -->\n\n    <!-- Newsletter Section Start -->\n    <!-- <section\n      class=\"newsletter-section section-b-space\"\n      v-if=\"data?.content?.news_letter?.status\"\n    >\n      <ThemesWidgetsNewsletter :data=\"data?.content?.news_letter\" />\n    </section> -->\n    <!-- Newsletter Section End -->\n  </div>\n</template>\n\n<script setup>\nlet { data, pending } = await HandleRequest(\"theme/osaka\", {\n  key: \"getAllOsaka\",\n  params: { slug: \"osaka\" },\n});\n\nlet { data: product, error } = await HandleRequest(\n  \"https://alsouq.anevex.com/app/shop-api/sections?ewd=rewf\",\n  {\n    // key: \"getThemeParisProduct\",\n    params: {\n      status: 1,\n      theme: \"osaka\",\n      ids: data?.value?.content?.products_ids.join(\",\"),\n    },\n  }\n);\n\n// console.log(product.value.data[0].advertisements[0].image);\n// console.log(data?.content?.offer_banner);\n\nlet { data: blog } = await HandleRequest(\"blog\", {\n  key: \"GetAllFeaturedBlogs\",\n  params: {\n    status: 1,\n    ids: data?.value?.content?.featured_blogs?.blog_ids.join(\",\"),\n  },\n});\n\n// console.log(\"data.content.coupons..\", data?.value.content?.coupons);\n\nonMounted(() => {\n  // Note: This Customization is only for this tokyo theme, otherwise you can change it in the settings from the backend.\n  // Change color for this layout\n  document.documentElement.style.setProperty(\"--theme-color\", \"#239698\");\n});\n\nonBeforeUnmount(() => {\n  // Remove the color when the component is unmounted\n  document.documentElement.style.removeProperty(\"--theme-color\");\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056284832,
+      "end": 1716056284946,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment } from \"vue\"\n\nconst _hoisted_1 = { class: \"bg-effect\" }\nconst _hoisted_2 = { class: \"home-section pt-2\" }\nconst _hoisted_3 = { key: 0 }\nconst _hoisted_4 = { class: \"container-fluid-lg sale-banner\" }\nconst _hoisted_5 = { class: \"row\" }\nconst _hoisted_6 = { class: \"col-12\" }\nconst _hoisted_7 = { class: \"container-fluid-lg\" }\nconst _hoisted_8 = { key: 1 }\nconst _hoisted_9 = { class: \"container-fluid-lg\" }\nconst _hoisted_10 = { class: \"row\" }\nconst _hoisted_11 = { class: \"col-12\" }\nconst _hoisted_12 = { key: 2 }\nconst _hoisted_13 = { class: \"container-fluid-lg\" }\nconst _hoisted_14 = { class: \"row\" }\nconst _hoisted_15 = { class: \"col-12\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet { data, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"theme/osaka\", {\n  key: \"getAllOsaka\",\n  params: { slug: \"osaka\" },\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nlet { data: product, error } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\n  \"https://alsouq.anevex.com/app/shop-api/sections?ewd=rewf\",\n  {\n    // key: \"getThemeParisProduct\",\n    params: {\n      status: 1,\n      theme: \"osaka\",\n      ids: data?.value?.content?.products_ids.join(\",\"),\n    },\n  }\n))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\n// console.log(product.value.data[0].advertisements[0].image);\n// console.log(data?.content?.offer_banner);\n\nlet { data: blog } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"blog\", {\n  key: \"GetAllFeaturedBlogs\",\n  params: {\n    status: 1,\n    ids: data?.value?.content?.featured_blogs?.blog_ids.join(\",\"),\n  },\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\n// console.log(\"data.content.coupons..\", data?.value.content?.coupons);\n\nonMounted(() => {\n  // Note: This Customization is only for this tokyo theme, otherwise you can change it in the settings from the backend.\n  // Change color for this layout\n  document.documentElement.style.setProperty(\"--theme-color\", \"#239698\");\n});\n\nonBeforeUnmount(() => {\n  // Remove the color when the component is unmounted\n  document.documentElement.style.removeProperty(\"--theme-color\");\n});\n\nreturn (_ctx, _cache) => {\n  const _component_ThemesWidgetsHomeBannerOsaka = _resolveComponent(\"ThemesWidgetsHomeBannerOsaka\")\n  const _component_ThemesWidgetsBanner = _resolveComponent(\"ThemesWidgetsBanner\")\n  const _component_WidgetsTitle = _resolveComponent(\"WidgetsTitle\")\n  const _component_ThemesWidgetsProduct = _resolveComponent(\"ThemesWidgetsProduct\")\n  const _component_ThemesWidgetsCollection = _resolveComponent(\"ThemesWidgetsCollection\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"section\", _hoisted_2, [\n      _createVNode(_component_ThemesWidgetsHomeBannerOsaka, {\n        data: _unref(data)?.content?.home_banner\n      }, null, 8, [\"data\"])\n    ]),\n    (_unref(data)?.content?.coupons?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"div\", _hoisted_5, [\n              _createElementVNode(\"div\", _hoisted_6, [\n                _createVNode(_component_ThemesWidgetsBanner, {\n                  banners: {\n                image_url: _unref(product)?.data[0]?.advertisements[0].image,\n\n                redirect_link: {\n                  link: 'vegetables-fruits',\n                  link_type: 'collection',\n                },\n                status: true,\n              },\n                  classes: 'banner-contain hover-effect',\n                  style: 'full_width'\n                }, null, 8, [\"banners\"])\n              ])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_openBlock(), _createElementBlock(_Fragment, null, _renderList(6, (i) => {\n      return _createElementVNode(\"section\", { key: i }, [\n        _createElementVNode(\"div\", _hoisted_7, [\n          _createVNode(_component_WidgetsTitle, {\n            title: _unref(product)?.data[i]?.title,\n            description: _unref(product)?.data[i]?.description\n          }, null, 8, [\"title\", \"description\"]),\n          _createVNode(_component_ThemesWidgetsProduct, {\n            products: _unref(product)?.data[i]?.products_to_show,\n            productIds: _unref(data)?.content?.products_list_1?.product_ids || [],\n            slider: true,\n            style: 'horizontal',\n            sliderPerView: 6\n          }, null, 8, [\"products\", \"productIds\"])\n        ])\n      ])\n    }), 64)),\n    (_unref(data)?.content?.offer_banner?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_8, [\n          _createElementVNode(\"div\", _hoisted_9, [\n            _createElementVNode(\"div\", _hoisted_10, [\n              _createElementVNode(\"div\", _hoisted_11, [\n                _createVNode(_component_ThemesWidgetsBanner, {\n                  banners: {\n                image_url: _unref(product)?.data[3]?.advertisements[0].image,\n\n                redirect_link: {\n                  link: 'vegetables-fruits',\n                  link_type: 'collection',\n                },\n                status: true,\n              },\n                  classes: 'offer-box hover-effect',\n                  style: 'full_width'\n                }, null, 8, [\"banners\"])\n              ])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.product_bundles?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_12, [\n          _createElementVNode(\"div\", _hoisted_13, [\n            _createElementVNode(\"div\", _hoisted_14, [\n              _createElementVNode(\"div\", _hoisted_15, [\n                _createVNode(_component_ThemesWidgetsCollection, {\n                  data: _unref(data)?.content?.product_bundles?.bundles\n                }, null, 8, [\"data\"])\n              ])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284946,
+      "end": 1716056284949,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284949,
+      "end": 1716056284949,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284949,
+      "end": 1716056284949,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284949,
+      "end": 1716056284949,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284949,
+      "end": 1716056284949,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Osaka/index.vue\").then(r => r.default))",
+      "start": 1716056284949,
+      "end": 1716056284950,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Osaka/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284950,
+      "end": 1716056284950,
+      "order": "normal"
+    }
+  ]
+}

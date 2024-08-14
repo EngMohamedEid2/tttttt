@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Category/index.vue?nuxt_component=async&nuxt_component_name=WidgetsCategory",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <!-- Category Style Vertical -->\n    <div class=\"category-menu section-b-space\" v-show=\"categories?.length && style == 'vertical'\">\n      <h3>{{ title ? title : $t(\"Categories\") }}</h3>\n      <ul>\n        <li v-for=\"category in categories\" :key=\"category\">\n          <div class=\"category-list\">\n            <img :src=\"category?.category_icon ? category?.category_icon?.original_url : '/images/category.png'\"\n              :alt=\"category?.name\">\n            <h5>\n              <a href=\"javascript:void(0)\" @click=\"redirectToCollection(category.slug)\">{{ category?.name }}</a>\n            </h5>\n          </div>\n        </li>\n      </ul>\n    </div>\n\n    <!-- Category Classic Vertical -->\n    <div class=\"shop-left-sidebar\" v-if=\"categories?.length && style == 'classic_vertical'\">\n      <ul class=\"nav nav-pills mb-3 custom-nav-tab\">\n        <li class=\"nav-item\" v-for=\"category in categories\" :key=\"category\">\n          <WidgetsButton \n            :class=\"selectedCategorySlug.length && selectedCategorySlug.includes(category.slug) ? 'nav-link active' :\n            'nav-link'\"\n            :id=\"'nav_link_btn'\"\n            @onCLick=\"redirectToCollection(category.slug)\">\n            {{ category.name }}\n            <img :src=\"category?.category_icon ? category?.category_icon?.original_url : '/images/category.png'\"\n              :alt=\"category?.name\">\n          </WidgetsButton>\n        </li>\n      </ul>\n    </div>\n\n    <!-- Category Style Horizontal -->\n    <div class=\"product-wrapper\" :class=\"'category-slider'\" v-show=\"categories?.length && style == 'horizontal'\">\n      <swiper :breakpoints=\"categorySlider2\" :loop=\"true\" class=\"banner-slider\" :slides-per-view=\"slidesPerView\"\n        :space-between=\"10\">\n        <swiper-slide v-for=\"category in categories\" :key=\"category\">\n          <div v-if=\"theme == 'paris'\">\n            <a href=\"javascript:void(0)\" @click=\"redirectToCollection(category.slug)\" class=\"category-box category-dark\"\n              :class=\"{ 'active': selectedCategorySlug.length && selectedCategorySlug.includes(category.slug) }\">\n              <img :src=\"image ? image : '/images/vegetable/shape.png'\" class=\"background-image\" alt=\"\">\n              <img :src=\"category?.category_icon ? category?.category_icon?.original_url : '/images/category.png'\"\n                :alt=\"category?.name\">\n              <h5>{{ category.name }}</h5>\n            </a>\n          </div>\n          <div v-if=\"theme == 'madrid'\">\n            <div class=\"category-box-list\">\n              <a href=\"javascript:void(0)\" @click=\"redirectToCollection(category.slug)\" class=\"category-name\">\n                <h4>{{ category.name }}</h4>\n                <h6>{{ category.products_count }} {{ 'items' }}</h6>\n              </a>\n              <div class=\"category-box-view\">\n                <a href=\"javascript:void(0)\" @click=\"redirectToCollection(category.slug)\">\n                  <img :src=\"category?.category_image ? category?.category_image?.original_url : '/images/category.png'\"\n                    class=\"img-fluid\" :alt=\"category?.name\">\n                </a>\n                <WidgetsButton :classes=\"'btn shop-button'\" :id=\"'shop_now_btn'\">\n                  <span>{{ 'Shop Now' }}</span>\n                  <Icon name=\"ri:arrow-right-s-line\"></Icon>\n                </WidgetsButton>\n              </div>\n            </div>\n          </div>\n          <div v-if=\"theme == 'rome'\">\n            <div class=\"shop-category-box border-0\">\n              <a href=\"javascript:void(0)\" @click=\"redirectToCollection(category.slug)\" class=\"circle-1\">\n                <img :src=\"category?.category_image ? category?.category_image?.original_url : '/images/category.png'\"\n                  :alt=\"category?.name\">\n              </a>\n              <div class=\"category-name\">\n                <h6>{{ category.name }}</h6>\n              </div>\n            </div>\n          </div>\n        </swiper-slide>\n      </swiper>\n    </div>\n\n    <div class=\"product-wrapper\" :class=\"'category-slider'\" v-show=\"categories?.length && style == 'horizontal'\">\n      <swiper :breakpoints=\"categorySlider3\" :loop=\"true\" class=\"banner-slider\" :slides-per-view=\"8\" :space-between=\"10\">\n        <swiper-slide v-for=\"category in categories\" :key=\"category\">\n          <div v-if=\"theme == 'rome'\">\n            <div class=\"shop-category-box border-0\">\n              <a href=\"javascript:void(0)\" @click=\"redirectToCollection(category.slug)\" class=\"circle-1\">\n                <img :src=\"category?.category_image ? category?.category_image?.original_url : '/images/category.png'\"\n                  :alt=\"category?.name\">\n              </a>\n              <div class=\"category-name\">\n                <h6>{{ category.name }}</h6>\n              </div>\n            </div>\n          </div>\n        </swiper-slide>\n      </swiper>\n    </div>\n\n    <!-- Category Style classic -->\n    <div v-if=\"categories?.length && style == 'classic'\">\n      <swiper :breakpoints=\"categorySlider2\" :loop=\"true\" class=\"banner-slider\" :slides-per-view=\"slidesPerView\"\n        :space-between=\"10\">\n        <swiper-slide v-for=\"category in categories\" :key=\"category\">\n          <div>\n            <div class=\"shop-category-box border-0 wow fadeIn\">\n              <a href=\"javascript:void(0)\" @click=\"redirectToCollection(category.slug)\" class=\"circle-1\">\n                <img :src=\"category?.category_icon ? category?.category_icon?.original_url : '/images/category.png'\"\n                  :alt=\"category?.name\">\n              </a>\n              <div class=\"category-name\">\n                <h6>{{ category.name }}</h6>\n              </div>\n            </div>\n          </div>\n        </swiper-slide>\n      </swiper>\n    </div>\n\n    <!-- Category Style Filter -->\n    <ul class=\"nav nav-tabs tab-style-color-2 tab-style-color\" v-show=\"categories?.length && style == 'filter'\">\n      <li class=\"nav-item\" v-for=\"category in categories\" :key=\"category\">\n        <WidgetsButton :classes=\"selectedCategoryId == category.id ? 'nav-link btn active' : 'nav-link btn'\"\n          :id=\"'category' + category.id\" @onClick=\"selectCategory(category.id)\">{{ category?.name }}</WidgetsButton>\n      </li>\n    </ul>\n\n    <!--- Category Style Dropdown -->\n    <ul class=\"category-list\" v-show=\"categories?.length && style == 'dropdown'\">\n      <li class=\"onhover-category-list\" v-for=\"category in categories\" :key=\"category\">\n        <a href=\"javascript:void(0)\" @click=\"redirectToCollection(category.slug)\" class=\"category-name\">\n          <img :src=\"category?.category_icon ? category?.category_icon?.original_url : '/images/category.png'\"\n            :alt=\"category?.name\">\n          <h6>{{ category?.name }}</h6>\n        </a>\n      </li>\n    </ul>\n    <!-- Input Category Dropdown -->\n    <div class=\"location-button \" v-show=\"styled === 'input_dropdown'\">\n      <select class=\"form-select locat-name border-0\">\n        <option>{{ 'All Category' }}</option>\n        <option v-for=\"category in ProductCategory\" :key=\"category\">\n          {{ category.name }}\n        </option>\n      </select>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\nimport { useCollectionStore } from '~/store/collection';\nlet props = defineProps({\n  categoryIds: Array,\n  Category: Array,\n  style: { type: [String, Object], default: \"vertical\" },\n  title: String,\n  image: String,\n  theme: String,\n  slidesPerView: { type: Number, default: 7 },\n  selectedCategoryId: Number,\n  bgImage: String\n})\nlet styled = props.style\nlet store = useCollectionStore();\nlet categorySlider3 = {\n  0: {\n    slidesPerView: 2\n  },\n  620: {\n    slidesPerView: 3\n  },\n  620: {\n    slidesPerView: 4\n  },\n  768: {\n    slidesPerView: 5\n  },\n  1060: {\n    slidesPerView: 6\n  },\n  1390: {\n    slidesPerView: 7\n  },\n  1690: {\n    slidesPerView: 8\n  }\n}\n\nlet categorySlider2 = {\n  0: {\n    slidesPerView: 2\n  },\n  460: {\n    slidesPerView: 3\n  },\n  640: {\n    slidesPerView: 4,\n  },\n  800: {\n    slidesPerView: 5\n  },\n  1000: {\n    slidesPerView: 6\n  },\n  1260: {\n    slidesPerView: 7\n  },\n  1450: {\n    slidesPerView: 8\n  },\n  1640: {\n    slidesPerView: props.slidesPerView\n  }\n}\n\nconst emit = defineEmits(['selectedCategory'])\nlet { Categories } = storeToRefs(useDataStore())\nlet categories = ref([])\nlet ProductCategory = ref([])\nlet selectedCategorySlug = ref([])\nlet selectedCategory = ref()\nlet route = useRoute()\nlet router = useRouter()\n\n\nProductCategory.value = Categories?.value?.data?.filter(category => category.type == 'product')\ncategories.value = props.categoryIds ? Categories?.value?.data?.filter(category => props.categoryIds?.includes(category.id)) : Categories?.value?.data\n\nfunction selectCategory(id) {\n  emit('selectedCategory', id)\n}\n\nconst redirectToCollection = (slug) => {\n  const index = selectedCategorySlug.value.indexOf(slug)\n  if (index === -1) {\n    selectedCategorySlug.value.push(slug)\n  } else {\n    selectedCategorySlug.value.splice(index, 1)\n  }\n\n  const queryParams = selectedCategorySlug.value.length ? selectedCategorySlug.value.join(',') : null\n  router.push({ path: '/collections', query: { category: queryParams, layout: \"collection_left_sidebar\" } })\n  setTimeout(async () => {\n    store.initialCheckedValue();\n  }, 2000);\n}\nonMounted(() => {\n  let queryParams = route.query.category\n  selectedCategorySlug.value = queryParams ? queryParams.split(',') : []\n})\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056339767,
+      "end": 1716056339852,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339852,
+      "end": 1716056339852,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339852,
+      "end": 1716056339852,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339852,
+      "end": 1716056339852,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339852,
+      "end": 1716056339852,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339852,
+      "end": 1716056339852,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339852,
+      "end": 1716056339852,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339852,
+      "end": 1716056339852,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339852,
+      "end": 1716056339852,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339852,
+      "end": 1716056339852,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339852,
+      "end": 1716056339852,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createVNode as _createVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderStyle as _ssrRenderStyle, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\nimport { useCollectionStore } from '~/store/collection';\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  categoryIds: Array,\n  Category: Array,\n  style: { type: [String, Object], default: \"vertical\" },\n  title: String,\n  image: String,\n  theme: String,\n  slidesPerView: { type: Number, default: 7 },\n  selectedCategoryId: Number,\n  bgImage: String\n},\n  emits: ['selectedCategory'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\nlet styled = props.style\nlet store = useCollectionStore();\nlet categorySlider3 = {\n  0: {\n    slidesPerView: 2\n  },\n  620: {\n    slidesPerView: 3\n  },\n  620: {\n    slidesPerView: 4\n  },\n  768: {\n    slidesPerView: 5\n  },\n  1060: {\n    slidesPerView: 6\n  },\n  1390: {\n    slidesPerView: 7\n  },\n  1690: {\n    slidesPerView: 8\n  }\n}\n\nlet categorySlider2 = {\n  0: {\n    slidesPerView: 2\n  },\n  460: {\n    slidesPerView: 3\n  },\n  640: {\n    slidesPerView: 4,\n  },\n  800: {\n    slidesPerView: 5\n  },\n  1000: {\n    slidesPerView: 6\n  },\n  1260: {\n    slidesPerView: 7\n  },\n  1450: {\n    slidesPerView: 8\n  },\n  1640: {\n    slidesPerView: props.slidesPerView\n  }\n}\n\nconst emit = __emit\nlet { Categories } = storeToRefs(useDataStore())\nlet categories = ref([])\nlet ProductCategory = ref([])\nlet selectedCategorySlug = ref([])\nlet selectedCategory = ref()\nlet route = useRoute()\nlet router = useRouter()\n\n\nProductCategory.value = Categories?.value?.data?.filter(category => category.type == 'product')\ncategories.value = props.categoryIds ? Categories?.value?.data?.filter(category => props.categoryIds?.includes(category.id)) : Categories?.value?.data\n\nfunction selectCategory(id) {\n  emit('selectedCategory', id)\n}\n\nconst redirectToCollection = (slug) => {\n  const index = selectedCategorySlug.value.indexOf(slug)\n  if (index === -1) {\n    selectedCategorySlug.value.push(slug)\n  } else {\n    selectedCategorySlug.value.splice(index, 1)\n  }\n\n  const queryParams = selectedCategorySlug.value.length ? selectedCategorySlug.value.join(',') : null\n  router.push({ path: '/collections', query: { category: queryParams, layout: \"collection_left_sidebar\" } })\n  setTimeout(async () => {\n    store.initialCheckedValue();\n  }, 2000);\n}\nonMounted(() => {\n  let queryParams = route.query.category\n  selectedCategorySlug.value = queryParams ? queryParams.split(',') : []\n})\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_swiper = _resolveComponent(\"swiper\")\n  const _component_swiper_slide = _resolveComponent(\"swiper-slide\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_attrs)\n  }><div class=\"category-menu section-b-space\" style=\"${\n    _ssrRenderStyle((_unref(categories)?.length && __props.style == 'vertical') ? null : { display: \"none\" })\n  }\"><h3>${\n    _ssrInterpolate(__props.title ? __props.title : _ctx.$t(\"Categories\"))\n  }</h3><ul><!--[-->`)\n  _ssrRenderList(_unref(categories), (category) => {\n    _push(`<li><div class=\"category-list\"><img${\n      _ssrRenderAttr(\"src\", category?.category_icon ? category?.category_icon?.original_url : '/images/category.png')\n    }${\n      _ssrRenderAttr(\"alt\", category?.name)\n    }><h5><a href=\"javascript:void(0)\">${\n      _ssrInterpolate(category?.name)\n    }</a></h5></div></li>`)\n  })\n  _push(`<!--]--></ul></div>`)\n  if (_unref(categories)?.length && __props.style == 'classic_vertical') {\n    _push(`<div class=\"shop-left-sidebar\"><ul class=\"nav nav-pills mb-3 custom-nav-tab\"><!--[-->`)\n    _ssrRenderList(_unref(categories), (category) => {\n      _push(`<li class=\"nav-item\">`)\n      _push(_ssrRenderComponent(_component_WidgetsButton, {\n        class: _unref(selectedCategorySlug).length && _unref(selectedCategorySlug).includes(category.slug) ? 'nav-link active' :\n            'nav-link',\n        id: 'nav_link_btn',\n        onOnCLick: $event => (redirectToCollection(category.slug))\n      }, {\n        default: _withCtx((_, _push, _parent, _scopeId) => {\n          if (_push) {\n            _push(`${\n              _ssrInterpolate(category.name)\n            } <img${\n              _ssrRenderAttr(\"src\", category?.category_icon ? category?.category_icon?.original_url : '/images/category.png')\n            }${\n              _ssrRenderAttr(\"alt\", category?.name)\n            }${\n              _scopeId\n            }>`)\n          } else {\n            return [\n              _createTextVNode(_toDisplayString(category.name) + \" \", 1),\n              _createVNode(\"img\", {\n                src: category?.category_icon ? category?.category_icon?.original_url : '/images/category.png',\n                alt: category?.name\n              }, null, 8, [\"src\", \"alt\"])\n            ]\n          }\n        }),\n        _: 2\n      }, _parent))\n      _push(`</li>`)\n    })\n    _push(`<!--]--></ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"${\n    _ssrRenderClass(['category-slider', \"product-wrapper\"])\n  }\" style=\"${\n    _ssrRenderStyle((_unref(categories)?.length && __props.style == 'horizontal') ? null : { display: \"none\" })\n  }\">`)\n  _push(_ssrRenderComponent(_component_swiper, {\n    breakpoints: _unref(categorySlider2),\n    loop: true,\n    class: \"banner-slider\",\n    \"slides-per-view\": __props.slidesPerView,\n    \"space-between\": 10\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<!--[-->`)\n        _ssrRenderList(_unref(categories), (category) => {\n          _push(_ssrRenderComponent(_component_swiper_slide, { key: category }, {\n            default: _withCtx((_, _push, _parent, _scopeId) => {\n              if (_push) {\n                if (__props.theme == 'paris') {\n                  _push(`<div${\n                    _scopeId\n                  }><a href=\"javascript:void(0)\" class=\"${\n                    _ssrRenderClass([{ 'active': _unref(selectedCategorySlug).length && _unref(selectedCategorySlug).includes(category.slug) }, \"category-box category-dark\"])\n                  }\"${\n                    _scopeId\n                  }><img${\n                    _ssrRenderAttr(\"src\", __props.image ? __props.image : '/images/vegetable/shape.png')\n                  } class=\"background-image\" alt=\"\"${\n                    _scopeId\n                  }><img${\n                    _ssrRenderAttr(\"src\", category?.category_icon ? category?.category_icon?.original_url : '/images/category.png')\n                  }${\n                    _ssrRenderAttr(\"alt\", category?.name)\n                  }${\n                    _scopeId\n                  }><h5${\n                    _scopeId\n                  }>${\n                    _ssrInterpolate(category.name)\n                  }</h5></a></div>`)\n                } else {\n                  _push(`<!---->`)\n                }\n                if (__props.theme == 'madrid') {\n                  _push(`<div${\n                    _scopeId\n                  }><div class=\"category-box-list\"${\n                    _scopeId\n                  }><a href=\"javascript:void(0)\" class=\"category-name\"${\n                    _scopeId\n                  }><h4${\n                    _scopeId\n                  }>${\n                    _ssrInterpolate(category.name)\n                  }</h4><h6${\n                    _scopeId\n                  }>${\n                    _ssrInterpolate(category.products_count)\n                  } ${\n                    _ssrInterpolate('items')\n                  }</h6></a><div class=\"category-box-view\"${\n                    _scopeId\n                  }><a href=\"javascript:void(0)\"${\n                    _scopeId\n                  }><img${\n                    _ssrRenderAttr(\"src\", category?.category_image ? category?.category_image?.original_url : '/images/category.png')\n                  } class=\"img-fluid\"${\n                    _ssrRenderAttr(\"alt\", category?.name)\n                  }${\n                    _scopeId\n                  }></a>`)\n                  _push(_ssrRenderComponent(_component_WidgetsButton, {\n                    classes: 'btn shop-button',\n                    id: 'shop_now_btn'\n                  }, {\n                    default: _withCtx((_, _push, _parent, _scopeId) => {\n                      if (_push) {\n                        _push(`<span${\n                          _scopeId\n                        }>${\n                          _ssrInterpolate('Shop Now')\n                        }</span>`)\n                        _push(_ssrRenderComponent(_component_Icon, { name: \"ri:arrow-right-s-line\" }, null, _parent, _scopeId))\n                      } else {\n                        return [\n                          _createVNode(\"span\", null, _toDisplayString('Shop Now')),\n                          _createVNode(_component_Icon, { name: \"ri:arrow-right-s-line\" })\n                        ]\n                      }\n                    }),\n                    _: 2\n                  }, _parent, _scopeId))\n                  _push(`</div></div></div>`)\n                } else {\n                  _push(`<!---->`)\n                }\n                if (__props.theme == 'rome') {\n                  _push(`<div${\n                    _scopeId\n                  }><div class=\"shop-category-box border-0\"${\n                    _scopeId\n                  }><a href=\"javascript:void(0)\" class=\"circle-1\"${\n                    _scopeId\n                  }><img${\n                    _ssrRenderAttr(\"src\", category?.category_image ? category?.category_image?.original_url : '/images/category.png')\n                  }${\n                    _ssrRenderAttr(\"alt\", category?.name)\n                  }${\n                    _scopeId\n                  }></a><div class=\"category-name\"${\n                    _scopeId\n                  }><h6${\n                    _scopeId\n                  }>${\n                    _ssrInterpolate(category.name)\n                  }</h6></div></div></div>`)\n                } else {\n                  _push(`<!---->`)\n                }\n              } else {\n                return [\n                  (__props.theme == 'paris')\n                    ? (_openBlock(), _createBlock(\"div\", { key: 0 }, [\n                        _createVNode(\"a\", {\n                          href: \"javascript:void(0)\",\n                          onClick: $event => (redirectToCollection(category.slug)),\n                          class: [\"category-box category-dark\", { 'active': _unref(selectedCategorySlug).length && _unref(selectedCategorySlug).includes(category.slug) }]\n                        }, [\n                          _createVNode(\"img\", {\n                            src: __props.image ? __props.image : '/images/vegetable/shape.png',\n                            class: \"background-image\",\n                            alt: \"\"\n                          }, null, 8, [\"src\"]),\n                          _createVNode(\"img\", {\n                            src: category?.category_icon ? category?.category_icon?.original_url : '/images/category.png',\n                            alt: category?.name\n                          }, null, 8, [\"src\", \"alt\"]),\n                          _createVNode(\"h5\", null, _toDisplayString(category.name), 1)\n                        ], 10, [\"onClick\"])\n                      ]))\n                    : _createCommentVNode(\"\", true),\n                  (__props.theme == 'madrid')\n                    ? (_openBlock(), _createBlock(\"div\", { key: 1 }, [\n                        _createVNode(\"div\", { class: \"category-box-list\" }, [\n                          _createVNode(\"a\", {\n                            href: \"javascript:void(0)\",\n                            onClick: $event => (redirectToCollection(category.slug)),\n                            class: \"category-name\"\n                          }, [\n                            _createVNode(\"h4\", null, _toDisplayString(category.name), 1),\n                            _createVNode(\"h6\", null, _toDisplayString(category.products_count) + \" \" + _toDisplayString('items'), 1)\n                          ], 8, [\"onClick\"]),\n                          _createVNode(\"div\", { class: \"category-box-view\" }, [\n                            _createVNode(\"a\", {\n                              href: \"javascript:void(0)\",\n                              onClick: $event => (redirectToCollection(category.slug))\n                            }, [\n                              _createVNode(\"img\", {\n                                src: category?.category_image ? category?.category_image?.original_url : '/images/category.png',\n                                class: \"img-fluid\",\n                                alt: category?.name\n                              }, null, 8, [\"src\", \"alt\"])\n                            ], 8, [\"onClick\"]),\n                            _createVNode(_component_WidgetsButton, {\n                              classes: 'btn shop-button',\n                              id: 'shop_now_btn'\n                            }, {\n                              default: _withCtx(() => [\n                                _createVNode(\"span\", null, _toDisplayString('Shop Now')),\n                                _createVNode(_component_Icon, { name: \"ri:arrow-right-s-line\" })\n                              ]),\n                              _: 1\n                            })\n                          ])\n                        ])\n                      ]))\n                    : _createCommentVNode(\"\", true),\n                  (__props.theme == 'rome')\n                    ? (_openBlock(), _createBlock(\"div\", { key: 2 }, [\n                        _createVNode(\"div\", { class: \"shop-category-box border-0\" }, [\n                          _createVNode(\"a\", {\n                            href: \"javascript:void(0)\",\n                            onClick: $event => (redirectToCollection(category.slug)),\n                            class: \"circle-1\"\n                          }, [\n                            _createVNode(\"img\", {\n                              src: category?.category_image ? category?.category_image?.original_url : '/images/category.png',\n                              alt: category?.name\n                            }, null, 8, [\"src\", \"alt\"])\n                          ], 8, [\"onClick\"]),\n                          _createVNode(\"div\", { class: \"category-name\" }, [\n                            _createVNode(\"h6\", null, _toDisplayString(category.name), 1)\n                          ])\n                        ])\n                      ]))\n                    : _createCommentVNode(\"\", true)\n                ]\n              }\n            }),\n            _: 2\n          }, _parent, _scopeId))\n        })\n        _push(`<!--]-->`)\n      } else {\n        return [\n          (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(categories), (category) => {\n            return (_openBlock(), _createBlock(_component_swiper_slide, { key: category }, {\n              default: _withCtx(() => [\n                (__props.theme == 'paris')\n                  ? (_openBlock(), _createBlock(\"div\", { key: 0 }, [\n                      _createVNode(\"a\", {\n                        href: \"javascript:void(0)\",\n                        onClick: $event => (redirectToCollection(category.slug)),\n                        class: [\"category-box category-dark\", { 'active': _unref(selectedCategorySlug).length && _unref(selectedCategorySlug).includes(category.slug) }]\n                      }, [\n                        _createVNode(\"img\", {\n                          src: __props.image ? __props.image : '/images/vegetable/shape.png',\n                          class: \"background-image\",\n                          alt: \"\"\n                        }, null, 8, [\"src\"]),\n                        _createVNode(\"img\", {\n                          src: category?.category_icon ? category?.category_icon?.original_url : '/images/category.png',\n                          alt: category?.name\n                        }, null, 8, [\"src\", \"alt\"]),\n                        _createVNode(\"h5\", null, _toDisplayString(category.name), 1)\n                      ], 10, [\"onClick\"])\n                    ]))\n                  : _createCommentVNode(\"\", true),\n                (__props.theme == 'madrid')\n                  ? (_openBlock(), _createBlock(\"div\", { key: 1 }, [\n                      _createVNode(\"div\", { class: \"category-box-list\" }, [\n                        _createVNode(\"a\", {\n                          href: \"javascript:void(0)\",\n                          onClick: $event => (redirectToCollection(category.slug)),\n                          class: \"category-name\"\n                        }, [\n                          _createVNode(\"h4\", null, _toDisplayString(category.name), 1),\n                          _createVNode(\"h6\", null, _toDisplayString(category.products_count) + \" \" + _toDisplayString('items'), 1)\n                        ], 8, [\"onClick\"]),\n                        _createVNode(\"div\", { class: \"category-box-view\" }, [\n                          _createVNode(\"a\", {\n                            href: \"javascript:void(0)\",\n                            onClick: $event => (redirectToCollection(category.slug))\n                          }, [\n                            _createVNode(\"img\", {\n                              src: category?.category_image ? category?.category_image?.original_url : '/images/category.png',\n                              class: \"img-fluid\",\n                              alt: category?.name\n                            }, null, 8, [\"src\", \"alt\"])\n                          ], 8, [\"onClick\"]),\n                          _createVNode(_component_WidgetsButton, {\n                            classes: 'btn shop-button',\n                            id: 'shop_now_btn'\n                          }, {\n                            default: _withCtx(() => [\n                              _createVNode(\"span\", null, _toDisplayString('Shop Now')),\n                              _createVNode(_component_Icon, { name: \"ri:arrow-right-s-line\" })\n                            ]),\n                            _: 1\n                          })\n                        ])\n                      ])\n                    ]))\n                  : _createCommentVNode(\"\", true),\n                (__props.theme == 'rome')\n                  ? (_openBlock(), _createBlock(\"div\", { key: 2 }, [\n                      _createVNode(\"div\", { class: \"shop-category-box border-0\" }, [\n                        _createVNode(\"a\", {\n                          href: \"javascript:void(0)\",\n                          onClick: $event => (redirectToCollection(category.slug)),\n                          class: \"circle-1\"\n                        }, [\n                          _createVNode(\"img\", {\n                            src: category?.category_image ? category?.category_image?.original_url : '/images/category.png',\n                            alt: category?.name\n                          }, null, 8, [\"src\", \"alt\"])\n                        ], 8, [\"onClick\"]),\n                        _createVNode(\"div\", { class: \"category-name\" }, [\n                          _createVNode(\"h6\", null, _toDisplayString(category.name), 1)\n                        ])\n                      ])\n                    ]))\n                  : _createCommentVNode(\"\", true)\n              ]),\n              _: 2\n            }, 1024))\n          }), 128))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"${\n    _ssrRenderClass(['category-slider', \"product-wrapper\"])\n  }\" style=\"${\n    _ssrRenderStyle((_unref(categories)?.length && __props.style == 'horizontal') ? null : { display: \"none\" })\n  }\">`)\n  _push(_ssrRenderComponent(_component_swiper, {\n    breakpoints: _unref(categorySlider3),\n    loop: true,\n    class: \"banner-slider\",\n    \"slides-per-view\": 8,\n    \"space-between\": 10\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<!--[-->`)\n        _ssrRenderList(_unref(categories), (category) => {\n          _push(_ssrRenderComponent(_component_swiper_slide, { key: category }, {\n            default: _withCtx((_, _push, _parent, _scopeId) => {\n              if (_push) {\n                if (__props.theme == 'rome') {\n                  _push(`<div${\n                    _scopeId\n                  }><div class=\"shop-category-box border-0\"${\n                    _scopeId\n                  }><a href=\"javascript:void(0)\" class=\"circle-1\"${\n                    _scopeId\n                  }><img${\n                    _ssrRenderAttr(\"src\", category?.category_image ? category?.category_image?.original_url : '/images/category.png')\n                  }${\n                    _ssrRenderAttr(\"alt\", category?.name)\n                  }${\n                    _scopeId\n                  }></a><div class=\"category-name\"${\n                    _scopeId\n                  }><h6${\n                    _scopeId\n                  }>${\n                    _ssrInterpolate(category.name)\n                  }</h6></div></div></div>`)\n                } else {\n                  _push(`<!---->`)\n                }\n              } else {\n                return [\n                  (__props.theme == 'rome')\n                    ? (_openBlock(), _createBlock(\"div\", { key: 0 }, [\n                        _createVNode(\"div\", { class: \"shop-category-box border-0\" }, [\n                          _createVNode(\"a\", {\n                            href: \"javascript:void(0)\",\n                            onClick: $event => (redirectToCollection(category.slug)),\n                            class: \"circle-1\"\n                          }, [\n                            _createVNode(\"img\", {\n                              src: category?.category_image ? category?.category_image?.original_url : '/images/category.png',\n                              alt: category?.name\n                            }, null, 8, [\"src\", \"alt\"])\n                          ], 8, [\"onClick\"]),\n                          _createVNode(\"div\", { class: \"category-name\" }, [\n                            _createVNode(\"h6\", null, _toDisplayString(category.name), 1)\n                          ])\n                        ])\n                      ]))\n                    : _createCommentVNode(\"\", true)\n                ]\n              }\n            }),\n            _: 2\n          }, _parent, _scopeId))\n        })\n        _push(`<!--]-->`)\n      } else {\n        return [\n          (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(categories), (category) => {\n            return (_openBlock(), _createBlock(_component_swiper_slide, { key: category }, {\n              default: _withCtx(() => [\n                (__props.theme == 'rome')\n                  ? (_openBlock(), _createBlock(\"div\", { key: 0 }, [\n                      _createVNode(\"div\", { class: \"shop-category-box border-0\" }, [\n                        _createVNode(\"a\", {\n                          href: \"javascript:void(0)\",\n                          onClick: $event => (redirectToCollection(category.slug)),\n                          class: \"circle-1\"\n                        }, [\n                          _createVNode(\"img\", {\n                            src: category?.category_image ? category?.category_image?.original_url : '/images/category.png',\n                            alt: category?.name\n                          }, null, 8, [\"src\", \"alt\"])\n                        ], 8, [\"onClick\"]),\n                        _createVNode(\"div\", { class: \"category-name\" }, [\n                          _createVNode(\"h6\", null, _toDisplayString(category.name), 1)\n                        ])\n                      ])\n                    ]))\n                  : _createCommentVNode(\"\", true)\n              ]),\n              _: 2\n            }, 1024))\n          }), 128))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n  if (_unref(categories)?.length && __props.style == 'classic') {\n    _push(`<div>`)\n    _push(_ssrRenderComponent(_component_swiper, {\n      breakpoints: _unref(categorySlider2),\n      loop: true,\n      class: \"banner-slider\",\n      \"slides-per-view\": __props.slidesPerView,\n      \"space-between\": 10\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(`<!--[-->`)\n          _ssrRenderList(_unref(categories), (category) => {\n            _push(_ssrRenderComponent(_component_swiper_slide, { key: category }, {\n              default: _withCtx((_, _push, _parent, _scopeId) => {\n                if (_push) {\n                  _push(`<div${\n                    _scopeId\n                  }><div class=\"shop-category-box border-0 wow fadeIn\"${\n                    _scopeId\n                  }><a href=\"javascript:void(0)\" class=\"circle-1\"${\n                    _scopeId\n                  }><img${\n                    _ssrRenderAttr(\"src\", category?.category_icon ? category?.category_icon?.original_url : '/images/category.png')\n                  }${\n                    _ssrRenderAttr(\"alt\", category?.name)\n                  }${\n                    _scopeId\n                  }></a><div class=\"category-name\"${\n                    _scopeId\n                  }><h6${\n                    _scopeId\n                  }>${\n                    _ssrInterpolate(category.name)\n                  }</h6></div></div></div>`)\n                } else {\n                  return [\n                    _createVNode(\"div\", null, [\n                      _createVNode(\"div\", { class: \"shop-category-box border-0 wow fadeIn\" }, [\n                        _createVNode(\"a\", {\n                          href: \"javascript:void(0)\",\n                          onClick: $event => (redirectToCollection(category.slug)),\n                          class: \"circle-1\"\n                        }, [\n                          _createVNode(\"img\", {\n                            src: category?.category_icon ? category?.category_icon?.original_url : '/images/category.png',\n                            alt: category?.name\n                          }, null, 8, [\"src\", \"alt\"])\n                        ], 8, [\"onClick\"]),\n                        _createVNode(\"div\", { class: \"category-name\" }, [\n                          _createVNode(\"h6\", null, _toDisplayString(category.name), 1)\n                        ])\n                      ])\n                    ])\n                  ]\n                }\n              }),\n              _: 2\n            }, _parent, _scopeId))\n          })\n          _push(`<!--]-->`)\n        } else {\n          return [\n            (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(categories), (category) => {\n              return (_openBlock(), _createBlock(_component_swiper_slide, { key: category }, {\n                default: _withCtx(() => [\n                  _createVNode(\"div\", null, [\n                    _createVNode(\"div\", { class: \"shop-category-box border-0 wow fadeIn\" }, [\n                      _createVNode(\"a\", {\n                        href: \"javascript:void(0)\",\n                        onClick: $event => (redirectToCollection(category.slug)),\n                        class: \"circle-1\"\n                      }, [\n                        _createVNode(\"img\", {\n                          src: category?.category_icon ? category?.category_icon?.original_url : '/images/category.png',\n                          alt: category?.name\n                        }, null, 8, [\"src\", \"alt\"])\n                      ], 8, [\"onClick\"]),\n                      _createVNode(\"div\", { class: \"category-name\" }, [\n                        _createVNode(\"h6\", null, _toDisplayString(category.name), 1)\n                      ])\n                    ])\n                  ])\n                ]),\n                _: 2\n              }, 1024))\n            }), 128))\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<ul class=\"nav nav-tabs tab-style-color-2 tab-style-color\" style=\"${_ssrRenderStyle((_unref(categories)?.length && __props.style == 'filter') ? null : { display: \"none\" })}\"><!--[-->`)\n  _ssrRenderList(_unref(categories), (category) => {\n    _push(`<li class=\"nav-item\">`)\n    _push(_ssrRenderComponent(_component_WidgetsButton, {\n      classes: __props.selectedCategoryId == category.id ? 'nav-link btn active' : 'nav-link btn',\n      id: 'category' + category.id,\n      onOnClick: $event => (selectCategory(category.id))\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(`${_ssrInterpolate(category?.name)}`)\n        } else {\n          return [\n            _createTextVNode(_toDisplayString(category?.name), 1)\n          ]\n        }\n      }),\n      _: 2\n    }, _parent))\n    _push(`</li>`)\n  })\n  _push(`<!--]--></ul><ul class=\"category-list\" style=\"${_ssrRenderStyle((_unref(categories)?.length && __props.style == 'dropdown') ? null : { display: \"none\" })}\"><!--[-->`)\n  _ssrRenderList(_unref(categories), (category) => {\n    _push(`<li class=\"onhover-category-list\"><a href=\"javascript:void(0)\" class=\"category-name\"><img${\n      _ssrRenderAttr(\"src\", category?.category_icon ? category?.category_icon?.original_url : '/images/category.png')\n    }${\n      _ssrRenderAttr(\"alt\", category?.name)\n    }><h6>${\n      _ssrInterpolate(category?.name)\n    }</h6></a></li>`)\n  })\n  _push(`<!--]--></ul><div class=\"location-button\" style=\"${\n    _ssrRenderStyle((_unref(styled) === 'input_dropdown') ? null : { display: \"none\" })\n  }\"><select class=\"form-select locat-name border-0\"><option>${\n    _ssrInterpolate('All Category')\n  }</option><!--[-->`)\n  _ssrRenderList(_unref(ProductCategory), (category) => {\n    _push(`<option>${_ssrInterpolate(category.name)}</option>`)\n  })\n  _push(`<!--]--></select></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Category/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339852,
+      "end": 1716056339861,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Category/index.vue\").then(r => r.default))",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339861,
+      "end": 1716056339861,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339861,
+      "end": 1716056339862,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339861,
+      "end": 1716056339862,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339862,
+      "end": 1716056339862,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339862,
+      "end": 1716056339862,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339862,
+      "end": 1716056339862,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339862,
+      "end": 1716056339862,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339862,
+      "end": 1716056339862,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339862,
+      "end": 1716056339862,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339862,
+      "end": 1716056339862,
+      "order": "normal"
+    }
+  ]
+}

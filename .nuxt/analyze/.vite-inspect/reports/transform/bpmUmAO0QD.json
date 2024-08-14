@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Point/index.vue?nuxt_component=async&nuxt_component_name=AccountPoint",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <div class=\"title-header\">\n    <div class=\"d-flex align-items-center\">\n      <h5>{{ $t(\"Points\") }}</h5>\n    </div>\n  </div>\n  <div class=\"total-box mt-0\" v-if=\"point?.transactions?.data?.length\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n        <div class=\"totle-contain wallet-bg\">\n          <div class=\"wallet-point-box\">\n            <img src=\"/images/svg/coin.svg\" alt=\"coin\" class=\"img-fluid\" />\n            <div class=\"totle-detail\">\n              <h5>{{ $t(\"Total Points\") }}</h5>\n              <h3>{{ point ? point?.balance : 0 }}</h3>\n            </div>\n          </div>\n          <div class=\"point-ratio\">\n            <h3 class=\"counter\">\n              <Icon class=\"me-2\" name=\"ri:information-line\" />\n              {{ $t(\"1 Point\") }} =\n              {{ Number(1 / (Settings?.values?.wallet_points?.point_currency_ratio)).toFixed(2) }}\n              {{ $t(\"Balance\") }}\n            </h3>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"wallet-table\">\n      <h4 class=\"user-dashboard-title\">{{ $t(\"Transactions\") }}</h4>\n      <table>\n        <tbody>\n          <tr>\n            <th>{{ $t(\"No\") }}.</th>\n            <th>{{ $t(\"Date\") }}</th>\n            <th>{{ $t(\"Amount\") }}</th>\n            <th>{{ $t(\"Remark\") }}</th>\n            <th>{{ $t(\"Status\") }}</th>\n          </tr>\n          <tr v-for=\"(transaction, index) in point?.transactions?.data\" :key=\"index\">\n            <td>{{ index + 1 }}</td>\n            <td>{{ dateFormatter(transaction?.created_at) }}</td>\n            <td>{{ transaction?.amount }}</td>\n            <td>{{ transaction?.detail }}</td>\n            <td>\n              <div :class=\"`status-${transaction?.type}`\">\n                <span>{{ transform(transaction?.type) }}</span>\n              </div>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n    <nav class=\"custome-pagination\" v-if=\"point?.transactions?.data?.length\">\n      <WidgetsPagination :Data=\"point.transactions\" @change-page=\"(toPage) => ChangePage({ toPage })\" />\n    </nav>\n  </div>\n  <WidgetsNoData :class=\"'no-data-added'\" :image=\"'/svg/empty-items.svg'\" :text=\"'No Transaction Found'\"\n    :description=\"'You have not earned any points yet'\" v-if=\"!point?.transactions?.data?.length\">\n  </WidgetsNoData>\n</div>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\"\nlet Pointparams = ref({ paginate: 10, page: 1 });\nlet { Settings } = storeToRefs(useDataStore())\nlet { data: point, pending } = await HandleRequest(\"points/consumer\", {\n  key: \"getAllPoints\",\n  params: Pointparams,\n});\n\nconst ChangePage = ({ toPage }) => {\n  Pointparams.value.page = toPage;\n};\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056261548,
+      "end": 1716056262525,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056262525,
+      "end": 1716056262525,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056262525,
+      "end": 1716056262525,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056262525,
+      "end": 1716056262525,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056262525,
+      "end": 1716056262525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056262525,
+      "end": 1716056262525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056262525,
+      "end": 1716056262525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056262525,
+      "end": 1716056262525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, normalizeClass as _normalizeClass, createCommentVNode as _createCommentVNode, createBlock as _createBlock } from \"vue\"\nimport _imports_0 from '/images/svg/coin.svg'\n\n\nconst _hoisted_1 = { class: \"title-header\" }\nconst _hoisted_2 = { class: \"d-flex align-items-center\" }\nconst _hoisted_3 = {\n  key: 0,\n  class: \"total-box mt-0\"\n}\nconst _hoisted_4 = { class: \"row\" }\nconst _hoisted_5 = { class: \"col-12\" }\nconst _hoisted_6 = { class: \"totle-contain wallet-bg\" }\nconst _hoisted_7 = { class: \"wallet-point-box\" }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_0,\n  alt: \"coin\",\n  class: \"img-fluid\"\n}, null, -1)\nconst _hoisted_9 = { class: \"totle-detail\" }\nconst _hoisted_10 = { class: \"point-ratio\" }\nconst _hoisted_11 = { class: \"counter\" }\nconst _hoisted_12 = { class: \"wallet-table\" }\nconst _hoisted_13 = { class: \"user-dashboard-title\" }\nconst _hoisted_14 = {\n  key: 0,\n  class: \"custome-pagination\"\n}\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\"\n\nconst _sfc_main = {\n  __name: 'index',\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet Pointparams = ref({ paginate: 10, page: 1 });\nlet { Settings } = storeToRefs(useDataStore())\nlet { data: point, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"points/consumer\", {\n  key: \"getAllPoints\",\n  params: Pointparams,\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nconst ChangePage = ({ toPage }) => {\n  Pointparams.value.page = toPage;\n};\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsPagination = _resolveComponent(\"WidgetsPagination\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"Points\")), 1)\n      ])\n    ]),\n    (_unref(point)?.transactions?.data?.length)\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"div\", _hoisted_5, [\n              _createElementVNode(\"div\", _hoisted_6, [\n                _createElementVNode(\"div\", _hoisted_7, [\n                  _hoisted_8,\n                  _createElementVNode(\"div\", _hoisted_9, [\n                    _createElementVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"Total Points\")), 1),\n                    _createElementVNode(\"h3\", null, _toDisplayString(_unref(point) ? _unref(point)?.balance : 0), 1)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_10, [\n                  _createElementVNode(\"h3\", _hoisted_11, [\n                    _createVNode(_component_Icon, {\n                      class: \"me-2\",\n                      name: \"ri:information-line\"\n                    }),\n                    _createTextVNode(\" \" + _toDisplayString(_ctx.$t(\"1 Point\")) + \" = \" + _toDisplayString(Number(1 / (_unref(Settings)?.values?.wallet_points?.point_currency_ratio)).toFixed(2)) + \" \" + _toDisplayString(_ctx.$t(\"Balance\")), 1)\n                  ])\n                ])\n              ])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_12, [\n            _createElementVNode(\"h4\", _hoisted_13, _toDisplayString(_ctx.$t(\"Transactions\")), 1),\n            _createElementVNode(\"table\", null, [\n              _createElementVNode(\"tbody\", null, [\n                _createElementVNode(\"tr\", null, [\n                  _createElementVNode(\"th\", null, _toDisplayString(_ctx.$t(\"No\")) + \".\", 1),\n                  _createElementVNode(\"th\", null, _toDisplayString(_ctx.$t(\"Date\")), 1),\n                  _createElementVNode(\"th\", null, _toDisplayString(_ctx.$t(\"Amount\")), 1),\n                  _createElementVNode(\"th\", null, _toDisplayString(_ctx.$t(\"Remark\")), 1),\n                  _createElementVNode(\"th\", null, _toDisplayString(_ctx.$t(\"Status\")), 1)\n                ]),\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(point)?.transactions?.data, (transaction, index) => {\n                  return (_openBlock(), _createElementBlock(\"tr\", { key: index }, [\n                    _createElementVNode(\"td\", null, _toDisplayString(index + 1), 1),\n                    _createElementVNode(\"td\", null, _toDisplayString(_ctx.dateFormatter(transaction?.created_at)), 1),\n                    _createElementVNode(\"td\", null, _toDisplayString(transaction?.amount), 1),\n                    _createElementVNode(\"td\", null, _toDisplayString(transaction?.detail), 1),\n                    _createElementVNode(\"td\", null, [\n                      _createElementVNode(\"div\", {\n                        class: _normalizeClass(`status-${transaction?.type}`)\n                      }, [\n                        _createElementVNode(\"span\", null, _toDisplayString(_ctx.transform(transaction?.type)), 1)\n                      ], 2)\n                    ])\n                  ]))\n                }), 128))\n              ])\n            ])\n          ]),\n          (_unref(point)?.transactions?.data?.length)\n            ? (_openBlock(), _createElementBlock(\"nav\", _hoisted_14, [\n                _createVNode(_component_WidgetsPagination, {\n                  Data: _unref(point).transactions,\n                  onChangePage: _cache[0] || (_cache[0] = (toPage) => ChangePage({ toPage }))\n                }, null, 8, [\"Data\"])\n              ]))\n            : _createCommentVNode(\"\", true)\n        ]))\n      : _createCommentVNode(\"\", true),\n    (!_unref(point)?.transactions?.data?.length)\n      ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n          key: 1,\n          class: _normalizeClass('no-data-added'),\n          image: '/svg/empty-items.svg',\n          text: 'No Transaction Found',\n          description: 'You have not earned any points yet'\n        }, null, 8, [\"image\"]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056262525,
+      "end": 1716056262534,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056262535,
+      "end": 1716056262535,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056262535,
+      "end": 1716056262535,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056262535,
+      "end": 1716056262535,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056262535,
+      "end": 1716056262535,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Point/index.vue\").then(r => r.default))",
+      "start": 1716056262535,
+      "end": 1716056262535,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056262535,
+      "end": 1716056262535,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056262535,
+      "end": 1716056262535,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056262535,
+      "end": 1716056262535,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056262535,
+      "end": 1716056262535,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056262535,
+      "end": 1716056262535,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056262535,
+      "end": 1716056262535,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056262535,
+      "end": 1716056262535,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056262535,
+      "end": 1716056262535,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056262535,
+      "end": 1716056262536,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056262536,
+      "end": 1716056262536,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056262536,
+      "end": 1716056262536,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056262536,
+      "end": 1716056262536,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056262536,
+      "end": 1716056262536,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056262536,
+      "end": 1716056262536,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056262536,
+      "end": 1716056262536,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056262536,
+      "end": 1716056262536,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056262536,
+      "end": 1716056262536,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056262536,
+      "end": 1716056262536,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Point/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056262536,
+      "end": 1716056262536,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056262536,
+      "end": 1716056262536,
+      "order": "normal"
+    }
+  ]
+}

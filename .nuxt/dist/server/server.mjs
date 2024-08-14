@@ -1,0 +1,1 @@
+export { default } from "file:///G:/DwnlData/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"

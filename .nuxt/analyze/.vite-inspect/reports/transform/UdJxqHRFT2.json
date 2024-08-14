@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Footer/index.vue?nuxt_component=async&nuxt_component_name=Footer",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <footer class=\"section-t-space\" :class=\"footer?.footer_class\">\n        <div class=\"container-fluid-lg\">\n            <div class=\"main-footer section-b-space\">\n                <div class=\"row g-md-4 g-3\">\n                    <div class=\"col-xl-3 col-lg-4 col-sm-6\">\n                        <div class=\"footer-logo\">\n                            <FooterLogo :data=\"ThemeOptions?.options\" :footer=\"footer\" />\n                            <FooterAbout :data=\"ThemeOptions?.options\" />\n                        </div>\n                    </div>\n\n                    <div class=\"col-xl-2 col-lg-3 col-md-4 col-sm-6\"\n                        v-if=\"ThemeOptions?.options?.footer?.footer_categories?.length\" @click=\"toggle('categories')\">\n                        <div class=\"footer-title\" :class=\"{ show: active['categories'] }\">\n                            <h4>{{ $t(\"Categories\") }}</h4>\n                        </div>\n                        <div class=\"footer-contain\">\n                            <FooterCategory :data=\"CategoryInitial\" />\n                            <WidgetsNoData :class=\"'no-data-footer'\" :text=\"'No Category Found'\"\n                                v-if=\"!ThemeOptions?.options?.footer?.footer_categories?.length\"></WidgetsNoData>\n                        </div>\n                    </div>\n\n                    <div class=\"col-xl col-lg-2 col-sm-3\" v-if=\"ThemeOptions?.options?.footer?.useful_link?.length\"\n                        @click=\"toggle('useful_link')\">\n                        <div class=\"footer-title\" :class=\"{ show: active['useful_link'] }\">\n                            <h4>{{ $t(\"Useful Links\") }}</h4>\n                        </div>\n                        <div class=\"footer-contain\">\n                            <FooterLinks :links=\"ThemeOptions?.options?.footer?.useful_link\" />\n                            <WidgetsNoData :class=\"'no-data-footer'\" :text=\"'No Link Found'\"\n                                v-if=\"!ThemeOptions?.options?.footer?.useful_link?.length\"></WidgetsNoData>\n                        </div>\n                    </div>\n                    \n                    <div class=\"col-xl-2 col-sm-3\" v-if=\"ThemeOptions?.options?.footer?.help_center?.length\"\n                        @click=\"toggle('help_center')\">\n                        <div class=\"footer-title\" :class=\"{ show: active['help_center'] }\">\n                            <h4>{{ $t(\"Help Center\") }}</h4>\n                        </div>\n                        <div class=\"footer-contain\">\n                            <FooterLinks :links=\"ThemeOptions?.options?.footer?.help_center\" />\n                            <WidgetsNoData :class=\"'no-data-footer'\" :text=\"'No Link Found'\"\n                                v-if=\"!ThemeOptions?.options?.footer?.help_center?.length\"></WidgetsNoData>\n                        </div>\n                    </div>\n\n                    <div class=\"col-xl-3 col-lg-4 col-sm-6\"\n                        v-if=\"ThemeOptions?.options?.footer?.support_email || ThemeOptions?.options?.footer?.support_number || ThemeOptions?.options?.footer?.play_store_url || ThemeOptions?.options?.footer?.app_store_url\">\n                        <div class=\"footer-title contact-title\">\n                            <h4>{{ $t(\"Contact Us\") }}</h4>\n                        </div>\n                        <FooterCantact :data=\"ThemeOptions.options\" />\n                    </div>\n                </div>\n            </div>\n            <div class=\"sub-footer section-small-space\">\n                <div class=\"reserve\" v-if=\"ThemeOptions?.options?.footer?.footer_copyright\">\n                    <h6 class=\"text-content\" v-if=\"ThemeOptions?.options?.footer?.copyright_content\">{{\n                        ThemeOptions?.options?.footer?.copyright_content }}</h6>\n                </div>\n\n                <div class=\"payment\">\n                    <img src=\"/images/payment/1.png\" class=\"img-fluid\" alt=\"\">\n                </div>\n                <FooterSocial :data=\"ThemeOptions.options\" v-if=\"ThemeOptions?.options?.footer?.social_media_enable\" />\n            </div>\n        </div>\n    </footer>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from '@/store/data';\n\nlet props = defineProps({\n    footer: Object\n})\n\nlet active = ref({\n    categories: false,\n    useful_link: false,\n    quick_pages: false,\n});\nlet CategoryInitial = ref([]);\nlet { ThemeOptions } = storeToRefs(useDataStore())\n\nThemeOptions?.value?.options?.footer?.footer_categories.map((id) => {\n    let { data: categories } = HandleRequest(`category/${id}`, { key: `GetFooterCategory${id}`, type: 'product' });\n    CategoryInitial.value.push(categories)\n})\n\nfunction toggle(value) {\n    active.value[value] = !active.value[value];\n}\n</script>",
+      "start": 1716056270648,
+      "end": 1716056270741,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056270741,
+      "end": 1716056270741,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056270741,
+      "end": 1716056270741,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056270741,
+      "end": 1716056270741,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056270741,
+      "end": 1716056270741,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056270741,
+      "end": 1716056270741,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056270741,
+      "end": 1716056270741,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056270741,
+      "end": 1716056270741,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from '/images/payment/1.png'\n\n\nconst _hoisted_1 = { class: \"container-fluid-lg\" }\nconst _hoisted_2 = { class: \"main-footer section-b-space\" }\nconst _hoisted_3 = { class: \"row g-md-4 g-3\" }\nconst _hoisted_4 = { class: \"col-xl-3 col-lg-4 col-sm-6\" }\nconst _hoisted_5 = { class: \"footer-logo\" }\nconst _hoisted_6 = { class: \"footer-contain\" }\nconst _hoisted_7 = { class: \"footer-contain\" }\nconst _hoisted_8 = { class: \"footer-contain\" }\nconst _hoisted_9 = {\n  key: 3,\n  class: \"col-xl-3 col-lg-4 col-sm-6\"\n}\nconst _hoisted_10 = { class: \"footer-title contact-title\" }\nconst _hoisted_11 = { class: \"sub-footer section-small-space\" }\nconst _hoisted_12 = {\n  key: 0,\n  class: \"reserve\"\n}\nconst _hoisted_13 = {\n  key: 0,\n  class: \"text-content\"\n}\nconst _hoisted_14 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"payment\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_0,\n    class: \"img-fluid\",\n    alt: \"\"\n  })\n], -1)\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from '@/store/data';\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    footer: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nlet active = ref({\n    categories: false,\n    useful_link: false,\n    quick_pages: false,\n});\nlet CategoryInitial = ref([]);\nlet { ThemeOptions } = storeToRefs(useDataStore())\n\nThemeOptions?.value?.options?.footer?.footer_categories.map((id) => {\n    let { data: categories } = HandleRequest(`category/${id}`, { key: `GetFooterCategory${id}`, type: 'product' });\n    CategoryInitial.value.push(categories)\n})\n\nfunction toggle(value) {\n    active.value[value] = !active.value[value];\n}\n\nreturn (_ctx, _cache) => {\n  const _component_FooterLogo = _resolveComponent(\"FooterLogo\")\n  const _component_FooterAbout = _resolveComponent(\"FooterAbout\")\n  const _component_FooterCategory = _resolveComponent(\"FooterCategory\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n  const _component_FooterLinks = _resolveComponent(\"FooterLinks\")\n  const _component_FooterCantact = _resolveComponent(\"FooterCantact\")\n  const _component_FooterSocial = _resolveComponent(\"FooterSocial\")\n\n  return (_openBlock(), _createElementBlock(\"footer\", {\n    class: _normalizeClass([\"section-t-space\", __props.footer?.footer_class])\n  }, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"div\", _hoisted_5, [\n              _createVNode(_component_FooterLogo, {\n                data: _unref(ThemeOptions)?.options,\n                footer: __props.footer\n              }, null, 8, [\"data\", \"footer\"]),\n              _createVNode(_component_FooterAbout, {\n                data: _unref(ThemeOptions)?.options\n              }, null, 8, [\"data\"])\n            ])\n          ]),\n          (_unref(ThemeOptions)?.options?.footer?.footer_categories?.length)\n            ? (_openBlock(), _createElementBlock(\"div\", {\n                key: 0,\n                class: \"col-xl-2 col-lg-3 col-md-4 col-sm-6\",\n                onClick: _cache[0] || (_cache[0] = $event => (toggle('categories')))\n              }, [\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([\"footer-title\", { show: _unref(active)['categories'] }])\n                }, [\n                  _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Categories\")), 1)\n                ], 2),\n                _createElementVNode(\"div\", _hoisted_6, [\n                  _createVNode(_component_FooterCategory, { data: _unref(CategoryInitial) }, null, 8, [\"data\"]),\n                  (!_unref(ThemeOptions)?.options?.footer?.footer_categories?.length)\n                    ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n                        key: 0,\n                        class: _normalizeClass('no-data-footer'),\n                        text: 'No Category Found'\n                      }))\n                    : _createCommentVNode(\"\", true)\n                ])\n              ]))\n            : _createCommentVNode(\"\", true),\n          (_unref(ThemeOptions)?.options?.footer?.useful_link?.length)\n            ? (_openBlock(), _createElementBlock(\"div\", {\n                key: 1,\n                class: \"col-xl col-lg-2 col-sm-3\",\n                onClick: _cache[1] || (_cache[1] = $event => (toggle('useful_link')))\n              }, [\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([\"footer-title\", { show: _unref(active)['useful_link'] }])\n                }, [\n                  _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Useful Links\")), 1)\n                ], 2),\n                _createElementVNode(\"div\", _hoisted_7, [\n                  _createVNode(_component_FooterLinks, {\n                    links: _unref(ThemeOptions)?.options?.footer?.useful_link\n                  }, null, 8, [\"links\"]),\n                  (!_unref(ThemeOptions)?.options?.footer?.useful_link?.length)\n                    ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n                        key: 0,\n                        class: _normalizeClass('no-data-footer'),\n                        text: 'No Link Found'\n                      }))\n                    : _createCommentVNode(\"\", true)\n                ])\n              ]))\n            : _createCommentVNode(\"\", true),\n          (_unref(ThemeOptions)?.options?.footer?.help_center?.length)\n            ? (_openBlock(), _createElementBlock(\"div\", {\n                key: 2,\n                class: \"col-xl-2 col-sm-3\",\n                onClick: _cache[2] || (_cache[2] = $event => (toggle('help_center')))\n              }, [\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([\"footer-title\", { show: _unref(active)['help_center'] }])\n                }, [\n                  _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Help Center\")), 1)\n                ], 2),\n                _createElementVNode(\"div\", _hoisted_8, [\n                  _createVNode(_component_FooterLinks, {\n                    links: _unref(ThemeOptions)?.options?.footer?.help_center\n                  }, null, 8, [\"links\"]),\n                  (!_unref(ThemeOptions)?.options?.footer?.help_center?.length)\n                    ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n                        key: 0,\n                        class: _normalizeClass('no-data-footer'),\n                        text: 'No Link Found'\n                      }))\n                    : _createCommentVNode(\"\", true)\n                ])\n              ]))\n            : _createCommentVNode(\"\", true),\n          (_unref(ThemeOptions)?.options?.footer?.support_email || _unref(ThemeOptions)?.options?.footer?.support_number || _unref(ThemeOptions)?.options?.footer?.play_store_url || _unref(ThemeOptions)?.options?.footer?.app_store_url)\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_9, [\n                _createElementVNode(\"div\", _hoisted_10, [\n                  _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Contact Us\")), 1)\n                ]),\n                _createVNode(_component_FooterCantact, {\n                  data: _unref(ThemeOptions).options\n                }, null, 8, [\"data\"])\n              ]))\n            : _createCommentVNode(\"\", true)\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_11, [\n        (_unref(ThemeOptions)?.options?.footer?.footer_copyright)\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_12, [\n              (_unref(ThemeOptions)?.options?.footer?.copyright_content)\n                ? (_openBlock(), _createElementBlock(\"h6\", _hoisted_13, _toDisplayString(_unref(ThemeOptions)?.options?.footer?.copyright_content), 1))\n                : _createCommentVNode(\"\", true)\n            ]))\n          : _createCommentVNode(\"\", true),\n        _hoisted_14,\n        (_unref(ThemeOptions)?.options?.footer?.social_media_enable)\n          ? (_openBlock(), _createBlock(_component_FooterSocial, {\n              key: 1,\n              data: _unref(ThemeOptions).options\n            }, null, 8, [\"data\"]))\n          : _createCommentVNode(\"\", true)\n      ])\n    ])\n  ], 2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056270741,
+      "end": 1716056270748,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056270748,
+      "end": 1716056270748,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056270748,
+      "end": 1716056270748,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Footer/index.vue\").then(r => r.default))",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Footer/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056270749,
+      "end": 1716056270749,
+      "order": "normal"
+    }
+  ]
+}

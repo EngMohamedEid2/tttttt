@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Language.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <!-- Language Basic Style -->\n    <OnClickOutside\n      class=\"modal-content\"\n      @trigger=\"active = false\"\n      v-if=\"style == 'basic'\"\n    >\n      <WidgetsButton\n        :classes=\"'btn dropdown-toggle'\"\n        :type=\"'button'\"\n        :id=\"'open_dropdown_basic_btn'\"\n        @onClick=\"openDropDown()\"\n      >\n        <div class=\"iti-flag\" :class=\"selectedLanguage.icon\"></div>\n        <span> {{ selectedLanguage.language }}</span>\n      </WidgetsButton>\n      <ul\n        class=\"dropdown-menu dropdown-menu-end language-dropdown\"\n        :class=\"{ show: active }\"\n      >\n        <li v-for=\"language in languages\" :key=\"language\">\n          <button class=\"dropdown-item\" @click=\"selectLanguage(language)\">\n            <div class=\"iti-flag\" :class=\"language.icon\"></div>\n            <span>{{ language.language }}</span>\n          </button>\n        </li>\n      </ul>\n    </OnClickOutside>\n\n    <!-- Language Standard Style -->\n    <OnClickOutside\n      class=\"modal-content\"\n      @trigger=\"active = false\"\n      v-if=\"style == 'standard'\"\n    >\n      <WidgetsButton\n        :classes=\"'btn dropdown-toggle'\"\n        :type=\"'button'\"\n        :id=\"'open_dropdown_standard_btn'\"\n        @onClick=\"openDropDown()\"\n      >\n        <div class=\"iti-flag {{ selectedLanguage.icon }}\"></div>\n        <span>\n          {{ selectedLanguage.language }}\n        </span>\n        <Icon name=\"ri-arrow-{{ active ? 'up' : 'down' }}-s-line\"></Icon>\n      </WidgetsButton>\n      <ul class=\"dropdown-menu\" :class=\"{ show: active }\">\n        <li v-for=\"language in languages\" :key=\"language\">\n          <a\n            class=\"dropdown-item\"\n            href=\"javascript:void(0)\"\n            @click=\"selectLanguage(language)\"\n          >\n            <div class=\"iti-flag\" :class=\"language.icon\"></div>\n            <span>{{ language.language }}</span>\n          </a>\n        </li>\n      </ul>\n    </OnClickOutside>\n  </div>\n</template>\n<script setup>\nimport { OnClickOutside } from \"@vueuse/components\";\nimport { useI18n } from \"vue-i18n\";\nconst i18n = useI18n();\nlet props = defineProps({\n  style: { type: [String, Object], default: \"basic\" },\n});\n\nlet active = ref(false);\nlet languages = ref([\n  {\n    language: \"English\",\n    code: \"en\",\n    icon: \"us\",\n  },\n  {\n    language: \"Arabic\",\n    code: \"ar\",\n    icon: \"sa\",\n  },\n]);\n\nlet selectedLanguage = ref({\n  language: \"English\",\n  code: \"en\",\n  icon: \"us\",\n});\n\nfunction updateLang(language) {\n  i18n.locale.value = language.code;\n  selectedLanguage.value = language;\n  if (language.code === \"ar\") {\n    if (process.client) {\n      document.body.classList.add(\"rtl\");\n      document.documentElement.dir = \"rtl\";\n    }\n  } else {\n    if (process.client) {\n      document.body.classList.remove(\"rtl\");\n      document.documentElement.dir = \"ltr\";\n    }\n  }\n}\n\nfunction selectLanguage(language) {\n  active.value = false;\n  localStorage.setItem(\"lang\", JSON.stringify(language));\n  updateLang(language);\n}\n\nfunction openDropDown() {\n  active.value = !active.value;\n}\n\nonMounted(() => {\n  if (localStorage.getItem(\"lang\")) {\n    updateLang(JSON.parse(localStorage.getItem(\"lang\")));\n  }\n});\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056286919,
+      "end": 1716056287100,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287100,
+      "end": 1716056287100,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287100,
+      "end": 1716056287100,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287100,
+      "end": 1716056287100,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287100,
+      "end": 1716056287100,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287100,
+      "end": 1716056287100,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287100,
+      "end": 1716056287100,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287100,
+      "end": 1716056287100,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, isRef as _isRef, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = [\"onClick\"]\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"iti-flag {{ selectedLanguage.icon }}\" }, null, -1)\nconst _hoisted_3 = [\"onClick\"]\n\nimport { OnClickOutside } from \"@vueuse/components\";\nimport { useI18n } from \"vue-i18n\";\n\nconst _sfc_main = {\n  __name: 'Language',\n  props: {\n  style: { type: [String, Object], default: \"basic\" },\n},\n  setup(__props) {\n\nconst i18n = useI18n();\nlet props = __props;\n\nlet active = ref(false);\nlet languages = ref([\n  {\n    language: \"English\",\n    code: \"en\",\n    icon: \"us\",\n  },\n  {\n    language: \"Arabic\",\n    code: \"ar\",\n    icon: \"sa\",\n  },\n]);\n\nlet selectedLanguage = ref({\n  language: \"English\",\n  code: \"en\",\n  icon: \"us\",\n});\n\nfunction updateLang(language) {\n  i18n.locale.value = language.code;\n  selectedLanguage.value = language;\n  if (language.code === \"ar\") {\n    if (process.client) {\n      document.body.classList.add(\"rtl\");\n      document.documentElement.dir = \"rtl\";\n    }\n  } else {\n    if (process.client) {\n      document.body.classList.remove(\"rtl\");\n      document.documentElement.dir = \"ltr\";\n    }\n  }\n}\n\nfunction selectLanguage(language) {\n  active.value = false;\n  localStorage.setItem(\"lang\", JSON.stringify(language));\n  updateLang(language);\n}\n\nfunction openDropDown() {\n  active.value = !active.value;\n}\n\nonMounted(() => {\n  if (localStorage.getItem(\"lang\")) {\n    updateLang(JSON.parse(localStorage.getItem(\"lang\")));\n  }\n});\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (__props.style == 'basic')\n      ? (_openBlock(), _createBlock(_unref(OnClickOutside), {\n          key: 0,\n          class: \"modal-content\",\n          onTrigger: _cache[1] || (_cache[1] = $event => (_isRef(active) ? active.value = false : active = false))\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_WidgetsButton, {\n              classes: 'btn dropdown-toggle',\n              type: 'button',\n              id: 'open_dropdown_basic_btn',\n              onOnClick: _cache[0] || (_cache[0] = $event => (openDropDown()))\n            }, {\n              default: _withCtx(() => [\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([\"iti-flag\", _unref(selectedLanguage).icon])\n                }, null, 2),\n                _createElementVNode(\"span\", null, _toDisplayString(_unref(selectedLanguage).language), 1)\n              ]),\n              _: 1\n            }),\n            _createElementVNode(\"ul\", {\n              class: _normalizeClass([\"dropdown-menu dropdown-menu-end language-dropdown\", { show: _unref(active) }])\n            }, [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(languages), (language) => {\n                return (_openBlock(), _createElementBlock(\"li\", { key: language }, [\n                  _createElementVNode(\"button\", {\n                    class: \"dropdown-item\",\n                    onClick: $event => (selectLanguage(language))\n                  }, [\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass([\"iti-flag\", language.icon])\n                    }, null, 2),\n                    _createElementVNode(\"span\", null, _toDisplayString(language.language), 1)\n                  ], 8, _hoisted_1)\n                ]))\n              }), 128))\n            ], 2)\n          ]),\n          _: 1\n        }))\n      : _createCommentVNode(\"\", true),\n    (__props.style == 'standard')\n      ? (_openBlock(), _createBlock(_unref(OnClickOutside), {\n          key: 1,\n          class: \"modal-content\",\n          onTrigger: _cache[3] || (_cache[3] = $event => (_isRef(active) ? active.value = false : active = false))\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_WidgetsButton, {\n              classes: 'btn dropdown-toggle',\n              type: 'button',\n              id: 'open_dropdown_standard_btn',\n              onOnClick: _cache[2] || (_cache[2] = $event => (openDropDown()))\n            }, {\n              default: _withCtx(() => [\n                _hoisted_2,\n                _createElementVNode(\"span\", null, _toDisplayString(_unref(selectedLanguage).language), 1),\n                _createVNode(_component_Icon, { name: \"ri-arrow-{{ active ? 'up' : 'down' }}-s-line\" })\n              ]),\n              _: 1\n            }),\n            _createElementVNode(\"ul\", {\n              class: _normalizeClass([\"dropdown-menu\", { show: _unref(active) }])\n            }, [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(languages), (language) => {\n                return (_openBlock(), _createElementBlock(\"li\", { key: language }, [\n                  _createElementVNode(\"a\", {\n                    class: \"dropdown-item\",\n                    href: \"javascript:void(0)\",\n                    onClick: $event => (selectLanguage(language))\n                  }, [\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass([\"iti-flag\", language.icon])\n                    }, null, 2),\n                    _createElementVNode(\"span\", null, _toDisplayString(language.language), 1)\n                  ], 8, _hoisted_3)\n                ]))\n              }), 128))\n            ], 2)\n          ]),\n          _: 1\n        }))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287100,
+      "end": 1716056287100,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287100,
+      "end": 1716056287100,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287100,
+      "end": 1716056287100,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287101,
+      "end": 1716056287101,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287101,
+      "end": 1716056287101,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287101,
+      "end": 1716056287101,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287101,
+      "end": 1716056287101,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287101,
+      "end": 1716056287101,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { unref as _unref, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, isRef as _isRef, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\";\nconst _hoisted_1 = [\"onClick\"];\nconst _hoisted_2 = /* @__PURE__ */ _createElementVNode(\"div\", { class: \"iti-flag {{ selectedLanguage.icon }}\" }, null, -1);\nconst _hoisted_3 = [\"onClick\"];\nimport { OnClickOutside } from \"@vueuse/components\";\nimport { useI18n } from \"vue-i18n\";\nconst _sfc_main = {\n  __name: \"Language\",\n  props: {\n    style: { type: [String, Object], default: \"basic\" }\n  },\n  setup(__props) {\n    const i18n = useI18n();\n    let props = __props;\n    let active = ref(false);\n    let languages = ref([\n      {\n        language: \"English\",\n        code: \"en\",\n        icon: \"us\"\n      },\n      {\n        language: \"Arabic\",\n        code: \"ar\",\n        icon: \"sa\"\n      }\n    ]);\n    let selectedLanguage = ref({\n      language: \"English\",\n      code: \"en\",\n      icon: \"us\"\n    });\n    function updateLang(language) {\n      i18n.locale.value = language.code;\n      selectedLanguage.value = language;\n      if (language.code === \"ar\") {\n        if (true) {\n          document.body.classList.add(\"rtl\");\n          document.documentElement.dir = \"rtl\";\n        }\n      } else {\n        if (true) {\n          document.body.classList.remove(\"rtl\");\n          document.documentElement.dir = \"ltr\";\n        }\n      }\n    }\n    function selectLanguage(language) {\n      active.value = false;\n      localStorage.setItem(\"lang\", JSON.stringify(language));\n      updateLang(language);\n    }\n    function openDropDown() {\n      active.value = !active.value;\n    }\n    onMounted(() => {\n      if (localStorage.getItem(\"lang\")) {\n        updateLang(JSON.parse(localStorage.getItem(\"lang\")));\n      }\n    });\n    return (_ctx, _cache) => {\n      const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\");\n      const _component_Icon = _resolveComponent(\"Icon\");\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        __props.style == \"basic\" ? (_openBlock(), _createBlock(_unref(OnClickOutside), {\n          key: 0,\n          class: \"modal-content\",\n          onTrigger: _cache[1] || (_cache[1] = ($event) => _isRef(active) ? active.value = false : active = false)\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_WidgetsButton, {\n              classes: \"btn dropdown-toggle\",\n              type: \"button\",\n              id: \"open_dropdown_basic_btn\",\n              onOnClick: _cache[0] || (_cache[0] = ($event) => openDropDown())\n            }, {\n              default: _withCtx(() => [\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([\"iti-flag\", _unref(selectedLanguage).icon])\n                }, null, 2),\n                _createElementVNode(\"span\", null, _toDisplayString(_unref(selectedLanguage).language), 1)\n              ]),\n              _: 1\n            }),\n            _createElementVNode(\"ul\", {\n              class: _normalizeClass([\"dropdown-menu dropdown-menu-end language-dropdown\", { show: _unref(active) }])\n            }, [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(languages), (language) => {\n                return _openBlock(), _createElementBlock(\"li\", { key: language }, [\n                  _createElementVNode(\"button\", {\n                    class: \"dropdown-item\",\n                    onClick: ($event) => selectLanguage(language)\n                  }, [\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass([\"iti-flag\", language.icon])\n                    }, null, 2),\n                    _createElementVNode(\"span\", null, _toDisplayString(language.language), 1)\n                  ], 8, _hoisted_1)\n                ]);\n              }), 128))\n            ], 2)\n          ]),\n          _: 1\n        })) : _createCommentVNode(\"\", true),\n        __props.style == \"standard\" ? (_openBlock(), _createBlock(_unref(OnClickOutside), {\n          key: 1,\n          class: \"modal-content\",\n          onTrigger: _cache[3] || (_cache[3] = ($event) => _isRef(active) ? active.value = false : active = false)\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_WidgetsButton, {\n              classes: \"btn dropdown-toggle\",\n              type: \"button\",\n              id: \"open_dropdown_standard_btn\",\n              onOnClick: _cache[2] || (_cache[2] = ($event) => openDropDown())\n            }, {\n              default: _withCtx(() => [\n                _hoisted_2,\n                _createElementVNode(\"span\", null, _toDisplayString(_unref(selectedLanguage).language), 1),\n                _createVNode(_component_Icon, { name: \"ri-arrow-{{ active ? 'up' : 'down' }}-s-line\" })\n              ]),\n              _: 1\n            }),\n            _createElementVNode(\"ul\", {\n              class: _normalizeClass([\"dropdown-menu\", { show: _unref(active) }])\n            }, [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(languages), (language) => {\n                return _openBlock(), _createElementBlock(\"li\", { key: language }, [\n                  _createElementVNode(\"a\", {\n                    class: \"dropdown-item\",\n                    href: \"javascript:void(0)\",\n                    onClick: ($event) => selectLanguage(language)\n                  }, [\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass([\"iti-flag\", language.icon])\n                    }, null, 2),\n                    _createElementVNode(\"span\", null, _toDisplayString(language.language), 1)\n                  ], 8, _hoisted_3)\n                ]);\n              }), 128))\n            ], 2)\n          ]),\n          _: 1\n        })) : _createCommentVNode(\"\", true)\n      ]);\n    };\n  }\n};\nexport default _sfc_main;\n",
+      "start": 1716056287101,
+      "end": 1716056287164,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287164,
+      "end": 1716056287164,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287164,
+      "end": 1716056287164,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287164,
+      "end": 1716056287164,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287164,
+      "end": 1716056287164,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287164,
+      "end": 1716056287164,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287164,
+      "end": 1716056287164,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287164,
+      "end": 1716056287164,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287164,
+      "end": 1716056287164,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { unref as _unref, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, isRef as _isRef, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\";\nconst _hoisted_1 = [\"onClick\"];\nconst _hoisted_2 = /* @__PURE__ */ _createElementVNode(\"div\", { class: \"iti-flag {{ selectedLanguage.icon }}\" }, null, -1);\nconst _hoisted_3 = [\"onClick\"];\nimport { OnClickOutside } from \"@vueuse/components\";\nimport { useI18n } from \"vue-i18n\";\nconst _sfc_main = {\n  __name: \"Language\",\n  props: {\n    style: { type: [String, Object], default: \"basic\" }\n  },\n  setup(__props) {\n    const i18n = useI18n();\n    let props = __props;\n    let active = ref(false);\n    let languages = ref([\n      {\n        language: \"English\",\n        code: \"en\",\n        icon: \"us\"\n      },\n      {\n        language: \"Arabic\",\n        code: \"ar\",\n        icon: \"sa\"\n      }\n    ]);\n    let selectedLanguage = ref({\n      language: \"English\",\n      code: \"en\",\n      icon: \"us\"\n    });\n    function updateLang(language) {\n      i18n.locale.value = language.code;\n      selectedLanguage.value = language;\n      if (language.code === \"ar\") {\n        if (true) {\n          document.body.classList.add(\"rtl\");\n          document.documentElement.dir = \"rtl\";\n        }\n      } else {\n        if (true) {\n          document.body.classList.remove(\"rtl\");\n          document.documentElement.dir = \"ltr\";\n        }\n      }\n    }\n    function selectLanguage(language) {\n      active.value = false;\n      localStorage.setItem(\"lang\", JSON.stringify(language));\n      updateLang(language);\n    }\n    function openDropDown() {\n      active.value = !active.value;\n    }\n    onMounted(() => {\n      if (localStorage.getItem(\"lang\")) {\n        updateLang(JSON.parse(localStorage.getItem(\"lang\")));\n      }\n    });\n    return (_ctx, _cache) => {\n      const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\");\n      const _component_Icon = _resolveComponent(\"Icon\");\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        __props.style == \"basic\" ? (_openBlock(), _createBlock(_unref(OnClickOutside), {\n          key: 0,\n          class: \"modal-content\",\n          onTrigger: _cache[1] || (_cache[1] = ($event) => _isRef(active) ? active.value = false : active = false)\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_WidgetsButton, {\n              classes: \"btn dropdown-toggle\",\n              type: \"button\",\n              id: \"open_dropdown_basic_btn\",\n              onOnClick: _cache[0] || (_cache[0] = ($event) => openDropDown())\n            }, {\n              default: _withCtx(() => [\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([\"iti-flag\", _unref(selectedLanguage).icon])\n                }, null, 2),\n                _createElementVNode(\"span\", null, _toDisplayString(_unref(selectedLanguage).language), 1)\n              ]),\n              _: 1\n            }),\n            _createElementVNode(\"ul\", {\n              class: _normalizeClass([\"dropdown-menu dropdown-menu-end language-dropdown\", { show: _unref(active) }])\n            }, [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(languages), (language) => {\n                return _openBlock(), _createElementBlock(\"li\", { key: language }, [\n                  _createElementVNode(\"button\", {\n                    class: \"dropdown-item\",\n                    onClick: ($event) => selectLanguage(language)\n                  }, [\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass([\"iti-flag\", language.icon])\n                    }, null, 2),\n                    _createElementVNode(\"span\", null, _toDisplayString(language.language), 1)\n                  ], 8, _hoisted_1)\n                ]);\n              }), 128))\n            ], 2)\n          ]),\n          _: 1\n        })) : _createCommentVNode(\"\", true),\n        __props.style == \"standard\" ? (_openBlock(), _createBlock(_unref(OnClickOutside), {\n          key: 1,\n          class: \"modal-content\",\n          onTrigger: _cache[3] || (_cache[3] = ($event) => _isRef(active) ? active.value = false : active = false)\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_WidgetsButton, {\n              classes: \"btn dropdown-toggle\",\n              type: \"button\",\n              id: \"open_dropdown_standard_btn\",\n              onOnClick: _cache[2] || (_cache[2] = ($event) => openDropDown())\n            }, {\n              default: _withCtx(() => [\n                _hoisted_2,\n                _createElementVNode(\"span\", null, _toDisplayString(_unref(selectedLanguage).language), 1),\n                _createVNode(_component_Icon, { name: \"ri-arrow-{{ active ? 'up' : 'down' }}-s-line\" })\n              ]),\n              _: 1\n            }),\n            _createElementVNode(\"ul\", {\n              class: _normalizeClass([\"dropdown-menu\", { show: _unref(active) }])\n            }, [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(languages), (language) => {\n                return _openBlock(), _createElementBlock(\"li\", { key: language }, [\n                  _createElementVNode(\"a\", {\n                    class: \"dropdown-item\",\n                    href: \"javascript:void(0)\",\n                    onClick: ($event) => selectLanguage(language)\n                  }, [\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass([\"iti-flag\", language.icon])\n                    }, null, 2),\n                    _createElementVNode(\"span\", null, _toDisplayString(language.language), 1)\n                  ], 8, _hoisted_3)\n                ]);\n              }), 128))\n            ], 2)\n          ]),\n          _: 1\n        })) : _createCommentVNode(\"\", true)\n      ]);\n    };\n  }\n};\nexport default _sfc_main;\n",
+      "start": 1716056287164,
+      "end": 1716056287169,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287169,
+      "end": 1716056287170,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287170,
+      "end": 1716056287170,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287170,
+      "end": 1716056287170,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287170,
+      "end": 1716056287170,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { ref, onMounted } from 'vue';\nimport { unref as _unref, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, isRef as _isRef, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\";\nconst _hoisted_1 = [\"onClick\"];\nconst _hoisted_2 = /* @__PURE__ */ _createElementVNode(\"div\", { class: \"iti-flag {{ selectedLanguage.icon }}\" }, null, -1);\nconst _hoisted_3 = [\"onClick\"];\nimport { OnClickOutside } from \"@vueuse/components\";\nimport { useI18n } from \"vue-i18n\";\nconst _sfc_main = {\n  __name: \"Language\",\n  props: {\n    style: { type: [String, Object], default: \"basic\" }\n  },\n  setup(__props) {\n    const i18n = useI18n();\n    let props = __props;\n    let active = ref(false);\n    let languages = ref([\n      {\n        language: \"English\",\n        code: \"en\",\n        icon: \"us\"\n      },\n      {\n        language: \"Arabic\",\n        code: \"ar\",\n        icon: \"sa\"\n      }\n    ]);\n    let selectedLanguage = ref({\n      language: \"English\",\n      code: \"en\",\n      icon: \"us\"\n    });\n    function updateLang(language) {\n      i18n.locale.value = language.code;\n      selectedLanguage.value = language;\n      if (language.code === \"ar\") {\n        if (true) {\n          document.body.classList.add(\"rtl\");\n          document.documentElement.dir = \"rtl\";\n        }\n      } else {\n        if (true) {\n          document.body.classList.remove(\"rtl\");\n          document.documentElement.dir = \"ltr\";\n        }\n      }\n    }\n    function selectLanguage(language) {\n      active.value = false;\n      localStorage.setItem(\"lang\", JSON.stringify(language));\n      updateLang(language);\n    }\n    function openDropDown() {\n      active.value = !active.value;\n    }\n    onMounted(() => {\n      if (localStorage.getItem(\"lang\")) {\n        updateLang(JSON.parse(localStorage.getItem(\"lang\")));\n      }\n    });\n    return (_ctx, _cache) => {\n      const _component_WidgetsButton = __nuxt_component_0;\n      const _component_Icon = __nuxt_component_1;\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        __props.style == \"basic\" ? (_openBlock(), _createBlock(_unref(OnClickOutside), {\n          key: 0,\n          class: \"modal-content\",\n          onTrigger: _cache[1] || (_cache[1] = ($event) => _isRef(active) ? active.value = false : active = false)\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_WidgetsButton, {\n              classes: \"btn dropdown-toggle\",\n              type: \"button\",\n              id: \"open_dropdown_basic_btn\",\n              onOnClick: _cache[0] || (_cache[0] = ($event) => openDropDown())\n            }, {\n              default: _withCtx(() => [\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([\"iti-flag\", _unref(selectedLanguage).icon])\n                }, null, 2),\n                _createElementVNode(\"span\", null, _toDisplayString(_unref(selectedLanguage).language), 1)\n              ]),\n              _: 1\n            }),\n            _createElementVNode(\"ul\", {\n              class: _normalizeClass([\"dropdown-menu dropdown-menu-end language-dropdown\", { show: _unref(active) }])\n            }, [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(languages), (language) => {\n                return _openBlock(), _createElementBlock(\"li\", { key: language }, [\n                  _createElementVNode(\"button\", {\n                    class: \"dropdown-item\",\n                    onClick: ($event) => selectLanguage(language)\n                  }, [\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass([\"iti-flag\", language.icon])\n                    }, null, 2),\n                    _createElementVNode(\"span\", null, _toDisplayString(language.language), 1)\n                  ], 8, _hoisted_1)\n                ]);\n              }), 128))\n            ], 2)\n          ]),\n          _: 1\n        })) : _createCommentVNode(\"\", true),\n        __props.style == \"standard\" ? (_openBlock(), _createBlock(_unref(OnClickOutside), {\n          key: 1,\n          class: \"modal-content\",\n          onTrigger: _cache[3] || (_cache[3] = ($event) => _isRef(active) ? active.value = false : active = false)\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_WidgetsButton, {\n              classes: \"btn dropdown-toggle\",\n              type: \"button\",\n              id: \"open_dropdown_standard_btn\",\n              onOnClick: _cache[2] || (_cache[2] = ($event) => openDropDown())\n            }, {\n              default: _withCtx(() => [\n                _hoisted_2,\n                _createElementVNode(\"span\", null, _toDisplayString(_unref(selectedLanguage).language), 1),\n                _createVNode(_component_Icon, { name: \"ri-arrow-{{ active ? 'up' : 'down' }}-s-line\" })\n              ]),\n              _: 1\n            }),\n            _createElementVNode(\"ul\", {\n              class: _normalizeClass([\"dropdown-menu\", { show: _unref(active) }])\n            }, [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(languages), (language) => {\n                return _openBlock(), _createElementBlock(\"li\", { key: language }, [\n                  _createElementVNode(\"a\", {\n                    class: \"dropdown-item\",\n                    href: \"javascript:void(0)\",\n                    onClick: ($event) => selectLanguage(language)\n                  }, [\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass([\"iti-flag\", language.icon])\n                    }, null, 2),\n                    _createElementVNode(\"span\", null, _toDisplayString(language.language), 1)\n                  ], 8, _hoisted_3)\n                ]);\n              }), 128))\n            ], 2)\n          ]),\n          _: 1\n        })) : _createCommentVNode(\"\", true)\n      ]);\n    };\n  }\n};\nexport default _sfc_main;\n",
+      "start": 1716056287170,
+      "end": 1716056287170,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287170,
+      "end": 1716056287170,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287170,
+      "end": 1716056287171,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287171,
+      "end": 1716056287171,
+      "order": "normal"
+    }
+  ]
+}

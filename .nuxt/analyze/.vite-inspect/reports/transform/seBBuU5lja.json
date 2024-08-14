@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ProductBox/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n        <WidgetsProductBoxHorizontal :product=\"product\" v-if=\"style == 'horizontal'\" :classes=\"classes\" :close=\"close\" />\n        <WidgetsProductBoxVertical :product=\"product\" v-if=\"style == 'vertical'\" />\n    </div>\n</template>\n\n<script setup>\n\nlet props = defineProps({\n    style: [String, Object],\n    classes: String,\n    close: Boolean,\n    product: Object\n})\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056289040,
+      "end": 1716056289136,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056289136,
+      "end": 1716056289136,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056289136,
+      "end": 1716056289136,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056289136,
+      "end": 1716056289136,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056289136,
+      "end": 1716056289136,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056289136,
+      "end": 1716056289136,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056289136,
+      "end": 1716056289136,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056289136,
+      "end": 1716056289136,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    style: [String, Object],\n    classes: String,\n    close: Boolean,\n    product: Object\n},\n  setup(__props) {\n\n\nlet props = __props\n\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsProductBoxHorizontal = _resolveComponent(\"WidgetsProductBoxHorizontal\")\n  const _component_WidgetsProductBoxVertical = _resolveComponent(\"WidgetsProductBoxVertical\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (__props.style == 'horizontal')\n      ? (_openBlock(), _createBlock(_component_WidgetsProductBoxHorizontal, {\n          key: 0,\n          product: __props.product,\n          classes: __props.classes,\n          close: __props.close\n        }, null, 8, [\"product\", \"classes\", \"close\"]))\n      : _createCommentVNode(\"\", true),\n    (__props.style == 'vertical')\n      ? (_openBlock(), _createBlock(_component_WidgetsProductBoxVertical, {\n          key: 1,\n          product: __props.product\n        }, null, 8, [\"product\"]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289136,
+      "end": 1716056289137,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056289137,
+      "end": 1716056289137,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056289137,
+      "end": 1716056289138,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056289138,
+      "end": 1716056289138,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056289138,
+      "end": 1716056289138,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056289138,
+      "end": 1716056289138,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056289138,
+      "end": 1716056289138,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ProductBox/Horizontal.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ProductBox/Vertical.vue\";\nimport { resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    style: [String, Object],\n    classes: String,\n    close: Boolean,\n    product: Object\n},\n  setup(__props) {\n\n\nlet props = __props\n\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsProductBoxHorizontal = __nuxt_component_0\n  const _component_WidgetsProductBoxVertical = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (__props.style == 'horizontal')\n      ? (_openBlock(), _createBlock(_component_WidgetsProductBoxHorizontal, {\n          key: 0,\n          product: __props.product,\n          classes: __props.classes,\n          close: __props.close\n        }, null, 8, [\"product\", \"classes\", \"close\"]))\n      : _createCommentVNode(\"\", true),\n    (__props.style == 'vertical')\n      ? (_openBlock(), _createBlock(_component_WidgetsProductBoxVertical, {\n          key: 1,\n          product: __props.product\n        }, null, 8, [\"product\"]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289138,
+      "end": 1716056289139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056289139,
+      "end": 1716056289139,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056289139,
+      "end": 1716056289139,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056289139,
+      "end": 1716056289139,
+      "order": "normal"
+    }
+  ]
+}

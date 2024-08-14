@@ -1,0 +1,262 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Auth/OTP.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <section class=\"log-in-section otp-section section-b-space\">\n    <div class=\"container-fluid-lg w-100\">\n      <div class=\"row align-items-center\">\n        <div class=\"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\">\n          <div class=\"image-contain\">\n            <img src=\"/images/inner-page/otp.png\" class=\"img-fluid\" alt=\"image\" />\n          </div>\n        </div>\n        <div class=\"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\">\n          <div class=\"log-in-box\">\n            <div class=\"log-in-title\">\n              <h3 class=\"text-title\">\n                {{\n                  $t(\"Please enter the one time password to verify your account\")\n                }}\n              </h3>\n              <h5 class=\"text-content\">\n                {{ $t(\"A code has been sent to\") }} <span>{{ $t(\"email\") }}</span>\n              </h5>\n            </div>\n            <form  @submit.prevent=\"HandleOTP()\">\n              <div class=\"outer-otp\">\n                <div id=\"otp\" class=\"inner-otp\">\n                  <input type=\"text\" formControlName=\"otp\" maxlength=\"5\"\n                    oninput=\"this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\\..*)\\./g, '$1');\"\n                    v-model=\"input.token.data\" @input=\"updated($event.target.value)\" />\n                  <p class=\"text-danger pt-2 m-0\">\n                    {{ input.token.errorMessage }}\n                  </p>\n                </div>\n              </div>\n              <WidgetsButton :id=\"'validate'\">{{\n                $t(\"Validate\")\n              }}</WidgetsButton>\n            </form>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</template>\n\n<script setup>\nlet input = ref({\n  token: { data: \"\" },\n});\nfunction updated(inputValue) {\n  if (inputValue.length == 5) return false;\n}\nasync function HandleOTP() {\n  input.value.token.errorMessage =\n    input.value.token.data.length != 5 ? \"Please Enter Otp\" : \"\";\n  if (input.value.token.data.length == 5) {\n    let { data, error } = await useFetch(\"verify-token\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: input.value.token.data,\n      },\n      onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"vo\").value = input.value.token.data;\n          navigateTo(\"/auth/update\");\n        }\n      },\n    });\n  }\n}\nonMounted(() => {\n  let mail = useCookie(\"fpemail\").value;\n  if (mail == undefined) {\n    navigateTo(\"/auth/forgot-password\");\n  }\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056340764,
+      "end": 1716056340953,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/inner-page/otp.png'\n\n\n\nconst _sfc_main = {\n  __name: 'OTP',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet input = ref({\n  token: { data: \"\" },\n});\nfunction updated(inputValue) {\n  if (inputValue.length == 5) return false;\n}\nasync function HandleOTP() {\n  input.value.token.errorMessage =\n    input.value.token.data.length != 5 ? \"Please Enter Otp\" : \"\";\n  if (input.value.token.data.length == 5) {\n    let { data, error } = await useFetch(\"verify-token\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: input.value.token.data,\n      },\n      onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"vo\").value = input.value.token.data;\n          navigateTo(\"/auth/update\");\n        }\n      },\n    });\n  }\n}\nonMounted(() => {\n  let mail = useCookie(\"fpemail\").value;\n  if (mail == undefined) {\n    navigateTo(\"/auth/forgot-password\");\n  }\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"log-in-section otp-section section-b-space\" }, _attrs))\n  }><div class=\"container-fluid-lg w-100\"><div class=\"row align-items-center\"><div class=\"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\"><div class=\"image-contain\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } class=\"img-fluid\" alt=\"image\"></div></div><div class=\"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\"><div class=\"log-in-box\"><div class=\"log-in-title\"><h3 class=\"text-title\">${\n    _ssrInterpolate(_ctx.$t(\"Please enter the one time password to verify your account\"))\n  }</h3><h5 class=\"text-content\">${\n    _ssrInterpolate(_ctx.$t(\"A code has been sent to\"))\n  } <span>${\n    _ssrInterpolate(_ctx.$t(\"email\"))\n  }</span></h5></div><form><div class=\"outer-otp\"><div id=\"otp\" class=\"inner-otp\"><input type=\"text\" formControlName=\"otp\" maxlength=\"5\" oninput=\"this.value = this.value.replace(/[^0-9.]/g, &#39;&#39;).replace(/(\\\\..*)\\\\./g, &#39;\\$1&#39;);\"${\n    _ssrRenderAttr(\"value\", _unref(input).token.data)\n  }><p class=\"text-danger pt-2 m-0\">${\n    _ssrInterpolate(_unref(input).token.errorMessage)\n  }</p></div></div>`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, { id: 'validate' }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t(\"Validate\"))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Validate\")), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</form></div></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Auth/OTP.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340953,
+      "end": 1716056340953,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340953,
+      "end": 1716056340954,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340953,
+      "end": 1716056340954,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056340954,
+      "end": 1716056340954,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340954,
+      "end": 1716056340954,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056340954,
+      "end": 1716056340954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056340954,
+      "end": 1716056340954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056340954,
+      "end": 1716056340954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056340954,
+      "end": 1716056340954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056340954,
+      "end": 1716056340955,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056340955,
+      "end": 1716056340955,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056340955,
+      "end": 1716056340955,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056340955,
+      "end": 1716056340955,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056340955,
+      "end": 1716056340955,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/inner-page/otp.png'\n\n\n\nconst _sfc_main = {\n  __name: 'OTP',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet input = ref({\n  token: { data: \"\" },\n});\nfunction updated(inputValue) {\n  if (inputValue.length == 5) return false;\n}\nasync function HandleOTP() {\n  input.value.token.errorMessage =\n    input.value.token.data.length != 5 ? \"Please Enter Otp\" : \"\";\n  if (input.value.token.data.length == 5) {\n    let { data, error } = await useFetch(\"verify-token\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: input.value.token.data,\n      },\n      onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"vo\").value = input.value.token.data;\n          navigateTo(\"/auth/update\");\n        }\n      },\n    }, '$t3A0Pj2OPb');\n  }\n}\nonMounted(() => {\n  let mail = useCookie(\"fpemail\").value;\n  if (mail == undefined) {\n    navigateTo(\"/auth/forgot-password\");\n  }\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"log-in-section otp-section section-b-space\" }, _attrs))\n  }><div class=\"container-fluid-lg w-100\"><div class=\"row align-items-center\"><div class=\"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\"><div class=\"image-contain\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } class=\"img-fluid\" alt=\"image\"></div></div><div class=\"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\"><div class=\"log-in-box\"><div class=\"log-in-title\"><h3 class=\"text-title\">${\n    _ssrInterpolate(_ctx.$t(\"Please enter the one time password to verify your account\"))\n  }</h3><h5 class=\"text-content\">${\n    _ssrInterpolate(_ctx.$t(\"A code has been sent to\"))\n  } <span>${\n    _ssrInterpolate(_ctx.$t(\"email\"))\n  }</span></h5></div><form><div class=\"outer-otp\"><div id=\"otp\" class=\"inner-otp\"><input type=\"text\" formControlName=\"otp\" maxlength=\"5\" oninput=\"this.value = this.value.replace(/[^0-9.]/g, &#39;&#39;).replace(/(\\\\..*)\\\\./g, &#39;\\$1&#39;);\"${\n    _ssrRenderAttr(\"value\", _unref(input).token.data)\n  }><p class=\"text-danger pt-2 m-0\">${\n    _ssrInterpolate(_unref(input).token.errorMessage)\n  }</p></div></div>`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, { id: 'validate' }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t(\"Validate\"))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Validate\")), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</form></div></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Auth/OTP.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340955,
+      "end": 1716056340956,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/inner-page/otp.png'\n\n\n\nconst _sfc_main = {\n  __name: 'OTP',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet input = ref({\n  token: { data: \"\" },\n});\nfunction updated(inputValue) {\n  if (inputValue.length == 5) return false;\n}\nasync function HandleOTP() {\n  input.value.token.errorMessage =\n    input.value.token.data.length != 5 ? \"Please Enter Otp\" : \"\";\n  if (input.value.token.data.length == 5) {\n    let { data, error } = await useFetch(\"verify-token\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: input.value.token.data,\n      },\n      onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"vo\").value = input.value.token.data;\n          navigateTo(\"/auth/update\");\n        }\n      },\n    }, '$t3A0Pj2OPb');\n  }\n}\nonMounted(() => {\n  let mail = useCookie(\"fpemail\").value;\n  if (mail == undefined) {\n    navigateTo(\"/auth/forgot-password\");\n  }\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"log-in-section otp-section section-b-space\" }, _attrs))\n  }><div class=\"container-fluid-lg w-100\"><div class=\"row align-items-center\"><div class=\"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\"><div class=\"image-contain\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } class=\"img-fluid\" alt=\"image\"></div></div><div class=\"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\"><div class=\"log-in-box\"><div class=\"log-in-title\"><h3 class=\"text-title\">${\n    _ssrInterpolate(_ctx.$t(\"Please enter the one time password to verify your account\"))\n  }</h3><h5 class=\"text-content\">${\n    _ssrInterpolate(_ctx.$t(\"A code has been sent to\"))\n  } <span>${\n    _ssrInterpolate(_ctx.$t(\"email\"))\n  }</span></h5></div><form><div class=\"outer-otp\"><div id=\"otp\" class=\"inner-otp\"><input type=\"text\" formControlName=\"otp\" maxlength=\"5\" oninput=\"this.value = this.value.replace(/[^0-9.]/g, &#39;&#39;).replace(/(\\\\..*)\\\\./g, &#39;\\$1&#39;);\"${\n    _ssrRenderAttr(\"value\", _unref(input).token.data)\n  }><p class=\"text-danger pt-2 m-0\">${\n    _ssrInterpolate(_unref(input).token.errorMessage)\n  }</p></div></div>`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, { id: 'validate' }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t(\"Validate\"))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Validate\")), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</form></div></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Auth/OTP.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340955,
+      "end": 1716056340956,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { useCookie } from '#app/composables/cookie';\nimport { navigateTo } from '#app/composables/router';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/inner-page/otp.png'\n\n\n\nconst _sfc_main = {\n  __name: 'OTP',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet input = ref({\n  token: { data: \"\" },\n});\nfunction updated(inputValue) {\n  if (inputValue.length == 5) return false;\n}\nasync function HandleOTP() {\n  input.value.token.errorMessage =\n    input.value.token.data.length != 5 ? \"Please Enter Otp\" : \"\";\n  if (input.value.token.data.length == 5) {\n    let { data, error } = await useFetch(\"verify-token\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: input.value.token.data,\n      },\n      onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"vo\").value = input.value.token.data;\n          navigateTo(\"/auth/update\");\n        }\n      },\n    }, '$t3A0Pj2OPb');\n  }\n}\nonMounted(() => {\n  let mail = useCookie(\"fpemail\").value;\n  if (mail == undefined) {\n    navigateTo(\"/auth/forgot-password\");\n  }\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"log-in-section otp-section section-b-space\" }, _attrs))\n  }><div class=\"container-fluid-lg w-100\"><div class=\"row align-items-center\"><div class=\"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\"><div class=\"image-contain\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } class=\"img-fluid\" alt=\"image\"></div></div><div class=\"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\"><div class=\"log-in-box\"><div class=\"log-in-title\"><h3 class=\"text-title\">${\n    _ssrInterpolate(_ctx.$t(\"Please enter the one time password to verify your account\"))\n  }</h3><h5 class=\"text-content\">${\n    _ssrInterpolate(_ctx.$t(\"A code has been sent to\"))\n  } <span>${\n    _ssrInterpolate(_ctx.$t(\"email\"))\n  }</span></h5></div><form><div class=\"outer-otp\"><div id=\"otp\" class=\"inner-otp\"><input type=\"text\" formControlName=\"otp\" maxlength=\"5\" oninput=\"this.value = this.value.replace(/[^0-9.]/g, &#39;&#39;).replace(/(\\\\..*)\\\\./g, &#39;\\$1&#39;);\"${\n    _ssrRenderAttr(\"value\", _unref(input).token.data)\n  }><p class=\"text-danger pt-2 m-0\">${\n    _ssrInterpolate(_unref(input).token.errorMessage)\n  }</p></div></div>`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, { id: 'validate' }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t(\"Validate\"))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Validate\")), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</form></div></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Auth/OTP.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340956,
+      "end": 1716056340958,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { useCookie } from '#app/composables/cookie';\nimport { navigateTo } from '#app/composables/router';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/inner-page/otp.png'\n\n\n\nconst _sfc_main = {\n  __name: 'OTP',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet input = ref({\n  token: { data: \"\" },\n});\nfunction updated(inputValue) {\n  if (inputValue.length == 5) return false;\n}\nasync function HandleOTP() {\n  input.value.token.errorMessage =\n    input.value.token.data.length != 5 ? \"Please Enter Otp\" : \"\";\n  if (input.value.token.data.length == 5) {\n    let { data, error } = await useFetch(\"verify-token\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: input.value.token.data,\n      },\n      onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"vo\").value = input.value.token.data;\n          navigateTo(\"/auth/update\");\n        }\n      },\n    }, '$t3A0Pj2OPb');\n  }\n}\nonMounted(() => {\n  let mail = useCookie(\"fpemail\").value;\n  if (mail == undefined) {\n    navigateTo(\"/auth/forgot-password\");\n  }\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"log-in-section otp-section section-b-space\" }, _attrs))\n  }><div class=\"container-fluid-lg w-100\"><div class=\"row align-items-center\"><div class=\"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\"><div class=\"image-contain\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } class=\"img-fluid\" alt=\"image\"></div></div><div class=\"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\"><div class=\"log-in-box\"><div class=\"log-in-title\"><h3 class=\"text-title\">${\n    _ssrInterpolate(_ctx.$t(\"Please enter the one time password to verify your account\"))\n  }</h3><h5 class=\"text-content\">${\n    _ssrInterpolate(_ctx.$t(\"A code has been sent to\"))\n  } <span>${\n    _ssrInterpolate(_ctx.$t(\"email\"))\n  }</span></h5></div><form><div class=\"outer-otp\"><div id=\"otp\" class=\"inner-otp\"><input type=\"text\" formControlName=\"otp\" maxlength=\"5\" oninput=\"this.value = this.value.replace(/[^0-9.]/g, &#39;&#39;).replace(/(\\\\..*)\\\\./g, &#39;\\$1&#39;);\"${\n    _ssrRenderAttr(\"value\", _unref(input).token.data)\n  }><p class=\"text-danger pt-2 m-0\">${\n    _ssrInterpolate(_unref(input).token.errorMessage)\n  }</p></div></div>`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, { id: 'validate' }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t(\"Validate\"))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Validate\")), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</form></div></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Auth/OTP.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340956,
+      "end": 1716056340958,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340958,
+      "end": 1716056340958,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340958,
+      "end": 1716056340958,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340958,
+      "end": 1716056340958,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340958,
+      "end": 1716056340958,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056340958,
+      "end": 1716056340958,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { ref, onMounted } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { useCookie } from '#app/composables/cookie';\nimport { navigateTo } from '#app/composables/router';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/inner-page/otp.png'\n\n\n\nconst _sfc_main = {\n  __name: 'OTP',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet input = ref({\n  token: { data: \"\" },\n});\nfunction updated(inputValue) {\n  if (inputValue.length == 5) return false;\n}\nasync function HandleOTP() {\n  input.value.token.errorMessage =\n    input.value.token.data.length != 5 ? \"Please Enter Otp\" : \"\";\n  if (input.value.token.data.length == 5) {\n    let { data, error } = await useFetch(\"verify-token\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: input.value.token.data,\n      },\n      onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"vo\").value = input.value.token.data;\n          navigateTo(\"/auth/update\");\n        }\n      },\n    }, '$t3A0Pj2OPb');\n  }\n}\nonMounted(() => {\n  let mail = useCookie(\"fpemail\").value;\n  if (mail == undefined) {\n    navigateTo(\"/auth/forgot-password\");\n  }\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsButton = __nuxt_component_0\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"log-in-section otp-section section-b-space\" }, _attrs))\n  }><div class=\"container-fluid-lg w-100\"><div class=\"row align-items-center\"><div class=\"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\"><div class=\"image-contain\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } class=\"img-fluid\" alt=\"image\"></div></div><div class=\"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\"><div class=\"log-in-box\"><div class=\"log-in-title\"><h3 class=\"text-title\">${\n    _ssrInterpolate(_ctx.$t(\"Please enter the one time password to verify your account\"))\n  }</h3><h5 class=\"text-content\">${\n    _ssrInterpolate(_ctx.$t(\"A code has been sent to\"))\n  } <span>${\n    _ssrInterpolate(_ctx.$t(\"email\"))\n  }</span></h5></div><form><div class=\"outer-otp\"><div id=\"otp\" class=\"inner-otp\"><input type=\"text\" formControlName=\"otp\" maxlength=\"5\" oninput=\"this.value = this.value.replace(/[^0-9.]/g, &#39;&#39;).replace(/(\\\\..*)\\\\./g, &#39;\\$1&#39;);\"${\n    _ssrRenderAttr(\"value\", _unref(input).token.data)\n  }><p class=\"text-danger pt-2 m-0\">${\n    _ssrInterpolate(_unref(input).token.errorMessage)\n  }</p></div></div>`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, { id: 'validate' }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t(\"Validate\"))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Validate\")), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</form></div></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Auth/OTP.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340958,
+      "end": 1716056340958,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { ref, onMounted } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { useCookie } from '#app/composables/cookie';\nimport { navigateTo } from '#app/composables/router';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/inner-page/otp.png'\n\n\n\nconst _sfc_main = {\n  __name: 'OTP',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet input = ref({\n  token: { data: \"\" },\n});\nfunction updated(inputValue) {\n  if (inputValue.length == 5) return false;\n}\nasync function HandleOTP() {\n  input.value.token.errorMessage =\n    input.value.token.data.length != 5 ? \"Please Enter Otp\" : \"\";\n  if (input.value.token.data.length == 5) {\n    let { data, error } = await useFetch(\"verify-token\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: input.value.token.data,\n      },\n      onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"vo\").value = input.value.token.data;\n          navigateTo(\"/auth/update\");\n        }\n      },\n    }, '$t3A0Pj2OPb');\n  }\n}\n false && /*@__PURE__*/ onMounted(() => {\n  let mail = useCookie(\"fpemail\").value;\n  if (mail == undefined) {\n    navigateTo(\"/auth/forgot-password\");\n  }\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsButton = __nuxt_component_0\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"log-in-section otp-section section-b-space\" }, _attrs))\n  }><div class=\"container-fluid-lg w-100\"><div class=\"row align-items-center\"><div class=\"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\"><div class=\"image-contain\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } class=\"img-fluid\" alt=\"image\"></div></div><div class=\"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\"><div class=\"log-in-box\"><div class=\"log-in-title\"><h3 class=\"text-title\">${\n    _ssrInterpolate(_ctx.$t(\"Please enter the one time password to verify your account\"))\n  }</h3><h5 class=\"text-content\">${\n    _ssrInterpolate(_ctx.$t(\"A code has been sent to\"))\n  } <span>${\n    _ssrInterpolate(_ctx.$t(\"email\"))\n  }</span></h5></div><form><div class=\"outer-otp\"><div id=\"otp\" class=\"inner-otp\"><input type=\"text\" formControlName=\"otp\" maxlength=\"5\" oninput=\"this.value = this.value.replace(/[^0-9.]/g, &#39;&#39;).replace(/(\\\\..*)\\\\./g, &#39;\\$1&#39;);\"${\n    _ssrRenderAttr(\"value\", _unref(input).token.data)\n  }><p class=\"text-danger pt-2 m-0\">${\n    _ssrInterpolate(_unref(input).token.errorMessage)\n  }</p></div></div>`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, { id: 'validate' }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t(\"Validate\"))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Validate\")), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</form></div></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Auth/OTP.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340958,
+      "end": 1716056340960,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056340960,
+      "end": 1716056340960,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056340960,
+      "end": 1716056340960,
+      "order": "normal"
+    }
+  ]
+}

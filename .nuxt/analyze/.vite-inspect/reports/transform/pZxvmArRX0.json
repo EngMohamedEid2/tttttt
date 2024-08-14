@@ -1,0 +1,211 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/store/currency.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineStore, storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nexport const useCurrencyStore = defineStore(\"currency\", () => {\n  let currency = ref({});\n  let { Currencies } = storeToRefs(useDataStore());\n  async function allCurrency() {\n    if (useCookie(\"currency\").value) {\n      currency.value = useCookie(\"currency\").value;\n    } else {\n      currency.value = Currencies.value.data[0];\n    }\n  }\n  function getCurrencyObj(currencyObj) {\n    currency.value = currencyObj;\n    useCookie(\"currency\").value = currencyObj;\n  }\n  function convertCurrency(price) {\n    return Number(price).toFixed(2);\n  }\n  // console.log(Currencies.value.data);\n  return {\n    currency,\n    getCurrencyObj,\n    allCurrency,\n    convertCurrency,\n  };\n});\n",
+      "start": 1716056289465,
+      "end": 1716056289905,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056289905,
+      "end": 1716056289905,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056289905,
+      "end": 1716056289905,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056289905,
+      "end": 1716056289905,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056289905,
+      "end": 1716056289905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056289905,
+      "end": 1716056289905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056289905,
+      "end": 1716056289905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056289906,
+      "end": 1716056289906,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056289906,
+      "end": 1716056289906,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056289906,
+      "end": 1716056289906,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289906,
+      "end": 1716056289906,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056289906,
+      "end": 1716056289906,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056289907,
+      "end": 1716056289907,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056289907,
+      "end": 1716056289907,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289907,
+      "end": 1716056289907,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056289907,
+      "end": 1716056289907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056289907,
+      "end": 1716056289907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056289907,
+      "end": 1716056289907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056289907,
+      "end": 1716056289907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056289907,
+      "end": 1716056289907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056289907,
+      "end": 1716056289907,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056289907,
+      "end": 1716056289907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056289907,
+      "end": 1716056289907,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056289908,
+      "end": 1716056289908,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056289908,
+      "end": 1716056289908,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { useCookie } from '#app/composables/cookie';\nimport { defineStore, storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nexport const useCurrencyStore = defineStore(\"currency\", () => {\n  let currency = ref({});\n  let { Currencies } = storeToRefs(useDataStore());\n  async function allCurrency() {\n    if (useCookie(\"currency\").value) {\n      currency.value = useCookie(\"currency\").value;\n    } else {\n      currency.value = Currencies.value.data[0];\n    }\n  }\n  function getCurrencyObj(currencyObj) {\n    currency.value = currencyObj;\n    useCookie(\"currency\").value = currencyObj;\n  }\n  function convertCurrency(price) {\n    return Number(price).toFixed(2);\n  }\n  // console.log(Currencies.value.data);\n  return {\n    currency,\n    getCurrencyObj,\n    allCurrency,\n    convertCurrency,\n  };\n});\n",
+      "start": 1716056289908,
+      "end": 1716056289909,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056289909,
+      "end": 1716056289909,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056289909,
+      "end": 1716056289909,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056289909,
+      "end": 1716056289909,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056289909,
+      "end": 1716056289909,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056289909,
+      "end": 1716056289909,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056289909,
+      "end": 1716056289909,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056289909,
+      "end": 1716056289909,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056289909,
+      "end": 1716056289909,
+      "order": "normal"
+    }
+  ]
+}

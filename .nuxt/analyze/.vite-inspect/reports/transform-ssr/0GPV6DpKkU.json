@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/Common/SearchDropdownInput.vue?nuxt_component=async&nuxt_component_name=WidgetsInputFieldsCommonSearchDropdownInput",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"dropdown\">\n        <button class=\"dropdown-toggle\" type=\"button\" :id=\"dropdownId\" data-bs-toggle=\"dropdown\">\n            <span>{{ modelValue[displayKey] || 'Select' }}</span>\n            <Icon name=\"ri:arrow-down-s-line\"></Icon>\n        </button>\n        <ul class=\"dropdown-menu\">\n            <li v-for=\"(option, index) in options\" :key=\"`selectOption${index}`\">\n                <a class=\"dropdown-item\" @click.prevent=\"handleSelect({ option })\" href=\"javascript:void(0)\">{{\n                    option.display }}</a>\n            </li>\n        </ul>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    options: Array,\n    modelValue: Object,\n    displayKey: {\n        default: 'display',\n        type: String\n    },\n    dropdownId: {\n        default: 'dropDown',\n        type: String\n    }\n})\n\nlet emit = defineEmits(['update:modelValue'])\n\nconst handleSelect = ({ option }) => {\n    emit('update:modelValue', option)\n}\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056339792,
+      "end": 1716056339872,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339872,
+      "end": 1716056339872,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339872,
+      "end": 1716056339872,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339872,
+      "end": 1716056339872,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339872,
+      "end": 1716056339872,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339872,
+      "end": 1716056339872,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339872,
+      "end": 1716056339873,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339873,
+      "end": 1716056339873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339873,
+      "end": 1716056339873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339873,
+      "end": 1716056339873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339873,
+      "end": 1716056339873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'SearchDropdownInput',\n  __ssrInlineRender: true,\n  props: {\n    options: Array,\n    modelValue: Object,\n    displayKey: {\n        default: 'display',\n        type: String\n    },\n    dropdownId: {\n        default: 'dropDown',\n        type: String\n    }\n},\n  emits: ['update:modelValue'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet emit = __emit\n\nconst handleSelect = ({ option }) => {\n    emit('update:modelValue', option)\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"dropdown\" }, _attrs))\n  }><button class=\"dropdown-toggle\" type=\"button\"${\n    _ssrRenderAttr(\"id\", __props.dropdownId)\n  } data-bs-toggle=\"dropdown\"><span>${\n    _ssrInterpolate(__props.modelValue[__props.displayKey] || 'Select')\n  }</span>`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri:arrow-down-s-line\" }, null, _parent))\n  _push(`</button><ul class=\"dropdown-menu\"><!--[-->`)\n  _ssrRenderList(__props.options, (option, index) => {\n    _push(`<li><a class=\"dropdown-item\" href=\"javascript:void(0)\">${_ssrInterpolate(option.display)}</a></li>`)\n  })\n  _push(`<!--]--></ul></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/InputFields/Common/SearchDropdownInput.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339873,
+      "end": 1716056339874,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/Common/SearchDropdownInput.vue\").then(r => r.default))",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339874,
+      "end": 1716056339874,
+      "order": "normal"
+    }
+  ]
+}

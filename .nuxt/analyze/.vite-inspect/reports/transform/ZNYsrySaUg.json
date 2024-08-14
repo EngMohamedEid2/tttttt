@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/AllCategory.vue?nuxt_component=async&nuxt_component_name=HeaderElementsAllCategory",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n    <!-- Category Classic Vertical -->\n    <div class=\"shop-left-sidebar\" v-if=\"style == 'classic_vertical'\">\n        <ul class=\"nav nav-pills mb-3 custom-nav-tab\">\n            <li class=\"nav-item\" v-for=\"category of categories\" :key=\"category\">\n                <button class=\"nav-link\" @click=\"redirectToCollection(category.slug)\"\n                    :class=\"{ active: selectedCategorySlug.length && selectedCategorySlug.includes(category.slug) }\">\n                    {{ category?.name }}\n                    <img :src=\"category?.category_icon ? category?.category_icon?.original_url : '/images/category.png'\"\n                        :alt=\"category?.name\">\n                </button>\n            </li>\n        </ul>\n    </div>\n\n    <!-- Category dropdown Vertical -->\n    <ul class=\"category-list\" v-if=\"categories?.length && style == 'dropdown'\">\n        <li class=\"onhover-category-list\" v-for=\"category of categories\" :key=\"category\">\n            <a href=\"javascript:void(0)\" @click=\"redirectToCollection(category.slug)\" class=\"category-name\">\n                <img :src=\"category?.category_icon ? category?.category_icon?.original_url : '/images/category.png'\"\n                    :alt=\"category?.name\">\n                <h6>{{ category?.name }}</h6>\n            </a>\n        </li>\n    </ul>\n\n    <!-- Category input_dropdown Vertical -->\n    <button class=\"btn location-button\" v-if=\"categories?.length && style == 'input_dropdown'\">\n        <select class=\"form-select locat-name\">\n            <option>All Category</option>\n            <option v-for=\"category of categories\" :key=\"category\">\n                {{ category.name }}\n            </option>\n        </select>\n    </button>\n</div>\n</template>\n\n<script setup>\nimport { useCollectionStore } from '~/store/collection';\nlet store = useCollectionStore();\nconst props = defineProps({\n    categories: Object,\n    style: [String,Object],\n})\n\n\n\nlet selectedCategorySlug = ref([]);\n\nfunction redirectToCollection(slug) {\n    let index = selectedCategorySlug.value.indexOf(slug);\n    if (index === -1)\n        selectedCategorySlug.value.push(slug);\n    else\n        selectedCategorySlug.value.splice(index, 1);\n\n    const queryParams = selectedCategorySlug.value.length\n        ? { category: selectedCategorySlug.value.join(',') }\n        : null;\n\n    useRouter().push({ path: '/collections', query: queryParams });\n    store.getParams();\n}\n</script>\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056270664,
+      "end": 1716056270763,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056270763,
+      "end": 1716056270763,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056270763,
+      "end": 1716056270763,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056270763,
+      "end": 1716056270763,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056270763,
+      "end": 1716056270763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056270763,
+      "end": 1716056270763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056270763,
+      "end": 1716056270763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056270763,
+      "end": 1716056270763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"shop-left-sidebar\"\n}\nconst _hoisted_2 = { class: \"nav nav-pills mb-3 custom-nav-tab\" }\nconst _hoisted_3 = [\"onClick\"]\nconst _hoisted_4 = [\"src\", \"alt\"]\nconst _hoisted_5 = {\n  key: 1,\n  class: \"category-list\"\n}\nconst _hoisted_6 = [\"onClick\"]\nconst _hoisted_7 = [\"src\", \"alt\"]\nconst _hoisted_8 = {\n  key: 2,\n  class: \"btn location-button\"\n}\nconst _hoisted_9 = { class: \"form-select locat-name\" }\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"option\", null, \"All Category\", -1)\n\nimport { useCollectionStore } from '~/store/collection';\n\nconst _sfc_main = {\n  __name: 'AllCategory',\n  props: {\n    categories: Object,\n    style: [String,Object],\n},\n  setup(__props) {\n\nlet store = useCollectionStore();\nconst props = __props\n\n\n\nlet selectedCategorySlug = ref([]);\n\nfunction redirectToCollection(slug) {\n    let index = selectedCategorySlug.value.indexOf(slug);\n    if (index === -1)\n        selectedCategorySlug.value.push(slug);\n    else\n        selectedCategorySlug.value.splice(index, 1);\n\n    const queryParams = selectedCategorySlug.value.length\n        ? { category: selectedCategorySlug.value.join(',') }\n        : null;\n\n    useRouter().push({ path: '/collections', query: queryParams });\n    store.getParams();\n}\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (__props.style == 'classic_vertical')\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n          _createElementVNode(\"ul\", _hoisted_2, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.categories, (category) => {\n              return (_openBlock(), _createElementBlock(\"li\", {\n                class: \"nav-item\",\n                key: category\n              }, [\n                _createElementVNode(\"button\", {\n                  class: _normalizeClass([\"nav-link\", { active: _unref(selectedCategorySlug).length && _unref(selectedCategorySlug).includes(category.slug) }]),\n                  onClick: $event => (redirectToCollection(category.slug))\n                }, [\n                  _createTextVNode(_toDisplayString(category?.name) + \" \", 1),\n                  _createElementVNode(\"img\", {\n                    src: category?.category_icon ? category?.category_icon?.original_url : '/images/category.png',\n                    alt: category?.name\n                  }, null, 8, _hoisted_4)\n                ], 10, _hoisted_3)\n              ]))\n            }), 128))\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (__props.categories?.length && __props.style == 'dropdown')\n      ? (_openBlock(), _createElementBlock(\"ul\", _hoisted_5, [\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.categories, (category) => {\n            return (_openBlock(), _createElementBlock(\"li\", {\n              class: \"onhover-category-list\",\n              key: category\n            }, [\n              _createElementVNode(\"a\", {\n                href: \"javascript:void(0)\",\n                onClick: $event => (redirectToCollection(category.slug)),\n                class: \"category-name\"\n              }, [\n                _createElementVNode(\"img\", {\n                  src: category?.category_icon ? category?.category_icon?.original_url : '/images/category.png',\n                  alt: category?.name\n                }, null, 8, _hoisted_7),\n                _createElementVNode(\"h6\", null, _toDisplayString(category?.name), 1)\n              ], 8, _hoisted_6)\n            ]))\n          }), 128))\n        ]))\n      : _createCommentVNode(\"\", true),\n    (__props.categories?.length && __props.style == 'input_dropdown')\n      ? (_openBlock(), _createElementBlock(\"button\", _hoisted_8, [\n          _createElementVNode(\"select\", _hoisted_9, [\n            _hoisted_10,\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.categories, (category) => {\n              return (_openBlock(), _createElementBlock(\"option\", { key: category }, _toDisplayString(category.name), 1))\n            }), 128))\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056270763,
+      "end": 1716056270766,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/AllCategory.vue\").then(r => r.default))",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056270766,
+      "end": 1716056270766,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056270767,
+      "end": 1716056270767,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056270767,
+      "end": 1716056270767,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056270767,
+      "end": 1716056270767,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056270767,
+      "end": 1716056270767,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056270767,
+      "end": 1716056270767,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/AllCategory.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056270767,
+      "end": 1716056270767,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056270767,
+      "end": 1716056270767,
+      "order": "normal"
+    }
+  ]
+}

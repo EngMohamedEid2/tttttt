@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/sidebar/index.vue?nuxt_component=async&nuxt_component_name=ShopCollectionWidgetsSidebar",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"shop-left-sidebar\">\n        <div class=\"leftbox-overlay\" @click=\"closeCanvasMenu()\"></div>\n        <div class=\"back-button\" @click=\"closeCanvasMenu()\">\n            <h3>\n                <a  class=\"text-title\">\n                    <Icon name=\"ri-close-fill\"></Icon>\n                    <span>{{ $t('Back') }}</span>\n                </a>\n            </h3>\n        </div>\n        <slot></slot>\n        \n            <ShopCollectionWidgetsFilter />\n       \n        <!-- <app-skeleton-collection-sidebar v-if=\"!attributeService.skeletonLoader\" /> -->\n        <div class=\"accordion custome-accordion\" id=\"accordionExample\">\n            <div class=\"accordion-item\">\n                <h2 class=\"accordion-header\">\n                    <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"\n                        :data-bs-target=\"`#category-dropdown`\">\n                        <span>{{ $t(\"Categories\") }}</span>\n                    </button>\n                </h2>\n\n                <div :id=\"`category-dropdown`\" class=\"accordion-collapse collapse show\">\n                    <div class=\"accordion-body\">\n                        <ShopCollectionWidgetsFilterCategory  />\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"accordion-item\">\n                <ShopCollectionWidgetsFilterAttribute />\n            </div>\n\n            <div class=\"accordion-item\">\n                <h2 class=\"accordion-header\" >\n                    <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"\n                        :data-bs-target=\"`#price-dropdown`\">\n                        <span>{{ $t(\"Price\") }}</span>\n                    </button>\n                </h2>\n\n                <div :id=\"`price-dropdown`\" class=\"accordion-collapse collapse show\">\n                    <div class=\"accordion-body\">\n                        <ShopCollectionWidgetsFilterPrice :filter=\"filter\" />\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"accordion-item\">\n                <h2 class=\"accordion-header\" >\n                    <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"\n                        :data-bs-target=\"`#rating-dropdown`\">\n                        <span>{{ $t(\"Rating\") }}</span>\n                    </button>\n                </h2>\n\n                <div :id=\"`rating-dropdown`\" class=\"accordion-collapse collapse show\">\n                    <div class=\"accordion-body\">\n                        <ShopCollectionWidgetsFilterRating :filter=\"filter\" />\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>\n  \n<script setup>\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\nlet { offCanvasMenu } = storeToRefs(useDataStore())\n\nlet props = defineProps({\n    filter: Object,\n    opensidebar:Boolean\n})\nfunction closeCanvasMenu() {\n    offCanvasMenu.value = false\n}\n\n</script>\n",
+      "start": 1716056271426,
+      "end": 1716056271541,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271541,
+      "end": 1716056271541,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271541,
+      "end": 1716056271541,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271541,
+      "end": 1716056271541,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271541,
+      "end": 1716056271541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271541,
+      "end": 1716056271541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271541,
+      "end": 1716056271541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271541,
+      "end": 1716056271541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, renderSlot as _renderSlot, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"shop-left-sidebar\" }\nconst _hoisted_2 = { class: \"text-title\" }\nconst _hoisted_3 = {\n  class: \"accordion custome-accordion\",\n  id: \"accordionExample\"\n}\nconst _hoisted_4 = { class: \"accordion-item\" }\nconst _hoisted_5 = { class: \"accordion-header\" }\nconst _hoisted_6 = {\n  class: \"accordion-button collapsed\",\n  type: \"button\",\n  \"data-bs-toggle\": \"collapse\",\n  \"data-bs-target\": `#category-dropdown`\n}\nconst _hoisted_7 = {\n  id: `category-dropdown`,\n  class: \"accordion-collapse collapse show\"\n}\nconst _hoisted_8 = { class: \"accordion-body\" }\nconst _hoisted_9 = { class: \"accordion-item\" }\nconst _hoisted_10 = { class: \"accordion-item\" }\nconst _hoisted_11 = { class: \"accordion-header\" }\nconst _hoisted_12 = {\n  class: \"accordion-button collapsed\",\n  type: \"button\",\n  \"data-bs-toggle\": \"collapse\",\n  \"data-bs-target\": `#price-dropdown`\n}\nconst _hoisted_13 = {\n  id: `price-dropdown`,\n  class: \"accordion-collapse collapse show\"\n}\nconst _hoisted_14 = { class: \"accordion-body\" }\nconst _hoisted_15 = { class: \"accordion-item\" }\nconst _hoisted_16 = { class: \"accordion-header\" }\nconst _hoisted_17 = {\n  class: \"accordion-button collapsed\",\n  type: \"button\",\n  \"data-bs-toggle\": \"collapse\",\n  \"data-bs-target\": `#rating-dropdown`\n}\nconst _hoisted_18 = {\n  id: `rating-dropdown`,\n  class: \"accordion-collapse collapse show\"\n}\nconst _hoisted_19 = { class: \"accordion-body\" }\n\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    filter: Object,\n    opensidebar:Boolean\n},\n  setup(__props) {\n\nlet { offCanvasMenu } = storeToRefs(useDataStore())\n\nlet props = __props\nfunction closeCanvasMenu() {\n    offCanvasMenu.value = false\n}\n\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_ShopCollectionWidgetsFilter = _resolveComponent(\"ShopCollectionWidgetsFilter\")\n  const _component_ShopCollectionWidgetsFilterCategory = _resolveComponent(\"ShopCollectionWidgetsFilterCategory\")\n  const _component_ShopCollectionWidgetsFilterAttribute = _resolveComponent(\"ShopCollectionWidgetsFilterAttribute\")\n  const _component_ShopCollectionWidgetsFilterPrice = _resolveComponent(\"ShopCollectionWidgetsFilterPrice\")\n  const _component_ShopCollectionWidgetsFilterRating = _resolveComponent(\"ShopCollectionWidgetsFilterRating\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", {\n      class: \"leftbox-overlay\",\n      onClick: _cache[0] || (_cache[0] = $event => (closeCanvasMenu()))\n    }),\n    _createElementVNode(\"div\", {\n      class: \"back-button\",\n      onClick: _cache[1] || (_cache[1] = $event => (closeCanvasMenu()))\n    }, [\n      _createElementVNode(\"h3\", null, [\n        _createElementVNode(\"a\", _hoisted_2, [\n          _createVNode(_component_Icon, { name: \"ri-close-fill\" }),\n          _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t('Back')), 1)\n        ])\n      ])\n    ]),\n    _renderSlot(_ctx.$slots, \"default\"),\n    _createVNode(_component_ShopCollectionWidgetsFilter),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createElementVNode(\"div\", _hoisted_4, [\n        _createElementVNode(\"h2\", _hoisted_5, [\n          _createElementVNode(\"button\", _hoisted_6, [\n            _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"Categories\")), 1)\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_7, [\n          _createElementVNode(\"div\", _hoisted_8, [\n            _createVNode(_component_ShopCollectionWidgetsFilterCategory)\n          ])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_9, [\n        _createVNode(_component_ShopCollectionWidgetsFilterAttribute)\n      ]),\n      _createElementVNode(\"div\", _hoisted_10, [\n        _createElementVNode(\"h2\", _hoisted_11, [\n          _createElementVNode(\"button\", _hoisted_12, [\n            _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"Price\")), 1)\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_13, [\n          _createElementVNode(\"div\", _hoisted_14, [\n            _createVNode(_component_ShopCollectionWidgetsFilterPrice, { filter: __props.filter }, null, 8, [\"filter\"])\n          ])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_15, [\n        _createElementVNode(\"h2\", _hoisted_16, [\n          _createElementVNode(\"button\", _hoisted_17, [\n            _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"Rating\")), 1)\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_18, [\n          _createElementVNode(\"div\", _hoisted_19, [\n            _createVNode(_component_ShopCollectionWidgetsFilterRating, { filter: __props.filter }, null, 8, [\"filter\"])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056271542,
+      "end": 1716056271544,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/sidebar/index.vue\").then(r => r.default))",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271544,
+      "end": 1716056271544,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271544,
+      "end": 1716056271545,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271545,
+      "end": 1716056271545,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271545,
+      "end": 1716056271545,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271545,
+      "end": 1716056271545,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/sidebar/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271545,
+      "end": 1716056271545,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271545,
+      "end": 1716056271545,
+      "order": "normal"
+    }
+  ]
+}

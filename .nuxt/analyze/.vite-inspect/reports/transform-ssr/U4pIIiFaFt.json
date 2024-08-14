@@ -1,0 +1,257 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/MenuProduct/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"product-box\">\n    <div class=\"product-image\">\n      <nuxt-link class=\"dropdown-item\" :to=\"`/product/${product?.slug}`\">\n        <img :src=\"product.product_thumbnail ? product.product_thumbnail.original_url : '/images/product.png'\"\n          class=\"img-fluid\" alt=\"\">\n      </nuxt-link>\n\n      <ul class=\"product-option\">\n        <li>\n          <a href=\"javascript:void(0)\" @click.prevent=\"useCompareStore().ToggleFromCompare({ product })\">\n            <Icon name=\"teenyicons:git-compare-outline\"  size=\"20\"\n              v-if=\"useCompareStore().ExistsInCompare({ product })\" />\n            <Icon name=\"teenyicons:git-compare-outline\" size=\"20\" v-else />\n          </a>\n        </li>\n        <li>\n          <Icon name=\"ic:outline-remove-red-eye\" size=\"20\" />\n        </li>\n        <li>\n          <a href=\"javascript:void(0)\" @click.prevent=\"useWishlistStore().ToggleFromWishlist({ product })\">\n            <Icon name=\"fe:heart\" size=\"20\"  v-if=\"useWishlistStore().ExistsInCart({ product })\" />\n            <Icon name=\"fe:heart-o\" size=\"20\" v-else />\n          </a>\n        </li>\n      </ul>\n    </div>\n    <div class=\"product-detail\">\n      <nuxt-link class=\"dropdown-item\" :to=\"`/product/${product?.slug}`\">\n        <h6 class=\"name\">{{ product.name }}</h6>\n      </nuxt-link>\n      \n\n      <h5 class=\"sold text-content\">\n        <span class=\"theme-color price\">$ {{ Number(product.sale_price).toFixed(2) }}</span>\n        <del v-if=\"product.discount\">$ {{ Number(product.price).toFixed(2) }}</del>\n      </h5>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { useCompareStore } from \"@/store/compare\";\nimport { useWishlistStore } from \"@/store/wishlist\";\n\nlet props = defineProps({\n  product: Object\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056341130,
+      "end": 1716056341326,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341326,
+      "end": 1716056341326,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341326,
+      "end": 1716056341326,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341326,
+      "end": 1716056341327,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341326,
+      "end": 1716056341327,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056341327,
+      "end": 1716056341327,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056341327,
+      "end": 1716056341327,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056341327,
+      "end": 1716056341327,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056341327,
+      "end": 1716056341327,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056341327,
+      "end": 1716056341327,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056341327,
+      "end": 1716056341327,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, unref as _unref, toDisplayString as _toDisplayString, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { useCompareStore } from \"@/store/compare\";\nimport { useWishlistStore } from \"@/store/wishlist\";\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"product-box\" }, _attrs))}><div class=\"product-image\">`)\n  _push(_ssrRenderComponent(_component_nuxt_link, {\n    class: \"dropdown-item\",\n    to: `/product/${__props.product?.slug}`\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<img${\n          _ssrRenderAttr(\"src\", __props.product.product_thumbnail ? __props.product.product_thumbnail.original_url : '/images/product.png')\n        } class=\"img-fluid\" alt=\"\"${\n          _scopeId\n        }>`)\n      } else {\n        return [\n          _createVNode(\"img\", {\n            src: __props.product.product_thumbnail ? __props.product.product_thumbnail.original_url : '/images/product.png',\n            class: \"img-fluid\",\n            alt: \"\"\n          }, null, 8, [\"src\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`<ul class=\"product-option\"><li><a href=\"javascript:void(0)\">`)\n  if (_unref(useCompareStore)().ExistsInCompare({ product: __props.product })) {\n    _push(_ssrRenderComponent(_component_Icon, {\n      name: \"teenyicons:git-compare-outline\",\n      size: \"20\"\n    }, null, _parent))\n  } else {\n    _push(_ssrRenderComponent(_component_Icon, {\n      name: \"teenyicons:git-compare-outline\",\n      size: \"20\"\n    }, null, _parent))\n  }\n  _push(`</a></li><li>`)\n  _push(_ssrRenderComponent(_component_Icon, {\n    name: \"ic:outline-remove-red-eye\",\n    size: \"20\"\n  }, null, _parent))\n  _push(`</li><li><a href=\"javascript:void(0)\">`)\n  if (_unref(useWishlistStore)().ExistsInCart({ product: __props.product })) {\n    _push(_ssrRenderComponent(_component_Icon, {\n      name: \"fe:heart\",\n      size: \"20\"\n    }, null, _parent))\n  } else {\n    _push(_ssrRenderComponent(_component_Icon, {\n      name: \"fe:heart-o\",\n      size: \"20\"\n    }, null, _parent))\n  }\n  _push(`</a></li></ul></div><div class=\"product-detail\">`)\n  _push(_ssrRenderComponent(_component_nuxt_link, {\n    class: \"dropdown-item\",\n    to: `/product/${__props.product?.slug}`\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<h6 class=\"name\"${\n          _scopeId\n        }>${\n          _ssrInterpolate(__props.product.name)\n        }</h6>`)\n      } else {\n        return [\n          _createVNode(\"h6\", { class: \"name\" }, _toDisplayString(__props.product.name), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`<h5 class=\"sold text-content\"><span class=\"theme-color price\">\\$ ${_ssrInterpolate(Number(__props.product.sale_price).toFixed(2))}</span>`)\n  if (__props.product.discount) {\n    _push(`<del>\\$ ${_ssrInterpolate(Number(__props.product.price).toFixed(2))}</del>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</h5></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Header/Elements/MenuProduct/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341327,
+      "end": 1716056341328,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056341328,
+      "end": 1716056341328,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341328,
+      "end": 1716056341328,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341328,
+      "end": 1716056341328,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341328,
+      "end": 1716056341328,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341328,
+      "end": 1716056341328,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056341328,
+      "end": 1716056341328,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341328,
+      "end": 1716056341328,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056341328,
+      "end": 1716056341330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056341330,
+      "end": 1716056341330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056341330,
+      "end": 1716056341330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056341330,
+      "end": 1716056341330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056341330,
+      "end": 1716056341330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056341330,
+      "end": 1716056341330,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056341330,
+      "end": 1716056341330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056341330,
+      "end": 1716056341330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056341330,
+      "end": 1716056341330,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341330,
+      "end": 1716056341330,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341330,
+      "end": 1716056341330,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056341330,
+      "end": 1716056341332,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056341330,
+      "end": 1716056341332,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341332,
+      "end": 1716056341332,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341332,
+      "end": 1716056341332,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341332,
+      "end": 1716056341332,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341332,
+      "end": 1716056341332,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056341332,
+      "end": 1716056341332,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, unref as _unref, toDisplayString as _toDisplayString, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { useCompareStore } from \"@/store/compare\";\nimport { useWishlistStore } from \"@/store/wishlist\";\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_nuxt_link = __nuxt_component_0\n  const _component_Icon = __nuxt_component_1\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"product-box\" }, _attrs))}><div class=\"product-image\">`)\n  _push(_ssrRenderComponent(_component_nuxt_link, {\n    class: \"dropdown-item\",\n    to: `/product/${__props.product?.slug}`\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<img${\n          _ssrRenderAttr(\"src\", __props.product.product_thumbnail ? __props.product.product_thumbnail.original_url : '/images/product.png')\n        } class=\"img-fluid\" alt=\"\"${\n          _scopeId\n        }>`)\n      } else {\n        return [\n          _createVNode(\"img\", {\n            src: __props.product.product_thumbnail ? __props.product.product_thumbnail.original_url : '/images/product.png',\n            class: \"img-fluid\",\n            alt: \"\"\n          }, null, 8, [\"src\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`<ul class=\"product-option\"><li><a href=\"javascript:void(0)\">`)\n  if (_unref(useCompareStore)().ExistsInCompare({ product: __props.product })) {\n    _push(_ssrRenderComponent(_component_Icon, {\n      name: \"teenyicons:git-compare-outline\",\n      size: \"20\"\n    }, null, _parent))\n  } else {\n    _push(_ssrRenderComponent(_component_Icon, {\n      name: \"teenyicons:git-compare-outline\",\n      size: \"20\"\n    }, null, _parent))\n  }\n  _push(`</a></li><li>`)\n  _push(_ssrRenderComponent(_component_Icon, {\n    name: \"ic:outline-remove-red-eye\",\n    size: \"20\"\n  }, null, _parent))\n  _push(`</li><li><a href=\"javascript:void(0)\">`)\n  if (_unref(useWishlistStore)().ExistsInCart({ product: __props.product })) {\n    _push(_ssrRenderComponent(_component_Icon, {\n      name: \"fe:heart\",\n      size: \"20\"\n    }, null, _parent))\n  } else {\n    _push(_ssrRenderComponent(_component_Icon, {\n      name: \"fe:heart-o\",\n      size: \"20\"\n    }, null, _parent))\n  }\n  _push(`</a></li></ul></div><div class=\"product-detail\">`)\n  _push(_ssrRenderComponent(_component_nuxt_link, {\n    class: \"dropdown-item\",\n    to: `/product/${__props.product?.slug}`\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<h6 class=\"name\"${\n          _scopeId\n        }>${\n          _ssrInterpolate(__props.product.name)\n        }</h6>`)\n      } else {\n        return [\n          _createVNode(\"h6\", { class: \"name\" }, _toDisplayString(__props.product.name), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`<h5 class=\"sold text-content\"><span class=\"theme-color price\">\\$ ${_ssrInterpolate(Number(__props.product.sale_price).toFixed(2))}</span>`)\n  if (__props.product.discount) {\n    _push(`<del>\\$ ${_ssrInterpolate(Number(__props.product.price).toFixed(2))}</del>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</h5></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Header/Elements/MenuProduct/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341332,
+      "end": 1716056341333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056341333,
+      "end": 1716056341333,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056341333,
+      "end": 1716056341333,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056341333,
+      "end": 1716056341333,
+      "order": "normal"
+    }
+  ]
+}

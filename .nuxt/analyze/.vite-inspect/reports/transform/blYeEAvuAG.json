@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/sidebar/index.vue?nuxt_component=async&nuxt_component_name=BlogSidebar",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <div class=\"left-sidebar-box wow fadeInUp\">\n      <div class=\"accordion left-accordion-box\" id=\"accordionPanelsStayOpenExample\">\n        <div class=\"accordion-item\">\n          <BlogSidebarRecentPost :blogs=\"blogs?.data\" />\n        </div>\n\n        <div class=\"accordion-item\">\n          <BlogSidebarBlogCategory />\n        </div>\n\n        <div class=\"accordion-item\">\n          <BlogSidebarBlogTag />\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  blogs: Object,\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056262535,
+      "end": 1716056270702,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056270702,
+      "end": 1716056270702,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056270702,
+      "end": 1716056270702,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056270702,
+      "end": 1716056270702,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056270702,
+      "end": 1716056270702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056270702,
+      "end": 1716056270702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056270702,
+      "end": 1716056270702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056270702,
+      "end": 1716056270702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"left-sidebar-box wow fadeInUp\" }\nconst _hoisted_2 = {\n  class: \"accordion left-accordion-box\",\n  id: \"accordionPanelsStayOpenExample\"\n}\nconst _hoisted_3 = { class: \"accordion-item\" }\nconst _hoisted_4 = { class: \"accordion-item\" }\nconst _hoisted_5 = { class: \"accordion-item\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  blogs: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  const _component_BlogSidebarRecentPost = _resolveComponent(\"BlogSidebarRecentPost\")\n  const _component_BlogSidebarBlogCategory = _resolveComponent(\"BlogSidebarBlogCategory\")\n  const _component_BlogSidebarBlogTag = _resolveComponent(\"BlogSidebarBlogTag\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createVNode(_component_BlogSidebarRecentPost, {\n            blogs: __props.blogs?.data\n          }, null, 8, [\"blogs\"])\n        ]),\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createVNode(_component_BlogSidebarBlogCategory)\n        ]),\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createVNode(_component_BlogSidebarBlogTag)\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056270703,
+      "end": 1716056270703,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056270703,
+      "end": 1716056270703,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/sidebar/index.vue\").then(r => r.default))",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056270704,
+      "end": 1716056270704,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056270705,
+      "end": 1716056270705,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056270705,
+      "end": 1716056270705,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/sidebar/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056270705,
+      "end": 1716056270705,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056270705,
+      "end": 1716056270705,
+      "order": "normal"
+    }
+  ]
+}

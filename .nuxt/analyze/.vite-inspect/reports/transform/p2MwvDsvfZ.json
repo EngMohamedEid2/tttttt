@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/index.vue?nuxt_component=async&nuxt_component_name=ShopProductDetails",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n  <WidgetsBreadcrumb :breadcrumbs=\"breadcrumbs\" />\n  <!-- Product Details Layout -->\n  <section class=\"product-section section-b-space\">\n\n    <ShopProductDetailsThumbnail :Data=\"data\" :option=\"ThemeOptions?.options\" v-if=\"layout == 'product_thumbnail'\"\n      :reviews=\"productReview?.data\" :questionAnswers=\"queAns.data\" />\n    <ShopProductDetailsImage4 :Data=\"data\" :option=\"ThemeOptions?.options\" v-if=\"layout == 'product_images'\"\n      :reviews=\"productReview?.data\" :questionAnswers=\"queAns.data\" />\n    <ShopProductDetailsSilder :Data=\"data\" :option=\"ThemeOptions?.options\" v-if=\"layout == 'product_slider'\"\n      :reviews=\"productReview?.data\" :questionAnswers=\"queAns.data\" />\n    <ShopProductDetailsSticky :Data=\"data\" :option=\"ThemeOptions?.options\" v-if=\"layout == 'product_sticky'\"\n      :reviews=\"productReview?.data\" :questionAnswers=\"queAns.data\" />\n    <ShopProductDetailsAccordions :Data=\"data\" :option=\"ThemeOptions?.options\" v-if=\"layout == 'product_accordion'\"\n      :reviews=\"productReview?.data\" :questionAnswers=\"queAns.data\" />\n  </section>\n  <!-- Related Products -->\n  <section class=\"product-list-section section-b-space pt-0\" v-if=\"data?.related_products?.length\">\n    <ShopProductDetailsWidgetsRelatedProducts :product=\"data\" />\n  </section>\n  <!-- Sticky Cart Box Start -->\n  <ShopProductDetailsWidgetsStickyCheckout :product=\"data\" />\n</div>\n  <!-- Sticky Cart Box End -->\n</template>\n \n<script setup>\nimport { storeToRefs } from 'pinia';\nimport { HandleRequest } from \"~~/composables/HandleRequest\";\nimport { useCartStore } from '~~/store/cart';\nimport { useDataStore } from '~~/store/data';\nlet props = defineProps({ Data: { type: Object }, option: { type: Object } })\n\nlet { ThemeOptions, queAns, SingleProducts } = storeToRefs(useDataStore())\nlet { data, error } = await HandleRequest(`product/slug/${useRoute().params.slug}`, { key: \"getSingleDetailsProduct\", params: { status: 1 }, });\nlet { data: productReview } = await HandleRequest('front/review', { key: \"getProductReview\", params: { product_id: data?.value?.id } });\nvar breadcrumbs = { page: data?.value?.name, links: [{ name: 'Product' }, { name: data?.value?.name },] }\nconst route = useRoute();\nlet layout = ref(route?.query.layout);\n\nconst isScrollActive = ref(false);\nlet { data: SingleProduct } = await HandleRequest(`product/slug/${useRoute().params.slug}`, { key: \"getSingleDetailsProduct\", params: { status: 1 }, });\n\nwatch(() => route?.query?.layout, () => {\n  if (route?.query?.layout) {\n    layout.value = route?.query?.layout;\n  } else {\n    console.log(\"ThemeOptions\", ThemeOptions);\n    // layout.value =  ThemeOptions.value.options.seller && ThemeOptions.value.options.seller.store_layout ? option.seller.store_layout : 'basic_store'; \n  }\n}, { deep: true })\n\nconst onScroll = () => {\n  const button = document.querySelector('.scroll-button');\n  if (button) {\n    const buttonRect = button.getBoundingClientRect();\n    if (buttonRect.bottom < window.innerHeight && buttonRect.bottom < 0) {\n      isScrollActive.value = true;\n      document.body.classList.add('stickyCart');\n    } else {\n      isScrollActive.value = false;\n      document.body.classList.remove('stickyCart');\n    }\n  }\n};\n\nconst setLayout = (layoutValue) => {\n  layout.value = layoutValue;\n};\n\nconst getProductLayout = () => {\n  layout.value = ThemeOptions.options?.product?.product_layout || 'product_thumbnail';\n};\nuseDataStore().GetAllQustionAnswer(data?.value?.id)\nuseDataStore().GetSingleProduct()\n\nonMounted(() => {\n  route.query.layout ? setLayout(route.query.layout) : getProductLayout();\n  window.addEventListener('scroll', onScroll);\n  useDataStore().GetAllQustionAnswer(data?.value?.id)\n});\n\nonUnmounted(() => {\n  window.removeEventListener('scroll', onScroll);\n  document.body.classList.remove('stickyCart');\n});\n\n</script>",
+      "start": 1716056284673,
+      "end": 1716056284818,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284818,
+      "end": 1716056284818,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284818,
+      "end": 1716056284818,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284818,
+      "end": 1716056284818,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284818,
+      "end": 1716056284818,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284818,
+      "end": 1716056284818,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284818,
+      "end": 1716056284818,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284818,
+      "end": 1716056284818,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"product-section section-b-space\" }\nconst _hoisted_2 = {\n  key: 0,\n  class: \"product-list-section section-b-space pt-0\"\n}\n\nimport { storeToRefs } from 'pinia';\nimport { HandleRequest } from \"~~/composables/HandleRequest\";\nimport { useCartStore } from '~~/store/cart';\nimport { useDataStore } from '~~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: { Data: { type: Object }, option: { type: Object } },\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet props = __props\n\nlet { ThemeOptions, queAns, SingleProducts } = storeToRefs(useDataStore())\nlet { data, error } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(`product/slug/${useRoute().params.slug}`, { key: \"getSingleDetailsProduct\", params: { status: 1 }, }))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\nlet { data: productReview } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest('front/review', { key: \"getProductReview\", params: { product_id: data?.value?.id } }))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\nvar breadcrumbs = { page: data?.value?.name, links: [{ name: 'Product' }, { name: data?.value?.name },] }\nconst route = useRoute();\nlet layout = ref(route?.query.layout);\n\nconst isScrollActive = ref(false);\nlet { data: SingleProduct } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(`product/slug/${useRoute().params.slug}`, { key: \"getSingleDetailsProduct\", params: { status: 1 }, }))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nwatch(() => route?.query?.layout, () => {\n  if (route?.query?.layout) {\n    layout.value = route?.query?.layout;\n  } else {\n    console.log(\"ThemeOptions\", ThemeOptions);\n    // layout.value =  ThemeOptions.value.options.seller && ThemeOptions.value.options.seller.store_layout ? option.seller.store_layout : 'basic_store'; \n  }\n}, { deep: true })\n\nconst onScroll = () => {\n  const button = document.querySelector('.scroll-button');\n  if (button) {\n    const buttonRect = button.getBoundingClientRect();\n    if (buttonRect.bottom < window.innerHeight && buttonRect.bottom < 0) {\n      isScrollActive.value = true;\n      document.body.classList.add('stickyCart');\n    } else {\n      isScrollActive.value = false;\n      document.body.classList.remove('stickyCart');\n    }\n  }\n};\n\nconst setLayout = (layoutValue) => {\n  layout.value = layoutValue;\n};\n\nconst getProductLayout = () => {\n  layout.value = ThemeOptions.options?.product?.product_layout || 'product_thumbnail';\n};\nuseDataStore().GetAllQustionAnswer(data?.value?.id)\nuseDataStore().GetSingleProduct()\n\nonMounted(() => {\n  route.query.layout ? setLayout(route.query.layout) : getProductLayout();\n  window.addEventListener('scroll', onScroll);\n  useDataStore().GetAllQustionAnswer(data?.value?.id)\n});\n\nonUnmounted(() => {\n  window.removeEventListener('scroll', onScroll);\n  document.body.classList.remove('stickyCart');\n});\n\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_ShopProductDetailsThumbnail = _resolveComponent(\"ShopProductDetailsThumbnail\")\n  const _component_ShopProductDetailsImage4 = _resolveComponent(\"ShopProductDetailsImage4\")\n  const _component_ShopProductDetailsSilder = _resolveComponent(\"ShopProductDetailsSilder\")\n  const _component_ShopProductDetailsSticky = _resolveComponent(\"ShopProductDetailsSticky\")\n  const _component_ShopProductDetailsAccordions = _resolveComponent(\"ShopProductDetailsAccordions\")\n  const _component_ShopProductDetailsWidgetsRelatedProducts = _resolveComponent(\"ShopProductDetailsWidgetsRelatedProducts\")\n  const _component_ShopProductDetailsWidgetsStickyCheckout = _resolveComponent(\"ShopProductDetailsWidgetsStickyCheckout\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_WidgetsBreadcrumb, { breadcrumbs: _unref(breadcrumbs) }, null, 8, [\"breadcrumbs\"]),\n    _createElementVNode(\"section\", _hoisted_1, [\n      (_unref(layout) == 'product_thumbnail')\n        ? (_openBlock(), _createBlock(_component_ShopProductDetailsThumbnail, {\n            key: 0,\n            Data: _unref(data),\n            option: _unref(ThemeOptions)?.options,\n            reviews: _unref(productReview)?.data,\n            questionAnswers: _unref(queAns).data\n          }, null, 8, [\"Data\", \"option\", \"reviews\", \"questionAnswers\"]))\n        : _createCommentVNode(\"\", true),\n      (_unref(layout) == 'product_images')\n        ? (_openBlock(), _createBlock(_component_ShopProductDetailsImage4, {\n            key: 1,\n            Data: _unref(data),\n            option: _unref(ThemeOptions)?.options,\n            reviews: _unref(productReview)?.data,\n            questionAnswers: _unref(queAns).data\n          }, null, 8, [\"Data\", \"option\", \"reviews\", \"questionAnswers\"]))\n        : _createCommentVNode(\"\", true),\n      (_unref(layout) == 'product_slider')\n        ? (_openBlock(), _createBlock(_component_ShopProductDetailsSilder, {\n            key: 2,\n            Data: _unref(data),\n            option: _unref(ThemeOptions)?.options,\n            reviews: _unref(productReview)?.data,\n            questionAnswers: _unref(queAns).data\n          }, null, 8, [\"Data\", \"option\", \"reviews\", \"questionAnswers\"]))\n        : _createCommentVNode(\"\", true),\n      (_unref(layout) == 'product_sticky')\n        ? (_openBlock(), _createBlock(_component_ShopProductDetailsSticky, {\n            key: 3,\n            Data: _unref(data),\n            option: _unref(ThemeOptions)?.options,\n            reviews: _unref(productReview)?.data,\n            questionAnswers: _unref(queAns).data\n          }, null, 8, [\"Data\", \"option\", \"reviews\", \"questionAnswers\"]))\n        : _createCommentVNode(\"\", true),\n      (_unref(layout) == 'product_accordion')\n        ? (_openBlock(), _createBlock(_component_ShopProductDetailsAccordions, {\n            key: 4,\n            Data: _unref(data),\n            option: _unref(ThemeOptions)?.options,\n            reviews: _unref(productReview)?.data,\n            questionAnswers: _unref(queAns).data\n          }, null, 8, [\"Data\", \"option\", \"reviews\", \"questionAnswers\"]))\n        : _createCommentVNode(\"\", true)\n    ]),\n    (_unref(data)?.related_products?.length)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_2, [\n          _createVNode(_component_ShopProductDetailsWidgetsRelatedProducts, { product: _unref(data) }, null, 8, [\"product\"])\n        ]))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_ShopProductDetailsWidgetsStickyCheckout, { product: _unref(data) }, null, 8, [\"product\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284818,
+      "end": 1716056284822,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284822,
+      "end": 1716056284822,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284822,
+      "end": 1716056284822,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284822,
+      "end": 1716056284822,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284822,
+      "end": 1716056284822,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/index.vue\").then(r => r.default))",
+      "start": 1716056284822,
+      "end": 1716056284822,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284822,
+      "end": 1716056284823,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284823,
+      "end": 1716056284823,
+      "order": "normal"
+    }
+  ]
+}

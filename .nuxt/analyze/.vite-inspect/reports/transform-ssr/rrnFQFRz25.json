@@ -1,0 +1,256 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Compare/Skeloton.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"compare-part\">\n        <div class=\"img-section\">\n            <div>\n                <div class=\"compare-img\"></div>\n            </div>\n            <a href=\"javascript:void(0)\" tabindex=\"0\">\n                <h5 class=\"placeholder col-6\"></h5>\n            </a>\n        </div>\n        <div class=\"detail-part\">\n            <div class=\"title-detail\">\n                <h5 class=\"placeholder col-3\"></h5>\n            </div>\n            <div class=\"inner-detail\">\n                <p class=\"placeholder col-1\"></p>\n            </div>\n        </div>\n        <div class=\"detail-part\">\n            <div class=\"title-detail\">\n                <h5 class=\"placeholder col-1\"></h5>\n            </div>\n            <div class=\"inner-detail\">\n                <p class=\"placeholder col-2\"></p>\n            </div>\n        </div>\n        <div class=\"detail-part\">\n            <div class=\"title-detail\">\n                <h5 class=\"placeholder col-4\"></h5>\n            </div>\n            <div class=\"inner-detail\">\n                <p class=\"placeholder col-3\"></p>\n            </div>\n        </div>\n        <div class=\"detail-part\">\n            <div class=\"title-detail\">\n                <h5 class=\"placeholder col-1\"></h5>\n            </div>\n            <div class=\"inner-detail\">\n                <div class=\"compare-rating\">\n                    <span class=\"placeholder col-4\"></span>\n                </div>\n            </div>\n        </div>\n        <div class=\"detail-part\">\n            <div class=\"title-detail\">\n                <h5 class=\"placeholder col-1\"></h5>\n            </div>\n            <div class=\"inner-detail\">\n                <p class=\"placeholder col-3\"></p>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup></script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056341694,
+      "end": 1716056341884,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341884,
+      "end": 1716056341884,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341884,
+      "end": 1716056341884,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341884,
+      "end": 1716056341884,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341884,
+      "end": 1716056341884,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056341884,
+      "end": 1716056341884,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056341884,
+      "end": 1716056341884,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056341884,
+      "end": 1716056341884,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056341884,
+      "end": 1716056341885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056341885,
+      "end": 1716056341885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056341885,
+      "end": 1716056341885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs) {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"compare-part\" }, _attrs))}><div class=\"img-section\"><div><div class=\"compare-img\"></div></div><a href=\"javascript:void(0)\" tabindex=\"0\"><h5 class=\"placeholder col-6\"></h5></a></div><div class=\"detail-part\"><div class=\"title-detail\"><h5 class=\"placeholder col-3\"></h5></div><div class=\"inner-detail\"><p class=\"placeholder col-1\"></p></div></div><div class=\"detail-part\"><div class=\"title-detail\"><h5 class=\"placeholder col-1\"></h5></div><div class=\"inner-detail\"><p class=\"placeholder col-2\"></p></div></div><div class=\"detail-part\"><div class=\"title-detail\"><h5 class=\"placeholder col-4\"></h5></div><div class=\"inner-detail\"><p class=\"placeholder col-3\"></p></div></div><div class=\"detail-part\"><div class=\"title-detail\"><h5 class=\"placeholder col-1\"></h5></div><div class=\"inner-detail\"><div class=\"compare-rating\"><span class=\"placeholder col-4\"></span></div></div></div><div class=\"detail-part\"><div class=\"title-detail\"><h5 class=\"placeholder col-1\"></h5></div><div class=\"inner-detail\"><p class=\"placeholder col-3\"></p></div></div></div>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Compare/Skeloton.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
+      "start": 1716056341885,
+      "end": 1716056341886,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056341886,
+      "end": 1716056341886,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341886,
+      "end": 1716056341886,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341886,
+      "end": 1716056341886,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341886,
+      "end": 1716056341887,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341886,
+      "end": 1716056341887,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056341887,
+      "end": 1716056341887,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341887,
+      "end": 1716056341887,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056341887,
+      "end": 1716056341887,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056341887,
+      "end": 1716056341887,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056341887,
+      "end": 1716056341887,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056341887,
+      "end": 1716056341887,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056341887,
+      "end": 1716056341887,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056341888,
+      "end": 1716056341888,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056341888,
+      "end": 1716056341888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056341888,
+      "end": 1716056341888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056341888,
+      "end": 1716056341888,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341888,
+      "end": 1716056341888,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341888,
+      "end": 1716056341888,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056341888,
+      "end": 1716056341889,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056341888,
+      "end": 1716056341889,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341889,
+      "end": 1716056341889,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341889,
+      "end": 1716056341889,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341889,
+      "end": 1716056341889,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341889,
+      "end": 1716056341889,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056341889,
+      "end": 1716056341889,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056341889,
+      "end": 1716056341889,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056341889,
+      "end": 1716056341889,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056341889,
+      "end": 1716056341889,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056341889,
+      "end": 1716056341889,
+      "order": "normal"
+    }
+  ]
+}

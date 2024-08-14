@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Footer/Pages.vue?nuxt_component=async&nuxt_component_name=FooterPages",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <ul>\n    <li v-for=\"page in  filteredPages\" :key=\"page\">\n      <NuxtLink :to=\"`/pages/${page.slug}`\" class=\"text-content\">\n        {{ page?.title }}\n      </NuxtLink>\n    </li>\n  </ul>\n</template>\n\n<script setup>\nlet props = defineProps({\n  data: Object\n})\n\nconst filteredPages = ref([]);\n\nwatch(data, () => {\n  fetchFilteredPages();\n});\n\nconst fetchFilteredPages = () => {\n  let { data: pages } = HandleRequest(`page`, { key: `GetAllpages`, });\n  const ids = props.data.value?.footer?.footer_pages;\n  if (Array.isArray(ids)) {\n    filteredPages.value = pages.value.data.filter((page) => ids.includes(page.id));\n  }\n};\n\nonMounted(() => {\n  fetchFilteredPages();\n});\n</script>\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056270638,
+      "end": 1716056270735,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056270735,
+      "end": 1716056270735,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056270735,
+      "end": 1716056270735,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056270735,
+      "end": 1716056270735,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056270735,
+      "end": 1716056270735,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056270735,
+      "end": 1716056270735,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056270735,
+      "end": 1716056270735,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056270735,
+      "end": 1716056270735,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'Pages',\n  props: {\n  data: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nconst filteredPages = ref([]);\n\nwatch(data, () => {\n  fetchFilteredPages();\n});\n\nconst fetchFilteredPages = () => {\n  let { data: pages } = HandleRequest(`page`, { key: `GetAllpages`, });\n  const ids = props.data.value?.footer?.footer_pages;\n  if (Array.isArray(ids)) {\n    filteredPages.value = pages.value.data.filter((page) => ids.includes(page.id));\n  }\n};\n\nonMounted(() => {\n  fetchFilteredPages();\n});\n\nreturn (_ctx, _cache) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n\n  return (_openBlock(), _createElementBlock(\"ul\", null, [\n    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(filteredPages), (page) => {\n      return (_openBlock(), _createElementBlock(\"li\", { key: page }, [\n        _createVNode(_component_NuxtLink, {\n          to: `/pages/${page.slug}`,\n          class: \"text-content\"\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(_toDisplayString(page?.title), 1)\n          ]),\n          _: 2\n        }, 1032, [\"to\"])\n      ]))\n    }), 128))\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056270735,
+      "end": 1716056270736,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056270736,
+      "end": 1716056270736,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056270736,
+      "end": 1716056270736,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056270736,
+      "end": 1716056270736,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056270736,
+      "end": 1716056270736,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Footer/Pages.vue\").then(r => r.default))",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Footer/Pages.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056270737,
+      "end": 1716056270737,
+      "order": "normal"
+    }
+  ]
+}

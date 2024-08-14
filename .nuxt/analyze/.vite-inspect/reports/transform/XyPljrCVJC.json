@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Breadcrumb/index.vue?nuxt_component=async&nuxt_component_name=WidgetsBreadcrumb",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <section class=\"breadscrumb-section pt-0\">\n    <div class=\"container-fluid-lg\">\n      <div class=\"row\">\n        <div class=\"col-12\">\n          <div class=\"breadscrumb-contain\">\n            <h2 v-if=\"breadcrumbs?.page\">{{ breadcrumbs?.page  }}</h2>\n            <h2 v-else>{{'Current Page Name Here'}}</h2>\n            <nav>\n              <ol class=\"breadcrumb mb-0\">\n                <li class=\"breadcrumb-item\">\n                  <nuxt-link to=\"/theme/paris\">\n                    <Icon name=\"ri:home-3-fill\"></Icon>\n                  </nuxt-link>\n                </li>\n                <li class=\"breadcrumb-item active\" v-for=\"(item, index) in breadcrumbs?.links\"\n                  :key=\"`breadcrumbs${index}`\">\n                  {{ shortenText(item.name, 25) }}\n                </li>\n              </ol>\n            </nav>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</template>\n\n<script setup>\nlet props = defineProps({\n  breadcrumbs: Object,\n});\n\nfunction shortenText(text, maxLength) {\n  if (text?.length <= maxLength) {\n    return text;\n  } else {\n    return text?.slice(0, maxLength - 3) + '...';\n  }\n}\n\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056284972,
+      "end": 1716056285076,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285076,
+      "end": 1716056285076,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285076,
+      "end": 1716056285076,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285076,
+      "end": 1716056285076,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285076,
+      "end": 1716056285076,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285076,
+      "end": 1716056285076,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285076,
+      "end": 1716056285076,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285076,
+      "end": 1716056285076,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment } from \"vue\"\n\nconst _hoisted_1 = { class: \"breadscrumb-section pt-0\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-12\" }\nconst _hoisted_5 = { class: \"breadscrumb-contain\" }\nconst _hoisted_6 = { key: 0 }\nconst _hoisted_7 = { key: 1 }\nconst _hoisted_8 = { class: \"breadcrumb mb-0\" }\nconst _hoisted_9 = { class: \"breadcrumb-item\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n  breadcrumbs: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nfunction shortenText(text, maxLength) {\n  if (text?.length <= maxLength) {\n    return text;\n  } else {\n    return text?.slice(0, maxLength - 3) + '...';\n  }\n}\n\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            (__props.breadcrumbs?.page)\n              ? (_openBlock(), _createElementBlock(\"h2\", _hoisted_6, _toDisplayString(__props.breadcrumbs?.page), 1))\n              : (_openBlock(), _createElementBlock(\"h2\", _hoisted_7, _toDisplayString('Current Page Name Here'))),\n            _createElementVNode(\"nav\", null, [\n              _createElementVNode(\"ol\", _hoisted_8, [\n                _createElementVNode(\"li\", _hoisted_9, [\n                  _createVNode(_component_nuxt_link, { to: \"/theme/paris\" }, {\n                    default: _withCtx(() => [\n                      _createVNode(_component_Icon, { name: \"ri:home-3-fill\" })\n                    ]),\n                    _: 1\n                  })\n                ]),\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.breadcrumbs?.links, (item, index) => {\n                  return (_openBlock(), _createElementBlock(\"li\", {\n                    class: \"breadcrumb-item active\",\n                    key: `breadcrumbs${index}`\n                  }, _toDisplayString(shortenText(item.name, 25)), 1))\n                }), 128))\n              ])\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056285077,
+      "end": 1716056285078,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285078,
+      "end": 1716056285078,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285078,
+      "end": 1716056285078,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285078,
+      "end": 1716056285078,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285078,
+      "end": 1716056285078,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Breadcrumb/index.vue\").then(r => r.default))",
+      "start": 1716056285078,
+      "end": 1716056285078,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Breadcrumb/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285079,
+      "end": 1716056285079,
+      "order": "normal"
+    }
+  ]
+}

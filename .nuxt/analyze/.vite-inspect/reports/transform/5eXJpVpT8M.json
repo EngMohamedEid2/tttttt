@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Widgets/Blog/SkeletonSliderBlog.vue?nuxt_component=async&nuxt_component_name=ThemesWidgetsBlogSkeletonSliderBlog",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n    <!-- Blog Grid Skeleton -->\n    <div class=\"blog-skeleton\">\n        <div class=\"skeleton-div\">\n            <div class=\"product-box skeleton-box\">\n                <div class=\"skeleton\">\n                    <div class=\"skeleton__section skeleton__section--card\">\n                        <div class=\"skeleton__img\"></div>\n                        <div>\n                            <div class=\"skeleton__header skeleton__header--long\"></div>\n                            <div class=\"skeleton__p\"></div>\n                        </div>\n                    </div>\n                    <div class=\"content-div\">\n                        <div class=\"skeleton__p\"></div>\n                        <div class=\"skeleton__p\"></div>\n                        <div class=\"skeleton__p\"></div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    type: {\n        type: String,\n        default: 'grid'\n    }\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056284860,
+      "end": 1716056284974,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284974,
+      "end": 1716056284974,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284974,
+      "end": 1716056284974,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284974,
+      "end": 1716056284974,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284974,
+      "end": 1716056284974,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284974,
+      "end": 1716056284974,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284974,
+      "end": 1716056284974,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284974,
+      "end": 1716056284974,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = /*#__PURE__*/_createStaticVNode(\"<div class=\\\"blog-skeleton\\\"><div class=\\\"skeleton-div\\\"><div class=\\\"product-box skeleton-box\\\"><div class=\\\"skeleton\\\"><div class=\\\"skeleton__section skeleton__section--card\\\"><div class=\\\"skeleton__img\\\"></div><div><div class=\\\"skeleton__header skeleton__header--long\\\"></div><div class=\\\"skeleton__p\\\"></div></div></div><div class=\\\"content-div\\\"><div class=\\\"skeleton__p\\\"></div><div class=\\\"skeleton__p\\\"></div><div class=\\\"skeleton__p\\\"></div></div></div></div></div></div>\", 1)\nconst _hoisted_2 = [\n  _hoisted_1\n]\n\n\nconst _sfc_main = {\n  __name: 'SkeletonSliderBlog',\n  props: {\n    type: {\n        type: String,\n        default: 'grid'\n    }\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", null, _hoisted_2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284974,
+      "end": 1716056284976,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Widgets/Blog/SkeletonSliderBlog.vue\").then(r => r.default))",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284976,
+      "end": 1716056284976,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Widgets/Blog/SkeletonSliderBlog.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284976,
+      "end": 1716056284977,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284977,
+      "end": 1716056284977,
+      "order": "normal"
+    }
+  ]
+}

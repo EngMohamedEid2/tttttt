@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Deals/index.vue?nuxt_component=async&nuxt_component_name=HeaderElementsDeals",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"modal-content\">\n        <div class=\"modal-header\">\n            <div>\n                <h5 class=\"modal-title w-100\">{{ $t(\"Deal Today\") }}</h5>\n                <p class=\"mt-1 text-content\">{{ $t('Recommended deals for you.') }}</p>\n            </div>\n        </div>\n        <div class=\"modal-body\">\n            <div class=\"deal-offer-box\">\n                <ul class=\"deal-offer-list\">\n                    <li class=\"list-1\" v-for=\"product in TopDealInitial\" :key=\"product\">\n                        <!-- <pre>{{ product }}</pre> -->\n                        <div class=\"deal-offer-contain\">\n                            <NuxtLink class=\"deal-image\" :to=\"`/product/${product?.slug}`\"\n                                @click=\"() => { emit('close'); }\">\n                                <img :src=\"product?.product_thumbnail ? product?.product_thumbnail?.original_url : 'images/product.png'\"\n                                    alt=\"product\" height=\"100\" width=\"100\">\n                            </NuxtLink>\n                            <NuxtLink class=\"deal-contain\" :to=\"`/product/${product?.slug}`\" @click=\"() => { emit('close'); }\">\n                                <h5 class=\"fw-semibold\">{{ product?.name }}</h5>\n                                <h6>${{ Number(product?.sale_price).toFixed(2) }} <del>{{\n                                    Number(product?.price).toFixed(2) }}</del> <span v-if=\"product?.unit\">{{\n        product?.unit }}</span></h6>\n                            </NuxtLink>\n                        </div>\n                    </li>\n                </ul>\n            </div>\n            <WidgetsNoData :classes=\"'no-data-added bg-light'\" :text=\"'No Product Found'\" v-if=\"!TopDealInitial?.length\">\n            </WidgetsNoData>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\n\nlet { Products } = storeToRefs(useDataStore())\nconst props = defineProps({\n    todayDeal: Object\n})\n\nlet emit = defineEmits(['close'])\nlet TopDealInitial = ref()\nTopDealInitial.value = Products?.value?.data?.filter((product) =>\n    props.todayDeal?.includes(product.id)\n);\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056270692,
+      "end": 1716056270773,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056270773,
+      "end": 1716056270773,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056270773,
+      "end": 1716056270773,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056270773,
+      "end": 1716056270773,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056270773,
+      "end": 1716056270773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056270773,
+      "end": 1716056270773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056270773,
+      "end": 1716056270773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056270773,
+      "end": 1716056270773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createCommentVNode as _createCommentVNode, createTextVNode as _createTextVNode, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"modal-content\" }\nconst _hoisted_2 = { class: \"modal-header\" }\nconst _hoisted_3 = { class: \"modal-title w-100\" }\nconst _hoisted_4 = { class: \"mt-1 text-content\" }\nconst _hoisted_5 = { class: \"modal-body\" }\nconst _hoisted_6 = { class: \"deal-offer-box\" }\nconst _hoisted_7 = { class: \"deal-offer-list\" }\nconst _hoisted_8 = { class: \"deal-offer-contain\" }\nconst _hoisted_9 = [\"src\"]\nconst _hoisted_10 = { class: \"fw-semibold\" }\nconst _hoisted_11 = { key: 0 }\n\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    todayDeal: Object\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet { Products } = storeToRefs(useDataStore())\nconst props = __props\n\nlet emit = __emit\nlet TopDealInitial = ref()\nTopDealInitial.value = Products?.value?.data?.filter((product) =>\n    props.todayDeal?.includes(product.id)\n);\n\nreturn (_ctx, _cache) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", null, [\n        _createElementVNode(\"h5\", _hoisted_3, _toDisplayString(_ctx.$t(\"Deal Today\")), 1),\n        _createElementVNode(\"p\", _hoisted_4, _toDisplayString(_ctx.$t('Recommended deals for you.')), 1)\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_5, [\n      _createElementVNode(\"div\", _hoisted_6, [\n        _createElementVNode(\"ul\", _hoisted_7, [\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(TopDealInitial), (product) => {\n            return (_openBlock(), _createElementBlock(\"li\", {\n              class: \"list-1\",\n              key: product\n            }, [\n              _createElementVNode(\"div\", _hoisted_8, [\n                _createVNode(_component_NuxtLink, {\n                  class: \"deal-image\",\n                  to: `/product/${product?.slug}`,\n                  onClick: _cache[0] || (_cache[0] = () => { _unref(emit)('close'); })\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"img\", {\n                      src: product?.product_thumbnail ? product?.product_thumbnail?.original_url : 'images/product.png',\n                      alt: \"product\",\n                      height: \"100\",\n                      width: \"100\"\n                    }, null, 8, _hoisted_9)\n                  ]),\n                  _: 2\n                }, 1032, [\"to\"]),\n                _createVNode(_component_NuxtLink, {\n                  class: \"deal-contain\",\n                  to: `/product/${product?.slug}`,\n                  onClick: _cache[1] || (_cache[1] = () => { _unref(emit)('close'); })\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"h5\", _hoisted_10, _toDisplayString(product?.name), 1),\n                    _createElementVNode(\"h6\", null, [\n                      _createTextVNode(\"$\" + _toDisplayString(Number(product?.sale_price).toFixed(2)) + \" \", 1),\n                      _createElementVNode(\"del\", null, _toDisplayString(Number(product?.price).toFixed(2)), 1),\n                      _createTextVNode(),\n                      (product?.unit)\n                        ? (_openBlock(), _createElementBlock(\"span\", _hoisted_11, _toDisplayString(product?.unit), 1))\n                        : _createCommentVNode(\"\", true)\n                    ])\n                  ]),\n                  _: 2\n                }, 1032, [\"to\"])\n              ])\n            ]))\n          }), 128))\n        ])\n      ]),\n      (!_unref(TopDealInitial)?.length)\n        ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n            key: 0,\n            classes: 'no-data-added bg-light',\n            text: 'No Product Found'\n          }))\n        : _createCommentVNode(\"\", true)\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056270773,
+      "end": 1716056270776,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056270776,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Deals/index.vue\").then(r => r.default))",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056270777,
+      "end": 1716056270777,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Deals/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056270777,
+      "end": 1716056270778,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056270778,
+      "end": 1716056270778,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/Error404/index.vue?nuxt_component=async&nuxt_component_name=PagesError404",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <section class=\"section-404 section-lg-space\">\n        <div class=\"container-fluid-lg\">\n            <div class=\"row\">\n                <div class=\"col-12\">\n                    <div class=\"image-404\">\n                        <img src=\"/images/inner-page/404.png\" class=\"img-fluid\" alt=\"\">\n                    </div>\n                </div>\n                <div class=\"col-12\" v-if=\"ThemeOptions.options?.error_page?.error_page_content\">\n                    <div class=\"contain-404\">\n                        <h3 class=\"text-content\">\n                            {{ ThemeOptions.options?.error_page?.error_page_content }}\n                        </h3>\n                        <WidgetsButton :classes=\"'btn btn-md text-white theme-bg-color mt-4 mx-auto'\" :id=\"'back_button'\"\n                            v-if=\"ThemeOptions.options?.error_page?.back_button_enable\" @onClick=\"back()\">{{\n                                ThemeOptions.options?.error_page?.back_button_text }}</WidgetsButton>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nlet { ThemeOptions } = storeToRefs(useDataStore())\n\nfunction back() {\n    useRouter().go(-1)\n}\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056271144,
+      "end": 1716056271360,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271360,
+      "end": 1716056271360,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271360,
+      "end": 1716056271360,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271360,
+      "end": 1716056271360,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271360,
+      "end": 1716056271360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271360,
+      "end": 1716056271360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271360,
+      "end": 1716056271360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271360,
+      "end": 1716056271360,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, unref as _unref, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from '/images/inner-page/404.png'\n\n\nconst _hoisted_1 = { class: \"section-404 section-lg-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-12\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"image-404\" }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_0,\n      class: \"img-fluid\",\n      alt: \"\"\n    })\n  ])\n], -1)\nconst _hoisted_5 = {\n  key: 0,\n  class: \"col-12\"\n}\nconst _hoisted_6 = { class: \"contain-404\" }\nconst _hoisted_7 = { class: \"text-content\" }\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet { ThemeOptions } = storeToRefs(useDataStore())\n\nfunction back() {\n    useRouter().go(-1)\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _hoisted_4,\n        (_unref(ThemeOptions).options?.error_page?.error_page_content)\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_5, [\n              _createElementVNode(\"div\", _hoisted_6, [\n                _createElementVNode(\"h3\", _hoisted_7, _toDisplayString(_unref(ThemeOptions).options?.error_page?.error_page_content), 1),\n                (_unref(ThemeOptions).options?.error_page?.back_button_enable)\n                  ? (_openBlock(), _createBlock(_component_WidgetsButton, {\n                      key: 0,\n                      classes: 'btn btn-md text-white theme-bg-color mt-4 mx-auto',\n                      id: 'back_button',\n                      onOnClick: _cache[0] || (_cache[0] = $event => (back()))\n                    }, {\n                      default: _withCtx(() => [\n                        _createTextVNode(_toDisplayString(_unref(ThemeOptions).options?.error_page?.back_button_text), 1)\n                      ]),\n                      _: 1\n                    }))\n                  : _createCommentVNode(\"\", true)\n              ])\n            ]))\n          : _createCommentVNode(\"\", true)\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056271360,
+      "end": 1716056271362,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271362,
+      "end": 1716056271362,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271362,
+      "end": 1716056271362,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271362,
+      "end": 1716056271362,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271362,
+      "end": 1716056271362,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/Error404/index.vue\").then(r => r.default))",
+      "start": 1716056271362,
+      "end": 1716056271362,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271362,
+      "end": 1716056271362,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271362,
+      "end": 1716056271362,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271362,
+      "end": 1716056271362,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271362,
+      "end": 1716056271362,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271362,
+      "end": 1716056271362,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271362,
+      "end": 1716056271362,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271362,
+      "end": 1716056271362,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271362,
+      "end": 1716056271362,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271362,
+      "end": 1716056271363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/Error404/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271363,
+      "end": 1716056271363,
+      "order": "normal"
+    }
+  ]
+}

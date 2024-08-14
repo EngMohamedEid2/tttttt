@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/TrackingPanel.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"mb-4\">\n        <div class=\"tracking-panel\">\n            <ul v-if=\"order && !order?.sub_orders?.length\">\n                <template v-for=\"(orderStatus,index) in orderStatus?.data\" :key=\"index\">\n                    <li :class=\"{\n                        'd-none': (orderStatus?.sequence >= order?.order_status?.sequence\n                            && (order?.order_status && order?.order_status.slug == 'cancelled')) ||\n                            orderStatus?.slug == 'cancelled', 'active': orderStatus?.sequence <= order?.order_status?.sequence\n                    }\">\n                        <div class=\"panel-content\">\n                            <div class=\"icon\">\n                                <img :src=\"`/svg/tracking/${orderStatus?.slug}.svg`\" class=\"img-fluid\" alt=\"image\">\n                            </div>\n                            <div class=\"status\">{{ transform(orderStatus?.name?.replace('_', ' ')) }}</div>\n                        </div>\n                    </li>\n                </template>\n\n                <li class=\"active cancelled-box\" v-if=\"order?.order_status && order?.order_status?.slug == 'cancelled'\">\n                    <div class=\"panel-content\" v-if=\"order?.order_status\">\n                        <div class=\"icon\">\n                            <img :src=\"`/svg/tracking/${order.order_status.slug}.svg`\" class=\"img-fluid\" alt=\"image\">\n                        </div>\n                        <div class=\"status\">{{ transform(order.order_status.name.replace('_', ' ')) }}</div>\n                    </div>\n                </li>\n            </ul>\n        </div>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    order: Object,\n    orderStatus: Object\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056286503,
+      "end": 1716056286796,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056286797,
+      "end": 1716056286797,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056286797,
+      "end": 1716056286797,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056286797,
+      "end": 1716056286797,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056286797,
+      "end": 1716056286797,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056286797,
+      "end": 1716056286797,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056286797,
+      "end": 1716056286797,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056286797,
+      "end": 1716056286797,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"mb-4\" }\nconst _hoisted_2 = { class: \"tracking-panel\" }\nconst _hoisted_3 = { key: 0 }\nconst _hoisted_4 = { class: \"panel-content\" }\nconst _hoisted_5 = { class: \"icon\" }\nconst _hoisted_6 = [\"src\"]\nconst _hoisted_7 = { class: \"status\" }\nconst _hoisted_8 = {\n  key: 0,\n  class: \"active cancelled-box\"\n}\nconst _hoisted_9 = {\n  key: 0,\n  class: \"panel-content\"\n}\nconst _hoisted_10 = { class: \"icon\" }\nconst _hoisted_11 = [\"src\"]\nconst _hoisted_12 = { class: \"status\" }\n\n\nconst _sfc_main = {\n  __name: 'TrackingPanel',\n  props: {\n    order: Object,\n    orderStatus: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      (__props.order && !__props.order?.sub_orders?.length)\n        ? (_openBlock(), _createElementBlock(\"ul\", _hoisted_3, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.orderStatus?.data, (orderStatus, index) => {\n              return (_openBlock(), _createElementBlock(\"li\", {\n                key: index,\n                class: _normalizeClass({\n                        'd-none': (orderStatus?.sequence >= __props.order?.order_status?.sequence\n                            && (__props.order?.order_status && __props.order?.order_status.slug == 'cancelled')) ||\n                            orderStatus?.slug == 'cancelled', 'active': orderStatus?.sequence <= __props.order?.order_status?.sequence\n                    })\n              }, [\n                _createElementVNode(\"div\", _hoisted_4, [\n                  _createElementVNode(\"div\", _hoisted_5, [\n                    _createElementVNode(\"img\", {\n                      src: `/svg/tracking/${orderStatus?.slug}.svg`,\n                      class: \"img-fluid\",\n                      alt: \"image\"\n                    }, null, 8, _hoisted_6)\n                  ]),\n                  _createElementVNode(\"div\", _hoisted_7, _toDisplayString(_ctx.transform(orderStatus?.name?.replace('_', ' '))), 1)\n                ])\n              ], 2))\n            }), 128)),\n            (__props.order?.order_status && __props.order?.order_status?.slug == 'cancelled')\n              ? (_openBlock(), _createElementBlock(\"li\", _hoisted_8, [\n                  (__props.order?.order_status)\n                    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_9, [\n                        _createElementVNode(\"div\", _hoisted_10, [\n                          _createElementVNode(\"img\", {\n                            src: `/svg/tracking/${__props.order.order_status.slug}.svg`,\n                            class: \"img-fluid\",\n                            alt: \"image\"\n                          }, null, 8, _hoisted_11)\n                        ]),\n                        _createElementVNode(\"div\", _hoisted_12, _toDisplayString(_ctx.transform(__props.order.order_status.name.replace('_', ' '))), 1)\n                      ]))\n                    : _createCommentVNode(\"\", true)\n                ]))\n              : _createCommentVNode(\"\", true)\n          ]))\n        : _createCommentVNode(\"\", true)\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286797,
+      "end": 1716056286797,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056286797,
+      "end": 1716056286797,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286797,
+      "end": 1716056286797,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056286797,
+      "end": 1716056286798,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056286798,
+      "end": 1716056286798,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056286798,
+      "end": 1716056286798,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286798,
+      "end": 1716056286798,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056286798,
+      "end": 1716056286798,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056286798,
+      "end": 1716056286798,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056286798,
+      "end": 1716056286798,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056286798,
+      "end": 1716056286798,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056286798,
+      "end": 1716056286798,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056286798,
+      "end": 1716056286798,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056286798,
+      "end": 1716056286798,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056286798,
+      "end": 1716056286798,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056286798,
+      "end": 1716056286798,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056286798,
+      "end": 1716056286798,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { transform as __unimport_transform } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/formators/capital.js';\nimport { unref as __unimport_unref_ } from 'vue';import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"mb-4\" }\nconst _hoisted_2 = { class: \"tracking-panel\" }\nconst _hoisted_3 = { key: 0 }\nconst _hoisted_4 = { class: \"panel-content\" }\nconst _hoisted_5 = { class: \"icon\" }\nconst _hoisted_6 = [\"src\"]\nconst _hoisted_7 = { class: \"status\" }\nconst _hoisted_8 = {\n  key: 0,\n  class: \"active cancelled-box\"\n}\nconst _hoisted_9 = {\n  key: 0,\n  class: \"panel-content\"\n}\nconst _hoisted_10 = { class: \"icon\" }\nconst _hoisted_11 = [\"src\"]\nconst _hoisted_12 = { class: \"status\" }\n\n\nconst _sfc_main = {\n  __name: 'TrackingPanel',\n  props: {\n    order: Object,\n    orderStatus: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      (__props.order && !__props.order?.sub_orders?.length)\n        ? (_openBlock(), _createElementBlock(\"ul\", _hoisted_3, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.orderStatus?.data, (orderStatus, index) => {\n              return (_openBlock(), _createElementBlock(\"li\", {\n                key: index,\n                class: _normalizeClass({\n                        'd-none': (orderStatus?.sequence >= __props.order?.order_status?.sequence\n                            && (__props.order?.order_status && __props.order?.order_status.slug == 'cancelled')) ||\n                            orderStatus?.slug == 'cancelled', 'active': orderStatus?.sequence <= __props.order?.order_status?.sequence\n                    })\n              }, [\n                _createElementVNode(\"div\", _hoisted_4, [\n                  _createElementVNode(\"div\", _hoisted_5, [\n                    _createElementVNode(\"img\", {\n                      src: `/svg/tracking/${orderStatus?.slug}.svg`,\n                      class: \"img-fluid\",\n                      alt: \"image\"\n                    }, null, 8, _hoisted_6)\n                  ]),\n                  _createElementVNode(\"div\", _hoisted_7, _toDisplayString((\"transform\" in _ctx ? _ctx.transform : __unimport_unref_(__unimport_transform))(orderStatus?.name?.replace('_', ' '))), 1)\n                ])\n              ], 2))\n            }), 128)),\n            (__props.order?.order_status && __props.order?.order_status?.slug == 'cancelled')\n              ? (_openBlock(), _createElementBlock(\"li\", _hoisted_8, [\n                  (__props.order?.order_status)\n                    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_9, [\n                        _createElementVNode(\"div\", _hoisted_10, [\n                          _createElementVNode(\"img\", {\n                            src: `/svg/tracking/${__props.order.order_status.slug}.svg`,\n                            class: \"img-fluid\",\n                            alt: \"image\"\n                          }, null, 8, _hoisted_11)\n                        ]),\n                        _createElementVNode(\"div\", _hoisted_12, _toDisplayString((\"transform\" in _ctx ? _ctx.transform : __unimport_unref_(__unimport_transform))(__props.order.order_status.name.replace('_', ' '))), 1)\n                      ]))\n                    : _createCommentVNode(\"\", true)\n                ]))\n              : _createCommentVNode(\"\", true)\n          ]))\n        : _createCommentVNode(\"\", true)\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286798,
+      "end": 1716056286800,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056286800,
+      "end": 1716056286800,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056286800,
+      "end": 1716056286800,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056286800,
+      "end": 1716056286800,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056286800,
+      "end": 1716056286800,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056286800,
+      "end": 1716056286800,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056286800,
+      "end": 1716056286800,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056286801,
+      "end": 1716056286801,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056286801,
+      "end": 1716056286802,
+      "order": "normal"
+    }
+  ]
+}

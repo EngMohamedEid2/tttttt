@@ -1,0 +1,257 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/ConfrmationModal/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"modal-body text-center p-3\">\n        <Icon name=\"ri:question-line\" class=\"icon-box wo-bg\"></Icon>\n        <h5 class=\"modal-title\">{{ $t('Confirmation') }}</h5>\n        <p>{{ $t('Are you sure you want to proceed?') }}?</p>\n        <div class=\"button-box\">\n            <WidgetsButton :classes=\"'btn btn-md fw-bold btn-theme-outline'\" :id=\"'confirm_no_btn'\"\n                @onClick=\"() => { emit('close'); }\">\n                {{ $t('No') }}\n            </WidgetsButton>\n            <WidgetsButton :classes=\"'btn theme-bg-color btn-md fw-bold text-light'\" :id=\"'confirm_yes_btn'\"\n                @onClick=\"() => { emit('confirm'); }\">\n                {{ $t('Yes') }}\n            </WidgetsButton>\n        </div>\n    </div>\n</template>\n\n<script setup>\nlet emit = defineEmits(['confirm', 'close'])\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056342574,
+      "end": 1716056342710,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  emits: ['confirm', 'close'],\n  setup(__props, { emit: __emit }) {\n\nlet emit = __emit\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"modal-body text-center p-3\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(_component_Icon, {\n    name: \"ri:question-line\",\n    class: \"icon-box wo-bg\"\n  }, null, _parent))\n  _push(`<h5 class=\"modal-title\">${\n    _ssrInterpolate(_ctx.$t('Confirmation'))\n  }</h5><p>${\n    _ssrInterpolate(_ctx.$t('Are you sure you want to proceed?'))\n  }?</p><div class=\"button-box\">`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn btn-md fw-bold btn-theme-outline',\n    id: 'confirm_no_btn',\n    onOnClick: () => { _unref(emit)('close'); }\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t('No'))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t('No')), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn theme-bg-color btn-md fw-bold text-light',\n    id: 'confirm_yes_btn',\n    onOnClick: () => { _unref(emit)('confirm'); }\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t('Yes'))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t('Yes')), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/ConfrmationModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342710,
+      "end": 1716056342710,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342710,
+      "end": 1716056342711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056342711,
+      "end": 1716056342711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342711,
+      "end": 1716056342711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342711,
+      "end": 1716056342711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342711,
+      "end": 1716056342711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342711,
+      "end": 1716056342711,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342711,
+      "end": 1716056342711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342711,
+      "end": 1716056342711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342711,
+      "end": 1716056342711,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342711,
+      "end": 1716056342711,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342711,
+      "end": 1716056342711,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056342711,
+      "end": 1716056342712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056342711,
+      "end": 1716056342712,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342712,
+      "end": 1716056342712,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342712,
+      "end": 1716056342712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342712,
+      "end": 1716056342712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342712,
+      "end": 1716056342712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342712,
+      "end": 1716056342712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  emits: ['confirm', 'close'],\n  setup(__props, { emit: __emit }) {\n\nlet emit = __emit\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_WidgetsButton = __nuxt_component_1\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"modal-body text-center p-3\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(_component_Icon, {\n    name: \"ri:question-line\",\n    class: \"icon-box wo-bg\"\n  }, null, _parent))\n  _push(`<h5 class=\"modal-title\">${\n    _ssrInterpolate(_ctx.$t('Confirmation'))\n  }</h5><p>${\n    _ssrInterpolate(_ctx.$t('Are you sure you want to proceed?'))\n  }?</p><div class=\"button-box\">`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn btn-md fw-bold btn-theme-outline',\n    id: 'confirm_no_btn',\n    onOnClick: () => { _unref(emit)('close'); }\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t('No'))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t('No')), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn theme-bg-color btn-md fw-bold text-light',\n    id: 'confirm_yes_btn',\n    onOnClick: () => { _unref(emit)('confirm'); }\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t('Yes'))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t('Yes')), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/ConfrmationModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342712,
+      "end": 1716056342712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056342712,
+      "end": 1716056342712,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342712,
+      "end": 1716056342712,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342712,
+      "end": 1716056342712,
+      "order": "normal"
+    }
+  ]
+}

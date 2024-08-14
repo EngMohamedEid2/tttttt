@@ -1,0 +1,262 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/Offer/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"section-b-space section-t-space offer-section skeleton-offer\" v-if=\"skeletonLoader\">\n    <div class=\"container-fluid-lg\">\n      <div class=\"row g-md-4 g-3\">\n        <div class=\"col-xxl-3 col-lg-4 col-sm-6\" v-for=\"item in skeletonItems\" :key=\"item\">\n          <div class=\"coupon-box\">\n            <div class=\"coupon-name\">\n              <div class=\"card-name\">\n                <div>\n                  <h5 class=\"fw-semibold dark-text\"></h5>\n                </div>\n              </div>\n            </div>\n            <div class=\"coupon-content\">\n              <p></p>\n              <p class=\"long\"></p>\n              <p class=\"long long-s\"></p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"section-b-space section-t-space offer-section\" v-else>\n    <div class=\"container-fluid-lg\">\n      <div class=\"row g-md-4 g-3\">\n        <div class=\"col-xxl-3 col-lg-4 col-sm-6\" v-for=\"coupon in coupon?.data\" :key=\"coupon\">\n          <div class=\"coupon-box\">\n            <div class=\"coupon-name\">\n              <div class=\"card-name\">\n                <div>\n                  <h5 class=\"fw-semibold dark-text\">{{ coupon.title }}</h5>\n                </div>\n              </div>\n            </div>\n            <div class=\"coupon-content\">\n              <p>{{ coupon.description }}</p>\n              <div class=\"coupon-apply\">\n                <h6 class=\"coupon-code success-color\">#{{ coupon.code }}</h6>\n                <nuxtLink class=\"btn theme-btn border-btn copy-btn mt-0\" @click=\"copyFunction(coupon.code)\">{{ $t(\"Copy Code \")}}</nuxtLink>\n              </div>\n            </div>\n          </div>\n        </div>\n        <WidgetsNoData :classes=\"'no-data-added collection-no-data'\" :image=\"'/svg/no-product.svg'\"\n          :text=\"'I regret to inform you that the offer is currently unavailable.'\"\n          v-if=\"!coupon?.data?.length && !skeletonLoader\">\n        </WidgetsNoData>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  coupon: Object\n})\n\nconst skeletonLoader = ref(true)\nlet skeletonItems = Array.from({ length: 10 }, (_, index) => index);\nonMounted(() => {\n  setTimeout(() => {\n    skeletonLoader.value = false\n  }, 2000);\n})\n\nfunction copyFunction(txt) {\n  navigator.clipboard.writeText(txt)\n}\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056341374,
+      "end": 1716056341543,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341543,
+      "end": 1716056341543,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341543,
+      "end": 1716056341543,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341543,
+      "end": 1716056341543,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341543,
+      "end": 1716056341543,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056341543,
+      "end": 1716056341544,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056341544,
+      "end": 1716056341544,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056341544,
+      "end": 1716056341544,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056341544,
+      "end": 1716056341544,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056341544,
+      "end": 1716056341544,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056341544,
+      "end": 1716056341544,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, mergeProps as _mergeProps, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrRenderComponent as _ssrRenderComponent, ssrRenderList as _ssrRenderList, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  coupon: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nconst skeletonLoader = ref(true)\nlet skeletonItems = Array.from({ length: 10 }, (_, index) => index);\nonMounted(() => {\n  setTimeout(() => {\n    skeletonLoader.value = false\n  }, 2000);\n})\n\nfunction copyFunction(txt) {\n  navigator.clipboard.writeText(txt)\n}\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_nuxtLink = _resolveComponent(\"nuxtLink\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  if (_unref(skeletonLoader)) {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"section-b-space section-t-space offer-section skeleton-offer\" }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row g-md-4 g-3\"><!--[-->`)\n    _ssrRenderList(_unref(skeletonItems), (item) => {\n      _push(`<div class=\"col-xxl-3 col-lg-4 col-sm-6\"><div class=\"coupon-box\"><div class=\"coupon-name\"><div class=\"card-name\"><div><h5 class=\"fw-semibold dark-text\"></h5></div></div></div><div class=\"coupon-content\"><p></p><p class=\"long\"></p><p class=\"long long-s\"></p></div></div></div>`)\n    })\n    _push(`<!--]--></div></div></div>`)\n  } else {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"section-b-space section-t-space offer-section\" }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row g-md-4 g-3\"><!--[-->`)\n    _ssrRenderList(__props.coupon?.data, (coupon) => {\n      _push(`<div class=\"col-xxl-3 col-lg-4 col-sm-6\"><div class=\"coupon-box\"><div class=\"coupon-name\"><div class=\"card-name\"><div><h5 class=\"fw-semibold dark-text\">${\n        _ssrInterpolate(coupon.title)\n      }</h5></div></div></div><div class=\"coupon-content\"><p>${\n        _ssrInterpolate(coupon.description)\n      }</p><div class=\"coupon-apply\"><h6 class=\"coupon-code success-color\">#${\n        _ssrInterpolate(coupon.code)\n      }</h6>`)\n      _push(_ssrRenderComponent(_component_nuxtLink, {\n        class: \"btn theme-btn border-btn copy-btn mt-0\",\n        onClick: $event => (copyFunction(coupon.code))\n      }, {\n        default: _withCtx((_, _push, _parent, _scopeId) => {\n          if (_push) {\n            _push(`${_ssrInterpolate(_ctx.$t(\"Copy Code \"))}`)\n          } else {\n            return [\n              _createTextVNode(_toDisplayString(_ctx.$t(\"Copy Code \")), 1)\n            ]\n          }\n        }),\n        _: 2\n      }, _parent))\n      _push(`</div></div></div></div>`)\n    })\n    _push(`<!--]-->`)\n    if (!__props.coupon?.data?.length && !_unref(skeletonLoader)) {\n      _push(_ssrRenderComponent(_component_WidgetsNoData, {\n        classes: 'no-data-added collection-no-data',\n        image: '/svg/no-product.svg',\n        text: 'I regret to inform you that the offer is currently unavailable.'\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div></div>`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Pages/Offer/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341544,
+      "end": 1716056341544,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056341544,
+      "end": 1716056341544,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341544,
+      "end": 1716056341544,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341544,
+      "end": 1716056341544,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341544,
+      "end": 1716056341544,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341544,
+      "end": 1716056341544,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056341544,
+      "end": 1716056341544,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341544,
+      "end": 1716056341544,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056341544,
+      "end": 1716056341545,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { unref as _unref, mergeProps as _mergeProps, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrRenderComponent as _ssrRenderComponent, ssrRenderList as _ssrRenderList, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  props: {\n    coupon: Object\n  },\n  setup(__props) {\n    let props = __props;\n    const skeletonLoader = ref(true);\n    let skeletonItems = Array.from({ length: 10 }, (_, index) => index);\n    onMounted(() => {\n      setTimeout(() => {\n        skeletonLoader.value = false;\n      }, 2e3);\n    });\n    function copyFunction(txt) {\n      (void 0).clipboard.writeText(txt);\n    }\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_nuxtLink = _resolveComponent(\"nuxtLink\");\n      const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\");\n      if (_unref(skeletonLoader)) {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"section-b-space section-t-space offer-section skeleton-offer\" }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row g-md-4 g-3\"><!--[-->`);\n        _ssrRenderList(_unref(skeletonItems), (item) => {\n          _push(`<div class=\"col-xxl-3 col-lg-4 col-sm-6\"><div class=\"coupon-box\"><div class=\"coupon-name\"><div class=\"card-name\"><div><h5 class=\"fw-semibold dark-text\"></h5></div></div></div><div class=\"coupon-content\"><p></p><p class=\"long\"></p><p class=\"long long-s\"></p></div></div></div>`);\n        });\n        _push(`<!--]--></div></div></div>`);\n      } else {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"section-b-space section-t-space offer-section\" }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row g-md-4 g-3\"><!--[-->`);\n        _ssrRenderList(__props.coupon?.data, (coupon) => {\n          _push(`<div class=\"col-xxl-3 col-lg-4 col-sm-6\"><div class=\"coupon-box\"><div class=\"coupon-name\"><div class=\"card-name\"><div><h5 class=\"fw-semibold dark-text\">${_ssrInterpolate(coupon.title)}</h5></div></div></div><div class=\"coupon-content\"><p>${_ssrInterpolate(coupon.description)}</p><div class=\"coupon-apply\"><h6 class=\"coupon-code success-color\">#${_ssrInterpolate(coupon.code)}</h6>`);\n          _push(_ssrRenderComponent(_component_nuxtLink, {\n            class: \"btn theme-btn border-btn copy-btn mt-0\",\n            onClick: ($event) => copyFunction(coupon.code)\n          }, {\n            default: _withCtx((_, _push2, _parent2, _scopeId) => {\n              if (_push2) {\n                _push2(`${_ssrInterpolate(_ctx.$t(\"Copy Code \"))}`);\n              } else {\n                return [\n                  _createTextVNode(_toDisplayString(_ctx.$t(\"Copy Code \")), 1)\n                ];\n              }\n            }),\n            _: 2\n          }, _parent));\n          _push(`</div></div></div></div>`);\n        });\n        _push(`<!--]-->`);\n        if (!__props.coupon?.data?.length && !_unref(skeletonLoader)) {\n          _push(_ssrRenderComponent(_component_WidgetsNoData, {\n            classes: \"no-data-added collection-no-data\",\n            image: \"/svg/no-product.svg\",\n            text: \"I regret to inform you that the offer is currently unavailable.\"\n          }, null, _parent));\n        } else {\n          _push(`<!---->`);\n        }\n        _push(`</div></div></div>`);\n      }\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Pages/Offer/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056341545,
+      "end": 1716056341645,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056341645,
+      "end": 1716056341645,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056341645,
+      "end": 1716056341645,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056341645,
+      "end": 1716056341645,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056341645,
+      "end": 1716056341645,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056341645,
+      "end": 1716056341645,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056341645,
+      "end": 1716056341645,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056341645,
+      "end": 1716056341645,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341645,
+      "end": 1716056341645,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341645,
+      "end": 1716056341645,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { unref as _unref, mergeProps as _mergeProps, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrRenderComponent as _ssrRenderComponent, ssrRenderList as _ssrRenderList, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  props: {\n    coupon: Object\n  },\n  setup(__props) {\n    let props = __props;\n    const skeletonLoader = ref(true);\n    let skeletonItems = Array.from({ length: 10 }, (_, index) => index);\n    onMounted(() => {\n      setTimeout(() => {\n        skeletonLoader.value = false;\n      }, 2e3);\n    });\n    function copyFunction(txt) {\n      (void 0).clipboard.writeText(txt);\n    }\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_nuxtLink = _resolveComponent(\"nuxtLink\");\n      const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\");\n      if (_unref(skeletonLoader)) {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"section-b-space section-t-space offer-section skeleton-offer\" }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row g-md-4 g-3\"><!--[-->`);\n        _ssrRenderList(_unref(skeletonItems), (item) => {\n          _push(`<div class=\"col-xxl-3 col-lg-4 col-sm-6\"><div class=\"coupon-box\"><div class=\"coupon-name\"><div class=\"card-name\"><div><h5 class=\"fw-semibold dark-text\"></h5></div></div></div><div class=\"coupon-content\"><p></p><p class=\"long\"></p><p class=\"long long-s\"></p></div></div></div>`);\n        });\n        _push(`<!--]--></div></div></div>`);\n      } else {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"section-b-space section-t-space offer-section\" }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row g-md-4 g-3\"><!--[-->`);\n        _ssrRenderList(__props.coupon?.data, (coupon) => {\n          _push(`<div class=\"col-xxl-3 col-lg-4 col-sm-6\"><div class=\"coupon-box\"><div class=\"coupon-name\"><div class=\"card-name\"><div><h5 class=\"fw-semibold dark-text\">${_ssrInterpolate(coupon.title)}</h5></div></div></div><div class=\"coupon-content\"><p>${_ssrInterpolate(coupon.description)}</p><div class=\"coupon-apply\"><h6 class=\"coupon-code success-color\">#${_ssrInterpolate(coupon.code)}</h6>`);\n          _push(_ssrRenderComponent(_component_nuxtLink, {\n            class: \"btn theme-btn border-btn copy-btn mt-0\",\n            onClick: ($event) => copyFunction(coupon.code)\n          }, {\n            default: _withCtx((_, _push2, _parent2, _scopeId) => {\n              if (_push2) {\n                _push2(`${_ssrInterpolate(_ctx.$t(\"Copy Code \"))}`);\n              } else {\n                return [\n                  _createTextVNode(_toDisplayString(_ctx.$t(\"Copy Code \")), 1)\n                ];\n              }\n            }),\n            _: 2\n          }, _parent));\n          _push(`</div></div></div></div>`);\n        });\n        _push(`<!--]-->`);\n        if (!__props.coupon?.data?.length && !_unref(skeletonLoader)) {\n          _push(_ssrRenderComponent(_component_WidgetsNoData, {\n            classes: \"no-data-added collection-no-data\",\n            image: \"/svg/no-product.svg\",\n            text: \"I regret to inform you that the offer is currently unavailable.\"\n          }, null, _parent));\n        } else {\n          _push(`<!---->`);\n        }\n        _push(`</div></div></div>`);\n      }\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Pages/Offer/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056341645,
+      "end": 1716056341647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted } from 'vue';\nimport { unref as _unref, mergeProps as _mergeProps, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrRenderComponent as _ssrRenderComponent, ssrRenderList as _ssrRenderList, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  props: {\n    coupon: Object\n  },\n  setup(__props) {\n    let props = __props;\n    const skeletonLoader = ref(true);\n    let skeletonItems = Array.from({ length: 10 }, (_, index) => index);\n    onMounted(() => {\n      setTimeout(() => {\n        skeletonLoader.value = false;\n      }, 2e3);\n    });\n    function copyFunction(txt) {\n      (void 0).clipboard.writeText(txt);\n    }\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_nuxtLink = _resolveComponent(\"nuxtLink\");\n      const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\");\n      if (_unref(skeletonLoader)) {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"section-b-space section-t-space offer-section skeleton-offer\" }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row g-md-4 g-3\"><!--[-->`);\n        _ssrRenderList(_unref(skeletonItems), (item) => {\n          _push(`<div class=\"col-xxl-3 col-lg-4 col-sm-6\"><div class=\"coupon-box\"><div class=\"coupon-name\"><div class=\"card-name\"><div><h5 class=\"fw-semibold dark-text\"></h5></div></div></div><div class=\"coupon-content\"><p></p><p class=\"long\"></p><p class=\"long long-s\"></p></div></div></div>`);\n        });\n        _push(`<!--]--></div></div></div>`);\n      } else {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"section-b-space section-t-space offer-section\" }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row g-md-4 g-3\"><!--[-->`);\n        _ssrRenderList(__props.coupon?.data, (coupon) => {\n          _push(`<div class=\"col-xxl-3 col-lg-4 col-sm-6\"><div class=\"coupon-box\"><div class=\"coupon-name\"><div class=\"card-name\"><div><h5 class=\"fw-semibold dark-text\">${_ssrInterpolate(coupon.title)}</h5></div></div></div><div class=\"coupon-content\"><p>${_ssrInterpolate(coupon.description)}</p><div class=\"coupon-apply\"><h6 class=\"coupon-code success-color\">#${_ssrInterpolate(coupon.code)}</h6>`);\n          _push(_ssrRenderComponent(_component_nuxtLink, {\n            class: \"btn theme-btn border-btn copy-btn mt-0\",\n            onClick: ($event) => copyFunction(coupon.code)\n          }, {\n            default: _withCtx((_, _push2, _parent2, _scopeId) => {\n              if (_push2) {\n                _push2(`${_ssrInterpolate(_ctx.$t(\"Copy Code \"))}`);\n              } else {\n                return [\n                  _createTextVNode(_toDisplayString(_ctx.$t(\"Copy Code \")), 1)\n                ];\n              }\n            }),\n            _: 2\n          }, _parent));\n          _push(`</div></div></div></div>`);\n        });\n        _push(`<!--]-->`);\n        if (!__props.coupon?.data?.length && !_unref(skeletonLoader)) {\n          _push(_ssrRenderComponent(_component_WidgetsNoData, {\n            classes: \"no-data-added collection-no-data\",\n            image: \"/svg/no-product.svg\",\n            text: \"I regret to inform you that the offer is currently unavailable.\"\n          }, null, _parent));\n        } else {\n          _push(`<!---->`);\n        }\n        _push(`</div></div></div>`);\n      }\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Pages/Offer/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056341645,
+      "end": 1716056341647,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341647,
+      "end": 1716056341647,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341647,
+      "end": 1716056341647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341647,
+      "end": 1716056341647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341647,
+      "end": 1716056341647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056341647,
+      "end": 1716056341647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/NoData/index.vue\";\nimport { ref, onMounted } from 'vue';\nimport { unref as _unref, mergeProps as _mergeProps, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrRenderComponent as _ssrRenderComponent, ssrRenderList as _ssrRenderList, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  props: {\n    coupon: Object\n  },\n  setup(__props) {\n    let props = __props;\n    const skeletonLoader = ref(true);\n    let skeletonItems = Array.from({ length: 10 }, (_, index) => index);\n    onMounted(() => {\n      setTimeout(() => {\n        skeletonLoader.value = false;\n      }, 2e3);\n    });\n    function copyFunction(txt) {\n      (void 0).clipboard.writeText(txt);\n    }\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_nuxtLink = __nuxt_component_0;\n      const _component_WidgetsNoData = __nuxt_component_1;\n      if (_unref(skeletonLoader)) {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"section-b-space section-t-space offer-section skeleton-offer\" }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row g-md-4 g-3\"><!--[-->`);\n        _ssrRenderList(_unref(skeletonItems), (item) => {\n          _push(`<div class=\"col-xxl-3 col-lg-4 col-sm-6\"><div class=\"coupon-box\"><div class=\"coupon-name\"><div class=\"card-name\"><div><h5 class=\"fw-semibold dark-text\"></h5></div></div></div><div class=\"coupon-content\"><p></p><p class=\"long\"></p><p class=\"long long-s\"></p></div></div></div>`);\n        });\n        _push(`<!--]--></div></div></div>`);\n      } else {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"section-b-space section-t-space offer-section\" }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row g-md-4 g-3\"><!--[-->`);\n        _ssrRenderList(__props.coupon?.data, (coupon) => {\n          _push(`<div class=\"col-xxl-3 col-lg-4 col-sm-6\"><div class=\"coupon-box\"><div class=\"coupon-name\"><div class=\"card-name\"><div><h5 class=\"fw-semibold dark-text\">${_ssrInterpolate(coupon.title)}</h5></div></div></div><div class=\"coupon-content\"><p>${_ssrInterpolate(coupon.description)}</p><div class=\"coupon-apply\"><h6 class=\"coupon-code success-color\">#${_ssrInterpolate(coupon.code)}</h6>`);\n          _push(_ssrRenderComponent(_component_nuxtLink, {\n            class: \"btn theme-btn border-btn copy-btn mt-0\",\n            onClick: ($event) => copyFunction(coupon.code)\n          }, {\n            default: _withCtx((_, _push2, _parent2, _scopeId) => {\n              if (_push2) {\n                _push2(`${_ssrInterpolate(_ctx.$t(\"Copy Code \"))}`);\n              } else {\n                return [\n                  _createTextVNode(_toDisplayString(_ctx.$t(\"Copy Code \")), 1)\n                ];\n              }\n            }),\n            _: 2\n          }, _parent));\n          _push(`</div></div></div></div>`);\n        });\n        _push(`<!--]-->`);\n        if (!__props.coupon?.data?.length && !_unref(skeletonLoader)) {\n          _push(_ssrRenderComponent(_component_WidgetsNoData, {\n            classes: \"no-data-added collection-no-data\",\n            image: \"/svg/no-product.svg\",\n            text: \"I regret to inform you that the offer is currently unavailable.\"\n          }, null, _parent));\n        } else {\n          _push(`<!---->`);\n        }\n        _push(`</div></div></div>`);\n      }\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Pages/Offer/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056341647,
+      "end": 1716056341647,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/NoData/index.vue\";\nimport { ref, onMounted } from 'vue';\nimport { unref as _unref, mergeProps as _mergeProps, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrRenderComponent as _ssrRenderComponent, ssrRenderList as _ssrRenderList, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  props: {\n    coupon: Object\n  },\n  setup(__props) {\n    let props = __props;\n    const skeletonLoader = ref(true);\n    let skeletonItems = Array.from({ length: 10 }, (_, index) => index);\n     false && /*@__PURE__*/ onMounted(() => {\n      setTimeout(() => {\n        skeletonLoader.value = false;\n      }, 2e3);\n    });\n    function copyFunction(txt) {\n      (void 0).clipboard.writeText(txt);\n    }\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_nuxtLink = __nuxt_component_0;\n      const _component_WidgetsNoData = __nuxt_component_1;\n      if (_unref(skeletonLoader)) {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"section-b-space section-t-space offer-section skeleton-offer\" }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row g-md-4 g-3\"><!--[-->`);\n        _ssrRenderList(_unref(skeletonItems), (item) => {\n          _push(`<div class=\"col-xxl-3 col-lg-4 col-sm-6\"><div class=\"coupon-box\"><div class=\"coupon-name\"><div class=\"card-name\"><div><h5 class=\"fw-semibold dark-text\"></h5></div></div></div><div class=\"coupon-content\"><p></p><p class=\"long\"></p><p class=\"long long-s\"></p></div></div></div>`);\n        });\n        _push(`<!--]--></div></div></div>`);\n      } else {\n        _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"section-b-space section-t-space offer-section\" }, _attrs))}><div class=\"container-fluid-lg\"><div class=\"row g-md-4 g-3\"><!--[-->`);\n        _ssrRenderList(__props.coupon?.data, (coupon) => {\n          _push(`<div class=\"col-xxl-3 col-lg-4 col-sm-6\"><div class=\"coupon-box\"><div class=\"coupon-name\"><div class=\"card-name\"><div><h5 class=\"fw-semibold dark-text\">${_ssrInterpolate(coupon.title)}</h5></div></div></div><div class=\"coupon-content\"><p>${_ssrInterpolate(coupon.description)}</p><div class=\"coupon-apply\"><h6 class=\"coupon-code success-color\">#${_ssrInterpolate(coupon.code)}</h6>`);\n          _push(_ssrRenderComponent(_component_nuxtLink, {\n            class: \"btn theme-btn border-btn copy-btn mt-0\",\n            onClick: ($event) => copyFunction(coupon.code)\n          }, {\n            default: _withCtx((_, _push2, _parent2, _scopeId) => {\n              if (_push2) {\n                _push2(`${_ssrInterpolate(_ctx.$t(\"Copy Code \"))}`);\n              } else {\n                return [\n                  _createTextVNode(_toDisplayString(_ctx.$t(\"Copy Code \")), 1)\n                ];\n              }\n            }),\n            _: 2\n          }, _parent));\n          _push(`</div></div></div></div>`);\n        });\n        _push(`<!--]-->`);\n        if (!__props.coupon?.data?.length && !_unref(skeletonLoader)) {\n          _push(_ssrRenderComponent(_component_WidgetsNoData, {\n            classes: \"no-data-added collection-no-data\",\n            image: \"/svg/no-product.svg\",\n            text: \"I regret to inform you that the offer is currently unavailable.\"\n          }, null, _parent));\n        } else {\n          _push(`<!---->`);\n        }\n        _push(`</div></div></div>`);\n      }\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Pages/Offer/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056341647,
+      "end": 1716056341648,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056341648,
+      "end": 1716056341648,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056341648,
+      "end": 1716056341649,
+      "order": "normal"
+    }
+  ]
+}

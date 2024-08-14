@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div >\n    <AccountOrdersDetailsTitleHeader :order=\"filteredOrder\" />\n    <AccountOrdersDetailsTrackingPanel :order=\"filteredOrder\" :orderStatus=\"orderStatus\" />\n    <AccountOrdersDetailsProductTable :order=\"filteredOrder\" />\n    <div class=\"row\">\n      <div class=\"col-xxl-8 col-lg-12 col-md-7\">\n        <AccountOrdersDetailsConsumerDetails :order=\"filteredOrder\" />\n      </div>\n      <div class=\"col-xxl-4 col-lg-12 col-md-5\">\n        <AccountOrdersDetailsSummaryDetails :order=\"filteredOrder\" />\n      </div>\n    </div>\n    <AccountOrdersDetailsSubOrders :order=\"filteredOrder\" />\n  </div>\n</template>\n\n<script setup>\nconst route = useRoute();\nconst filteredOrder = ref(null);\n\n\nlet { data: order, pending } = await HandleRequest(`order`, {\n  key: \"getAllSingleOrder\",\n  params: 10,\n});\n\nlet { data: orderStatus } = await HandleRequest(\"orderStatus\", {\n  key: \"getorderStatus\",\n  params: 10,\n});\n\nonMounted(() => {\n  const params = route.params\n  const orderId = params.order_number;\n\n  if(orderId){\n    const allOrders = order.value.data;\n    filteredOrder.value = allOrders.find((order) => order.order_number == orderId); \n  } else {\n    filteredOrder.value = null; \n  }\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056286208,
+      "end": 1716056286597,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056286597,
+      "end": 1716056286597,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056286597,
+      "end": 1716056286597,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056286598,
+      "end": 1716056286598,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056286598,
+      "end": 1716056286598,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056286598,
+      "end": 1716056286598,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056286598,
+      "end": 1716056286598,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056286598,
+      "end": 1716056286598,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"row\" }\nconst _hoisted_2 = { class: \"col-xxl-8 col-lg-12 col-md-7\" }\nconst _hoisted_3 = { class: \"col-xxl-4 col-lg-12 col-md-5\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  async setup(__props) {\n\nlet __temp, __restore\n\nconst route = useRoute();\nconst filteredOrder = ref(null);\n\n\nlet { data: order, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(`order`, {\n  key: \"getAllSingleOrder\",\n  params: 10,\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nlet { data: orderStatus } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"orderStatus\", {\n  key: \"getorderStatus\",\n  params: 10,\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nonMounted(() => {\n  const params = route.params\n  const orderId = params.order_number;\n\n  if(orderId){\n    const allOrders = order.value.data;\n    filteredOrder.value = allOrders.find((order) => order.order_number == orderId); \n  } else {\n    filteredOrder.value = null; \n  }\n})\n\nreturn (_ctx, _cache) => {\n  const _component_AccountOrdersDetailsTitleHeader = _resolveComponent(\"AccountOrdersDetailsTitleHeader\")\n  const _component_AccountOrdersDetailsTrackingPanel = _resolveComponent(\"AccountOrdersDetailsTrackingPanel\")\n  const _component_AccountOrdersDetailsProductTable = _resolveComponent(\"AccountOrdersDetailsProductTable\")\n  const _component_AccountOrdersDetailsConsumerDetails = _resolveComponent(\"AccountOrdersDetailsConsumerDetails\")\n  const _component_AccountOrdersDetailsSummaryDetails = _resolveComponent(\"AccountOrdersDetailsSummaryDetails\")\n  const _component_AccountOrdersDetailsSubOrders = _resolveComponent(\"AccountOrdersDetailsSubOrders\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_AccountOrdersDetailsTitleHeader, { order: _unref(filteredOrder) }, null, 8, [\"order\"]),\n    _createVNode(_component_AccountOrdersDetailsTrackingPanel, {\n      order: _unref(filteredOrder),\n      orderStatus: _unref(orderStatus)\n    }, null, 8, [\"order\", \"orderStatus\"]),\n    _createVNode(_component_AccountOrdersDetailsProductTable, { order: _unref(filteredOrder) }, null, 8, [\"order\"]),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createVNode(_component_AccountOrdersDetailsConsumerDetails, { order: _unref(filteredOrder) }, null, 8, [\"order\"])\n      ]),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createVNode(_component_AccountOrdersDetailsSummaryDetails, { order: _unref(filteredOrder) }, null, 8, [\"order\"])\n      ])\n    ]),\n    _createVNode(_component_AccountOrdersDetailsSubOrders, { order: _unref(filteredOrder) }, null, 8, [\"order\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286598,
+      "end": 1716056286598,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056286598,
+      "end": 1716056286598,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286598,
+      "end": 1716056286598,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056286598,
+      "end": 1716056286599,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056286599,
+      "end": 1716056286599,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056286599,
+      "end": 1716056286599,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286599,
+      "end": 1716056286599,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056286599,
+      "end": 1716056286599,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056286599,
+      "end": 1716056286599,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056286599,
+      "end": 1716056286599,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056286599,
+      "end": 1716056286599,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056286599,
+      "end": 1716056286599,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056286599,
+      "end": 1716056286599,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056286599,
+      "end": 1716056286599,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056286599,
+      "end": 1716056286599,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056286599,
+      "end": 1716056286599,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056286599,
+      "end": 1716056286599,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useRoute } from '#app/composables/router';\nimport { ref, onMounted } from 'vue';\nimport { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"row\" }\nconst _hoisted_2 = { class: \"col-xxl-8 col-lg-12 col-md-7\" }\nconst _hoisted_3 = { class: \"col-xxl-4 col-lg-12 col-md-5\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  async setup(__props) {\n\nlet __temp, __restore\n\nconst route = useRoute();\nconst filteredOrder = ref(null);\n\n\nlet { data: order, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(`order`, {\n  key: \"getAllSingleOrder\",\n  params: 10,\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nlet { data: orderStatus } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"orderStatus\", {\n  key: \"getorderStatus\",\n  params: 10,\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nonMounted(() => {\n  const params = route.params\n  const orderId = params.order_number;\n\n  if(orderId){\n    const allOrders = order.value.data;\n    filteredOrder.value = allOrders.find((order) => order.order_number == orderId); \n  } else {\n    filteredOrder.value = null; \n  }\n})\n\nreturn (_ctx, _cache) => {\n  const _component_AccountOrdersDetailsTitleHeader = _resolveComponent(\"AccountOrdersDetailsTitleHeader\")\n  const _component_AccountOrdersDetailsTrackingPanel = _resolveComponent(\"AccountOrdersDetailsTrackingPanel\")\n  const _component_AccountOrdersDetailsProductTable = _resolveComponent(\"AccountOrdersDetailsProductTable\")\n  const _component_AccountOrdersDetailsConsumerDetails = _resolveComponent(\"AccountOrdersDetailsConsumerDetails\")\n  const _component_AccountOrdersDetailsSummaryDetails = _resolveComponent(\"AccountOrdersDetailsSummaryDetails\")\n  const _component_AccountOrdersDetailsSubOrders = _resolveComponent(\"AccountOrdersDetailsSubOrders\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_AccountOrdersDetailsTitleHeader, { order: _unref(filteredOrder) }, null, 8, [\"order\"]),\n    _createVNode(_component_AccountOrdersDetailsTrackingPanel, {\n      order: _unref(filteredOrder),\n      orderStatus: _unref(orderStatus)\n    }, null, 8, [\"order\", \"orderStatus\"]),\n    _createVNode(_component_AccountOrdersDetailsProductTable, { order: _unref(filteredOrder) }, null, 8, [\"order\"]),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createVNode(_component_AccountOrdersDetailsConsumerDetails, { order: _unref(filteredOrder) }, null, 8, [\"order\"])\n      ]),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createVNode(_component_AccountOrdersDetailsSummaryDetails, { order: _unref(filteredOrder) }, null, 8, [\"order\"])\n      ])\n    ]),\n    _createVNode(_component_AccountOrdersDetailsSubOrders, { order: _unref(filteredOrder) }, null, 8, [\"order\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286599,
+      "end": 1716056286602,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056286602,
+      "end": 1716056286602,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056286602,
+      "end": 1716056286602,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056286602,
+      "end": 1716056286602,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056286602,
+      "end": 1716056286602,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/TitleHeader.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/TrackingPanel.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/ProductTable.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/ConsumerDetails.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/SummaryDetails.vue\";\nimport { default as __nuxt_component_5 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/SubOrders.vue\";\nimport { useRoute } from '#app/composables/router';\nimport { ref, onMounted } from 'vue';\nimport { HandleRequest } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"row\" }\nconst _hoisted_2 = { class: \"col-xxl-8 col-lg-12 col-md-7\" }\nconst _hoisted_3 = { class: \"col-xxl-4 col-lg-12 col-md-5\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  async setup(__props) {\n\nlet __temp, __restore\n\nconst route = useRoute();\nconst filteredOrder = ref(null);\n\n\nlet { data: order, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(`order`, {\n  key: \"getAllSingleOrder\",\n  params: 10,\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nlet { data: orderStatus } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"orderStatus\", {\n  key: \"getorderStatus\",\n  params: 10,\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nonMounted(() => {\n  const params = route.params\n  const orderId = params.order_number;\n\n  if(orderId){\n    const allOrders = order.value.data;\n    filteredOrder.value = allOrders.find((order) => order.order_number == orderId); \n  } else {\n    filteredOrder.value = null; \n  }\n})\n\nreturn (_ctx, _cache) => {\n  const _component_AccountOrdersDetailsTitleHeader = __nuxt_component_0\n  const _component_AccountOrdersDetailsTrackingPanel = __nuxt_component_1\n  const _component_AccountOrdersDetailsProductTable = __nuxt_component_2\n  const _component_AccountOrdersDetailsConsumerDetails = __nuxt_component_3\n  const _component_AccountOrdersDetailsSummaryDetails = __nuxt_component_4\n  const _component_AccountOrdersDetailsSubOrders = __nuxt_component_5\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_AccountOrdersDetailsTitleHeader, { order: _unref(filteredOrder) }, null, 8, [\"order\"]),\n    _createVNode(_component_AccountOrdersDetailsTrackingPanel, {\n      order: _unref(filteredOrder),\n      orderStatus: _unref(orderStatus)\n    }, null, 8, [\"order\", \"orderStatus\"]),\n    _createVNode(_component_AccountOrdersDetailsProductTable, { order: _unref(filteredOrder) }, null, 8, [\"order\"]),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createVNode(_component_AccountOrdersDetailsConsumerDetails, { order: _unref(filteredOrder) }, null, 8, [\"order\"])\n      ]),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createVNode(_component_AccountOrdersDetailsSummaryDetails, { order: _unref(filteredOrder) }, null, 8, [\"order\"])\n      ])\n    ]),\n    _createVNode(_component_AccountOrdersDetailsSubOrders, { order: _unref(filteredOrder) }, null, 8, [\"order\"])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286602,
+      "end": 1716056286603,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056286603,
+      "end": 1716056286603,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056286603,
+      "end": 1716056286603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056286603,
+      "end": 1716056286603,
+      "order": "normal"
+    }
+  ]
+}

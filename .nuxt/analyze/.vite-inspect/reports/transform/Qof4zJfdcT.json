@@ -1,0 +1,214 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/RecursiveMenu.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n    <div v-for=\"menu in menus\" :key=\"menu.id\">\n        {{ menu.label }}\n        <recursive-menu v-if=\"menu.children\" :menus=\"menu.children\"></recursive-menu>\n    </div>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    menus: Array\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056287016,
+      "end": 1716056287218,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287218,
+      "end": 1716056287218,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287218,
+      "end": 1716056287218,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287218,
+      "end": 1716056287218,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287218,
+      "end": 1716056287218,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287218,
+      "end": 1716056287218,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287218,
+      "end": 1716056287218,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287218,
+      "end": 1716056287218,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createTextVNode as _createTextVNode } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'RecursiveMenu',\n  props: {\n    menus: Array\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  const _component_recursive_menu = _resolveComponent(\"recursive-menu\", true)\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.menus, (menu) => {\n      return (_openBlock(), _createElementBlock(\"div\", {\n        key: menu.id\n      }, [\n        _createTextVNode(_toDisplayString(menu.label) + \" \", 1),\n        (menu.children)\n          ? (_openBlock(), _createBlock(_component_recursive_menu, {\n              key: 0,\n              menus: menu.children\n            }, null, 8, [\"menus\"]))\n          : _createCommentVNode(\"\", true)\n      ]))\n    }), 128))\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287218,
+      "end": 1716056287219,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287219,
+      "end": 1716056287219,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056287219,
+      "end": 1716056287220,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287220,
+      "end": 1716056287220,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287220,
+      "end": 1716056287220,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287220,
+      "end": 1716056287220,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287220,
+      "end": 1716056287220,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056287220,
+      "end": 1716056287220,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287220,
+      "end": 1716056287220,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287220,
+      "end": 1716056287220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287220,
+      "end": 1716056287220,
+      "order": "normal"
+    }
+  ]
+}

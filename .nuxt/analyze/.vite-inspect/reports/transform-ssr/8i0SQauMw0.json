@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/sidebar/BlogCategory.vue?nuxt_component=async&nuxt_component_name=BlogSidebarBlogCategory",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n  <div>\n    <h2 class=\"accordion-header\" id=\"panelsStayOpen-headingTwo\">\n      <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"\n        data-bs-target=\"#panelsStayOpen-collapseTwo\">\n        {{ $t(\"Category\") }}\n      </button>\n    </h2>\n    <div id=\"panelsStayOpen-collapseTwo\" class=\"accordion-collapse collapse collapse show\">\n      <div class=\"accordion-body p-0\">\n        <div class=\"category-list-box\">\n          <ul>\n            <li v-for=\"category in category?.data\" :key=\"category\">\n              <nuxt-link class=\"dropdown-item\" :to=\"{ path: '/blog', query: { category: category?.slug } }\">\n                <div class=\"category-name\">\n                  <h5>{{ category?.name }}</h5>\n                  <span v-if=\"category?.blogs_count\">({{\n                    category?.blogs_count\n                  }})</span>\n                </div>\n              </nuxt-link>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n  <WidgetsNoData :classes=\"'no-data-added bg-light'\" :text=\"'No Category Found'\" v-if=\"!category?.data?.length\">\n  </WidgetsNoData>\n</div>\n</template>\n  \n<script setup>\nimport { HandleRequest } from \"~~/composables/HandleRequest\";\nlet { data: category } = HandleRequest(`category`, {\n  key: `GetBrownsByCategory`, params: { type: 'post' }\n});\n</script>\n  \n<style lang=\"scss\" scoped></style>",
+      "start": 1716056306301,
+      "end": 1716056313572,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056313573,
+      "end": 1716056313573,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056313573,
+      "end": 1716056313573,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056313573,
+      "end": 1716056313573,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056313573,
+      "end": 1716056313573,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056313573,
+      "end": 1716056313573,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056313573,
+      "end": 1716056313573,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056313573,
+      "end": 1716056313573,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056313573,
+      "end": 1716056313573,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056313573,
+      "end": 1716056313573,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056313573,
+      "end": 1716056313573,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { HandleRequest } from \"~~/composables/HandleRequest\";\n\nconst _sfc_main = {\n  __name: 'BlogCategory',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet { data: category } = HandleRequest(`category`, {\n  key: `GetBrownsByCategory`, params: { type: 'post' }\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_attrs)\n  }><div><h2 class=\"accordion-header\" id=\"panelsStayOpen-headingTwo\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#panelsStayOpen-collapseTwo\">${\n    _ssrInterpolate(_ctx.$t(\"Category\"))\n  }</button></h2><div id=\"panelsStayOpen-collapseTwo\" class=\"accordion-collapse collapse collapse show\"><div class=\"accordion-body p-0\"><div class=\"category-list-box\"><ul><!--[-->`)\n  _ssrRenderList(_unref(category)?.data, (category) => {\n    _push(`<li>`)\n    _push(_ssrRenderComponent(_component_nuxt_link, {\n      class: \"dropdown-item\",\n      to: { path: '/blog', query: { category: category?.slug } }\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(`<div class=\"category-name\"${\n            _scopeId\n          }><h5${\n            _scopeId\n          }>${\n            _ssrInterpolate(category?.name)\n          }</h5>`)\n          if (category?.blogs_count) {\n            _push(`<span${\n              _scopeId\n            }>(${\n              _ssrInterpolate(category?.blogs_count)\n            })</span>`)\n          } else {\n            _push(`<!---->`)\n          }\n          _push(`</div>`)\n        } else {\n          return [\n            _createVNode(\"div\", { class: \"category-name\" }, [\n              _createVNode(\"h5\", null, _toDisplayString(category?.name), 1),\n              (category?.blogs_count)\n                ? (_openBlock(), _createBlock(\"span\", { key: 0 }, \"(\" + _toDisplayString(category?.blogs_count) + \")\", 1))\n                : _createCommentVNode(\"\", true)\n            ])\n          ]\n        }\n      }),\n      _: 2\n    }, _parent))\n    _push(`</li>`)\n  })\n  _push(`<!--]--></ul></div></div></div></div>`)\n  if (!_unref(category)?.data?.length) {\n    _push(_ssrRenderComponent(_component_WidgetsNoData, {\n      classes: 'no-data-added bg-light',\n      text: 'No Category Found'\n    }, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Blog/sidebar/BlogCategory.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056313573,
+      "end": 1716056313576,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056313576,
+      "end": 1716056313576,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056313576,
+      "end": 1716056313576,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056313576,
+      "end": 1716056313576,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056313576,
+      "end": 1716056313576,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056313576,
+      "end": 1716056313576,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/sidebar/BlogCategory.vue\").then(r => r.default))",
+      "start": 1716056313576,
+      "end": 1716056313577,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056313577,
+      "end": 1716056313577,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056313577,
+      "end": 1716056313578,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056313578,
+      "end": 1716056313578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056313578,
+      "end": 1716056313578,
+      "order": "normal"
+    }
+  ]
+}

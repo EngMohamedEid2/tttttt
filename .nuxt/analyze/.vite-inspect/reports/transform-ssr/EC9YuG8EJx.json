@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Auth/CommonForm/LoginForm.vue?nuxt_component=async&nuxt_component_name=AuthCommonFormLoginForm",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <form class=\"row g-4\" @submit.prevent=\"HandleLogin()\">\n    <div class=\"col-12\">\n      <div class=\"form-floating log-in-form\">\n        <WidgetsInputFieldsEmailField classes=\"form-control\" v-model=\"input.email\" :formSubmitted=\"formSubmitted\"\n          id=\"email\" placeholder=\"Email Address\" />\n        <label for=\"email\">{{ $t(\"Email Address\") }}</label>\n      </div>\n    </div>\n    <div class=\"col-12\">\n      <div class=\"form-floating log-in-form\">\n        <WidgetsInputFieldsPasswordField classes=\"form-control\" v-model=\"input.password\" :formSubmitted=\"formSubmitted\"\n          id=\"password\" placeholder=\"Password\" />\n        <label for=\"password\">{{ $t(\"Password\") }}</label>\n      </div>\n    </div>\n    <div class=\"col-12\">\n      <div class=\"forgot-box\">\n        <div class=\"form-check ps-0 m-0 remember-box\">\n          <input class=\"checkbox_animated check-box\" type=\"checkbox\" id=\"remeberme\" />\n          <label class=\"form-check-label\" for=\"remeberme\">{{\n            $t(\"Remember me\")\n          }}</label>\n        </div>\n        <nuxt-link to=\"/auth/forgot-password\" class=\"forgot-password\">{{ $t(\"Forgot Password ?\") }}</nuxt-link>\n      </div>\n    </div>\n    <div class=\"col-12\">\n      <WidgetsButton :id=\"'login_btn'\">{{ $t(\"Log In\") }}</WidgetsButton>\n    </div>\n  </form>\n</template>\n\n<script setup>\nimport { useCartStore } from \"~~/store/cart\";\nimport { useUserStore } from \"~~/store/user\";\nlet input = ref({\n  email: { data: \"john.customer@example.com\" },\n  password: { data: \"123456789\" },\n});\nlet formSubmitted = ref(false);\nvar breadcrumbs = { page: \"Log In\", links: [{ name: \"Log In\" }] };\n\nconst HandleLogin = async () => {\n  formSubmitted = true;\n  if (input.value.email.data != \"\" && input.value.password.data != \"\") {\n\n    let login = {\n      email: input.value.email.data,\n      password: input.value.password.data,\n      access_token: \"950|ymQRD5qdiWikHpWyio5NN1Zw1ot5bTYnUxgGrXJCf980d31d\"\n    }\n    let userData = {\n      isLoggedIn: true,\n      email: input?.value?.email?.data,\n      uat: login?.access_token,\n    };\n\n    localStorage.setItem(\"usersAccount\", JSON.stringify(userData));\n    useCookie(\"uat\").value = login?.access_token;\n\n    useUserStore().GetUserInfo();\n    useUserStore().SetUser({\n      isLoggedIn: true,\n      email: input.value.email.data,\n      uat: login?.access_token,\n    });\n    useCartStore().GetCartDataFromApi();\n    navigateTo(NavigationLinks.user_Dashboard);\n  }\n};\n</script>\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056306196,
+      "end": 1716056306336,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306336,
+      "end": 1716056306336,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306336,
+      "end": 1716056306336,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306336,
+      "end": 1716056306336,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306336,
+      "end": 1716056306336,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056306336,
+      "end": 1716056306336,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056306336,
+      "end": 1716056306336,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056306336,
+      "end": 1716056306336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056306336,
+      "end": 1716056306336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056306337,
+      "end": 1716056306337,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056306337,
+      "end": 1716056306337,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { useCartStore } from \"~~/store/cart\";\nimport { useUserStore } from \"~~/store/user\";\n\nconst _sfc_main = {\n  __name: 'LoginForm',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet input = ref({\n  email: { data: \"john.customer@example.com\" },\n  password: { data: \"123456789\" },\n});\nlet formSubmitted = ref(false);\nvar breadcrumbs = { page: \"Log In\", links: [{ name: \"Log In\" }] };\n\nconst HandleLogin = async () => {\n  formSubmitted = true;\n  if (input.value.email.data != \"\" && input.value.password.data != \"\") {\n\n    let login = {\n      email: input.value.email.data,\n      password: input.value.password.data,\n      access_token: \"950|ymQRD5qdiWikHpWyio5NN1Zw1ot5bTYnUxgGrXJCf980d31d\"\n    }\n    let userData = {\n      isLoggedIn: true,\n      email: input?.value?.email?.data,\n      uat: login?.access_token,\n    };\n\n    localStorage.setItem(\"usersAccount\", JSON.stringify(userData));\n    useCookie(\"uat\").value = login?.access_token;\n\n    useUserStore().GetUserInfo();\n    useUserStore().SetUser({\n      isLoggedIn: true,\n      email: input.value.email.data,\n      uat: login?.access_token,\n    });\n    useCartStore().GetCartDataFromApi();\n    navigateTo(NavigationLinks.user_Dashboard);\n  }\n};\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsInputFieldsEmailField = _resolveComponent(\"WidgetsInputFieldsEmailField\")\n  const _component_WidgetsInputFieldsPasswordField = _resolveComponent(\"WidgetsInputFieldsPasswordField\")\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<form${_ssrRenderAttrs(_mergeProps({ class: \"row g-4\" }, _attrs))}><div class=\"col-12\"><div class=\"form-floating log-in-form\">`)\n  _push(_ssrRenderComponent(_component_WidgetsInputFieldsEmailField, {\n    classes: \"form-control\",\n    modelValue: _unref(input).email,\n    \"onUpdate:modelValue\": $event => ((_unref(input).email) = $event),\n    formSubmitted: _unref(formSubmitted),\n    id: \"email\",\n    placeholder: \"Email Address\"\n  }, null, _parent))\n  _push(`<label for=\"email\">${_ssrInterpolate(_ctx.$t(\"Email Address\"))}</label></div></div><div class=\"col-12\"><div class=\"form-floating log-in-form\">`)\n  _push(_ssrRenderComponent(_component_WidgetsInputFieldsPasswordField, {\n    classes: \"form-control\",\n    modelValue: _unref(input).password,\n    \"onUpdate:modelValue\": $event => ((_unref(input).password) = $event),\n    formSubmitted: _unref(formSubmitted),\n    id: \"password\",\n    placeholder: \"Password\"\n  }, null, _parent))\n  _push(`<label for=\"password\">${\n    _ssrInterpolate(_ctx.$t(\"Password\"))\n  }</label></div></div><div class=\"col-12\"><div class=\"forgot-box\"><div class=\"form-check ps-0 m-0 remember-box\"><input class=\"checkbox_animated check-box\" type=\"checkbox\" id=\"remeberme\"><label class=\"form-check-label\" for=\"remeberme\">${\n    _ssrInterpolate(_ctx.$t(\"Remember me\"))\n  }</label></div>`)\n  _push(_ssrRenderComponent(_component_nuxt_link, {\n    to: \"/auth/forgot-password\",\n    class: \"forgot-password\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t(\"Forgot Password ?\"))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Forgot Password ?\")), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div><div class=\"col-12\">`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, { id: 'login_btn' }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_ctx.$t(\"Log In\"))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_ctx.$t(\"Log In\")), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></form>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Auth/CommonForm/LoginForm.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056306337,
+      "end": 1716056306339,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Auth/CommonForm/LoginForm.vue\").then(r => r.default))",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056306339,
+      "end": 1716056306339,
+      "order": "normal"
+    }
+  ]
+}

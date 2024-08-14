@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Seller/BecomeSeller/Business.vue?nuxt_component=async&nuxt_component_name=ShopSellerBecomeSellerBusiness",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <section class=\"business-section section-b-space\" v-if=\"sellerStore.status\">\n      <div class=\"container-fluid-lg\">\n        <div class=\"vendor-title mb-5\">\n          <h5>{{ sellerStore.title }}</h5>\n        </div>\n        <div class=\"business-contain\">\n          <div class=\"row g-xl-4 g-3\">\n            <div class=\"col-sm-6 col-xl-4\">\n              <div class=\"business-box\">\n                <div>\n                  <div class=\"business-number\">\n                    <h2>1</h2>\n                  </div>\n                  <div class=\"business-detail\">\n                    <h4>{{ sellerStore.step_1.title }}</h4>\n                    <p>{{ sellerStore.step_1.description }}</p>\n                  </div>\n                </div>\n              </div>\n            </div>\n\n            <div class=\"col-sm-6 col-xl-4\">\n              <div class=\"business-box\">\n                <div>\n                  <div class=\"business-number\">\n                    <h2>2</h2>\n                  </div>\n                  <div class=\"business-detail\">\n                    <h4>{{ sellerStore.step_2.title }}</h4>\n                    <p>{{ sellerStore.step_2.description }}</p>\n                  </div>\n                </div>\n              </div>\n            </div>\n\n            <div class=\"col-sm-6 col-xl-4\">\n              <div class=\"business-box\">\n                <div>\n                  <div class=\"business-number\">\n                    <h2>3</h2>\n                  </div>\n                  <div class=\"business-detail\">\n                    <h4>{{ sellerStore.step_3.title }}</h4>\n                    <p>{{ sellerStore.step_3.description }}</p>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  sellerStore: Object,\n});\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056284679,
+      "end": 1716056284827,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284827,
+      "end": 1716056284827,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284827,
+      "end": 1716056284827,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284827,
+      "end": 1716056284827,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284827,
+      "end": 1716056284827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284827,
+      "end": 1716056284827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284827,
+      "end": 1716056284827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284827,
+      "end": 1716056284827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"business-section section-b-space\"\n}\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"vendor-title mb-5\" }\nconst _hoisted_4 = { class: \"business-contain\" }\nconst _hoisted_5 = { class: \"row g-xl-4 g-3\" }\nconst _hoisted_6 = { class: \"col-sm-6 col-xl-4\" }\nconst _hoisted_7 = { class: \"business-box\" }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"business-number\" }, [\n  /*#__PURE__*/_createElementVNode(\"h2\", null, \"1\")\n], -1)\nconst _hoisted_9 = { class: \"business-detail\" }\nconst _hoisted_10 = { class: \"col-sm-6 col-xl-4\" }\nconst _hoisted_11 = { class: \"business-box\" }\nconst _hoisted_12 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"business-number\" }, [\n  /*#__PURE__*/_createElementVNode(\"h2\", null, \"2\")\n], -1)\nconst _hoisted_13 = { class: \"business-detail\" }\nconst _hoisted_14 = { class: \"col-sm-6 col-xl-4\" }\nconst _hoisted_15 = { class: \"business-box\" }\nconst _hoisted_16 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"business-number\" }, [\n  /*#__PURE__*/_createElementVNode(\"h2\", null, \"3\")\n], -1)\nconst _hoisted_17 = { class: \"business-detail\" }\n\n\nconst _sfc_main = {\n  __name: 'Business',\n  props: {\n  sellerStore: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (__props.sellerStore.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createElementVNode(\"div\", _hoisted_3, [\n              _createElementVNode(\"h5\", null, _toDisplayString(__props.sellerStore.title), 1)\n            ]),\n            _createElementVNode(\"div\", _hoisted_4, [\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createElementVNode(\"div\", _hoisted_6, [\n                  _createElementVNode(\"div\", _hoisted_7, [\n                    _createElementVNode(\"div\", null, [\n                      _hoisted_8,\n                      _createElementVNode(\"div\", _hoisted_9, [\n                        _createElementVNode(\"h4\", null, _toDisplayString(__props.sellerStore.step_1.title), 1),\n                        _createElementVNode(\"p\", null, _toDisplayString(__props.sellerStore.step_1.description), 1)\n                      ])\n                    ])\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_10, [\n                  _createElementVNode(\"div\", _hoisted_11, [\n                    _createElementVNode(\"div\", null, [\n                      _hoisted_12,\n                      _createElementVNode(\"div\", _hoisted_13, [\n                        _createElementVNode(\"h4\", null, _toDisplayString(__props.sellerStore.step_2.title), 1),\n                        _createElementVNode(\"p\", null, _toDisplayString(__props.sellerStore.step_2.description), 1)\n                      ])\n                    ])\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_14, [\n                  _createElementVNode(\"div\", _hoisted_15, [\n                    _createElementVNode(\"div\", null, [\n                      _hoisted_16,\n                      _createElementVNode(\"div\", _hoisted_17, [\n                        _createElementVNode(\"h4\", null, _toDisplayString(__props.sellerStore.step_3.title), 1),\n                        _createElementVNode(\"p\", null, _toDisplayString(__props.sellerStore.step_3.description), 1)\n                      ])\n                    ])\n                  ])\n                ])\n              ])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284827,
+      "end": 1716056284829,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Seller/BecomeSeller/Business.vue\").then(r => r.default))",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Seller/BecomeSeller/Business.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284829,
+      "end": 1716056284829,
+      "order": "normal"
+    }
+  ]
+}

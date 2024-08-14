@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/filter/Price.vue?nuxt_component=async&nuxt_component_name=ShopCollectionWidgetsFilterPrice",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <ul class=\"category-list custom-padding custom-height\">\n        <li v-for=\"(price,index) of prices\" :key=\"index\">\n            <div class=\"form-check ps-0 m-0 category-list-box\">\n                <input class=\"checkbox_animated\" type=\"checkbox\" :id=\"'price-filter'+index\"\n                    v-model=\"store.filterObject.selectedPrice\"  :value=\"price.value\" />\n                <label class=\"form-check-label\" :for=\"'price-filter'+index\">\n                    <span class=\"name\" v-if=\"price.price\">{{ price.text }} - $ {{ price.price }}</span>\n                    <template v-else>\n                        <span class=\"name\">$ {{ price.minPrice }} - $ {{ price.maxPrice }}</span>\n                    </template>\n                </label>\n            </div>\n        </li>\n    </ul>\n</template>\n\n<script setup>\nimport { useCollectionStore } from '~/store/collection';\nimport { useDataStore } from '~/store/data';\nlet props = defineProps({\n    filter:Object\n})\nlet store = useCollectionStore();\nlet prices = ref([\n    {\n        id: 1,\n        price: 100,\n        text: 'Below',\n        value: '100'\n    },\n    {\n        id: 2,\n        minPrice: 100,\n        maxPrice: 200,\n        value: '0-200'\n    },\n    {\n        id: 3,\n        minPrice: 200,\n        maxPrice: 400,\n        value: '200-400'\n    },\n    {\n        id: 4,\n        minPrice: 400,\n        maxPrice: 600,\n        value: '400-600'\n    },\n    {\n        id: 5,\n        minPrice: 600,\n        maxPrice: 800,\n        value: '600-800'\n    },\n    {\n        id: 6,\n        minPrice: 800,\n        maxPrice: 1000,\n        value: '800-1000'\n    },\n    {\n        id: 7,\n        price: 1000,\n        text: 'Above',\n        value: '1000'\n    }\n]\n)\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056271407,
+      "end": 1716056271527,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271527,
+      "end": 1716056271527,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271527,
+      "end": 1716056271527,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271527,
+      "end": 1716056271527,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271527,
+      "end": 1716056271527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271527,
+      "end": 1716056271527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271527,
+      "end": 1716056271527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271527,
+      "end": 1716056271527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, vModelCheckbox as _vModelCheckbox, createElementVNode as _createElementVNode, withDirectives as _withDirectives, toDisplayString as _toDisplayString, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"category-list custom-padding custom-height\" }\nconst _hoisted_2 = { class: \"form-check ps-0 m-0 category-list-box\" }\nconst _hoisted_3 = [\"id\", \"value\"]\nconst _hoisted_4 = [\"for\"]\nconst _hoisted_5 = {\n  key: 0,\n  class: \"name\"\n}\nconst _hoisted_6 = {\n  key: 1,\n  class: \"name\"\n}\n\nimport { useCollectionStore } from '~/store/collection';\nimport { useDataStore } from '~/store/data';\n\nconst _sfc_main = {\n  __name: 'Price',\n  props: {\n    filter:Object\n},\n  setup(__props) {\n\nlet props = __props\nlet store = useCollectionStore();\nlet prices = ref([\n    {\n        id: 1,\n        price: 100,\n        text: 'Below',\n        value: '100'\n    },\n    {\n        id: 2,\n        minPrice: 100,\n        maxPrice: 200,\n        value: '0-200'\n    },\n    {\n        id: 3,\n        minPrice: 200,\n        maxPrice: 400,\n        value: '200-400'\n    },\n    {\n        id: 4,\n        minPrice: 400,\n        maxPrice: 600,\n        value: '400-600'\n    },\n    {\n        id: 5,\n        minPrice: 600,\n        maxPrice: 800,\n        value: '600-800'\n    },\n    {\n        id: 6,\n        minPrice: 800,\n        maxPrice: 1000,\n        value: '800-1000'\n    },\n    {\n        id: 7,\n        price: 1000,\n        text: 'Above',\n        value: '1000'\n    }\n]\n)\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"ul\", _hoisted_1, [\n    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(prices), (price, index) => {\n      return (_openBlock(), _createElementBlock(\"li\", { key: index }, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _withDirectives(_createElementVNode(\"input\", {\n            class: \"checkbox_animated\",\n            type: \"checkbox\",\n            id: 'price-filter'+index,\n            \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_unref(store).filterObject.selectedPrice) = $event)),\n            value: price.value\n          }, null, 8, _hoisted_3), [\n            [_vModelCheckbox, _unref(store).filterObject.selectedPrice]\n          ]),\n          _createElementVNode(\"label\", {\n            class: \"form-check-label\",\n            for: 'price-filter'+index\n          }, [\n            (price.price)\n              ? (_openBlock(), _createElementBlock(\"span\", _hoisted_5, _toDisplayString(price.text) + \" - $ \" + _toDisplayString(price.price), 1))\n              : (_openBlock(), _createElementBlock(\"span\", _hoisted_6, \"$ \" + _toDisplayString(price.minPrice) + \" - $ \" + _toDisplayString(price.maxPrice), 1))\n          ], 8, _hoisted_4)\n        ])\n      ]))\n    }), 128))\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056271527,
+      "end": 1716056271530,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/filter/Price.vue\").then(r => r.default))",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271530,
+      "end": 1716056271530,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271530,
+      "end": 1716056271531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271531,
+      "end": 1716056271531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271531,
+      "end": 1716056271531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271531,
+      "end": 1716056271531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271531,
+      "end": 1716056271531,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/filter/Price.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271531,
+      "end": 1716056271531,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271531,
+      "end": 1716056271531,
+      "order": "normal"
+    }
+  ]
+}

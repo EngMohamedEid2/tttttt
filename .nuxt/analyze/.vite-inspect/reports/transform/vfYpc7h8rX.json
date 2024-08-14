@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/ConfrmationModal/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"modal-body text-center p-3\">\n        <Icon name=\"ri:question-line\" class=\"icon-box wo-bg\"></Icon>\n        <h5 class=\"modal-title\">{{ $t('Confirmation') }}</h5>\n        <p>{{ $t('Are you sure you want to proceed?') }}?</p>\n        <div class=\"button-box\">\n            <WidgetsButton :classes=\"'btn btn-md fw-bold btn-theme-outline'\" :id=\"'confirm_no_btn'\"\n                @onClick=\"() => { emit('close'); }\">\n                {{ $t('No') }}\n            </WidgetsButton>\n            <WidgetsButton :classes=\"'btn theme-bg-color btn-md fw-bold text-light'\" :id=\"'confirm_yes_btn'\"\n                @onClick=\"() => { emit('confirm'); }\">\n                {{ $t('Yes') }}\n            </WidgetsButton>\n        </div>\n    </div>\n</template>\n\n<script setup>\nlet emit = defineEmits(['confirm', 'close'])\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056288260,
+      "end": 1716056288399,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056288400,
+      "end": 1716056288400,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056288400,
+      "end": 1716056288400,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056288400,
+      "end": 1716056288400,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056288400,
+      "end": 1716056288400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056288400,
+      "end": 1716056288400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056288400,
+      "end": 1716056288400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056288400,
+      "end": 1716056288400,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"modal-body text-center p-3\" }\nconst _hoisted_2 = { class: \"modal-title\" }\nconst _hoisted_3 = { class: \"button-box\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  emits: ['confirm', 'close'],\n  setup(__props, { emit: __emit }) {\n\nlet emit = __emit\n\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_Icon, {\n      name: \"ri:question-line\",\n      class: \"icon-box wo-bg\"\n    }),\n    _createElementVNode(\"h5\", _hoisted_2, _toDisplayString(_ctx.$t('Confirmation')), 1),\n    _createElementVNode(\"p\", null, _toDisplayString(_ctx.$t('Are you sure you want to proceed?')) + \"?\", 1),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn btn-md fw-bold btn-theme-outline',\n        id: 'confirm_no_btn',\n        onOnClick: _cache[0] || (_cache[0] = () => { _unref(emit)('close'); })\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString(_ctx.$t('No')), 1)\n        ]),\n        _: 1\n      }),\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn theme-bg-color btn-md fw-bold text-light',\n        id: 'confirm_yes_btn',\n        onOnClick: _cache[1] || (_cache[1] = () => { _unref(emit)('confirm'); })\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString(_ctx.$t('Yes')), 1)\n        ]),\n        _: 1\n      })\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288400,
+      "end": 1716056288401,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056288401,
+      "end": 1716056288401,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056288401,
+      "end": 1716056288403,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056288403,
+      "end": 1716056288403,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056288403,
+      "end": 1716056288403,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056288403,
+      "end": 1716056288403,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056288403,
+      "end": 1716056288403,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"modal-body text-center p-3\" }\nconst _hoisted_2 = { class: \"modal-title\" }\nconst _hoisted_3 = { class: \"button-box\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  emits: ['confirm', 'close'],\n  setup(__props, { emit: __emit }) {\n\nlet emit = __emit\n\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_WidgetsButton = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_Icon, {\n      name: \"ri:question-line\",\n      class: \"icon-box wo-bg\"\n    }),\n    _createElementVNode(\"h5\", _hoisted_2, _toDisplayString(_ctx.$t('Confirmation')), 1),\n    _createElementVNode(\"p\", null, _toDisplayString(_ctx.$t('Are you sure you want to proceed?')) + \"?\", 1),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn btn-md fw-bold btn-theme-outline',\n        id: 'confirm_no_btn',\n        onOnClick: _cache[0] || (_cache[0] = () => { _unref(emit)('close'); })\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString(_ctx.$t('No')), 1)\n        ]),\n        _: 1\n      }),\n      _createVNode(_component_WidgetsButton, {\n        classes: 'btn theme-bg-color btn-md fw-bold text-light',\n        id: 'confirm_yes_btn',\n        onOnClick: _cache[1] || (_cache[1] = () => { _unref(emit)('confirm'); })\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString(_ctx.$t('Yes')), 1)\n        ]),\n        _: 1\n      })\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056288403,
+      "end": 1716056288403,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056288403,
+      "end": 1716056288403,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056288403,
+      "end": 1716056288403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056288403,
+      "end": 1716056288403,
+      "order": "normal"
+    }
+  ]
+}

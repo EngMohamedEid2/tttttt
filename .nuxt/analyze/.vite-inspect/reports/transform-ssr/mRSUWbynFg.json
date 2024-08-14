@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Tokyo/index.vue?nuxt_component=async&nuxt_component_name=ThemesTokyo",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <!-- Home Section Start -->\n  <section class=\"home-section home-section-ratio pt-md-2 pt-4\">\n    <ThemesWidgetsHomeBannerTokyo :theme=\"'tokyo'\" :data=\"data?.content?.home_banner\" />\n  </section>\n  <!-- Home Section End -->\n\n  <!-- Category Section Start -->\n  <section v-if=\"data?.content?.categories_icon_list?.status\">\n    <div class=\"container-fluid-lg\">\n      <ThemesWidgetsCategories  :style=\"'horizontal'\" :slidesPerView=\"9\"\n        :categoryIds=\"data?.content?.categories_icon_list?.category_ids || []\"\n        :image=\"data?.content?.categories_icon_list?.image_url\" :theme=\"'paris'\" />\n    </div>\n  </section>\n  <!-- Category Section End -->\n\n  <!-- Discount Section Start -->\n  <section v-if=\"data?.content?.coupons?.status\">\n    <div class=\"container-fluid-lg\">\n      <div class=\"row\">\n        <div class=\"col-12 sale-banner\">\n          <ThemesWidgetsBanner :banners=\"data?.content?.coupons\" :classes=\"'banner-contain hover-effect'\"\n            :style=\"'full_width'\" />\n        </div>\n      </div>\n    </div>\n  </section>\n  <!-- Discount Section End -->\n\n  <!-- Banner Section Start -->\n  <section class=\"banner-section ratio_60 wow fadeInUp\" v-if=\"data?.content?.featured_banners?.status\">\n    <ThemesWidgetsBanner :banners=\"data?.content?.featured_banners?.banners\" :style=\"'horizontal'\" />\n  </section>\n  <!-- Banner Section End -->\n\n  <!-- Product Section Start -->\n  <section>\n    <div class=\"container-fluid-lg\">\n      <div class=\"row g-3\">\n        <div :class=\"data?.content?.main_content?.sidebar?.status ? 'col-xxl-9 col-xl-8' : 'col-xxl-12 col-xl-12'\">\n          <!-- Product Box Horizontal Style-->\n          <div v-if=\"data?.content?.main_content?.section1_products?.status &&\n            data?.content?.main_content?.section1_products?.product_ids?.length >= 5\">\n            <div>\n              <WidgetsTitle :title=\"data?.content?.main_content?.section1_products?.title\"\n                :description=\"data?.content?.main_content?.section1_products?.description\" :svg=\"'cake'\" />\n              <ThemesWidgetsProduct :Products=\"product\" :spaceBetween=\"15\"\n                :productIds=\"data?.content?.main_content?.section1_products?.product_ids || []\" :slider=\"true\"\n                :style=\"'horizontal'\" :boxClass=\"'product-box-bg'\" :productstyle=\"'product-standard'\" />\n            </div>\n          </div>\n\n          <!-- Product Box Classic Style-->\n          <div v-if=\"data?.content?.main_content?.section2_slider_products?.status &&\n            data?.content?.main_content?.section2_slider_products?.product_ids?.length >= 5\">\n            <div class=\"section-t-space\">\n              <WidgetsTitle :title=\"data?.content?.main_content?.section2_slider_products?.title\"\n                :description=\"data?.content?.main_content?.section2_slider_products?.description\" :svg=\"'cake'\" />\n\n              <ThemesWidgetsProduct :Products=\"product\"\n                :productIds=\"data?.content?.main_content?.section2_slider_products?.product_ids || []\" :style=\"'classic'\"\n                :boxClass=\"'product-box-bg'\" />\n            </div>\n          </div>\n\n          <!-- Product Box Horizontal Style-->\n          <div v-if=\"data?.content?.main_content?.section3_products?.status &&\n            data?.content?.main_content?.section3_products?.product_ids?.length >= 5\">\n            <div class=\"section-t-space\">\n              <WidgetsTitle :title=\"data?.content?.main_content?.section3_products?.title\"\n                :description=\"data?.content?.main_content?.section3_products?.description\" :svg=\"'cake'\" />\n              <ThemesWidgetsProduct :Products=\"product\" :spaceBetween=\"15\"\n                :productIds=\"data?.content?.main_content?.section3_products?.product_ids || []\" :slider=\"true\"\n                :productstyle=\"'product-standard'\" :style=\"'horizontal'\" :boxClass=\"'product-box-bg'\" />\n            </div>\n          </div>\n\n          <!-- Product Box Horizontal Style-->\n          <div v-if=\"data?.content?.main_content?.section4_products?.status &&\n            data?.content?.main_content?.section4_products?.product_ids?.length >= 5\">\n            <div class=\"section-t-space\">\n              <WidgetsTitle :title=\"data?.content?.main_content?.section4_products?.title\"\n                :description=\"data?.content?.main_content?.section4_products?.description\" :svg=\"'cake'\" />\n              <ThemesWidgetsProduct :Products=\"product\" :spaceBetween=\"15\"\n                :productIds=\"data?.content?.main_content?.section4_products?.product_ids || []\" :slider=\"true\"\n                :productstyle=\"'product-standard'\" :style=\"'horizontal'\" :boxClass=\"'product-box-bg'\" />\n            </div>\n          </div>\n        </div>\n\n        <!-- Theme Banner-->\n        <div class=\"col-xxl-3 col-xl-4 d-none d-xl-block\" v-if=\"data?.content?.main_content?.sidebar?.status\">\n          <div class=\"position-sticky top-0\">\n            <ThemesWidgetsBanner :classes=\"'ratio_209 rounded'\"\n              :banners=\"data?.content?.main_content?.sidebar?.right_side_banners?.banner_1\" :style=\"'vertical'\" />\n            <ThemesWidgetsBanner :classes=\"'ratio_125 section-t-space'\"\n              :banners=\"data?.content?.main_content?.sidebar?.right_side_banners?.banner_2\" :style=\"'vertical'\" />\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n  <!-- Product Section End -->\n\n  <!-- Banner Section Start -->\n  <div v-if=\"data?.content?.full_width_banner?.status\">\n    <section>\n      <div class=\"container-fluid-lg\">\n        <div class=\"row\">\n          <div class=\"col-12\">\n            <WidgetsImageLink :image=\"data?.content?.full_width_banner\" :bgImage=\"false\"\n              :class=\"'home-contain hover-effect'\" />\n          </div>\n        </div>\n      </div>\n    </section>\n  </div>\n  <!-- Banner Section End -->\n\n  <!-- Four-column Start -->\n  <div v-if=\"data?.content?.slider_products?.status\">\n    <section class=\"top-selling-section\">\n      <div class=\"container-fluid-lg\">\n        <ThemesWidgetsFourColumnProduct :Products=\"product\" :data=\"data?.content?.slider_products\" />\n      </div>\n    </section>\n  </div>\n  <!-- Four-column End -->\n\n  <!-- Newsletter Section Start -->\n  <div v-if=\"data?.content?.news_letter?.status\">\n    <section class=\"newsletter-section section-b-space\">\n      <ThemesWidgetsNewsletter :data=\"data?.content?.news_letter\" />\n    </section>\n  </div>\n  <!-- Newsletter Section End -->\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  data: Object\n})\n\nlet { data, pending } = await HandleRequest(\"theme/tokyo\", {\n  key: \"getAllTokyo\",\n  // params: { slug: 'tokyo' }\n});\n\nlet { data: product, error } = await HandleRequest(\"product\", {\n  key: \"getThemeParisProduct\",\n  params: { status: 1, theme: 'tokyo', ids: data?.value?.content?.products_ids.join(',') }\n});\n\nonMounted(() => {\n  // Note: This Customization is only for this tokyo theme, otherwise you can change it in the settings from the backend.\n  // Change color for this layout\n  document.documentElement.style.setProperty('--theme-color', '#d99f46')\n\n  // Add Topbar Dark Class\n  document.querySelector('.header-top')?.classList.add('bg-dark');\n})\n\nonBeforeUnmount(() => {\n  // Remove the color when the component is unmounted\n  document.documentElement.style.removeProperty('--theme-color')\n\n  // Remove Topbar Dark Class for this theme only\n  document.querySelector('.header-top')?.classList.remove('bg-dark');\n})\n\n</script>",
+      "start": 1716056339672,
+      "end": 1716056339758,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339758,
+      "end": 1716056339758,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339758,
+      "end": 1716056339758,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339758,
+      "end": 1716056339758,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339758,
+      "end": 1716056339758,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339758,
+      "end": 1716056339758,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339758,
+      "end": 1716056339758,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339758,
+      "end": 1716056339758,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339758,
+      "end": 1716056339758,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339758,
+      "end": 1716056339758,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339758,
+      "end": 1716056339758,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  data: Object\n},\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet props = __props\n\nlet { data, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"theme/tokyo\", {\n  key: \"getAllTokyo\",\n  // params: { slug: 'tokyo' }\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nlet { data: product, error } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"product\", {\n  key: \"getThemeParisProduct\",\n  params: { status: 1, theme: 'tokyo', ids: data?.value?.content?.products_ids.join(',') }\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nonMounted(() => {\n  // Note: This Customization is only for this tokyo theme, otherwise you can change it in the settings from the backend.\n  // Change color for this layout\n  document.documentElement.style.setProperty('--theme-color', '#d99f46')\n\n  // Add Topbar Dark Class\n  document.querySelector('.header-top')?.classList.add('bg-dark');\n})\n\nonBeforeUnmount(() => {\n  // Remove the color when the component is unmounted\n  document.documentElement.style.removeProperty('--theme-color')\n\n  // Remove Topbar Dark Class for this theme only\n  document.querySelector('.header-top')?.classList.remove('bg-dark');\n})\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_ThemesWidgetsHomeBannerTokyo = _resolveComponent(\"ThemesWidgetsHomeBannerTokyo\")\n  const _component_ThemesWidgetsCategories = _resolveComponent(\"ThemesWidgetsCategories\")\n  const _component_ThemesWidgetsBanner = _resolveComponent(\"ThemesWidgetsBanner\")\n  const _component_WidgetsTitle = _resolveComponent(\"WidgetsTitle\")\n  const _component_ThemesWidgetsProduct = _resolveComponent(\"ThemesWidgetsProduct\")\n  const _component_WidgetsImageLink = _resolveComponent(\"WidgetsImageLink\")\n  const _component_ThemesWidgetsFourColumnProduct = _resolveComponent(\"ThemesWidgetsFourColumnProduct\")\n  const _component_ThemesWidgetsNewsletter = _resolveComponent(\"ThemesWidgetsNewsletter\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}><section class=\"home-section home-section-ratio pt-md-2 pt-4\">`)\n  _push(_ssrRenderComponent(_component_ThemesWidgetsHomeBannerTokyo, {\n    theme: 'tokyo',\n    data: _unref(data)?.content?.home_banner\n  }, null, _parent))\n  _push(`</section>`)\n  if (_unref(data)?.content?.categories_icon_list?.status) {\n    _push(`<section><div class=\"container-fluid-lg\">`)\n    _push(_ssrRenderComponent(_component_ThemesWidgetsCategories, {\n      style: 'horizontal',\n      slidesPerView: 9,\n      categoryIds: _unref(data)?.content?.categories_icon_list?.category_ids || [],\n      image: _unref(data)?.content?.categories_icon_list?.image_url,\n      theme: 'paris'\n    }, null, _parent))\n    _push(`</div></section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.content?.coupons?.status) {\n    _push(`<section><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12 sale-banner\">`)\n    _push(_ssrRenderComponent(_component_ThemesWidgetsBanner, {\n      banners: _unref(data)?.content?.coupons,\n      classes: 'banner-contain hover-effect',\n      style: 'full_width'\n    }, null, _parent))\n    _push(`</div></div></div></section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.content?.featured_banners?.status) {\n    _push(`<section class=\"banner-section ratio_60 wow fadeInUp\">`)\n    _push(_ssrRenderComponent(_component_ThemesWidgetsBanner, {\n      banners: _unref(data)?.content?.featured_banners?.banners,\n      style: 'horizontal'\n    }, null, _parent))\n    _push(`</section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<section><div class=\"container-fluid-lg\"><div class=\"row g-3\"><div class=\"${_ssrRenderClass(_unref(data)?.content?.main_content?.sidebar?.status ? 'col-xxl-9 col-xl-8' : 'col-xxl-12 col-xl-12')}\">`)\n  if (_unref(data)?.content?.main_content?.section1_products?.status &&\n            _unref(data)?.content?.main_content?.section1_products?.product_ids?.length >= 5) {\n    _push(`<div><div>`)\n    _push(_ssrRenderComponent(_component_WidgetsTitle, {\n      title: _unref(data)?.content?.main_content?.section1_products?.title,\n      description: _unref(data)?.content?.main_content?.section1_products?.description,\n      svg: 'cake'\n    }, null, _parent))\n    _push(_ssrRenderComponent(_component_ThemesWidgetsProduct, {\n      Products: _unref(product),\n      spaceBetween: 15,\n      productIds: _unref(data)?.content?.main_content?.section1_products?.product_ids || [],\n      slider: true,\n      style: 'horizontal',\n      boxClass: 'product-box-bg',\n      productstyle: 'product-standard'\n    }, null, _parent))\n    _push(`</div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.content?.main_content?.section2_slider_products?.status &&\n            _unref(data)?.content?.main_content?.section2_slider_products?.product_ids?.length >= 5) {\n    _push(`<div><div class=\"section-t-space\">`)\n    _push(_ssrRenderComponent(_component_WidgetsTitle, {\n      title: _unref(data)?.content?.main_content?.section2_slider_products?.title,\n      description: _unref(data)?.content?.main_content?.section2_slider_products?.description,\n      svg: 'cake'\n    }, null, _parent))\n    _push(_ssrRenderComponent(_component_ThemesWidgetsProduct, {\n      Products: _unref(product),\n      productIds: _unref(data)?.content?.main_content?.section2_slider_products?.product_ids || [],\n      style: 'classic',\n      boxClass: 'product-box-bg'\n    }, null, _parent))\n    _push(`</div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.content?.main_content?.section3_products?.status &&\n            _unref(data)?.content?.main_content?.section3_products?.product_ids?.length >= 5) {\n    _push(`<div><div class=\"section-t-space\">`)\n    _push(_ssrRenderComponent(_component_WidgetsTitle, {\n      title: _unref(data)?.content?.main_content?.section3_products?.title,\n      description: _unref(data)?.content?.main_content?.section3_products?.description,\n      svg: 'cake'\n    }, null, _parent))\n    _push(_ssrRenderComponent(_component_ThemesWidgetsProduct, {\n      Products: _unref(product),\n      spaceBetween: 15,\n      productIds: _unref(data)?.content?.main_content?.section3_products?.product_ids || [],\n      slider: true,\n      productstyle: 'product-standard',\n      style: 'horizontal',\n      boxClass: 'product-box-bg'\n    }, null, _parent))\n    _push(`</div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.content?.main_content?.section4_products?.status &&\n            _unref(data)?.content?.main_content?.section4_products?.product_ids?.length >= 5) {\n    _push(`<div><div class=\"section-t-space\">`)\n    _push(_ssrRenderComponent(_component_WidgetsTitle, {\n      title: _unref(data)?.content?.main_content?.section4_products?.title,\n      description: _unref(data)?.content?.main_content?.section4_products?.description,\n      svg: 'cake'\n    }, null, _parent))\n    _push(_ssrRenderComponent(_component_ThemesWidgetsProduct, {\n      Products: _unref(product),\n      spaceBetween: 15,\n      productIds: _unref(data)?.content?.main_content?.section4_products?.product_ids || [],\n      slider: true,\n      productstyle: 'product-standard',\n      style: 'horizontal',\n      boxClass: 'product-box-bg'\n    }, null, _parent))\n    _push(`</div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  if (_unref(data)?.content?.main_content?.sidebar?.status) {\n    _push(`<div class=\"col-xxl-3 col-xl-4 d-none d-xl-block\"><div class=\"position-sticky top-0\">`)\n    _push(_ssrRenderComponent(_component_ThemesWidgetsBanner, {\n      classes: 'ratio_209 rounded',\n      banners: _unref(data)?.content?.main_content?.sidebar?.right_side_banners?.banner_1,\n      style: 'vertical'\n    }, null, _parent))\n    _push(_ssrRenderComponent(_component_ThemesWidgetsBanner, {\n      classes: 'ratio_125 section-t-space',\n      banners: _unref(data)?.content?.main_content?.sidebar?.right_side_banners?.banner_2,\n      style: 'vertical'\n    }, null, _parent))\n    _push(`</div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div></section>`)\n  if (_unref(data)?.content?.full_width_banner?.status) {\n    _push(`<div><section><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-12\">`)\n    _push(_ssrRenderComponent(_component_WidgetsImageLink, {\n      image: _unref(data)?.content?.full_width_banner,\n      bgImage: false,\n      class: 'home-contain hover-effect'\n    }, null, _parent))\n    _push(`</div></div></div></section></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.content?.slider_products?.status) {\n    _push(`<div><section class=\"top-selling-section\"><div class=\"container-fluid-lg\">`)\n    _push(_ssrRenderComponent(_component_ThemesWidgetsFourColumnProduct, {\n      Products: _unref(product),\n      data: _unref(data)?.content?.slider_products\n    }, null, _parent))\n    _push(`</div></section></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.content?.news_letter?.status) {\n    _push(`<div><section class=\"newsletter-section section-b-space\">`)\n    _push(_ssrRenderComponent(_component_ThemesWidgetsNewsletter, {\n      data: _unref(data)?.content?.news_letter\n    }, null, _parent))\n    _push(`</section></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Themes/Tokyo/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339758,
+      "end": 1716056339762,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Tokyo/index.vue\").then(r => r.default))",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339762,
+      "end": 1716056339762,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339762,
+      "end": 1716056339763,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339762,
+      "end": 1716056339763,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339763,
+      "end": 1716056339763,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339763,
+      "end": 1716056339763,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339763,
+      "end": 1716056339763,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339763,
+      "end": 1716056339763,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339763,
+      "end": 1716056339763,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339763,
+      "end": 1716056339763,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339763,
+      "end": 1716056339763,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339763,
+      "end": 1716056339763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339763,
+      "end": 1716056339763,
+      "order": "normal"
+    }
+  ]
+}

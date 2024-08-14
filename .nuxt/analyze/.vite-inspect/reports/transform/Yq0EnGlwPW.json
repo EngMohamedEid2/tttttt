@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Rome/index.vue?nuxt_component=async&nuxt_component_name=ThemesRome",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"bg-effect\">\n    <!-- Home section start -->\n    <section class=\"home-section-2 home-section-small section-b-space\"\n      :style=\"{ 'background-image': 'url(' + data?.content?.home_banner?.bg_image_url + ')' }\"\n      v-if=\"data?.content?.home_banner\">\n      <ThemesWidgetsHomeBannerRome :data=\"data?.content?.home_banner\" />\n    </section>\n    <!-- Home Section End -->\n\n    <!-- Category Section Start -->\n    <section class=\"category-section-2\" v-if=\"data?.content?.categories_image_list?.status\">\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle :title=\"data?.content?.categories_image_list?.title\" :style=\"'simple'\" />\n        <div class=\"row\">\n          <div class=\"col-12\">\n            <ThemesWidgetsCategories  :style=\"'horizontal'\" :theme=\"'rome'\"\n              :categoryIds=\"data?.content?.categories_image_list?.category_ids || []\"\n              :image=\"data?.content?.categories_icon_list?.image_url\" />\n          </div>\n        </div>\n      </div>\n    </section>\n    <!-- Category Section End -->\n\n    <!-- Value Section Start -->\n    <section class=\"overflow-hidden\" v-if=\"data?.content?.value_banners?.status\">\n      <WidgetsTitle :title=\"data?.content?.value_banners?.title\" :style=\"'simple'\" :classes=\"'container-fluid-lg'\" />\n      <div class=\"row\">\n        <div class=\"col-12\">\n          <ThemesWidgetsBanner :banners=\"data?.content?.value_banners?.banners\" :style=\"'horizontal-3'\"\n            :sliderPerView=\"3\" />\n        </div>\n      </div>\n    </section>\n    <!-- Value Section End -->\n\n    <!-- Product Section Start -->\n    <section class=\"product-section\" v-if=\"data?.content?.categories_products?.status\n      && data?.content?.categories_products?.category_ids?.length\">\n      <WidgetsTitle :title=\"data?.content?.categories_products?.title\" :style=\"'simple'\" :classes=\"'container-fluid-lg'\">\n        <ThemesWidgetsCategories v-if=\"data?.content?.categories_products?.category_ids?.length\" \n          :style=\"'filter'\" @selectCategory=\"selectCategory($event)\" :selectedCategoryId=\"selectedCategoryId\"\n          :categoryIds=\"data?.content?.categories_products?.category_ids || []\" />\n      </WidgetsTitle>\n      <div class=\"container-fluid-lg\">\n        <ThemesWidgetsProduct :Products=\"productsCategory\" :productIds=\"productFilterIds || []\" :slider=\"false\"\n          :style=\"'horizontal'\" :boxClass=\"'product-box-bg'\" :productstyle=\"'product-standard'\" :showItem=\"5\" />\n      </div>\n    </section>\n    <!-- Product Section End -->\n\n    <!-- Banner Section Start -->\n    <section class=\"banner-section\" v-if=\"data?.content?.two_column_banners?.status\">\n      <div class=\"container-fluid-lg\">\n        <div class=\"row gy-xl-0 gy-3\">\n          <div class=\"col-lg-6 \">\n            <WidgetsImageLink :classes=\"'banner-contain-3 hover-effect'\"\n              :image=\"data?.content?.two_column_banners?.banner_1\" :bgImage=\"false\" />\n          </div>\n          <div class=\"col-lg-6 \">\n            <WidgetsImageLink :classes=\"'banner-contain-3 hover-effect'\"\n              :image=\"data?.content?.two_column_banners?.banner_2\" :bgImage=\"false\" />\n          </div>\n        </div>\n      </div>\n    </section>\n    <!-- Banner Section End -->\n\n    <section class=\"top-selling-section border-box section-b-space\" v-if=\"data?.content?.slider_products?.status\">\n      <div class=\"container-fluid-lg\">\n        <ThemesWidgetsFourColumnProduct :Products=\"product\" :data=\"data?.content?.slider_products\" />\n      </div>\n    </section>\n\n    <!-- Banner Section Start -->\n    <div class=\"container-fluid-lg\" v-if=\"data?.content?.full_width_banner?.status\">\n      <div class=\"ratio_27\" v-if=\"data?.content?.full_width_banner?.status\">\n        <ThemesWidgetsBanner :banners=\"data?.content?.full_width_banner\" :style=\"'full_width'\" />\n      </div>\n    </div>\n    <!-- Banner Section End -->\n\n    <!-- Product Section Start -->\n    <section class=\"product-section\"\n      v-if=\"data?.content?.products_list_1?.status && data?.content?.products_list_1?.product_ids?.length || 0 >= 6\">\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle :title=\"data?.content?.products_list_1?.title\" :style=\"'simple'\" />\n        <ThemesWidgetsProduct :Products=\"product\" :productIds=\"data?.content?.products_list_1?.product_ids || []\"\n          :slider=\"true\" :style=\"'horizontal'\" :spaceBetween=\"24\" :productstyle=\"'product-standard'\"\n          :boxClass=\"'product-box-bg'\" :sliderPerView=\"6\" />\n      </div>\n    </section>\n    <!-- Product Section End -->\n\n    <!-- Blog Section Start -->\n    <section v-if=\"data?.content?.featured_blogs?.status\n      && data?.content?.featured_blogs?.blog_ids?.length || 0 >= 3\">\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle :title=\"data?.content?.featured_blogs?.title\" :style=\"'simple'\" />\n        <ThemesWidgetsBlog :Blogs=\"blog\" :blogIds=\"data?.content?.featured_blogs?.blog_ids || []\" />\n      </div>\n    </section>\n    <!-- Blog Section End -->\n\n    <!-- Newsletter Section Start -->\n    <section class=\"newsletter-section-2 section-b-space\" v-if=\"data?.content?.news_letter?.status\">\n      <ThemesWidgetsNewsletter :data=\"data?.content?.news_letter\" :style=\"'classic'\" />\n    </section>\n    <!-- Newsletter Section End -->\n  </div>\n</template>\n\n<script setup>\nconst slug = ref(null)\nconst router = useRouter()\nconst themeOptionService = ref(null)\nconst categorySlider = ref(null)\nconst productSlider6ItemMargin = ref(null)\nconst customOptionsItem4 = ref(null)\nconst productFilterIds = ref([])\nconst selectedCategoryId = ref(null)\n\nlet { data, pending } = await HandleRequest(\"theme/rome\", {\n  key: \"getAllRomes\",\n  params: { slug: 'rome' }\n});\n\nlet { data: product, error } = await HandleRequest(\"product\", {\n  key: \"getThemeParisProduct\",\n  params: { status: 1, theme: 'rome', ids: data?.value?.content?.products_ids.join(',') }\n});\n\nlet { data: blog } = await HandleRequest(\"blog\", {\n  key: \"GetAllFeaturedBlogs\",\n  params: { status: 1, ids: data?.value?.content?.featured_blogs?.blog_ids?.join(',') }\n});\n\nlet categoryProduct = data?.value?.content?.categories_products?.category_ids?.join(',')\n\nlet { data: productsCategory } = await HandleRequest(\"product\", {\n  key: \"getProductCategory\",\n  params: { category_ids: categoryProduct }\n});\n\nfunction selectCategory(id) {\n  selectedCategoryId.value = id;\n  if (selectedCategoryId.value) {\n    productFilterIds.value = productsCategory?.value?.data?.filter(product => product?.categories?.map(category => category?.id).includes(id))\n      ?.map(product => product.id)\n      .slice(0, 5);\n  }\n};\n\nif (\n  data?.value?.content.categories_products &&\n  data?.value?.content.categories_products.category_ids.length\n) {\n  selectCategory(data?.value?.content?.categories_products?.category_ids[0])\n}\n\nonBeforeMount(() => {\n  // Change color for this layout\n  document.documentElement.style.setProperty('--theme-color', '#0baf9a')\n})\n\nonBeforeUnmount(() => {\n  // Remove Color\n  document.documentElement.style.removeProperty('--theme-color')\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056284847,
+      "end": 1716056284954,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284954,
+      "end": 1716056284954,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284954,
+      "end": 1716056284954,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284954,
+      "end": 1716056284954,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284954,
+      "end": 1716056284954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284954,
+      "end": 1716056284954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284954,
+      "end": 1716056284954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284954,
+      "end": 1716056284954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, normalizeStyle as _normalizeStyle, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, createBlock as _createBlock, withCtx as _withCtx } from \"vue\"\n\nconst _hoisted_1 = { class: \"bg-effect\" }\nconst _hoisted_2 = {\n  key: 1,\n  class: \"category-section-2\"\n}\nconst _hoisted_3 = { class: \"container-fluid-lg\" }\nconst _hoisted_4 = { class: \"row\" }\nconst _hoisted_5 = { class: \"col-12\" }\nconst _hoisted_6 = {\n  key: 2,\n  class: \"overflow-hidden\"\n}\nconst _hoisted_7 = { class: \"row\" }\nconst _hoisted_8 = { class: \"col-12\" }\nconst _hoisted_9 = {\n  key: 3,\n  class: \"product-section\"\n}\nconst _hoisted_10 = { class: \"container-fluid-lg\" }\nconst _hoisted_11 = {\n  key: 4,\n  class: \"banner-section\"\n}\nconst _hoisted_12 = { class: \"container-fluid-lg\" }\nconst _hoisted_13 = { class: \"row gy-xl-0 gy-3\" }\nconst _hoisted_14 = { class: \"col-lg-6\" }\nconst _hoisted_15 = { class: \"col-lg-6\" }\nconst _hoisted_16 = {\n  key: 5,\n  class: \"top-selling-section border-box section-b-space\"\n}\nconst _hoisted_17 = { class: \"container-fluid-lg\" }\nconst _hoisted_18 = {\n  key: 6,\n  class: \"container-fluid-lg\"\n}\nconst _hoisted_19 = {\n  key: 0,\n  class: \"ratio_27\"\n}\nconst _hoisted_20 = {\n  key: 7,\n  class: \"product-section\"\n}\nconst _hoisted_21 = { class: \"container-fluid-lg\" }\nconst _hoisted_22 = { key: 8 }\nconst _hoisted_23 = { class: \"container-fluid-lg\" }\nconst _hoisted_24 = {\n  key: 9,\n  class: \"newsletter-section-2 section-b-space\"\n}\n\n\nconst _sfc_main = {\n  __name: 'index',\n  async setup(__props) {\n\nlet __temp, __restore\n\nconst slug = ref(null)\nconst router = useRouter()\nconst themeOptionService = ref(null)\nconst categorySlider = ref(null)\nconst productSlider6ItemMargin = ref(null)\nconst customOptionsItem4 = ref(null)\nconst productFilterIds = ref([])\nconst selectedCategoryId = ref(null)\n\nlet { data, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"theme/rome\", {\n  key: \"getAllRomes\",\n  params: { slug: 'rome' }\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nlet { data: product, error } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"product\", {\n  key: \"getThemeParisProduct\",\n  params: { status: 1, theme: 'rome', ids: data?.value?.content?.products_ids.join(',') }\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nlet { data: blog } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"blog\", {\n  key: \"GetAllFeaturedBlogs\",\n  params: { status: 1, ids: data?.value?.content?.featured_blogs?.blog_ids?.join(',') }\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nlet categoryProduct = data?.value?.content?.categories_products?.category_ids?.join(',')\n\nlet { data: productsCategory } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"product\", {\n  key: \"getProductCategory\",\n  params: { category_ids: categoryProduct }\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nfunction selectCategory(id) {\n  selectedCategoryId.value = id;\n  if (selectedCategoryId.value) {\n    productFilterIds.value = productsCategory?.value?.data?.filter(product => product?.categories?.map(category => category?.id).includes(id))\n      ?.map(product => product.id)\n      .slice(0, 5);\n  }\n};\n\nif (\n  data?.value?.content.categories_products &&\n  data?.value?.content.categories_products.category_ids.length\n) {\n  selectCategory(data?.value?.content?.categories_products?.category_ids[0])\n}\n\nonBeforeMount(() => {\n  // Change color for this layout\n  document.documentElement.style.setProperty('--theme-color', '#0baf9a')\n})\n\nonBeforeUnmount(() => {\n  // Remove Color\n  document.documentElement.style.removeProperty('--theme-color')\n})\n\nreturn (_ctx, _cache) => {\n  const _component_ThemesWidgetsHomeBannerRome = _resolveComponent(\"ThemesWidgetsHomeBannerRome\")\n  const _component_WidgetsTitle = _resolveComponent(\"WidgetsTitle\")\n  const _component_ThemesWidgetsCategories = _resolveComponent(\"ThemesWidgetsCategories\")\n  const _component_ThemesWidgetsBanner = _resolveComponent(\"ThemesWidgetsBanner\")\n  const _component_ThemesWidgetsProduct = _resolveComponent(\"ThemesWidgetsProduct\")\n  const _component_WidgetsImageLink = _resolveComponent(\"WidgetsImageLink\")\n  const _component_ThemesWidgetsFourColumnProduct = _resolveComponent(\"ThemesWidgetsFourColumnProduct\")\n  const _component_ThemesWidgetsBlog = _resolveComponent(\"ThemesWidgetsBlog\")\n  const _component_ThemesWidgetsNewsletter = _resolveComponent(\"ThemesWidgetsNewsletter\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    (_unref(data)?.content?.home_banner)\n      ? (_openBlock(), _createElementBlock(\"section\", {\n          key: 0,\n          class: \"home-section-2 home-section-small section-b-space\",\n          style: _normalizeStyle({ 'background-image': 'url(' + _unref(data)?.content?.home_banner?.bg_image_url + ')' })\n        }, [\n          _createVNode(_component_ThemesWidgetsHomeBannerRome, {\n            data: _unref(data)?.content?.home_banner\n          }, null, 8, [\"data\"])\n        ], 4))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.categories_image_list?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.categories_image_list?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createElementVNode(\"div\", _hoisted_4, [\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createVNode(_component_ThemesWidgetsCategories, {\n                  style: 'horizontal',\n                  theme: 'rome',\n                  categoryIds: _unref(data)?.content?.categories_image_list?.category_ids || [],\n                  image: _unref(data)?.content?.categories_icon_list?.image_url\n                }, null, 8, [\"categoryIds\", \"image\"])\n              ])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.value_banners?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_6, [\n          _createVNode(_component_WidgetsTitle, {\n            title: _unref(data)?.content?.value_banners?.title,\n            style: 'simple',\n            classes: 'container-fluid-lg'\n          }, null, 8, [\"title\"]),\n          _createElementVNode(\"div\", _hoisted_7, [\n            _createElementVNode(\"div\", _hoisted_8, [\n              _createVNode(_component_ThemesWidgetsBanner, {\n                banners: _unref(data)?.content?.value_banners?.banners,\n                style: 'horizontal-3',\n                sliderPerView: 3\n              }, null, 8, [\"banners\"])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.categories_products?.status\n      && _unref(data)?.content?.categories_products?.category_ids?.length)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_9, [\n          _createVNode(_component_WidgetsTitle, {\n            title: _unref(data)?.content?.categories_products?.title,\n            style: 'simple',\n            classes: 'container-fluid-lg'\n          }, {\n            default: _withCtx(() => [\n              (_unref(data)?.content?.categories_products?.category_ids?.length)\n                ? (_openBlock(), _createBlock(_component_ThemesWidgetsCategories, {\n                    key: 0,\n                    style: 'filter',\n                    onSelectCategory: _cache[0] || (_cache[0] = $event => (selectCategory($event))),\n                    selectedCategoryId: _unref(selectedCategoryId),\n                    categoryIds: _unref(data)?.content?.categories_products?.category_ids || []\n                  }, null, 8, [\"selectedCategoryId\", \"categoryIds\"]))\n                : _createCommentVNode(\"\", true)\n            ]),\n            _: 1\n          }, 8, [\"title\"]),\n          _createElementVNode(\"div\", _hoisted_10, [\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: _unref(productsCategory),\n              productIds: _unref(productFilterIds) || [],\n              slider: false,\n              style: 'horizontal',\n              boxClass: 'product-box-bg',\n              productstyle: 'product-standard',\n              showItem: 5\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.two_column_banners?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_11, [\n          _createElementVNode(\"div\", _hoisted_12, [\n            _createElementVNode(\"div\", _hoisted_13, [\n              _createElementVNode(\"div\", _hoisted_14, [\n                _createVNode(_component_WidgetsImageLink, {\n                  classes: 'banner-contain-3 hover-effect',\n                  image: _unref(data)?.content?.two_column_banners?.banner_1,\n                  bgImage: false\n                }, null, 8, [\"image\"])\n              ]),\n              _createElementVNode(\"div\", _hoisted_15, [\n                _createVNode(_component_WidgetsImageLink, {\n                  classes: 'banner-contain-3 hover-effect',\n                  image: _unref(data)?.content?.two_column_banners?.banner_2,\n                  bgImage: false\n                }, null, 8, [\"image\"])\n              ])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.slider_products?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_16, [\n          _createElementVNode(\"div\", _hoisted_17, [\n            _createVNode(_component_ThemesWidgetsFourColumnProduct, {\n              Products: _unref(product),\n              data: _unref(data)?.content?.slider_products\n            }, null, 8, [\"Products\", \"data\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.full_width_banner?.status)\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_18, [\n          (_unref(data)?.content?.full_width_banner?.status)\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_19, [\n                _createVNode(_component_ThemesWidgetsBanner, {\n                  banners: _unref(data)?.content?.full_width_banner,\n                  style: 'full_width'\n                }, null, 8, [\"banners\"])\n              ]))\n            : _createCommentVNode(\"\", true)\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.products_list_1?.status && _unref(data)?.content?.products_list_1?.product_ids?.length || 0 >= 6)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_20, [\n          _createElementVNode(\"div\", _hoisted_21, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.products_list_1?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: _unref(product),\n              productIds: _unref(data)?.content?.products_list_1?.product_ids || [],\n              slider: true,\n              style: 'horizontal',\n              spaceBetween: 24,\n              productstyle: 'product-standard',\n              boxClass: 'product-box-bg',\n              sliderPerView: 6\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.featured_blogs?.status\n      && _unref(data)?.content?.featured_blogs?.blog_ids?.length || 0 >= 3)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_22, [\n          _createElementVNode(\"div\", _hoisted_23, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.featured_blogs?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createVNode(_component_ThemesWidgetsBlog, {\n              Blogs: _unref(blog),\n              blogIds: _unref(data)?.content?.featured_blogs?.blog_ids || []\n            }, null, 8, [\"Blogs\", \"blogIds\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.news_letter?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_24, [\n          _createVNode(_component_ThemesWidgetsNewsletter, {\n            data: _unref(data)?.content?.news_letter,\n            style: 'classic'\n          }, null, 8, [\"data\"])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284954,
+      "end": 1716056284959,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Rome/index.vue\").then(r => r.default))",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284959,
+      "end": 1716056284959,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284960,
+      "end": 1716056284960,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284960,
+      "end": 1716056284960,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284960,
+      "end": 1716056284960,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284960,
+      "end": 1716056284960,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Rome/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284960,
+      "end": 1716056284960,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284960,
+      "end": 1716056284960,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Auth/UpdatePssword.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <section class=\"log-in-section background-image-2 section-b-space\">\n    <div class=\"container-fluid-lg w-100\">\n      <div class=\"row\">\n        <div class=\"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\">\n          <div class=\"image-contain\">\n            <img src=\"/images/inner-page/log-in.png\" class=\"img-fluid\" alt=\"\" />\n          </div>\n        </div>\n        <div class=\"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\">\n          <div class=\"log-in-box\">\n            <div class=\"log-in-title\">\n              <h3>{{ $t(\"Welcome to Fastkart\") }}</h3>\n              <h4>{{ $t(\"Reset your account password\") }}</h4>\n            </div>\n            <div class=\"input-box\">\n              <form class=\"row g-4\" @submit.prevent=\"submit()\">\n                <div class=\"col-12\">\n                  <div class=\"form-floating\">\n                    <WidgetsInputFieldsPasswordField errorMessage=\"Password is required\" :formSubmitted=\"formSubmitted\"\n                      v-model=\"input.password\" classes=\"form-control\" id=\"newPassword\" placeholder=\"password\" />\n                    <label for=\"newPassword\">{{ $t(\"New Password\") }}</label>\n                  </div>\n                </div>\n                <div class=\"col-12\">\n                  <div class=\"form-floating\">\n                    <WidgetsInputFieldsRePasswordField errorMessage=\"Confirm Password is required\"\n                      :formSubmitted=\"formSubmitted\" v-model=\"input.password_confirmation\" classes=\"form-control\"\n                      id=\"password_confirmation\" placeholder=\"Password Confirmation\"\n                      :passwordToCompere=\"input.password.data\" />\n                    <label for=\"confirmPassword\">{{\n                      $t(\"Confirm Password\")\n                    }}</label>\n                  </div>\n                </div>\n                <div class=\"col-12\">\n                  <WidgetsButton :id=\"'Update_btn'\">{{\n                    $t(\"Submit\")\n                  }}</WidgetsButton>\n                </div>\n              </form>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</template>\n\n<script setup>\nimport formValidator from \"@/utils/validators/formValidator\";\nlet input = ref({\n  password: { data: \"\" },\n  password_confirmation: { data: \"\" },\n});\nlet formSubmitted = ref(false);\nfunction submit() {\n  formSubmitted.value = true;\n  if (formValidator({ formData: input.value })) {\n    let { data, error } = useFetch(\"update-password\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: useCookie(\"vo\").value,\n        password: input.value.password.data,\n        password_confirmation: input.value.password_confirmation.data,\n      },\n    });\n    if (data?.value?.success) {\n      navigateTo(\"/auth/login\");\n    }\n  }\n}\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056286564,
+      "end": 1716056286880,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056286881,
+      "end": 1716056286881,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056286881,
+      "end": 1716056286881,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056286881,
+      "end": 1716056286881,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056286881,
+      "end": 1716056286881,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056286881,
+      "end": 1716056286881,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056286881,
+      "end": 1716056286881,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056286881,
+      "end": 1716056286881,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, withModifiers as _withModifiers, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from '/images/inner-page/log-in.png'\n\n\nconst _hoisted_1 = { class: \"log-in-section background-image-2 section-b-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg w-100\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"image-contain\" }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_0,\n      class: \"img-fluid\",\n      alt: \"\"\n    })\n  ])\n], -1)\nconst _hoisted_5 = { class: \"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\" }\nconst _hoisted_6 = { class: \"log-in-box\" }\nconst _hoisted_7 = { class: \"log-in-title\" }\nconst _hoisted_8 = { class: \"input-box\" }\nconst _hoisted_9 = { class: \"col-12\" }\nconst _hoisted_10 = { class: \"form-floating\" }\nconst _hoisted_11 = { for: \"newPassword\" }\nconst _hoisted_12 = { class: \"col-12\" }\nconst _hoisted_13 = { class: \"form-floating\" }\nconst _hoisted_14 = { for: \"confirmPassword\" }\nconst _hoisted_15 = { class: \"col-12\" }\n\nimport formValidator from \"@/utils/validators/formValidator\";\n\nconst _sfc_main = {\n  __name: 'UpdatePssword',\n  setup(__props) {\n\nlet input = ref({\n  password: { data: \"\" },\n  password_confirmation: { data: \"\" },\n});\nlet formSubmitted = ref(false);\nfunction submit() {\n  formSubmitted.value = true;\n  if (formValidator({ formData: input.value })) {\n    let { data, error } = useFetch(\"update-password\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: useCookie(\"vo\").value,\n        password: input.value.password.data,\n        password_confirmation: input.value.password_confirmation.data,\n      },\n    });\n    if (data?.value?.success) {\n      navigateTo(\"/auth/login\");\n    }\n  }\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsInputFieldsPasswordField = _resolveComponent(\"WidgetsInputFieldsPasswordField\")\n  const _component_WidgetsInputFieldsRePasswordField = _resolveComponent(\"WidgetsInputFieldsRePasswordField\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _hoisted_4,\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"h3\", null, _toDisplayString(_ctx.$t(\"Welcome to Fastkart\")), 1),\n              _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Reset your account password\")), 1)\n            ]),\n            _createElementVNode(\"div\", _hoisted_8, [\n              _createElementVNode(\"form\", {\n                class: \"row g-4\",\n                onSubmit: _cache[2] || (_cache[2] = _withModifiers($event => (submit()), [\"prevent\"]))\n              }, [\n                _createElementVNode(\"div\", _hoisted_9, [\n                  _createElementVNode(\"div\", _hoisted_10, [\n                    _createVNode(_component_WidgetsInputFieldsPasswordField, {\n                      errorMessage: \"Password is required\",\n                      formSubmitted: _unref(formSubmitted),\n                      modelValue: _unref(input).password,\n                      \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_unref(input).password) = $event)),\n                      classes: \"form-control\",\n                      id: \"newPassword\",\n                      placeholder: \"password\"\n                    }, null, 8, [\"formSubmitted\", \"modelValue\"]),\n                    _createElementVNode(\"label\", _hoisted_11, _toDisplayString(_ctx.$t(\"New Password\")), 1)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createElementVNode(\"div\", _hoisted_13, [\n                    _createVNode(_component_WidgetsInputFieldsRePasswordField, {\n                      errorMessage: \"Confirm Password is required\",\n                      formSubmitted: _unref(formSubmitted),\n                      modelValue: _unref(input).password_confirmation,\n                      \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => ((_unref(input).password_confirmation) = $event)),\n                      classes: \"form-control\",\n                      id: \"password_confirmation\",\n                      placeholder: \"Password Confirmation\",\n                      passwordToCompere: _unref(input).password.data\n                    }, null, 8, [\"formSubmitted\", \"modelValue\", \"passwordToCompere\"]),\n                    _createElementVNode(\"label\", _hoisted_14, _toDisplayString(_ctx.$t(\"Confirm Password\")), 1)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_15, [\n                  _createVNode(_component_WidgetsButton, { id: 'Update_btn' }, {\n                    default: _withCtx(() => [\n                      _createTextVNode(_toDisplayString(_ctx.$t(\"Submit\")), 1)\n                    ]),\n                    _: 1\n                  })\n                ])\n              ], 32)\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286881,
+      "end": 1716056286882,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056286882,
+      "end": 1716056286882,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, withModifiers as _withModifiers, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from '/images/inner-page/log-in.png'\n\n\nconst _hoisted_1 = { class: \"log-in-section background-image-2 section-b-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg w-100\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"image-contain\" }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_0,\n      class: \"img-fluid\",\n      alt: \"\"\n    })\n  ])\n], -1)\nconst _hoisted_5 = { class: \"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\" }\nconst _hoisted_6 = { class: \"log-in-box\" }\nconst _hoisted_7 = { class: \"log-in-title\" }\nconst _hoisted_8 = { class: \"input-box\" }\nconst _hoisted_9 = { class: \"col-12\" }\nconst _hoisted_10 = { class: \"form-floating\" }\nconst _hoisted_11 = { for: \"newPassword\" }\nconst _hoisted_12 = { class: \"col-12\" }\nconst _hoisted_13 = { class: \"form-floating\" }\nconst _hoisted_14 = { for: \"confirmPassword\" }\nconst _hoisted_15 = { class: \"col-12\" }\n\nimport formValidator from \"@/utils/validators/formValidator\";\n\nconst _sfc_main = {\n  __name: 'UpdatePssword',\n  setup(__props) {\n\nlet input = ref({\n  password: { data: \"\" },\n  password_confirmation: { data: \"\" },\n});\nlet formSubmitted = ref(false);\nfunction submit() {\n  formSubmitted.value = true;\n  if (formValidator({ formData: input.value })) {\n    let { data, error } = useFetch(\"update-password\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: useCookie(\"vo\").value,\n        password: input.value.password.data,\n        password_confirmation: input.value.password_confirmation.data,\n      },\n    }, '$vz1xn0tqtr');\n    if (data?.value?.success) {\n      navigateTo(\"/auth/login\");\n    }\n  }\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsInputFieldsPasswordField = _resolveComponent(\"WidgetsInputFieldsPasswordField\")\n  const _component_WidgetsInputFieldsRePasswordField = _resolveComponent(\"WidgetsInputFieldsRePasswordField\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _hoisted_4,\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"h3\", null, _toDisplayString(_ctx.$t(\"Welcome to Fastkart\")), 1),\n              _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Reset your account password\")), 1)\n            ]),\n            _createElementVNode(\"div\", _hoisted_8, [\n              _createElementVNode(\"form\", {\n                class: \"row g-4\",\n                onSubmit: _cache[2] || (_cache[2] = _withModifiers($event => (submit()), [\"prevent\"]))\n              }, [\n                _createElementVNode(\"div\", _hoisted_9, [\n                  _createElementVNode(\"div\", _hoisted_10, [\n                    _createVNode(_component_WidgetsInputFieldsPasswordField, {\n                      errorMessage: \"Password is required\",\n                      formSubmitted: _unref(formSubmitted),\n                      modelValue: _unref(input).password,\n                      \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_unref(input).password) = $event)),\n                      classes: \"form-control\",\n                      id: \"newPassword\",\n                      placeholder: \"password\"\n                    }, null, 8, [\"formSubmitted\", \"modelValue\"]),\n                    _createElementVNode(\"label\", _hoisted_11, _toDisplayString(_ctx.$t(\"New Password\")), 1)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createElementVNode(\"div\", _hoisted_13, [\n                    _createVNode(_component_WidgetsInputFieldsRePasswordField, {\n                      errorMessage: \"Confirm Password is required\",\n                      formSubmitted: _unref(formSubmitted),\n                      modelValue: _unref(input).password_confirmation,\n                      \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => ((_unref(input).password_confirmation) = $event)),\n                      classes: \"form-control\",\n                      id: \"password_confirmation\",\n                      placeholder: \"Password Confirmation\",\n                      passwordToCompere: _unref(input).password.data\n                    }, null, 8, [\"formSubmitted\", \"modelValue\", \"passwordToCompere\"]),\n                    _createElementVNode(\"label\", _hoisted_14, _toDisplayString(_ctx.$t(\"Confirm Password\")), 1)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_15, [\n                  _createVNode(_component_WidgetsButton, { id: 'Update_btn' }, {\n                    default: _withCtx(() => [\n                      _createTextVNode(_toDisplayString(_ctx.$t(\"Submit\")), 1)\n                    ]),\n                    _: 1\n                  })\n                ])\n              ], 32)\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286882,
+      "end": 1716056286886,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { useCookie } from '#app/composables/cookie';\nimport { navigateTo } from '#app/composables/router';\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, withModifiers as _withModifiers, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from '/images/inner-page/log-in.png'\n\n\nconst _hoisted_1 = { class: \"log-in-section background-image-2 section-b-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg w-100\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"image-contain\" }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_0,\n      class: \"img-fluid\",\n      alt: \"\"\n    })\n  ])\n], -1)\nconst _hoisted_5 = { class: \"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\" }\nconst _hoisted_6 = { class: \"log-in-box\" }\nconst _hoisted_7 = { class: \"log-in-title\" }\nconst _hoisted_8 = { class: \"input-box\" }\nconst _hoisted_9 = { class: \"col-12\" }\nconst _hoisted_10 = { class: \"form-floating\" }\nconst _hoisted_11 = { for: \"newPassword\" }\nconst _hoisted_12 = { class: \"col-12\" }\nconst _hoisted_13 = { class: \"form-floating\" }\nconst _hoisted_14 = { for: \"confirmPassword\" }\nconst _hoisted_15 = { class: \"col-12\" }\n\nimport formValidator from \"@/utils/validators/formValidator\";\n\nconst _sfc_main = {\n  __name: 'UpdatePssword',\n  setup(__props) {\n\nlet input = ref({\n  password: { data: \"\" },\n  password_confirmation: { data: \"\" },\n});\nlet formSubmitted = ref(false);\nfunction submit() {\n  formSubmitted.value = true;\n  if (formValidator({ formData: input.value })) {\n    let { data, error } = useFetch(\"update-password\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: useCookie(\"vo\").value,\n        password: input.value.password.data,\n        password_confirmation: input.value.password_confirmation.data,\n      },\n    }, '$vz1xn0tqtr');\n    if (data?.value?.success) {\n      navigateTo(\"/auth/login\");\n    }\n  }\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsInputFieldsPasswordField = _resolveComponent(\"WidgetsInputFieldsPasswordField\")\n  const _component_WidgetsInputFieldsRePasswordField = _resolveComponent(\"WidgetsInputFieldsRePasswordField\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _hoisted_4,\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"h3\", null, _toDisplayString(_ctx.$t(\"Welcome to Fastkart\")), 1),\n              _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Reset your account password\")), 1)\n            ]),\n            _createElementVNode(\"div\", _hoisted_8, [\n              _createElementVNode(\"form\", {\n                class: \"row g-4\",\n                onSubmit: _cache[2] || (_cache[2] = _withModifiers($event => (submit()), [\"prevent\"]))\n              }, [\n                _createElementVNode(\"div\", _hoisted_9, [\n                  _createElementVNode(\"div\", _hoisted_10, [\n                    _createVNode(_component_WidgetsInputFieldsPasswordField, {\n                      errorMessage: \"Password is required\",\n                      formSubmitted: _unref(formSubmitted),\n                      modelValue: _unref(input).password,\n                      \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_unref(input).password) = $event)),\n                      classes: \"form-control\",\n                      id: \"newPassword\",\n                      placeholder: \"password\"\n                    }, null, 8, [\"formSubmitted\", \"modelValue\"]),\n                    _createElementVNode(\"label\", _hoisted_11, _toDisplayString(_ctx.$t(\"New Password\")), 1)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createElementVNode(\"div\", _hoisted_13, [\n                    _createVNode(_component_WidgetsInputFieldsRePasswordField, {\n                      errorMessage: \"Confirm Password is required\",\n                      formSubmitted: _unref(formSubmitted),\n                      modelValue: _unref(input).password_confirmation,\n                      \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => ((_unref(input).password_confirmation) = $event)),\n                      classes: \"form-control\",\n                      id: \"password_confirmation\",\n                      placeholder: \"Password Confirmation\",\n                      passwordToCompere: _unref(input).password.data\n                    }, null, 8, [\"formSubmitted\", \"modelValue\", \"passwordToCompere\"]),\n                    _createElementVNode(\"label\", _hoisted_14, _toDisplayString(_ctx.$t(\"Confirm Password\")), 1)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_15, [\n                  _createVNode(_component_WidgetsButton, { id: 'Update_btn' }, {\n                    default: _withCtx(() => [\n                      _createTextVNode(_toDisplayString(_ctx.$t(\"Submit\")), 1)\n                    ]),\n                    _: 1\n                  })\n                ])\n              ], 32)\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286886,
+      "end": 1716056286889,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056286890,
+      "end": 1716056286890,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056286890,
+      "end": 1716056286890,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056286890,
+      "end": 1716056286890,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056286890,
+      "end": 1716056286890,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/PasswordField.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/RePasswordField.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { ref } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { useCookie } from '#app/composables/cookie';\nimport { navigateTo } from '#app/composables/router';\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, withModifiers as _withModifiers, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from '/images/inner-page/log-in.png'\n\n\nconst _hoisted_1 = { class: \"log-in-section background-image-2 section-b-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg w-100\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"image-contain\" }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_0,\n      class: \"img-fluid\",\n      alt: \"\"\n    })\n  ])\n], -1)\nconst _hoisted_5 = { class: \"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\" }\nconst _hoisted_6 = { class: \"log-in-box\" }\nconst _hoisted_7 = { class: \"log-in-title\" }\nconst _hoisted_8 = { class: \"input-box\" }\nconst _hoisted_9 = { class: \"col-12\" }\nconst _hoisted_10 = { class: \"form-floating\" }\nconst _hoisted_11 = { for: \"newPassword\" }\nconst _hoisted_12 = { class: \"col-12\" }\nconst _hoisted_13 = { class: \"form-floating\" }\nconst _hoisted_14 = { for: \"confirmPassword\" }\nconst _hoisted_15 = { class: \"col-12\" }\n\nimport formValidator from \"@/utils/validators/formValidator\";\n\nconst _sfc_main = {\n  __name: 'UpdatePssword',\n  setup(__props) {\n\nlet input = ref({\n  password: { data: \"\" },\n  password_confirmation: { data: \"\" },\n});\nlet formSubmitted = ref(false);\nfunction submit() {\n  formSubmitted.value = true;\n  if (formValidator({ formData: input.value })) {\n    let { data, error } = useFetch(\"update-password\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: useCookie(\"vo\").value,\n        password: input.value.password.data,\n        password_confirmation: input.value.password_confirmation.data,\n      },\n    }, '$vz1xn0tqtr');\n    if (data?.value?.success) {\n      navigateTo(\"/auth/login\");\n    }\n  }\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsInputFieldsPasswordField = __nuxt_component_0\n  const _component_WidgetsInputFieldsRePasswordField = __nuxt_component_1\n  const _component_WidgetsButton = __nuxt_component_2\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _hoisted_4,\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"h3\", null, _toDisplayString(_ctx.$t(\"Welcome to Fastkart\")), 1),\n              _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Reset your account password\")), 1)\n            ]),\n            _createElementVNode(\"div\", _hoisted_8, [\n              _createElementVNode(\"form\", {\n                class: \"row g-4\",\n                onSubmit: _cache[2] || (_cache[2] = _withModifiers($event => (submit()), [\"prevent\"]))\n              }, [\n                _createElementVNode(\"div\", _hoisted_9, [\n                  _createElementVNode(\"div\", _hoisted_10, [\n                    _createVNode(_component_WidgetsInputFieldsPasswordField, {\n                      errorMessage: \"Password is required\",\n                      formSubmitted: _unref(formSubmitted),\n                      modelValue: _unref(input).password,\n                      \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_unref(input).password) = $event)),\n                      classes: \"form-control\",\n                      id: \"newPassword\",\n                      placeholder: \"password\"\n                    }, null, 8, [\"formSubmitted\", \"modelValue\"]),\n                    _createElementVNode(\"label\", _hoisted_11, _toDisplayString(_ctx.$t(\"New Password\")), 1)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createElementVNode(\"div\", _hoisted_13, [\n                    _createVNode(_component_WidgetsInputFieldsRePasswordField, {\n                      errorMessage: \"Confirm Password is required\",\n                      formSubmitted: _unref(formSubmitted),\n                      modelValue: _unref(input).password_confirmation,\n                      \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => ((_unref(input).password_confirmation) = $event)),\n                      classes: \"form-control\",\n                      id: \"password_confirmation\",\n                      placeholder: \"Password Confirmation\",\n                      passwordToCompere: _unref(input).password.data\n                    }, null, 8, [\"formSubmitted\", \"modelValue\", \"passwordToCompere\"]),\n                    _createElementVNode(\"label\", _hoisted_14, _toDisplayString(_ctx.$t(\"Confirm Password\")), 1)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_15, [\n                  _createVNode(_component_WidgetsButton, { id: 'Update_btn' }, {\n                    default: _withCtx(() => [\n                      _createTextVNode(_toDisplayString(_ctx.$t(\"Submit\")), 1)\n                    ]),\n                    _: 1\n                  })\n                ])\n              ], 32)\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286890,
+      "end": 1716056286890,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056286890,
+      "end": 1716056286890,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056286890,
+      "end": 1716056286890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056286890,
+      "end": 1716056286890,
+      "order": "normal"
+    }
+  ]
+}

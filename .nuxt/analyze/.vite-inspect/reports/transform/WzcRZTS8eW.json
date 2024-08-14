@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Compare/index.vue?nuxt_component=async&nuxt_component_name=ShopCompare",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <section class=\"compare-section section-b-space\">\n    <div class=\"container-fluid-lg\">\n      <div class=\"row g-0 compare-row\">\n        <template v-if=\"skeletonLoader\">\n          <div class=\"col skeleton-compare\" v-for=\"item in skeletonItems\" :key=\"item\">\n            <ShopCompareSkeloton />\n          </div>\n        </template>\n        <template v-else>\n          <ShopCompareContent :compare=\"compare\" />\n        </template>\n      </div>\n      <WidgetsNoData :classes=\"'no-data-added'\" :image=\"'/svg/no-category.svg'\" :text=\"'No Items Added'\"\n        :description=\"'It appears that nothing has been added to your compare list. Explore products if you want to.'\"\n        v-if=\"!compare?.length\">\n      </WidgetsNoData>\n    </div>\n  </section>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useCompareStore } from \"~~/store/compare\";\n\nlet { compare } = storeToRefs(useCompareStore());\nuseCompareStore().GetCompare()\nlet skeletonLoader = ref(true)\nlet skeletonItems = Array.from({ length: 12 }, (_, index) => index);\nonMounted(() => {\n  setTimeout(() => {\n    skeletonLoader.value = false\n  }, 2000);\n})\n</script>\n",
+      "start": 1716056271432,
+      "end": 1716056271551,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271551,
+      "end": 1716056271551,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271551,
+      "end": 1716056271551,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271551,
+      "end": 1716056271551,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271551,
+      "end": 1716056271551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271551,
+      "end": 1716056271551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271551,
+      "end": 1716056271551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271551,
+      "end": 1716056271551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, createCommentVNode as _createCommentVNode, createBlock as _createBlock, createElementVNode as _createElementVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"compare-section section-b-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row g-0 compare-row\" }\n\nimport { storeToRefs } from \"pinia\";\nimport { useCompareStore } from \"~~/store/compare\";\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet { compare } = storeToRefs(useCompareStore());\nuseCompareStore().GetCompare()\nlet skeletonLoader = ref(true)\nlet skeletonItems = Array.from({ length: 12 }, (_, index) => index);\nonMounted(() => {\n  setTimeout(() => {\n    skeletonLoader.value = false\n  }, 2000);\n})\n\nreturn (_ctx, _cache) => {\n  const _component_ShopCompareSkeloton = _resolveComponent(\"ShopCompareSkeloton\")\n  const _component_ShopCompareContent = _resolveComponent(\"ShopCompareContent\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        (_unref(skeletonLoader))\n          ? (_openBlock(true), _createElementBlock(_Fragment, { key: 0 }, _renderList(_unref(skeletonItems), (item) => {\n              return (_openBlock(), _createElementBlock(\"div\", {\n                class: \"col skeleton-compare\",\n                key: item\n              }, [\n                _createVNode(_component_ShopCompareSkeloton)\n              ]))\n            }), 128))\n          : (_openBlock(), _createBlock(_component_ShopCompareContent, {\n              key: 1,\n              compare: _unref(compare)\n            }, null, 8, [\"compare\"]))\n      ]),\n      (!_unref(compare)?.length)\n        ? (_openBlock(), _createBlock(_component_WidgetsNoData, {\n            key: 0,\n            classes: 'no-data-added',\n            image: '/svg/no-category.svg',\n            text: 'No Items Added',\n            description: 'It appears that nothing has been added to your compare list. Explore products if you want to.'\n          }, null, 8, [\"image\", \"description\"]))\n        : _createCommentVNode(\"\", true)\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056271551,
+      "end": 1716056271553,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Compare/index.vue\").then(r => r.default))",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Compare/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271553,
+      "end": 1716056271553,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/AboutUs/Review.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <section class=\"review-section section-lg-space\">\n    <div class=\"container-fluid\">\n      <div class=\"about-us-title text-center\">\n        <h4 class=\"text-content\">{{ aboutTestimonial.sub_title }}</h4>\n        <h2 class=\"center\">{{ aboutTestimonial.title }}</h2>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-12\">\n          <div class=\"slider-dots\">\n            <swiper :modules=\"modules\" :loop=\"true\" :spaceBetween=\"30\" :centeredSlides=\"true\" :breakpoints=\"reviewSlider\"\n              slidesPerView=\"auto\">\n              <swiper-slide v-for=\"(testi, index) in aboutTestimonial.reviews\" :key=\"index\">\n                <div class=\"reviewer-box\">\n                  <Icon name=\"ri:double-quotes-r\" class=\"quotes\" />\n                  <h3>{{ testi.title }}</h3>\n                  <p class=\"truncate-line\">{{ testi.review }}</p>\n                  <div class=\"reviewer-profile\">\n                    <div class=\"reviewer-image\">\n                      <img :src=\"testi.profile_image_url\" class=\"\" alt=\"\" />\n                    </div>\n                    <div class=\"reviewer-name\">\n                      <h4>{{ testi.name }}</h4>\n                      <h6>{{ testi.designation }}</h6>\n                    </div>\n                  </div>\n                </div>\n              </swiper-slide>\n            </swiper>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { Autoplay } from \"swiper\";\n\nlet modules = [Autoplay];\nlet reviewSlider = {\n  0: {\n    slidesPerView: 1,\n    spaceBetween: 10,\n  },\n  650: {\n    slidesPerView: 2,\n    spaceBetween: 10,\n  },\n  975: {\n    slidesPerView: 3,\n    spaceBetween: 15,\n  },\n  1375: {\n    slidesPerView: 4,\n    spaceBetween: 20,\n  },\n};\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\nlet aboutTestimonial = ref(ThemeOptions.value.options.about_us.testimonial);\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056341324,
+      "end": 1716056341505,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341505,
+      "end": 1716056341505,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341505,
+      "end": 1716056341505,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341505,
+      "end": 1716056341505,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341505,
+      "end": 1716056341505,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056341505,
+      "end": 1716056341505,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056341505,
+      "end": 1716056341505,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056341506,
+      "end": 1716056341506,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056341506,
+      "end": 1716056341506,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056341506,
+      "end": 1716056341506,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056341506,
+      "end": 1716056341506,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { Autoplay } from \"swiper\";\n\n\nconst _sfc_main = {\n  __name: 'Review',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet modules = [Autoplay];\nlet reviewSlider = {\n  0: {\n    slidesPerView: 1,\n    spaceBetween: 10,\n  },\n  650: {\n    slidesPerView: 2,\n    spaceBetween: 10,\n  },\n  975: {\n    slidesPerView: 3,\n    spaceBetween: 15,\n  },\n  1375: {\n    slidesPerView: 4,\n    spaceBetween: 20,\n  },\n};\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\nlet aboutTestimonial = ref(ThemeOptions.value.options.about_us.testimonial);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_swiper = _resolveComponent(\"swiper\")\n  const _component_swiper_slide = _resolveComponent(\"swiper-slide\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"review-section section-lg-space\" }, _attrs))\n  }><div class=\"container-fluid\"><div class=\"about-us-title text-center\"><h4 class=\"text-content\">${\n    _ssrInterpolate(_unref(aboutTestimonial).sub_title)\n  }</h4><h2 class=\"center\">${\n    _ssrInterpolate(_unref(aboutTestimonial).title)\n  }</h2></div><div class=\"row\"><div class=\"col-12\"><div class=\"slider-dots\">`)\n  _push(_ssrRenderComponent(_component_swiper, {\n    modules: _unref(modules),\n    loop: true,\n    spaceBetween: 30,\n    centeredSlides: true,\n    breakpoints: _unref(reviewSlider),\n    slidesPerView: \"auto\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<!--[-->`)\n        _ssrRenderList(_unref(aboutTestimonial).reviews, (testi, index) => {\n          _push(_ssrRenderComponent(_component_swiper_slide, { key: index }, {\n            default: _withCtx((_, _push, _parent, _scopeId) => {\n              if (_push) {\n                _push(`<div class=\"reviewer-box\"${_scopeId}>`)\n                _push(_ssrRenderComponent(_component_Icon, {\n                  name: \"ri:double-quotes-r\",\n                  class: \"quotes\"\n                }, null, _parent, _scopeId))\n                _push(`<h3${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.title)\n                }</h3><p class=\"truncate-line\"${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.review)\n                }</p><div class=\"reviewer-profile\"${\n                  _scopeId\n                }><div class=\"reviewer-image\"${\n                  _scopeId\n                }><img${\n                  _ssrRenderAttr(\"src\", testi.profile_image_url)\n                } class=\"\" alt=\"\"${\n                  _scopeId\n                }></div><div class=\"reviewer-name\"${\n                  _scopeId\n                }><h4${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.name)\n                }</h4><h6${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.designation)\n                }</h6></div></div></div>`)\n              } else {\n                return [\n                  _createVNode(\"div\", { class: \"reviewer-box\" }, [\n                    _createVNode(_component_Icon, {\n                      name: \"ri:double-quotes-r\",\n                      class: \"quotes\"\n                    }),\n                    _createVNode(\"h3\", null, _toDisplayString(testi.title), 1),\n                    _createVNode(\"p\", { class: \"truncate-line\" }, _toDisplayString(testi.review), 1),\n                    _createVNode(\"div\", { class: \"reviewer-profile\" }, [\n                      _createVNode(\"div\", { class: \"reviewer-image\" }, [\n                        _createVNode(\"img\", {\n                          src: testi.profile_image_url,\n                          class: \"\",\n                          alt: \"\"\n                        }, null, 8, [\"src\"])\n                      ]),\n                      _createVNode(\"div\", { class: \"reviewer-name\" }, [\n                        _createVNode(\"h4\", null, _toDisplayString(testi.name), 1),\n                        _createVNode(\"h6\", null, _toDisplayString(testi.designation), 1)\n                      ])\n                    ])\n                  ])\n                ]\n              }\n            }),\n            _: 2\n          }, _parent, _scopeId))\n        })\n        _push(`<!--]-->`)\n      } else {\n        return [\n          (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(aboutTestimonial).reviews, (testi, index) => {\n            return (_openBlock(), _createBlock(_component_swiper_slide, { key: index }, {\n              default: _withCtx(() => [\n                _createVNode(\"div\", { class: \"reviewer-box\" }, [\n                  _createVNode(_component_Icon, {\n                    name: \"ri:double-quotes-r\",\n                    class: \"quotes\"\n                  }),\n                  _createVNode(\"h3\", null, _toDisplayString(testi.title), 1),\n                  _createVNode(\"p\", { class: \"truncate-line\" }, _toDisplayString(testi.review), 1),\n                  _createVNode(\"div\", { class: \"reviewer-profile\" }, [\n                    _createVNode(\"div\", { class: \"reviewer-image\" }, [\n                      _createVNode(\"img\", {\n                        src: testi.profile_image_url,\n                        class: \"\",\n                        alt: \"\"\n                      }, null, 8, [\"src\"])\n                    ]),\n                    _createVNode(\"div\", { class: \"reviewer-name\" }, [\n                      _createVNode(\"h4\", null, _toDisplayString(testi.name), 1),\n                      _createVNode(\"h6\", null, _toDisplayString(testi.designation), 1)\n                    ])\n                  ])\n                ])\n              ]),\n              _: 2\n            }, 1024))\n          }), 128))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Pages/AboutUs/Review.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341506,
+      "end": 1716056341506,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056341506,
+      "end": 1716056341506,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341506,
+      "end": 1716056341506,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341506,
+      "end": 1716056341506,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341506,
+      "end": 1716056341506,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341506,
+      "end": 1716056341506,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056341506,
+      "end": 1716056341506,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341506,
+      "end": 1716056341506,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056341506,
+      "end": 1716056341507,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056341507,
+      "end": 1716056341507,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056341507,
+      "end": 1716056341507,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056341507,
+      "end": 1716056341507,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056341507,
+      "end": 1716056341507,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056341507,
+      "end": 1716056341507,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056341508,
+      "end": 1716056341508,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056341508,
+      "end": 1716056341508,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056341508,
+      "end": 1716056341508,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341508,
+      "end": 1716056341508,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341508,
+      "end": 1716056341508,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { Autoplay } from \"swiper\";\n\n\nconst _sfc_main = {\n  __name: 'Review',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet modules = [Autoplay];\nlet reviewSlider = {\n  0: {\n    slidesPerView: 1,\n    spaceBetween: 10,\n  },\n  650: {\n    slidesPerView: 2,\n    spaceBetween: 10,\n  },\n  975: {\n    slidesPerView: 3,\n    spaceBetween: 15,\n  },\n  1375: {\n    slidesPerView: 4,\n    spaceBetween: 20,\n  },\n};\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\nlet aboutTestimonial = ref(ThemeOptions.value.options.about_us.testimonial);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_swiper = _resolveComponent(\"swiper\")\n  const _component_swiper_slide = _resolveComponent(\"swiper-slide\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"review-section section-lg-space\" }, _attrs))\n  }><div class=\"container-fluid\"><div class=\"about-us-title text-center\"><h4 class=\"text-content\">${\n    _ssrInterpolate(_unref(aboutTestimonial).sub_title)\n  }</h4><h2 class=\"center\">${\n    _ssrInterpolate(_unref(aboutTestimonial).title)\n  }</h2></div><div class=\"row\"><div class=\"col-12\"><div class=\"slider-dots\">`)\n  _push(_ssrRenderComponent(_component_swiper, {\n    modules: _unref(modules),\n    loop: true,\n    spaceBetween: 30,\n    centeredSlides: true,\n    breakpoints: _unref(reviewSlider),\n    slidesPerView: \"auto\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<!--[-->`)\n        _ssrRenderList(_unref(aboutTestimonial).reviews, (testi, index) => {\n          _push(_ssrRenderComponent(_component_swiper_slide, { key: index }, {\n            default: _withCtx((_, _push, _parent, _scopeId) => {\n              if (_push) {\n                _push(`<div class=\"reviewer-box\"${_scopeId}>`)\n                _push(_ssrRenderComponent(_component_Icon, {\n                  name: \"ri:double-quotes-r\",\n                  class: \"quotes\"\n                }, null, _parent, _scopeId))\n                _push(`<h3${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.title)\n                }</h3><p class=\"truncate-line\"${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.review)\n                }</p><div class=\"reviewer-profile\"${\n                  _scopeId\n                }><div class=\"reviewer-image\"${\n                  _scopeId\n                }><img${\n                  _ssrRenderAttr(\"src\", testi.profile_image_url)\n                } class=\"\" alt=\"\"${\n                  _scopeId\n                }></div><div class=\"reviewer-name\"${\n                  _scopeId\n                }><h4${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.name)\n                }</h4><h6${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.designation)\n                }</h6></div></div></div>`)\n              } else {\n                return [\n                  _createVNode(\"div\", { class: \"reviewer-box\" }, [\n                    _createVNode(_component_Icon, {\n                      name: \"ri:double-quotes-r\",\n                      class: \"quotes\"\n                    }),\n                    _createVNode(\"h3\", null, _toDisplayString(testi.title), 1),\n                    _createVNode(\"p\", { class: \"truncate-line\" }, _toDisplayString(testi.review), 1),\n                    _createVNode(\"div\", { class: \"reviewer-profile\" }, [\n                      _createVNode(\"div\", { class: \"reviewer-image\" }, [\n                        _createVNode(\"img\", {\n                          src: testi.profile_image_url,\n                          class: \"\",\n                          alt: \"\"\n                        }, null, 8, [\"src\"])\n                      ]),\n                      _createVNode(\"div\", { class: \"reviewer-name\" }, [\n                        _createVNode(\"h4\", null, _toDisplayString(testi.name), 1),\n                        _createVNode(\"h6\", null, _toDisplayString(testi.designation), 1)\n                      ])\n                    ])\n                  ])\n                ]\n              }\n            }),\n            _: 2\n          }, _parent, _scopeId))\n        })\n        _push(`<!--]-->`)\n      } else {\n        return [\n          (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(aboutTestimonial).reviews, (testi, index) => {\n            return (_openBlock(), _createBlock(_component_swiper_slide, { key: index }, {\n              default: _withCtx(() => [\n                _createVNode(\"div\", { class: \"reviewer-box\" }, [\n                  _createVNode(_component_Icon, {\n                    name: \"ri:double-quotes-r\",\n                    class: \"quotes\"\n                  }),\n                  _createVNode(\"h3\", null, _toDisplayString(testi.title), 1),\n                  _createVNode(\"p\", { class: \"truncate-line\" }, _toDisplayString(testi.review), 1),\n                  _createVNode(\"div\", { class: \"reviewer-profile\" }, [\n                    _createVNode(\"div\", { class: \"reviewer-image\" }, [\n                      _createVNode(\"img\", {\n                        src: testi.profile_image_url,\n                        class: \"\",\n                        alt: \"\"\n                      }, null, 8, [\"src\"])\n                    ]),\n                    _createVNode(\"div\", { class: \"reviewer-name\" }, [\n                      _createVNode(\"h4\", null, _toDisplayString(testi.name), 1),\n                      _createVNode(\"h6\", null, _toDisplayString(testi.designation), 1)\n                    ])\n                  ])\n                ])\n              ]),\n              _: 2\n            }, 1024))\n          }), 128))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Pages/AboutUs/Review.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341508,
+      "end": 1716056341510,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { Autoplay } from \"swiper\";\n\n\nconst _sfc_main = {\n  __name: 'Review',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet modules = [Autoplay];\nlet reviewSlider = {\n  0: {\n    slidesPerView: 1,\n    spaceBetween: 10,\n  },\n  650: {\n    slidesPerView: 2,\n    spaceBetween: 10,\n  },\n  975: {\n    slidesPerView: 3,\n    spaceBetween: 15,\n  },\n  1375: {\n    slidesPerView: 4,\n    spaceBetween: 20,\n  },\n};\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\nlet aboutTestimonial = ref(ThemeOptions.value.options.about_us.testimonial);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_swiper = _resolveComponent(\"swiper\")\n  const _component_swiper_slide = _resolveComponent(\"swiper-slide\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"review-section section-lg-space\" }, _attrs))\n  }><div class=\"container-fluid\"><div class=\"about-us-title text-center\"><h4 class=\"text-content\">${\n    _ssrInterpolate(_unref(aboutTestimonial).sub_title)\n  }</h4><h2 class=\"center\">${\n    _ssrInterpolate(_unref(aboutTestimonial).title)\n  }</h2></div><div class=\"row\"><div class=\"col-12\"><div class=\"slider-dots\">`)\n  _push(_ssrRenderComponent(_component_swiper, {\n    modules: _unref(modules),\n    loop: true,\n    spaceBetween: 30,\n    centeredSlides: true,\n    breakpoints: _unref(reviewSlider),\n    slidesPerView: \"auto\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<!--[-->`)\n        _ssrRenderList(_unref(aboutTestimonial).reviews, (testi, index) => {\n          _push(_ssrRenderComponent(_component_swiper_slide, { key: index }, {\n            default: _withCtx((_, _push, _parent, _scopeId) => {\n              if (_push) {\n                _push(`<div class=\"reviewer-box\"${_scopeId}>`)\n                _push(_ssrRenderComponent(_component_Icon, {\n                  name: \"ri:double-quotes-r\",\n                  class: \"quotes\"\n                }, null, _parent, _scopeId))\n                _push(`<h3${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.title)\n                }</h3><p class=\"truncate-line\"${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.review)\n                }</p><div class=\"reviewer-profile\"${\n                  _scopeId\n                }><div class=\"reviewer-image\"${\n                  _scopeId\n                }><img${\n                  _ssrRenderAttr(\"src\", testi.profile_image_url)\n                } class=\"\" alt=\"\"${\n                  _scopeId\n                }></div><div class=\"reviewer-name\"${\n                  _scopeId\n                }><h4${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.name)\n                }</h4><h6${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.designation)\n                }</h6></div></div></div>`)\n              } else {\n                return [\n                  _createVNode(\"div\", { class: \"reviewer-box\" }, [\n                    _createVNode(_component_Icon, {\n                      name: \"ri:double-quotes-r\",\n                      class: \"quotes\"\n                    }),\n                    _createVNode(\"h3\", null, _toDisplayString(testi.title), 1),\n                    _createVNode(\"p\", { class: \"truncate-line\" }, _toDisplayString(testi.review), 1),\n                    _createVNode(\"div\", { class: \"reviewer-profile\" }, [\n                      _createVNode(\"div\", { class: \"reviewer-image\" }, [\n                        _createVNode(\"img\", {\n                          src: testi.profile_image_url,\n                          class: \"\",\n                          alt: \"\"\n                        }, null, 8, [\"src\"])\n                      ]),\n                      _createVNode(\"div\", { class: \"reviewer-name\" }, [\n                        _createVNode(\"h4\", null, _toDisplayString(testi.name), 1),\n                        _createVNode(\"h6\", null, _toDisplayString(testi.designation), 1)\n                      ])\n                    ])\n                  ])\n                ]\n              }\n            }),\n            _: 2\n          }, _parent, _scopeId))\n        })\n        _push(`<!--]-->`)\n      } else {\n        return [\n          (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(aboutTestimonial).reviews, (testi, index) => {\n            return (_openBlock(), _createBlock(_component_swiper_slide, { key: index }, {\n              default: _withCtx(() => [\n                _createVNode(\"div\", { class: \"reviewer-box\" }, [\n                  _createVNode(_component_Icon, {\n                    name: \"ri:double-quotes-r\",\n                    class: \"quotes\"\n                  }),\n                  _createVNode(\"h3\", null, _toDisplayString(testi.title), 1),\n                  _createVNode(\"p\", { class: \"truncate-line\" }, _toDisplayString(testi.review), 1),\n                  _createVNode(\"div\", { class: \"reviewer-profile\" }, [\n                    _createVNode(\"div\", { class: \"reviewer-image\" }, [\n                      _createVNode(\"img\", {\n                        src: testi.profile_image_url,\n                        class: \"\",\n                        alt: \"\"\n                      }, null, 8, [\"src\"])\n                    ]),\n                    _createVNode(\"div\", { class: \"reviewer-name\" }, [\n                      _createVNode(\"h4\", null, _toDisplayString(testi.name), 1),\n                      _createVNode(\"h6\", null, _toDisplayString(testi.designation), 1)\n                    ])\n                  ])\n                ])\n              ]),\n              _: 2\n            }, 1024))\n          }), 128))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Pages/AboutUs/Review.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341508,
+      "end": 1716056341510,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341510,
+      "end": 1716056341510,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341510,
+      "end": 1716056341510,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341510,
+      "end": 1716056341511,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341510,
+      "end": 1716056341511,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056341511,
+      "end": 1716056341511,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { Swiper as __nuxt_component_0 } from \"swiper/vue\";\nimport { SwiperSlide as __nuxt_component_1 } from \"swiper/vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { Autoplay } from \"swiper\";\n\n\nconst _sfc_main = {\n  __name: 'Review',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet modules = [Autoplay];\nlet reviewSlider = {\n  0: {\n    slidesPerView: 1,\n    spaceBetween: 10,\n  },\n  650: {\n    slidesPerView: 2,\n    spaceBetween: 10,\n  },\n  975: {\n    slidesPerView: 3,\n    spaceBetween: 15,\n  },\n  1375: {\n    slidesPerView: 4,\n    spaceBetween: 20,\n  },\n};\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\nlet aboutTestimonial = ref(ThemeOptions.value.options.about_us.testimonial);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_swiper = __nuxt_component_0\n  const _component_swiper_slide = __nuxt_component_1\n  const _component_Icon = __nuxt_component_2\n\n  _push(`<section${\n    _ssrRenderAttrs(_mergeProps({ class: \"review-section section-lg-space\" }, _attrs))\n  }><div class=\"container-fluid\"><div class=\"about-us-title text-center\"><h4 class=\"text-content\">${\n    _ssrInterpolate(_unref(aboutTestimonial).sub_title)\n  }</h4><h2 class=\"center\">${\n    _ssrInterpolate(_unref(aboutTestimonial).title)\n  }</h2></div><div class=\"row\"><div class=\"col-12\"><div class=\"slider-dots\">`)\n  _push(_ssrRenderComponent(_component_swiper, {\n    modules: _unref(modules),\n    loop: true,\n    spaceBetween: 30,\n    centeredSlides: true,\n    breakpoints: _unref(reviewSlider),\n    slidesPerView: \"auto\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<!--[-->`)\n        _ssrRenderList(_unref(aboutTestimonial).reviews, (testi, index) => {\n          _push(_ssrRenderComponent(_component_swiper_slide, { key: index }, {\n            default: _withCtx((_, _push, _parent, _scopeId) => {\n              if (_push) {\n                _push(`<div class=\"reviewer-box\"${_scopeId}>`)\n                _push(_ssrRenderComponent(_component_Icon, {\n                  name: \"ri:double-quotes-r\",\n                  class: \"quotes\"\n                }, null, _parent, _scopeId))\n                _push(`<h3${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.title)\n                }</h3><p class=\"truncate-line\"${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.review)\n                }</p><div class=\"reviewer-profile\"${\n                  _scopeId\n                }><div class=\"reviewer-image\"${\n                  _scopeId\n                }><img${\n                  _ssrRenderAttr(\"src\", testi.profile_image_url)\n                } class=\"\" alt=\"\"${\n                  _scopeId\n                }></div><div class=\"reviewer-name\"${\n                  _scopeId\n                }><h4${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.name)\n                }</h4><h6${\n                  _scopeId\n                }>${\n                  _ssrInterpolate(testi.designation)\n                }</h6></div></div></div>`)\n              } else {\n                return [\n                  _createVNode(\"div\", { class: \"reviewer-box\" }, [\n                    _createVNode(_component_Icon, {\n                      name: \"ri:double-quotes-r\",\n                      class: \"quotes\"\n                    }),\n                    _createVNode(\"h3\", null, _toDisplayString(testi.title), 1),\n                    _createVNode(\"p\", { class: \"truncate-line\" }, _toDisplayString(testi.review), 1),\n                    _createVNode(\"div\", { class: \"reviewer-profile\" }, [\n                      _createVNode(\"div\", { class: \"reviewer-image\" }, [\n                        _createVNode(\"img\", {\n                          src: testi.profile_image_url,\n                          class: \"\",\n                          alt: \"\"\n                        }, null, 8, [\"src\"])\n                      ]),\n                      _createVNode(\"div\", { class: \"reviewer-name\" }, [\n                        _createVNode(\"h4\", null, _toDisplayString(testi.name), 1),\n                        _createVNode(\"h6\", null, _toDisplayString(testi.designation), 1)\n                      ])\n                    ])\n                  ])\n                ]\n              }\n            }),\n            _: 2\n          }, _parent, _scopeId))\n        })\n        _push(`<!--]-->`)\n      } else {\n        return [\n          (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(aboutTestimonial).reviews, (testi, index) => {\n            return (_openBlock(), _createBlock(_component_swiper_slide, { key: index }, {\n              default: _withCtx(() => [\n                _createVNode(\"div\", { class: \"reviewer-box\" }, [\n                  _createVNode(_component_Icon, {\n                    name: \"ri:double-quotes-r\",\n                    class: \"quotes\"\n                  }),\n                  _createVNode(\"h3\", null, _toDisplayString(testi.title), 1),\n                  _createVNode(\"p\", { class: \"truncate-line\" }, _toDisplayString(testi.review), 1),\n                  _createVNode(\"div\", { class: \"reviewer-profile\" }, [\n                    _createVNode(\"div\", { class: \"reviewer-image\" }, [\n                      _createVNode(\"img\", {\n                        src: testi.profile_image_url,\n                        class: \"\",\n                        alt: \"\"\n                      }, null, 8, [\"src\"])\n                    ]),\n                    _createVNode(\"div\", { class: \"reviewer-name\" }, [\n                      _createVNode(\"h4\", null, _toDisplayString(testi.name), 1),\n                      _createVNode(\"h6\", null, _toDisplayString(testi.designation), 1)\n                    ])\n                  ])\n                ])\n              ]),\n              _: 2\n            }, 1024))\n          }), 128))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div></div></div></section>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Pages/AboutUs/Review.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341511,
+      "end": 1716056341511,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056341511,
+      "end": 1716056341511,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056341511,
+      "end": 1716056341511,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056341511,
+      "end": 1716056341511,
+      "order": "normal"
+    }
+  ]
+}

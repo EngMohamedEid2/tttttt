@@ -1,0 +1,1 @@
+const g=(r,n)=>{const t=new Date(r);var e=t.getHours(),a=t.getMinutes(),o=e>=12?"PM":"AM";e=e%12,e=e||12,a=a<10?"0"+a:a;var s=e+":"+a+" "+o;const u=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return n?`${t.getDate()} ${u[t.getMonth()]} ${t.getFullYear()}`:`${t.getDate()}/${t.getMonth()+1}/${t.getFullYear()} ${s}`};export{g as d};

@@ -1,0 +1,677 @@
+/**=====================
+     Loader scss
+==========================**/
+.spinning {
+    padding-right: 40px;
+
+    &::before {
+        @include pos($pos: absolute, $content: '');
+        @include pseudowh($width: 18px, $height: 18px);
+        border-radius: 50%;
+        right: 10px;
+        top: 4px;
+        border: 2px solid rgba($white, 0.29);
+        border-right: 3px solid $white;
+        animation: rotate360 0.5s infinite linear;
+    }
+}
+
+@keyframes rotate360 {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-wrapper,
+.custom-loader-wrapper {
+    position: fixed;
+    left: 0;
+    @include pseudowh($width: 100%, $height: 100vh);
+    background-color: $white;
+    z-index: 999;
+    @include flex_common;
+    text-align: center;
+    gap: 15px;
+    top: 0;
+
+    .loader {
+        @include pseudowh($width: 48px, $height: 48px);
+        border: 5px solid #eaeaea;
+        border-bottom-color: var(--theme-color);
+        border-radius: 50%;
+        display: inline-block;
+        animation: rotation 1s linear infinite;
+
+        html.dark & {
+            border-color: #1d1d22;
+            border-bottom-color: var(--theme-color);
+        }
+    }
+
+    h3 {
+        margin-top: 6px;
+        color: #777;
+        font-weight: 400;
+
+        html.dark & {
+            color: #ddd;
+        }
+    }
+}
+
+.custom-box-loader {
+    position: relative;
+    min-height: 350px;
+    z-index: 0;
+
+    .box-loader {
+
+        .loader-wrapper,
+        .custom-loader-wrapper {
+            @include pseudowh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            padding: 0;
+            gap: 0;
+            z-index: 8;
+            align-items: flex-start;
+
+            >div {
+                padding-top: 30%;
+            }
+        }
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+div#loading-bar {
+    color: var(--theme-color) !important;
+
+    .bar {
+        background: var(--theme-color) !important;
+    }
+}
+
+#loading-bar-spinner {
+    top: 15px !important;
+    left: unset !important;
+    right: 0 !important;
+    margin-right: 20px;
+    color: var(--theme-color) !important;
+
+    .spinner-icon {
+        @include pseudowh($width: 16 !important, $height: 16 !important);
+    }
+}
+
+/* skeleton loader */
+.skeleton-body {
+    background-image: none !important;
+    overflow: hidden;
+    pointer-events: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    @include pseudowh($width: 100vw, $height: 100vh);
+
+    .bg-effect {
+        background-image: none;
+    }
+
+    .title {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .skeleton-banner-xl {
+        position: relative;
+
+        .bg-size {
+            background-color: #f8f8f8 !important;
+            background-image: none !important;
+        }
+
+        [class*='col-'] {
+            position: relative;
+        }
+    }
+
+    .skeleton-banner-sm {
+        position: relative;
+
+        .bg-size {
+            background-color: #f8f8f8 !important;
+            background-image: none !important;
+        }
+
+        [class*='col-'] {
+            position: relative;
+        }
+
+        .skeleton-text-wrap {
+            .placeholder {
+                min-height: 6.8%;
+            }
+        }
+    }
+
+    .skeleton-banner-vertical {
+        position: relative;
+
+        .bg-size {
+            background-color: #f8f8f8 !important;
+            background-image: none !important;
+        }
+
+        [class*='col-'] {
+            position: relative;
+        }
+
+        .skeleton-text-wrap {
+            justify-content: flex-start;
+
+            .placeholder {
+                min-height: 3.3%;
+            }
+        }
+    }
+
+    .skeleton-text-wrap {
+        @include pseudowh;
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        padding: 30px;
+
+        .placeholder {
+            min-height: 4.3%;
+            background: linear-gradient(90deg, rgb(212, 212, 212, 0.41) 8%, #cdcdcd 18%, rgb(212, 212, 212, 0.41) 33%);
+            background-size: 800px 104px;
+            animation: skeleton-loader 2s infinite linear;
+            border-radius: 10px;
+        }
+    }
+
+    .home-section-2 {
+        background-color: #f2f2f2;
+        background-image: none !important;
+    }
+
+    .setting-box,
+    .compare-fix,
+    .recently-purchase {
+        display: none;
+    }
+}
+
+.skeleton-text-wrap {
+    display: none;
+}
+
+.skeleton-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    padding: calc(8px + (14 - 8) * ((100vw - 320px) / (1920 - 320)));
+    z-index: 0;
+    background-color: #f9f9f6;
+}
+
+.skeleton *:empty {
+    background: #f6f7f8;
+    background-position: -500px 0;
+    animation: skeletonShine 1s linear 0s infinite normal forwards;
+    border-radius: 5px;
+    background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    background-repeat: no-repeat;
+    background-size: 1000px 100%;
+    width: 100%;
+
+    [class='dark'] & {
+        background-color: #1d1d22;
+        background-image: linear-gradient(135deg, #1d1d22 0%, #2a2d2d 20%, #1d1d22 40%, #1d1d22 100%);
+    }
+}
+
+.skeleton__section+.skeleton__section {
+    margin-top: 16px;
+}
+
+.skeleton-section,
+.skeleton {
+    width: 100%;
+}
+
+.skeleton__section--actions {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.skeleton__section--card {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 24px;
+}
+
+.skeleton__header {
+    margin-bottom: 6px;
+    @include pseudowh($width: 32px, $height: 200px);
+    max-width: 35%;
+}
+
+.skeleton__header--long {
+    width: 300px;
+    max-width: 85%;
+}
+
+.skeleton__p {
+    @include pseudowh($width: 100%, $height: 16px);
+    margin-bottom: 8px;
+}
+
+.skeleton__p:last-child {
+    width: 45%;
+}
+
+.skeleton__p--short {
+    max-width: 120px;
+}
+
+.skeleton__img {
+    @include pseudowh($width: 64px, $height: 160px);
+    border-radius: 8px;
+}
+
+.skeleton__tree .skeleton__p {
+    width: 100%;
+    max-width: none;
+}
+
+@keyframes skeletonShine {
+    to {
+        background-position: 500px 0;
+    }
+}
+
+.skeleton-seller {
+    .vendor-text {
+        @include pseudowh($width: 66px, $height: 66px);
+        border-radius: 11px;
+        background: #f6f7f8;
+        background-position: -500px 0;
+        animation: skeletonShine 1s linear 0s infinite normal forwards;
+        background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+        background-repeat: no-repeat;
+        background-size: 1000px 100%;
+
+        html.dark & {
+            background: rgba(246, 247, 248, 0.05);
+            background-image: linear-gradient(135deg, #3f4242 0%, rgba(237, 238, 241, 0.1) 20%, #3f4242 40%, #3f4242 100%);
+        }
+    }
+
+    .contain-name {
+        h3 {
+            background: #f6f7f8;
+            background-position: -500px 0;
+            animation: skeletonShine 1s linear 0s infinite normal forwards;
+            border-radius: 5px;
+            background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+            background-repeat: no-repeat;
+            background-size: 1000px 100%;
+            width: 50%;
+            height: 28px;
+
+            html.dark & {
+                background: rgba(246, 247, 248, 0.05);
+                background-image: linear-gradient(135deg, #3f4242 0%, rgba(237, 238, 241, 0.1) 20%, #3f4242 40%, #3f4242 100%);
+            }
+        }
+
+        .product-label {
+            background: #f6f7f8;
+            background-position: -500px 0;
+            animation: skeletonShine 1s linear 0s infinite normal forwards;
+            border-radius: 5px;
+            background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+            background-repeat: no-repeat;
+            background-size: 1000px 100%;
+            @include pseudowh($width: 20%, $height: 28px);
+
+            html.dark & {
+                background: rgba(246, 247, 248, 0.05);
+                background-image: linear-gradient(135deg, #3f4242 0%, rgba(237, 238, 241, 0.1) 20%, #3f4242 40%, #3f4242 100%);
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    .saller-contact {
+        background: #f6f7f8;
+        background-position: -500px 0;
+        animation: skeletonShine 1s linear 0s infinite normal forwards;
+        border-radius: 5px;
+        background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+        background-repeat: no-repeat;
+        background-size: 1000px 100%;
+        @include pseudowh($width: 50% !important, $height: 28px);
+
+        html.dark & {
+            background: rgba(246, 247, 248, 0.05);
+            background-image: linear-gradient(135deg, #3f4242 0%, rgba(237, 238, 241, 0.1) 20%, #3f4242 40%, #3f4242 100%);
+        }
+
+        &.mt-2 {
+            width: 60% !important;
+        }
+    }
+}
+
+.blog-skeleton {
+    .product-box {
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .skeleton__img {
+        height: 224px;
+    }
+}
+
+.list_view {
+    .skeleton {
+        display: flex;
+        align-items: center;
+    }
+
+    .skeleton__section--card {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: -1px;
+        @include pseudowh($width: 38%, $height: 300px);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .skeleton__img {
+        height: 100%;
+    }
+
+    .content-div {
+        width: 50%;
+        margin-left: 30px;
+    }
+}
+
+.skeleton-vertical {
+    .offer-image {
+        display: block;
+        @include pseudowh($width: 80px, $height: 80px);
+        background: #f6f7f8;
+        background-position: -500px 0;
+        animation: skeletonShine 1s linear 0s infinite normal forwards;
+        background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+        background-repeat: no-repeat;
+        background-size: 1000px 100%;
+        border-radius: 7px;
+
+        html.dark & {
+            background: rgba(246, 247, 248, 0.05);
+            background-image: linear-gradient(135deg, #3f4242 0%, rgba(237, 238, 241, 0.1) 20%, #3f4242 40%, #3f4242 100%);
+        }
+    }
+
+    &.offer-product {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    &.offer-product {
+        .offer-detail {
+            .vertical-price {
+                background: #f6f7f8;
+                background-position: -500px 0;
+                animation: skeletonShine 1s linear 0s infinite normal forwards;
+                background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+                background-repeat: no-repeat;
+                background-size: 1000px 100%;
+                @include pseudowh($width: 120px, $height: 21px);
+                border-radius: 100px;
+
+                html.dark & {
+                    background: rgba(246, 247, 248, 0.05);
+                    background-image: linear-gradient(135deg, #3f4242 0%, rgba(237, 238, 241, 0.1) 20%, #3f4242 40%, #3f4242 100%);
+                }
+            }
+
+            span {
+                background: #f6f7f8;
+                background-position: -500px 0;
+                animation: skeletonShine 1s linear 0s infinite normal forwards;
+                background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+                background-repeat: no-repeat;
+                background-size: 1000px 100%;
+                @include pseudowh($width: 30px, $height: 20px);
+                border-radius: 100px;
+
+                html.dark & {
+                    background: rgba(246, 247, 248, 0.05);
+                    background-image: linear-gradient(135deg, #3f4242 0%, rgba(237, 238, 241, 0.1) 20%, #3f4242 40%, #3f4242 100%);
+                }
+            }
+
+            a {
+                .name {
+                    background: #f6f7f8;
+                    background-position: -500px 0;
+                    animation: skeletonShine 1s linear 0s infinite normal forwards;
+                    background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+                    background-repeat: no-repeat;
+                    background-size: 1000px 100%;
+                    @include pseudowh($width: 120px, $height: 16px);
+                    border-radius: 100px;
+
+                    html.dark & {
+                        background: rgba(246, 247, 248, 0.05);
+                        background-image: linear-gradient(135deg, #3f4242 0%, rgba(237, 238, 241, 0.1) 20%, #3f4242 40%, #3f4242 100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.skeleton-offer {
+    .coupon-box {
+        padding: 40px 27px;
+
+        .coupon-name {
+            .card-name {
+                h5 {
+                    background: #ffffff;
+                    background-position: -500px 0;
+                    animation: skeletonShine 2s linear 0s infinite normal forwards;
+                    border-radius: 5px;
+                    background-image: linear-gradient(135deg, #ffffff 0%, #e1e1e1 20%, #ffffff 40%, #ffffff 100%);
+                    background-repeat: no-repeat;
+                    background-size: 1000px 100%;
+                    opacity: 1;
+                    @include pseudowh($width: 140px, $height: 24px);
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .coupon-content {
+            p {
+                background: #ffffff;
+                background-position: -500px 0;
+                animation: skeletonShine 2s linear 0s infinite normal forwards;
+                border-radius: 5px;
+                background-image: linear-gradient(135deg, #ffffff 0%, #e1e1e1 20%, #ffffff 40%, #ffffff 100%);
+                background-repeat: no-repeat;
+                background-size: 1000px 100%;
+                opacity: 1;
+                @include pseudowh($width: 70%, $height: 22px);
+                margin-bottom: 0;
+            }
+
+            .long {
+                width: 90%;
+                margin-top: 10px;
+            }
+
+            .long.long-s {
+                width: 60%;
+            }
+        }
+    }
+}
+
+.common-skeleton {
+    ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0 !important;
+
+        li {
+            display: block !important;
+        }
+
+        .placeholder {
+            background: #f6f7f8;
+            background-position: -500px 0;
+            animation: skeletonShine 1s linear 0s infinite normal forwards;
+            border-radius: 5px;
+            background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+            background-repeat: no-repeat;
+            background-size: 1000px 100%;
+            opacity: 1;
+            height: 24px;
+
+            +.placeholder {
+                margin-top: 14px;
+            }
+        }
+    }
+
+    .img-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+
+        .img-content {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-left: 40px;
+        }
+
+        .img {
+            @include pseudowh($width: 230px, $height: 230px);
+            border-radius: 15px;
+            background: #f6f7f8;
+            background-position: -500px 0;
+            animation: skeletonShine 1s linear 0s infinite normal forwards;
+            background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+            background-repeat: no-repeat;
+            background-size: 1000px 100%;
+            opacity: 1;
+        }
+
+        .placeholder {
+            background: #f6f7f8;
+            background-position: -500px 0;
+            animation: skeletonShine 1s linear 0s infinite normal forwards;
+            border-radius: 5px;
+            background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+            background-repeat: no-repeat;
+            background-size: 1000px 100%;
+            opacity: 1;
+            height: 20px;
+        }
+    }
+}
+
+@keyframes skeleton-loader {
+    0% {
+        transform: translateZ(0);
+        background-position: -468px 0;
+    }
+
+    100% {
+        transform: translateZ(0);
+        background-position: 468px 0;
+    }
+}
+
+.product-section-box {
+    .question-answer {
+        &.skeleton-qa {
+            li {
+                h6 {
+                    background: linear-gradient(90deg, rgb(212, 212, 212, 0.41) 8%, #cdcdcd 18%, rgb(212, 212, 212, 0.41) 33%);
+                    background-size: 800px 104px;
+                    animation: skeleton-loader 2s infinite linear;
+                    @include pseudowh($width: 15%, $height: 20px);
+                }
+
+                .answer-box {
+                    >div {
+                        width: 100%;
+                    }
+
+                    p {
+                        background: linear-gradient(90deg, rgb(212, 212, 212, 0.41) 8%, #cdcdcd 18%, rgb(212, 212, 212, 0.41) 33%);
+                        background-size: 800px 104px;
+                        animation: skeleton-loader 2s infinite linear;
+                        @include pseudowh($width: 40%, $height: 20px);
+                        margin-bottom: 6px;
+
+                        &:nth-child(2) {
+                            width: 60%;
+                        }
+
+                        &:nth-child(3) {
+                            width: 50%;
+                        }
+                    }
+                }
+
+                .answer-box,
+                .question-box {
+                    h5 {
+                        border: none;
+                        background-color: $light-gray;
+                    }
+                }
+            }
+        }
+    }
+}

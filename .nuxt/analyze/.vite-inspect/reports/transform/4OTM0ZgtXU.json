@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Madrid/index.vue?nuxt_component=async&nuxt_component_name=ThemesMadrid",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <!-- Home Section Start -->\n    <section\n      class=\"home-section-2 home-section-bg pt-0 overflow-hidden\"\n      v-if=\"data?.content?.home_banner\"\n    >\n      <ThemesWidgetsHomeBannerMadrid :data=\"data?.content?.home_banner\" />\n    </section>\n    <!-- Home Section End -->\n\n    <!-- Banner Section Start -->\n    <section\n      class=\"banner-section ratio_60\"\n      v-if=\"\n        (data?.content?.featured_banners?.status &&\n          data?.content?.featured_banners?.banners?.length) ||\n        0 >= 4\n      \"\n    >\n      <ThemesWidgetsBanner\n        :banners=\"data?.content?.featured_banners?.banners\"\n        :style=\"'horizontal'\"\n      />\n    </section>\n    <!-- Banner Section End -->\n\n    <!-- Category Section Start -->\n    <section\n      class=\"category-section-3\"\n      v-if=\"data?.content?.categories_image_list?.status\"\n    >\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.categories_image_list?.title\"\n          :style=\"'simple'\"\n        />\n        <ThemesWidgetsCategories\n          :style=\"'horizontal'\"\n          :theme=\"'madrid'\"\n          :slidesPerView=\"8\"\n          :categoryIds=\"\n            data?.content?.categories_image_list?.category_ids || []\n          \"\n          :image=\"data?.content?.categories_image_list?.image_url\"\n        />\n      </div>\n    </section>\n    <!-- Category Section End -->\n\n    <!-- Product Section Start -->\n    <section\n      class=\"product-section-3\"\n      v-if=\"\n        data?.content?.products_list_1?.product_ids?.length ||\n        (0 >= 6 && data?.content?.products_list_1?.status)\n      \"\n    >\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.products_list_1?.title\"\n          :style=\"'simple'\"\n        />\n        <ThemesWidgetsProduct\n          :Products=\"product\"\n          :productIds=\"data?.content?.products_list_1?.product_ids || []\"\n          :sliderPerView=\"6\"\n          :spaceBetween=\"15\"\n          :slider=\"true\"\n          :style=\"'horizontal'\"\n          :productstyle=\"'product-standard overflow-hidden'\"\n          :boxClass=\"'product-box-bg'\"\n        />\n      </div>\n    </section>\n    <!-- Product Section End -->\n\n    <!-- Banner Section Start -->\n    <section\n      class=\"bank-section overflow-hidden\"\n      v-if=\"data?.content?.bank_wallet_offers?.status\"\n    >\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.bank_wallet_offers?.title\"\n          :style=\"'simple'\"\n        />\n        <ThemesWidgetsWalletOffer\n          :offers=\"data?.content?.bank_wallet_offers?.offers\"\n        />\n      </div>\n    </section>\n    <!-- Banner Section End -->\n\n    <!-- Deal Section Start -->\n    <section\n      class=\"product-section product-section-3\"\n      v-if=\"data?.content?.product_with_deals?.status\"\n    >\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.product_with_deals?.title\"\n          :style=\"'simple'\"\n        />\n        <div class=\"row g-sm-4 g-3\">\n          <div\n            class=\"col-xxl-4 order-lg-2 d-xxl-block d-none\"\n            v-if=\"data?.content?.product_with_deals?.deal_of_days?.status\"\n          >\n            <ThemesWidgetsDeal\n              :Products=\"product\"\n              :data=\"data?.content?.product_with_deals?.deal_of_days\"\n            />\n          </div>\n          <div\n            class=\"col-xxl-8 col-lg-12 order-lg-1\"\n            :class=\"\n              (data?.content?.product_with_deals?.deal_of_days?.status &&\n                data?.content?.product_with_deals?.deal_of_days?.deals\n                  ?.length) ||\n              0\n                ? 'col-xxl-8 col-lg-12 order-lg-1'\n                : 'col-xxl-12 col-lg-12 order-lg-1'\n            \"\n          >\n            <ThemesWidgetsProduct\n              :Products=\"product\"\n              :productIds=\"\n                data?.content?.product_with_deals?.products_list?.product_ids ||\n                []\n              \"\n              :slider=\"false\"\n              :style=\"'horizontal'\"\n              :productstyle=\"'product-standard theme-plus overflow-hidden'\"\n              :boxClass=\"'product-box-bg'\"\n              :showItem=\"\n                (data?.content?.product_with_deals?.deal_of_days?.status &&\n                  data?.content?.product_with_deals?.deal_of_days?.deals\n                    ?.length) ||\n                0\n                  ? 4\n                  : 6\n              \"\n            />\n          </div>\n        </div>\n      </div>\n    </section>\n    <!-- Deal Section End -->\n\n    <!-- Offer Section Start -->\n    <section\n      class=\"offer-section sale-banner\"\n      v-if=\"data?.content?.full_width_banner?.status\"\n    >\n      <div class=\"container-fluid-lg\">\n        <div class=\"row\">\n          <div class=\"col-12 ratio_12\">\n            <WidgetsImageLink\n              :classes=\"'offer-box hover-effect'\"\n              :image=\"data?.content?.full_width_banner\"\n              :bgImage=\"false\"\n            />\n          </div>\n        </div>\n      </div>\n    </section>\n    <!-- Offer Section End -->\n\n    <!-- Product Section Start -->\n    <section\n      class=\"product-section\"\n      v-if=\"\n        data?.content?.products_list_2?.product_ids?.length ||\n        (0 >= 6 && data?.content?.products_list_2?.status)\n      \"\n    >\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.products_list_2?.title\"\n          :style=\"'simple'\"\n        />\n        <ThemesWidgetsProduct\n          :Products=\"product\"\n          :productIds=\"data?.content?.products_list_2?.product_ids || []\"\n          :sliderPerView=\"6\"\n          :slider=\"true\"\n          :spaceBetween=\"15\"\n          :style=\"'horizontal'\"\n          :productstyle=\"'product-standard theme-plus'\"\n          :boxClass=\"'product-box-bg'\"\n        />\n      </div>\n    </section>\n    <!-- Product Section End -->\n\n    <!-- Product Section Start -->\n    <section\n      class=\"product-section\"\n      v-if=\"\n        data?.content?.products_list_3?.product_ids?.length ||\n        (0 >= 6 && data?.content?.products_list_3?.status)\n      \"\n    >\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.products_list_3?.title\"\n          :style=\"'simple'\"\n        />\n        <ThemesWidgetsProduct\n          :Products=\"product\"\n          :spaceBetween=\"15\"\n          :productIds=\"data?.content?.products_list_3?.product_ids || []\"\n          :sliderPerView=\"6\"\n          :slider=\"true\"\n          :style=\"'horizontal'\"\n          :productstyle=\"'product-standard theme-plus overflow-hidden'\"\n          :boxClass=\"'product-box-bg'\"\n        />\n      </div>\n    </section>\n    <!-- Product Section End -->\n\n    <!-- Banner Section Start -->\n    <section\n      class=\"banner-section\"\n      v-if=\"data?.content?.two_column_banners?.status\"\n    >\n      <div class=\"container-fluid-lg\">\n        <div class=\"row gy-lg-0 gy-3\">\n          <div class=\"col-lg-6\">\n            <WidgetsImageLink\n              :classes=\"'banner-contain-3 hover-effect'\"\n              :image=\"data?.content?.two_column_banners?.banner_1\"\n              :bgImage=\"false\"\n            />\n          </div>\n          <div class=\"col-lg-6\">\n            <WidgetsImageLink\n              :classes=\"'banner-contain-3 hover-effect'\"\n              :image=\"data?.content?.two_column_banners?.banner_2\"\n              :bgImage=\"false\"\n            />\n          </div>\n        </div>\n      </div>\n    </section>\n    <!-- Banner Section End -->\n\n    <!-- Product Section Start -->\n    <section\n      class=\"product-section\"\n      v-if=\"\n        data?.content?.products_list_4?.product_ids?.length ||\n        (0 >= 6 && data?.content?.products_list_4?.status)\n      \"\n    >\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.products_list_4?.title\"\n          :style=\"'simple'\"\n        />\n        <ThemesWidgetsProduct\n          :Products=\"product\"\n          :productIds=\"data?.content?.products_list_4?.product_ids || []\"\n          :sliderPerView=\"6\"\n          :slider=\"true\"\n          :style=\"'horizontal'\"\n          :spaceBetween=\"15\"\n          :productstyle=\"'product-standard theme-plus overflow-hidden'\"\n          :boxClass=\"'product-box-bg'\"\n        />\n      </div>\n    </section>\n    <!-- Product Section End -->\n\n    <!-- Product Section Start -->\n    <section\n      class=\"product-section\"\n      v-if=\"\n        data?.content?.products_list_5?.product_ids?.length ||\n        (0 >= 6 && data?.content?.products_list_5?.status)\n      \"\n    >\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.products_list_5?.title\"\n          :style=\"'simple'\"\n        />\n        <ThemesWidgetsProduct\n          :Products=\"product\"\n          :productIds=\"data?.content?.products_list_5?.product_ids || []\"\n          :sliderPerView=\"6\"\n          :slider=\"true\"\n          :style=\"'horizontal'\"\n          :spaceBetween=\"15\"\n          :productstyle=\"'product-standard theme-plus overflow-hidden'\"\n          :boxClass=\"'product-box-bg'\"\n        />\n      </div>\n    </section>\n    <!-- Product Section End -->\n\n    <!-- Banner Section Start -->\n    <section\n      class=\"banner-section\"\n      v-if=\"data?.content?.delivery_banners?.status\"\n    >\n      <div class=\"container-fluid-lg\">\n        <div class=\"row gy-lg-0 gy-3\">\n          <div class=\"col-lg-8\">\n            <WidgetsImageLink\n              :classes=\"'banner-contain  pt-sm-5 hover-effect'\"\n              :image=\"data?.content?.delivery_banners?.banner_1\"\n              :bgImage=\"false\"\n            />\n          </div>\n          <div class=\"col-lg-4\">\n            <WidgetsImageLink\n              :classes=\"'banner-contain pt-lg-4 hover-effect'\"\n              :image=\"data?.content?.delivery_banners?.banner_2\"\n              :bgImage=\"true\"\n              :saleclass=\"'h-100'\"\n            />\n          </div>\n        </div>\n      </div>\n    </section>\n    <!-- Banner Section End -->\n\n    <!-- Product Section Start -->\n    <section\n      class=\"product-section\"\n      v-if=\"\n        data?.content?.products_list_6?.product_ids?.length &&\n        data?.content?.products_list_6?.status\n      \"\n    >\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.products_list_6?.title\"\n          :style=\"'simple'\"\n        />\n        <ThemesWidgetsProduct\n          :Products=\"product\"\n          :productIds=\"data?.content?.products_list_6?.product_ids || []\"\n          :sliderPerView=\"6\"\n          :slider=\"true\"\n          :style=\"'horizontal'\"\n          :spaceBetween=\"15\"\n          :productstyle=\"'product-standard theme-plus overflow-hidden'\"\n          :boxClass=\"'product-box-bg'\"\n        />\n      </div>\n    </section>\n\n    <!-- Product Section Start -->\n    <section\n      class=\"product-section\"\n      v-if=\"\n        data?.content?.products_list_7?.product_ids?.length ||\n        (0 >= 6 && data?.content?.products_list_7?.status)\n      \"\n    >\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.products_list_7?.title\"\n          :style=\"'simple'\"\n        />\n        <ThemesWidgetsProduct\n          :Products=\"product\"\n          :productIds=\"data?.content?.products_list_7?.product_ids || []\"\n          :sliderPerView=\"6\"\n          :slider=\"true\"\n          :style=\"'horizontal'\"\n          :spaceBetween=\"15\"\n          :productstyle=\"'product-standard theme-plus overflow-hidden'\"\n          :boxClass=\"'product-box-bg'\"\n        />\n      </div>\n    </section>\n    <!-- Product Section End -->\n\n    <!-- Blog Section Start -->\n    <section\n      class=\"section-b-space\"\n      v-if=\"\n        data?.content?.featured_blogs?.blog_ids?.length ||\n        (0 >= 3 && data?.content?.featured_blogs?.status)\n      \"\n    >\n      <div class=\"container-fluid-lg\">\n        <WidgetsTitle\n          :title=\"data?.content?.featured_blogs?.title\"\n          :style=\"'simple'\"\n        />\n        <ThemesWidgetsBlog\n          :Blogs=\"blog\"\n          :blogIds=\"data?.content?.featured_blogs?.blog_ids || []\"\n          :sliderPerView=\"4\"\n        />\n      </div>\n    </section>\n    <!-- Banner Section End -->\n  </div>\n</template>\n<script setup>\nlet { data, pending } = await HandleRequest(\"theme/madrid\", {\n  key: \"getAllmadrid\",\n  params: { slug: \"madrid\" },\n});\n\nlet { data: product, error } = await HandleRequest(\"product\", {\n  key: \"getThemeParisProduct\",\n  params: {\n    status: 1,\n    theme: \"madrid\",\n    ids: data?.value?.content?.products_ids?.join(\",\"),\n  },\n});\n\nlet { data: blog } = await HandleRequest(\"blog\", {\n  key: \"GetAllFeaturedBlogs\",\n  params: {\n    status: 1,\n    ids: data?.value?.content?.featured_blogs?.blog_ids?.join(\",\"),\n  },\n});\n\nonMounted(() => {\n  // Change color for this layout\n  document.documentElement.style.setProperty(\"--theme-color\", \"#239698\");\n});\n\nonBeforeUnmount(() => {\n  // Remove Color\n  document.documentElement.style.removeProperty(\"--theme-color\");\n});\n</script>\n",
+      "start": 1716056284829,
+      "end": 1716056284912,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284912,
+      "end": 1716056284912,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284912,
+      "end": 1716056284912,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284912,
+      "end": 1716056284912,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284912,
+      "end": 1716056284912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284912,
+      "end": 1716056284912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284912,
+      "end": 1716056284912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284912,
+      "end": 1716056284912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"home-section-2 home-section-bg pt-0 overflow-hidden\"\n}\nconst _hoisted_2 = {\n  key: 1,\n  class: \"banner-section ratio_60\"\n}\nconst _hoisted_3 = {\n  key: 2,\n  class: \"category-section-3\"\n}\nconst _hoisted_4 = { class: \"container-fluid-lg\" }\nconst _hoisted_5 = {\n  key: 3,\n  class: \"product-section-3\"\n}\nconst _hoisted_6 = { class: \"container-fluid-lg\" }\nconst _hoisted_7 = {\n  key: 4,\n  class: \"bank-section overflow-hidden\"\n}\nconst _hoisted_8 = { class: \"container-fluid-lg\" }\nconst _hoisted_9 = {\n  key: 5,\n  class: \"product-section product-section-3\"\n}\nconst _hoisted_10 = { class: \"container-fluid-lg\" }\nconst _hoisted_11 = { class: \"row g-sm-4 g-3\" }\nconst _hoisted_12 = {\n  key: 0,\n  class: \"col-xxl-4 order-lg-2 d-xxl-block d-none\"\n}\nconst _hoisted_13 = {\n  key: 6,\n  class: \"offer-section sale-banner\"\n}\nconst _hoisted_14 = { class: \"container-fluid-lg\" }\nconst _hoisted_15 = { class: \"row\" }\nconst _hoisted_16 = { class: \"col-12 ratio_12\" }\nconst _hoisted_17 = {\n  key: 7,\n  class: \"product-section\"\n}\nconst _hoisted_18 = { class: \"container-fluid-lg\" }\nconst _hoisted_19 = {\n  key: 8,\n  class: \"product-section\"\n}\nconst _hoisted_20 = { class: \"container-fluid-lg\" }\nconst _hoisted_21 = {\n  key: 9,\n  class: \"banner-section\"\n}\nconst _hoisted_22 = { class: \"container-fluid-lg\" }\nconst _hoisted_23 = { class: \"row gy-lg-0 gy-3\" }\nconst _hoisted_24 = { class: \"col-lg-6\" }\nconst _hoisted_25 = { class: \"col-lg-6\" }\nconst _hoisted_26 = {\n  key: 10,\n  class: \"product-section\"\n}\nconst _hoisted_27 = { class: \"container-fluid-lg\" }\nconst _hoisted_28 = {\n  key: 11,\n  class: \"product-section\"\n}\nconst _hoisted_29 = { class: \"container-fluid-lg\" }\nconst _hoisted_30 = {\n  key: 12,\n  class: \"banner-section\"\n}\nconst _hoisted_31 = { class: \"container-fluid-lg\" }\nconst _hoisted_32 = { class: \"row gy-lg-0 gy-3\" }\nconst _hoisted_33 = { class: \"col-lg-8\" }\nconst _hoisted_34 = { class: \"col-lg-4\" }\nconst _hoisted_35 = {\n  key: 13,\n  class: \"product-section\"\n}\nconst _hoisted_36 = { class: \"container-fluid-lg\" }\nconst _hoisted_37 = {\n  key: 14,\n  class: \"product-section\"\n}\nconst _hoisted_38 = { class: \"container-fluid-lg\" }\nconst _hoisted_39 = {\n  key: 15,\n  class: \"section-b-space\"\n}\nconst _hoisted_40 = { class: \"container-fluid-lg\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet { data, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"theme/madrid\", {\n  key: \"getAllmadrid\",\n  params: { slug: \"madrid\" },\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nlet { data: product, error } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"product\", {\n  key: \"getThemeParisProduct\",\n  params: {\n    status: 1,\n    theme: \"madrid\",\n    ids: data?.value?.content?.products_ids?.join(\",\"),\n  },\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nlet { data: blog } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"blog\", {\n  key: \"GetAllFeaturedBlogs\",\n  params: {\n    status: 1,\n    ids: data?.value?.content?.featured_blogs?.blog_ids?.join(\",\"),\n  },\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nonMounted(() => {\n  // Change color for this layout\n  document.documentElement.style.setProperty(\"--theme-color\", \"#239698\");\n});\n\nonBeforeUnmount(() => {\n  // Remove Color\n  document.documentElement.style.removeProperty(\"--theme-color\");\n});\n\nreturn (_ctx, _cache) => {\n  const _component_ThemesWidgetsHomeBannerMadrid = _resolveComponent(\"ThemesWidgetsHomeBannerMadrid\")\n  const _component_ThemesWidgetsBanner = _resolveComponent(\"ThemesWidgetsBanner\")\n  const _component_WidgetsTitle = _resolveComponent(\"WidgetsTitle\")\n  const _component_ThemesWidgetsCategories = _resolveComponent(\"ThemesWidgetsCategories\")\n  const _component_ThemesWidgetsProduct = _resolveComponent(\"ThemesWidgetsProduct\")\n  const _component_ThemesWidgetsWalletOffer = _resolveComponent(\"ThemesWidgetsWalletOffer\")\n  const _component_ThemesWidgetsDeal = _resolveComponent(\"ThemesWidgetsDeal\")\n  const _component_WidgetsImageLink = _resolveComponent(\"WidgetsImageLink\")\n  const _component_ThemesWidgetsBlog = _resolveComponent(\"ThemesWidgetsBlog\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (_unref(data)?.content?.home_banner)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n          _createVNode(_component_ThemesWidgetsHomeBannerMadrid, {\n            data: _unref(data)?.content?.home_banner\n          }, null, 8, [\"data\"])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (\n        (_unref(data)?.content?.featured_banners?.status &&\n          _unref(data)?.content?.featured_banners?.banners?.length) ||\n        0 >= 4\n      )\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_2, [\n          _createVNode(_component_ThemesWidgetsBanner, {\n            banners: _unref(data)?.content?.featured_banners?.banners,\n            style: 'horizontal'\n          }, null, 8, [\"banners\"])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.categories_image_list?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.categories_image_list?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createVNode(_component_ThemesWidgetsCategories, {\n              style: 'horizontal',\n              theme: 'madrid',\n              slidesPerView: 8,\n              categoryIds: \n            _unref(data)?.content?.categories_image_list?.category_ids || []\n          ,\n              image: _unref(data)?.content?.categories_image_list?.image_url\n            }, null, 8, [\"categoryIds\", \"image\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (\n        _unref(data)?.content?.products_list_1?.product_ids?.length ||\n        (0 >= 6 && _unref(data)?.content?.products_list_1?.status)\n      )\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.products_list_1?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: _unref(product),\n              productIds: _unref(data)?.content?.products_list_1?.product_ids || [],\n              sliderPerView: 6,\n              spaceBetween: 15,\n              slider: true,\n              style: 'horizontal',\n              productstyle: 'product-standard overflow-hidden',\n              boxClass: 'product-box-bg'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.bank_wallet_offers?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_7, [\n          _createElementVNode(\"div\", _hoisted_8, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.bank_wallet_offers?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createVNode(_component_ThemesWidgetsWalletOffer, {\n              offers: _unref(data)?.content?.bank_wallet_offers?.offers\n            }, null, 8, [\"offers\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.product_with_deals?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_9, [\n          _createElementVNode(\"div\", _hoisted_10, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.product_with_deals?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createElementVNode(\"div\", _hoisted_11, [\n              (_unref(data)?.content?.product_with_deals?.deal_of_days?.status)\n                ? (_openBlock(), _createElementBlock(\"div\", _hoisted_12, [\n                    _createVNode(_component_ThemesWidgetsDeal, {\n                      Products: _unref(product),\n                      data: _unref(data)?.content?.product_with_deals?.deal_of_days\n                    }, null, 8, [\"Products\", \"data\"])\n                  ]))\n                : _createCommentVNode(\"\", true),\n              _createElementVNode(\"div\", {\n                class: _normalizeClass([\"col-xxl-8 col-lg-12 order-lg-1\", \n              (_unref(data)?.content?.product_with_deals?.deal_of_days?.status &&\n                _unref(data)?.content?.product_with_deals?.deal_of_days?.deals\n                  ?.length) ||\n              0\n                ? 'col-xxl-8 col-lg-12 order-lg-1'\n                : 'col-xxl-12 col-lg-12 order-lg-1'\n            ])\n              }, [\n                _createVNode(_component_ThemesWidgetsProduct, {\n                  Products: _unref(product),\n                  productIds: \n                _unref(data)?.content?.product_with_deals?.products_list?.product_ids ||\n                []\n              ,\n                  slider: false,\n                  style: 'horizontal',\n                  productstyle: 'product-standard theme-plus overflow-hidden',\n                  boxClass: 'product-box-bg',\n                  showItem: \n                (_unref(data)?.content?.product_with_deals?.deal_of_days?.status &&\n                  _unref(data)?.content?.product_with_deals?.deal_of_days?.deals\n                    ?.length) ||\n                0\n                  ? 4\n                  : 6\n              \n                }, null, 8, [\"Products\", \"productIds\", \"showItem\"])\n              ], 2)\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.full_width_banner?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_13, [\n          _createElementVNode(\"div\", _hoisted_14, [\n            _createElementVNode(\"div\", _hoisted_15, [\n              _createElementVNode(\"div\", _hoisted_16, [\n                _createVNode(_component_WidgetsImageLink, {\n                  classes: 'offer-box hover-effect',\n                  image: _unref(data)?.content?.full_width_banner,\n                  bgImage: false\n                }, null, 8, [\"image\"])\n              ])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (\n        _unref(data)?.content?.products_list_2?.product_ids?.length ||\n        (0 >= 6 && _unref(data)?.content?.products_list_2?.status)\n      )\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_17, [\n          _createElementVNode(\"div\", _hoisted_18, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.products_list_2?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: _unref(product),\n              productIds: _unref(data)?.content?.products_list_2?.product_ids || [],\n              sliderPerView: 6,\n              slider: true,\n              spaceBetween: 15,\n              style: 'horizontal',\n              productstyle: 'product-standard theme-plus',\n              boxClass: 'product-box-bg'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (\n        _unref(data)?.content?.products_list_3?.product_ids?.length ||\n        (0 >= 6 && _unref(data)?.content?.products_list_3?.status)\n      )\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_19, [\n          _createElementVNode(\"div\", _hoisted_20, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.products_list_3?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: _unref(product),\n              spaceBetween: 15,\n              productIds: _unref(data)?.content?.products_list_3?.product_ids || [],\n              sliderPerView: 6,\n              slider: true,\n              style: 'horizontal',\n              productstyle: 'product-standard theme-plus overflow-hidden',\n              boxClass: 'product-box-bg'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.two_column_banners?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_21, [\n          _createElementVNode(\"div\", _hoisted_22, [\n            _createElementVNode(\"div\", _hoisted_23, [\n              _createElementVNode(\"div\", _hoisted_24, [\n                _createVNode(_component_WidgetsImageLink, {\n                  classes: 'banner-contain-3 hover-effect',\n                  image: _unref(data)?.content?.two_column_banners?.banner_1,\n                  bgImage: false\n                }, null, 8, [\"image\"])\n              ]),\n              _createElementVNode(\"div\", _hoisted_25, [\n                _createVNode(_component_WidgetsImageLink, {\n                  classes: 'banner-contain-3 hover-effect',\n                  image: _unref(data)?.content?.two_column_banners?.banner_2,\n                  bgImage: false\n                }, null, 8, [\"image\"])\n              ])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (\n        _unref(data)?.content?.products_list_4?.product_ids?.length ||\n        (0 >= 6 && _unref(data)?.content?.products_list_4?.status)\n      )\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_26, [\n          _createElementVNode(\"div\", _hoisted_27, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.products_list_4?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: _unref(product),\n              productIds: _unref(data)?.content?.products_list_4?.product_ids || [],\n              sliderPerView: 6,\n              slider: true,\n              style: 'horizontal',\n              spaceBetween: 15,\n              productstyle: 'product-standard theme-plus overflow-hidden',\n              boxClass: 'product-box-bg'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (\n        _unref(data)?.content?.products_list_5?.product_ids?.length ||\n        (0 >= 6 && _unref(data)?.content?.products_list_5?.status)\n      )\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_28, [\n          _createElementVNode(\"div\", _hoisted_29, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.products_list_5?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: _unref(product),\n              productIds: _unref(data)?.content?.products_list_5?.product_ids || [],\n              sliderPerView: 6,\n              slider: true,\n              style: 'horizontal',\n              spaceBetween: 15,\n              productstyle: 'product-standard theme-plus overflow-hidden',\n              boxClass: 'product-box-bg'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(data)?.content?.delivery_banners?.status)\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_30, [\n          _createElementVNode(\"div\", _hoisted_31, [\n            _createElementVNode(\"div\", _hoisted_32, [\n              _createElementVNode(\"div\", _hoisted_33, [\n                _createVNode(_component_WidgetsImageLink, {\n                  classes: 'banner-contain  pt-sm-5 hover-effect',\n                  image: _unref(data)?.content?.delivery_banners?.banner_1,\n                  bgImage: false\n                }, null, 8, [\"image\"])\n              ]),\n              _createElementVNode(\"div\", _hoisted_34, [\n                _createVNode(_component_WidgetsImageLink, {\n                  classes: 'banner-contain pt-lg-4 hover-effect',\n                  image: _unref(data)?.content?.delivery_banners?.banner_2,\n                  bgImage: true,\n                  saleclass: 'h-100'\n                }, null, 8, [\"image\"])\n              ])\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (\n        _unref(data)?.content?.products_list_6?.product_ids?.length &&\n        _unref(data)?.content?.products_list_6?.status\n      )\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_35, [\n          _createElementVNode(\"div\", _hoisted_36, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.products_list_6?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: _unref(product),\n              productIds: _unref(data)?.content?.products_list_6?.product_ids || [],\n              sliderPerView: 6,\n              slider: true,\n              style: 'horizontal',\n              spaceBetween: 15,\n              productstyle: 'product-standard theme-plus overflow-hidden',\n              boxClass: 'product-box-bg'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (\n        _unref(data)?.content?.products_list_7?.product_ids?.length ||\n        (0 >= 6 && _unref(data)?.content?.products_list_7?.status)\n      )\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_37, [\n          _createElementVNode(\"div\", _hoisted_38, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.products_list_7?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createVNode(_component_ThemesWidgetsProduct, {\n              Products: _unref(product),\n              productIds: _unref(data)?.content?.products_list_7?.product_ids || [],\n              sliderPerView: 6,\n              slider: true,\n              style: 'horizontal',\n              spaceBetween: 15,\n              productstyle: 'product-standard theme-plus overflow-hidden',\n              boxClass: 'product-box-bg'\n            }, null, 8, [\"Products\", \"productIds\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    (\n        _unref(data)?.content?.featured_blogs?.blog_ids?.length ||\n        (0 >= 3 && _unref(data)?.content?.featured_blogs?.status)\n      )\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_39, [\n          _createElementVNode(\"div\", _hoisted_40, [\n            _createVNode(_component_WidgetsTitle, {\n              title: _unref(data)?.content?.featured_blogs?.title,\n              style: 'simple'\n            }, null, 8, [\"title\"]),\n            _createVNode(_component_ThemesWidgetsBlog, {\n              Blogs: _unref(blog),\n              blogIds: _unref(data)?.content?.featured_blogs?.blog_ids || [],\n              sliderPerView: 4\n            }, null, 8, [\"Blogs\", \"blogIds\"])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284912,
+      "end": 1716056284925,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284925,
+      "end": 1716056284925,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284925,
+      "end": 1716056284925,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284925,
+      "end": 1716056284925,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284925,
+      "end": 1716056284925,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Madrid/index.vue\").then(r => r.default))",
+      "start": 1716056284925,
+      "end": 1716056284926,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Madrid/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284926,
+      "end": 1716056284926,
+      "order": "normal"
+    }
+  ]
+}

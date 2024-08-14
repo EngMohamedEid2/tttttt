@@ -1,0 +1,256 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/store/CartWithApi.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { storeToRefs } from \"pinia\";\nimport { GetHeaders } from \"~~/services/api/handleRequest\";\nimport { useCartStore } from \"./cart\";\n\nexport const useApiCartStore = defineStore(\"api-cart-store\", () => {\n\n    let ApiCart = ref([]);\n    var modals = ref({ quickView: { show: false } }), { cart } = storeToRefs(useCartStore());\n\n    const api_AddToCart = async ({ product, quantity = 1, variation,variation_id }) => {\n        if (product.variations?.length && !variation) {\n            modals.value.quickView.item = product\n            modals.value.quickView.show = true\n        } else {\n            let ItemToAdd = {    \n             product:product,\n                product_id: product?.id,\n                quantity,\n                variation_id: variation_id || null,\n                variation: variation || null,\n            };\n\n            let { data, error } = await useFetch('cart', {\n                baseURL: BaseUrl,\n                headers: GetHeaders(),\n                method: 'post',\n                body: ItemToAdd\n            })\n            if (!error.value) {\n                modals.value.quickView.show = false;\n                await useCartStore().GetCartDataFromApi();\n            }\n        }\n    }\n\n    const api_change_quantity = async ({ CartItem, quantity = 1 }) => {\n        if (cart.value.findIndex(item => CartItem.variation_id ? item.variation_id == CartItem.variation_id && item.product_id == CartItem.product_id : item.product_id == CartItem.product_id) > -1) {\n            let { data, error } = await useFetch(`cart`, {\n                method: 'put',\n                key: 'updateCartItemQuantity',\n                baseURL: BaseUrl,\n                headers: GetHeaders(),\n                body: {\n                    id: CartItem.id,\n                    product: CartItem.product,\n                    product_id: CartItem.product_id,\n                    variation: CartItem.variation || null,\n                    variation_id: CartItem.variation_id || null,\n                    quantity,\n                }\n            })\n            if (!error.value) {\n                await useCartStore().GetCartDataFromApi();\n            }\n        } else {\n        }\n    }\n\n    const api_RemoveFromCart = async ({ CartItem }) => {\n        let { data, error } = await useFetch(`cart/${CartItem?.CartItem?.id}`, {\n            method: 'delete',\n            baseURL: BaseUrl,\n            headers: GetHeaders(),\n            key: `deleteFromCart${CartItem.id}`\n        })\n        if (!error.value) {\n            await useCartStore().GetCartDataFromApi();\n        }\n    }\n\n    return {\n        api_AddToCart,\n        ApiCart,\n        api_change_quantity,\n        api_RemoveFromCart,\n    };\n});",
+      "start": 1716056343331,
+      "end": 1716056343529,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056343529,
+      "end": 1716056343529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056343530,
+      "end": 1716056343530,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056343530,
+      "end": 1716056343530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056343530,
+      "end": 1716056343530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056343530,
+      "end": 1716056343530,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { storeToRefs } from \"pinia\";\nimport { GetHeaders } from \"~~/services/api/handleRequest\";\nimport { useCartStore } from \"./cart\";\n\nexport const useApiCartStore = defineStore(\"api-cart-store\", () => {\n\n    let ApiCart = ref([]);\n    var modals = ref({ quickView: { show: false } }), { cart } = storeToRefs(useCartStore());\n\n    const api_AddToCart = async ({ product, quantity = 1, variation,variation_id }) => {\n        if (product.variations?.length && !variation) {\n            modals.value.quickView.item = product\n            modals.value.quickView.show = true\n        } else {\n            let ItemToAdd = {    \n             product:product,\n                product_id: product?.id,\n                quantity,\n                variation_id: variation_id || null,\n                variation: variation || null,\n            };\n\n            let { data, error } = await useFetch('cart', {\n                baseURL: BaseUrl,\n                headers: GetHeaders(),\n                method: 'post',\n                body: ItemToAdd\n            }, '$p7udemtVcS')\n            if (!error.value) {\n                modals.value.quickView.show = false;\n                await useCartStore().GetCartDataFromApi();\n            }\n        }\n    }\n\n    const api_change_quantity = async ({ CartItem, quantity = 1 }) => {\n        if (cart.value.findIndex(item => CartItem.variation_id ? item.variation_id == CartItem.variation_id && item.product_id == CartItem.product_id : item.product_id == CartItem.product_id) > -1) {\n            let { data, error } = await useFetch(`cart`, {\n                method: 'put',\n                key: 'updateCartItemQuantity',\n                baseURL: BaseUrl,\n                headers: GetHeaders(),\n                body: {\n                    id: CartItem.id,\n                    product: CartItem.product,\n                    product_id: CartItem.product_id,\n                    variation: CartItem.variation || null,\n                    variation_id: CartItem.variation_id || null,\n                    quantity,\n                }\n            }, '$wRCaENuuwF')\n            if (!error.value) {\n                await useCartStore().GetCartDataFromApi();\n            }\n        } else {\n        }\n    }\n\n    const api_RemoveFromCart = async ({ CartItem }) => {\n        let { data, error } = await useFetch(`cart/${CartItem?.CartItem?.id}`, {\n            method: 'delete',\n            baseURL: BaseUrl,\n            headers: GetHeaders(),\n            key: `deleteFromCart${CartItem.id}`\n        }, '$ZzS2rW8F5n')\n        if (!error.value) {\n            await useCartStore().GetCartDataFromApi();\n        }\n    }\n\n    return {\n        api_AddToCart,\n        ApiCart,\n        api_change_quantity,\n        api_RemoveFromCart,\n    };\n});",
+      "start": 1716056343530,
+      "end": 1716056343530,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { storeToRefs } from \"pinia\";\nimport { GetHeaders } from \"~~/services/api/handleRequest\";\nimport { useCartStore } from \"./cart\";\n\nexport const useApiCartStore = defineStore(\"api-cart-store\", () => {\n\n    let ApiCart = ref([]);\n    var modals = ref({ quickView: { show: false } }), { cart } = storeToRefs(useCartStore());\n\n    const api_AddToCart = async ({ product, quantity = 1, variation,variation_id }) => {\n        if (product.variations?.length && !variation) {\n            modals.value.quickView.item = product\n            modals.value.quickView.show = true\n        } else {\n            let ItemToAdd = {    \n             product:product,\n                product_id: product?.id,\n                quantity,\n                variation_id: variation_id || null,\n                variation: variation || null,\n            };\n\n            let { data, error } = await useFetch('cart', {\n                baseURL: BaseUrl,\n                headers: GetHeaders(),\n                method: 'post',\n                body: ItemToAdd\n            }, '$p7udemtVcS')\n            if (!error.value) {\n                modals.value.quickView.show = false;\n                await useCartStore().GetCartDataFromApi();\n            }\n        }\n    }\n\n    const api_change_quantity = async ({ CartItem, quantity = 1 }) => {\n        if (cart.value.findIndex(item => CartItem.variation_id ? item.variation_id == CartItem.variation_id && item.product_id == CartItem.product_id : item.product_id == CartItem.product_id) > -1) {\n            let { data, error } = await useFetch(`cart`, {\n                method: 'put',\n                key: 'updateCartItemQuantity',\n                baseURL: BaseUrl,\n                headers: GetHeaders(),\n                body: {\n                    id: CartItem.id,\n                    product: CartItem.product,\n                    product_id: CartItem.product_id,\n                    variation: CartItem.variation || null,\n                    variation_id: CartItem.variation_id || null,\n                    quantity,\n                }\n            }, '$wRCaENuuwF')\n            if (!error.value) {\n                await useCartStore().GetCartDataFromApi();\n            }\n        } else {\n        }\n    }\n\n    const api_RemoveFromCart = async ({ CartItem }) => {\n        let { data, error } = await useFetch(`cart/${CartItem?.CartItem?.id}`, {\n            method: 'delete',\n            baseURL: BaseUrl,\n            headers: GetHeaders(),\n            key: `deleteFromCart${CartItem.id}`\n        }, '$ZzS2rW8F5n')\n        if (!error.value) {\n            await useCartStore().GetCartDataFromApi();\n        }\n    }\n\n    return {\n        api_AddToCart,\n        ApiCart,\n        api_change_quantity,\n        api_RemoveFromCart,\n    };\n});",
+      "start": 1716056343530,
+      "end": 1716056343530,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineStore } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/@pinia/nuxt/dist/runtime/composables';\nimport { ref } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { storeToRefs } from \"pinia\";\nimport { GetHeaders } from \"~~/services/api/handleRequest\";\nimport { useCartStore } from \"./cart\";\n\nexport const useApiCartStore = defineStore(\"api-cart-store\", () => {\n\n    let ApiCart = ref([]);\n    var modals = ref({ quickView: { show: false } }), { cart } = storeToRefs(useCartStore());\n\n    const api_AddToCart = async ({ product, quantity = 1, variation,variation_id }) => {\n        if (product.variations?.length && !variation) {\n            modals.value.quickView.item = product\n            modals.value.quickView.show = true\n        } else {\n            let ItemToAdd = {    \n             product:product,\n                product_id: product?.id,\n                quantity,\n                variation_id: variation_id || null,\n                variation: variation || null,\n            };\n\n            let { data, error } = await useFetch('cart', {\n                baseURL: BaseUrl,\n                headers: GetHeaders(),\n                method: 'post',\n                body: ItemToAdd\n            }, '$p7udemtVcS')\n            if (!error.value) {\n                modals.value.quickView.show = false;\n                await useCartStore().GetCartDataFromApi();\n            }\n        }\n    }\n\n    const api_change_quantity = async ({ CartItem, quantity = 1 }) => {\n        if (cart.value.findIndex(item => CartItem.variation_id ? item.variation_id == CartItem.variation_id && item.product_id == CartItem.product_id : item.product_id == CartItem.product_id) > -1) {\n            let { data, error } = await useFetch(`cart`, {\n                method: 'put',\n                key: 'updateCartItemQuantity',\n                baseURL: BaseUrl,\n                headers: GetHeaders(),\n                body: {\n                    id: CartItem.id,\n                    product: CartItem.product,\n                    product_id: CartItem.product_id,\n                    variation: CartItem.variation || null,\n                    variation_id: CartItem.variation_id || null,\n                    quantity,\n                }\n            }, '$wRCaENuuwF')\n            if (!error.value) {\n                await useCartStore().GetCartDataFromApi();\n            }\n        } else {\n        }\n    }\n\n    const api_RemoveFromCart = async ({ CartItem }) => {\n        let { data, error } = await useFetch(`cart/${CartItem?.CartItem?.id}`, {\n            method: 'delete',\n            baseURL: BaseUrl,\n            headers: GetHeaders(),\n            key: `deleteFromCart${CartItem.id}`\n        }, '$ZzS2rW8F5n')\n        if (!error.value) {\n            await useCartStore().GetCartDataFromApi();\n        }\n    }\n\n    return {\n        api_AddToCart,\n        ApiCart,\n        api_change_quantity,\n        api_RemoveFromCart,\n    };\n});",
+      "start": 1716056343530,
+      "end": 1716056343531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineStore } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/@pinia/nuxt/dist/runtime/composables';\nimport { ref } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { storeToRefs } from \"pinia\";\nimport { GetHeaders } from \"~~/services/api/handleRequest\";\nimport { useCartStore } from \"./cart\";\n\nexport const useApiCartStore = defineStore(\"api-cart-store\", () => {\n\n    let ApiCart = ref([]);\n    var modals = ref({ quickView: { show: false } }), { cart } = storeToRefs(useCartStore());\n\n    const api_AddToCart = async ({ product, quantity = 1, variation,variation_id }) => {\n        if (product.variations?.length && !variation) {\n            modals.value.quickView.item = product\n            modals.value.quickView.show = true\n        } else {\n            let ItemToAdd = {    \n             product:product,\n                product_id: product?.id,\n                quantity,\n                variation_id: variation_id || null,\n                variation: variation || null,\n            };\n\n            let { data, error } = await useFetch('cart', {\n                baseURL: BaseUrl,\n                headers: GetHeaders(),\n                method: 'post',\n                body: ItemToAdd\n            }, '$p7udemtVcS')\n            if (!error.value) {\n                modals.value.quickView.show = false;\n                await useCartStore().GetCartDataFromApi();\n            }\n        }\n    }\n\n    const api_change_quantity = async ({ CartItem, quantity = 1 }) => {\n        if (cart.value.findIndex(item => CartItem.variation_id ? item.variation_id == CartItem.variation_id && item.product_id == CartItem.product_id : item.product_id == CartItem.product_id) > -1) {\n            let { data, error } = await useFetch(`cart`, {\n                method: 'put',\n                key: 'updateCartItemQuantity',\n                baseURL: BaseUrl,\n                headers: GetHeaders(),\n                body: {\n                    id: CartItem.id,\n                    product: CartItem.product,\n                    product_id: CartItem.product_id,\n                    variation: CartItem.variation || null,\n                    variation_id: CartItem.variation_id || null,\n                    quantity,\n                }\n            }, '$wRCaENuuwF')\n            if (!error.value) {\n                await useCartStore().GetCartDataFromApi();\n            }\n        } else {\n        }\n    }\n\n    const api_RemoveFromCart = async ({ CartItem }) => {\n        let { data, error } = await useFetch(`cart/${CartItem?.CartItem?.id}`, {\n            method: 'delete',\n            baseURL: BaseUrl,\n            headers: GetHeaders(),\n            key: `deleteFromCart${CartItem.id}`\n        }, '$ZzS2rW8F5n')\n        if (!error.value) {\n            await useCartStore().GetCartDataFromApi();\n        }\n    }\n\n    return {\n        api_AddToCart,\n        ApiCart,\n        api_change_quantity,\n        api_RemoveFromCart,\n    };\n});",
+      "start": 1716056343530,
+      "end": 1716056343531,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343531,
+      "end": 1716056343531,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343531,
+      "end": 1716056343531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343531,
+      "end": 1716056343531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343531,
+      "end": 1716056343531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056343531,
+      "end": 1716056343531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056343531,
+      "end": 1716056343531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056343531,
+      "end": 1716056343531,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056343531,
+      "end": 1716056343531,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056343531,
+      "end": 1716056343531,
+      "order": "normal"
+    }
+  ]
+}

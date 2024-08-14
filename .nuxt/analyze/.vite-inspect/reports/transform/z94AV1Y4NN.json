@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/Common/TextInput.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"mb-md-4 mb-3 custom-form\">\n        <label class=\"form-label\" :for=\"label\">{{ label }}</label>\n        <div class=\"custom-input\">\n            <input :disabled=\"disabled\" :type=\"inputType\" :value=\"modelValue.data ? modelValue.data : ''\" :id=\"label\"\n                :placeholder=\"$t(placeholder || 'Enter Value')\" v-on:input=\"updated($event.target.value)\"\n                :class=\"[props.classes, inputClasses]\" class=\"form-control\" />\n            <i :class=\"[IconClass]\"></i>\n        </div>\n        <p class=\"error-message\" v-if=\"modelValue.errorMessage\">{{ $t(modelValue.errorMessage) }}</p>\n    </div>\n</template>\n  \n<script setup>\nimport { validateNonEmptyFields } from \"@/utils/validators/inputFieldValidators\";\n\nvar props = defineProps({\n    classes: { type: String, default: 'form-control' },\n    FormSubmitted: Boolean,\n    inputId: String,\n    label: String,\n    minLength: Number,\n    disabled: Boolean,\n    modelValue: [Object, String],\n    placeholder: String,\n    IconClass: [Object, String],\n    errorMessage: String,\n    inputType: {\n        default: 'text',\n        type: String\n    },\n    checkValidation: { type: Boolean, default: true }\n});\n\nlet inputClasses = ref(\"\"),\n    validStatus = ref({}),\n    changed = ref(false);\n\nwatch(() => props.FormSubmitted, () => { props.FormSubmitted && updated(props.modelValue.data || '') }, { deep: true })\n\nconst emit = defineEmits([\"update:modelValue\"]);\n\nfunction updated(inputValue) {\n    changed.value = true;\n    validStatus.value = props.checkValidation ? validateNonEmptyFields({\n        value: String(inputValue),\n        errorMessage: props.errorMessage\n    }) : { valid: true };\n    // validStatus.value.valid\n    //     ? (inputClasses.value = `is-valid`)\n    //     : (inputClasses.value = `is-invalid`);\n    emit(\"update:modelValue\", {\n        data: props.inputType == 'number' ? Number(inputValue) : inputValue,\n        errorMessage: validStatus.value.errorMessage,\n    });\n}\n</script>\n<style  scoped>\n.error-message {\n    color: red;\n    width: 100%;\n    margin: 4px 0 0;\n    font-size: 14px;\n}\n</style>\n\n  ",
+      "start": 1716056288209,
+      "end": 1716056288329,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056288329,
+      "end": 1716056288329,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056288329,
+      "end": 1716056288329,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056288329,
+      "end": 1716056288329,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056288329,
+      "end": 1716056288329,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056288329,
+      "end": 1716056288329,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056288329,
+      "end": 1716056288329,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056288329,
+      "end": 1716056288329,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, unref as _unref, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-3dfe0fd7\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"mb-md-4 mb-3 custom-form\" }\nconst _hoisted_2 = [\"for\"]\nconst _hoisted_3 = { class: \"custom-input\" }\nconst _hoisted_4 = [\"disabled\", \"type\", \"value\", \"id\", \"placeholder\"]\nconst _hoisted_5 = {\n  key: 0,\n  class: \"error-message\"\n}\n\nimport { validateNonEmptyFields } from \"@/utils/validators/inputFieldValidators\";\n\n\nconst _sfc_main = {\n  __name: 'TextInput',\n  props: {\n    classes: { type: String, default: 'form-control' },\n    FormSubmitted: Boolean,\n    inputId: String,\n    label: String,\n    minLength: Number,\n    disabled: Boolean,\n    modelValue: [Object, String],\n    placeholder: String,\n    IconClass: [Object, String],\n    errorMessage: String,\n    inputType: {\n        default: 'text',\n        type: String\n    },\n    checkValidation: { type: Boolean, default: true }\n},\n  emits: [\"update:modelValue\"],\n  setup(__props, { emit: __emit }) {\n\nvar props = __props;\n\nlet inputClasses = ref(\"\"),\n    validStatus = ref({}),\n    changed = ref(false);\n\nwatch(() => props.FormSubmitted, () => { props.FormSubmitted && updated(props.modelValue.data || '') }, { deep: true })\n\nconst emit = __emit;\n\nfunction updated(inputValue) {\n    changed.value = true;\n    validStatus.value = props.checkValidation ? validateNonEmptyFields({\n        value: String(inputValue),\n        errorMessage: props.errorMessage\n    }) : { valid: true };\n    // validStatus.value.valid\n    //     ? (inputClasses.value = `is-valid`)\n    //     : (inputClasses.value = `is-invalid`);\n    emit(\"update:modelValue\", {\n        data: props.inputType == 'number' ? Number(inputValue) : inputValue,\n        errorMessage: validStatus.value.errorMessage,\n    });\n}\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"label\", {\n      class: \"form-label\",\n      for: __props.label\n    }, _toDisplayString(__props.label), 9, _hoisted_2),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createElementVNode(\"input\", {\n        disabled: __props.disabled,\n        type: __props.inputType,\n        value: __props.modelValue.data ? __props.modelValue.data : '',\n        id: __props.label,\n        placeholder: _ctx.$t(__props.placeholder || 'Enter Value'),\n        onInput: _cache[0] || (_cache[0] = $event => (updated($event.target.value))),\n        class: _normalizeClass([[_unref(props).classes, _unref(inputClasses)], \"form-control\"])\n      }, null, 42, _hoisted_4),\n      _createElementVNode(\"i\", {\n        class: _normalizeClass([__props.IconClass])\n      }, null, 2)\n    ]),\n    (__props.modelValue.errorMessage)\n      ? (_openBlock(), _createElementBlock(\"p\", _hoisted_5, _toDisplayString(_ctx.$t(__props.modelValue.errorMessage)), 1))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\nimport \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/Common/TextInput.vue?vue&type=style&index=0&scoped=3dfe0fd7&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-3dfe0fd7\"]])",
+      "start": 1716056288329,
+      "end": 1716056288330,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056288330,
+      "end": 1716056288330,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, watch } from 'vue';\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, unref as _unref, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-3dfe0fd7\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"mb-md-4 mb-3 custom-form\" }\nconst _hoisted_2 = [\"for\"]\nconst _hoisted_3 = { class: \"custom-input\" }\nconst _hoisted_4 = [\"disabled\", \"type\", \"value\", \"id\", \"placeholder\"]\nconst _hoisted_5 = {\n  key: 0,\n  class: \"error-message\"\n}\n\nimport { validateNonEmptyFields } from \"@/utils/validators/inputFieldValidators\";\n\n\nconst _sfc_main = {\n  __name: 'TextInput',\n  props: {\n    classes: { type: String, default: 'form-control' },\n    FormSubmitted: Boolean,\n    inputId: String,\n    label: String,\n    minLength: Number,\n    disabled: Boolean,\n    modelValue: [Object, String],\n    placeholder: String,\n    IconClass: [Object, String],\n    errorMessage: String,\n    inputType: {\n        default: 'text',\n        type: String\n    },\n    checkValidation: { type: Boolean, default: true }\n},\n  emits: [\"update:modelValue\"],\n  setup(__props, { emit: __emit }) {\n\nvar props = __props;\n\nlet inputClasses = ref(\"\"),\n    validStatus = ref({}),\n    changed = ref(false);\n\nwatch(() => props.FormSubmitted, () => { props.FormSubmitted && updated(props.modelValue.data || '') }, { deep: true })\n\nconst emit = __emit;\n\nfunction updated(inputValue) {\n    changed.value = true;\n    validStatus.value = props.checkValidation ? validateNonEmptyFields({\n        value: String(inputValue),\n        errorMessage: props.errorMessage\n    }) : { valid: true };\n    // validStatus.value.valid\n    //     ? (inputClasses.value = `is-valid`)\n    //     : (inputClasses.value = `is-invalid`);\n    emit(\"update:modelValue\", {\n        data: props.inputType == 'number' ? Number(inputValue) : inputValue,\n        errorMessage: validStatus.value.errorMessage,\n    });\n}\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"label\", {\n      class: \"form-label\",\n      for: __props.label\n    }, _toDisplayString(__props.label), 9, _hoisted_2),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createElementVNode(\"input\", {\n        disabled: __props.disabled,\n        type: __props.inputType,\n        value: __props.modelValue.data ? __props.modelValue.data : '',\n        id: __props.label,\n        placeholder: _ctx.$t(__props.placeholder || 'Enter Value'),\n        onInput: _cache[0] || (_cache[0] = $event => (updated($event.target.value))),\n        class: _normalizeClass([[_unref(props).classes, _unref(inputClasses)], \"form-control\"])\n      }, null, 42, _hoisted_4),\n      _createElementVNode(\"i\", {\n        class: _normalizeClass([__props.IconClass])\n      }, null, 2)\n    ]),\n    (__props.modelValue.errorMessage)\n      ? (_openBlock(), _createElementBlock(\"p\", _hoisted_5, _toDisplayString(_ctx.$t(__props.modelValue.errorMessage)), 1))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\nimport \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/Common/TextInput.vue?vue&type=style&index=0&scoped=3dfe0fd7&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-3dfe0fd7\"]])",
+      "start": 1716056288330,
+      "end": 1716056288333,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056288333,
+      "end": 1716056288333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056288333,
+      "end": 1716056288333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056288333,
+      "end": 1716056288333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056288333,
+      "end": 1716056288333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056288333,
+      "end": 1716056288333,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056288333,
+      "end": 1716056288333,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056288333,
+      "end": 1716056288334,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056288334,
+      "end": 1716056288334,
+      "order": "normal"
+    }
+  ]
+}

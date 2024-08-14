@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Seller/Widgets/StoreSocialLink/index.vue?nuxt_component=async&nuxt_component_name=ShopSellerWidgetsStoreSocialLink",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"vendor-share\">\n        <h5>{{ 'Follow Us' }} :</h5>\n        <ul>\n            <li v-if=\"store.facebook\">\n                <nuxtLink :to=\"store.facebook\" target=\"_blank\">\n                    <Icon name=\"ri:facebook-fill\"></Icon>\n                </nuxtLink>\n            </li>\n            <li v-if=\"store?.twitter\">\n                <nuxtLink :to=\"store.twitter\" target=\"_blank\">\n                    <Icon name=\"ri:twitter-fill\"></Icon>\n                </nuxtLink>\n            </li>\n            <li v-if=\"store?.instagram\">\n                <nuxtLink :to=\"store.instagram\" target=\"_blank\">\n                    <Icon name=\"ri:instagram-fill\"></Icon>\n                </nuxtLink>\n            </li>\n            <li v-if=\"store?.youtube\">\n                <nuxtLink :to=\"store.youtube\" target=\"_blank\">\n                    <Icon name=\"ri:youtube-fill\"></Icon>\n                </nuxtLink>\n            </li>\n            <li v-if=\"store?.pinterest\">\n                <nuxtLink :to=\"store.pinterest\" target=\"_blank\">\n                    <Icon name=\"ri:pinterest-fill\"></Icon>\n                </nuxtLink>\n            </li>\n        </ul>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    store: Object\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056339627,
+      "end": 1716056339693,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339693,
+      "end": 1716056339693,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339693,
+      "end": 1716056339693,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339693,
+      "end": 1716056339693,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339693,
+      "end": 1716056339693,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339693,
+      "end": 1716056339693,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339693,
+      "end": 1716056339693,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339693,
+      "end": 1716056339693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339693,
+      "end": 1716056339693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339693,
+      "end": 1716056339693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339693,
+      "end": 1716056339693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    store: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_nuxtLink = _resolveComponent(\"nuxtLink\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"vendor-share\" }, _attrs))\n  }><h5>${\n    _ssrInterpolate('Follow Us')\n  } :</h5><ul>`)\n  if (__props.store.facebook) {\n    _push(`<li>`)\n    _push(_ssrRenderComponent(_component_nuxtLink, {\n      to: __props.store.facebook,\n      target: \"_blank\"\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(_ssrRenderComponent(_component_Icon, { name: \"ri:facebook-fill\" }, null, _parent, _scopeId))\n        } else {\n          return [\n            _createVNode(_component_Icon, { name: \"ri:facebook-fill\" })\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`</li>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.store?.twitter) {\n    _push(`<li>`)\n    _push(_ssrRenderComponent(_component_nuxtLink, {\n      to: __props.store.twitter,\n      target: \"_blank\"\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(_ssrRenderComponent(_component_Icon, { name: \"ri:twitter-fill\" }, null, _parent, _scopeId))\n        } else {\n          return [\n            _createVNode(_component_Icon, { name: \"ri:twitter-fill\" })\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`</li>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.store?.instagram) {\n    _push(`<li>`)\n    _push(_ssrRenderComponent(_component_nuxtLink, {\n      to: __props.store.instagram,\n      target: \"_blank\"\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(_ssrRenderComponent(_component_Icon, { name: \"ri:instagram-fill\" }, null, _parent, _scopeId))\n        } else {\n          return [\n            _createVNode(_component_Icon, { name: \"ri:instagram-fill\" })\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`</li>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.store?.youtube) {\n    _push(`<li>`)\n    _push(_ssrRenderComponent(_component_nuxtLink, {\n      to: __props.store.youtube,\n      target: \"_blank\"\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(_ssrRenderComponent(_component_Icon, { name: \"ri:youtube-fill\" }, null, _parent, _scopeId))\n        } else {\n          return [\n            _createVNode(_component_Icon, { name: \"ri:youtube-fill\" })\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`</li>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.store?.pinterest) {\n    _push(`<li>`)\n    _push(_ssrRenderComponent(_component_nuxtLink, {\n      to: __props.store.pinterest,\n      target: \"_blank\"\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(_ssrRenderComponent(_component_Icon, { name: \"ri:pinterest-fill\" }, null, _parent, _scopeId))\n        } else {\n          return [\n            _createVNode(_component_Icon, { name: \"ri:pinterest-fill\" })\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`</li>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</ul></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Seller/Widgets/StoreSocialLink/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339693,
+      "end": 1716056339695,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Seller/Widgets/StoreSocialLink/index.vue\").then(r => r.default))",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339695,
+      "end": 1716056339695,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339696,
+      "end": 1716056339696,
+      "order": "normal"
+    }
+  ]
+}

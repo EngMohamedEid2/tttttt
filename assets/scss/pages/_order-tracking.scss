@@ -1,0 +1,196 @@
+/**=====================
+     Order tracking Page scss
+==========================**/
+.order-detail-title {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+
+     .right-detail {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+
+          label {
+               border-radius: 8px;
+               padding: 10px 20px;
+               border: 1px solid #eee;
+               font-weight: 500;
+               font-size: 16px;
+               display: flex;
+               align-items: center;
+               gap: 8px;
+          }
+     }
+}
+
+.tracking-wrapper {
+     padding: 15px;
+     border-radius: 10px;
+     background-color: #f8f8f8;
+     box-shadow: 0 0 4px rgba(221, 221, 221, 0.36);
+
+     .product-table {
+          tbody {
+               tr {
+                    td {
+                         text-align: left;
+                         border-color: #ececec;
+
+                         h6 {
+                              font-size: 16px;
+                         }
+
+                         &:nth-child(2) {
+                              h6 {
+                                   overflow: hidden;
+                                   white-space: nowrap;
+                                   text-overflow: ellipsis;
+                                   display: inline-block;
+                              }
+                         }
+                    }
+               }
+          }
+
+          thead {
+               tr {
+                    th {
+                         text-align: left;
+                         border-color: #ececec;
+                         font-size: 16px;
+                    }
+               }
+          }
+     }
+}
+
+.customer-detail {
+     ul {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+
+          li {
+               width: 100%;
+               display: block;
+
+               label {
+                    color: #999;
+                    text-transform: capitalize;
+               }
+
+               h4 {
+                    font-size: 16px;
+                    line-height: 1.6;
+               }
+          }
+     }
+}
+
+.tracking-total {
+     li {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          font-size: 17px;
+          margin-bottom: 6px;
+
+          &:last-child {
+               font-weight: 600;
+               color: var(--theme-color);
+               margin-bottom: 0;
+               padding-top: 15px;
+               border-top: 1px solid #e8e8e8;
+               margin-top: 12px;
+          }
+     }
+}
+
+.accented {
+     fill: var(--theme-color);
+     stroke: var(--theme-color);
+}
+
+.tracking-panel {
+     ul {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          justify-content: space-between;
+          position: relative;
+          gap: 15px;
+          padding-right: 20px;
+
+          li {
+               position: relative;
+               width: 100%;
+               background-color: #f8f8f8;
+               border-radius: 0;
+               padding: 17px 0 17px 31px;
+
+               &:after {
+                    opacity: 1;
+                    content: " ";
+                    position: absolute;
+                    top: 0;
+                    right: -16px;
+                    width: 0;
+                    height: 0;
+                    border-top: 40px solid transparent;
+                    border-bottom: 40px solid transparent;
+                    border-left: 17px solid #f8f8f8;
+                    transition: border-color 0.2s ease;
+               }
+
+               &:before {
+                    content: " ";
+                    position: absolute;
+                    top: 0;
+                    left: 0px;
+                    width: 0;
+                    height: 0;
+                    border-top: 40px solid transparent;
+                    border-bottom: 40px solid transparent;
+                    border-left: 17px solid #ffffff;
+                    transition: border-color 0.2s ease;
+               }
+
+               &.active {
+                    background-color: #e9f6f3;
+
+                    &:after {
+                         border-left: 17px solid #e9f6f3;
+                    }
+               }
+
+               &:first-child {
+                    border-radius: 6px 0 0 6px;
+
+                    &::before {
+                         display: none;
+                    }
+               }
+          }
+     }
+
+     .panel-content {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          margin-top: 0;
+
+          .icon {
+               width: 19%;
+          }
+
+          .status {
+               margin-top: 0;
+               font-size: 17px;
+               display: flex;
+               flex-direction: column;
+               font-weight: 600;
+          }
+     }
+}

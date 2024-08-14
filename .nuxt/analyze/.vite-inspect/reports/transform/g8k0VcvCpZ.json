@@ -1,0 +1,217 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/pages/order/status/[order_number].vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n        <WidgetsBreadcrumb />\n        <section class=\"section-b-space order-tracking-sec\" v-if=\"!pending\">\n            <div class=\"container-fluid-lg\">\n                <div class=\"row\">\n                    <div class=\"col-12 mb-4\">\n                        <div class=\"order-detail-title\">\n                            <h2>Your order: {{ data.order_number }}</h2>\n                            <div class=\"right-detail\">\n                                <label v-if=\"data.payment_status.toLowerCase().includes('complete')\">Status : <span\n                                        class=\"text-theme\">Completed</span></label>\n                                <a href=\"#\" class=\"btn btn-2-animation btn-animation btn-md\" v-else>Pay Now</a>\n                                <a href=\"#\" class=\"btn btn-2-animation btn-animation btn-md\">Download Invoice</a>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-9\">\n                        <div class=\"mb-4\">\n                            <div class=\"tracking-panel\">\n                                <ul>\n                                    <li :class=\"[{ active: index + 1 <= data.order_status.sequence }]\"\n                                        v-for=\"(status, index) in order_statuses\" :key=\"`OrderStatus${index}`\">\n                                        <div class=\"panel-content\">\n                                            <div class=\"icon\">\n                                                <component :is=\"status.component\" />\n                                            </div>\n                                            <div class=\"status\">\n                                                {{ status.title }}\n                                            </div>\n                                        </div>\n                                    </li>\n                                </ul>\n                            </div>\n                        </div>\n                        <div class=\"tracking-wrapper\">\n                            <OrderTable :items=\"data.products\" />\n                        </div>\n\n                    </div>\n                    <OrderStatusRightSidebar :order=\"data\" v-if=\"data\" />\n                </div>\n            </div>\n        </section>\n    </div>\n\n</template>\n\n<script setup>\nlet { data, refresh, pending } = await useFetch(`trackOrder/${useRoute().params.order_number}`, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: 'get',\n    key: `GetOrder${useRoute().params.order_number}`,\n    cache: false\n}), order_statuses = ref([\n    { title: 'Order Processed', component: \"CommonSvgOrderStatusProcessed\" },\n    { title: 'Order Shipped', component: \"CommonSvgOrderStatusShipped\" },\n    { title: 'Order Enroute', component: \"CommonSvgOrderStatusEnroute\" },\n    { title: 'Order Arrived', component: \"CommonSvgOrderStatusArrived\" },\n])\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056288957,
+      "end": 1716056289039,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056289039,
+      "end": 1716056289039,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056289039,
+      "end": 1716056289040,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment, resolveDynamicComponent as _resolveDynamicComponent, createBlock as _createBlock, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"section-b-space order-tracking-sec\"\n}\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-12 mb-4\" }\nconst _hoisted_5 = { class: \"order-detail-title\" }\nconst _hoisted_6 = { class: \"right-detail\" }\nconst _hoisted_7 = { key: 0 }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-theme\" }, \"Completed\", -1)\nconst _hoisted_9 = {\n  key: 1,\n  href: \"#\",\n  class: \"btn btn-2-animation btn-animation btn-md\"\n}\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"a\", {\n  href: \"#\",\n  class: \"btn btn-2-animation btn-animation btn-md\"\n}, \"Download Invoice\", -1)\nconst _hoisted_11 = { class: \"col-9\" }\nconst _hoisted_12 = { class: \"mb-4\" }\nconst _hoisted_13 = { class: \"tracking-panel\" }\nconst _hoisted_14 = { class: \"panel-content\" }\nconst _hoisted_15 = { class: \"icon\" }\nconst _hoisted_16 = { class: \"status\" }\nconst _hoisted_17 = { class: \"tracking-wrapper\" }\n\n\nconst _sfc_main = {\n  __name: '[order_number]',\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet { data, refresh, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => useFetch(`trackOrder/${useRoute().params.order_number}`, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: 'get',\n    key: `GetOrder${useRoute().params.order_number}`,\n    cache: false\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n), order_statuses = ref([\n    { title: 'Order Processed', component: \"CommonSvgOrderStatusProcessed\" },\n    { title: 'Order Shipped', component: \"CommonSvgOrderStatusShipped\" },\n    { title: 'Order Enroute', component: \"CommonSvgOrderStatusEnroute\" },\n    { title: 'Order Arrived', component: \"CommonSvgOrderStatusArrived\" },\n])\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_OrderTable = _resolveComponent(\"OrderTable\")\n  const _component_OrderStatusRightSidebar = _resolveComponent(\"OrderStatusRightSidebar\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_WidgetsBreadcrumb),\n    (!_unref(pending))\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createElementVNode(\"div\", _hoisted_3, [\n              _createElementVNode(\"div\", _hoisted_4, [\n                _createElementVNode(\"div\", _hoisted_5, [\n                  _createElementVNode(\"h2\", null, \"Your order: \" + _toDisplayString(_unref(data).order_number), 1),\n                  _createElementVNode(\"div\", _hoisted_6, [\n                    (_unref(data).payment_status.toLowerCase().includes('complete'))\n                      ? (_openBlock(), _createElementBlock(\"label\", _hoisted_7, [\n                          _createTextVNode(\"Status : \"),\n                          _hoisted_8\n                        ]))\n                      : (_openBlock(), _createElementBlock(\"a\", _hoisted_9, \"Pay Now\")),\n                    _hoisted_10\n                  ])\n                ])\n              ]),\n              _createElementVNode(\"div\", _hoisted_11, [\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createElementVNode(\"div\", _hoisted_13, [\n                    _createElementVNode(\"ul\", null, [\n                      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(order_statuses), (status, index) => {\n                        return (_openBlock(), _createElementBlock(\"li\", {\n                          class: _normalizeClass([{ active: index + 1 <= _unref(data).order_status.sequence }]),\n                          key: `OrderStatus${index}`\n                        }, [\n                          _createElementVNode(\"div\", _hoisted_14, [\n                            _createElementVNode(\"div\", _hoisted_15, [\n                              (_openBlock(), _createBlock(_resolveDynamicComponent(status.component)))\n                            ]),\n                            _createElementVNode(\"div\", _hoisted_16, _toDisplayString(status.title), 1)\n                          ])\n                        ], 2))\n                      }), 128))\n                    ])\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_17, [\n                  _createVNode(_component_OrderTable, {\n                    items: _unref(data).products\n                  }, null, 8, [\"items\"])\n                ])\n              ]),\n              (_unref(data))\n                ? (_openBlock(), _createBlock(_component_OrderStatusRightSidebar, {\n                    key: 0,\n                    order: _unref(data)\n                  }, null, 8, [\"order\"]))\n                : _createCommentVNode(\"\", true)\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056289040,
+      "end": 1716056289040,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056289041,
+      "end": 1716056289041,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056289041,
+      "end": 1716056289041,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056289041,
+      "end": 1716056289041,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment, resolveDynamicComponent as _resolveDynamicComponent, createBlock as _createBlock, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"section-b-space order-tracking-sec\"\n}\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-12 mb-4\" }\nconst _hoisted_5 = { class: \"order-detail-title\" }\nconst _hoisted_6 = { class: \"right-detail\" }\nconst _hoisted_7 = { key: 0 }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-theme\" }, \"Completed\", -1)\nconst _hoisted_9 = {\n  key: 1,\n  href: \"#\",\n  class: \"btn btn-2-animation btn-animation btn-md\"\n}\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"a\", {\n  href: \"#\",\n  class: \"btn btn-2-animation btn-animation btn-md\"\n}, \"Download Invoice\", -1)\nconst _hoisted_11 = { class: \"col-9\" }\nconst _hoisted_12 = { class: \"mb-4\" }\nconst _hoisted_13 = { class: \"tracking-panel\" }\nconst _hoisted_14 = { class: \"panel-content\" }\nconst _hoisted_15 = { class: \"icon\" }\nconst _hoisted_16 = { class: \"status\" }\nconst _hoisted_17 = { class: \"tracking-wrapper\" }\n\n\nconst _sfc_main = {\n  __name: '[order_number]',\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet { data, refresh, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => useFetch(`trackOrder/${useRoute().params.order_number}`, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: 'get',\n    key: `GetOrder${useRoute().params.order_number}`,\n    cache: false\n}, '$8RKDZsWidX'))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n), order_statuses = ref([\n    { title: 'Order Processed', component: \"CommonSvgOrderStatusProcessed\" },\n    { title: 'Order Shipped', component: \"CommonSvgOrderStatusShipped\" },\n    { title: 'Order Enroute', component: \"CommonSvgOrderStatusEnroute\" },\n    { title: 'Order Arrived', component: \"CommonSvgOrderStatusArrived\" },\n])\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_OrderTable = _resolveComponent(\"OrderTable\")\n  const _component_OrderStatusRightSidebar = _resolveComponent(\"OrderStatusRightSidebar\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_WidgetsBreadcrumb),\n    (!_unref(pending))\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createElementVNode(\"div\", _hoisted_3, [\n              _createElementVNode(\"div\", _hoisted_4, [\n                _createElementVNode(\"div\", _hoisted_5, [\n                  _createElementVNode(\"h2\", null, \"Your order: \" + _toDisplayString(_unref(data).order_number), 1),\n                  _createElementVNode(\"div\", _hoisted_6, [\n                    (_unref(data).payment_status.toLowerCase().includes('complete'))\n                      ? (_openBlock(), _createElementBlock(\"label\", _hoisted_7, [\n                          _createTextVNode(\"Status : \"),\n                          _hoisted_8\n                        ]))\n                      : (_openBlock(), _createElementBlock(\"a\", _hoisted_9, \"Pay Now\")),\n                    _hoisted_10\n                  ])\n                ])\n              ]),\n              _createElementVNode(\"div\", _hoisted_11, [\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createElementVNode(\"div\", _hoisted_13, [\n                    _createElementVNode(\"ul\", null, [\n                      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(order_statuses), (status, index) => {\n                        return (_openBlock(), _createElementBlock(\"li\", {\n                          class: _normalizeClass([{ active: index + 1 <= _unref(data).order_status.sequence }]),\n                          key: `OrderStatus${index}`\n                        }, [\n                          _createElementVNode(\"div\", _hoisted_14, [\n                            _createElementVNode(\"div\", _hoisted_15, [\n                              (_openBlock(), _createBlock(_resolveDynamicComponent(status.component)))\n                            ]),\n                            _createElementVNode(\"div\", _hoisted_16, _toDisplayString(status.title), 1)\n                          ])\n                        ], 2))\n                      }), 128))\n                    ])\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_17, [\n                  _createVNode(_component_OrderTable, {\n                    items: _unref(data).products\n                  }, null, 8, [\"items\"])\n                ])\n              ]),\n              (_unref(data))\n                ? (_openBlock(), _createBlock(_component_OrderStatusRightSidebar, {\n                    key: 0,\n                    order: _unref(data)\n                  }, null, 8, [\"order\"]))\n                : _createCommentVNode(\"\", true)\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289041,
+      "end": 1716056289043,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useFetch } from '#app/composables/fetch';\nimport { useRoute } from '#app/composables/router';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { ref } from 'vue';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment, resolveDynamicComponent as _resolveDynamicComponent, createBlock as _createBlock, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"section-b-space order-tracking-sec\"\n}\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-12 mb-4\" }\nconst _hoisted_5 = { class: \"order-detail-title\" }\nconst _hoisted_6 = { class: \"right-detail\" }\nconst _hoisted_7 = { key: 0 }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-theme\" }, \"Completed\", -1)\nconst _hoisted_9 = {\n  key: 1,\n  href: \"#\",\n  class: \"btn btn-2-animation btn-animation btn-md\"\n}\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"a\", {\n  href: \"#\",\n  class: \"btn btn-2-animation btn-animation btn-md\"\n}, \"Download Invoice\", -1)\nconst _hoisted_11 = { class: \"col-9\" }\nconst _hoisted_12 = { class: \"mb-4\" }\nconst _hoisted_13 = { class: \"tracking-panel\" }\nconst _hoisted_14 = { class: \"panel-content\" }\nconst _hoisted_15 = { class: \"icon\" }\nconst _hoisted_16 = { class: \"status\" }\nconst _hoisted_17 = { class: \"tracking-wrapper\" }\n\n\nconst _sfc_main = {\n  __name: '[order_number]',\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet { data, refresh, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => useFetch(`trackOrder/${useRoute().params.order_number}`, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: 'get',\n    key: `GetOrder${useRoute().params.order_number}`,\n    cache: false\n}, '$8RKDZsWidX'))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n), order_statuses = ref([\n    { title: 'Order Processed', component: \"CommonSvgOrderStatusProcessed\" },\n    { title: 'Order Shipped', component: \"CommonSvgOrderStatusShipped\" },\n    { title: 'Order Enroute', component: \"CommonSvgOrderStatusEnroute\" },\n    { title: 'Order Arrived', component: \"CommonSvgOrderStatusArrived\" },\n])\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsBreadcrumb = _resolveComponent(\"WidgetsBreadcrumb\")\n  const _component_OrderTable = _resolveComponent(\"OrderTable\")\n  const _component_OrderStatusRightSidebar = _resolveComponent(\"OrderStatusRightSidebar\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_WidgetsBreadcrumb),\n    (!_unref(pending))\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createElementVNode(\"div\", _hoisted_3, [\n              _createElementVNode(\"div\", _hoisted_4, [\n                _createElementVNode(\"div\", _hoisted_5, [\n                  _createElementVNode(\"h2\", null, \"Your order: \" + _toDisplayString(_unref(data).order_number), 1),\n                  _createElementVNode(\"div\", _hoisted_6, [\n                    (_unref(data).payment_status.toLowerCase().includes('complete'))\n                      ? (_openBlock(), _createElementBlock(\"label\", _hoisted_7, [\n                          _createTextVNode(\"Status : \"),\n                          _hoisted_8\n                        ]))\n                      : (_openBlock(), _createElementBlock(\"a\", _hoisted_9, \"Pay Now\")),\n                    _hoisted_10\n                  ])\n                ])\n              ]),\n              _createElementVNode(\"div\", _hoisted_11, [\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createElementVNode(\"div\", _hoisted_13, [\n                    _createElementVNode(\"ul\", null, [\n                      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(order_statuses), (status, index) => {\n                        return (_openBlock(), _createElementBlock(\"li\", {\n                          class: _normalizeClass([{ active: index + 1 <= _unref(data).order_status.sequence }]),\n                          key: `OrderStatus${index}`\n                        }, [\n                          _createElementVNode(\"div\", _hoisted_14, [\n                            _createElementVNode(\"div\", _hoisted_15, [\n                              (_openBlock(), _createBlock(_resolveDynamicComponent(status.component)))\n                            ]),\n                            _createElementVNode(\"div\", _hoisted_16, _toDisplayString(status.title), 1)\n                          ])\n                        ], 2))\n                      }), 128))\n                    ])\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_17, [\n                  _createVNode(_component_OrderTable, {\n                    items: _unref(data).products\n                  }, null, 8, [\"items\"])\n                ])\n              ]),\n              (_unref(data))\n                ? (_openBlock(), _createBlock(_component_OrderStatusRightSidebar, {\n                    key: 0,\n                    order: _unref(data)\n                  }, null, 8, [\"order\"]))\n                : _createCommentVNode(\"\", true)\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289043,
+      "end": 1716056289045,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056289045,
+      "end": 1716056289045,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056289045,
+      "end": 1716056289045,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056289045,
+      "end": 1716056289045,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056289045,
+      "end": 1716056289045,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Breadcrumb/index.vue\";\nimport { useFetch } from '#app/composables/fetch';\nimport { useRoute } from '#app/composables/router';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { ref } from 'vue';\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment, resolveDynamicComponent as _resolveDynamicComponent, createBlock as _createBlock, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"section-b-space order-tracking-sec\"\n}\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"row\" }\nconst _hoisted_4 = { class: \"col-12 mb-4\" }\nconst _hoisted_5 = { class: \"order-detail-title\" }\nconst _hoisted_6 = { class: \"right-detail\" }\nconst _hoisted_7 = { key: 0 }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-theme\" }, \"Completed\", -1)\nconst _hoisted_9 = {\n  key: 1,\n  href: \"#\",\n  class: \"btn btn-2-animation btn-animation btn-md\"\n}\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"a\", {\n  href: \"#\",\n  class: \"btn btn-2-animation btn-animation btn-md\"\n}, \"Download Invoice\", -1)\nconst _hoisted_11 = { class: \"col-9\" }\nconst _hoisted_12 = { class: \"mb-4\" }\nconst _hoisted_13 = { class: \"tracking-panel\" }\nconst _hoisted_14 = { class: \"panel-content\" }\nconst _hoisted_15 = { class: \"icon\" }\nconst _hoisted_16 = { class: \"status\" }\nconst _hoisted_17 = { class: \"tracking-wrapper\" }\n\n\nconst _sfc_main = {\n  __name: '[order_number]',\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet { data, refresh, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => useFetch(`trackOrder/${useRoute().params.order_number}`, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    method: 'get',\n    key: `GetOrder${useRoute().params.order_number}`,\n    cache: false\n}, '$8RKDZsWidX'))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n), order_statuses = ref([\n    { title: 'Order Processed', component: \"CommonSvgOrderStatusProcessed\" },\n    { title: 'Order Shipped', component: \"CommonSvgOrderStatusShipped\" },\n    { title: 'Order Enroute', component: \"CommonSvgOrderStatusEnroute\" },\n    { title: 'Order Arrived', component: \"CommonSvgOrderStatusArrived\" },\n])\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsBreadcrumb = __nuxt_component_0\n  const _component_OrderTable = _resolveComponent(\"OrderTable\")\n  const _component_OrderStatusRightSidebar = _resolveComponent(\"OrderStatusRightSidebar\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_WidgetsBreadcrumb),\n    (!_unref(pending))\n      ? (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createElementVNode(\"div\", _hoisted_3, [\n              _createElementVNode(\"div\", _hoisted_4, [\n                _createElementVNode(\"div\", _hoisted_5, [\n                  _createElementVNode(\"h2\", null, \"Your order: \" + _toDisplayString(_unref(data).order_number), 1),\n                  _createElementVNode(\"div\", _hoisted_6, [\n                    (_unref(data).payment_status.toLowerCase().includes('complete'))\n                      ? (_openBlock(), _createElementBlock(\"label\", _hoisted_7, [\n                          _createTextVNode(\"Status : \"),\n                          _hoisted_8\n                        ]))\n                      : (_openBlock(), _createElementBlock(\"a\", _hoisted_9, \"Pay Now\")),\n                    _hoisted_10\n                  ])\n                ])\n              ]),\n              _createElementVNode(\"div\", _hoisted_11, [\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createElementVNode(\"div\", _hoisted_13, [\n                    _createElementVNode(\"ul\", null, [\n                      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(order_statuses), (status, index) => {\n                        return (_openBlock(), _createElementBlock(\"li\", {\n                          class: _normalizeClass([{ active: index + 1 <= _unref(data).order_status.sequence }]),\n                          key: `OrderStatus${index}`\n                        }, [\n                          _createElementVNode(\"div\", _hoisted_14, [\n                            _createElementVNode(\"div\", _hoisted_15, [\n                              (_openBlock(), _createBlock(_resolveDynamicComponent(status.component)))\n                            ]),\n                            _createElementVNode(\"div\", _hoisted_16, _toDisplayString(status.title), 1)\n                          ])\n                        ], 2))\n                      }), 128))\n                    ])\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_17, [\n                  _createVNode(_component_OrderTable, {\n                    items: _unref(data).products\n                  }, null, 8, [\"items\"])\n                ])\n              ]),\n              (_unref(data))\n                ? (_openBlock(), _createBlock(_component_OrderStatusRightSidebar, {\n                    key: 0,\n                    order: _unref(data)\n                  }, null, 8, [\"order\"]))\n                : _createCommentVNode(\"\", true)\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289045,
+      "end": 1716056289046,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056289046,
+      "end": 1716056289046,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056289046,
+      "end": 1716056289046,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056289046,
+      "end": 1716056289046,
+      "order": "normal"
+    }
+  ]
+}

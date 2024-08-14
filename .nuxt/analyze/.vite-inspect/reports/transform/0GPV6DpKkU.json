@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/Common/SearchDropdownInput.vue?nuxt_component=async&nuxt_component_name=WidgetsInputFieldsCommonSearchDropdownInput",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"dropdown\">\n        <button class=\"dropdown-toggle\" type=\"button\" :id=\"dropdownId\" data-bs-toggle=\"dropdown\">\n            <span>{{ modelValue[displayKey] || 'Select' }}</span>\n            <Icon name=\"ri:arrow-down-s-line\"></Icon>\n        </button>\n        <ul class=\"dropdown-menu\">\n            <li v-for=\"(option, index) in options\" :key=\"`selectOption${index}`\">\n                <a class=\"dropdown-item\" @click.prevent=\"handleSelect({ option })\" href=\"javascript:void(0)\">{{\n                    option.display }}</a>\n            </li>\n        </ul>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    options: Array,\n    modelValue: Object,\n    displayKey: {\n        default: 'display',\n        type: String\n    },\n    dropdownId: {\n        default: 'dropDown',\n        type: String\n    }\n})\n\nlet emit = defineEmits(['update:modelValue'])\n\nconst handleSelect = ({ option }) => {\n    emit('update:modelValue', option)\n}\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056285008,
+      "end": 1716056285117,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285117,
+      "end": 1716056285117,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285117,
+      "end": 1716056285117,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285117,
+      "end": 1716056285117,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285117,
+      "end": 1716056285117,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285118,
+      "end": 1716056285118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285118,
+      "end": 1716056285118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285118,
+      "end": 1716056285118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, withModifiers as _withModifiers } from \"vue\"\n\nconst _hoisted_1 = { class: \"dropdown\" }\nconst _hoisted_2 = [\"id\"]\nconst _hoisted_3 = { class: \"dropdown-menu\" }\nconst _hoisted_4 = [\"onClick\"]\n\n\nconst _sfc_main = {\n  __name: 'SearchDropdownInput',\n  props: {\n    options: Array,\n    modelValue: Object,\n    displayKey: {\n        default: 'display',\n        type: String\n    },\n    dropdownId: {\n        default: 'dropDown',\n        type: String\n    }\n},\n  emits: ['update:modelValue'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet emit = __emit\n\nconst handleSelect = ({ option }) => {\n    emit('update:modelValue', option)\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"button\", {\n      class: \"dropdown-toggle\",\n      type: \"button\",\n      id: __props.dropdownId,\n      \"data-bs-toggle\": \"dropdown\"\n    }, [\n      _createElementVNode(\"span\", null, _toDisplayString(__props.modelValue[__props.displayKey] || 'Select'), 1),\n      _createVNode(_component_Icon, { name: \"ri:arrow-down-s-line\" })\n    ], 8, _hoisted_2),\n    _createElementVNode(\"ul\", _hoisted_3, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.options, (option, index) => {\n        return (_openBlock(), _createElementBlock(\"li\", {\n          key: `selectOption${index}`\n        }, [\n          _createElementVNode(\"a\", {\n            class: \"dropdown-item\",\n            onClick: _withModifiers($event => (handleSelect({ option })), [\"prevent\"]),\n            href: \"javascript:void(0)\"\n          }, _toDisplayString(option.display), 9, _hoisted_4)\n        ]))\n      }), 128))\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056285118,
+      "end": 1716056285124,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285124,
+      "end": 1716056285124,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285124,
+      "end": 1716056285124,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285124,
+      "end": 1716056285124,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285124,
+      "end": 1716056285124,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/Common/SearchDropdownInput.vue\").then(r => r.default))",
+      "start": 1716056285124,
+      "end": 1716056285125,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285125,
+      "end": 1716056285125,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285125,
+      "end": 1716056285125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285125,
+      "end": 1716056285125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285125,
+      "end": 1716056285125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285125,
+      "end": 1716056285125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285125,
+      "end": 1716056285125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285125,
+      "end": 1716056285125,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285125,
+      "end": 1716056285125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285125,
+      "end": 1716056285125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285125,
+      "end": 1716056285125,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285125,
+      "end": 1716056285125,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285125,
+      "end": 1716056285126,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285126,
+      "end": 1716056285126,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285126,
+      "end": 1716056285126,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285126,
+      "end": 1716056285126,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285126,
+      "end": 1716056285126,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285126,
+      "end": 1716056285126,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285126,
+      "end": 1716056285126,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/Common/SearchDropdownInput.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285126,
+      "end": 1716056285126,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285126,
+      "end": 1716056285126,
+      "order": "normal"
+    }
+  ]
+}

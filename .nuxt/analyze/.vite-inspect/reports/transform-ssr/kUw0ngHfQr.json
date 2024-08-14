@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/MyAccount.vue?nuxt_component=async&nuxt_component_name=HeaderElementsMyAccount",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n    <!-- My Account Basic Style -->\n    <div v-if=\"style == 'basic'\">\n        <div class=\"delivery-login-box\">\n            <div class=\"delivery-icon\">\n                <Icon name=\"ri:user-3-line\" v-if=\"!User.isLoggedIn\"></Icon>    \n                <div class=\"user-box\" v-else>\n                    <img :src=\"useUserStore().UserInfo?.profile_image?.original_url\" class=\"img-fluid\" alt=\"profile\"\n                         v-if=\"useUserStore().UserInfo?.profile_image?.original_url \" width=\"50\" height=\"50\"/>\n                     <h3 v-else>{{ useUserStore().UserInfo?.name?.charAt(0)?.toString()?.toUpperCase()}}</h3>\n                </div>\n            </div>\n            <div class=\"delivery-detail\">\n                <h6 v-if=\"UserInfo?.name\">{{$t(\"Hi\")}},{{ UserInfo?.name  }}</h6>\n                <h6 v-else>{{$t(\"Hi , User\")}}</h6>\n                <h5>{{$t(\"My Account\")}}</h5>\n            </div>\n        </div>\n        <div class=\"onhover-div onhover-div-login\">\n            <ul class=\"user-box-name\" v-show=\"User.isLoggedIn == false\">\n                <li class=\"product-box-contain\" >\n                    <nuxt-link :to=\"NavigationLinks?.login\">{{ $t('Log In') }}</nuxt-link>\n                </li>\n                <li class=\"product-box-contain\">\n                    <nuxt-link :to=\"NavigationLinks?.signUp\">{{ $t('Register') }}</nuxt-link>\n                </li>\n            </ul>\n             <ul class=\"user-box-name\" v-show=\"User.isLoggedIn\">\n                <li class=\"product-box-contain\">\n                    <nuxt-link :to=\"'/account/dashboard'\">\n                        <Icon name=\"ri:user-3-line\" class=\"me-2\"/>{{ $t('My Account') }}\n                    </nuxt-link>\n                </li>\n                <li class=\"product-box-contain\">\n                    <a href=\"#\" @click=\"(data) => { toggleModal({ data }) }\">\n                        <Icon name=\"ri:logout-box-r-line\" class=\"me-2\"></Icon>{{ $t('Logout') }}\n                    </a>\n                </li>\n            </ul>\n        </div>\n    </div>\n\n    <!-- My Account Classic Style -->\n    <a href=\"javascript:void(0)\" class=\"user-box\" v-if=\"style == 'classic'\">\n        <span class=\"header-icon\">\n            <Icon name=\"ri:user-line\"></Icon>\n        </span>\n        <div class=\"user-name\">\n            <h6 class=\"text-content\">{{$t(\"My Account\")}}</h6>\n            <h4 class=\"mt-1\">{{ User?.isLoggedIn ? UserInfo?.name : 'User' }}</h4>\n        </div>\n    </a>\n\n    <a href=\"javascript:void(0)\" class=\"header-icon user-icon search-icon\" v-if=\"style == 'standard'\">\n        <Icon name=\"ri-user-line\"></Icon>\n    </a>\n\n    <WidgetsModalsCommon :showModal=\"modals.logout\" @close=\"toggleModal({ state: false })\">\n        <WidgetsModalsConfrmationModal @close=\"toggleModal({ state: false })\" @confirm=\"useUserStore().LogoutUser()\"/>\n    </WidgetsModalsCommon>\n</div>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useUserStore } from \"@/store/user\";\nlet props = defineProps({\n    style: {type:[String,Object],default:'basic'}\n})\nuseUserStore().setDefaultUser()\nlet modals = ref({ logout: false })\nlet { User, UserInfo } = storeToRefs(useUserStore())\n\nasync function toggleModal({ state = true }) {\n    modals.value.logout = state\n}\n \nonMounted(() => {    \nlet storedData = localStorage.getItem('usersAccount')\nif(storedData?.isLoggedIn == true){\n    useUserStore().UpdateUserInfo()\n  }\n})\n</script>",
+      "start": 1716056313603,
+      "end": 1716056339270,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339270,
+      "end": 1716056339270,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339270,
+      "end": 1716056339270,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339270,
+      "end": 1716056339270,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339270,
+      "end": 1716056339270,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339270,
+      "end": 1716056339270,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339270,
+      "end": 1716056339270,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339270,
+      "end": 1716056339270,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339270,
+      "end": 1716056339270,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339270,
+      "end": 1716056339270,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339270,
+      "end": 1716056339270,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderStyle as _ssrRenderStyle, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useUserStore } from \"@/store/user\";\n\nconst _sfc_main = {\n  __name: 'MyAccount',\n  __ssrInlineRender: true,\n  props: {\n    style: {type:[String,Object],default:'basic'}\n},\n  setup(__props) {\n\nlet props = __props\nuseUserStore().setDefaultUser()\nlet modals = ref({ logout: false })\nlet { User, UserInfo } = storeToRefs(useUserStore())\n\nasync function toggleModal({ state = true }) {\n    modals.value.logout = state\n}\n \nonMounted(() => {    \nlet storedData = localStorage.getItem('usersAccount')\nif(storedData?.isLoggedIn == true){\n    useUserStore().UpdateUserInfo()\n  }\n})\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsConfrmationModal = _resolveComponent(\"WidgetsModalsConfrmationModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (__props.style == 'basic') {\n    _push(`<div><div class=\"delivery-login-box\"><div class=\"delivery-icon\">`)\n    if (!_unref(User).isLoggedIn) {\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:user-3-line\" }, null, _parent))\n    } else {\n      _push(`<div class=\"user-box\">`)\n      if (_unref(useUserStore)().UserInfo?.profile_image?.original_url ) {\n        _push(`<img${_ssrRenderAttr(\"src\", _unref(useUserStore)().UserInfo?.profile_image?.original_url)} class=\"img-fluid\" alt=\"profile\" width=\"50\" height=\"50\">`)\n      } else {\n        _push(`<h3>${_ssrInterpolate(_unref(useUserStore)().UserInfo?.name?.charAt(0)?.toString()?.toUpperCase())}</h3>`)\n      }\n      _push(`</div>`)\n    }\n    _push(`</div><div class=\"delivery-detail\">`)\n    if (_unref(UserInfo)?.name) {\n      _push(`<h6>${\n        _ssrInterpolate(_ctx.$t(\"Hi\"))\n      },${\n        _ssrInterpolate(_unref(UserInfo)?.name)\n      }</h6>`)\n    } else {\n      _push(`<h6>${_ssrInterpolate(_ctx.$t(\"Hi , User\"))}</h6>`)\n    }\n    _push(`<h5>${\n      _ssrInterpolate(_ctx.$t(\"My Account\"))\n    }</h5></div></div><div class=\"onhover-div onhover-div-login\"><ul class=\"user-box-name\" style=\"${\n      _ssrRenderStyle((_unref(User).isLoggedIn == false) ? null : { display: \"none\" })\n    }\"><li class=\"product-box-contain\">`)\n    _push(_ssrRenderComponent(_component_nuxt_link, {\n      to: _ctx.NavigationLinks?.login\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(`${_ssrInterpolate(_ctx.$t('Log In'))}`)\n        } else {\n          return [\n            _createTextVNode(_toDisplayString(_ctx.$t('Log In')), 1)\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`</li><li class=\"product-box-contain\">`)\n    _push(_ssrRenderComponent(_component_nuxt_link, {\n      to: _ctx.NavigationLinks?.signUp\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(`${_ssrInterpolate(_ctx.$t('Register'))}`)\n        } else {\n          return [\n            _createTextVNode(_toDisplayString(_ctx.$t('Register')), 1)\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`</li></ul><ul class=\"user-box-name\" style=\"${_ssrRenderStyle((_unref(User).isLoggedIn) ? null : { display: \"none\" })}\"><li class=\"product-box-contain\">`)\n    _push(_ssrRenderComponent(_component_nuxt_link, { to: '/account/dashboard' }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(_ssrRenderComponent(_component_Icon, {\n            name: \"ri:user-3-line\",\n            class: \"me-2\"\n          }, null, _parent, _scopeId))\n          _push(`${_ssrInterpolate(_ctx.$t('My Account'))}`)\n        } else {\n          return [\n            _createVNode(_component_Icon, {\n              name: \"ri:user-3-line\",\n              class: \"me-2\"\n            }),\n            _createTextVNode(_toDisplayString(_ctx.$t('My Account')), 1)\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`</li><li class=\"product-box-contain\"><a href=\"#\">`)\n    _push(_ssrRenderComponent(_component_Icon, {\n      name: \"ri:logout-box-r-line\",\n      class: \"me-2\"\n    }, null, _parent))\n    _push(`${_ssrInterpolate(_ctx.$t('Logout'))}</a></li></ul></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.style == 'classic') {\n    _push(`<a href=\"javascript:void(0)\" class=\"user-box\"><span class=\"header-icon\">`)\n    _push(_ssrRenderComponent(_component_Icon, { name: \"ri:user-line\" }, null, _parent))\n    _push(`</span><div class=\"user-name\"><h6 class=\"text-content\">${\n      _ssrInterpolate(_ctx.$t(\"My Account\"))\n    }</h6><h4 class=\"mt-1\">${\n      _ssrInterpolate(_unref(User)?.isLoggedIn ? _unref(UserInfo)?.name : 'User')\n    }</h4></div></a>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.style == 'standard') {\n    _push(`<a href=\"javascript:void(0)\" class=\"header-icon user-icon search-icon\">`)\n    _push(_ssrRenderComponent(_component_Icon, { name: \"ri-user-line\" }, null, _parent))\n    _push(`</a>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(modals).logout,\n    onClose: $event => (toggleModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsConfrmationModal, {\n          onClose: $event => (toggleModal({ state: false })),\n          onConfirm: $event => (_unref(useUserStore)().LogoutUser())\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsConfrmationModal, {\n            onClose: $event => (toggleModal({ state: false })),\n            onConfirm: $event => (_unref(useUserStore)().LogoutUser())\n          }, null, 8, [\"onClose\", \"onConfirm\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Header/Elements/MyAccount.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339270,
+      "end": 1716056339274,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/MyAccount.vue\").then(r => r.default))",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339274,
+      "end": 1716056339274,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339274,
+      "end": 1716056339275,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339274,
+      "end": 1716056339275,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339275,
+      "end": 1716056339275,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339275,
+      "end": 1716056339275,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339275,
+      "end": 1716056339275,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339275,
+      "end": 1716056339275,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339275,
+      "end": 1716056339275,
+      "order": "normal"
+    }
+  ]
+}

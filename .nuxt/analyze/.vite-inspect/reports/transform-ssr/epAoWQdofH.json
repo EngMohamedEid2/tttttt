@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Silder/index.vue?nuxt_component=async&nuxt_component_name=ShopProductDetailsSilder",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n    <section class=\"pt-0\">\n        <div class=\"container-fluid-lg\">\n            <ShopProductDetailsSilderImage :Data=\"Data\" />\n        </div>\n    </section>\n    <section class=\"product-section\">\n        <div class=\"container-fluid-lg\">\n            <div class=\"row\">\n                <div class=\"col-xxl-9 col-xl-8 col-lg-7\">\n                    <div class=\"row g-4\">\n                        <div class=\"col-12\">\n                            <div class=\"right-box-contain full-width-right-box\">\n                                <ShopProductDetailsWidgetsProductView :product=\"Data\" :option=\"option\" />\n                                <ShopProductDetailsWidgetsProductContain :product=\"Data\" :option=\"option\" />\n                                <ShopProductDetailsWidgetsProductAction :product=\"Data\" :option=\"option\" />\n                                <ShopProductDetailsWidgetsProductInformation :product=\"Data\" />\n                                <ShopProductDetailsWidgetsProductDeliveryInformation :product=\"Data\" />\n                                <ShopProductDetailsWidgetsPaymentOption :product=\"Data\" :option=\"option\" />\n                                <ShopProductDetailsWidgetsProductSocialShare :product=\"Data\" :option=\"option\" />\n                            </div>\n                        </div>\n\n                        <div class=\"col-12 related-product-2\"\n                            v-if=\"Data?.cross_sell_products && Data?.cross_sell_products?.length\">\n                            <ShopProductDetailsWidgetsProductBundle :productData=\"Data\" />\n                        </div>\n\n                        <div class=\"col-12\">\n                            <ShopProductDetailsWidgetsProductDetailsTabs :product=\"Data\" :reviews=\"reviews\"\n                                :questionAnswers=\"questionAnswers\" />\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"col-xxl-3 col-xl-4 col-lg-5 d-none d-lg-block\">\n                    <ShopProductDetailsSidebar :product=\"Data\" :option=\"option\" />\n                </div>\n            </div>\n        </div>\n    </section>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    Data: { type: Object },\n    option: { type: Object },\n    reviews: Object,\n    questionAnswers: Object,\n})\n</script>",
+      "start": 1716056339446,
+      "end": 1716056339531,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339531,
+      "end": 1716056339531,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339531,
+      "end": 1716056339531,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339531,
+      "end": 1716056339531,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339531,
+      "end": 1716056339531,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339531,
+      "end": 1716056339531,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339531,
+      "end": 1716056339531,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339531,
+      "end": 1716056339531,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339531,
+      "end": 1716056339531,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339531,
+      "end": 1716056339531,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339531,
+      "end": 1716056339531,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    Data: { type: Object },\n    option: { type: Object },\n    reviews: Object,\n    questionAnswers: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_ShopProductDetailsSilderImage = _resolveComponent(\"ShopProductDetailsSilderImage\")\n  const _component_ShopProductDetailsWidgetsProductView = _resolveComponent(\"ShopProductDetailsWidgetsProductView\")\n  const _component_ShopProductDetailsWidgetsProductContain = _resolveComponent(\"ShopProductDetailsWidgetsProductContain\")\n  const _component_ShopProductDetailsWidgetsProductAction = _resolveComponent(\"ShopProductDetailsWidgetsProductAction\")\n  const _component_ShopProductDetailsWidgetsProductInformation = _resolveComponent(\"ShopProductDetailsWidgetsProductInformation\")\n  const _component_ShopProductDetailsWidgetsProductDeliveryInformation = _resolveComponent(\"ShopProductDetailsWidgetsProductDeliveryInformation\")\n  const _component_ShopProductDetailsWidgetsPaymentOption = _resolveComponent(\"ShopProductDetailsWidgetsPaymentOption\")\n  const _component_ShopProductDetailsWidgetsProductSocialShare = _resolveComponent(\"ShopProductDetailsWidgetsProductSocialShare\")\n  const _component_ShopProductDetailsWidgetsProductBundle = _resolveComponent(\"ShopProductDetailsWidgetsProductBundle\")\n  const _component_ShopProductDetailsWidgetsProductDetailsTabs = _resolveComponent(\"ShopProductDetailsWidgetsProductDetailsTabs\")\n  const _component_ShopProductDetailsSidebar = _resolveComponent(\"ShopProductDetailsSidebar\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}><section class=\"pt-0\"><div class=\"container-fluid-lg\">`)\n  _push(_ssrRenderComponent(_component_ShopProductDetailsSilderImage, { Data: __props.Data }, null, _parent))\n  _push(`</div></section><section class=\"product-section\"><div class=\"container-fluid-lg\"><div class=\"row\"><div class=\"col-xxl-9 col-xl-8 col-lg-7\"><div class=\"row g-4\"><div class=\"col-12\"><div class=\"right-box-contain full-width-right-box\">`)\n  _push(_ssrRenderComponent(_component_ShopProductDetailsWidgetsProductView, {\n    product: __props.Data,\n    option: __props.option\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_ShopProductDetailsWidgetsProductContain, {\n    product: __props.Data,\n    option: __props.option\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_ShopProductDetailsWidgetsProductAction, {\n    product: __props.Data,\n    option: __props.option\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_ShopProductDetailsWidgetsProductInformation, { product: __props.Data }, null, _parent))\n  _push(_ssrRenderComponent(_component_ShopProductDetailsWidgetsProductDeliveryInformation, { product: __props.Data }, null, _parent))\n  _push(_ssrRenderComponent(_component_ShopProductDetailsWidgetsPaymentOption, {\n    product: __props.Data,\n    option: __props.option\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_ShopProductDetailsWidgetsProductSocialShare, {\n    product: __props.Data,\n    option: __props.option\n  }, null, _parent))\n  _push(`</div></div>`)\n  if (__props.Data?.cross_sell_products && __props.Data?.cross_sell_products?.length) {\n    _push(`<div class=\"col-12 related-product-2\">`)\n    _push(_ssrRenderComponent(_component_ShopProductDetailsWidgetsProductBundle, { productData: __props.Data }, null, _parent))\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"col-12\">`)\n  _push(_ssrRenderComponent(_component_ShopProductDetailsWidgetsProductDetailsTabs, {\n    product: __props.Data,\n    reviews: __props.reviews,\n    questionAnswers: __props.questionAnswers\n  }, null, _parent))\n  _push(`</div></div></div><div class=\"col-xxl-3 col-xl-4 col-lg-5 d-none d-lg-block\">`)\n  _push(_ssrRenderComponent(_component_ShopProductDetailsSidebar, {\n    product: __props.Data,\n    option: __props.option\n  }, null, _parent))\n  _push(`</div></div></div></section></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Silder/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339531,
+      "end": 1716056339532,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Silder/index.vue\").then(r => r.default))",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339533,
+      "end": 1716056339533,
+      "order": "normal"
+    }
+  ]
+}

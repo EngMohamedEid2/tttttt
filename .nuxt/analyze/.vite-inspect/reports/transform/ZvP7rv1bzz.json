@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Wrapper/Form.vue?nuxt_component=async&nuxt_component_name=WidgetsWrapperForm",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <form @submit.prevent=\"HandleSubmit\" :class=\"Classes\">\n        <slot :FormData=\"FormData\" :submit=\"HandleSubmit\" :FormSubmitted=\"FormData.IsSubmitted\" />\n    </form>\n</template>\n\n<script setup>\nlet props = defineProps({\n    OnSubmit: Function,\n    Inputs: Object,\n    NotRequiredFields: { type: Array, default: [] },\n    InitialData: Object,\n    Classes: String\n});\nlet FormData = ref({ IsValid: false, data: {}, IsSubmitted: false });\n\nprops.InitialData && setInitialValues({ initialValues: props.InitialData, inputs: props.Inputs });\nconst HandleSubmit = () => {\n    FormData.value.IsSubmitted = true;\n    if (formValidator({ FormData: props.Inputs, notRequired: props.NotRequiredFields })) {\n        FormData.value.IsValid = true;\n        FormData.value.data = convertInputData({ data: props.Inputs })\n        props.OnSubmit && props.OnSubmit(FormData.value.data);\n    }\n}\ndefineExpose({\n    HandleSubmit\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056285358,
+      "end": 1716056285557,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285557,
+      "end": 1716056285557,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285557,
+      "end": 1716056285557,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285557,
+      "end": 1716056285557,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285557,
+      "end": 1716056285557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285557,
+      "end": 1716056285557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285557,
+      "end": 1716056285557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285557,
+      "end": 1716056285557,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, renderSlot as _renderSlot, withModifiers as _withModifiers, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'Form',\n  props: {\n    OnSubmit: Function,\n    Inputs: Object,\n    NotRequiredFields: { type: Array, default: [] },\n    InitialData: Object,\n    Classes: String\n},\n  setup(__props, { expose: __expose }) {\n\nlet props = __props;\nlet FormData = ref({ IsValid: false, data: {}, IsSubmitted: false });\n\nprops.InitialData && setInitialValues({ initialValues: props.InitialData, inputs: props.Inputs });\nconst HandleSubmit = () => {\n    FormData.value.IsSubmitted = true;\n    if (formValidator({ FormData: props.Inputs, notRequired: props.NotRequiredFields })) {\n        FormData.value.IsValid = true;\n        FormData.value.data = convertInputData({ data: props.Inputs })\n        props.OnSubmit && props.OnSubmit(FormData.value.data);\n    }\n}\n__expose({\n    HandleSubmit\n})\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"form\", {\n    onSubmit: _withModifiers(HandleSubmit, [\"prevent\"]),\n    class: _normalizeClass(__props.Classes)\n  }, [\n    _renderSlot(_ctx.$slots, \"default\", {\n      FormData: _unref(FormData),\n      submit: HandleSubmit,\n      FormSubmitted: _unref(FormData).IsSubmitted\n    })\n  ], 34))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056285557,
+      "end": 1716056285559,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285559,
+      "end": 1716056285559,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285559,
+      "end": 1716056285559,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285559,
+      "end": 1716056285559,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285559,
+      "end": 1716056285559,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Wrapper/Form.vue\").then(r => r.default))",
+      "start": 1716056285559,
+      "end": 1716056285559,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285559,
+      "end": 1716056285559,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285559,
+      "end": 1716056285559,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285559,
+      "end": 1716056285559,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Wrapper/Form.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285560,
+      "end": 1716056285560,
+      "order": "normal"
+    }
+  ]
+}

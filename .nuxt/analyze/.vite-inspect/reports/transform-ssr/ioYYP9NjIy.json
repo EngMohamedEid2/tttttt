@@ -1,0 +1,259 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductAction/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <div class=\"progress-sec\" v-if=\"product?.quantity && product.quantity <= 10\">\n    <div class=\"left-progressbar\">\n      <h6>{{ $t(\"Please hurry! only\") }} {{ product.quantity }} {{ $t(\"left in stock\") }}</h6>\n      <div class=\"progress\"\n        :class=\"{ 'danger-progress': product.quantity <= 2, 'warning-progress': product.quantity >= 3 && product.quantity <= 7 }\"\n        role=\"progressbar\">\n        <div class=\"progress-bar progress-bar-striped progress-bar-animated\"\n          :style=\"{ width: (product.quantity * 100) / 10 + '%' }\"></div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"size-delivery-info\" v-if=\"product.size_chart_image || (policy && product.is_return)\">\n    <a href=\"javascript:void(0)\" @click=\"(sizeChartData) => { sizechartModal({ sizeChartData }) }\"\n      v-if=\"product.size_chart_image\">\n      <Icon name=\"ri:ruler-line\"></Icon> {{ $t(\"Size Chart\") }}\n    </a>\n    <a href=\"javascript:void(0)\" @click=\"(policy) => { deliveryReturnModal({ policy }) }\"\n      v-if=\"policy && product.is_return\">\n      <Icon name=\"ri:truck-line\"></Icon> {{ $t(\"Delivery Return\") }}\n    </a>\n    <a href=\"javascript:void(0)\" @click=\"(product) => { askQuestionModal({ product }) }\"\n      v-if=\"policy && product.is_return\">\n      <Icon name=\"ri:questionnaire-line\"></Icon> {{ $t(\"Ask a Question\") }}\n    </a>\n  </div>\n\n  <WidgetsModalsCommon :showModal=\"sizeChartModal\" @close=\"sizechartModal({ state: false })\" :classes=\"'modal-lg'\">\n    <WidgetsModalsSizeChartModal :image=\"sizeChartData\" @close=\"sizechartModal({ state: false })\" />\n  </WidgetsModalsCommon>\n\n  <WidgetsModalsCommon :showModal=\"deliveryModal\" @close=\"deliveryReturnModal({ state: false })\" :classes=\"'modal-lg'\">\n    <WidgetsModalsDeliveryReturnModal :policy=\"policy\" @close=\"deliveryReturnModal({ state: false })\" />\n  </WidgetsModalsCommon>\n\n  <WidgetsModalsCommon :showModal=\"askQuestion\" @close=\"askQuestionModal({ state: false })\">\n    <WidgetsModalsQuestionModal :product=\"product\" @close=\"askQuestionModal({ state: false })\" />\n  </WidgetsModalsCommon>\n</div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  product: Object,\n  option: Object\n})\n\nlet policy = ref('');\n\nlet sizeChartModal = ref(false)\nlet sizeChartData = props.product.size_chart_image\nlet deliveryModal = ref(false)\nlet askQuestion = ref(false)\npolicy.value = props?.option?.product?.shipping_and_return\n\nfunction sizechartModal({ state = true, }) {\n  sizeChartModal.value = state\n}\n\nfunction deliveryReturnModal({ state = true, }) {\n  deliveryModal.value = state\n}\n\nfunction askQuestionModal({ state = true, }) {\n  askQuestion.value = state\n}\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056341746,
+      "end": 1716056341930,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341930,
+      "end": 1716056341930,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056341930,
+      "end": 1716056341930,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341930,
+      "end": 1716056341930,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056341930,
+      "end": 1716056341930,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056341930,
+      "end": 1716056341930,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056341930,
+      "end": 1716056341930,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056341930,
+      "end": 1716056341930,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056341930,
+      "end": 1716056341930,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056341930,
+      "end": 1716056341930,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056341930,
+      "end": 1716056341930,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderStyle as _ssrRenderStyle, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object,\n  option: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nlet policy = ref('');\n\nlet sizeChartModal = ref(false)\nlet sizeChartData = props.product.size_chart_image\nlet deliveryModal = ref(false)\nlet askQuestion = ref(false)\npolicy.value = props?.option?.product?.shipping_and_return\n\nfunction sizechartModal({ state = true, }) {\n  sizeChartModal.value = state\n}\n\nfunction deliveryReturnModal({ state = true, }) {\n  deliveryModal.value = state\n}\n\nfunction askQuestionModal({ state = true, }) {\n  askQuestion.value = state\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsSizeChartModal = _resolveComponent(\"WidgetsModalsSizeChartModal\")\n  const _component_WidgetsModalsDeliveryReturnModal = _resolveComponent(\"WidgetsModalsDeliveryReturnModal\")\n  const _component_WidgetsModalsQuestionModal = _resolveComponent(\"WidgetsModalsQuestionModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (__props.product?.quantity && __props.product.quantity <= 10) {\n    _push(`<div class=\"progress-sec\"><div class=\"left-progressbar\"><h6>${\n      _ssrInterpolate(_ctx.$t(\"Please hurry! only\"))\n    } ${\n      _ssrInterpolate(__props.product.quantity)\n    } ${\n      _ssrInterpolate(_ctx.$t(\"left in stock\"))\n    }</h6><div class=\"${\n      _ssrRenderClass([{ 'danger-progress': __props.product.quantity <= 2, 'warning-progress': __props.product.quantity >= 3 && __props.product.quantity <= 7 }, \"progress\"])\n    }\" role=\"progressbar\"><div class=\"progress-bar progress-bar-striped progress-bar-animated\" style=\"${\n      _ssrRenderStyle({ width: (__props.product.quantity * 100) / 10 + '%' })\n    }\"></div></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.product.size_chart_image || (_unref(policy) && __props.product.is_return)) {\n    _push(`<div class=\"size-delivery-info\">`)\n    if (__props.product.size_chart_image) {\n      _push(`<a href=\"javascript:void(0)\">`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:ruler-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(_ctx.$t(\"Size Chart\"))}</a>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_unref(policy) && __props.product.is_return) {\n      _push(`<a href=\"javascript:void(0)\">`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:truck-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(_ctx.$t(\"Delivery Return\"))}</a>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_unref(policy) && __props.product.is_return) {\n      _push(`<a href=\"javascript:void(0)\">`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:questionnaire-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(_ctx.$t(\"Ask a Question\"))}</a>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(sizeChartModal),\n    onClose: $event => (sizechartModal({ state: false })),\n    classes: 'modal-lg'\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsSizeChartModal, {\n          image: _unref(sizeChartData),\n          onClose: $event => (sizechartModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsSizeChartModal, {\n            image: _unref(sizeChartData),\n            onClose: $event => (sizechartModal({ state: false }))\n          }, null, 8, [\"image\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(deliveryModal),\n    onClose: $event => (deliveryReturnModal({ state: false })),\n    classes: 'modal-lg'\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsDeliveryReturnModal, {\n          policy: _unref(policy),\n          onClose: $event => (deliveryReturnModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsDeliveryReturnModal, {\n            policy: _unref(policy),\n            onClose: $event => (deliveryReturnModal({ state: false }))\n          }, null, 8, [\"policy\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(askQuestion),\n    onClose: $event => (askQuestionModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsQuestionModal, {\n          product: __props.product,\n          onClose: $event => (askQuestionModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsQuestionModal, {\n            product: __props.product,\n            onClose: $event => (askQuestionModal({ state: false }))\n          }, null, 8, [\"product\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductAction/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341930,
+      "end": 1716056341931,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056341931,
+      "end": 1716056341931,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341931,
+      "end": 1716056341931,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341931,
+      "end": 1716056341931,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341931,
+      "end": 1716056341931,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056341931,
+      "end": 1716056341931,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056341931,
+      "end": 1716056341931,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056341931,
+      "end": 1716056341931,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056341931,
+      "end": 1716056341932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056341932,
+      "end": 1716056341932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056341932,
+      "end": 1716056341932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056341932,
+      "end": 1716056341932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056341932,
+      "end": 1716056341932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056341932,
+      "end": 1716056341932,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056341932,
+      "end": 1716056341932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056341932,
+      "end": 1716056341932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056341932,
+      "end": 1716056341932,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341932,
+      "end": 1716056341932,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056341932,
+      "end": 1716056341932,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderStyle as _ssrRenderStyle, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object,\n  option: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nlet policy = ref('');\n\nlet sizeChartModal = ref(false)\nlet sizeChartData = props.product.size_chart_image\nlet deliveryModal = ref(false)\nlet askQuestion = ref(false)\npolicy.value = props?.option?.product?.shipping_and_return\n\nfunction sizechartModal({ state = true, }) {\n  sizeChartModal.value = state\n}\n\nfunction deliveryReturnModal({ state = true, }) {\n  deliveryModal.value = state\n}\n\nfunction askQuestionModal({ state = true, }) {\n  askQuestion.value = state\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsSizeChartModal = _resolveComponent(\"WidgetsModalsSizeChartModal\")\n  const _component_WidgetsModalsDeliveryReturnModal = _resolveComponent(\"WidgetsModalsDeliveryReturnModal\")\n  const _component_WidgetsModalsQuestionModal = _resolveComponent(\"WidgetsModalsQuestionModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (__props.product?.quantity && __props.product.quantity <= 10) {\n    _push(`<div class=\"progress-sec\"><div class=\"left-progressbar\"><h6>${\n      _ssrInterpolate(_ctx.$t(\"Please hurry! only\"))\n    } ${\n      _ssrInterpolate(__props.product.quantity)\n    } ${\n      _ssrInterpolate(_ctx.$t(\"left in stock\"))\n    }</h6><div class=\"${\n      _ssrRenderClass([{ 'danger-progress': __props.product.quantity <= 2, 'warning-progress': __props.product.quantity >= 3 && __props.product.quantity <= 7 }, \"progress\"])\n    }\" role=\"progressbar\"><div class=\"progress-bar progress-bar-striped progress-bar-animated\" style=\"${\n      _ssrRenderStyle({ width: (__props.product.quantity * 100) / 10 + '%' })\n    }\"></div></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.product.size_chart_image || (_unref(policy) && __props.product.is_return)) {\n    _push(`<div class=\"size-delivery-info\">`)\n    if (__props.product.size_chart_image) {\n      _push(`<a href=\"javascript:void(0)\">`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:ruler-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(_ctx.$t(\"Size Chart\"))}</a>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_unref(policy) && __props.product.is_return) {\n      _push(`<a href=\"javascript:void(0)\">`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:truck-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(_ctx.$t(\"Delivery Return\"))}</a>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_unref(policy) && __props.product.is_return) {\n      _push(`<a href=\"javascript:void(0)\">`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:questionnaire-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(_ctx.$t(\"Ask a Question\"))}</a>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(sizeChartModal),\n    onClose: $event => (sizechartModal({ state: false })),\n    classes: 'modal-lg'\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsSizeChartModal, {\n          image: _unref(sizeChartData),\n          onClose: $event => (sizechartModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsSizeChartModal, {\n            image: _unref(sizeChartData),\n            onClose: $event => (sizechartModal({ state: false }))\n          }, null, 8, [\"image\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(deliveryModal),\n    onClose: $event => (deliveryReturnModal({ state: false })),\n    classes: 'modal-lg'\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsDeliveryReturnModal, {\n          policy: _unref(policy),\n          onClose: $event => (deliveryReturnModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsDeliveryReturnModal, {\n            policy: _unref(policy),\n            onClose: $event => (deliveryReturnModal({ state: false }))\n          }, null, 8, [\"policy\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(askQuestion),\n    onClose: $event => (askQuestionModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsQuestionModal, {\n          product: __props.product,\n          onClose: $event => (askQuestionModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsQuestionModal, {\n            product: __props.product,\n            onClose: $event => (askQuestionModal({ state: false }))\n          }, null, 8, [\"product\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductAction/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341932,
+      "end": 1716056341935,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderStyle as _ssrRenderStyle, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object,\n  option: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nlet policy = ref('');\n\nlet sizeChartModal = ref(false)\nlet sizeChartData = props.product.size_chart_image\nlet deliveryModal = ref(false)\nlet askQuestion = ref(false)\npolicy.value = props?.option?.product?.shipping_and_return\n\nfunction sizechartModal({ state = true, }) {\n  sizeChartModal.value = state\n}\n\nfunction deliveryReturnModal({ state = true, }) {\n  deliveryModal.value = state\n}\n\nfunction askQuestionModal({ state = true, }) {\n  askQuestion.value = state\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsModalsSizeChartModal = _resolveComponent(\"WidgetsModalsSizeChartModal\")\n  const _component_WidgetsModalsDeliveryReturnModal = _resolveComponent(\"WidgetsModalsDeliveryReturnModal\")\n  const _component_WidgetsModalsQuestionModal = _resolveComponent(\"WidgetsModalsQuestionModal\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (__props.product?.quantity && __props.product.quantity <= 10) {\n    _push(`<div class=\"progress-sec\"><div class=\"left-progressbar\"><h6>${\n      _ssrInterpolate(_ctx.$t(\"Please hurry! only\"))\n    } ${\n      _ssrInterpolate(__props.product.quantity)\n    } ${\n      _ssrInterpolate(_ctx.$t(\"left in stock\"))\n    }</h6><div class=\"${\n      _ssrRenderClass([{ 'danger-progress': __props.product.quantity <= 2, 'warning-progress': __props.product.quantity >= 3 && __props.product.quantity <= 7 }, \"progress\"])\n    }\" role=\"progressbar\"><div class=\"progress-bar progress-bar-striped progress-bar-animated\" style=\"${\n      _ssrRenderStyle({ width: (__props.product.quantity * 100) / 10 + '%' })\n    }\"></div></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.product.size_chart_image || (_unref(policy) && __props.product.is_return)) {\n    _push(`<div class=\"size-delivery-info\">`)\n    if (__props.product.size_chart_image) {\n      _push(`<a href=\"javascript:void(0)\">`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:ruler-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(_ctx.$t(\"Size Chart\"))}</a>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_unref(policy) && __props.product.is_return) {\n      _push(`<a href=\"javascript:void(0)\">`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:truck-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(_ctx.$t(\"Delivery Return\"))}</a>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_unref(policy) && __props.product.is_return) {\n      _push(`<a href=\"javascript:void(0)\">`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:questionnaire-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(_ctx.$t(\"Ask a Question\"))}</a>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(sizeChartModal),\n    onClose: $event => (sizechartModal({ state: false })),\n    classes: 'modal-lg'\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsSizeChartModal, {\n          image: _unref(sizeChartData),\n          onClose: $event => (sizechartModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsSizeChartModal, {\n            image: _unref(sizeChartData),\n            onClose: $event => (sizechartModal({ state: false }))\n          }, null, 8, [\"image\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(deliveryModal),\n    onClose: $event => (deliveryReturnModal({ state: false })),\n    classes: 'modal-lg'\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsDeliveryReturnModal, {\n          policy: _unref(policy),\n          onClose: $event => (deliveryReturnModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsDeliveryReturnModal, {\n            policy: _unref(policy),\n            onClose: $event => (deliveryReturnModal({ state: false }))\n          }, null, 8, [\"policy\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(askQuestion),\n    onClose: $event => (askQuestionModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsQuestionModal, {\n          product: __props.product,\n          onClose: $event => (askQuestionModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsQuestionModal, {\n            product: __props.product,\n            onClose: $event => (askQuestionModal({ state: false }))\n          }, null, 8, [\"product\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductAction/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341932,
+      "end": 1716056341935,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341935,
+      "end": 1716056341935,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056341935,
+      "end": 1716056341935,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341935,
+      "end": 1716056341935,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056341935,
+      "end": 1716056341935,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056341935,
+      "end": 1716056341935,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/SizeChartModal/index.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/DeliveryReturnModal/index.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/QuestionModal/index.vue\";\nimport { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderStyle as _ssrRenderStyle, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  product: Object,\n  option: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nlet policy = ref('');\n\nlet sizeChartModal = ref(false)\nlet sizeChartData = props.product.size_chart_image\nlet deliveryModal = ref(false)\nlet askQuestion = ref(false)\npolicy.value = props?.option?.product?.shipping_and_return\n\nfunction sizechartModal({ state = true, }) {\n  sizeChartModal.value = state\n}\n\nfunction deliveryReturnModal({ state = true, }) {\n  deliveryModal.value = state\n}\n\nfunction askQuestionModal({ state = true, }) {\n  askQuestion.value = state\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_WidgetsModalsCommon = __nuxt_component_1\n  const _component_WidgetsModalsSizeChartModal = __nuxt_component_2\n  const _component_WidgetsModalsDeliveryReturnModal = __nuxt_component_3\n  const _component_WidgetsModalsQuestionModal = __nuxt_component_4\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (__props.product?.quantity && __props.product.quantity <= 10) {\n    _push(`<div class=\"progress-sec\"><div class=\"left-progressbar\"><h6>${\n      _ssrInterpolate(_ctx.$t(\"Please hurry! only\"))\n    } ${\n      _ssrInterpolate(__props.product.quantity)\n    } ${\n      _ssrInterpolate(_ctx.$t(\"left in stock\"))\n    }</h6><div class=\"${\n      _ssrRenderClass([{ 'danger-progress': __props.product.quantity <= 2, 'warning-progress': __props.product.quantity >= 3 && __props.product.quantity <= 7 }, \"progress\"])\n    }\" role=\"progressbar\"><div class=\"progress-bar progress-bar-striped progress-bar-animated\" style=\"${\n      _ssrRenderStyle({ width: (__props.product.quantity * 100) / 10 + '%' })\n    }\"></div></div></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.product.size_chart_image || (_unref(policy) && __props.product.is_return)) {\n    _push(`<div class=\"size-delivery-info\">`)\n    if (__props.product.size_chart_image) {\n      _push(`<a href=\"javascript:void(0)\">`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:ruler-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(_ctx.$t(\"Size Chart\"))}</a>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_unref(policy) && __props.product.is_return) {\n      _push(`<a href=\"javascript:void(0)\">`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:truck-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(_ctx.$t(\"Delivery Return\"))}</a>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_unref(policy) && __props.product.is_return) {\n      _push(`<a href=\"javascript:void(0)\">`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:questionnaire-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(_ctx.$t(\"Ask a Question\"))}</a>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(sizeChartModal),\n    onClose: $event => (sizechartModal({ state: false })),\n    classes: 'modal-lg'\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsSizeChartModal, {\n          image: _unref(sizeChartData),\n          onClose: $event => (sizechartModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsSizeChartModal, {\n            image: _unref(sizeChartData),\n            onClose: $event => (sizechartModal({ state: false }))\n          }, null, 8, [\"image\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(deliveryModal),\n    onClose: $event => (deliveryReturnModal({ state: false })),\n    classes: 'modal-lg'\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsDeliveryReturnModal, {\n          policy: _unref(policy),\n          onClose: $event => (deliveryReturnModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsDeliveryReturnModal, {\n            policy: _unref(policy),\n            onClose: $event => (deliveryReturnModal({ state: false }))\n          }, null, 8, [\"policy\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, {\n    showModal: _unref(askQuestion),\n    onClose: $event => (askQuestionModal({ state: false }))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_WidgetsModalsQuestionModal, {\n          product: __props.product,\n          onClose: $event => (askQuestionModal({ state: false }))\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_WidgetsModalsQuestionModal, {\n            product: __props.product,\n            onClose: $event => (askQuestionModal({ state: false }))\n          }, null, 8, [\"product\", \"onClose\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductAction/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056341935,
+      "end": 1716056341935,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056341935,
+      "end": 1716056341935,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056341935,
+      "end": 1716056341935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056341936,
+      "end": 1716056341936,
+      "order": "normal"
+    }
+  ]
+}

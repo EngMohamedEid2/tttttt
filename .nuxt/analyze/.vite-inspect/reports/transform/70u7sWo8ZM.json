@@ -1,0 +1,214 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Orders/Details/SummaryDetails.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"card h-m30\">\n        <div class=\"card-body\">\n            <h3 class=\"fw-semibold mb-3\">\n                {{ $t(\"Summary\") }}\n            </h3>\n            <div class=\"tracking-total tracking-wrapper\">\n                <ul>\n                    <li>{{ $t(\"Subtotal\") }} <span>{{ store.currency.symbol }} {{ Number(store.convertCurrency(order?.amount\n                        ? order?.amount : 0)).toFixed(2) }}</span></li>\n                    <li>{{ $t(\"Shipping\") }} <span>{{ store?.currency.symbol }} {{\n                        Number(store.convertCurrency(order?.shipping_total ? order?.shipping_total : 0)).toFixed(2)\n                    }}</span></li>\n                    <li>{{ $t(\"Tax\") }} <span>{{ store?.currency.symbol }} {{ Number(store?.convertCurrency(order?.tax_total\n                        ?\n                        order?.tax_total : 0)).toFixed(2) }}</span></li>\n                    <li class=\"txt-primary fw-bold\" v-if=\"order?.points_amount != 0\">{{ $t(\"Points\") }} <span>{{\n                        order?.points_amount }}</span></li>\n                    <li class=\"txt-primary fw-bold\" v-if=\"order?.wallet_balance != 0\">{{ $t(\"Wallet Balance\") }} <span>{{\n                        store?.currency?.symbol }} {{ Number(store.convertCurrency(order?.wallet_balance)).toFixed(2)\n    }}</span></li>\n                    <li class=\"txt-primary fw-bold\" v-if=\"order?.coupon_total_discount != 0\">{{ $t(\"Coupon Discount\") }}\n                        <span>{{ store?.currency?.symbol }} {{\n                            Number(store.convertCurrency(order?.coupon_total_discount)).toFixed(2) }}</span>\n                    </li>\n                    <li>{{ $t(\"Total\") }} <span>{{ store?.currency?.symbol }} {{ (order?.total ? order.total : 0) }}</span>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { useCurrencyStore } from '@/store/currency'\nlet props = defineProps({\n    order: Object\n})\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056286210,
+      "end": 1716056286609,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056286609,
+      "end": 1716056286609,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056286609,
+      "end": 1716056286609,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056286609,
+      "end": 1716056286609,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056286609,
+      "end": 1716056286609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056286609,
+      "end": 1716056286609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056286609,
+      "end": 1716056286609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056286609,
+      "end": 1716056286609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, unref as _unref, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"card h-m30\" }\nconst _hoisted_2 = { class: \"card-body\" }\nconst _hoisted_3 = { class: \"fw-semibold mb-3\" }\nconst _hoisted_4 = { class: \"tracking-total tracking-wrapper\" }\nconst _hoisted_5 = {\n  key: 0,\n  class: \"txt-primary fw-bold\"\n}\nconst _hoisted_6 = {\n  key: 1,\n  class: \"txt-primary fw-bold\"\n}\nconst _hoisted_7 = {\n  key: 2,\n  class: \"txt-primary fw-bold\"\n}\n\nimport { useCurrencyStore } from '@/store/currency'\n\nconst _sfc_main = {\n  __name: 'SummaryDetails',\n  props: {\n    order: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"h3\", _hoisted_3, _toDisplayString(_ctx.$t(\"Summary\")), 1),\n      _createElementVNode(\"div\", _hoisted_4, [\n        _createElementVNode(\"ul\", null, [\n          _createElementVNode(\"li\", null, [\n            _createTextVNode(_toDisplayString(_ctx.$t(\"Subtotal\")) + \" \", 1),\n            _createElementVNode(\"span\", null, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(__props.order?.amount\n                        ? __props.order?.amount : 0)).toFixed(2)), 1)\n          ]),\n          _createElementVNode(\"li\", null, [\n            _createTextVNode(_toDisplayString(_ctx.$t(\"Shipping\")) + \" \", 1),\n            _createElementVNode(\"span\", null, _toDisplayString(_unref(store)?.currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(__props.order?.shipping_total ? __props.order?.shipping_total : 0)).toFixed(2)), 1)\n          ]),\n          _createElementVNode(\"li\", null, [\n            _createTextVNode(_toDisplayString(_ctx.$t(\"Tax\")) + \" \", 1),\n            _createElementVNode(\"span\", null, _toDisplayString(_unref(store)?.currency.symbol) + \" \" + _toDisplayString(Number(_unref(store)?.convertCurrency(__props.order?.tax_total\n                        ?\n                        __props.order?.tax_total : 0)).toFixed(2)), 1)\n          ]),\n          (__props.order?.points_amount != 0)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_5, [\n                _createTextVNode(_toDisplayString(_ctx.$t(\"Points\")) + \" \", 1),\n                _createElementVNode(\"span\", null, _toDisplayString(__props.order?.points_amount), 1)\n              ]))\n            : _createCommentVNode(\"\", true),\n          (__props.order?.wallet_balance != 0)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_6, [\n                _createTextVNode(_toDisplayString(_ctx.$t(\"Wallet Balance\")) + \" \", 1),\n                _createElementVNode(\"span\", null, _toDisplayString(_unref(store)?.currency?.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(__props.order?.wallet_balance)).toFixed(2)), 1)\n              ]))\n            : _createCommentVNode(\"\", true),\n          (__props.order?.coupon_total_discount != 0)\n            ? (_openBlock(), _createElementBlock(\"li\", _hoisted_7, [\n                _createTextVNode(_toDisplayString(_ctx.$t(\"Coupon Discount\")) + \" \", 1),\n                _createElementVNode(\"span\", null, _toDisplayString(_unref(store)?.currency?.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(__props.order?.coupon_total_discount)).toFixed(2)), 1)\n              ]))\n            : _createCommentVNode(\"\", true),\n          _createElementVNode(\"li\", null, [\n            _createTextVNode(_toDisplayString(_ctx.$t(\"Total\")) + \" \", 1),\n            _createElementVNode(\"span\", null, _toDisplayString(_unref(store)?.currency?.symbol) + \" \" + _toDisplayString((__props.order?.total ? __props.order.total : 0)), 1)\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286609,
+      "end": 1716056286610,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056286610,
+      "end": 1716056286610,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056286610,
+      "end": 1716056286612,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056286612,
+      "end": 1716056286612,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056286612,
+      "end": 1716056286612,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056286612,
+      "end": 1716056286612,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056286612,
+      "end": 1716056286612,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056286612,
+      "end": 1716056286612,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056286612,
+      "end": 1716056286612,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056286612,
+      "end": 1716056286612,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056286612,
+      "end": 1716056286612,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/QuestionModal/index.vue?nuxt_component=async&nuxt_component_name=WidgetsModalsQuestionModal",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n  <div class=\"modal-header\">\n    <h3 class=\"fw-semibold\">{{ 'Ask a question' }}</h3>\n    <WidgetsButton :classes=\"'btn btn-close'\"  :id=\"'profile_modal_close_btn'\"\n    @onClick=\"() => {emit('close')}\">\n    <Icon name=\"ri-close-line\"></Icon>\n    </WidgetsButton>\n  </div>\n\n  <div class=\"modal-body\">\n    <form class=\"product-review-form\" >\n      <div class=\"product-wrapper\">\n        <div class=\"product-image\">\n          <img :src=\"product.product_thumbnail ?\n                product.product_thumbnail.original_url :\n                '/images/product.png'\" class=\"img-fluid\" :alt=\"product.name\">\n        </div>\n        <div class=\"product-content\">\n          <h5 class=\"name\">{{ product?.name }}</h5>\n          <div class=\"product-review-rating\">\n            <div class=\"product-rating\">\n              <h6 class=\"price-number\">{{ store.currency.symbol }} {{ Number(store.convertCurrency(product?.sale_price)).toFixed(2) }}</h6>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"review-box\">\n        <label class=\"form-label\" for=\"content\">{{ 'Your Questions' }} *</label>\n        <textarea placeholder=\"Your Questions'\" class=\"form-control\" id=\"content\" rows=\"3\" v-model=\"question\"></textarea>\n      </div>\n    </form>\n    <div class=\"modal-footer\">\n      <WidgetsButton :classes=\"'btn btn-theme-outline btn-md fw-bold'\" :type=\"'button'\"\n        :id=\"'cancel_profile_btn'\" @onClick=\"() => { emit('close'); }\">{{ 'Cancel'  }}</WidgetsButton>\n      <WidgetsButton :classes=\"'btn theme-bg-color btn-md fw-bold text-light'\"  :id=\"'submit_profile_btn'\" @onClick=\"submitQuestion\">\n        {{ 'Submit' }}\n      </WidgetsButton>\n    </div>\n   </div>\n  </div>\n</template>\n\n<script setup>\nimport { useCurrencyStore } from '@/store/currency'\nimport { useDataStore } from '~~/store/data';\nlet props = defineProps({\n    product:Object,\n    qna:Object\n})\n\nlet store = useCurrencyStore();\nstore.allCurrency();\nconst emit = defineEmits(['close']);\nlet question = ref('')\nprops.qna && setInitialValues(props.qna)\nfunction setInitialValues(values){\n  question.value = values.question\n}\nasync function submitQuestion(){\n  let userData = localStorage.getItem('usersAccount')\n  if(question.value != '' && userData){\n   if(props.qna){\n      let {data , error} = await useFetch('question-and-answer/'+props.qna.id,{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"put\",\n       key: \"UpdateQuestion\"\n    })\n   }\n   else{\n     let {data , error} = await useFetch('question-and-answer',{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"post\",\n       key: \"AskQuestion\"\n    })\n   }\n    useDataStore().GetAllQustionAnswer(props.product.id)\n  }\n}\n</script>\n\n<style lang=\"scss\" scoped>\n\n</style>",
+      "start": 1716056339883,
+      "end": 1716056340000,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340000,
+      "end": 1716056340000,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340000,
+      "end": 1716056340000,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340000,
+      "end": 1716056340000,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340000,
+      "end": 1716056340000,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056340000,
+      "end": 1716056340000,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056340000,
+      "end": 1716056340000,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056340000,
+      "end": 1716056340000,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056340000,
+      "end": 1716056340000,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056340000,
+      "end": 1716056340000,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056340000,
+      "end": 1716056340000,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, unref as _unref, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { useCurrencyStore } from '@/store/currency'\nimport { useDataStore } from '~~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    product:Object,\n    qna:Object\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet store = useCurrencyStore();\nstore.allCurrency();\nconst emit = __emit;\nlet question = ref('')\nprops.qna && setInitialValues(props.qna)\nfunction setInitialValues(values){\n  question.value = values.question\n}\nasync function submitQuestion(){\n  let userData = localStorage.getItem('usersAccount')\n  if(question.value != '' && userData){\n   if(props.qna){\n      let {data , error} = await useFetch('question-and-answer/'+props.qna.id,{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"put\",\n       key: \"UpdateQuestion\"\n    })\n   }\n   else{\n     let {data , error} = await useFetch('question-and-answer',{\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      body:{\n        question:question.value,\n        answer:\"\",\n        product_id:props.product.id\n      },\n       method: \"post\",\n       key: \"AskQuestion\"\n    })\n   }\n    useDataStore().GetAllQustionAnswer(props.product.id)\n  }\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_attrs)\n  }><div class=\"modal-header\"><h3 class=\"fw-semibold\">${\n    _ssrInterpolate('Ask a question')\n  }</h3>`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn btn-close',\n    id: 'profile_modal_close_btn',\n    onOnClick: () => {emit('close')}\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri-close-line\" }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_Icon, { name: \"ri-close-line\" })\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"modal-body\"><form class=\"product-review-form\"><div class=\"product-wrapper\"><div class=\"product-image\"><img${\n    _ssrRenderAttr(\"src\", __props.product.product_thumbnail ?\n                __props.product.product_thumbnail.original_url :\n                '/images/product.png')\n  } class=\"img-fluid\"${\n    _ssrRenderAttr(\"alt\", __props.product.name)\n  }></div><div class=\"product-content\"><h5 class=\"name\">${\n    _ssrInterpolate(__props.product?.name)\n  }</h5><div class=\"product-review-rating\"><div class=\"product-rating\"><h6 class=\"price-number\">${\n    _ssrInterpolate(_unref(store).currency.symbol)\n  } ${\n    _ssrInterpolate(Number(_unref(store).convertCurrency(__props.product?.sale_price)).toFixed(2))\n  }</h6></div></div></div></div><div class=\"review-box\"><label class=\"form-label\" for=\"content\">${\n    _ssrInterpolate('Your Questions')\n  } *</label><textarea placeholder=\"Your Questions&#39;\" class=\"form-control\" id=\"content\" rows=\"3\">${\n    _ssrInterpolate(_unref(question))\n  }</textarea></div></form><div class=\"modal-footer\">`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn btn-theme-outline btn-md fw-bold',\n    type: 'button',\n    id: 'cancel_profile_btn',\n    onOnClick: () => { emit('close'); }\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('Cancel')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('Cancel'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn theme-bg-color btn-md fw-bold text-light',\n    id: 'submit_profile_btn',\n    onOnClick: submitQuestion\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('Submit')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('Submit'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/QuestionModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340000,
+      "end": 1716056340004,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/QuestionModal/index.vue\").then(r => r.default))",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340004,
+      "end": 1716056340004,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340004,
+      "end": 1716056340005,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340004,
+      "end": 1716056340005,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056340005,
+      "end": 1716056340005,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056340005,
+      "end": 1716056340005,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056340005,
+      "end": 1716056340005,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056340005,
+      "end": 1716056340005,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056340005,
+      "end": 1716056340005,
+      "order": "normal"
+    }
+  ]
+}

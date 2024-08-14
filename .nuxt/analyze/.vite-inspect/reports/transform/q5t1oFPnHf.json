@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/payment-block/index.vue?nuxt_component=async&nuxt_component_name=ShopCheckoutPaymentBlock",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"checkout-detail\">\n        <div class=\"row g-sm-4 g-3\">\n            <div class=\"col-xxl-6\" v-for=\"(payment, index) in setting?.payment_methods\" :key=\"index\">\n                <div class=\"payment-option\" v-if=\"payment?.status\">\n                    <div class=\"payment-category w-100\">\n                        <div class=\"form-check custom-form-check hide-check-box w-100\">\n                            <input class=\"form-check-input\" type=\"radio\" name=\"payment_method\" :checked=\"index === 0\"\n                                :id=\"payment.name\" @change=\"useCheckoutStore().SetPaymentOption(payment.name)\">\n                            <label class=\"form-check-label text-uppercase\" for=\"{{payment.name}}\">\n                                {{ transform(payment.name) }}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { useCheckoutStore } from '~~/store/checkout';\nlet props = defineProps({\n    setting: Object,\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056271181,
+      "end": 1716056271413,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271413,
+      "end": 1716056271413,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271413,
+      "end": 1716056271413,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271413,
+      "end": 1716056271413,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271413,
+      "end": 1716056271413,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271413,
+      "end": 1716056271413,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271413,
+      "end": 1716056271413,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271413,
+      "end": 1716056271413,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, unref as _unref, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"checkout-detail\" }\nconst _hoisted_2 = { class: \"row g-sm-4 g-3\" }\nconst _hoisted_3 = {\n  key: 0,\n  class: \"payment-option\"\n}\nconst _hoisted_4 = { class: \"payment-category w-100\" }\nconst _hoisted_5 = { class: \"form-check custom-form-check hide-check-box w-100\" }\nconst _hoisted_6 = [\"checked\", \"id\", \"onChange\"]\nconst _hoisted_7 = {\n  class: \"form-check-label text-uppercase\",\n  for: \"{{payment.name}}\"\n}\n\nimport { useCheckoutStore } from '~~/store/checkout';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    setting: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.setting?.payment_methods, (payment, index) => {\n        return (_openBlock(), _createElementBlock(\"div\", {\n          class: \"col-xxl-6\",\n          key: index\n        }, [\n          (payment?.status)\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n                _createElementVNode(\"div\", _hoisted_4, [\n                  _createElementVNode(\"div\", _hoisted_5, [\n                    _createElementVNode(\"input\", {\n                      class: \"form-check-input\",\n                      type: \"radio\",\n                      name: \"payment_method\",\n                      checked: index === 0,\n                      id: payment.name,\n                      onChange: $event => (_unref(useCheckoutStore)().SetPaymentOption(payment.name))\n                    }, null, 40, _hoisted_6),\n                    _createElementVNode(\"label\", _hoisted_7, _toDisplayString(_ctx.transform(payment.name)), 1)\n                  ])\n                ])\n              ]))\n            : _createCommentVNode(\"\", true)\n        ]))\n      }), 128))\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056271413,
+      "end": 1716056271415,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271415,
+      "end": 1716056271415,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271415,
+      "end": 1716056271415,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271415,
+      "end": 1716056271415,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271415,
+      "end": 1716056271415,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/payment-block/index.vue\").then(r => r.default))",
+      "start": 1716056271415,
+      "end": 1716056271415,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Checkout/payment-block/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271416,
+      "end": 1716056271416,
+      "order": "normal"
+    }
+  ]
+}

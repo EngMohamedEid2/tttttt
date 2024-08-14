@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Paris/index.vue?nuxt_component=async&nuxt_component_name=ThemesParis",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"bg-effect\">\n    <!-- Home Section Start -->\n    <section class=\"home-section pt-2\" v-if=\"data?.content?.home_banner\">\n      <ThemesWidgetsHomeBannerParis :data=\"data?.content?.home_banner\" />\n    </section>\n    <!-- Home Section End -->\n\n    <!-- Banner Section Start -->\n    <section class=\"banner-section ratio_60\">\n      <ThemesWidgetsBanner\n        :style=\"'horizontal'\"\n        :banners=\"data?.content?.featured_banners?.banners\"\n      />\n    </section>\n    <!-- Banner Section End -->\n\n    <!-- Product Section Start -->\n    <section class=\"product-section\">\n      <div class=\"container-fluid-lg\">\n        <div class=\"row g-sm-4 g-3\">\n          <!-- Left Content Start -->\n          <ThemesParisLeftContent\n            :leftdata=\"data.content\"\n            :Products=\"product\"\n          />\n          <!-- Left Content End -->\n\n          <!-- Right Content Star -->\n\n          <ThemesParisRightContent\n            :data=\"data\"\n            :Products=\"product\"\n            :Blogs=\"blog\"\n          />\n          <!-- Right Content End -->\n        </div>\n      </div>\n    </section>\n    <!-- Product Section End -->\n\n    <!-- Newsletter Section Start -->\n    <!-- <div v-if=\"data?.content?.news_letter?.status\">\n      <section class=\"newsletter-section section-b-space\">\n        <ThemesWidgetsNewsletter :data=\"data?.content?.news_letter\" />\n      </section>\n    </div> -->\n    <!-- Newsletter Section End -->\n  </div>\n  <!-- <app-newsletter-modal></app-newsletter-modal> -->\n  <!-- <app-exit-modal></app-exit-modal> -->\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\n\nlet { data, pending } = await HandleRequest(\"theme/paris\", {\n  key: \"getAllHomesInPage\",\n  // params: { slug: 'paris' }\n});\n\nlet {\n  data: product,\n  pending: loadingPosProducts,\n  error,\n} = await HandleRequest(\"product\", {\n  key: \"getThemeParisProduct\",\n  params: {\n    status: 1,\n    theme: \"paris\",\n    ids: data?.value?.content?.products_ids.join(\",\"),\n  },\n});\n\nlet { data: blog } = await HandleRequest(\"blog\", {\n  key: \"GetAllFeaturedBlogs\",\n  params: {\n    status: 1,\n    ids: data?.value.content.main_content?.section9_featured_blogs?.blog_ids.join(\n      \",\"\n    ),\n  },\n});\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056339649,
+      "end": 1716056339737,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339737,
+      "end": 1716056339737,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339737,
+      "end": 1716056339737,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339737,
+      "end": 1716056339737,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339737,
+      "end": 1716056339737,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339737,
+      "end": 1716056339737,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339737,
+      "end": 1716056339737,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339737,
+      "end": 1716056339737,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339737,
+      "end": 1716056339737,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339737,
+      "end": 1716056339737,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339737,
+      "end": 1716056339737,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet { data, pending } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"theme/paris\", {\n  key: \"getAllHomesInPage\",\n  // params: { slug: 'paris' }\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nlet {\n  data: product,\n  pending: loadingPosProducts,\n  error,\n} = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"product\", {\n  key: \"getThemeParisProduct\",\n  params: {\n    status: 1,\n    theme: \"paris\",\n    ids: data?.value?.content?.products_ids.join(\",\"),\n  },\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nlet { data: blog } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\"blog\", {\n  key: \"GetAllFeaturedBlogs\",\n  params: {\n    status: 1,\n    ids: data?.value.content.main_content?.section9_featured_blogs?.blog_ids.join(\n      \",\"\n    ),\n  },\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_ThemesWidgetsHomeBannerParis = _resolveComponent(\"ThemesWidgetsHomeBannerParis\")\n  const _component_ThemesWidgetsBanner = _resolveComponent(\"ThemesWidgetsBanner\")\n  const _component_ThemesParisLeftContent = _resolveComponent(\"ThemesParisLeftContent\")\n  const _component_ThemesParisRightContent = _resolveComponent(\"ThemesParisRightContent\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"bg-effect\" }, _attrs))}>`)\n  if (_unref(data)?.content?.home_banner) {\n    _push(`<section class=\"home-section pt-2\">`)\n    _push(_ssrRenderComponent(_component_ThemesWidgetsHomeBannerParis, {\n      data: _unref(data)?.content?.home_banner\n    }, null, _parent))\n    _push(`</section>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<section class=\"banner-section ratio_60\">`)\n  _push(_ssrRenderComponent(_component_ThemesWidgetsBanner, {\n    style: 'horizontal',\n    banners: _unref(data)?.content?.featured_banners?.banners\n  }, null, _parent))\n  _push(`</section><section class=\"product-section\"><div class=\"container-fluid-lg\"><div class=\"row g-sm-4 g-3\">`)\n  _push(_ssrRenderComponent(_component_ThemesParisLeftContent, {\n    leftdata: _unref(data).content,\n    Products: _unref(product)\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_ThemesParisRightContent, {\n    data: _unref(data),\n    Products: _unref(product),\n    Blogs: _unref(blog)\n  }, null, _parent))\n  _push(`</div></div></section></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Themes/Paris/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339737,
+      "end": 1716056339738,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339738,
+      "end": 1716056339738,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339738,
+      "end": 1716056339738,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339738,
+      "end": 1716056339738,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339738,
+      "end": 1716056339738,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339738,
+      "end": 1716056339738,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Paris/index.vue\").then(r => r.default))",
+      "start": 1716056339738,
+      "end": 1716056339738,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339738,
+      "end": 1716056339738,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339738,
+      "end": 1716056339738,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339738,
+      "end": 1716056339739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339739,
+      "end": 1716056339739,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/AboutUs/Team.vue?nuxt_component=async&nuxt_component_name=PagesAboutUsTeam",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <section class=\"team-section section-lg-space\">\n    <div class=\"container-fluid-lg\">\n      <div class=\"about-us-title text-center\">\n        <h4 class=\"text-content\">{{ aboutTeam.sub_title }}</h4>\n        <h2 class=\"center\">{{ aboutTeam.title }}</h2>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-12\">\n          <div class=\"slider-dots\">\n            <swiper :autoplay=\"{ delay: 2500, disableOnInteraction: true }\" :modules=\"modules\" :loop=\"true\"\n              :slidesPerView=\"4\" :spaceBetween=\"50\">\n              <swiper-slide v-for=\"(team, index) in aboutTeam.members\" :key=\"index\">\n                <div class=\"team-box\">\n                  <div class=\"team-iamge\">\n                    <img :src=\"team.profile_image_url\" class=\"img-fluid\" :alt=\"team.name\" />\n                  </div>\n                  <div class=\"team-name\">\n                    <h3>{{ team.name }}</h3>\n                    <h5>{{ team.designation }}</h5>\n                    <p>{{ team.description }}</p>\n                    <ul class=\"team-media\">\n                      <li>\n                        <a href=\"https://www.facebook.com/\" class=\"fb-bg\">\n                          <Icon name=\"ri:facebook-fill\" size=\"16\" />\n                        </a>\n                      </li>\n                      <li>\n                        <a href=\"https://in.pinterest.com/\" class=\"pint-bg\">\n                          <Icon name=\"ri:pinterest-fill\" size=\"16\" />\n                        </a>\n                      </li>\n                      <li>\n                        <a href=\"https://twitter.com/\" class=\"twitter-bg\">\n                          <Icon name=\"ri:twitter-fill\" size=\"16\" />\n                        </a>\n                      </li>\n                      <li>\n                        <a href=\"https://www.instagram.com/\" class=\"insta-bg\">\n                          <Icon name=\"ri:instagram-fill\" size=\"16\" />\n                        </a>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n              </swiper-slide>\n            </swiper>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { Autoplay } from \"swiper\";\nlet modules = [Autoplay];\nlet { ThemeOptions } = storeToRefs(useDataStore());\nlet aboutTeam = ref(ThemeOptions.value.options.about_us.team);\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056270796,
+      "end": 1716056271186,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271186,
+      "end": 1716056271186,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271186,
+      "end": 1716056271186,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271186,
+      "end": 1716056271186,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271186,
+      "end": 1716056271186,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271186,
+      "end": 1716056271186,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271186,
+      "end": 1716056271186,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271186,
+      "end": 1716056271187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"team-section section-lg-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg\" }\nconst _hoisted_3 = { class: \"about-us-title text-center\" }\nconst _hoisted_4 = { class: \"text-content\" }\nconst _hoisted_5 = { class: \"center\" }\nconst _hoisted_6 = { class: \"row\" }\nconst _hoisted_7 = { class: \"col-12\" }\nconst _hoisted_8 = { class: \"slider-dots\" }\nconst _hoisted_9 = { class: \"team-box\" }\nconst _hoisted_10 = { class: \"team-iamge\" }\nconst _hoisted_11 = [\"src\", \"alt\"]\nconst _hoisted_12 = { class: \"team-name\" }\nconst _hoisted_13 = { class: \"team-media\" }\nconst _hoisted_14 = {\n  href: \"https://www.facebook.com/\",\n  class: \"fb-bg\"\n}\nconst _hoisted_15 = {\n  href: \"https://in.pinterest.com/\",\n  class: \"pint-bg\"\n}\nconst _hoisted_16 = {\n  href: \"https://twitter.com/\",\n  class: \"twitter-bg\"\n}\nconst _hoisted_17 = {\n  href: \"https://www.instagram.com/\",\n  class: \"insta-bg\"\n}\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { Autoplay } from \"swiper\";\n\nconst _sfc_main = {\n  __name: 'Team',\n  setup(__props) {\n\nlet modules = [Autoplay];\nlet { ThemeOptions } = storeToRefs(useDataStore());\nlet aboutTeam = ref(ThemeOptions.value.options.about_us.team);\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_swiper_slide = _resolveComponent(\"swiper-slide\")\n  const _component_swiper = _resolveComponent(\"swiper\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"h4\", _hoisted_4, _toDisplayString(_unref(aboutTeam).sub_title), 1),\n        _createElementVNode(\"h2\", _hoisted_5, _toDisplayString(_unref(aboutTeam).title), 1)\n      ]),\n      _createElementVNode(\"div\", _hoisted_6, [\n        _createElementVNode(\"div\", _hoisted_7, [\n          _createElementVNode(\"div\", _hoisted_8, [\n            _createVNode(_component_swiper, {\n              autoplay: { delay: 2500, disableOnInteraction: true },\n              modules: _unref(modules),\n              loop: true,\n              slidesPerView: 4,\n              spaceBetween: 50\n            }, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(aboutTeam).members, (team, index) => {\n                  return (_openBlock(), _createBlock(_component_swiper_slide, { key: index }, {\n                    default: _withCtx(() => [\n                      _createElementVNode(\"div\", _hoisted_9, [\n                        _createElementVNode(\"div\", _hoisted_10, [\n                          _createElementVNode(\"img\", {\n                            src: team.profile_image_url,\n                            class: \"img-fluid\",\n                            alt: team.name\n                          }, null, 8, _hoisted_11)\n                        ]),\n                        _createElementVNode(\"div\", _hoisted_12, [\n                          _createElementVNode(\"h3\", null, _toDisplayString(team.name), 1),\n                          _createElementVNode(\"h5\", null, _toDisplayString(team.designation), 1),\n                          _createElementVNode(\"p\", null, _toDisplayString(team.description), 1),\n                          _createElementVNode(\"ul\", _hoisted_13, [\n                            _createElementVNode(\"li\", null, [\n                              _createElementVNode(\"a\", _hoisted_14, [\n                                _createVNode(_component_Icon, {\n                                  name: \"ri:facebook-fill\",\n                                  size: \"16\"\n                                })\n                              ])\n                            ]),\n                            _createElementVNode(\"li\", null, [\n                              _createElementVNode(\"a\", _hoisted_15, [\n                                _createVNode(_component_Icon, {\n                                  name: \"ri:pinterest-fill\",\n                                  size: \"16\"\n                                })\n                              ])\n                            ]),\n                            _createElementVNode(\"li\", null, [\n                              _createElementVNode(\"a\", _hoisted_16, [\n                                _createVNode(_component_Icon, {\n                                  name: \"ri:twitter-fill\",\n                                  size: \"16\"\n                                })\n                              ])\n                            ]),\n                            _createElementVNode(\"li\", null, [\n                              _createElementVNode(\"a\", _hoisted_17, [\n                                _createVNode(_component_Icon, {\n                                  name: \"ri:instagram-fill\",\n                                  size: \"16\"\n                                })\n                              ])\n                            ])\n                          ])\n                        ])\n                      ])\n                    ]),\n                    _: 2\n                  }, 1024))\n                }), 128))\n              ]),\n              _: 1\n            }, 8, [\"modules\"])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056271187,
+      "end": 1716056271189,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/AboutUs/Team.vue\").then(r => r.default))",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/AboutUs/Team.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271189,
+      "end": 1716056271189,
+      "order": "normal"
+    }
+  ]
+}

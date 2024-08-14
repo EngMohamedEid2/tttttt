@@ -1,0 +1,256 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/store/compare.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { GetHeaders } from \"~~/services/api/handleRequest\";\nexport const useCompareStore = defineStore(\"compare-store\", () => {\n  var compare = ref([]);\n\n  const AddToCompare = async ({ product }) => {\n    let userData = JSON.parse(localStorage.getItem(\"usersAccount\"));\n    if (userData) {\n      let { data } = await useFetch(\"compare\", {\n        baseURL: BaseUrl,\n        method: \"post\",\n        headers: GetHeaders(),\n        key: \"AddItemToCompare\",\n        body: { product_id: product.id },\n        onResponse({ response, error }) {\n          if (error) {\n            useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n          } else {\n            useNuxtApp().$useToaster({ msg: \"Item Added To Compare\" });\n          }\n        },\n      });\n      await GetComparetems();\n    }\n  };\n\n  const GetComparetems = async () => {\n    if (useCookie(\"uat\").value) {\n      let { data, error } = await useFetch(\"compare\", {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"get\",\n        key: \"GetAllcompareItemsInStore\",\n      });\n      if (!error.value) {\n        compare.value = data.value?.data || [];\n      }\n    }\n  };\n\n  const RemoveFromCompare = async ({ product }) => {\n    if (useCookie(\"uat\").value) {\n      let { data, error } = await useFetch(`compare/${product.id}`, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"delete\",\n        key: `DeleteItemFromcompare${product.id}`,\n        onResponse({ response, error }) {\n          if (error) {\n            useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n          } else {\n            useNuxtApp().$useToaster({\n              msg: \"Item Removed From compare\",\n              type: \"warning\",\n            });\n          }\n        },\n      });\n      if (!error.value) {\n        await GetComparetems();\n      }\n    }\n  };\n\n  const GetCompare = async () => {\n    await GetComparetems();\n  };\n\n  const ExistsInCompare = ({ product }) => {\n    return compare.value.findIndex((item) => item.id == product.id) > -1;\n  };\n\n  const ToggleFromCompare = async ({ product }) => {\n    if (ExistsInCompare({ product })) {\n      RemoveFromCompare({ product });\n    } else {\n      AddToCompare({ product });\n    }\n  };\n\n  return {\n    compare,\n    AddToCompare,\n    RemoveFromCompare,\n    ExistsInCompare,\n    ToggleFromCompare,\n    GetCompare,\n  };\n});\n",
+      "start": 1716056343308,
+      "end": 1716056343503,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343503,
+      "end": 1716056343503,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056343503,
+      "end": 1716056343504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056343504,
+      "end": 1716056343504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056343504,
+      "end": 1716056343504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056343504,
+      "end": 1716056343504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056343504,
+      "end": 1716056343504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056343504,
+      "end": 1716056343504,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056343504,
+      "end": 1716056343504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056343504,
+      "end": 1716056343504,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056343504,
+      "end": 1716056343504,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { GetHeaders } from \"~~/services/api/handleRequest\";\nexport const useCompareStore = defineStore(\"compare-store\", () => {\n  var compare = ref([]);\n\n  const AddToCompare = async ({ product }) => {\n    let userData = JSON.parse(localStorage.getItem(\"usersAccount\"));\n    if (userData) {\n      let { data } = await useFetch(\"compare\", {\n        baseURL: BaseUrl,\n        method: \"post\",\n        headers: GetHeaders(),\n        key: \"AddItemToCompare\",\n        body: { product_id: product.id },\n        onResponse({ response, error }) {\n          if (error) {\n            useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n          } else {\n            useNuxtApp().$useToaster({ msg: \"Item Added To Compare\" });\n          }\n        },\n      }, '$L0BXq1cWH6');\n      await GetComparetems();\n    }\n  };\n\n  const GetComparetems = async () => {\n    if (useCookie(\"uat\").value) {\n      let { data, error } = await useFetch(\"compare\", {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"get\",\n        key: \"GetAllcompareItemsInStore\",\n      }, '$EUvKAuO8tl');\n      if (!error.value) {\n        compare.value = data.value?.data || [];\n      }\n    }\n  };\n\n  const RemoveFromCompare = async ({ product }) => {\n    if (useCookie(\"uat\").value) {\n      let { data, error } = await useFetch(`compare/${product.id}`, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"delete\",\n        key: `DeleteItemFromcompare${product.id}`,\n        onResponse({ response, error }) {\n          if (error) {\n            useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n          } else {\n            useNuxtApp().$useToaster({\n              msg: \"Item Removed From compare\",\n              type: \"warning\",\n            });\n          }\n        },\n      }, '$9FZRX78egb');\n      if (!error.value) {\n        await GetComparetems();\n      }\n    }\n  };\n\n  const GetCompare = async () => {\n    await GetComparetems();\n  };\n\n  const ExistsInCompare = ({ product }) => {\n    return compare.value.findIndex((item) => item.id == product.id) > -1;\n  };\n\n  const ToggleFromCompare = async ({ product }) => {\n    if (ExistsInCompare({ product })) {\n      RemoveFromCompare({ product });\n    } else {\n      AddToCompare({ product });\n    }\n  };\n\n  return {\n    compare,\n    AddToCompare,\n    RemoveFromCompare,\n    ExistsInCompare,\n    ToggleFromCompare,\n    GetCompare,\n  };\n});\n",
+      "start": 1716056343504,
+      "end": 1716056343505,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { GetHeaders } from \"~~/services/api/handleRequest\";\nexport const useCompareStore = defineStore(\"compare-store\", () => {\n  var compare = ref([]);\n\n  const AddToCompare = async ({ product }) => {\n    let userData = JSON.parse(localStorage.getItem(\"usersAccount\"));\n    if (userData) {\n      let { data } = await useFetch(\"compare\", {\n        baseURL: BaseUrl,\n        method: \"post\",\n        headers: GetHeaders(),\n        key: \"AddItemToCompare\",\n        body: { product_id: product.id },\n        onResponse({ response, error }) {\n          if (error) {\n            useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n          } else {\n            useNuxtApp().$useToaster({ msg: \"Item Added To Compare\" });\n          }\n        },\n      }, '$L0BXq1cWH6');\n      await GetComparetems();\n    }\n  };\n\n  const GetComparetems = async () => {\n    if (useCookie(\"uat\").value) {\n      let { data, error } = await useFetch(\"compare\", {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"get\",\n        key: \"GetAllcompareItemsInStore\",\n      }, '$EUvKAuO8tl');\n      if (!error.value) {\n        compare.value = data.value?.data || [];\n      }\n    }\n  };\n\n  const RemoveFromCompare = async ({ product }) => {\n    if (useCookie(\"uat\").value) {\n      let { data, error } = await useFetch(`compare/${product.id}`, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"delete\",\n        key: `DeleteItemFromcompare${product.id}`,\n        onResponse({ response, error }) {\n          if (error) {\n            useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n          } else {\n            useNuxtApp().$useToaster({\n              msg: \"Item Removed From compare\",\n              type: \"warning\",\n            });\n          }\n        },\n      }, '$9FZRX78egb');\n      if (!error.value) {\n        await GetComparetems();\n      }\n    }\n  };\n\n  const GetCompare = async () => {\n    await GetComparetems();\n  };\n\n  const ExistsInCompare = ({ product }) => {\n    return compare.value.findIndex((item) => item.id == product.id) > -1;\n  };\n\n  const ToggleFromCompare = async ({ product }) => {\n    if (ExistsInCompare({ product })) {\n      RemoveFromCompare({ product });\n    } else {\n      AddToCompare({ product });\n    }\n  };\n\n  return {\n    compare,\n    AddToCompare,\n    RemoveFromCompare,\n    ExistsInCompare,\n    ToggleFromCompare,\n    GetCompare,\n  };\n});\n",
+      "start": 1716056343504,
+      "end": 1716056343505,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineStore } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/@pinia/nuxt/dist/runtime/composables';\nimport { ref } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { useNuxtApp } from '#app/nuxt';\nimport { useCookie } from '#app/composables/cookie';\nimport { GetHeaders } from \"~~/services/api/handleRequest\";\nexport const useCompareStore = defineStore(\"compare-store\", () => {\n  var compare = ref([]);\n\n  const AddToCompare = async ({ product }) => {\n    let userData = JSON.parse(localStorage.getItem(\"usersAccount\"));\n    if (userData) {\n      let { data } = await useFetch(\"compare\", {\n        baseURL: BaseUrl,\n        method: \"post\",\n        headers: GetHeaders(),\n        key: \"AddItemToCompare\",\n        body: { product_id: product.id },\n        onResponse({ response, error }) {\n          if (error) {\n            useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n          } else {\n            useNuxtApp().$useToaster({ msg: \"Item Added To Compare\" });\n          }\n        },\n      }, '$L0BXq1cWH6');\n      await GetComparetems();\n    }\n  };\n\n  const GetComparetems = async () => {\n    if (useCookie(\"uat\").value) {\n      let { data, error } = await useFetch(\"compare\", {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"get\",\n        key: \"GetAllcompareItemsInStore\",\n      }, '$EUvKAuO8tl');\n      if (!error.value) {\n        compare.value = data.value?.data || [];\n      }\n    }\n  };\n\n  const RemoveFromCompare = async ({ product }) => {\n    if (useCookie(\"uat\").value) {\n      let { data, error } = await useFetch(`compare/${product.id}`, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"delete\",\n        key: `DeleteItemFromcompare${product.id}`,\n        onResponse({ response, error }) {\n          if (error) {\n            useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n          } else {\n            useNuxtApp().$useToaster({\n              msg: \"Item Removed From compare\",\n              type: \"warning\",\n            });\n          }\n        },\n      }, '$9FZRX78egb');\n      if (!error.value) {\n        await GetComparetems();\n      }\n    }\n  };\n\n  const GetCompare = async () => {\n    await GetComparetems();\n  };\n\n  const ExistsInCompare = ({ product }) => {\n    return compare.value.findIndex((item) => item.id == product.id) > -1;\n  };\n\n  const ToggleFromCompare = async ({ product }) => {\n    if (ExistsInCompare({ product })) {\n      RemoveFromCompare({ product });\n    } else {\n      AddToCompare({ product });\n    }\n  };\n\n  return {\n    compare,\n    AddToCompare,\n    RemoveFromCompare,\n    ExistsInCompare,\n    ToggleFromCompare,\n    GetCompare,\n  };\n});\n",
+      "start": 1716056343505,
+      "end": 1716056343505,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineStore } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/@pinia/nuxt/dist/runtime/composables';\nimport { ref } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { useNuxtApp } from '#app/nuxt';\nimport { useCookie } from '#app/composables/cookie';\nimport { GetHeaders } from \"~~/services/api/handleRequest\";\nexport const useCompareStore = defineStore(\"compare-store\", () => {\n  var compare = ref([]);\n\n  const AddToCompare = async ({ product }) => {\n    let userData = JSON.parse(localStorage.getItem(\"usersAccount\"));\n    if (userData) {\n      let { data } = await useFetch(\"compare\", {\n        baseURL: BaseUrl,\n        method: \"post\",\n        headers: GetHeaders(),\n        key: \"AddItemToCompare\",\n        body: { product_id: product.id },\n        onResponse({ response, error }) {\n          if (error) {\n            useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n          } else {\n            useNuxtApp().$useToaster({ msg: \"Item Added To Compare\" });\n          }\n        },\n      }, '$L0BXq1cWH6');\n      await GetComparetems();\n    }\n  };\n\n  const GetComparetems = async () => {\n    if (useCookie(\"uat\").value) {\n      let { data, error } = await useFetch(\"compare\", {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"get\",\n        key: \"GetAllcompareItemsInStore\",\n      }, '$EUvKAuO8tl');\n      if (!error.value) {\n        compare.value = data.value?.data || [];\n      }\n    }\n  };\n\n  const RemoveFromCompare = async ({ product }) => {\n    if (useCookie(\"uat\").value) {\n      let { data, error } = await useFetch(`compare/${product.id}`, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: \"delete\",\n        key: `DeleteItemFromcompare${product.id}`,\n        onResponse({ response, error }) {\n          if (error) {\n            useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n          } else {\n            useNuxtApp().$useToaster({\n              msg: \"Item Removed From compare\",\n              type: \"warning\",\n            });\n          }\n        },\n      }, '$9FZRX78egb');\n      if (!error.value) {\n        await GetComparetems();\n      }\n    }\n  };\n\n  const GetCompare = async () => {\n    await GetComparetems();\n  };\n\n  const ExistsInCompare = ({ product }) => {\n    return compare.value.findIndex((item) => item.id == product.id) > -1;\n  };\n\n  const ToggleFromCompare = async ({ product }) => {\n    if (ExistsInCompare({ product })) {\n      RemoveFromCompare({ product });\n    } else {\n      AddToCompare({ product });\n    }\n  };\n\n  return {\n    compare,\n    AddToCompare,\n    RemoveFromCompare,\n    ExistsInCompare,\n    ToggleFromCompare,\n    GetCompare,\n  };\n});\n",
+      "start": 1716056343505,
+      "end": 1716056343505,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343505,
+      "end": 1716056343505,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343505,
+      "end": 1716056343505,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343505,
+      "end": 1716056343505,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343505,
+      "end": 1716056343505,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056343505,
+      "end": 1716056343505,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056343505,
+      "end": 1716056343505,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056343505,
+      "end": 1716056343505,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056343505,
+      "end": 1716056343505,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056343506,
+      "end": 1716056343506,
+      "order": "normal"
+    }
+  ]
+}

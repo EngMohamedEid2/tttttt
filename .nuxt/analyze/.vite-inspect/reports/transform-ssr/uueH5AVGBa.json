@@ -1,0 +1,260 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/pages/order/success/[order_number].vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div v-if=\"!pending\">\n\n    <section class=\"cart-section section-b-space\">\n        <div class=\"container-fluid-lg\">\n            <div class=\"row g-sm-4 g-3\">\n                <div class=\"col-xxl-9 col-lg-8\">\n                    \n                    <div class=\"cart-table order-table order-table-2\">\n                        <div class=\"table-responsive\">\n                            <table class=\"table mb-0\">\n                                <tbody>\n                                    <tr v-for=\"(product,index) in data.products\" :key=\"`product${index}`\">\n                                        <td class=\"product-detail\">\n                                            <div class=\"product border-0\">\n                                               \n                                                    <img :src=\"product.product_thumbnail?.original_url || product.product_galleries[0]?.original_url || PlaceholderImage\"\n                                                        class=\"img-fluid\" alt=\"\">\n                                              \n                                                <div class=\"product-detail\">\n                                                    <ul>\n                                                        <li class=\"name\">\n                                                            {{product.name}}\n                                                        </li>\n\n                                                        <li class=\"text-content\">Sold By: {{product.store.store_name}}</li>\n\n                                                        <li class=\"text-content\">Quantity - 500 g</li>\n                                                    </ul>\n                                                </div>\n                                            </div>\n                                        </td>\n\n                                        <td class=\"price\">\n                                            <h4 class=\"table-title text-content\">\n                                                Price</h4>\n                                            <h6 class=\"theme-color\">${{product.price || 0}}</h6>\n                                        </td>\n\n                                        <td class=\"quantity\">\n                                            <h4 class=\"table-title text-content\">Qty</h4>\n                                            <h4 class=\"text-title\">{{product.pivot?.quantity}}</h4>\n                                        </td>\n\n                                        <td class=\"subtotal\">\n                                            <h4 class=\"table-title text-content\">Total</h4>\n                                            <h5>${{product.pivot.subtotal || 0}}</h5>\n                                        </td>\n                                    </tr>\n\n                                    \n\n                                    \n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"col-xxl-3 col-lg-4\">\n                    <div class=\"row g-4\">\n                        <div class=\"col-lg-12 col-sm-6\">\n                            <div class=\"summery-box\">\n                                <div class=\"summery-header\">\n                                    <h3>Price Details</h3>\n                                    <h5 class=\"ms-auto theme-color\">({{ data.products.length }} Items)</h5>\n                                </div>\n\n                                <ul class=\"summery-contain\">\n                                    <li>\n                                        <h4>SubTotal</h4>\n                                        <h4 class=\"price\">${{data.amount}}</h4>\n                                    </li>\n                                    <li>\n                                        <h4>Tax</h4>\n                                        <h4 class=\"price\">${{data.tax_total}}</h4>\n                                    </li>\n                                    <li>\n                                        <h4>Shipping</h4>\n                                        <h4 class=\"price\">${{data.shipping_total}}</h4>\n                                    </li>\n                                    \n                                </ul>\n\n                                <ul class=\"summery-total\">\n                                    <li class=\"list-total\">\n                                        <h4>Total ({{useSettingsStore().currencyName}})</h4>\n                                        <h4 class=\"price\">${{data.total}}</h4>\n                                    </li>\n                                </ul>\n                            </div>\n                        </div>\n\n                        <div class=\"col-lg-12 col-sm-6\">\n                            <div class=\"summery-box\">\n                                <div class=\"summery-header d-block\">\n                                    <h3>Shipping Address</h3>\n                                </div>\n\n                                <ul class=\"summery-contain pb-0 border-bottom-0\">\n                                    <li class=\"d-block\">\n                                        <h4>{{`${data.shipping_address.street} ${data.shipping_address.city}`}}</h4>\n                                        <h4 class=\"mt-2\">{{data.shipping_address?.state?.name}}, {{data?.shipping_address?.country?.name}} {{data?.shipping_address?.pincode}}</h4>\n                                    </li>\n\n                                    <li class=\"pb-0\">\n                                        <h4>Expected Date Of Delivery:</h4>\n                                        <h4 class=\"price theme-color\">\n                                            <a @click.prevent=\"()=>{useRouter().push(`/account/order/details/${data.order_number}`)}\" href=\"#\" class=\"text-danger\">Track Order</a>\n                                        </h4>\n                                    </li>\n                                </ul>\n\n                                <ul class=\"summery-total\">\n                                    <li class=\"list-total border-top-0 pt-2\">\n                                        <h4 class=\"fw-bold\">Oct 21, 2021</h4>\n                                    </li>\n                                </ul>\n                            </div>\n                        </div>\n\n                        <div class=\"col-12\">\n                            <div class=\"summery-box\">\n                                <div class=\"summery-header d-block\">\n                                    <h3>Payment Method</h3>\n                                </div>\n\n                                <ul class=\"summery-contain pb-0 border-bottom-0\">\n                                    <li class=\"d-block pt-0\">\n                                        <p class=\"text-content\">{{data.payment_method}}</p>\n                                    </li>\n                                </ul>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</div>\n    <div v-else></div>\n</template>\n\n<script setup>\nimport { useSettingsStore } from '~~/store/settings';\n\nlet {data,refresh,pending} = await useFetch(`trackOrder/${useRoute().params.order_number}`,{\n    baseURL:BaseUrl,\n    headers:GetHeaders(),\n    method:'get',\n    key:`GetOrderInSuccess${useRoute().params.order_number}`,\n    params:{order_number:useRoute().params.order_number},\n})\n</script>\n\n<style lang=\"scss\" scoped>\n\n</style>",
+      "start": 1716056343045,
+      "end": 1716056343122,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useSettingsStore } from '~~/store/settings';\n\n\nconst _sfc_main = {\n  __name: '[order_number]',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet {data,refresh,pending} = (\n  ([__temp,__restore] = _withAsyncContext(() => useFetch(`trackOrder/${useRoute().params.order_number}`,{\n    baseURL:BaseUrl,\n    headers:GetHeaders(),\n    method:'get',\n    key:`GetOrderInSuccess${useRoute().params.order_number}`,\n    params:{order_number:useRoute().params.order_number},\n}))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  if (!_unref(pending)) {\n    _push(`<div${_ssrRenderAttrs(_attrs)}><section class=\"cart-section section-b-space\"><div class=\"container-fluid-lg\"><div class=\"row g-sm-4 g-3\"><div class=\"col-xxl-9 col-lg-8\"><div class=\"cart-table order-table order-table-2\"><div class=\"table-responsive\"><table class=\"table mb-0\"><tbody><!--[-->`)\n    _ssrRenderList(_unref(data).products, (product, index) => {\n      _push(`<tr><td class=\"product-detail\"><div class=\"product border-0\"><img${\n        _ssrRenderAttr(\"src\", product.product_thumbnail?.original_url || product.product_galleries[0]?.original_url || _ctx.PlaceholderImage)\n      } class=\"img-fluid\" alt=\"\"><div class=\"product-detail\"><ul><li class=\"name\">${\n        _ssrInterpolate(product.name)\n      }</li><li class=\"text-content\">Sold By: ${\n        _ssrInterpolate(product.store.store_name)\n      }</li><li class=\"text-content\">Quantity - 500 g</li></ul></div></div></td><td class=\"price\"><h4 class=\"table-title text-content\"> Price</h4><h6 class=\"theme-color\">\\$${\n        _ssrInterpolate(product.price || 0)\n      }</h6></td><td class=\"quantity\"><h4 class=\"table-title text-content\">Qty</h4><h4 class=\"text-title\">${\n        _ssrInterpolate(product.pivot?.quantity)\n      }</h4></td><td class=\"subtotal\"><h4 class=\"table-title text-content\">Total</h4><h5>\\$${\n        _ssrInterpolate(product.pivot.subtotal || 0)\n      }</h5></td></tr>`)\n    })\n    _push(`<!--]--></tbody></table></div></div></div><div class=\"col-xxl-3 col-lg-4\"><div class=\"row g-4\"><div class=\"col-lg-12 col-sm-6\"><div class=\"summery-box\"><div class=\"summery-header\"><h3>Price Details</h3><h5 class=\"ms-auto theme-color\">(${\n      _ssrInterpolate(_unref(data).products.length)\n    } Items)</h5></div><ul class=\"summery-contain\"><li><h4>SubTotal</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).amount)\n    }</h4></li><li><h4>Tax</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).tax_total)\n    }</h4></li><li><h4>Shipping</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).shipping_total)\n    }</h4></li></ul><ul class=\"summery-total\"><li class=\"list-total\"><h4>Total (${\n      _ssrInterpolate(_unref(useSettingsStore)().currencyName)\n    })</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).total)\n    }</h4></li></ul></div></div><div class=\"col-lg-12 col-sm-6\"><div class=\"summery-box\"><div class=\"summery-header d-block\"><h3>Shipping Address</h3></div><ul class=\"summery-contain pb-0 border-bottom-0\"><li class=\"d-block\"><h4>${\n      _ssrInterpolate(`${_unref(data).shipping_address.street} ${_unref(data).shipping_address.city}`)\n    }</h4><h4 class=\"mt-2\">${\n      _ssrInterpolate(_unref(data).shipping_address?.state?.name)\n    }, ${\n      _ssrInterpolate(_unref(data)?.shipping_address?.country?.name)\n    } ${\n      _ssrInterpolate(_unref(data)?.shipping_address?.pincode)\n    }</h4></li><li class=\"pb-0\"><h4>Expected Date Of Delivery:</h4><h4 class=\"price theme-color\"><a href=\"#\" class=\"text-danger\">Track Order</a></h4></li></ul><ul class=\"summery-total\"><li class=\"list-total border-top-0 pt-2\"><h4 class=\"fw-bold\">Oct 21, 2021</h4></li></ul></div></div><div class=\"col-12\"><div class=\"summery-box\"><div class=\"summery-header d-block\"><h3>Payment Method</h3></div><ul class=\"summery-contain pb-0 border-bottom-0\"><li class=\"d-block pt-0\"><p class=\"text-content\">${\n      _ssrInterpolate(_unref(data).payment_method)\n    }</p></li></ul></div></div></div></div></div></div></section></div>`)\n  } else {\n    _push(`<div${_ssrRenderAttrs(_attrs)}></div>`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/order/success/[order_number].vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343122,
+      "end": 1716056343122,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056343122,
+      "end": 1716056343123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056343123,
+      "end": 1716056343123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056343123,
+      "end": 1716056343123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056343123,
+      "end": 1716056343123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056343123,
+      "end": 1716056343123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056343123,
+      "end": 1716056343123,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056343123,
+      "end": 1716056343123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056343123,
+      "end": 1716056343123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056343123,
+      "end": 1716056343123,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useSettingsStore } from '~~/store/settings';\n\n\nconst _sfc_main = {\n  __name: '[order_number]',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet {data,refresh,pending} = (\n  ([__temp,__restore] = _withAsyncContext(() => useFetch(`trackOrder/${useRoute().params.order_number}`,{\n    baseURL:BaseUrl,\n    headers:GetHeaders(),\n    method:'get',\n    key:`GetOrderInSuccess${useRoute().params.order_number}`,\n    params:{order_number:useRoute().params.order_number},\n}, '$ZUHwIhKrvg'))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  if (!_unref(pending)) {\n    _push(`<div${_ssrRenderAttrs(_attrs)}><section class=\"cart-section section-b-space\"><div class=\"container-fluid-lg\"><div class=\"row g-sm-4 g-3\"><div class=\"col-xxl-9 col-lg-8\"><div class=\"cart-table order-table order-table-2\"><div class=\"table-responsive\"><table class=\"table mb-0\"><tbody><!--[-->`)\n    _ssrRenderList(_unref(data).products, (product, index) => {\n      _push(`<tr><td class=\"product-detail\"><div class=\"product border-0\"><img${\n        _ssrRenderAttr(\"src\", product.product_thumbnail?.original_url || product.product_galleries[0]?.original_url || _ctx.PlaceholderImage)\n      } class=\"img-fluid\" alt=\"\"><div class=\"product-detail\"><ul><li class=\"name\">${\n        _ssrInterpolate(product.name)\n      }</li><li class=\"text-content\">Sold By: ${\n        _ssrInterpolate(product.store.store_name)\n      }</li><li class=\"text-content\">Quantity - 500 g</li></ul></div></div></td><td class=\"price\"><h4 class=\"table-title text-content\"> Price</h4><h6 class=\"theme-color\">\\$${\n        _ssrInterpolate(product.price || 0)\n      }</h6></td><td class=\"quantity\"><h4 class=\"table-title text-content\">Qty</h4><h4 class=\"text-title\">${\n        _ssrInterpolate(product.pivot?.quantity)\n      }</h4></td><td class=\"subtotal\"><h4 class=\"table-title text-content\">Total</h4><h5>\\$${\n        _ssrInterpolate(product.pivot.subtotal || 0)\n      }</h5></td></tr>`)\n    })\n    _push(`<!--]--></tbody></table></div></div></div><div class=\"col-xxl-3 col-lg-4\"><div class=\"row g-4\"><div class=\"col-lg-12 col-sm-6\"><div class=\"summery-box\"><div class=\"summery-header\"><h3>Price Details</h3><h5 class=\"ms-auto theme-color\">(${\n      _ssrInterpolate(_unref(data).products.length)\n    } Items)</h5></div><ul class=\"summery-contain\"><li><h4>SubTotal</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).amount)\n    }</h4></li><li><h4>Tax</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).tax_total)\n    }</h4></li><li><h4>Shipping</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).shipping_total)\n    }</h4></li></ul><ul class=\"summery-total\"><li class=\"list-total\"><h4>Total (${\n      _ssrInterpolate(_unref(useSettingsStore)().currencyName)\n    })</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).total)\n    }</h4></li></ul></div></div><div class=\"col-lg-12 col-sm-6\"><div class=\"summery-box\"><div class=\"summery-header d-block\"><h3>Shipping Address</h3></div><ul class=\"summery-contain pb-0 border-bottom-0\"><li class=\"d-block\"><h4>${\n      _ssrInterpolate(`${_unref(data).shipping_address.street} ${_unref(data).shipping_address.city}`)\n    }</h4><h4 class=\"mt-2\">${\n      _ssrInterpolate(_unref(data).shipping_address?.state?.name)\n    }, ${\n      _ssrInterpolate(_unref(data)?.shipping_address?.country?.name)\n    } ${\n      _ssrInterpolate(_unref(data)?.shipping_address?.pincode)\n    }</h4></li><li class=\"pb-0\"><h4>Expected Date Of Delivery:</h4><h4 class=\"price theme-color\"><a href=\"#\" class=\"text-danger\">Track Order</a></h4></li></ul><ul class=\"summery-total\"><li class=\"list-total border-top-0 pt-2\"><h4 class=\"fw-bold\">Oct 21, 2021</h4></li></ul></div></div><div class=\"col-12\"><div class=\"summery-box\"><div class=\"summery-header d-block\"><h3>Payment Method</h3></div><ul class=\"summery-contain pb-0 border-bottom-0\"><li class=\"d-block pt-0\"><p class=\"text-content\">${\n      _ssrInterpolate(_unref(data).payment_method)\n    }</p></li></ul></div></div></div></div></div></div></section></div>`)\n  } else {\n    _push(`<div${_ssrRenderAttrs(_attrs)}></div>`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/order/success/[order_number].vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343123,
+      "end": 1716056343124,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useSettingsStore } from '~~/store/settings';\n\n\nconst _sfc_main = {\n  __name: '[order_number]',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet {data,refresh,pending} = (\n  ([__temp,__restore] = _withAsyncContext(() => useFetch(`trackOrder/${useRoute().params.order_number}`,{\n    baseURL:BaseUrl,\n    headers:GetHeaders(),\n    method:'get',\n    key:`GetOrderInSuccess${useRoute().params.order_number}`,\n    params:{order_number:useRoute().params.order_number},\n}, '$ZUHwIhKrvg'))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  if (!_unref(pending)) {\n    _push(`<div${_ssrRenderAttrs(_attrs)}><section class=\"cart-section section-b-space\"><div class=\"container-fluid-lg\"><div class=\"row g-sm-4 g-3\"><div class=\"col-xxl-9 col-lg-8\"><div class=\"cart-table order-table order-table-2\"><div class=\"table-responsive\"><table class=\"table mb-0\"><tbody><!--[-->`)\n    _ssrRenderList(_unref(data).products, (product, index) => {\n      _push(`<tr><td class=\"product-detail\"><div class=\"product border-0\"><img${\n        _ssrRenderAttr(\"src\", product.product_thumbnail?.original_url || product.product_galleries[0]?.original_url || _ctx.PlaceholderImage)\n      } class=\"img-fluid\" alt=\"\"><div class=\"product-detail\"><ul><li class=\"name\">${\n        _ssrInterpolate(product.name)\n      }</li><li class=\"text-content\">Sold By: ${\n        _ssrInterpolate(product.store.store_name)\n      }</li><li class=\"text-content\">Quantity - 500 g</li></ul></div></div></td><td class=\"price\"><h4 class=\"table-title text-content\"> Price</h4><h6 class=\"theme-color\">\\$${\n        _ssrInterpolate(product.price || 0)\n      }</h6></td><td class=\"quantity\"><h4 class=\"table-title text-content\">Qty</h4><h4 class=\"text-title\">${\n        _ssrInterpolate(product.pivot?.quantity)\n      }</h4></td><td class=\"subtotal\"><h4 class=\"table-title text-content\">Total</h4><h5>\\$${\n        _ssrInterpolate(product.pivot.subtotal || 0)\n      }</h5></td></tr>`)\n    })\n    _push(`<!--]--></tbody></table></div></div></div><div class=\"col-xxl-3 col-lg-4\"><div class=\"row g-4\"><div class=\"col-lg-12 col-sm-6\"><div class=\"summery-box\"><div class=\"summery-header\"><h3>Price Details</h3><h5 class=\"ms-auto theme-color\">(${\n      _ssrInterpolate(_unref(data).products.length)\n    } Items)</h5></div><ul class=\"summery-contain\"><li><h4>SubTotal</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).amount)\n    }</h4></li><li><h4>Tax</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).tax_total)\n    }</h4></li><li><h4>Shipping</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).shipping_total)\n    }</h4></li></ul><ul class=\"summery-total\"><li class=\"list-total\"><h4>Total (${\n      _ssrInterpolate(_unref(useSettingsStore)().currencyName)\n    })</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).total)\n    }</h4></li></ul></div></div><div class=\"col-lg-12 col-sm-6\"><div class=\"summery-box\"><div class=\"summery-header d-block\"><h3>Shipping Address</h3></div><ul class=\"summery-contain pb-0 border-bottom-0\"><li class=\"d-block\"><h4>${\n      _ssrInterpolate(`${_unref(data).shipping_address.street} ${_unref(data).shipping_address.city}`)\n    }</h4><h4 class=\"mt-2\">${\n      _ssrInterpolate(_unref(data).shipping_address?.state?.name)\n    }, ${\n      _ssrInterpolate(_unref(data)?.shipping_address?.country?.name)\n    } ${\n      _ssrInterpolate(_unref(data)?.shipping_address?.pincode)\n    }</h4></li><li class=\"pb-0\"><h4>Expected Date Of Delivery:</h4><h4 class=\"price theme-color\"><a href=\"#\" class=\"text-danger\">Track Order</a></h4></li></ul><ul class=\"summery-total\"><li class=\"list-total border-top-0 pt-2\"><h4 class=\"fw-bold\">Oct 21, 2021</h4></li></ul></div></div><div class=\"col-12\"><div class=\"summery-box\"><div class=\"summery-header d-block\"><h3>Payment Method</h3></div><ul class=\"summery-contain pb-0 border-bottom-0\"><li class=\"d-block pt-0\"><p class=\"text-content\">${\n      _ssrInterpolate(_unref(data).payment_method)\n    }</p></li></ul></div></div></div></div></div></div></section></div>`)\n  } else {\n    _push(`<div${_ssrRenderAttrs(_attrs)}></div>`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/order/success/[order_number].vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343123,
+      "end": 1716056343124,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useFetch } from '#app/composables/fetch';\nimport { useRoute } from '#app/composables/router';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { PlaceholderImage as __unimport_PlaceholderImage } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/dataFilters.js';\nimport { unref as __unimport_unref_ } from 'vue';import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useSettingsStore } from '~~/store/settings';\n\n\nconst _sfc_main = {\n  __name: '[order_number]',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet {data,refresh,pending} = (\n  ([__temp,__restore] = _withAsyncContext(() => useFetch(`trackOrder/${useRoute().params.order_number}`,{\n    baseURL:BaseUrl,\n    headers:GetHeaders(),\n    method:'get',\n    key:`GetOrderInSuccess${useRoute().params.order_number}`,\n    params:{order_number:useRoute().params.order_number},\n}, '$ZUHwIhKrvg'))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  if (!_unref(pending)) {\n    _push(`<div${_ssrRenderAttrs(_attrs)}><section class=\"cart-section section-b-space\"><div class=\"container-fluid-lg\"><div class=\"row g-sm-4 g-3\"><div class=\"col-xxl-9 col-lg-8\"><div class=\"cart-table order-table order-table-2\"><div class=\"table-responsive\"><table class=\"table mb-0\"><tbody><!--[-->`)\n    _ssrRenderList(_unref(data).products, (product, index) => {\n      _push(`<tr><td class=\"product-detail\"><div class=\"product border-0\"><img${\n        _ssrRenderAttr(\"src\", product.product_thumbnail?.original_url || product.product_galleries[0]?.original_url || (\"PlaceholderImage\" in _ctx ? _ctx.PlaceholderImage : __unimport_unref_(__unimport_PlaceholderImage)))\n      } class=\"img-fluid\" alt=\"\"><div class=\"product-detail\"><ul><li class=\"name\">${\n        _ssrInterpolate(product.name)\n      }</li><li class=\"text-content\">Sold By: ${\n        _ssrInterpolate(product.store.store_name)\n      }</li><li class=\"text-content\">Quantity - 500 g</li></ul></div></div></td><td class=\"price\"><h4 class=\"table-title text-content\"> Price</h4><h6 class=\"theme-color\">\\$${\n        _ssrInterpolate(product.price || 0)\n      }</h6></td><td class=\"quantity\"><h4 class=\"table-title text-content\">Qty</h4><h4 class=\"text-title\">${\n        _ssrInterpolate(product.pivot?.quantity)\n      }</h4></td><td class=\"subtotal\"><h4 class=\"table-title text-content\">Total</h4><h5>\\$${\n        _ssrInterpolate(product.pivot.subtotal || 0)\n      }</h5></td></tr>`)\n    })\n    _push(`<!--]--></tbody></table></div></div></div><div class=\"col-xxl-3 col-lg-4\"><div class=\"row g-4\"><div class=\"col-lg-12 col-sm-6\"><div class=\"summery-box\"><div class=\"summery-header\"><h3>Price Details</h3><h5 class=\"ms-auto theme-color\">(${\n      _ssrInterpolate(_unref(data).products.length)\n    } Items)</h5></div><ul class=\"summery-contain\"><li><h4>SubTotal</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).amount)\n    }</h4></li><li><h4>Tax</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).tax_total)\n    }</h4></li><li><h4>Shipping</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).shipping_total)\n    }</h4></li></ul><ul class=\"summery-total\"><li class=\"list-total\"><h4>Total (${\n      _ssrInterpolate(_unref(useSettingsStore)().currencyName)\n    })</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).total)\n    }</h4></li></ul></div></div><div class=\"col-lg-12 col-sm-6\"><div class=\"summery-box\"><div class=\"summery-header d-block\"><h3>Shipping Address</h3></div><ul class=\"summery-contain pb-0 border-bottom-0\"><li class=\"d-block\"><h4>${\n      _ssrInterpolate(`${_unref(data).shipping_address.street} ${_unref(data).shipping_address.city}`)\n    }</h4><h4 class=\"mt-2\">${\n      _ssrInterpolate(_unref(data).shipping_address?.state?.name)\n    }, ${\n      _ssrInterpolate(_unref(data)?.shipping_address?.country?.name)\n    } ${\n      _ssrInterpolate(_unref(data)?.shipping_address?.pincode)\n    }</h4></li><li class=\"pb-0\"><h4>Expected Date Of Delivery:</h4><h4 class=\"price theme-color\"><a href=\"#\" class=\"text-danger\">Track Order</a></h4></li></ul><ul class=\"summery-total\"><li class=\"list-total border-top-0 pt-2\"><h4 class=\"fw-bold\">Oct 21, 2021</h4></li></ul></div></div><div class=\"col-12\"><div class=\"summery-box\"><div class=\"summery-header d-block\"><h3>Payment Method</h3></div><ul class=\"summery-contain pb-0 border-bottom-0\"><li class=\"d-block pt-0\"><p class=\"text-content\">${\n      _ssrInterpolate(_unref(data).payment_method)\n    }</p></li></ul></div></div></div></div></div></div></section></div>`)\n  } else {\n    _push(`<div${_ssrRenderAttrs(_attrs)}></div>`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/order/success/[order_number].vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343124,
+      "end": 1716056343125,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useFetch } from '#app/composables/fetch';\nimport { useRoute } from '#app/composables/router';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { PlaceholderImage as __unimport_PlaceholderImage } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/utils/dataFilters.js';\nimport { unref as __unimport_unref_ } from 'vue';import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useSettingsStore } from '~~/store/settings';\n\n\nconst _sfc_main = {\n  __name: '[order_number]',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp, __restore\n\nlet {data,refresh,pending} = (\n  ([__temp,__restore] = _withAsyncContext(() => useFetch(`trackOrder/${useRoute().params.order_number}`,{\n    baseURL:BaseUrl,\n    headers:GetHeaders(),\n    method:'get',\n    key:`GetOrderInSuccess${useRoute().params.order_number}`,\n    params:{order_number:useRoute().params.order_number},\n}, '$ZUHwIhKrvg'))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  if (!_unref(pending)) {\n    _push(`<div${_ssrRenderAttrs(_attrs)}><section class=\"cart-section section-b-space\"><div class=\"container-fluid-lg\"><div class=\"row g-sm-4 g-3\"><div class=\"col-xxl-9 col-lg-8\"><div class=\"cart-table order-table order-table-2\"><div class=\"table-responsive\"><table class=\"table mb-0\"><tbody><!--[-->`)\n    _ssrRenderList(_unref(data).products, (product, index) => {\n      _push(`<tr><td class=\"product-detail\"><div class=\"product border-0\"><img${\n        _ssrRenderAttr(\"src\", product.product_thumbnail?.original_url || product.product_galleries[0]?.original_url || (\"PlaceholderImage\" in _ctx ? _ctx.PlaceholderImage : __unimport_unref_(__unimport_PlaceholderImage)))\n      } class=\"img-fluid\" alt=\"\"><div class=\"product-detail\"><ul><li class=\"name\">${\n        _ssrInterpolate(product.name)\n      }</li><li class=\"text-content\">Sold By: ${\n        _ssrInterpolate(product.store.store_name)\n      }</li><li class=\"text-content\">Quantity - 500 g</li></ul></div></div></td><td class=\"price\"><h4 class=\"table-title text-content\"> Price</h4><h6 class=\"theme-color\">\\$${\n        _ssrInterpolate(product.price || 0)\n      }</h6></td><td class=\"quantity\"><h4 class=\"table-title text-content\">Qty</h4><h4 class=\"text-title\">${\n        _ssrInterpolate(product.pivot?.quantity)\n      }</h4></td><td class=\"subtotal\"><h4 class=\"table-title text-content\">Total</h4><h5>\\$${\n        _ssrInterpolate(product.pivot.subtotal || 0)\n      }</h5></td></tr>`)\n    })\n    _push(`<!--]--></tbody></table></div></div></div><div class=\"col-xxl-3 col-lg-4\"><div class=\"row g-4\"><div class=\"col-lg-12 col-sm-6\"><div class=\"summery-box\"><div class=\"summery-header\"><h3>Price Details</h3><h5 class=\"ms-auto theme-color\">(${\n      _ssrInterpolate(_unref(data).products.length)\n    } Items)</h5></div><ul class=\"summery-contain\"><li><h4>SubTotal</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).amount)\n    }</h4></li><li><h4>Tax</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).tax_total)\n    }</h4></li><li><h4>Shipping</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).shipping_total)\n    }</h4></li></ul><ul class=\"summery-total\"><li class=\"list-total\"><h4>Total (${\n      _ssrInterpolate(_unref(useSettingsStore)().currencyName)\n    })</h4><h4 class=\"price\">\\$${\n      _ssrInterpolate(_unref(data).total)\n    }</h4></li></ul></div></div><div class=\"col-lg-12 col-sm-6\"><div class=\"summery-box\"><div class=\"summery-header d-block\"><h3>Shipping Address</h3></div><ul class=\"summery-contain pb-0 border-bottom-0\"><li class=\"d-block\"><h4>${\n      _ssrInterpolate(`${_unref(data).shipping_address.street} ${_unref(data).shipping_address.city}`)\n    }</h4><h4 class=\"mt-2\">${\n      _ssrInterpolate(_unref(data).shipping_address?.state?.name)\n    }, ${\n      _ssrInterpolate(_unref(data)?.shipping_address?.country?.name)\n    } ${\n      _ssrInterpolate(_unref(data)?.shipping_address?.pincode)\n    }</h4></li><li class=\"pb-0\"><h4>Expected Date Of Delivery:</h4><h4 class=\"price theme-color\"><a href=\"#\" class=\"text-danger\">Track Order</a></h4></li></ul><ul class=\"summery-total\"><li class=\"list-total border-top-0 pt-2\"><h4 class=\"fw-bold\">Oct 21, 2021</h4></li></ul></div></div><div class=\"col-12\"><div class=\"summery-box\"><div class=\"summery-header d-block\"><h3>Payment Method</h3></div><ul class=\"summery-contain pb-0 border-bottom-0\"><li class=\"d-block pt-0\"><p class=\"text-content\">${\n      _ssrInterpolate(_unref(data).payment_method)\n    }</p></li></ul></div></div></div></div></div></div></section></div>`)\n  } else {\n    _push(`<div${_ssrRenderAttrs(_attrs)}></div>`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/order/success/[order_number].vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343124,
+      "end": 1716056343125,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343125,
+      "end": 1716056343125,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343125,
+      "end": 1716056343125,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343125,
+      "end": 1716056343125,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343125,
+      "end": 1716056343125,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056343125,
+      "end": 1716056343125,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056343125,
+      "end": 1716056343125,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056343125,
+      "end": 1716056343125,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056343125,
+      "end": 1716056343126,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056343126,
+      "end": 1716056343126,
+      "order": "normal"
+    }
+  ]
+}

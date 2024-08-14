@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Auth/OTP.vue?nuxt_component=async&nuxt_component_name=AuthOTP",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <section class=\"log-in-section otp-section section-b-space\">\n    <div class=\"container-fluid-lg w-100\">\n      <div class=\"row align-items-center\">\n        <div class=\"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\">\n          <div class=\"image-contain\">\n            <img src=\"/images/inner-page/otp.png\" class=\"img-fluid\" alt=\"image\" />\n          </div>\n        </div>\n        <div class=\"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\">\n          <div class=\"log-in-box\">\n            <div class=\"log-in-title\">\n              <h3 class=\"text-title\">\n                {{\n                  $t(\"Please enter the one time password to verify your account\")\n                }}\n              </h3>\n              <h5 class=\"text-content\">\n                {{ $t(\"A code has been sent to\") }} <span>{{ $t(\"email\") }}</span>\n              </h5>\n            </div>\n            <form  @submit.prevent=\"HandleOTP()\">\n              <div class=\"outer-otp\">\n                <div id=\"otp\" class=\"inner-otp\">\n                  <input type=\"text\" formControlName=\"otp\" maxlength=\"5\"\n                    oninput=\"this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\\..*)\\./g, '$1');\"\n                    v-model=\"input.token.data\" @input=\"updated($event.target.value)\" />\n                  <p class=\"text-danger pt-2 m-0\">\n                    {{ input.token.errorMessage }}\n                  </p>\n                </div>\n              </div>\n              <WidgetsButton :id=\"'validate'\">{{\n                $t(\"Validate\")\n              }}</WidgetsButton>\n            </form>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</template>\n\n<script setup>\nlet input = ref({\n  token: { data: \"\" },\n});\nfunction updated(inputValue) {\n  if (inputValue.length == 5) return false;\n}\nasync function HandleOTP() {\n  input.value.token.errorMessage =\n    input.value.token.data.length != 5 ? \"Please Enter Otp\" : \"\";\n  if (input.value.token.data.length == 5) {\n    let { data, error } = await useFetch(\"verify-token\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: input.value.token.data,\n      },\n      onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"vo\").value = input.value.token.data;\n          navigateTo(\"/auth/update\");\n        }\n      },\n    });\n  }\n}\nonMounted(() => {\n  let mail = useCookie(\"fpemail\").value;\n  if (mail == undefined) {\n    navigateTo(\"/auth/forgot-password\");\n  }\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056262412,
+      "end": 1716056270655,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056270655,
+      "end": 1716056270655,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056270655,
+      "end": 1716056270655,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056270655,
+      "end": 1716056270655,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056270655,
+      "end": 1716056270655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056270655,
+      "end": 1716056270655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056270655,
+      "end": 1716056270655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056270655,
+      "end": 1716056270655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, unref as _unref, vModelText as _vModelText, withDirectives as _withDirectives, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, withModifiers as _withModifiers, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from '/images/inner-page/otp.png'\n\n\nconst _hoisted_1 = { class: \"log-in-section otp-section section-b-space\" }\nconst _hoisted_2 = { class: \"container-fluid-lg w-100\" }\nconst _hoisted_3 = { class: \"row align-items-center\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"image-contain\" }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_0,\n      class: \"img-fluid\",\n      alt: \"image\"\n    })\n  ])\n], -1)\nconst _hoisted_5 = { class: \"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\" }\nconst _hoisted_6 = { class: \"log-in-box\" }\nconst _hoisted_7 = { class: \"log-in-title\" }\nconst _hoisted_8 = { class: \"text-title\" }\nconst _hoisted_9 = { class: \"text-content\" }\nconst _hoisted_10 = { class: \"outer-otp\" }\nconst _hoisted_11 = {\n  id: \"otp\",\n  class: \"inner-otp\"\n}\nconst _hoisted_12 = { class: \"text-danger pt-2 m-0\" }\n\n\nconst _sfc_main = {\n  __name: 'OTP',\n  setup(__props) {\n\nlet input = ref({\n  token: { data: \"\" },\n});\nfunction updated(inputValue) {\n  if (inputValue.length == 5) return false;\n}\nasync function HandleOTP() {\n  input.value.token.errorMessage =\n    input.value.token.data.length != 5 ? \"Please Enter Otp\" : \"\";\n  if (input.value.token.data.length == 5) {\n    let { data, error } = await useFetch(\"verify-token\", {\n      baseURL: BaseUrl,\n      method: \"post\",\n      body: {\n        email: useCookie(\"fpemail\").value,\n        token: input.value.token.data,\n      },\n      onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"vo\").value = input.value.token.data;\n          navigateTo(\"/auth/update\");\n        }\n      },\n    });\n  }\n}\nonMounted(() => {\n  let mail = useCookie(\"fpemail\").value;\n  if (mail == undefined) {\n    navigateTo(\"/auth/forgot-password\");\n  }\n});\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _hoisted_4,\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"h3\", _hoisted_8, _toDisplayString(_ctx.$t(\"Please enter the one time password to verify your account\")), 1),\n              _createElementVNode(\"h5\", _hoisted_9, [\n                _createTextVNode(_toDisplayString(_ctx.$t(\"A code has been sent to\")) + \" \", 1),\n                _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"email\")), 1)\n              ])\n            ]),\n            _createElementVNode(\"form\", {\n              onSubmit: _cache[2] || (_cache[2] = _withModifiers($event => (HandleOTP()), [\"prevent\"]))\n            }, [\n              _createElementVNode(\"div\", _hoisted_10, [\n                _createElementVNode(\"div\", _hoisted_11, [\n                  _withDirectives(_createElementVNode(\"input\", {\n                    type: \"text\",\n                    formControlName: \"otp\",\n                    maxlength: \"5\",\n                    oninput: \"this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\\\\..*)\\\\./g, '$1');\",\n                    \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_unref(input).token.data) = $event)),\n                    onInput: _cache[1] || (_cache[1] = $event => (updated($event.target.value)))\n                  }, null, 544), [\n                    [_vModelText, _unref(input).token.data]\n                  ]),\n                  _createElementVNode(\"p\", _hoisted_12, _toDisplayString(_unref(input).token.errorMessage), 1)\n                ])\n              ]),\n              _createVNode(_component_WidgetsButton, { id: 'validate' }, {\n                default: _withCtx(() => [\n                  _createTextVNode(_toDisplayString(_ctx.$t(\"Validate\")), 1)\n                ]),\n                _: 1\n              })\n            ], 32)\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056270656,
+      "end": 1716056270659,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056270659,
+      "end": 1716056270659,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056270659,
+      "end": 1716056270659,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056270659,
+      "end": 1716056270659,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056270659,
+      "end": 1716056270659,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Auth/OTP.vue\").then(r => r.default))",
+      "start": 1716056270659,
+      "end": 1716056270659,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056270659,
+      "end": 1716056270659,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056270659,
+      "end": 1716056270659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056270659,
+      "end": 1716056270659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056270659,
+      "end": 1716056270659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056270659,
+      "end": 1716056270659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056270659,
+      "end": 1716056270659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056270659,
+      "end": 1716056270659,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056270659,
+      "end": 1716056270659,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056270659,
+      "end": 1716056270660,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056270660,
+      "end": 1716056270660,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056270660,
+      "end": 1716056270660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056270660,
+      "end": 1716056270660,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056270660,
+      "end": 1716056270660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056270660,
+      "end": 1716056270660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056270660,
+      "end": 1716056270660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056270660,
+      "end": 1716056270660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056270660,
+      "end": 1716056270660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056270660,
+      "end": 1716056270660,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Auth/OTP.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056270660,
+      "end": 1716056270660,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056270660,
+      "end": 1716056270660,
+      "order": "normal"
+    }
+  ]
+}

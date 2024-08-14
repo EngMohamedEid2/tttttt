@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/layouts/default.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <WidgetsLoader v-if=\"loading\" />\n\n    <!-- Layout Partial -->\n    <Header :logo=\"setLogo().header_logo\" />\n    <WidgetsMobileCart />\n    <slot />\n    <Footer :footer=\"setLogo().footer\" />\n\n    <!-- Widgets -->\n    <WidgetsCookie />\n    <WidgetsRecentlyPurchasePoppup />\n    <WidgetsStickyCart\n      v-if=\"ThemeOptions?.options?.general?.cart_style == 'cart_mini'\"\n    />\n    <WidgetsStickyCompare />\n    <div class=\"theme-option\">\n      <WidgetsThemeCustomizer />\n      <WidgetsBackToTop\n        v-if=\"ThemeOptions?.options?.general?.back_to_top_enable\"\n      />\n    </div>\n    <WidgetsModalsNewsletterModal />\n    <WidgetsModalsExitModal />\n  </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nimport { useUserStore } from \"@/store/user\";\n\nlet loading = ref(false);\nconst route = useRoute();\nconst router = useRouter();\n\nuseDataStore().GetProduct();\nuseDataStore().GetCategory();\n// useDataStore().GetCurrency();\n// useDataStore().GetBlog();\nuseDataStore().GetThemeoption();\nuseDataStore().GetNotifications();\nuseDataStore().GetSettings();\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nfunction setLogo() {\n  var headerLogo;\n  var footerLogo;\n  var footerClass;\n  if (route.path == \"/theme/paris\" || route.path == \"/theme/osaka\") {\n    headerLogo = \"/images/logo/1.png\";\n    footerLogo = \"/images/logo/1.png\";\n  } else if (route.path == \"/theme/tokyo\") {\n    headerLogo = \"/images/logo/2.png\";\n    footerLogo = \"/images/logo/2.png\";\n  } else if (route.path == \"/theme/rome\") {\n    headerLogo = \"/images/logo/3.png\";\n    footerLogo = \"/images/logo/3.png\";\n  } else if (route.path == \"/theme/madrid\") {\n    headerLogo = \"/images/logo/4.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-2\";\n  } else if (route.path == \"/theme/berlin\" || route.path == \"/theme/denver\") {\n    headerLogo = \"/images/logo/6.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-3\";\n  } else {\n    headerLogo = ThemeOptions?.value?.options?.logo?.header_logo?.original_url;\n    footerLogo = ThemeOptions?.value?.options?.logo?.footer_logo?.original_url;\n    footerClass =\n      ThemeOptions?.value?.options?.footer?.footer_style === \"dark_mode\"\n        ? \"footer-section-2 footer-color-3\"\n        : \"\";\n  }\n  return {\n    header_logo: headerLogo,\n    footer: { footer_logo: footerLogo, footer_class: footerClass },\n  };\n}\n\nwatch(\n  () => router,\n  () => {\n    loading.value = true;\n    setTimeout(() => {\n      loading.value = false;\n    }, 4000);\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  setLogo();\n  router.afterEach(() => {\n    setLogo();\n  });\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056289097,
+      "end": 1716056289194,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056289194,
+      "end": 1716056289194,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056289194,
+      "end": 1716056289194,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056289194,
+      "end": 1716056289194,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056289194,
+      "end": 1716056289194,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056289194,
+      "end": 1716056289194,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056289194,
+      "end": 1716056289194,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056289194,
+      "end": 1716056289194,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, renderSlot as _renderSlot, createElementVNode as _createElementVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"theme-option\" }\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nimport { useUserStore } from \"@/store/user\";\n\n\nconst _sfc_main = {\n  __name: 'default',\n  setup(__props) {\n\nlet loading = ref(false);\nconst route = useRoute();\nconst router = useRouter();\n\nuseDataStore().GetProduct();\nuseDataStore().GetCategory();\n// useDataStore().GetCurrency();\n// useDataStore().GetBlog();\nuseDataStore().GetThemeoption();\nuseDataStore().GetNotifications();\nuseDataStore().GetSettings();\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nfunction setLogo() {\n  var headerLogo;\n  var footerLogo;\n  var footerClass;\n  if (route.path == \"/theme/paris\" || route.path == \"/theme/osaka\") {\n    headerLogo = \"/images/logo/1.png\";\n    footerLogo = \"/images/logo/1.png\";\n  } else if (route.path == \"/theme/tokyo\") {\n    headerLogo = \"/images/logo/2.png\";\n    footerLogo = \"/images/logo/2.png\";\n  } else if (route.path == \"/theme/rome\") {\n    headerLogo = \"/images/logo/3.png\";\n    footerLogo = \"/images/logo/3.png\";\n  } else if (route.path == \"/theme/madrid\") {\n    headerLogo = \"/images/logo/4.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-2\";\n  } else if (route.path == \"/theme/berlin\" || route.path == \"/theme/denver\") {\n    headerLogo = \"/images/logo/6.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-3\";\n  } else {\n    headerLogo = ThemeOptions?.value?.options?.logo?.header_logo?.original_url;\n    footerLogo = ThemeOptions?.value?.options?.logo?.footer_logo?.original_url;\n    footerClass =\n      ThemeOptions?.value?.options?.footer?.footer_style === \"dark_mode\"\n        ? \"footer-section-2 footer-color-3\"\n        : \"\";\n  }\n  return {\n    header_logo: headerLogo,\n    footer: { footer_logo: footerLogo, footer_class: footerClass },\n  };\n}\n\nwatch(\n  () => router,\n  () => {\n    loading.value = true;\n    setTimeout(() => {\n      loading.value = false;\n    }, 4000);\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  setLogo();\n  router.afterEach(() => {\n    setLogo();\n  });\n});\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsLoader = _resolveComponent(\"WidgetsLoader\")\n  const _component_Header = _resolveComponent(\"Header\")\n  const _component_WidgetsMobileCart = _resolveComponent(\"WidgetsMobileCart\")\n  const _component_Footer = _resolveComponent(\"Footer\")\n  const _component_WidgetsCookie = _resolveComponent(\"WidgetsCookie\")\n  const _component_WidgetsRecentlyPurchasePoppup = _resolveComponent(\"WidgetsRecentlyPurchasePoppup\")\n  const _component_WidgetsStickyCart = _resolveComponent(\"WidgetsStickyCart\")\n  const _component_WidgetsStickyCompare = _resolveComponent(\"WidgetsStickyCompare\")\n  const _component_WidgetsThemeCustomizer = _resolveComponent(\"WidgetsThemeCustomizer\")\n  const _component_WidgetsBackToTop = _resolveComponent(\"WidgetsBackToTop\")\n  const _component_WidgetsModalsNewsletterModal = _resolveComponent(\"WidgetsModalsNewsletterModal\")\n  const _component_WidgetsModalsExitModal = _resolveComponent(\"WidgetsModalsExitModal\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (_unref(loading))\n      ? (_openBlock(), _createBlock(_component_WidgetsLoader, { key: 0 }))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_Header, {\n      logo: setLogo().header_logo\n    }, null, 8, [\"logo\"]),\n    _createVNode(_component_WidgetsMobileCart),\n    _renderSlot(_ctx.$slots, \"default\"),\n    _createVNode(_component_Footer, {\n      footer: setLogo().footer\n    }, null, 8, [\"footer\"]),\n    _createVNode(_component_WidgetsCookie),\n    _createVNode(_component_WidgetsRecentlyPurchasePoppup),\n    (_unref(ThemeOptions)?.options?.general?.cart_style == 'cart_mini')\n      ? (_openBlock(), _createBlock(_component_WidgetsStickyCart, { key: 1 }))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_WidgetsStickyCompare),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createVNode(_component_WidgetsThemeCustomizer),\n      (_unref(ThemeOptions)?.options?.general?.back_to_top_enable)\n        ? (_openBlock(), _createBlock(_component_WidgetsBackToTop, { key: 0 }))\n        : _createCommentVNode(\"\", true)\n    ]),\n    _createVNode(_component_WidgetsModalsNewsletterModal),\n    _createVNode(_component_WidgetsModalsExitModal)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289194,
+      "end": 1716056289198,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056289198,
+      "end": 1716056289198,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289198,
+      "end": 1716056289198,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056289198,
+      "end": 1716056289198,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056289198,
+      "end": 1716056289198,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056289198,
+      "end": 1716056289198,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056289199,
+      "end": 1716056289199,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056289199,
+      "end": 1716056289199,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056289199,
+      "end": 1716056289199,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056289199,
+      "end": 1716056289199,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056289199,
+      "end": 1716056289199,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056289199,
+      "end": 1716056289199,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056289199,
+      "end": 1716056289199,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056289199,
+      "end": 1716056289199,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056289199,
+      "end": 1716056289199,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056289199,
+      "end": 1716056289199,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056289199,
+      "end": 1716056289199,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, watch, onMounted } from 'vue';\nimport { useRoute, useRouter } from '#app/composables/router';\nimport { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, renderSlot as _renderSlot, createElementVNode as _createElementVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"theme-option\" }\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nimport { useUserStore } from \"@/store/user\";\n\n\nconst _sfc_main = {\n  __name: 'default',\n  setup(__props) {\n\nlet loading = ref(false);\nconst route = useRoute();\nconst router = useRouter();\n\nuseDataStore().GetProduct();\nuseDataStore().GetCategory();\n// useDataStore().GetCurrency();\n// useDataStore().GetBlog();\nuseDataStore().GetThemeoption();\nuseDataStore().GetNotifications();\nuseDataStore().GetSettings();\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nfunction setLogo() {\n  var headerLogo;\n  var footerLogo;\n  var footerClass;\n  if (route.path == \"/theme/paris\" || route.path == \"/theme/osaka\") {\n    headerLogo = \"/images/logo/1.png\";\n    footerLogo = \"/images/logo/1.png\";\n  } else if (route.path == \"/theme/tokyo\") {\n    headerLogo = \"/images/logo/2.png\";\n    footerLogo = \"/images/logo/2.png\";\n  } else if (route.path == \"/theme/rome\") {\n    headerLogo = \"/images/logo/3.png\";\n    footerLogo = \"/images/logo/3.png\";\n  } else if (route.path == \"/theme/madrid\") {\n    headerLogo = \"/images/logo/4.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-2\";\n  } else if (route.path == \"/theme/berlin\" || route.path == \"/theme/denver\") {\n    headerLogo = \"/images/logo/6.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-3\";\n  } else {\n    headerLogo = ThemeOptions?.value?.options?.logo?.header_logo?.original_url;\n    footerLogo = ThemeOptions?.value?.options?.logo?.footer_logo?.original_url;\n    footerClass =\n      ThemeOptions?.value?.options?.footer?.footer_style === \"dark_mode\"\n        ? \"footer-section-2 footer-color-3\"\n        : \"\";\n  }\n  return {\n    header_logo: headerLogo,\n    footer: { footer_logo: footerLogo, footer_class: footerClass },\n  };\n}\n\nwatch(\n  () => router,\n  () => {\n    loading.value = true;\n    setTimeout(() => {\n      loading.value = false;\n    }, 4000);\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  setLogo();\n  router.afterEach(() => {\n    setLogo();\n  });\n});\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsLoader = _resolveComponent(\"WidgetsLoader\")\n  const _component_Header = _resolveComponent(\"Header\")\n  const _component_WidgetsMobileCart = _resolveComponent(\"WidgetsMobileCart\")\n  const _component_Footer = _resolveComponent(\"Footer\")\n  const _component_WidgetsCookie = _resolveComponent(\"WidgetsCookie\")\n  const _component_WidgetsRecentlyPurchasePoppup = _resolveComponent(\"WidgetsRecentlyPurchasePoppup\")\n  const _component_WidgetsStickyCart = _resolveComponent(\"WidgetsStickyCart\")\n  const _component_WidgetsStickyCompare = _resolveComponent(\"WidgetsStickyCompare\")\n  const _component_WidgetsThemeCustomizer = _resolveComponent(\"WidgetsThemeCustomizer\")\n  const _component_WidgetsBackToTop = _resolveComponent(\"WidgetsBackToTop\")\n  const _component_WidgetsModalsNewsletterModal = _resolveComponent(\"WidgetsModalsNewsletterModal\")\n  const _component_WidgetsModalsExitModal = _resolveComponent(\"WidgetsModalsExitModal\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (_unref(loading))\n      ? (_openBlock(), _createBlock(_component_WidgetsLoader, { key: 0 }))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_Header, {\n      logo: setLogo().header_logo\n    }, null, 8, [\"logo\"]),\n    _createVNode(_component_WidgetsMobileCart),\n    _renderSlot(_ctx.$slots, \"default\"),\n    _createVNode(_component_Footer, {\n      footer: setLogo().footer\n    }, null, 8, [\"footer\"]),\n    _createVNode(_component_WidgetsCookie),\n    _createVNode(_component_WidgetsRecentlyPurchasePoppup),\n    (_unref(ThemeOptions)?.options?.general?.cart_style == 'cart_mini')\n      ? (_openBlock(), _createBlock(_component_WidgetsStickyCart, { key: 1 }))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_WidgetsStickyCompare),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createVNode(_component_WidgetsThemeCustomizer),\n      (_unref(ThemeOptions)?.options?.general?.back_to_top_enable)\n        ? (_openBlock(), _createBlock(_component_WidgetsBackToTop, { key: 0 }))\n        : _createCommentVNode(\"\", true)\n    ]),\n    _createVNode(_component_WidgetsModalsNewsletterModal),\n    _createVNode(_component_WidgetsModalsExitModal)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289199,
+      "end": 1716056289201,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056289201,
+      "end": 1716056289201,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056289201,
+      "end": 1716056289201,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056289201,
+      "end": 1716056289201,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056289201,
+      "end": 1716056289201,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Loader/index.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/MobileCart/index.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Footer/index.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Cookie/index.vue\";\nimport { default as __nuxt_component_5 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/RecentlyPurchasePoppup/index.vue\";\nimport { default as __nuxt_component_6 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/StickyCart/index.vue\";\nimport { default as __nuxt_component_7 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/StickyCompare/index.vue\";\nimport { default as __nuxt_component_8 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ThemeCustomizer/index.vue\";\nimport { default as __nuxt_component_9 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/BackToTop/index.vue\";\nimport { default as __nuxt_component_10 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/NewsletterModal/index.vue\";\nimport { default as __nuxt_component_11 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/ExitModal/index.vue\";\nimport { ref, watch, onMounted } from 'vue';\nimport { useRoute, useRouter } from '#app/composables/router';\nimport { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, renderSlot as _renderSlot, createElementVNode as _createElementVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"theme-option\" }\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"@/store/data\";\nimport { useUserStore } from \"@/store/user\";\n\n\nconst _sfc_main = {\n  __name: 'default',\n  setup(__props) {\n\nlet loading = ref(false);\nconst route = useRoute();\nconst router = useRouter();\n\nuseDataStore().GetProduct();\nuseDataStore().GetCategory();\n// useDataStore().GetCurrency();\n// useDataStore().GetBlog();\nuseDataStore().GetThemeoption();\nuseDataStore().GetNotifications();\nuseDataStore().GetSettings();\n\nlet { ThemeOptions } = storeToRefs(useDataStore());\n\nfunction setLogo() {\n  var headerLogo;\n  var footerLogo;\n  var footerClass;\n  if (route.path == \"/theme/paris\" || route.path == \"/theme/osaka\") {\n    headerLogo = \"/images/logo/1.png\";\n    footerLogo = \"/images/logo/1.png\";\n  } else if (route.path == \"/theme/tokyo\") {\n    headerLogo = \"/images/logo/2.png\";\n    footerLogo = \"/images/logo/2.png\";\n  } else if (route.path == \"/theme/rome\") {\n    headerLogo = \"/images/logo/3.png\";\n    footerLogo = \"/images/logo/3.png\";\n  } else if (route.path == \"/theme/madrid\") {\n    headerLogo = \"/images/logo/4.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-2\";\n  } else if (route.path == \"/theme/berlin\" || route.path == \"/theme/denver\") {\n    headerLogo = \"/images/logo/6.png\";\n    footerLogo = \"/images/logo/4.png\";\n    footerClass = \"footer-section-2 footer-color-3\";\n  } else {\n    headerLogo = ThemeOptions?.value?.options?.logo?.header_logo?.original_url;\n    footerLogo = ThemeOptions?.value?.options?.logo?.footer_logo?.original_url;\n    footerClass =\n      ThemeOptions?.value?.options?.footer?.footer_style === \"dark_mode\"\n        ? \"footer-section-2 footer-color-3\"\n        : \"\";\n  }\n  return {\n    header_logo: headerLogo,\n    footer: { footer_logo: footerLogo, footer_class: footerClass },\n  };\n}\n\nwatch(\n  () => router,\n  () => {\n    loading.value = true;\n    setTimeout(() => {\n      loading.value = false;\n    }, 4000);\n  },\n  { deep: true }\n);\n\nonMounted(() => {\n  setLogo();\n  router.afterEach(() => {\n    setLogo();\n  });\n});\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsLoader = __nuxt_component_0\n  const _component_Header = __nuxt_component_1\n  const _component_WidgetsMobileCart = __nuxt_component_2\n  const _component_Footer = __nuxt_component_3\n  const _component_WidgetsCookie = __nuxt_component_4\n  const _component_WidgetsRecentlyPurchasePoppup = __nuxt_component_5\n  const _component_WidgetsStickyCart = __nuxt_component_6\n  const _component_WidgetsStickyCompare = __nuxt_component_7\n  const _component_WidgetsThemeCustomizer = __nuxt_component_8\n  const _component_WidgetsBackToTop = __nuxt_component_9\n  const _component_WidgetsModalsNewsletterModal = __nuxt_component_10\n  const _component_WidgetsModalsExitModal = __nuxt_component_11\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (_unref(loading))\n      ? (_openBlock(), _createBlock(_component_WidgetsLoader, { key: 0 }))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_Header, {\n      logo: setLogo().header_logo\n    }, null, 8, [\"logo\"]),\n    _createVNode(_component_WidgetsMobileCart),\n    _renderSlot(_ctx.$slots, \"default\"),\n    _createVNode(_component_Footer, {\n      footer: setLogo().footer\n    }, null, 8, [\"footer\"]),\n    _createVNode(_component_WidgetsCookie),\n    _createVNode(_component_WidgetsRecentlyPurchasePoppup),\n    (_unref(ThemeOptions)?.options?.general?.cart_style == 'cart_mini')\n      ? (_openBlock(), _createBlock(_component_WidgetsStickyCart, { key: 1 }))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_WidgetsStickyCompare),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createVNode(_component_WidgetsThemeCustomizer),\n      (_unref(ThemeOptions)?.options?.general?.back_to_top_enable)\n        ? (_openBlock(), _createBlock(_component_WidgetsBackToTop, { key: 0 }))\n        : _createCommentVNode(\"\", true)\n    ]),\n    _createVNode(_component_WidgetsModalsNewsletterModal),\n    _createVNode(_component_WidgetsModalsExitModal)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056289201,
+      "end": 1716056289202,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056289202,
+      "end": 1716056289202,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056289202,
+      "end": 1716056289202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056289202,
+      "end": 1716056289202,
+      "order": "normal"
+    }
+  ]
+}

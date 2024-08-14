@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/StickyCart/index.vue?nuxt_component=async&nuxt_component_name=WidgetsStickyCart",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n  <div class=\"button-item\" v-if=\"cart?.length\">\n    <WidgetsButton :classes=\"'item-btn btn text-white'\" :id=\"'open_cart_btn'\" :type=\"'button'\" @onClick=\"openCart(true)\">\n      <Icon name=\"ri-shopping-cart-2-line\"></Icon>\n    </WidgetsButton>\n  </div>\n  <div class=\"item-section\" :class=\"{ active: isOpen && cart?.length }\">\n    <WidgetsButton :classes=\"'close-button'\" :id=\"'close_cart_btn'\" :type=\"'button'\" @onClick=\"openCart(false)\">\n     <Icon name=\"ri-close-line\"/>\n    </WidgetsButton>\n    <h6>\n      <Icon name=\"ri-shopping-cart-2-line\"></Icon>\n      <span>{{ cart?.length }} {{ $t(\"Items\") }}</span>\n    </h6>\n    <ul class=\"items-image\">\n      <li v-for=\"item in cart.slice(0, 2)\" :key=\"item\">\n        <img :src=\"item?.variation && item?.variation?.variation_image\n            ? item?.variation?.variation_image?.original_url\n            : item?.product?.product_thumbnail\n              ? item?.product?.product_thumbnail?.original_url\n              : '/images/product.png'\n          \" alt=\"product\" />\n      </li>\n      <li v-if=\"cart?.length > 2\">+ {{ cart?.length - 2 }}</li>\n    </ul>\n    <nuxt-link to=\"/cart\" class=\"btn item-button btn-sm fw-bold\">{{ store.currency.symbol }}\n      {{ Number(store.convertCurrency(CartTotal)).toFixed(2) }}</nuxt-link>\n  </div>\n</div>\n</template>\n\n<script setup>\nimport { useCartStore } from \"@/store/cart\";\nimport { useCurrencyStore } from \"@/store/currency\";\nlet { cart, CartTotal } = storeToRefs(useCartStore());\nlet store = useCurrencyStore();\nstore.allCurrency();\nlet isOpen = ref(false);\nfunction openCart(isOpen) {\n  isOpen = isOpen;\n}\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056339950,
+      "end": 1716056340098,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340098,
+      "end": 1716056340098,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340098,
+      "end": 1716056340098,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340098,
+      "end": 1716056340098,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340098,
+      "end": 1716056340098,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056340098,
+      "end": 1716056340098,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056340098,
+      "end": 1716056340098,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056340098,
+      "end": 1716056340098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056340098,
+      "end": 1716056340098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056340098,
+      "end": 1716056340098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056340098,
+      "end": 1716056340098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useCartStore } from \"@/store/cart\";\nimport { useCurrencyStore } from \"@/store/currency\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet { cart, CartTotal } = storeToRefs(useCartStore());\nlet store = useCurrencyStore();\nstore.allCurrency();\nlet isOpen = ref(false);\nfunction openCart(isOpen) {\n  isOpen = isOpen;\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (_unref(cart)?.length) {\n    _push(`<div class=\"button-item\">`)\n    _push(_ssrRenderComponent(_component_WidgetsButton, {\n      classes: 'item-btn btn text-white',\n      id: 'open_cart_btn',\n      type: 'button',\n      onOnClick: $event => (openCart(true))\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(_ssrRenderComponent(_component_Icon, { name: \"ri-shopping-cart-2-line\" }, null, _parent, _scopeId))\n        } else {\n          return [\n            _createVNode(_component_Icon, { name: \"ri-shopping-cart-2-line\" })\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"${_ssrRenderClass([{ active: _unref(isOpen) && _unref(cart)?.length }, \"item-section\"])}\">`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'close-button',\n    id: 'close_cart_btn',\n    type: 'button',\n    onOnClick: $event => (openCart(false))\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri-close-line\" }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_Icon, { name: \"ri-close-line\" })\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`<h6>`)\n  _push(_ssrRenderComponent(_component_Icon, { name: \"ri-shopping-cart-2-line\" }, null, _parent))\n  _push(`<span>${\n    _ssrInterpolate(_unref(cart)?.length)\n  } ${\n    _ssrInterpolate(_ctx.$t(\"Items\"))\n  }</span></h6><ul class=\"items-image\"><!--[-->`)\n  _ssrRenderList(_unref(cart).slice(0, 2), (item) => {\n    _push(`<li><img${_ssrRenderAttr(\"src\", item?.variation && item?.variation?.variation_image\n            ? item?.variation?.variation_image?.original_url\n            : item?.product?.product_thumbnail\n              ? item?.product?.product_thumbnail?.original_url\n              : '/images/product.png'\n          )} alt=\"product\"></li>`)\n  })\n  _push(`<!--]-->`)\n  if (_unref(cart)?.length > 2) {\n    _push(`<li>+ ${_ssrInterpolate(_unref(cart)?.length - 2)}</li>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</ul>`)\n  _push(_ssrRenderComponent(_component_nuxt_link, {\n    to: \"/cart\",\n    class: \"btn item-button btn-sm fw-bold\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate(_unref(store).currency.symbol)} ${_ssrInterpolate(Number(_unref(store).convertCurrency(_unref(CartTotal))).toFixed(2))}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(_unref(CartTotal))).toFixed(2)), 1)\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/StickyCart/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340098,
+      "end": 1716056340103,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056340103,
+      "end": 1716056340103,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340103,
+      "end": 1716056340103,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340103,
+      "end": 1716056340103,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340103,
+      "end": 1716056340103,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340103,
+      "end": 1716056340103,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/StickyCart/index.vue\").then(r => r.default))",
+      "start": 1716056340103,
+      "end": 1716056340103,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056340103,
+      "end": 1716056340103,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056340104,
+      "end": 1716056340104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056340104,
+      "end": 1716056340104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056340104,
+      "end": 1716056340104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056340104,
+      "end": 1716056340104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056340104,
+      "end": 1716056340104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056340104,
+      "end": 1716056340104,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056340104,
+      "end": 1716056340104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056340104,
+      "end": 1716056340104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056340104,
+      "end": 1716056340104,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340104,
+      "end": 1716056340104,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340104,
+      "end": 1716056340104,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056340104,
+      "end": 1716056340104,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056340104,
+      "end": 1716056340105,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340105,
+      "end": 1716056340105,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340105,
+      "end": 1716056340105,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340105,
+      "end": 1716056340105,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340105,
+      "end": 1716056340105,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056340105,
+      "end": 1716056340105,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056340105,
+      "end": 1716056340105,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056340105,
+      "end": 1716056340105,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056340105,
+      "end": 1716056340105,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056340105,
+      "end": 1716056340105,
+      "order": "normal"
+    }
+  ]
+}

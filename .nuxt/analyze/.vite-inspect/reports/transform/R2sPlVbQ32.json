@@ -1,0 +1,212 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/store/wishlist.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { GetHeaders } from \"~~/services/api/handleRequest\";\n\nexport const useWishlistStore = defineStore(\"wishlist-store\", () => {\n  var wishlist = ref([]);\n\n  const AddToWishlist = async ({ product }) => {\n    let userData = JSON.parse(localStorage.getItem(\"usersAccount\"));\n    if (userData) {\n      let { data } = await useFetch(\"wishlist\", {\n        baseURL: BaseUrl,\n        method: \"post\",\n        headers: GetHeaders(),\n        key: \"AddItemToWishlist\",\n        body: { product_id: product.id },\n        onResponse({ response, error }) {\n          if (error) {\n            useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n          } else {\n            useNuxtApp().$useToaster({ msg: \"Item Added To Wishlist\" });\n          }\n        },\n      });\n      await GetWishlistItems();\n    } else {\n      navigateTo(\"/auth/login\");\n    }\n  };\n\n  const GetWishlistItems = async () => {\n    let { data, error } = await useFetch(\"wishlist\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"get\",\n      key: \"GetAllWishlistItemsInStore\",\n    });\n    if (!error.value) {\n      wishlist.value = data.value?.data || [];\n    }\n  };\n\n  const RemoveFromWishlist = async ({ product }) => {\n    let { data, error } = await useFetch(`wishlist/${product.id}`, {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"delete\",\n      key: `DeleteItemFromWishlist${product.id}`,\n      onResponse({ response, error }) {\n        if (error) {\n          useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n        } else {\n          useNuxtApp().$useToaster({\n            msg: \"Item Removed From Wishlist\",\n            type: \"warning\",\n          });\n        }\n      },\n    });\n    if (!error.value) {\n      await GetWishlistItems();\n    }\n  };\n\n  const GetWishlist = async () => {\n    await GetWishlistItems();\n  };\n\n  const ExistsInCart = ({ product }) => {\n    return wishlist.value.findIndex((item) => item.id == product.id) > -1;\n  };\n\n  const ToggleFromWishlist = async ({ product }) => {\n    if (ExistsInCart({ product })) {\n      RemoveFromWishlist({ product });\n    } else {\n      AddToWishlist({ product });\n    }\n  };\n\n  return {\n    wishlist,\n    AddToWishlist,\n    GetWishlistItems,\n    GetWishlist,\n    RemoveFromWishlist,\n    ExistsInCart,\n    ToggleFromWishlist,\n  };\n});\n",
+      "start": 1716056289854,
+      "end": 1716056290159,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056290159,
+      "end": 1716056290159,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056290159,
+      "end": 1716056290159,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056290159,
+      "end": 1716056290159,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056290159,
+      "end": 1716056290159,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056290159,
+      "end": 1716056290159,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056290159,
+      "end": 1716056290159,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056290159,
+      "end": 1716056290159,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056290159,
+      "end": 1716056290159,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056290159,
+      "end": 1716056290159,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056290159,
+      "end": 1716056290159,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056290159,
+      "end": 1716056290159,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056290159,
+      "end": 1716056290159,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056290159,
+      "end": 1716056290159,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056290160,
+      "end": 1716056290160,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056290160,
+      "end": 1716056290160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056290160,
+      "end": 1716056290160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056290160,
+      "end": 1716056290160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056290160,
+      "end": 1716056290160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056290160,
+      "end": 1716056290160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056290160,
+      "end": 1716056290160,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056290160,
+      "end": 1716056290160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056290160,
+      "end": 1716056290160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056290160,
+      "end": 1716056290160,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { GetHeaders } from \"~~/services/api/handleRequest\";\n\nexport const useWishlistStore = defineStore(\"wishlist-store\", () => {\n  var wishlist = ref([]);\n\n  const AddToWishlist = async ({ product }) => {\n    let userData = JSON.parse(localStorage.getItem(\"usersAccount\"));\n    if (userData) {\n      let { data } = await useFetch(\"wishlist\", {\n        baseURL: BaseUrl,\n        method: \"post\",\n        headers: GetHeaders(),\n        key: \"AddItemToWishlist\",\n        body: { product_id: product.id },\n        onResponse({ response, error }) {\n          if (error) {\n            useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n          } else {\n            useNuxtApp().$useToaster({ msg: \"Item Added To Wishlist\" });\n          }\n        },\n      }, '$SrYahboRrQ');\n      await GetWishlistItems();\n    } else {\n      navigateTo(\"/auth/login\");\n    }\n  };\n\n  const GetWishlistItems = async () => {\n    let { data, error } = await useFetch(\"wishlist\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"get\",\n      key: \"GetAllWishlistItemsInStore\",\n    }, '$pnraPU9FFW');\n    if (!error.value) {\n      wishlist.value = data.value?.data || [];\n    }\n  };\n\n  const RemoveFromWishlist = async ({ product }) => {\n    let { data, error } = await useFetch(`wishlist/${product.id}`, {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"delete\",\n      key: `DeleteItemFromWishlist${product.id}`,\n      onResponse({ response, error }) {\n        if (error) {\n          useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n        } else {\n          useNuxtApp().$useToaster({\n            msg: \"Item Removed From Wishlist\",\n            type: \"warning\",\n          });\n        }\n      },\n    }, '$28HboPGowR');\n    if (!error.value) {\n      await GetWishlistItems();\n    }\n  };\n\n  const GetWishlist = async () => {\n    await GetWishlistItems();\n  };\n\n  const ExistsInCart = ({ product }) => {\n    return wishlist.value.findIndex((item) => item.id == product.id) > -1;\n  };\n\n  const ToggleFromWishlist = async ({ product }) => {\n    if (ExistsInCart({ product })) {\n      RemoveFromWishlist({ product });\n    } else {\n      AddToWishlist({ product });\n    }\n  };\n\n  return {\n    wishlist,\n    AddToWishlist,\n    GetWishlistItems,\n    GetWishlist,\n    RemoveFromWishlist,\n    ExistsInCart,\n    ToggleFromWishlist,\n  };\n});\n",
+      "start": 1716056290160,
+      "end": 1716056290161,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineStore } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/@pinia/nuxt/dist/runtime/composables';\nimport { ref } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { useNuxtApp } from '#app/nuxt';\nimport { navigateTo } from '#app/composables/router';\nimport { GetHeaders } from \"~~/services/api/handleRequest\";\n\nexport const useWishlistStore = defineStore(\"wishlist-store\", () => {\n  var wishlist = ref([]);\n\n  const AddToWishlist = async ({ product }) => {\n    let userData = JSON.parse(localStorage.getItem(\"usersAccount\"));\n    if (userData) {\n      let { data } = await useFetch(\"wishlist\", {\n        baseURL: BaseUrl,\n        method: \"post\",\n        headers: GetHeaders(),\n        key: \"AddItemToWishlist\",\n        body: { product_id: product.id },\n        onResponse({ response, error }) {\n          if (error) {\n            useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n          } else {\n            useNuxtApp().$useToaster({ msg: \"Item Added To Wishlist\" });\n          }\n        },\n      }, '$SrYahboRrQ');\n      await GetWishlistItems();\n    } else {\n      navigateTo(\"/auth/login\");\n    }\n  };\n\n  const GetWishlistItems = async () => {\n    let { data, error } = await useFetch(\"wishlist\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"get\",\n      key: \"GetAllWishlistItemsInStore\",\n    }, '$pnraPU9FFW');\n    if (!error.value) {\n      wishlist.value = data.value?.data || [];\n    }\n  };\n\n  const RemoveFromWishlist = async ({ product }) => {\n    let { data, error } = await useFetch(`wishlist/${product.id}`, {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"delete\",\n      key: `DeleteItemFromWishlist${product.id}`,\n      onResponse({ response, error }) {\n        if (error) {\n          useNuxtApp().$useToaster({ msg: error.message, type: \"error\" });\n        } else {\n          useNuxtApp().$useToaster({\n            msg: \"Item Removed From Wishlist\",\n            type: \"warning\",\n          });\n        }\n      },\n    }, '$28HboPGowR');\n    if (!error.value) {\n      await GetWishlistItems();\n    }\n  };\n\n  const GetWishlist = async () => {\n    await GetWishlistItems();\n  };\n\n  const ExistsInCart = ({ product }) => {\n    return wishlist.value.findIndex((item) => item.id == product.id) > -1;\n  };\n\n  const ToggleFromWishlist = async ({ product }) => {\n    if (ExistsInCart({ product })) {\n      RemoveFromWishlist({ product });\n    } else {\n      AddToWishlist({ product });\n    }\n  };\n\n  return {\n    wishlist,\n    AddToWishlist,\n    GetWishlistItems,\n    GetWishlist,\n    RemoveFromWishlist,\n    ExistsInCart,\n    ToggleFromWishlist,\n  };\n});\n",
+      "start": 1716056290161,
+      "end": 1716056290161,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056290161,
+      "end": 1716056290161,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056290161,
+      "end": 1716056290161,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056290161,
+      "end": 1716056290162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056290162,
+      "end": 1716056290162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056290162,
+      "end": 1716056290162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056290162,
+      "end": 1716056290162,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056290162,
+      "end": 1716056290162,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056290162,
+      "end": 1716056290162,
+      "order": "normal"
+    }
+  ]
+}

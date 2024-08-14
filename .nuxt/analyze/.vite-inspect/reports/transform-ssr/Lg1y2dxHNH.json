@@ -1,0 +1,262 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/ExitModal/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<WidgetsModalsCommon :showModal=\"showModal\" modalClass=\"theme-modal modal-lg exit-modal\"  @close=\"closeModal({ state: false })\">\n  <div class=\"modal-header p-0\">\n    <WidgetsButton :classes=\"'btn btn-close'\"  :id=\"'profile_modal_close_btn'\"\n      @onClick=\"closeModal({ state: false })\">\n      <Icon name=\"ri-close-line\"></Icon>\n    </WidgetsButton>\n  </div>\n  <div class=\"modal-box\">\n    <div class=\"modal-image\">\n      <img src=\"/images/newsletter/3.jpg\" class=\"img-fluid\" alt=\"newsletter\">\n    </div>\n    <div class=\"modal-content\">\n      <div>\n        <img src=\"/images/logo/1.png\" class=\"modal-logo\" alt=\"logo\">\n        <h2 class=\"text-title\">{{ $t(\"Wait\") }}<span class=\"theme-color\">!</span></h2>\n        <h5>{{ $t(\"I am sorry to see you go\") }}</h5>\n        <p>{{ \"In order to earn 10 off your first purchase provide your email address\" }}</p>\n      </div>\n    </div>\n  </div>\n</WidgetsModalsCommon>\n</template>\n\n<script setup>\nimport Cookies from 'js-cookie';\nconst showModal = ref(false);\n\nconst openModal = () => {\n  showModal.value = true;\n  Cookies.set('exit', 'true');\n};\n\nconst closeModal = () => {\n  showModal.value = false;\n};\n\nconst handleMouseOut = (event) => {\n  if (event.clientY <= 0) {\n    openModal();\n    window.removeEventListener('mouseout', handleMouseOut);\n  }\n};\n\nonMounted(() => {\n  const modalShown = Cookies.get('exit');\n  if (!modalShown) {\n    window.addEventListener('mouseout', handleMouseOut);\n  }\n});\n\nonUnmounted(() => {\n  window.removeEventListener('mouseout', handleMouseOut);\n});\n</script>\n\n<style lang=\"scss\" scoped>\n\n</style>",
+      "start": 1716056342587,
+      "end": 1716056342742,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342742,
+      "end": 1716056342742,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342742,
+      "end": 1716056342742,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342742,
+      "end": 1716056342742,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342742,
+      "end": 1716056342742,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342742,
+      "end": 1716056342742,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342742,
+      "end": 1716056342742,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342742,
+      "end": 1716056342742,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342742,
+      "end": 1716056342742,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342742,
+      "end": 1716056342742,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342742,
+      "end": 1716056342742,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/newsletter/3.jpg'\nimport _imports_1 from '/images/logo/1.png'\n\n\nimport Cookies from 'js-cookie';\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nconst showModal = ref(false);\n\nconst openModal = () => {\n  showModal.value = true;\n  Cookies.set('exit', 'true');\n};\n\nconst closeModal = () => {\n  showModal.value = false;\n};\n\nconst handleMouseOut = (event) => {\n  if (event.clientY <= 0) {\n    openModal();\n    window.removeEventListener('mouseout', handleMouseOut);\n  }\n};\n\nonMounted(() => {\n  const modalShown = Cookies.get('exit');\n  if (!modalShown) {\n    window.addEventListener('mouseout', handleMouseOut);\n  }\n});\n\nonUnmounted(() => {\n  window.removeEventListener('mouseout', handleMouseOut);\n});\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(_ssrRenderComponent(_component_WidgetsModalsCommon, _mergeProps({\n    showModal: _unref(showModal),\n    modalClass: \"theme-modal modal-lg exit-modal\",\n    onClose: $event => (closeModal({ state: false }))\n  }, _attrs), {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<div class=\"modal-header p-0\"${_scopeId}>`)\n        _push(_ssrRenderComponent(_component_WidgetsButton, {\n          classes: 'btn btn-close',\n          id: 'profile_modal_close_btn',\n          onOnClick: $event => (closeModal({ state: false }))\n        }, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(_ssrRenderComponent(_component_Icon, { name: \"ri-close-line\" }, null, _parent, _scopeId))\n            } else {\n              return [\n                _createVNode(_component_Icon, { name: \"ri-close-line\" })\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n        _push(`</div><div class=\"modal-box\"${\n          _scopeId\n        }><div class=\"modal-image\"${\n          _scopeId\n        }><img${\n          _ssrRenderAttr(\"src\", _imports_0)\n        } class=\"img-fluid\" alt=\"newsletter\"${\n          _scopeId\n        }></div><div class=\"modal-content\"${\n          _scopeId\n        }><div${\n          _scopeId\n        }><img${\n          _ssrRenderAttr(\"src\", _imports_1)\n        } class=\"modal-logo\" alt=\"logo\"${\n          _scopeId\n        }><h2 class=\"text-title\"${\n          _scopeId\n        }>${\n          _ssrInterpolate(_ctx.$t(\"Wait\"))\n        }<span class=\"theme-color\"${\n          _scopeId\n        }>!</span></h2><h5${\n          _scopeId\n        }>${\n          _ssrInterpolate(_ctx.$t(\"I am sorry to see you go\"))\n        }</h5><p${\n          _scopeId\n        }>${\n          _ssrInterpolate(\"In order to earn 10 off your first purchase provide your email address\")\n        }</p></div></div></div>`)\n      } else {\n        return [\n          _createVNode(\"div\", { class: \"modal-header p-0\" }, [\n            _createVNode(_component_WidgetsButton, {\n              classes: 'btn btn-close',\n              id: 'profile_modal_close_btn',\n              onOnClick: $event => (closeModal({ state: false }))\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_Icon, { name: \"ri-close-line\" })\n              ]),\n              _: 1\n            }, 8, [\"onOnClick\"])\n          ]),\n          _createVNode(\"div\", { class: \"modal-box\" }, [\n            _createVNode(\"div\", { class: \"modal-image\" }, [\n              _createVNode(\"img\", {\n                src: _imports_0,\n                class: \"img-fluid\",\n                alt: \"newsletter\"\n              })\n            ]),\n            _createVNode(\"div\", { class: \"modal-content\" }, [\n              _createVNode(\"div\", null, [\n                _createVNode(\"img\", {\n                  src: _imports_1,\n                  class: \"modal-logo\",\n                  alt: \"logo\"\n                }),\n                _createVNode(\"h2\", { class: \"text-title\" }, [\n                  _createTextVNode(_toDisplayString(_ctx.$t(\"Wait\")), 1),\n                  _createVNode(\"span\", { class: \"theme-color\" }, \"!\")\n                ]),\n                _createVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"I am sorry to see you go\")), 1),\n                _createVNode(\"p\", null, _toDisplayString(\"In order to earn 10 off your first purchase provide your email address\"))\n              ])\n            ])\n          ])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/ExitModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342742,
+      "end": 1716056342743,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342743,
+      "end": 1716056342743,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342743,
+      "end": 1716056342743,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342743,
+      "end": 1716056342743,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342743,
+      "end": 1716056342743,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342743,
+      "end": 1716056342743,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342743,
+      "end": 1716056342743,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342743,
+      "end": 1716056342743,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342743,
+      "end": 1716056342743,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport _imports_0 from \"/images/newsletter/3.jpg\";\nimport _imports_1 from \"/images/logo/1.png\";\nimport Cookies from \"js-cookie\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  setup(__props) {\n    const showModal = ref(false);\n    const openModal = () => {\n      showModal.value = true;\n      Cookies.set(\"exit\", \"true\");\n    };\n    const closeModal = () => {\n      showModal.value = false;\n    };\n    const handleMouseOut = (event) => {\n      if (event.clientY <= 0) {\n        openModal();\n        (void 0).removeEventListener(\"mouseout\", handleMouseOut);\n      }\n    };\n    onMounted(() => {\n      const modalShown = Cookies.get(\"exit\");\n      if (!modalShown) {\n        (void 0).addEventListener(\"mouseout\", handleMouseOut);\n      }\n    });\n    onUnmounted(() => {\n      (void 0).removeEventListener(\"mouseout\", handleMouseOut);\n    });\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\");\n      const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\");\n      const _component_Icon = _resolveComponent(\"Icon\");\n      _push(_ssrRenderComponent(_component_WidgetsModalsCommon, _mergeProps({\n        showModal: _unref(showModal),\n        modalClass: \"theme-modal modal-lg exit-modal\",\n        onClose: ($event) => closeModal({ state: false })\n      }, _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div class=\"modal-header p-0\"${_scopeId}>`);\n            _push2(_ssrRenderComponent(_component_WidgetsButton, {\n              classes: \"btn btn-close\",\n              id: \"profile_modal_close_btn\",\n              onOnClick: ($event) => closeModal({ state: false })\n            }, {\n              default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                if (_push3) {\n                  _push3(_ssrRenderComponent(_component_Icon, { name: \"ri-close-line\" }, null, _parent3, _scopeId2));\n                } else {\n                  return [\n                    _createVNode(_component_Icon, { name: \"ri-close-line\" })\n                  ];\n                }\n              }),\n              _: 1\n            }, _parent2, _scopeId));\n            _push2(`</div><div class=\"modal-box\"${_scopeId}><div class=\"modal-image\"${_scopeId}><img${_ssrRenderAttr(\"src\", _imports_0)} class=\"img-fluid\" alt=\"newsletter\"${_scopeId}></div><div class=\"modal-content\"${_scopeId}><div${_scopeId}><img${_ssrRenderAttr(\"src\", _imports_1)} class=\"modal-logo\" alt=\"logo\"${_scopeId}><h2 class=\"text-title\"${_scopeId}>${_ssrInterpolate(_ctx.$t(\"Wait\"))}<span class=\"theme-color\"${_scopeId}>!</span></h2><h5${_scopeId}>${_ssrInterpolate(_ctx.$t(\"I am sorry to see you go\"))}</h5><p${_scopeId}>${_ssrInterpolate(\"In order to earn 10 off your first purchase provide your email address\")}</p></div></div></div>`);\n          } else {\n            return [\n              _createVNode(\"div\", { class: \"modal-header p-0\" }, [\n                _createVNode(_component_WidgetsButton, {\n                  classes: \"btn btn-close\",\n                  id: \"profile_modal_close_btn\",\n                  onOnClick: ($event) => closeModal({ state: false })\n                }, {\n                  default: _withCtx(() => [\n                    _createVNode(_component_Icon, { name: \"ri-close-line\" })\n                  ]),\n                  _: 1\n                }, 8, [\"onOnClick\"])\n              ]),\n              _createVNode(\"div\", { class: \"modal-box\" }, [\n                _createVNode(\"div\", { class: \"modal-image\" }, [\n                  _createVNode(\"img\", {\n                    src: _imports_0,\n                    class: \"img-fluid\",\n                    alt: \"newsletter\"\n                  })\n                ]),\n                _createVNode(\"div\", { class: \"modal-content\" }, [\n                  _createVNode(\"div\", null, [\n                    _createVNode(\"img\", {\n                      src: _imports_1,\n                      class: \"modal-logo\",\n                      alt: \"logo\"\n                    }),\n                    _createVNode(\"h2\", { class: \"text-title\" }, [\n                      _createTextVNode(_toDisplayString(_ctx.$t(\"Wait\")), 1),\n                      _createVNode(\"span\", { class: \"theme-color\" }, \"!\")\n                    ]),\n                    _createVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"I am sorry to see you go\")), 1),\n                    _createVNode(\"p\", null, _toDisplayString(\"In order to earn 10 off your first purchase provide your email address\"))\n                  ])\n                ])\n              ])\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Widgets/Modals/ExitModal/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056342743,
+      "end": 1716056342798,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342798,
+      "end": 1716056342798,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342798,
+      "end": 1716056342798,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342798,
+      "end": 1716056342798,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342798,
+      "end": 1716056342798,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342798,
+      "end": 1716056342798,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342798,
+      "end": 1716056342798,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342798,
+      "end": 1716056342798,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342801,
+      "end": 1716056342801,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342801,
+      "end": 1716056342801,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted, onUnmounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport _imports_0 from \"/images/newsletter/3.jpg\";\nimport _imports_1 from \"/images/logo/1.png\";\nimport Cookies from \"js-cookie\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  setup(__props) {\n    const showModal = ref(false);\n    const openModal = () => {\n      showModal.value = true;\n      Cookies.set(\"exit\", \"true\");\n    };\n    const closeModal = () => {\n      showModal.value = false;\n    };\n    const handleMouseOut = (event) => {\n      if (event.clientY <= 0) {\n        openModal();\n        (void 0).removeEventListener(\"mouseout\", handleMouseOut);\n      }\n    };\n    onMounted(() => {\n      const modalShown = Cookies.get(\"exit\");\n      if (!modalShown) {\n        (void 0).addEventListener(\"mouseout\", handleMouseOut);\n      }\n    });\n    onUnmounted(() => {\n      (void 0).removeEventListener(\"mouseout\", handleMouseOut);\n    });\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\");\n      const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\");\n      const _component_Icon = _resolveComponent(\"Icon\");\n      _push(_ssrRenderComponent(_component_WidgetsModalsCommon, _mergeProps({\n        showModal: _unref(showModal),\n        modalClass: \"theme-modal modal-lg exit-modal\",\n        onClose: ($event) => closeModal({ state: false })\n      }, _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div class=\"modal-header p-0\"${_scopeId}>`);\n            _push2(_ssrRenderComponent(_component_WidgetsButton, {\n              classes: \"btn btn-close\",\n              id: \"profile_modal_close_btn\",\n              onOnClick: ($event) => closeModal({ state: false })\n            }, {\n              default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                if (_push3) {\n                  _push3(_ssrRenderComponent(_component_Icon, { name: \"ri-close-line\" }, null, _parent3, _scopeId2));\n                } else {\n                  return [\n                    _createVNode(_component_Icon, { name: \"ri-close-line\" })\n                  ];\n                }\n              }),\n              _: 1\n            }, _parent2, _scopeId));\n            _push2(`</div><div class=\"modal-box\"${_scopeId}><div class=\"modal-image\"${_scopeId}><img${_ssrRenderAttr(\"src\", _imports_0)} class=\"img-fluid\" alt=\"newsletter\"${_scopeId}></div><div class=\"modal-content\"${_scopeId}><div${_scopeId}><img${_ssrRenderAttr(\"src\", _imports_1)} class=\"modal-logo\" alt=\"logo\"${_scopeId}><h2 class=\"text-title\"${_scopeId}>${_ssrInterpolate(_ctx.$t(\"Wait\"))}<span class=\"theme-color\"${_scopeId}>!</span></h2><h5${_scopeId}>${_ssrInterpolate(_ctx.$t(\"I am sorry to see you go\"))}</h5><p${_scopeId}>${_ssrInterpolate(\"In order to earn 10 off your first purchase provide your email address\")}</p></div></div></div>`);\n          } else {\n            return [\n              _createVNode(\"div\", { class: \"modal-header p-0\" }, [\n                _createVNode(_component_WidgetsButton, {\n                  classes: \"btn btn-close\",\n                  id: \"profile_modal_close_btn\",\n                  onOnClick: ($event) => closeModal({ state: false })\n                }, {\n                  default: _withCtx(() => [\n                    _createVNode(_component_Icon, { name: \"ri-close-line\" })\n                  ]),\n                  _: 1\n                }, 8, [\"onOnClick\"])\n              ]),\n              _createVNode(\"div\", { class: \"modal-box\" }, [\n                _createVNode(\"div\", { class: \"modal-image\" }, [\n                  _createVNode(\"img\", {\n                    src: _imports_0,\n                    class: \"img-fluid\",\n                    alt: \"newsletter\"\n                  })\n                ]),\n                _createVNode(\"div\", { class: \"modal-content\" }, [\n                  _createVNode(\"div\", null, [\n                    _createVNode(\"img\", {\n                      src: _imports_1,\n                      class: \"modal-logo\",\n                      alt: \"logo\"\n                    }),\n                    _createVNode(\"h2\", { class: \"text-title\" }, [\n                      _createTextVNode(_toDisplayString(_ctx.$t(\"Wait\")), 1),\n                      _createVNode(\"span\", { class: \"theme-color\" }, \"!\")\n                    ]),\n                    _createVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"I am sorry to see you go\")), 1),\n                    _createVNode(\"p\", null, _toDisplayString(\"In order to earn 10 off your first purchase provide your email address\"))\n                  ])\n                ])\n              ])\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Widgets/Modals/ExitModal/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056342801,
+      "end": 1716056342804,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted, onUnmounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport _imports_0 from \"/images/newsletter/3.jpg\";\nimport _imports_1 from \"/images/logo/1.png\";\nimport Cookies from \"js-cookie\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  setup(__props) {\n    const showModal = ref(false);\n    const openModal = () => {\n      showModal.value = true;\n      Cookies.set(\"exit\", \"true\");\n    };\n    const closeModal = () => {\n      showModal.value = false;\n    };\n    const handleMouseOut = (event) => {\n      if (event.clientY <= 0) {\n        openModal();\n        (void 0).removeEventListener(\"mouseout\", handleMouseOut);\n      }\n    };\n    onMounted(() => {\n      const modalShown = Cookies.get(\"exit\");\n      if (!modalShown) {\n        (void 0).addEventListener(\"mouseout\", handleMouseOut);\n      }\n    });\n    onUnmounted(() => {\n      (void 0).removeEventListener(\"mouseout\", handleMouseOut);\n    });\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\");\n      const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\");\n      const _component_Icon = _resolveComponent(\"Icon\");\n      _push(_ssrRenderComponent(_component_WidgetsModalsCommon, _mergeProps({\n        showModal: _unref(showModal),\n        modalClass: \"theme-modal modal-lg exit-modal\",\n        onClose: ($event) => closeModal({ state: false })\n      }, _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div class=\"modal-header p-0\"${_scopeId}>`);\n            _push2(_ssrRenderComponent(_component_WidgetsButton, {\n              classes: \"btn btn-close\",\n              id: \"profile_modal_close_btn\",\n              onOnClick: ($event) => closeModal({ state: false })\n            }, {\n              default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                if (_push3) {\n                  _push3(_ssrRenderComponent(_component_Icon, { name: \"ri-close-line\" }, null, _parent3, _scopeId2));\n                } else {\n                  return [\n                    _createVNode(_component_Icon, { name: \"ri-close-line\" })\n                  ];\n                }\n              }),\n              _: 1\n            }, _parent2, _scopeId));\n            _push2(`</div><div class=\"modal-box\"${_scopeId}><div class=\"modal-image\"${_scopeId}><img${_ssrRenderAttr(\"src\", _imports_0)} class=\"img-fluid\" alt=\"newsletter\"${_scopeId}></div><div class=\"modal-content\"${_scopeId}><div${_scopeId}><img${_ssrRenderAttr(\"src\", _imports_1)} class=\"modal-logo\" alt=\"logo\"${_scopeId}><h2 class=\"text-title\"${_scopeId}>${_ssrInterpolate(_ctx.$t(\"Wait\"))}<span class=\"theme-color\"${_scopeId}>!</span></h2><h5${_scopeId}>${_ssrInterpolate(_ctx.$t(\"I am sorry to see you go\"))}</h5><p${_scopeId}>${_ssrInterpolate(\"In order to earn 10 off your first purchase provide your email address\")}</p></div></div></div>`);\n          } else {\n            return [\n              _createVNode(\"div\", { class: \"modal-header p-0\" }, [\n                _createVNode(_component_WidgetsButton, {\n                  classes: \"btn btn-close\",\n                  id: \"profile_modal_close_btn\",\n                  onOnClick: ($event) => closeModal({ state: false })\n                }, {\n                  default: _withCtx(() => [\n                    _createVNode(_component_Icon, { name: \"ri-close-line\" })\n                  ]),\n                  _: 1\n                }, 8, [\"onOnClick\"])\n              ]),\n              _createVNode(\"div\", { class: \"modal-box\" }, [\n                _createVNode(\"div\", { class: \"modal-image\" }, [\n                  _createVNode(\"img\", {\n                    src: _imports_0,\n                    class: \"img-fluid\",\n                    alt: \"newsletter\"\n                  })\n                ]),\n                _createVNode(\"div\", { class: \"modal-content\" }, [\n                  _createVNode(\"div\", null, [\n                    _createVNode(\"img\", {\n                      src: _imports_1,\n                      class: \"modal-logo\",\n                      alt: \"logo\"\n                    }),\n                    _createVNode(\"h2\", { class: \"text-title\" }, [\n                      _createTextVNode(_toDisplayString(_ctx.$t(\"Wait\")), 1),\n                      _createVNode(\"span\", { class: \"theme-color\" }, \"!\")\n                    ]),\n                    _createVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"I am sorry to see you go\")), 1),\n                    _createVNode(\"p\", null, _toDisplayString(\"In order to earn 10 off your first purchase provide your email address\"))\n                  ])\n                ])\n              ])\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Widgets/Modals/ExitModal/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056342801,
+      "end": 1716056342804,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342804,
+      "end": 1716056342804,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342804,
+      "end": 1716056342804,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342804,
+      "end": 1716056342804,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342804,
+      "end": 1716056342804,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342804,
+      "end": 1716056342804,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { ref, onMounted, onUnmounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport _imports_0 from \"/images/newsletter/3.jpg\";\nimport _imports_1 from \"/images/logo/1.png\";\nimport Cookies from \"js-cookie\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  setup(__props) {\n    const showModal = ref(false);\n    const openModal = () => {\n      showModal.value = true;\n      Cookies.set(\"exit\", \"true\");\n    };\n    const closeModal = () => {\n      showModal.value = false;\n    };\n    const handleMouseOut = (event) => {\n      if (event.clientY <= 0) {\n        openModal();\n        (void 0).removeEventListener(\"mouseout\", handleMouseOut);\n      }\n    };\n    onMounted(() => {\n      const modalShown = Cookies.get(\"exit\");\n      if (!modalShown) {\n        (void 0).addEventListener(\"mouseout\", handleMouseOut);\n      }\n    });\n    onUnmounted(() => {\n      (void 0).removeEventListener(\"mouseout\", handleMouseOut);\n    });\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_WidgetsModalsCommon = __nuxt_component_0;\n      const _component_WidgetsButton = __nuxt_component_1;\n      const _component_Icon = __nuxt_component_2;\n      _push(_ssrRenderComponent(_component_WidgetsModalsCommon, _mergeProps({\n        showModal: _unref(showModal),\n        modalClass: \"theme-modal modal-lg exit-modal\",\n        onClose: ($event) => closeModal({ state: false })\n      }, _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div class=\"modal-header p-0\"${_scopeId}>`);\n            _push2(_ssrRenderComponent(_component_WidgetsButton, {\n              classes: \"btn btn-close\",\n              id: \"profile_modal_close_btn\",\n              onOnClick: ($event) => closeModal({ state: false })\n            }, {\n              default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                if (_push3) {\n                  _push3(_ssrRenderComponent(_component_Icon, { name: \"ri-close-line\" }, null, _parent3, _scopeId2));\n                } else {\n                  return [\n                    _createVNode(_component_Icon, { name: \"ri-close-line\" })\n                  ];\n                }\n              }),\n              _: 1\n            }, _parent2, _scopeId));\n            _push2(`</div><div class=\"modal-box\"${_scopeId}><div class=\"modal-image\"${_scopeId}><img${_ssrRenderAttr(\"src\", _imports_0)} class=\"img-fluid\" alt=\"newsletter\"${_scopeId}></div><div class=\"modal-content\"${_scopeId}><div${_scopeId}><img${_ssrRenderAttr(\"src\", _imports_1)} class=\"modal-logo\" alt=\"logo\"${_scopeId}><h2 class=\"text-title\"${_scopeId}>${_ssrInterpolate(_ctx.$t(\"Wait\"))}<span class=\"theme-color\"${_scopeId}>!</span></h2><h5${_scopeId}>${_ssrInterpolate(_ctx.$t(\"I am sorry to see you go\"))}</h5><p${_scopeId}>${_ssrInterpolate(\"In order to earn 10 off your first purchase provide your email address\")}</p></div></div></div>`);\n          } else {\n            return [\n              _createVNode(\"div\", { class: \"modal-header p-0\" }, [\n                _createVNode(_component_WidgetsButton, {\n                  classes: \"btn btn-close\",\n                  id: \"profile_modal_close_btn\",\n                  onOnClick: ($event) => closeModal({ state: false })\n                }, {\n                  default: _withCtx(() => [\n                    _createVNode(_component_Icon, { name: \"ri-close-line\" })\n                  ]),\n                  _: 1\n                }, 8, [\"onOnClick\"])\n              ]),\n              _createVNode(\"div\", { class: \"modal-box\" }, [\n                _createVNode(\"div\", { class: \"modal-image\" }, [\n                  _createVNode(\"img\", {\n                    src: _imports_0,\n                    class: \"img-fluid\",\n                    alt: \"newsletter\"\n                  })\n                ]),\n                _createVNode(\"div\", { class: \"modal-content\" }, [\n                  _createVNode(\"div\", null, [\n                    _createVNode(\"img\", {\n                      src: _imports_1,\n                      class: \"modal-logo\",\n                      alt: \"logo\"\n                    }),\n                    _createVNode(\"h2\", { class: \"text-title\" }, [\n                      _createTextVNode(_toDisplayString(_ctx.$t(\"Wait\")), 1),\n                      _createVNode(\"span\", { class: \"theme-color\" }, \"!\")\n                    ]),\n                    _createVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"I am sorry to see you go\")), 1),\n                    _createVNode(\"p\", null, _toDisplayString(\"In order to earn 10 off your first purchase provide your email address\"))\n                  ])\n                ])\n              ])\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Widgets/Modals/ExitModal/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056342805,
+      "end": 1716056342805,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { ref, onMounted, onUnmounted } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport _imports_0 from \"/images/newsletter/3.jpg\";\nimport _imports_1 from \"/images/logo/1.png\";\nimport Cookies from \"js-cookie\";\nconst _sfc_main = {\n  __name: \"index\",\n  __ssrInlineRender: true,\n  setup(__props) {\n    const showModal = ref(false);\n    const openModal = () => {\n      showModal.value = true;\n      Cookies.set(\"exit\", \"true\");\n    };\n    const closeModal = () => {\n      showModal.value = false;\n    };\n    const handleMouseOut = (event) => {\n      if (event.clientY <= 0) {\n        openModal();\n        (void 0).removeEventListener(\"mouseout\", handleMouseOut);\n      }\n    };\n     false && /*@__PURE__*/ onMounted(() => {\n      const modalShown = Cookies.get(\"exit\");\n      if (!modalShown) {\n        (void 0).addEventListener(\"mouseout\", handleMouseOut);\n      }\n    });\n    onUnmounted(() => {\n      (void 0).removeEventListener(\"mouseout\", handleMouseOut);\n    });\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_WidgetsModalsCommon = __nuxt_component_0;\n      const _component_WidgetsButton = __nuxt_component_1;\n      const _component_Icon = __nuxt_component_2;\n      _push(_ssrRenderComponent(_component_WidgetsModalsCommon, _mergeProps({\n        showModal: _unref(showModal),\n        modalClass: \"theme-modal modal-lg exit-modal\",\n        onClose: ($event) => closeModal({ state: false })\n      }, _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div class=\"modal-header p-0\"${_scopeId}>`);\n            _push2(_ssrRenderComponent(_component_WidgetsButton, {\n              classes: \"btn btn-close\",\n              id: \"profile_modal_close_btn\",\n              onOnClick: ($event) => closeModal({ state: false })\n            }, {\n              default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                if (_push3) {\n                  _push3(_ssrRenderComponent(_component_Icon, { name: \"ri-close-line\" }, null, _parent3, _scopeId2));\n                } else {\n                  return [\n                    _createVNode(_component_Icon, { name: \"ri-close-line\" })\n                  ];\n                }\n              }),\n              _: 1\n            }, _parent2, _scopeId));\n            _push2(`</div><div class=\"modal-box\"${_scopeId}><div class=\"modal-image\"${_scopeId}><img${_ssrRenderAttr(\"src\", _imports_0)} class=\"img-fluid\" alt=\"newsletter\"${_scopeId}></div><div class=\"modal-content\"${_scopeId}><div${_scopeId}><img${_ssrRenderAttr(\"src\", _imports_1)} class=\"modal-logo\" alt=\"logo\"${_scopeId}><h2 class=\"text-title\"${_scopeId}>${_ssrInterpolate(_ctx.$t(\"Wait\"))}<span class=\"theme-color\"${_scopeId}>!</span></h2><h5${_scopeId}>${_ssrInterpolate(_ctx.$t(\"I am sorry to see you go\"))}</h5><p${_scopeId}>${_ssrInterpolate(\"In order to earn 10 off your first purchase provide your email address\")}</p></div></div></div>`);\n          } else {\n            return [\n              _createVNode(\"div\", { class: \"modal-header p-0\" }, [\n                _createVNode(_component_WidgetsButton, {\n                  classes: \"btn btn-close\",\n                  id: \"profile_modal_close_btn\",\n                  onOnClick: ($event) => closeModal({ state: false })\n                }, {\n                  default: _withCtx(() => [\n                    _createVNode(_component_Icon, { name: \"ri-close-line\" })\n                  ]),\n                  _: 1\n                }, 8, [\"onOnClick\"])\n              ]),\n              _createVNode(\"div\", { class: \"modal-box\" }, [\n                _createVNode(\"div\", { class: \"modal-image\" }, [\n                  _createVNode(\"img\", {\n                    src: _imports_0,\n                    class: \"img-fluid\",\n                    alt: \"newsletter\"\n                  })\n                ]),\n                _createVNode(\"div\", { class: \"modal-content\" }, [\n                  _createVNode(\"div\", null, [\n                    _createVNode(\"img\", {\n                      src: _imports_1,\n                      class: \"modal-logo\",\n                      alt: \"logo\"\n                    }),\n                    _createVNode(\"h2\", { class: \"text-title\" }, [\n                      _createTextVNode(_toDisplayString(_ctx.$t(\"Wait\")), 1),\n                      _createVNode(\"span\", { class: \"theme-color\" }, \"!\")\n                    ]),\n                    _createVNode(\"h5\", null, _toDisplayString(_ctx.$t(\"I am sorry to see you go\")), 1),\n                    _createVNode(\"p\", null, _toDisplayString(\"In order to earn 10 off your first purchase provide your email address\"))\n                  ])\n                ])\n              ])\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n    };\n  }\n};\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/Widgets/Modals/ExitModal/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1716056342805,
+      "end": 1716056342806,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342806,
+      "end": 1716056342806,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342806,
+      "end": 1716056342806,
+      "order": "normal"
+    }
+  ]
+}

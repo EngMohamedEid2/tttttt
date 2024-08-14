@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/NewsletterModal/index.vue?nuxt_component=async&nuxt_component_name=WidgetsModalsNewsletterModal",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <WidgetsModalsCommon :showModal=\"showModal\" modalClass=\"newsletter-modal modal-lg\" @close=\"closeModal({ state: false })\">\n    <div class=\"modal-header p-0\">\n      <WidgetsButton :classes=\"'btn btn-close'\" :id=\"'profile_modal_close_btn'\" @onClick=\"closeModal({ state: false })\">\n        <Icon name=\"ri-close-line\"></Icon>\n      </WidgetsButton>\n    </div>\n    <div class=\"modal-box\">\n      <div class=\"modal-image\">\n        <img src=\"/images/newsletter/3.jpg\" class=\"img-fluid\" alt=\"newsletter\">\n      </div>\n      <div class=\"modal-content content-padding\">\n        <div>\n          <img src=\"/images/logo/1.png\" class=\"modal-logo\" alt=\"logo\">\n          <h2>{{ '15%' }} <span>{{ 'off' }}</span></h2>\n          <h5>{{ 'Want to make your purchase' }}?</h5>\n          <p>{{ 'Plus early access to new arrivals exclusive sales lots more' }}?</p>\n          <form class=\"modal-form\">\n            <div class=\"input-group modal-form-box\">\n              <input type=\"email\" class=\"form-control\" placeholder=\"Your email here\">\n              <WidgetsButton :classes=\"'input-group-text'\" :id=\"'submit_newsletter_btn'\" @click@=\"submit(emailVal.value)\">\n                {{ 'Submit' }}</WidgetsButton>\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </WidgetsModalsCommon>\n</template>\n  \n<script setup>\nlet showModal = ref(false)\n\nonMounted(() => {\n  if (localStorage.getItem('showModel') !== 'newsletter') {\n    showModal.value = true\n    localStorage.setItem('showModel', 'newsletter')\n  }\n})\n\nfunction closeModal() {\n  showModal.value = false\n}\n</script>\n  \n<style lang=\"scss\" scoped></style>",
+      "start": 1716056285106,
+      "end": 1716056285314,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285314,
+      "end": 1716056285314,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285314,
+      "end": 1716056285314,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285314,
+      "end": 1716056285314,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285314,
+      "end": 1716056285314,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285314,
+      "end": 1716056285314,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285314,
+      "end": 1716056285314,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285315,
+      "end": 1716056285315,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\nimport _imports_0 from '/images/newsletter/3.jpg'\nimport _imports_1 from '/images/logo/1.png'\n\n\nconst _hoisted_1 = { class: \"modal-header p-0\" }\nconst _hoisted_2 = { class: \"modal-box\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"modal-image\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_0,\n    class: \"img-fluid\",\n    alt: \"newsletter\"\n  })\n], -1)\nconst _hoisted_4 = { class: \"modal-content content-padding\" }\nconst _hoisted_5 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_1,\n  class: \"modal-logo\",\n  alt: \"logo\"\n}, null, -1)\nconst _hoisted_6 = /*#__PURE__*/_createElementVNode(\"h2\", null, [\n  /*#__PURE__*/_createTextVNode(/*#__PURE__*/_toDisplayString('15%') + \" \"),\n  /*#__PURE__*/_createElementVNode(\"span\", null, /*#__PURE__*/_toDisplayString('off'))\n], -1)\nconst _hoisted_7 = /*#__PURE__*/_createElementVNode(\"h5\", null, /*#__PURE__*/_toDisplayString('Want to make your purchase') + \"?\", -1)\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"p\", null, /*#__PURE__*/_toDisplayString('Plus early access to new arrivals exclusive sales lots more') + \"?\", -1)\nconst _hoisted_9 = { class: \"modal-form\" }\nconst _hoisted_10 = { class: \"input-group modal-form-box\" }\nconst _hoisted_11 = /*#__PURE__*/_createElementVNode(\"input\", {\n  type: \"email\",\n  class: \"form-control\",\n  placeholder: \"Your email here\"\n}, null, -1)\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet showModal = ref(false)\n\nonMounted(() => {\n  if (localStorage.getItem('showModel') !== 'newsletter') {\n    showModal.value = true\n    localStorage.setItem('showModel', 'newsletter')\n  }\n})\n\nfunction closeModal() {\n  showModal.value = false\n}\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n  const _component_WidgetsModalsCommon = _resolveComponent(\"WidgetsModalsCommon\")\n\n  return (_openBlock(), _createBlock(_component_WidgetsModalsCommon, {\n    showModal: _unref(showModal),\n    modalClass: \"newsletter-modal modal-lg\",\n    onClose: _cache[2] || (_cache[2] = $event => (closeModal({ state: false })))\n  }, {\n    default: _withCtx(() => [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createVNode(_component_WidgetsButton, {\n          classes: 'btn btn-close',\n          id: 'profile_modal_close_btn',\n          onOnClick: _cache[0] || (_cache[0] = $event => (closeModal({ state: false })))\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Icon, { name: \"ri-close-line\" })\n          ]),\n          _: 1\n        })\n      ]),\n      _createElementVNode(\"div\", _hoisted_2, [\n        _hoisted_3,\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", null, [\n            _hoisted_5,\n            _hoisted_6,\n            _hoisted_7,\n            _hoisted_8,\n            _createElementVNode(\"form\", _hoisted_9, [\n              _createElementVNode(\"div\", _hoisted_10, [\n                _hoisted_11,\n                _createVNode(_component_WidgetsButton, {\n                  classes: 'input-group-text',\n                  id: 'submit_newsletter_btn',\n                  \"onClick@\": _cache[1] || (_cache[1] = $event => (_ctx.submit(_ctx.emailVal.value)))\n                }, {\n                  default: _withCtx(() => [\n                    _createTextVNode(_toDisplayString('Submit'))\n                  ]),\n                  _: 1\n                })\n              ])\n            ])\n          ])\n        ])\n      ])\n    ]),\n    _: 1\n  }, 8, [\"showModal\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056285315,
+      "end": 1716056285319,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285319,
+      "end": 1716056285319,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285319,
+      "end": 1716056285319,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285320,
+      "end": 1716056285320,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285320,
+      "end": 1716056285320,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/NewsletterModal/index.vue\").then(r => r.default))",
+      "start": 1716056285320,
+      "end": 1716056285320,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285320,
+      "end": 1716056285321,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285321,
+      "end": 1716056285321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285321,
+      "end": 1716056285321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285321,
+      "end": 1716056285321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285321,
+      "end": 1716056285321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285321,
+      "end": 1716056285321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285321,
+      "end": 1716056285321,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285321,
+      "end": 1716056285321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285321,
+      "end": 1716056285321,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285321,
+      "end": 1716056285321,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285321,
+      "end": 1716056285321,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285322,
+      "end": 1716056285322,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285322,
+      "end": 1716056285322,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285322,
+      "end": 1716056285322,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285322,
+      "end": 1716056285322,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285322,
+      "end": 1716056285322,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285322,
+      "end": 1716056285322,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285322,
+      "end": 1716056285322,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/NewsletterModal/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285322,
+      "end": 1716056285322,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285322,
+      "end": 1716056285322,
+      "order": "normal"
+    }
+  ]
+}

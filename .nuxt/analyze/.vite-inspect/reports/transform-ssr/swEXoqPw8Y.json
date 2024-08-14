@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/WapperTab/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"product-section-box mt-0\">\n    <ul class=\"nav nav-tabs custom-nav\" id=\"pills-tab\">\n      <li class=\"nav-item\" role=\"presentation\" v-for=\"(tab, index) in tabs\" :key=\"'a' + index\">\n        <button class=\"nav-link\" :ref=\"`tabButton${index}`\"\n          :class=\"[{ 'tab-error': tab.errors }, { active: index == activeTab }]\" :id=\"`${tab.id}-tab`\"\n          @click=\"handleClickOnTab({ tab, index })\" type=\"button\">\n          <!-- <Icon :name=\"tab.icon\" /> -->\n          {{ $t(tab.title) }}\n        </button>\n      </li>\n    </ul>\n    <div class=\"tab-content custom-tab\" id=\"pills-tabContent\">\n      <div :class=\"[{ 'active show': index == activeTab }]\" class=\"tab-pane fade\" v-for=\"(tab, index) in tabs\"\n        :key=\"'a' + index\" :id=\"tab.id\" role=\"tabpanel\">\n        <slot :name=\"tab.id\" />\n      </div>\n      <slot name=\"bottom\" />\n    </div>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  tabs: Array,\n  activeTab: Object,\n});\nlet activeTab = ref(0);\nlet emit = defineEmits([\"handleActive\"]);\n\nfunction handleClickOnTab({ tab, index }) {\n  activeTab.value = index;\n  emit(\"handleActive\", tab);\n}\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056343138,
+      "end": 1716056343229,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderAttr as _ssrRenderAttr, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  tabs: Array,\n  activeTab: Object,\n},\n  emits: [\"handleActive\"],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\nlet activeTab = ref(0);\nlet emit = __emit;\n\nfunction handleClickOnTab({ tab, index }) {\n  activeTab.value = index;\n  emit(\"handleActive\", tab);\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"product-section-box mt-0\" }, _attrs))}><ul class=\"nav nav-tabs custom-nav\" id=\"pills-tab\"><!--[-->`)\n  _ssrRenderList(__props.tabs, (tab, index) => {\n    _push(`<li class=\"nav-item\" role=\"presentation\"><button class=\"${\n      _ssrRenderClass([[{ 'tab-error': tab.errors }, { active: index == _unref(activeTab) }], \"nav-link\"])\n    }\"${\n      _ssrRenderAttr(\"id\", `${tab.id}-tab`)\n    } type=\"button\">${\n      _ssrInterpolate(_ctx.$t(tab.title))\n    }</button></li>`)\n  })\n  _push(`<!--]--></ul><div class=\"tab-content custom-tab\" id=\"pills-tabContent\"><!--[-->`)\n  _ssrRenderList(__props.tabs, (tab, index) => {\n    _push(`<div class=\"${\n      _ssrRenderClass([[{ 'active show': index == _unref(activeTab) }], \"tab-pane fade\"])\n    }\"${\n      _ssrRenderAttr(\"id\", tab.id)\n    } role=\"tabpanel\">`)\n    _ssrRenderSlot(_ctx.$slots, tab.id, {}, null, _push, _parent)\n    _push(`</div>`)\n  })\n  _push(`<!--]-->`)\n  _ssrRenderSlot(_ctx.$slots, \"bottom\", {}, null, _push, _parent)\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/WapperTab/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056343229,
+      "end": 1716056343229,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056343229,
+      "end": 1716056343230,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderAttr as _ssrRenderAttr, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  tabs: Array,\n  activeTab: Object,\n},\n  emits: [\"handleActive\"],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\nlet activeTab = ref(0);\nlet emit = __emit;\n\nfunction handleClickOnTab({ tab, index }) {\n  activeTab.value = index;\n  emit(\"handleActive\", tab);\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"product-section-box mt-0\" }, _attrs))}><ul class=\"nav nav-tabs custom-nav\" id=\"pills-tab\"><!--[-->`)\n  _ssrRenderList(__props.tabs, (tab, index) => {\n    _push(`<li class=\"nav-item\" role=\"presentation\"><button class=\"${\n      _ssrRenderClass([[{ 'tab-error': tab.errors }, { active: index == _unref(activeTab) }], \"nav-link\"])\n    }\"${\n      _ssrRenderAttr(\"id\", `${tab.id}-tab`)\n    } type=\"button\">${\n      _ssrInterpolate(_ctx.$t(tab.title))\n    }</button></li>`)\n  })\n  _push(`<!--]--></ul><div class=\"tab-content custom-tab\" id=\"pills-tabContent\"><!--[-->`)\n  _ssrRenderList(__props.tabs, (tab, index) => {\n    _push(`<div class=\"${\n      _ssrRenderClass([[{ 'active show': index == _unref(activeTab) }], \"tab-pane fade\"])\n    }\"${\n      _ssrRenderAttr(\"id\", tab.id)\n    } role=\"tabpanel\">`)\n    _ssrRenderSlot(_ctx.$slots, tab.id, {}, null, _push, _parent)\n    _push(`</div>`)\n  })\n  _push(`<!--]-->`)\n  _ssrRenderSlot(_ctx.$slots, \"bottom\", {}, null, _push, _parent)\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/WapperTab/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderAttr as _ssrRenderAttr, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  tabs: Array,\n  activeTab: Object,\n},\n  emits: [\"handleActive\"],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props;\nlet activeTab = ref(0);\nlet emit = __emit;\n\nfunction handleClickOnTab({ tab, index }) {\n  activeTab.value = index;\n  emit(\"handleActive\", tab);\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"product-section-box mt-0\" }, _attrs))}><ul class=\"nav nav-tabs custom-nav\" id=\"pills-tab\"><!--[-->`)\n  _ssrRenderList(__props.tabs, (tab, index) => {\n    _push(`<li class=\"nav-item\" role=\"presentation\"><button class=\"${\n      _ssrRenderClass([[{ 'tab-error': tab.errors }, { active: index == _unref(activeTab) }], \"nav-link\"])\n    }\"${\n      _ssrRenderAttr(\"id\", `${tab.id}-tab`)\n    } type=\"button\">${\n      _ssrInterpolate(_ctx.$t(tab.title))\n    }</button></li>`)\n  })\n  _push(`<!--]--></ul><div class=\"tab-content custom-tab\" id=\"pills-tabContent\"><!--[-->`)\n  _ssrRenderList(__props.tabs, (tab, index) => {\n    _push(`<div class=\"${\n      _ssrRenderClass([[{ 'active show': index == _unref(activeTab) }], \"tab-pane fade\"])\n    }\"${\n      _ssrRenderAttr(\"id\", tab.id)\n    } role=\"tabpanel\">`)\n    _ssrRenderSlot(_ctx.$slots, tab.id, {}, null, _push, _parent)\n    _push(`</div>`)\n  })\n  _push(`<!--]-->`)\n  _ssrRenderSlot(_ctx.$slots, \"bottom\", {}, null, _push, _parent)\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/WapperTab/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056343230,
+      "end": 1716056343230,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056343231,
+      "end": 1716056343231,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056343231,
+      "end": 1716056343231,
+      "order": "normal"
+    }
+  ]
+}

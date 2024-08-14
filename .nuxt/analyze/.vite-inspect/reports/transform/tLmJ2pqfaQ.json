@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/CollectionSort/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"show-button\">\n        <div class=\"filter-button-group mt-0\"\n            v-if=\"useRoute().query.layout !== 'collection_no_sidebar' && useRoute().query.layout !== 'collection_offcanvas_filter'\">\n            <div class=\"filter-button d-inline-block d-lg-none\">\n                <a @click=\"openOffCanvasMenu()\">\n                    <Icon name=\"ri-filter-2-fill\"></Icon> {{ $t('Filter Menu') }}\n                </a>\n            </div>\n        </div>\n        <div class=\"top-filter-menu\">\n            <div class=\"category-dropdown\">\n                <a href=\"javascript:void(0)\" class=\"filter-offcanvas-title\" @click=\"openOffCanvasMenu()\"\n                    v-if=\"route.query.layout == 'collection_offcanvas_filter'\">\n                    <Icon name=\"ri:filter-2-fill\"></Icon> Filter Menu\n                </a>\n                <h5 class=\"text-content\">Sort By :</h5>\n                <WidgetsInputFieldsCommonSearchDropdownInput v-model=\"store.filterObject.sort\" :options=\"sortingOptions\"\n                    dropdown-id=\"sortByDropdown\" />\n            </div>\n\n            <div class=\"grid-option d-none d-md-block\">\n                <ul>\n                    <li class=\"three-grid\" :class=\"[{ active: selectedGrid == 'collection_3_grid' }]\">\n                        <a href=\"javascript:void(0)\" @click.prevent=\"grid('collection_3_grid')\">\n                            <img src=\"/svg/grid-3.svg\" alt=\"sort\">\n                        </a>\n                    </li>\n                    <li class=\"grid-btn d-xxl-inline-block d-none \"\n                        :class=\"[{ active: selectedGrid == 'collection_4_grid' }]\"\n                        @click.prevent=\"grid('collection_4_grid')\">\n                        <a href=\"javascript:void(0)\">\n                            <img src=\"/svg/grid-4.svg\" class=\" d-lg-inline-block d-none\" alt=\"sort\">\n                            <img src=\"/svg/grid.svg\" class=\" img-fluid d-lg-none d-inline-block\" alt=\"sort\">\n                        </a>\n                    </li>\n\n                    <li class=\"grid-btn d-xxl-inline-block d-none \"\n                        :class=\"[{ active: selectedGrid == 'collection_5_grid' }]\"\n                        @click.prevent=\"grid('collection_5_grid')\">\n                        <a href=\"javascript:void(0)\">\n                            <img src=\"/svg/grid-5.svg\" class=\" d-lg-inline-block d-none\" alt=\"sort\">\n                            <img src=\"/svg/grid.svg\" class=\" img-fluid d-lg-none d-inline-block\" alt=\"sort\">\n                        </a>\n                    </li>\n                    <li class=\"list-btn\" :class=\"[{ active: selectedGrid == 'collection_list_view' }]\"\n                        @click.prevent=\"grid('collection_list_view')\">\n                        <a href=\"javascript:void(0)\">\n                            <img src=\"/svg/list.svg\" alt=\"\">\n                        </a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from 'pinia';\nimport { useCollectionStore } from '~/store/collection';\nimport { useDataStore } from '~/store/data';\nlet props = defineProps({\n    filter: Object,\n    show: Boolean,    \n    selectedGrid:{type:String, default:\"collection_4_grid\"}\n})\n\nlet route = useRoute()\nlet router = useRouter()\nlet { offCanvasMenu } = storeToRefs(useDataStore())\nlet classes = ref(\"row g-sm-4 g-3 row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2 product-list-section\");\nlet { sortingOptions, sort } = storeToRefs(useCollectionStore())\nlet emits = defineEmits(['setGridClass']);\nlet store = useCollectionStore();\n\nwatch(() => useRoute().query.layout, () => {\n    let layout = useRoute().query.layout\n    if (layout) {\n        grid(layout);\n    }\n}, { deep: true })\n\nfunction grid(value) {\n    if (value == 'collection_3_grid'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_4_grid'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_5_grid'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_list_view'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2 list-style\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_no_sidebar'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    emits('setGridClass', classes.value);\n}\nfunction openOffCanvasMenu() {\n    offCanvasMenu.value = true\n}\nonMounted(() => {\n    let layout = useRoute().query.layout\n    grid(layout)\n})\n</script>\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056287386,
+      "end": 1716056287541,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287541,
+      "end": 1716056287541,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287541,
+      "end": 1716056287541,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287541,
+      "end": 1716056287541,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287541,
+      "end": 1716056287541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287541,
+      "end": 1716056287541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287541,
+      "end": 1716056287541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287541,
+      "end": 1716056287541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, unref as _unref, withModifiers as _withModifiers, normalizeClass as _normalizeClass } from \"vue\"\nimport _imports_0 from '/svg/grid-3.svg'\nimport _imports_1 from '/svg/grid-4.svg'\nimport _imports_2 from '/svg/grid.svg'\nimport _imports_3 from '/svg/grid-5.svg'\nimport _imports_4 from '/svg/list.svg'\n\n\nconst _hoisted_1 = { class: \"show-button\" }\nconst _hoisted_2 = {\n  key: 0,\n  class: \"filter-button-group mt-0\"\n}\nconst _hoisted_3 = { class: \"filter-button d-inline-block d-lg-none\" }\nconst _hoisted_4 = { class: \"top-filter-menu\" }\nconst _hoisted_5 = { class: \"category-dropdown\" }\nconst _hoisted_6 = /*#__PURE__*/_createElementVNode(\"h5\", { class: \"text-content\" }, \"Sort By :\", -1)\nconst _hoisted_7 = { class: \"grid-option d-none d-md-block\" }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_0,\n  alt: \"sort\"\n}, null, -1)\nconst _hoisted_9 = [\n  _hoisted_8\n]\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"a\", { href: \"javascript:void(0)\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_1,\n    class: \"d-lg-inline-block d-none\",\n    alt: \"sort\"\n  }),\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_2,\n    class: \"img-fluid d-lg-none d-inline-block\",\n    alt: \"sort\"\n  })\n], -1)\nconst _hoisted_11 = [\n  _hoisted_10\n]\nconst _hoisted_12 = /*#__PURE__*/_createElementVNode(\"a\", { href: \"javascript:void(0)\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_3,\n    class: \"d-lg-inline-block d-none\",\n    alt: \"sort\"\n  }),\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_2,\n    class: \"img-fluid d-lg-none d-inline-block\",\n    alt: \"sort\"\n  })\n], -1)\nconst _hoisted_13 = [\n  _hoisted_12\n]\nconst _hoisted_14 = /*#__PURE__*/_createElementVNode(\"a\", { href: \"javascript:void(0)\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_4,\n    alt: \"\"\n  })\n], -1)\nconst _hoisted_15 = [\n  _hoisted_14\n]\n\nimport { storeToRefs } from 'pinia';\nimport { useCollectionStore } from '~/store/collection';\nimport { useDataStore } from '~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    filter: Object,\n    show: Boolean,    \n    selectedGrid:{type:String, default:\"collection_4_grid\"}\n},\n  emits: ['setGridClass'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet route = useRoute()\nlet router = useRouter()\nlet { offCanvasMenu } = storeToRefs(useDataStore())\nlet classes = ref(\"row g-sm-4 g-3 row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2 product-list-section\");\nlet { sortingOptions, sort } = storeToRefs(useCollectionStore())\nlet emits = __emit;\nlet store = useCollectionStore();\n\nwatch(() => useRoute().query.layout, () => {\n    let layout = useRoute().query.layout\n    if (layout) {\n        grid(layout);\n    }\n}, { deep: true })\n\nfunction grid(value) {\n    if (value == 'collection_3_grid'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_4_grid'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_5_grid'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_list_view'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2 list-style\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_no_sidebar'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    emits('setGridClass', classes.value);\n}\nfunction openOffCanvasMenu() {\n    offCanvasMenu.value = true\n}\nonMounted(() => {\n    let layout = useRoute().query.layout\n    grid(layout)\n})\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsInputFieldsCommonSearchDropdownInput = _resolveComponent(\"WidgetsInputFieldsCommonSearchDropdownInput\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    (_ctx.useRoute().query.layout !== 'collection_no_sidebar' && _ctx.useRoute().query.layout !== 'collection_offcanvas_filter')\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"a\", {\n              onClick: _cache[0] || (_cache[0] = $event => (openOffCanvasMenu()))\n            }, [\n              _createVNode(_component_Icon, { name: \"ri-filter-2-fill\" }),\n              _createTextVNode(\" \" + _toDisplayString(_ctx.$t('Filter Menu')), 1)\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", _hoisted_4, [\n      _createElementVNode(\"div\", _hoisted_5, [\n        (_unref(route).query.layout == 'collection_offcanvas_filter')\n          ? (_openBlock(), _createElementBlock(\"a\", {\n              key: 0,\n              href: \"javascript:void(0)\",\n              class: \"filter-offcanvas-title\",\n              onClick: _cache[1] || (_cache[1] = $event => (openOffCanvasMenu()))\n            }, [\n              _createVNode(_component_Icon, { name: \"ri:filter-2-fill\" }),\n              _createTextVNode(\" Filter Menu \")\n            ]))\n          : _createCommentVNode(\"\", true),\n        _hoisted_6,\n        _createVNode(_component_WidgetsInputFieldsCommonSearchDropdownInput, {\n          modelValue: _unref(store).filterObject.sort,\n          \"onUpdate:modelValue\": _cache[2] || (_cache[2] = $event => ((_unref(store).filterObject.sort) = $event)),\n          options: _unref(sortingOptions),\n          \"dropdown-id\": \"sortByDropdown\"\n        }, null, 8, [\"modelValue\", \"options\"])\n      ]),\n      _createElementVNode(\"div\", _hoisted_7, [\n        _createElementVNode(\"ul\", null, [\n          _createElementVNode(\"li\", {\n            class: _normalizeClass([\"three-grid\", [{ active: __props.selectedGrid == 'collection_3_grid' }]])\n          }, [\n            _createElementVNode(\"a\", {\n              href: \"javascript:void(0)\",\n              onClick: _cache[3] || (_cache[3] = _withModifiers($event => (grid('collection_3_grid')), [\"prevent\"]))\n            }, _hoisted_9)\n          ], 2),\n          _createElementVNode(\"li\", {\n            class: _normalizeClass([\"grid-btn d-xxl-inline-block d-none\", [{ active: __props.selectedGrid == 'collection_4_grid' }]]),\n            onClick: _cache[4] || (_cache[4] = _withModifiers($event => (grid('collection_4_grid')), [\"prevent\"]))\n          }, _hoisted_11, 2),\n          _createElementVNode(\"li\", {\n            class: _normalizeClass([\"grid-btn d-xxl-inline-block d-none\", [{ active: __props.selectedGrid == 'collection_5_grid' }]]),\n            onClick: _cache[5] || (_cache[5] = _withModifiers($event => (grid('collection_5_grid')), [\"prevent\"]))\n          }, _hoisted_13, 2),\n          _createElementVNode(\"li\", {\n            class: _normalizeClass([\"list-btn\", [{ active: __props.selectedGrid == 'collection_list_view' }]]),\n            onClick: _cache[6] || (_cache[6] = _withModifiers($event => (grid('collection_list_view')), [\"prevent\"]))\n          }, _hoisted_15, 2)\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287541,
+      "end": 1716056287541,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287541,
+      "end": 1716056287541,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287541,
+      "end": 1716056287541,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287541,
+      "end": 1716056287541,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287542,
+      "end": 1716056287542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287542,
+      "end": 1716056287542,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287542,
+      "end": 1716056287542,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287542,
+      "end": 1716056287542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287542,
+      "end": 1716056287542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287542,
+      "end": 1716056287542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287542,
+      "end": 1716056287542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287542,
+      "end": 1716056287542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287542,
+      "end": 1716056287542,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287542,
+      "end": 1716056287542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287542,
+      "end": 1716056287542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287542,
+      "end": 1716056287542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287542,
+      "end": 1716056287542,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useRoute, useRouter } from '#app/composables/router';\nimport { ref, watch, onMounted } from 'vue';\nimport { useRoute as __unimport_useRoute } from '#app/composables/router';\nimport { unref as __unimport_unref_ } from 'vue';import { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, unref as _unref, withModifiers as _withModifiers, normalizeClass as _normalizeClass } from \"vue\"\nimport _imports_0 from '/svg/grid-3.svg'\nimport _imports_1 from '/svg/grid-4.svg'\nimport _imports_2 from '/svg/grid.svg'\nimport _imports_3 from '/svg/grid-5.svg'\nimport _imports_4 from '/svg/list.svg'\n\n\nconst _hoisted_1 = { class: \"show-button\" }\nconst _hoisted_2 = {\n  key: 0,\n  class: \"filter-button-group mt-0\"\n}\nconst _hoisted_3 = { class: \"filter-button d-inline-block d-lg-none\" }\nconst _hoisted_4 = { class: \"top-filter-menu\" }\nconst _hoisted_5 = { class: \"category-dropdown\" }\nconst _hoisted_6 = /*#__PURE__*/_createElementVNode(\"h5\", { class: \"text-content\" }, \"Sort By :\", -1)\nconst _hoisted_7 = { class: \"grid-option d-none d-md-block\" }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_0,\n  alt: \"sort\"\n}, null, -1)\nconst _hoisted_9 = [\n  _hoisted_8\n]\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"a\", { href: \"javascript:void(0)\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_1,\n    class: \"d-lg-inline-block d-none\",\n    alt: \"sort\"\n  }),\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_2,\n    class: \"img-fluid d-lg-none d-inline-block\",\n    alt: \"sort\"\n  })\n], -1)\nconst _hoisted_11 = [\n  _hoisted_10\n]\nconst _hoisted_12 = /*#__PURE__*/_createElementVNode(\"a\", { href: \"javascript:void(0)\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_3,\n    class: \"d-lg-inline-block d-none\",\n    alt: \"sort\"\n  }),\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_2,\n    class: \"img-fluid d-lg-none d-inline-block\",\n    alt: \"sort\"\n  })\n], -1)\nconst _hoisted_13 = [\n  _hoisted_12\n]\nconst _hoisted_14 = /*#__PURE__*/_createElementVNode(\"a\", { href: \"javascript:void(0)\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_4,\n    alt: \"\"\n  })\n], -1)\nconst _hoisted_15 = [\n  _hoisted_14\n]\n\nimport { storeToRefs } from 'pinia';\nimport { useCollectionStore } from '~/store/collection';\nimport { useDataStore } from '~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    filter: Object,\n    show: Boolean,    \n    selectedGrid:{type:String, default:\"collection_4_grid\"}\n},\n  emits: ['setGridClass'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet route = useRoute()\nlet router = useRouter()\nlet { offCanvasMenu } = storeToRefs(useDataStore())\nlet classes = ref(\"row g-sm-4 g-3 row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2 product-list-section\");\nlet { sortingOptions, sort } = storeToRefs(useCollectionStore())\nlet emits = __emit;\nlet store = useCollectionStore();\n\nwatch(() => useRoute().query.layout, () => {\n    let layout = useRoute().query.layout\n    if (layout) {\n        grid(layout);\n    }\n}, { deep: true })\n\nfunction grid(value) {\n    if (value == 'collection_3_grid'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_4_grid'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_5_grid'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_list_view'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2 list-style\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_no_sidebar'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    emits('setGridClass', classes.value);\n}\nfunction openOffCanvasMenu() {\n    offCanvasMenu.value = true\n}\nonMounted(() => {\n    let layout = useRoute().query.layout\n    grid(layout)\n})\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsInputFieldsCommonSearchDropdownInput = _resolveComponent(\"WidgetsInputFieldsCommonSearchDropdownInput\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    ((\"useRoute\" in _ctx ? _ctx.useRoute : __unimport_unref_(__unimport_useRoute))().query.layout !== 'collection_no_sidebar' && (\"useRoute\" in _ctx ? _ctx.useRoute : __unimport_unref_(__unimport_useRoute))().query.layout !== 'collection_offcanvas_filter')\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"a\", {\n              onClick: _cache[0] || (_cache[0] = $event => (openOffCanvasMenu()))\n            }, [\n              _createVNode(_component_Icon, { name: \"ri-filter-2-fill\" }),\n              _createTextVNode(\" \" + _toDisplayString(_ctx.$t('Filter Menu')), 1)\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", _hoisted_4, [\n      _createElementVNode(\"div\", _hoisted_5, [\n        (_unref(route).query.layout == 'collection_offcanvas_filter')\n          ? (_openBlock(), _createElementBlock(\"a\", {\n              key: 0,\n              href: \"javascript:void(0)\",\n              class: \"filter-offcanvas-title\",\n              onClick: _cache[1] || (_cache[1] = $event => (openOffCanvasMenu()))\n            }, [\n              _createVNode(_component_Icon, { name: \"ri:filter-2-fill\" }),\n              _createTextVNode(\" Filter Menu \")\n            ]))\n          : _createCommentVNode(\"\", true),\n        _hoisted_6,\n        _createVNode(_component_WidgetsInputFieldsCommonSearchDropdownInput, {\n          modelValue: _unref(store).filterObject.sort,\n          \"onUpdate:modelValue\": _cache[2] || (_cache[2] = $event => ((_unref(store).filterObject.sort) = $event)),\n          options: _unref(sortingOptions),\n          \"dropdown-id\": \"sortByDropdown\"\n        }, null, 8, [\"modelValue\", \"options\"])\n      ]),\n      _createElementVNode(\"div\", _hoisted_7, [\n        _createElementVNode(\"ul\", null, [\n          _createElementVNode(\"li\", {\n            class: _normalizeClass([\"three-grid\", [{ active: __props.selectedGrid == 'collection_3_grid' }]])\n          }, [\n            _createElementVNode(\"a\", {\n              href: \"javascript:void(0)\",\n              onClick: _cache[3] || (_cache[3] = _withModifiers($event => (grid('collection_3_grid')), [\"prevent\"]))\n            }, _hoisted_9)\n          ], 2),\n          _createElementVNode(\"li\", {\n            class: _normalizeClass([\"grid-btn d-xxl-inline-block d-none\", [{ active: __props.selectedGrid == 'collection_4_grid' }]]),\n            onClick: _cache[4] || (_cache[4] = _withModifiers($event => (grid('collection_4_grid')), [\"prevent\"]))\n          }, _hoisted_11, 2),\n          _createElementVNode(\"li\", {\n            class: _normalizeClass([\"grid-btn d-xxl-inline-block d-none\", [{ active: __props.selectedGrid == 'collection_5_grid' }]]),\n            onClick: _cache[5] || (_cache[5] = _withModifiers($event => (grid('collection_5_grid')), [\"prevent\"]))\n          }, _hoisted_13, 2),\n          _createElementVNode(\"li\", {\n            class: _normalizeClass([\"list-btn\", [{ active: __props.selectedGrid == 'collection_list_view' }]]),\n            onClick: _cache[6] || (_cache[6] = _withModifiers($event => (grid('collection_list_view')), [\"prevent\"]))\n          }, _hoisted_15, 2)\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287542,
+      "end": 1716056287546,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287546,
+      "end": 1716056287546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287546,
+      "end": 1716056287546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287546,
+      "end": 1716056287546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287546,
+      "end": 1716056287546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/Common/SearchDropdownInput.vue\";\nimport { useRoute, useRouter } from '#app/composables/router';\nimport { ref, watch, onMounted } from 'vue';\nimport { useRoute as __unimport_useRoute } from '#app/composables/router';\nimport { unref as __unimport_unref_ } from 'vue';import { resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, unref as _unref, withModifiers as _withModifiers, normalizeClass as _normalizeClass } from \"vue\"\nimport _imports_0 from '/svg/grid-3.svg'\nimport _imports_1 from '/svg/grid-4.svg'\nimport _imports_2 from '/svg/grid.svg'\nimport _imports_3 from '/svg/grid-5.svg'\nimport _imports_4 from '/svg/list.svg'\n\n\nconst _hoisted_1 = { class: \"show-button\" }\nconst _hoisted_2 = {\n  key: 0,\n  class: \"filter-button-group mt-0\"\n}\nconst _hoisted_3 = { class: \"filter-button d-inline-block d-lg-none\" }\nconst _hoisted_4 = { class: \"top-filter-menu\" }\nconst _hoisted_5 = { class: \"category-dropdown\" }\nconst _hoisted_6 = /*#__PURE__*/_createElementVNode(\"h5\", { class: \"text-content\" }, \"Sort By :\", -1)\nconst _hoisted_7 = { class: \"grid-option d-none d-md-block\" }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"img\", {\n  src: _imports_0,\n  alt: \"sort\"\n}, null, -1)\nconst _hoisted_9 = [\n  _hoisted_8\n]\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"a\", { href: \"javascript:void(0)\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_1,\n    class: \"d-lg-inline-block d-none\",\n    alt: \"sort\"\n  }),\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_2,\n    class: \"img-fluid d-lg-none d-inline-block\",\n    alt: \"sort\"\n  })\n], -1)\nconst _hoisted_11 = [\n  _hoisted_10\n]\nconst _hoisted_12 = /*#__PURE__*/_createElementVNode(\"a\", { href: \"javascript:void(0)\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_3,\n    class: \"d-lg-inline-block d-none\",\n    alt: \"sort\"\n  }),\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_2,\n    class: \"img-fluid d-lg-none d-inline-block\",\n    alt: \"sort\"\n  })\n], -1)\nconst _hoisted_13 = [\n  _hoisted_12\n]\nconst _hoisted_14 = /*#__PURE__*/_createElementVNode(\"a\", { href: \"javascript:void(0)\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_4,\n    alt: \"\"\n  })\n], -1)\nconst _hoisted_15 = [\n  _hoisted_14\n]\n\nimport { storeToRefs } from 'pinia';\nimport { useCollectionStore } from '~/store/collection';\nimport { useDataStore } from '~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    filter: Object,\n    show: Boolean,    \n    selectedGrid:{type:String, default:\"collection_4_grid\"}\n},\n  emits: ['setGridClass'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet route = useRoute()\nlet router = useRouter()\nlet { offCanvasMenu } = storeToRefs(useDataStore())\nlet classes = ref(\"row g-sm-4 g-3 row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2 product-list-section\");\nlet { sortingOptions, sort } = storeToRefs(useCollectionStore())\nlet emits = __emit;\nlet store = useCollectionStore();\n\nwatch(() => useRoute().query.layout, () => {\n    let layout = useRoute().query.layout\n    if (layout) {\n        grid(layout);\n    }\n}, { deep: true })\n\nfunction grid(value) {\n    if (value == 'collection_3_grid'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_4_grid'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_5_grid'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_list_view'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2 list-style\";\n        props.selectedGrid = value;\n    }\n    else if (value == 'collection_no_sidebar'){\n        classes.value = \"row g-sm-4 g-3 product-list-section row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2\";\n        props.selectedGrid = value;\n    }\n    emits('setGridClass', classes.value);\n}\nfunction openOffCanvasMenu() {\n    offCanvasMenu.value = true\n}\nonMounted(() => {\n    let layout = useRoute().query.layout\n    grid(layout)\n})\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_WidgetsInputFieldsCommonSearchDropdownInput = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    ((\"useRoute\" in _ctx ? _ctx.useRoute : __unimport_unref_(__unimport_useRoute))().query.layout !== 'collection_no_sidebar' && (\"useRoute\" in _ctx ? _ctx.useRoute : __unimport_unref_(__unimport_useRoute))().query.layout !== 'collection_offcanvas_filter')\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"a\", {\n              onClick: _cache[0] || (_cache[0] = $event => (openOffCanvasMenu()))\n            }, [\n              _createVNode(_component_Icon, { name: \"ri-filter-2-fill\" }),\n              _createTextVNode(\" \" + _toDisplayString(_ctx.$t('Filter Menu')), 1)\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", _hoisted_4, [\n      _createElementVNode(\"div\", _hoisted_5, [\n        (_unref(route).query.layout == 'collection_offcanvas_filter')\n          ? (_openBlock(), _createElementBlock(\"a\", {\n              key: 0,\n              href: \"javascript:void(0)\",\n              class: \"filter-offcanvas-title\",\n              onClick: _cache[1] || (_cache[1] = $event => (openOffCanvasMenu()))\n            }, [\n              _createVNode(_component_Icon, { name: \"ri:filter-2-fill\" }),\n              _createTextVNode(\" Filter Menu \")\n            ]))\n          : _createCommentVNode(\"\", true),\n        _hoisted_6,\n        _createVNode(_component_WidgetsInputFieldsCommonSearchDropdownInput, {\n          modelValue: _unref(store).filterObject.sort,\n          \"onUpdate:modelValue\": _cache[2] || (_cache[2] = $event => ((_unref(store).filterObject.sort) = $event)),\n          options: _unref(sortingOptions),\n          \"dropdown-id\": \"sortByDropdown\"\n        }, null, 8, [\"modelValue\", \"options\"])\n      ]),\n      _createElementVNode(\"div\", _hoisted_7, [\n        _createElementVNode(\"ul\", null, [\n          _createElementVNode(\"li\", {\n            class: _normalizeClass([\"three-grid\", [{ active: __props.selectedGrid == 'collection_3_grid' }]])\n          }, [\n            _createElementVNode(\"a\", {\n              href: \"javascript:void(0)\",\n              onClick: _cache[3] || (_cache[3] = _withModifiers($event => (grid('collection_3_grid')), [\"prevent\"]))\n            }, _hoisted_9)\n          ], 2),\n          _createElementVNode(\"li\", {\n            class: _normalizeClass([\"grid-btn d-xxl-inline-block d-none\", [{ active: __props.selectedGrid == 'collection_4_grid' }]]),\n            onClick: _cache[4] || (_cache[4] = _withModifiers($event => (grid('collection_4_grid')), [\"prevent\"]))\n          }, _hoisted_11, 2),\n          _createElementVNode(\"li\", {\n            class: _normalizeClass([\"grid-btn d-xxl-inline-block d-none\", [{ active: __props.selectedGrid == 'collection_5_grid' }]]),\n            onClick: _cache[5] || (_cache[5] = _withModifiers($event => (grid('collection_5_grid')), [\"prevent\"]))\n          }, _hoisted_13, 2),\n          _createElementVNode(\"li\", {\n            class: _normalizeClass([\"list-btn\", [{ active: __props.selectedGrid == 'collection_list_view' }]]),\n            onClick: _cache[6] || (_cache[6] = _withModifiers($event => (grid('collection_list_view')), [\"prevent\"]))\n          }, _hoisted_15, 2)\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287546,
+      "end": 1716056287546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287546,
+      "end": 1716056287546,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287546,
+      "end": 1716056287547,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287547,
+      "end": 1716056287547,
+      "order": "normal"
+    }
+  ]
+}

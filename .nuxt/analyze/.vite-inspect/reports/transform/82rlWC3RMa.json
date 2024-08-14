@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Alert/index.vue?nuxt_component=async&nuxt_component_name=WidgetsAlert",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n  <div class=\"alert alert-danger login-alert\" role=\"alert\" v-if=\"alert['type'] == 'error'\">\n    <i class=\"ri-error-warning-line\"></i> {{ alert[\"message\"] }}\n  </div>\n  <div class=\"alert alert-success login-alert\" role=\"alert\" v-if=\"alert['type'] == 'success'\">\n    <i class=\"ri-check-line\"></i>{{ alert[\"message\"] }}\n  </div>\n</div>\n</template>\n\n<script setup>\nlet alert = ref({\n  type: null,\n  message: null\n});\n\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056284959,
+      "end": 1716056285067,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056285067,
+      "end": 1716056285067,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056285067,
+      "end": 1716056285067,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056285067,
+      "end": 1716056285067,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056285067,
+      "end": 1716056285067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056285067,
+      "end": 1716056285067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056285067,
+      "end": 1716056285067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056285067,
+      "end": 1716056285067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"alert alert-danger login-alert\",\n  role: \"alert\"\n}\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"i\", { class: \"ri-error-warning-line\" }, null, -1)\nconst _hoisted_3 = {\n  key: 1,\n  class: \"alert alert-success login-alert\",\n  role: \"alert\"\n}\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"i\", { class: \"ri-check-line\" }, null, -1)\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\nlet alert = ref({\n  type: null,\n  message: null\n});\n\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    (_unref(alert)['type'] == 'error')\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n          _hoisted_2,\n          _createTextVNode(\" \" + _toDisplayString(_unref(alert)[\"message\"]), 1)\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(alert)['type'] == 'success')\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n          _hoisted_4,\n          _createTextVNode(_toDisplayString(_unref(alert)[\"message\"]), 1)\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056285067,
+      "end": 1716056285069,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Alert/index.vue\").then(r => r.default))",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056285069,
+      "end": 1716056285069,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056285070,
+      "end": 1716056285070,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056285070,
+      "end": 1716056285070,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056285070,
+      "end": 1716056285070,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056285070,
+      "end": 1716056285070,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Alert/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056285070,
+      "end": 1716056285070,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056285070,
+      "end": 1716056285070,
+      "order": "normal"
+    }
+  ]
+}

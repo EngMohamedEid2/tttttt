@@ -1,0 +1,261 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/DeleteModal/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"modal-body p-3\">\n        <Icon name=\"ri:delete-bin-line\" class=\"icon-box\" />\n        <h5 class=\"modal-title text-center\">{{ 'Delete Item' }}?</h5>\n        <p class=\"text-center\">{{ \"This Item Will Be Deleted Permanently. You Can't Undo This Action.\" }} </p>\n        <div class=\"button-box\">\n            <WidgetsButton :classes=\"'btn btn-theme-outline btn-md fw-bold'\" :id=\"'delete_no_btn'\"\n                @onClick=\"() => { emit('close') }\">\n                {{ 'No' }}\n            </WidgetsButton>\n            <WidgetsButton :classes=\"'btn theme-bg-color btn-md fw-bold text-light'\" :id=\"'delete_yes_btn'\"\n                @click=\"handleDelete()\">\n                {{ 'yes' }}\n            </WidgetsButton>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { useUserStore } from \"@/store/user\";\nlet props = defineProps({\n    addressId: Number\n})\n\nlet emit = defineEmits(['close'])\nasync function handleDelete() {\n    await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: 'delete',\n        key: 'deleteAddress'\n    })\n    useUserStore().UpdateUserInfo()\n\n}\n\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056342580,
+      "end": 1716056342728,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342728,
+      "end": 1716056342728,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342728,
+      "end": 1716056342728,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342728,
+      "end": 1716056342728,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342728,
+      "end": 1716056342728,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342729,
+      "end": 1716056342729,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342729,
+      "end": 1716056342729,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342729,
+      "end": 1716056342729,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342729,
+      "end": 1716056342729,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342729,
+      "end": 1716056342729,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342729,
+      "end": 1716056342729,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { useUserStore } from \"@/store/user\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    addressId: Number\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet emit = __emit\nasync function handleDelete() {\n    await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: 'delete',\n        key: 'deleteAddress'\n    })\n    useUserStore().UpdateUserInfo()\n\n}\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"modal-body p-3\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(_component_Icon, {\n    name: \"ri:delete-bin-line\",\n    class: \"icon-box\"\n  }, null, _parent))\n  _push(`<h5 class=\"modal-title text-center\">${\n    _ssrInterpolate('Delete Item')\n  }?</h5><p class=\"text-center\">${\n    _ssrInterpolate(\"This Item Will Be Deleted Permanently. You Can't Undo This Action.\")\n  }</p><div class=\"button-box\">`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn btn-theme-outline btn-md fw-bold',\n    id: 'delete_no_btn',\n    onOnClick: () => { _unref(emit)('close') }\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('No')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('No'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn theme-bg-color btn-md fw-bold text-light',\n    id: 'delete_yes_btn',\n    onClick: $event => (handleDelete())\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('yes')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('yes'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/DeleteModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342729,
+      "end": 1716056342730,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342730,
+      "end": 1716056342730,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342730,
+      "end": 1716056342730,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342730,
+      "end": 1716056342730,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342730,
+      "end": 1716056342730,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342730,
+      "end": 1716056342730,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342730,
+      "end": 1716056342730,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342730,
+      "end": 1716056342730,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342730,
+      "end": 1716056342731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056342731,
+      "end": 1716056342731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342731,
+      "end": 1716056342731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342731,
+      "end": 1716056342731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342731,
+      "end": 1716056342731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342731,
+      "end": 1716056342731,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342731,
+      "end": 1716056342731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342731,
+      "end": 1716056342731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342731,
+      "end": 1716056342731,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { useUserStore } from \"@/store/user\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    addressId: Number\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet emit = __emit\nasync function handleDelete() {\n    await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: 'delete',\n        key: 'deleteAddress'\n    }, '$m8EstQwxC0')\n    useUserStore().UpdateUserInfo()\n\n}\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"modal-body p-3\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(_component_Icon, {\n    name: \"ri:delete-bin-line\",\n    class: \"icon-box\"\n  }, null, _parent))\n  _push(`<h5 class=\"modal-title text-center\">${\n    _ssrInterpolate('Delete Item')\n  }?</h5><p class=\"text-center\">${\n    _ssrInterpolate(\"This Item Will Be Deleted Permanently. You Can't Undo This Action.\")\n  }</p><div class=\"button-box\">`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn btn-theme-outline btn-md fw-bold',\n    id: 'delete_no_btn',\n    onOnClick: () => { _unref(emit)('close') }\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('No')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('No'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn theme-bg-color btn-md fw-bold text-light',\n    id: 'delete_yes_btn',\n    onClick: $event => (handleDelete())\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('yes')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('yes'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/DeleteModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342731,
+      "end": 1716056342733,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { useUserStore } from \"@/store/user\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    addressId: Number\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet emit = __emit\nasync function handleDelete() {\n    await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: 'delete',\n        key: 'deleteAddress'\n    }, '$m8EstQwxC0')\n    useUserStore().UpdateUserInfo()\n\n}\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"modal-body p-3\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(_component_Icon, {\n    name: \"ri:delete-bin-line\",\n    class: \"icon-box\"\n  }, null, _parent))\n  _push(`<h5 class=\"modal-title text-center\">${\n    _ssrInterpolate('Delete Item')\n  }?</h5><p class=\"text-center\">${\n    _ssrInterpolate(\"This Item Will Be Deleted Permanently. You Can't Undo This Action.\")\n  }</p><div class=\"button-box\">`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn btn-theme-outline btn-md fw-bold',\n    id: 'delete_no_btn',\n    onOnClick: () => { _unref(emit)('close') }\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('No')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('No'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn theme-bg-color btn-md fw-bold text-light',\n    id: 'delete_yes_btn',\n    onClick: $event => (handleDelete())\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('yes')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('yes'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/DeleteModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342731,
+      "end": 1716056342733,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { useUserStore } from \"@/store/user\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    addressId: Number\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet emit = __emit\nasync function handleDelete() {\n    await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: 'delete',\n        key: 'deleteAddress'\n    }, '$m8EstQwxC0')\n    useUserStore().UpdateUserInfo()\n\n}\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"modal-body p-3\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(_component_Icon, {\n    name: \"ri:delete-bin-line\",\n    class: \"icon-box\"\n  }, null, _parent))\n  _push(`<h5 class=\"modal-title text-center\">${\n    _ssrInterpolate('Delete Item')\n  }?</h5><p class=\"text-center\">${\n    _ssrInterpolate(\"This Item Will Be Deleted Permanently. You Can't Undo This Action.\")\n  }</p><div class=\"button-box\">`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn btn-theme-outline btn-md fw-bold',\n    id: 'delete_no_btn',\n    onOnClick: () => { _unref(emit)('close') }\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('No')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('No'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn theme-bg-color btn-md fw-bold text-light',\n    id: 'delete_yes_btn',\n    onClick: $event => (handleDelete())\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('yes')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('yes'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/DeleteModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342733,
+      "end": 1716056342734,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { useUserStore } from \"@/store/user\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    addressId: Number\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet emit = __emit\nasync function handleDelete() {\n    await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: 'delete',\n        key: 'deleteAddress'\n    }, '$m8EstQwxC0')\n    useUserStore().UpdateUserInfo()\n\n}\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"modal-body p-3\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(_component_Icon, {\n    name: \"ri:delete-bin-line\",\n    class: \"icon-box\"\n  }, null, _parent))\n  _push(`<h5 class=\"modal-title text-center\">${\n    _ssrInterpolate('Delete Item')\n  }?</h5><p class=\"text-center\">${\n    _ssrInterpolate(\"This Item Will Be Deleted Permanently. You Can't Undo This Action.\")\n  }</p><div class=\"button-box\">`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn btn-theme-outline btn-md fw-bold',\n    id: 'delete_no_btn',\n    onOnClick: () => { _unref(emit)('close') }\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('No')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('No'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn theme-bg-color btn-md fw-bold text-light',\n    id: 'delete_yes_btn',\n    onClick: $event => (handleDelete())\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('yes')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('yes'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/DeleteModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342733,
+      "end": 1716056342734,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342734,
+      "end": 1716056342734,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342734,
+      "end": 1716056342734,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342734,
+      "end": 1716056342735,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342734,
+      "end": 1716056342735,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342735,
+      "end": 1716056342735,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport { useUserStore } from \"@/store/user\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    addressId: Number\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet props = __props\n\nlet emit = __emit\nasync function handleDelete() {\n    await useFetch('/address/' + props.addressId, {\n        baseURL: BaseUrl,\n        headers: GetHeaders(),\n        method: 'delete',\n        key: 'deleteAddress'\n    }, '$m8EstQwxC0')\n    useUserStore().UpdateUserInfo()\n\n}\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_WidgetsButton = __nuxt_component_1\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"modal-body p-3\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(_component_Icon, {\n    name: \"ri:delete-bin-line\",\n    class: \"icon-box\"\n  }, null, _parent))\n  _push(`<h5 class=\"modal-title text-center\">${\n    _ssrInterpolate('Delete Item')\n  }?</h5><p class=\"text-center\">${\n    _ssrInterpolate(\"This Item Will Be Deleted Permanently. You Can't Undo This Action.\")\n  }</p><div class=\"button-box\">`)\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn btn-theme-outline btn-md fw-bold',\n    id: 'delete_no_btn',\n    onOnClick: () => { _unref(emit)('close') }\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('No')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('No'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(_ssrRenderComponent(_component_WidgetsButton, {\n    classes: 'btn theme-bg-color btn-md fw-bold text-light',\n    id: 'delete_yes_btn',\n    onClick: $event => (handleDelete())\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`${_ssrInterpolate('yes')}`)\n      } else {\n        return [\n          _createTextVNode(_toDisplayString('yes'))\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/DeleteModal/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342735,
+      "end": 1716056342735,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056342735,
+      "end": 1716056342735,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342735,
+      "end": 1716056342735,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342735,
+      "end": 1716056342735,
+      "order": "normal"
+    }
+  ]
+}

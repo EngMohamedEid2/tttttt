@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Paris/LeftContent.vue?nuxt_component=async&nuxt_component_name=ThemesParisLeftContent",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div\n    class=\"col-xxl-3 col-xl-4 d-none d-xl-block\"\n    v-if=\"leftdata?.main_content?.sidebar?.status\"\n  >\n    <div class=\"p-sticky\">\n      <!-- Sidebar Category Vertical Style -->\n      <div\n        v-if=\"\n          leftdata?.main_content?.sidebar?.categories_icon_list?.category_ids\n            ?.length\n        \"\n      >\n        <ThemesWidgetsCategories\n          :Category=\"Category\"\n          :style=\"'vertical'\"\n          :categoryIds=\"\n            leftdata?.main_content?.sidebar?.categories_icon_list\n              ?.category_ids || []\n          \"\n        />\n      </div>\n      <!-- Sidebar Vertical Banner -->\n      <ThemesWidgetsBanner\n        :classes=\"'ratio_156 section-t-space'\"\n        :style=\"'vertical'\"\n        :banners=\"leftdata?.main_content?.sidebar?.left_side_banners?.banner_1\"\n      />\n      <!-- Sidebar Vertical Banner -->\n      <ThemesWidgetsBanner\n        :classes=\"'ratio_medium section-t-space'\"\n        :style=\"'vertical'\"\n        :banners=\"leftdata?.main_content?.sidebar?.left_side_banners?.banner_2\"\n      />\n      <!-- Products -->\n      <div\n        v-if=\"\n          (leftdata?.main_content?.sidebar?.sidebar_products?.status &&\n            leftdata?.main_content?.sidebar?.sidebar_products?.product_ids\n              ?.length) ||\n          0 > 3\n        \"\n      >\n        <div class=\"section-t-space\">\n          <!-- <div class=\"category-menu\">\n            <h3>{{ leftdata?.main_content?.sidebar?.sidebar_products?.title }}</h3>\n            <ThemesWidgetsProduct :Products=\"Products\" :style=\"'vertical'\"\n              :productIds=\"leftdata?.main_content?.sidebar?.sidebar_products?.product_ids || []\" />\n          </div> -->\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  leftdata: Object,\n  Category: Object,\n  Products: [Object, Array],\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056284838,
+      "end": 1716056284943,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284943,
+      "end": 1716056284943,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284943,
+      "end": 1716056284943,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284943,
+      "end": 1716056284943,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284943,
+      "end": 1716056284943,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284943,
+      "end": 1716056284943,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284943,
+      "end": 1716056284943,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284943,
+      "end": 1716056284943,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"col-xxl-3 col-xl-4 d-none d-xl-block\"\n}\nconst _hoisted_2 = { class: \"p-sticky\" }\nconst _hoisted_3 = { key: 0 }\nconst _hoisted_4 = { key: 1 }\nconst _hoisted_5 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"section-t-space\" }, null, -1)\nconst _hoisted_6 = [\n  _hoisted_5\n]\n\n\nconst _sfc_main = {\n  __name: 'LeftContent',\n  props: {\n  leftdata: Object,\n  Category: Object,\n  Products: [Object, Array],\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _cache) => {\n  const _component_ThemesWidgetsCategories = _resolveComponent(\"ThemesWidgetsCategories\")\n  const _component_ThemesWidgetsBanner = _resolveComponent(\"ThemesWidgetsBanner\")\n\n  return (__props.leftdata?.main_content?.sidebar?.status)\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          (\n          __props.leftdata?.main_content?.sidebar?.categories_icon_list?.category_ids\n            ?.length\n        )\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n                _createVNode(_component_ThemesWidgetsCategories, {\n                  Category: __props.Category,\n                  style: 'vertical',\n                  categoryIds: \n            __props.leftdata?.main_content?.sidebar?.categories_icon_list\n              ?.category_ids || []\n          \n                }, null, 8, [\"Category\", \"categoryIds\"])\n              ]))\n            : _createCommentVNode(\"\", true),\n          _createVNode(_component_ThemesWidgetsBanner, {\n            classes: 'ratio_156 section-t-space',\n            style: 'vertical',\n            banners: __props.leftdata?.main_content?.sidebar?.left_side_banners?.banner_1\n          }, null, 8, [\"banners\"]),\n          _createVNode(_component_ThemesWidgetsBanner, {\n            classes: 'ratio_medium section-t-space',\n            style: 'vertical',\n            banners: __props.leftdata?.main_content?.sidebar?.left_side_banners?.banner_2\n          }, null, 8, [\"banners\"]),\n          (\n          (__props.leftdata?.main_content?.sidebar?.sidebar_products?.status &&\n            __props.leftdata?.main_content?.sidebar?.sidebar_products?.product_ids\n              ?.length) ||\n          0 > 3\n        )\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, _hoisted_6))\n            : _createCommentVNode(\"\", true)\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284943,
+      "end": 1716056284945,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284945,
+      "end": 1716056284945,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284945,
+      "end": 1716056284945,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284945,
+      "end": 1716056284945,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284945,
+      "end": 1716056284945,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Paris/LeftContent.vue\").then(r => r.default))",
+      "start": 1716056284945,
+      "end": 1716056284945,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284945,
+      "end": 1716056284945,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284945,
+      "end": 1716056284945,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Themes/Paris/LeftContent.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284946,
+      "end": 1716056284946,
+      "order": "normal"
+    }
+  ]
+}

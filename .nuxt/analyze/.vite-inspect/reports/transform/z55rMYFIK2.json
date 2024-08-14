@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Cart/Summary.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"summery-box p-sticky\">\n        <div class=\"summery-header\">\n            <h3>{{$t(\"Cart Total\")}}</h3>\n        </div>\n\n        <div class=\"summery-contain\">\n            <ul>\n                <li>\n                    <h4>{{$t(\"Subtotal\")}}</h4>\n                    <h4 class=\"price\">{{ store.currency.symbol }} {{ Number(store.convertCurrency(CartTotal)).toFixed(2) }}</h4>\n                </li>\n                <li class=\"align-items-start\">\n                    <h4>{{$t(\"Shipping\")}}</h4>\n                    <h4 class=\"price text-end\">{{$t(\"Cost at Checkout\")}}</h4>\n                </li>\n\n                <li class=\"align-items-start\">\n                    <h4>{{$t(\"Tax\")}}</h4>\n                    <h4 class=\"price text-end\">{{$t(\"Cost at Checkout\")}}</h4>\n                </li>\n            </ul>\n        </div>\n\n        <ul class=\"summery-total\">\n            <li class=\"list-total border-top-0\">\n                <h4>{{$t(\"Total\")}}</h4>\n                <h4 class=\"price theme-color\">{{ store.currency.symbol }} {{ Number(store.convertCurrency(CartTotal)).toFixed(2) }}</h4>\n            </li>\n        </ul>\n\n        <div class=\"button-group cart-button\">\n            <ul>\n                <li><nuxt-link to=\"/checkout\">\n                        <button class=\"btn btn-animation proceed-btn fw-bold\">{{$t(\"Process To Checkout\")}}</button></nuxt-link>\n                </li>\n\n                <li>\n                    <button onclick=\"location.href = '/collections'\" class=\"btn btn-light shopping-button text-dark\">\n                        <Icon name=\"ri:arrow-left-line\" class=\"\"></Icon>{{$t(\"Return To Shopping\")}}\n                    </button>\n                </li>\n            </ul>\n        </div>\n    </div>\n</template>\n<script setup>\nimport { useCurrencyStore } from '@/store/currency'\nimport { useCartStore } from \"@/store/cart\"\nimport { storeToRefs } from \"pinia\";\nlet { cart, CartTotal } = storeToRefs(useCartStore())\nlet store = useCurrencyStore();\nstore.allCurrency();\n</script> ",
+      "start": 1716056287238,
+      "end": 1716056287385,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287385,
+      "end": 1716056287385,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287385,
+      "end": 1716056287385,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287385,
+      "end": 1716056287385,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287385,
+      "end": 1716056287385,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287385,
+      "end": 1716056287385,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287385,
+      "end": 1716056287385,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287385,
+      "end": 1716056287385,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"summery-box p-sticky\" }\nconst _hoisted_2 = { class: \"summery-header\" }\nconst _hoisted_3 = { class: \"summery-contain\" }\nconst _hoisted_4 = { class: \"price\" }\nconst _hoisted_5 = { class: \"align-items-start\" }\nconst _hoisted_6 = { class: \"price text-end\" }\nconst _hoisted_7 = { class: \"align-items-start\" }\nconst _hoisted_8 = { class: \"price text-end\" }\nconst _hoisted_9 = { class: \"summery-total\" }\nconst _hoisted_10 = { class: \"list-total border-top-0\" }\nconst _hoisted_11 = { class: \"price theme-color\" }\nconst _hoisted_12 = { class: \"button-group cart-button\" }\nconst _hoisted_13 = { class: \"btn btn-animation proceed-btn fw-bold\" }\nconst _hoisted_14 = {\n  onclick: \"location.href = '/collections'\",\n  class: \"btn btn-light shopping-button text-dark\"\n}\n\nimport { useCurrencyStore } from '@/store/currency'\nimport { useCartStore } from \"@/store/cart\"\nimport { storeToRefs } from \"pinia\";\n\nconst _sfc_main = {\n  __name: 'Summary',\n  setup(__props) {\n\nlet { cart, CartTotal } = storeToRefs(useCartStore())\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nreturn (_ctx, _cache) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"h3\", null, _toDisplayString(_ctx.$t(\"Cart Total\")), 1)\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createElementVNode(\"ul\", null, [\n        _createElementVNode(\"li\", null, [\n          _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Subtotal\")), 1),\n          _createElementVNode(\"h4\", _hoisted_4, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(_unref(CartTotal))).toFixed(2)), 1)\n        ]),\n        _createElementVNode(\"li\", _hoisted_5, [\n          _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Shipping\")), 1),\n          _createElementVNode(\"h4\", _hoisted_6, _toDisplayString(_ctx.$t(\"Cost at Checkout\")), 1)\n        ]),\n        _createElementVNode(\"li\", _hoisted_7, [\n          _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Tax\")), 1),\n          _createElementVNode(\"h4\", _hoisted_8, _toDisplayString(_ctx.$t(\"Cost at Checkout\")), 1)\n        ])\n      ])\n    ]),\n    _createElementVNode(\"ul\", _hoisted_9, [\n      _createElementVNode(\"li\", _hoisted_10, [\n        _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Total\")), 1),\n        _createElementVNode(\"h4\", _hoisted_11, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(_unref(CartTotal))).toFixed(2)), 1)\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_12, [\n      _createElementVNode(\"ul\", null, [\n        _createElementVNode(\"li\", null, [\n          _createVNode(_component_nuxt_link, { to: \"/checkout\" }, {\n            default: _withCtx(() => [\n              _createElementVNode(\"button\", _hoisted_13, _toDisplayString(_ctx.$t(\"Process To Checkout\")), 1)\n            ]),\n            _: 1\n          })\n        ]),\n        _createElementVNode(\"li\", null, [\n          _createElementVNode(\"button\", _hoisted_14, [\n            _createVNode(_component_Icon, {\n              name: \"ri:arrow-left-line\",\n              class: \"\"\n            }),\n            _createTextVNode(_toDisplayString(_ctx.$t(\"Return To Shopping\")), 1)\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287385,
+      "end": 1716056287385,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287385,
+      "end": 1716056287385,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287385,
+      "end": 1716056287385,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287385,
+      "end": 1716056287385,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287385,
+      "end": 1716056287385,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287385,
+      "end": 1716056287386,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287386,
+      "end": 1716056287386,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287386,
+      "end": 1716056287386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287386,
+      "end": 1716056287386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287386,
+      "end": 1716056287386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287386,
+      "end": 1716056287386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287386,
+      "end": 1716056287386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287386,
+      "end": 1716056287386,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287386,
+      "end": 1716056287386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287386,
+      "end": 1716056287386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287386,
+      "end": 1716056287386,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287386,
+      "end": 1716056287386,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056287386,
+      "end": 1716056287388,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287388,
+      "end": 1716056287388,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287388,
+      "end": 1716056287388,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287388,
+      "end": 1716056287388,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287388,
+      "end": 1716056287388,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"summery-box p-sticky\" }\nconst _hoisted_2 = { class: \"summery-header\" }\nconst _hoisted_3 = { class: \"summery-contain\" }\nconst _hoisted_4 = { class: \"price\" }\nconst _hoisted_5 = { class: \"align-items-start\" }\nconst _hoisted_6 = { class: \"price text-end\" }\nconst _hoisted_7 = { class: \"align-items-start\" }\nconst _hoisted_8 = { class: \"price text-end\" }\nconst _hoisted_9 = { class: \"summery-total\" }\nconst _hoisted_10 = { class: \"list-total border-top-0\" }\nconst _hoisted_11 = { class: \"price theme-color\" }\nconst _hoisted_12 = { class: \"button-group cart-button\" }\nconst _hoisted_13 = { class: \"btn btn-animation proceed-btn fw-bold\" }\nconst _hoisted_14 = {\n  onclick: \"location.href = '/collections'\",\n  class: \"btn btn-light shopping-button text-dark\"\n}\n\nimport { useCurrencyStore } from '@/store/currency'\nimport { useCartStore } from \"@/store/cart\"\nimport { storeToRefs } from \"pinia\";\n\nconst _sfc_main = {\n  __name: 'Summary',\n  setup(__props) {\n\nlet { cart, CartTotal } = storeToRefs(useCartStore())\nlet store = useCurrencyStore();\nstore.allCurrency();\n\nreturn (_ctx, _cache) => {\n  const _component_nuxt_link = __nuxt_component_0\n  const _component_Icon = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"h3\", null, _toDisplayString(_ctx.$t(\"Cart Total\")), 1)\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createElementVNode(\"ul\", null, [\n        _createElementVNode(\"li\", null, [\n          _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Subtotal\")), 1),\n          _createElementVNode(\"h4\", _hoisted_4, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(_unref(CartTotal))).toFixed(2)), 1)\n        ]),\n        _createElementVNode(\"li\", _hoisted_5, [\n          _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Shipping\")), 1),\n          _createElementVNode(\"h4\", _hoisted_6, _toDisplayString(_ctx.$t(\"Cost at Checkout\")), 1)\n        ]),\n        _createElementVNode(\"li\", _hoisted_7, [\n          _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Tax\")), 1),\n          _createElementVNode(\"h4\", _hoisted_8, _toDisplayString(_ctx.$t(\"Cost at Checkout\")), 1)\n        ])\n      ])\n    ]),\n    _createElementVNode(\"ul\", _hoisted_9, [\n      _createElementVNode(\"li\", _hoisted_10, [\n        _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Total\")), 1),\n        _createElementVNode(\"h4\", _hoisted_11, _toDisplayString(_unref(store).currency.symbol) + \" \" + _toDisplayString(Number(_unref(store).convertCurrency(_unref(CartTotal))).toFixed(2)), 1)\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_12, [\n      _createElementVNode(\"ul\", null, [\n        _createElementVNode(\"li\", null, [\n          _createVNode(_component_nuxt_link, { to: \"/checkout\" }, {\n            default: _withCtx(() => [\n              _createElementVNode(\"button\", _hoisted_13, _toDisplayString(_ctx.$t(\"Process To Checkout\")), 1)\n            ]),\n            _: 1\n          })\n        ]),\n        _createElementVNode(\"li\", null, [\n          _createElementVNode(\"button\", _hoisted_14, [\n            _createVNode(_component_Icon, {\n              name: \"ri:arrow-left-line\",\n              class: \"\"\n            }),\n            _createTextVNode(_toDisplayString(_ctx.$t(\"Return To Shopping\")), 1)\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287388,
+      "end": 1716056287388,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287388,
+      "end": 1716056287388,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287388,
+      "end": 1716056287388,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287388,
+      "end": 1716056287388,
+      "order": "normal"
+    }
+  ]
+}

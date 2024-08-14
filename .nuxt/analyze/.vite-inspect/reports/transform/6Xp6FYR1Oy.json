@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/RelatedProducts/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"container-fluid-lg\" v-if=\"relatedProducts?.length\">\n        <WidgetsTitle :title=\"'You May Also Like'\" />\n        <div class=\"row g-3\">\n            <div class=\"col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain\" v-for=\"product in relatedProducts\"\n                :key=\"product\">\n                <WidgetsProductBox :product=\"product\" :classes=\"'product-box-3'\" :style=\"'horizontal'\" />\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\nlet props = defineProps({\n    product: Object,\n})\n\nlet relatedProducts = ref([])\nlet { Products } = storeToRefs(useDataStore())\nrelatedProducts.value = Products?.value?.data?.filter(product => props?.product?.related_products?.includes(product.id))\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056287691,
+      "end": 1716056287868,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287869,
+      "end": 1716056287869,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287869,
+      "end": 1716056287869,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287869,
+      "end": 1716056287869,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287869,
+      "end": 1716056287869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287869,
+      "end": 1716056287869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287869,
+      "end": 1716056287869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287869,
+      "end": 1716056287869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"container-fluid-lg\"\n}\nconst _hoisted_2 = { class: \"row g-3\" }\n\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    product: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nlet relatedProducts = ref([])\nlet { Products } = storeToRefs(useDataStore())\nrelatedProducts.value = Products?.value?.data?.filter(product => props?.product?.related_products?.includes(product.id))\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsTitle = _resolveComponent(\"WidgetsTitle\")\n  const _component_WidgetsProductBox = _resolveComponent(\"WidgetsProductBox\")\n\n  return (_unref(relatedProducts)?.length)\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_WidgetsTitle, { title: 'You May Also Like' }),\n        _createElementVNode(\"div\", _hoisted_2, [\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(relatedProducts), (product) => {\n            return (_openBlock(), _createElementBlock(\"div\", {\n              class: \"col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain\",\n              key: product\n            }, [\n              _createVNode(_component_WidgetsProductBox, {\n                product: product,\n                classes: 'product-box-3',\n                style: 'horizontal'\n              }, null, 8, [\"product\"])\n            ]))\n          }), 128))\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287869,
+      "end": 1716056287869,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287869,
+      "end": 1716056287869,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287869,
+      "end": 1716056287869,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287869,
+      "end": 1716056287869,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287869,
+      "end": 1716056287869,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287869,
+      "end": 1716056287869,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287870,
+      "end": 1716056287870,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287870,
+      "end": 1716056287870,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287870,
+      "end": 1716056287870,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287870,
+      "end": 1716056287870,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287870,
+      "end": 1716056287870,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287870,
+      "end": 1716056287870,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287870,
+      "end": 1716056287870,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287870,
+      "end": 1716056287870,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287870,
+      "end": 1716056287870,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287870,
+      "end": 1716056287870,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287870,
+      "end": 1716056287870,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"container-fluid-lg\"\n}\nconst _hoisted_2 = { class: \"row g-3\" }\n\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    product: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nlet relatedProducts = ref([])\nlet { Products } = storeToRefs(useDataStore())\nrelatedProducts.value = Products?.value?.data?.filter(product => props?.product?.related_products?.includes(product.id))\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsTitle = _resolveComponent(\"WidgetsTitle\")\n  const _component_WidgetsProductBox = _resolveComponent(\"WidgetsProductBox\")\n\n  return (_unref(relatedProducts)?.length)\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_WidgetsTitle, { title: 'You May Also Like' }),\n        _createElementVNode(\"div\", _hoisted_2, [\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(relatedProducts), (product) => {\n            return (_openBlock(), _createElementBlock(\"div\", {\n              class: \"col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain\",\n              key: product\n            }, [\n              _createVNode(_component_WidgetsProductBox, {\n                product: product,\n                classes: 'product-box-3',\n                style: 'horizontal'\n              }, null, 8, [\"product\"])\n            ]))\n          }), 128))\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287870,
+      "end": 1716056287871,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287871,
+      "end": 1716056287871,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287871,
+      "end": 1716056287871,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287871,
+      "end": 1716056287871,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287871,
+      "end": 1716056287871,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Title/index.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/ProductBox/index.vue\";\nimport { ref } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"container-fluid-lg\"\n}\nconst _hoisted_2 = { class: \"row g-3\" }\n\nimport { storeToRefs } from 'pinia';\nimport { useDataStore } from '~/store/data';\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    product: Object,\n},\n  setup(__props) {\n\nlet props = __props\n\nlet relatedProducts = ref([])\nlet { Products } = storeToRefs(useDataStore())\nrelatedProducts.value = Products?.value?.data?.filter(product => props?.product?.related_products?.includes(product.id))\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsTitle = __nuxt_component_0\n  const _component_WidgetsProductBox = __nuxt_component_1\n\n  return (_unref(relatedProducts)?.length)\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_WidgetsTitle, { title: 'You May Also Like' }),\n        _createElementVNode(\"div\", _hoisted_2, [\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(relatedProducts), (product) => {\n            return (_openBlock(), _createElementBlock(\"div\", {\n              class: \"col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain\",\n              key: product\n            }, [\n              _createVNode(_component_WidgetsProductBox, {\n                product: product,\n                classes: 'product-box-3',\n                style: 'horizontal'\n              }, null, 8, [\"product\"])\n            ]))\n          }), 128))\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287871,
+      "end": 1716056287872,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287872,
+      "end": 1716056287872,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287872,
+      "end": 1716056287872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287872,
+      "end": 1716056287872,
+      "order": "normal"
+    }
+  ]
+}

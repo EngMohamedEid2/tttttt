@@ -1,0 +1,257 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductDeliveryInformation/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"delivery-info\"\n        v-if=\"product?.estimated_delivery_text || (product?.return_policy_text && product?.is_return)\">\n        <div class=\"product-title\">\n            <h4>{{ $t(\"Delivery Details\") }}</h4>\n        </div>\n        <ul>\n            <li v-if=\"product?.estimated_delivery_text\">\n                <Icon name=\"ri:truck-line\"></Icon> {{ product?.estimated_delivery_text }}\n            </li>\n            <li v-if=\"product?.return_policy_text\">\n                <Icon name=\"ri:arrow-left-right-line\"></Icon> {{ product?.return_policy_text }}\n            </li>\n        </ul>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    product: Object\n})\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056341866,
+      "end": 1716056342042,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342042,
+      "end": 1716056342042,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056342042,
+      "end": 1716056342042,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342042,
+      "end": 1716056342043,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056342042,
+      "end": 1716056342043,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056342043,
+      "end": 1716056342043,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056342043,
+      "end": 1716056342043,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056342043,
+      "end": 1716056342043,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056342043,
+      "end": 1716056342043,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056342043,
+      "end": 1716056342043,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056342043,
+      "end": 1716056342043,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    product: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  if (__props.product?.estimated_delivery_text || (__props.product?.return_policy_text && __props.product?.is_return)) {\n    _push(`<div${\n      _ssrRenderAttrs(_mergeProps({ class: \"delivery-info\" }, _attrs))\n    }><div class=\"product-title\"><h4>${\n      _ssrInterpolate(_ctx.$t(\"Delivery Details\"))\n    }</h4></div><ul>`)\n    if (__props.product?.estimated_delivery_text) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:truck-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(__props.product?.estimated_delivery_text)}</li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (__props.product?.return_policy_text) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:arrow-left-right-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(__props.product?.return_policy_text)}</li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductDeliveryInformation/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342043,
+      "end": 1716056342043,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056342043,
+      "end": 1716056342043,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342043,
+      "end": 1716056342043,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342043,
+      "end": 1716056342043,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342043,
+      "end": 1716056342043,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056342043,
+      "end": 1716056342043,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056342043,
+      "end": 1716056342044,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056342044,
+      "end": 1716056342044,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056342044,
+      "end": 1716056342044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056342044,
+      "end": 1716056342044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056342044,
+      "end": 1716056342044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056342044,
+      "end": 1716056342044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056342044,
+      "end": 1716056342044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056342044,
+      "end": 1716056342044,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056342044,
+      "end": 1716056342044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056342044,
+      "end": 1716056342044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056342044,
+      "end": 1716056342044,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342044,
+      "end": 1716056342044,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056342044,
+      "end": 1716056342044,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056342044,
+      "end": 1716056342045,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056342044,
+      "end": 1716056342045,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342045,
+      "end": 1716056342045,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056342045,
+      "end": 1716056342045,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342045,
+      "end": 1716056342045,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056342045,
+      "end": 1716056342045,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056342045,
+      "end": 1716056342045,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    product: Object\n},\n  setup(__props) {\n\nlet props = __props\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = __nuxt_component_0\n\n  if (__props.product?.estimated_delivery_text || (__props.product?.return_policy_text && __props.product?.is_return)) {\n    _push(`<div${\n      _ssrRenderAttrs(_mergeProps({ class: \"delivery-info\" }, _attrs))\n    }><div class=\"product-title\"><h4>${\n      _ssrInterpolate(_ctx.$t(\"Delivery Details\"))\n    }</h4></div><ul>`)\n    if (__props.product?.estimated_delivery_text) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:truck-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(__props.product?.estimated_delivery_text)}</li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (__props.product?.return_policy_text) {\n      _push(`<li>`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri:arrow-left-right-line\" }, null, _parent))\n      _push(` ${_ssrInterpolate(__props.product?.return_policy_text)}</li>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</ul></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/ProductDetails/Widgets/ProductDeliveryInformation/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056342045,
+      "end": 1716056342046,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056342046,
+      "end": 1716056342046,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056342046,
+      "end": 1716056342046,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056342046,
+      "end": 1716056342046,
+      "order": "normal"
+    }
+  ]
+}

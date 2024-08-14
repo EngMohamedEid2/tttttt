@@ -1,0 +1,256 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/composables/HandleRequest.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export const HandleRequest = (\n  url,\n  { method = \"get\", key, cache = false, ...options }\n) => {\n  return useFetch(url, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    ...options,\n    method,\n    key,\n    onResponse(context) {\n      options.onResponse && options.onResponse(context);\n    },\n  });\n};\n",
+      "start": 1716056343247,
+      "end": 1716056343354,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343354,
+      "end": 1716056343354,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056343354,
+      "end": 1716056343354,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343354,
+      "end": 1716056343354,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056343354,
+      "end": 1716056343354,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056343354,
+      "end": 1716056343354,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056343354,
+      "end": 1716056343354,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056343354,
+      "end": 1716056343354,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056343355,
+      "end": 1716056343355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056343355,
+      "end": 1716056343355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056343355,
+      "end": 1716056343355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056343355,
+      "end": 1716056343355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056343355,
+      "end": 1716056343355,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343355,
+      "end": 1716056343355,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343355,
+      "end": 1716056343355,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343355,
+      "end": 1716056343355,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056343355,
+      "end": 1716056343355,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056343355,
+      "end": 1716056343355,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056343355,
+      "end": 1716056343355,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056343355,
+      "end": 1716056343355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056343355,
+      "end": 1716056343355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056343356,
+      "end": 1716056343356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056343356,
+      "end": 1716056343356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056343356,
+      "end": 1716056343356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056343356,
+      "end": 1716056343356,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056343356,
+      "end": 1716056343356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056343358,
+      "end": 1716056343358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056343359,
+      "end": 1716056343359,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "export const HandleRequest = (\n  url,\n  { method = \"get\", key, cache = false, ...options }\n) => {\n  return useFetch(url, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    ...options,\n    method,\n    key,\n    onResponse(context) {\n      options.onResponse && options.onResponse(context);\n    },\n  }, '$Zs5VJTyNtd');\n};\n",
+      "start": 1716056343359,
+      "end": 1716056343359,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "export const HandleRequest = (\n  url,\n  { method = \"get\", key, cache = false, ...options }\n) => {\n  return useFetch(url, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    ...options,\n    method,\n    key,\n    onResponse(context) {\n      options.onResponse && options.onResponse(context);\n    },\n  }, '$Zs5VJTyNtd');\n};\n",
+      "start": 1716056343359,
+      "end": 1716056343359,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nexport const HandleRequest = (\n  url,\n  { method = \"get\", key, cache = false, ...options }\n) => {\n  return useFetch(url, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    ...options,\n    method,\n    key,\n    onResponse(context) {\n      options.onResponse && options.onResponse(context);\n    },\n  }, '$Zs5VJTyNtd');\n};\n",
+      "start": 1716056343360,
+      "end": 1716056343360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nexport const HandleRequest = (\n  url,\n  { method = \"get\", key, cache = false, ...options }\n) => {\n  return useFetch(url, {\n    baseURL: BaseUrl,\n    headers: GetHeaders(),\n    ...options,\n    method,\n    key,\n    onResponse(context) {\n      options.onResponse && options.onResponse(context);\n    },\n  }, '$Zs5VJTyNtd');\n};\n",
+      "start": 1716056343360,
+      "end": 1716056343360,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343360,
+      "end": 1716056343360,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056343360,
+      "end": 1716056343360,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343362,
+      "end": 1716056343362,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056343362,
+      "end": 1716056343362,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056343363,
+      "end": 1716056343363,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056343363,
+      "end": 1716056343363,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056343363,
+      "end": 1716056343363,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056343364,
+      "end": 1716056343364,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056343364,
+      "end": 1716056343364,
+      "order": "normal"
+    }
+  ]
+}

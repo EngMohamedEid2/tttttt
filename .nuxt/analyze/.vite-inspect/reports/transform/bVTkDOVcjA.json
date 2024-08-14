@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Thumbnail/Images.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div class=\"product-left-box\">\n        <div class=\"row g-2\">\n            <div class=\"col-12\">\n                <div class=\"product-main-1\">\n                    <div class=\"product-label-group\">\n                        <div class=\"product-label-tag\" v-if=\"Data?.is_sale_enable\">{{ $t('SALE') }}</div>\n                        <template v-else>\n                            <div class=\"product-label-tag warning-label-tag\" v-if=\"Data?.is_featured\">{{ $t('FEATURED') }}\n                            </div>\n                        </template>\n                    </div>\n                    <swiper :autoplay=\"{ delay: 2500, disableOnInteraction: true }\" :modules=\"modules\" :navigation=\"true\"\n                        :loop=\"true\" class=\"banner-slider\" @swiper=\"onSwiper\" :slides-per-view=\"1\" :space-between=\"15\">\n                        <swiper-slide v-for=\"(productImages, index) in Data?.product_galleries\" :key=\"index\">\n                            <div class=\"slider-image\">\n                                <img :src=\"productImages?.original_url\" :id=\"productImages.id\" class=\"img-fluid\" alt=\"\"\n                                    v-if=\"!Data?.product_galleries?.length\">\n                                <ClientOnly>\n                                <vue-image-zoomer :regular=\"productImages?.original_url\"\n                                    img-class=\"img-fluid w-100 image_zoom_cls-0\" hover-message=\"Click once on image\"\n                                    :zoom-amount=\"5\" />\n                                </ClientOnly> \n                            </div>\n                        </swiper-slide>\n                    </swiper>\n                </div>\n            </div>\n\n            <div class=\"col-12\">\n                <div class=\"bottom-slider-image left-slider slick-top\">\n                    <swiper :loop=\"true\" class=\"banner-slider\" :breakpoints=\"thumbnailProductSlider\" :slides-per-view=\"4\"\n                        :space-between=\"15\">\n                        <swiper-slide v-for=\"(productImages, index) in Data?.product_galleries\" :key=\"index\"\n                            :class=\"slideId == index ? '' : ''\">\n                            <div class=\"slider-image\">\n                                <img :src=\"productImages?.original_url\" :id=\"productImages.id\" class=\"img-fluid\" alt=\"\"\n                                    @click=\"slideTo(index)\">\n                            </div>\n                        </swiper-slide>\n                    </swiper>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nimport 'swiper/css/navigation';\nimport { Navigation, Autoplay } from 'swiper';\nlet props = defineProps({\n    Data: Object,\n})\nlet thumbnailProductSlider = {\n    0: {\n        slidesPerView: 3\n    },\n    530: {\n        slidesPerView: 4\n    },\n    1399: {\n        slidesPerView: 3\n    },\n    1430: {\n        slidesPerView: 4\n    }\n}\nlet slideId = ref(0), swiperRef = ref(0), modules = [Navigation, Autoplay]\n\nfunction onSwiper(swiper) {\n    swiperRef.value = swiper;\n}\n\nfunction slideTo(index) {\n    swiperRef.value.slideTo(index + 1, 0)\n    slideId.value = index\n}\n\n</script>\n",
+      "start": 1716056287538,
+      "end": 1716056287715,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056287715,
+      "end": 1716056287715,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056287715,
+      "end": 1716056287716,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056287716,
+      "end": 1716056287716,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056287716,
+      "end": 1716056287716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056287716,
+      "end": 1716056287716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056287716,
+      "end": 1716056287716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056287716,
+      "end": 1716056287716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, Fragment as _Fragment, createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createBlock as _createBlock, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = { class: \"product-left-box\" }\nconst _hoisted_2 = { class: \"row g-2\" }\nconst _hoisted_3 = { class: \"col-12\" }\nconst _hoisted_4 = { class: \"product-main-1\" }\nconst _hoisted_5 = { class: \"product-label-group\" }\nconst _hoisted_6 = {\n  key: 0,\n  class: \"product-label-tag\"\n}\nconst _hoisted_7 = {\n  key: 0,\n  class: \"product-label-tag warning-label-tag\"\n}\nconst _hoisted_8 = { class: \"slider-image\" }\nconst _hoisted_9 = [\"src\", \"id\"]\nconst _hoisted_10 = { class: \"col-12\" }\nconst _hoisted_11 = { class: \"bottom-slider-image left-slider slick-top\" }\nconst _hoisted_12 = { class: \"slider-image\" }\nconst _hoisted_13 = [\"src\", \"id\", \"onClick\"]\n\nimport 'swiper/css/navigation';\nimport { Navigation, Autoplay } from 'swiper';\n\nconst _sfc_main = {\n  __name: 'Images',\n  props: {\n    Data: Object,\n},\n  setup(__props) {\n\nlet props = __props\nlet thumbnailProductSlider = {\n    0: {\n        slidesPerView: 3\n    },\n    530: {\n        slidesPerView: 4\n    },\n    1399: {\n        slidesPerView: 3\n    },\n    1430: {\n        slidesPerView: 4\n    }\n}\nlet slideId = ref(0), swiperRef = ref(0), modules = [Navigation, Autoplay]\n\nfunction onSwiper(swiper) {\n    swiperRef.value = swiper;\n}\n\nfunction slideTo(index) {\n    swiperRef.value.slideTo(index + 1, 0)\n    slideId.value = index\n}\n\n\nreturn (_ctx, _cache) => {\n  const _component_vue_image_zoomer = _resolveComponent(\"vue-image-zoomer\")\n  const _component_ClientOnly = _resolveComponent(\"ClientOnly\")\n  const _component_swiper_slide = _resolveComponent(\"swiper-slide\")\n  const _component_swiper = _resolveComponent(\"swiper\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            (__props.Data?.is_sale_enable)\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_6, _toDisplayString(_ctx.$t('SALE')), 1))\n              : (_openBlock(), _createElementBlock(_Fragment, { key: 1 }, [\n                  (__props.Data?.is_featured)\n                    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_7, _toDisplayString(_ctx.$t('FEATURED')), 1))\n                    : _createCommentVNode(\"\", true)\n                ], 64))\n          ]),\n          _createVNode(_component_swiper, {\n            autoplay: { delay: 2500, disableOnInteraction: true },\n            modules: _unref(modules),\n            navigation: true,\n            loop: true,\n            class: \"banner-slider\",\n            onSwiper: onSwiper,\n            \"slides-per-view\": 1,\n            \"space-between\": 15\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.Data?.product_galleries, (productImages, index) => {\n                return (_openBlock(), _createBlock(_component_swiper_slide, { key: index }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", _hoisted_8, [\n                      (!__props.Data?.product_galleries?.length)\n                        ? (_openBlock(), _createElementBlock(\"img\", {\n                            key: 0,\n                            src: productImages?.original_url,\n                            id: productImages.id,\n                            class: \"img-fluid\",\n                            alt: \"\"\n                          }, null, 8, _hoisted_9))\n                        : _createCommentVNode(\"\", true),\n                      _createVNode(_component_ClientOnly, null, {\n                        default: _withCtx(() => [\n                          _createVNode(_component_vue_image_zoomer, {\n                            regular: productImages?.original_url,\n                            \"img-class\": \"img-fluid w-100 image_zoom_cls-0\",\n                            \"hover-message\": \"Click once on image\",\n                            \"zoom-amount\": 5\n                          }, null, 8, [\"regular\"])\n                        ]),\n                        _: 2\n                      }, 1024)\n                    ])\n                  ]),\n                  _: 2\n                }, 1024))\n              }), 128))\n            ]),\n            _: 1\n          }, 8, [\"modules\"])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_10, [\n        _createElementVNode(\"div\", _hoisted_11, [\n          _createVNode(_component_swiper, {\n            loop: true,\n            class: \"banner-slider\",\n            breakpoints: _unref(thumbnailProductSlider),\n            \"slides-per-view\": 4,\n            \"space-between\": 15\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.Data?.product_galleries, (productImages, index) => {\n                return (_openBlock(), _createBlock(_component_swiper_slide, {\n                  key: index,\n                  class: _normalizeClass(_unref(slideId) == index ? '' : '')\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", _hoisted_12, [\n                      _createElementVNode(\"img\", {\n                        src: productImages?.original_url,\n                        id: productImages.id,\n                        class: \"img-fluid\",\n                        alt: \"\",\n                        onClick: $event => (slideTo(index))\n                      }, null, 8, _hoisted_13)\n                    ])\n                  ]),\n                  _: 2\n                }, 1032, [\"class\"]))\n              }), 128))\n            ]),\n            _: 1\n          }, 8, [\"breakpoints\"])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287716,
+      "end": 1716056287716,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056287716,
+      "end": 1716056287716,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287716,
+      "end": 1716056287716,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056287716,
+      "end": 1716056287716,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056287716,
+      "end": 1716056287716,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056287716,
+      "end": 1716056287716,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056287716,
+      "end": 1716056287716,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056287717,
+      "end": 1716056287717,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056287717,
+      "end": 1716056287717,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056287717,
+      "end": 1716056287717,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056287717,
+      "end": 1716056287717,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056287717,
+      "end": 1716056287717,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056287717,
+      "end": 1716056287717,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056287717,
+      "end": 1716056287717,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056287717,
+      "end": 1716056287717,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056287717,
+      "end": 1716056287717,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056287717,
+      "end": 1716056287717,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, Fragment as _Fragment, createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createBlock as _createBlock, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = { class: \"product-left-box\" }\nconst _hoisted_2 = { class: \"row g-2\" }\nconst _hoisted_3 = { class: \"col-12\" }\nconst _hoisted_4 = { class: \"product-main-1\" }\nconst _hoisted_5 = { class: \"product-label-group\" }\nconst _hoisted_6 = {\n  key: 0,\n  class: \"product-label-tag\"\n}\nconst _hoisted_7 = {\n  key: 0,\n  class: \"product-label-tag warning-label-tag\"\n}\nconst _hoisted_8 = { class: \"slider-image\" }\nconst _hoisted_9 = [\"src\", \"id\"]\nconst _hoisted_10 = { class: \"col-12\" }\nconst _hoisted_11 = { class: \"bottom-slider-image left-slider slick-top\" }\nconst _hoisted_12 = { class: \"slider-image\" }\nconst _hoisted_13 = [\"src\", \"id\", \"onClick\"]\n\nimport 'swiper/css/navigation';\nimport { Navigation, Autoplay } from 'swiper';\n\nconst _sfc_main = {\n  __name: 'Images',\n  props: {\n    Data: Object,\n},\n  setup(__props) {\n\nlet props = __props\nlet thumbnailProductSlider = {\n    0: {\n        slidesPerView: 3\n    },\n    530: {\n        slidesPerView: 4\n    },\n    1399: {\n        slidesPerView: 3\n    },\n    1430: {\n        slidesPerView: 4\n    }\n}\nlet slideId = ref(0), swiperRef = ref(0), modules = [Navigation, Autoplay]\n\nfunction onSwiper(swiper) {\n    swiperRef.value = swiper;\n}\n\nfunction slideTo(index) {\n    swiperRef.value.slideTo(index + 1, 0)\n    slideId.value = index\n}\n\n\nreturn (_ctx, _cache) => {\n  const _component_vue_image_zoomer = _resolveComponent(\"vue-image-zoomer\")\n  const _component_ClientOnly = _resolveComponent(\"ClientOnly\")\n  const _component_swiper_slide = _resolveComponent(\"swiper-slide\")\n  const _component_swiper = _resolveComponent(\"swiper\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            (__props.Data?.is_sale_enable)\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_6, _toDisplayString(_ctx.$t('SALE')), 1))\n              : (_openBlock(), _createElementBlock(_Fragment, { key: 1 }, [\n                  (__props.Data?.is_featured)\n                    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_7, _toDisplayString(_ctx.$t('FEATURED')), 1))\n                    : _createCommentVNode(\"\", true)\n                ], 64))\n          ]),\n          _createVNode(_component_swiper, {\n            autoplay: { delay: 2500, disableOnInteraction: true },\n            modules: _unref(modules),\n            navigation: true,\n            loop: true,\n            class: \"banner-slider\",\n            onSwiper: onSwiper,\n            \"slides-per-view\": 1,\n            \"space-between\": 15\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.Data?.product_galleries, (productImages, index) => {\n                return (_openBlock(), _createBlock(_component_swiper_slide, { key: index }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", _hoisted_8, [\n                      (!__props.Data?.product_galleries?.length)\n                        ? (_openBlock(), _createElementBlock(\"img\", {\n                            key: 0,\n                            src: productImages?.original_url,\n                            id: productImages.id,\n                            class: \"img-fluid\",\n                            alt: \"\"\n                          }, null, 8, _hoisted_9))\n                        : _createCommentVNode(\"\", true),\n                      _createVNode(_component_ClientOnly, null, {\n                        default: _withCtx(() => [\n                          _createVNode(_component_vue_image_zoomer, {\n                            regular: productImages?.original_url,\n                            \"img-class\": \"img-fluid w-100 image_zoom_cls-0\",\n                            \"hover-message\": \"Click once on image\",\n                            \"zoom-amount\": 5\n                          }, null, 8, [\"regular\"])\n                        ]),\n                        _: 2\n                      }, 1024)\n                    ])\n                  ]),\n                  _: 2\n                }, 1024))\n              }), 128))\n            ]),\n            _: 1\n          }, 8, [\"modules\"])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_10, [\n        _createElementVNode(\"div\", _hoisted_11, [\n          _createVNode(_component_swiper, {\n            loop: true,\n            class: \"banner-slider\",\n            breakpoints: _unref(thumbnailProductSlider),\n            \"slides-per-view\": 4,\n            \"space-between\": 15\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.Data?.product_galleries, (productImages, index) => {\n                return (_openBlock(), _createBlock(_component_swiper_slide, {\n                  key: index,\n                  class: _normalizeClass(_unref(slideId) == index ? '' : '')\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", _hoisted_12, [\n                      _createElementVNode(\"img\", {\n                        src: productImages?.original_url,\n                        id: productImages.id,\n                        class: \"img-fluid\",\n                        alt: \"\",\n                        onClick: $event => (slideTo(index))\n                      }, null, 8, _hoisted_13)\n                    ])\n                  ]),\n                  _: 2\n                }, 1032, [\"class\"]))\n              }), 128))\n            ]),\n            _: 1\n          }, 8, [\"breakpoints\"])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287717,
+      "end": 1716056287719,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056287719,
+      "end": 1716056287719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056287719,
+      "end": 1716056287719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056287719,
+      "end": 1716056287719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056287719,
+      "end": 1716056287720,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/node_modules/nuxt/dist/app/components/client-only\";\nimport { SwiperSlide as __nuxt_component_1 } from \"swiper/vue\";\nimport { Swiper as __nuxt_component_2 } from \"swiper/vue\";\nimport { ref } from 'vue';\nimport { toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, Fragment as _Fragment, createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createBlock as _createBlock, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = { class: \"product-left-box\" }\nconst _hoisted_2 = { class: \"row g-2\" }\nconst _hoisted_3 = { class: \"col-12\" }\nconst _hoisted_4 = { class: \"product-main-1\" }\nconst _hoisted_5 = { class: \"product-label-group\" }\nconst _hoisted_6 = {\n  key: 0,\n  class: \"product-label-tag\"\n}\nconst _hoisted_7 = {\n  key: 0,\n  class: \"product-label-tag warning-label-tag\"\n}\nconst _hoisted_8 = { class: \"slider-image\" }\nconst _hoisted_9 = [\"src\", \"id\"]\nconst _hoisted_10 = { class: \"col-12\" }\nconst _hoisted_11 = { class: \"bottom-slider-image left-slider slick-top\" }\nconst _hoisted_12 = { class: \"slider-image\" }\nconst _hoisted_13 = [\"src\", \"id\", \"onClick\"]\n\nimport 'swiper/css/navigation';\nimport { Navigation, Autoplay } from 'swiper';\n\nconst _sfc_main = {\n  __name: 'Images',\n  props: {\n    Data: Object,\n},\n  setup(__props) {\n\nlet props = __props\nlet thumbnailProductSlider = {\n    0: {\n        slidesPerView: 3\n    },\n    530: {\n        slidesPerView: 4\n    },\n    1399: {\n        slidesPerView: 3\n    },\n    1430: {\n        slidesPerView: 4\n    }\n}\nlet slideId = ref(0), swiperRef = ref(0), modules = [Navigation, Autoplay]\n\nfunction onSwiper(swiper) {\n    swiperRef.value = swiper;\n}\n\nfunction slideTo(index) {\n    swiperRef.value.slideTo(index + 1, 0)\n    slideId.value = index\n}\n\n\nreturn (_ctx, _cache) => {\n  const _component_vue_image_zoomer = _resolveComponent(\"vue-image-zoomer\")\n  const _component_ClientOnly = __nuxt_component_0\n  const _component_swiper_slide = __nuxt_component_1\n  const _component_swiper = __nuxt_component_2\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            (__props.Data?.is_sale_enable)\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_6, _toDisplayString(_ctx.$t('SALE')), 1))\n              : (_openBlock(), _createElementBlock(_Fragment, { key: 1 }, [\n                  (__props.Data?.is_featured)\n                    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_7, _toDisplayString(_ctx.$t('FEATURED')), 1))\n                    : _createCommentVNode(\"\", true)\n                ], 64))\n          ]),\n          _createVNode(_component_swiper, {\n            autoplay: { delay: 2500, disableOnInteraction: true },\n            modules: _unref(modules),\n            navigation: true,\n            loop: true,\n            class: \"banner-slider\",\n            onSwiper: onSwiper,\n            \"slides-per-view\": 1,\n            \"space-between\": 15\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.Data?.product_galleries, (productImages, index) => {\n                return (_openBlock(), _createBlock(_component_swiper_slide, { key: index }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", _hoisted_8, [\n                      (!__props.Data?.product_galleries?.length)\n                        ? (_openBlock(), _createElementBlock(\"img\", {\n                            key: 0,\n                            src: productImages?.original_url,\n                            id: productImages.id,\n                            class: \"img-fluid\",\n                            alt: \"\"\n                          }, null, 8, _hoisted_9))\n                        : _createCommentVNode(\"\", true),\n                      _createVNode(_component_ClientOnly, null, {\n                        default: _withCtx(() => [\n                          _createVNode(_component_vue_image_zoomer, {\n                            regular: productImages?.original_url,\n                            \"img-class\": \"img-fluid w-100 image_zoom_cls-0\",\n                            \"hover-message\": \"Click once on image\",\n                            \"zoom-amount\": 5\n                          }, null, 8, [\"regular\"])\n                        ]),\n                        _: 2\n                      }, 1024)\n                    ])\n                  ]),\n                  _: 2\n                }, 1024))\n              }), 128))\n            ]),\n            _: 1\n          }, 8, [\"modules\"])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_10, [\n        _createElementVNode(\"div\", _hoisted_11, [\n          _createVNode(_component_swiper, {\n            loop: true,\n            class: \"banner-slider\",\n            breakpoints: _unref(thumbnailProductSlider),\n            \"slides-per-view\": 4,\n            \"space-between\": 15\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.Data?.product_galleries, (productImages, index) => {\n                return (_openBlock(), _createBlock(_component_swiper_slide, {\n                  key: index,\n                  class: _normalizeClass(_unref(slideId) == index ? '' : '')\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", _hoisted_12, [\n                      _createElementVNode(\"img\", {\n                        src: productImages?.original_url,\n                        id: productImages.id,\n                        class: \"img-fluid\",\n                        alt: \"\",\n                        onClick: $event => (slideTo(index))\n                      }, null, 8, _hoisted_13)\n                    ])\n                  ]),\n                  _: 2\n                }, 1032, [\"class\"]))\n              }), 128))\n            ]),\n            _: 1\n          }, 8, [\"breakpoints\"])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056287720,
+      "end": 1716056287720,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056287720,
+      "end": 1716056287720,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056287720,
+      "end": 1716056287720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056287720,
+      "end": 1716056287720,
+      "order": "normal"
+    }
+  ]
+}

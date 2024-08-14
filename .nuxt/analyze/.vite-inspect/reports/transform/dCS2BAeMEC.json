@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductDetailsAccordion/index.vue?nuxt_component=async&nuxt_component_name=ShopProductDetailsWidgetsProductDetailsAccordion",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n        <div class=\"accordion accordion-box product-section-box mt-0\" id=\"accordionExample\">\n            <div class=\"accordion shipping-accordion\" id=\"accordionExample\">\n                <div class=\"accordion-item\">\n                    <h2 class=\"accordion-header\" id=\"headingOne\">\n                        <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"\n                            :data-bs-target=\"`#${'description'}`\"\n                            :aria-expanded=\"show == true ? 'true' : 'false'\">\n                            <span>{{ $t(\"Description\") }}</span>\n                            <Icon name=\"ri:arrow-down-s-line\"></Icon>\n                        </button>\n                    </h2>\n                    <div :id=\"`${'description'}`\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionExample\" :class=\"{ 'show': open == true }\">\n                        <div id=\"collapseOne\" class=\"accordion-collapse collapse show\" data-bs-parent=\"#accordionExample\">\n                            <div class=\"accordion-body\">\n                                <div class=\"product-description\">\n                                    <div class=\"nav-desh ckeditor-content\" v-html=\"product?.description\">\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"accordion shipping-accordion\" id=\"accordionExample\">\n                <div class=\"accordion-item\">\n                    <h2 class=\"accordion-header\" id=\"headingOne\">\n                        <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"\n                            :data-bs-target=\"`#${'review'}`\">\n                            <span>{{ $t(\"Review\") }}</span>\n                            <Icon name=\"ri:arrow-down-s-line\"></Icon>\n                        </button>\n                    </h2>\n                    <div :id=\"`${'review'}`\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionExample\">\n                        <div id=\"collapseOne\" class=\"accordion-collapse collapse show\" data-bs-parent=\"#accordionExample\">\n                            <div class=\"accordion-body\">\n                                <ShopProductDetailsWidgetsProductReview :product=\"product\" :reviews=\"reviews\" />\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"accordion shipping-accordion\" id=\"accordionExample\">\n                <div class=\"accordion-item\">\n                    <h2 class=\"accordion-header\" id=\"headingOne\">\n                        <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"\n                            :data-bs-target=\"`#${'qa'}`\">\n                            <span>{{ $t(\"QA\") }}</span>\n                            <Icon name=\"ri:arrow-down-s-line\"></Icon>\n                        </button>\n                    </h2>\n                    <div :id=\"`${'qa'}`\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionExample\">\n                        <div id=\"collapseOne\" class=\"accordion-collapse collapse show\" data-bs-parent=\"#accordionExample\">\n                            <div class=\"accordion-body\">\n                                <ShopProductDetailsWidgetsQuestionsAnswers :product=\"product\"\n                                    :questionAnswers=\"questionAnswers\" />\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n    product: Object,\n    reviews: Object,\n    questionAnswers: Object\n});\n\nlet open = ref(true)\n</script>\n\n<style lang=\"scss\" scoped></style>",
+      "start": 1716056271544,
+      "end": 1716056284727,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056284728,
+      "end": 1716056284728,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056284728,
+      "end": 1716056284728,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056284728,
+      "end": 1716056284728,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056284728,
+      "end": 1716056284728,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056284728,
+      "end": 1716056284728,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056284728,
+      "end": 1716056284728,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056284728,
+      "end": 1716056284728,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = {\n  class: \"accordion accordion-box product-section-box mt-0\",\n  id: \"accordionExample\"\n}\nconst _hoisted_2 = {\n  class: \"accordion shipping-accordion\",\n  id: \"accordionExample\"\n}\nconst _hoisted_3 = { class: \"accordion-item\" }\nconst _hoisted_4 = {\n  class: \"accordion-header\",\n  id: \"headingOne\"\n}\nconst _hoisted_5 = [\"aria-expanded\"]\nconst _hoisted_6 = {\n  id: \"collapseOne\",\n  class: \"accordion-collapse collapse show\",\n  \"data-bs-parent\": \"#accordionExample\"\n}\nconst _hoisted_7 = { class: \"accordion-body\" }\nconst _hoisted_8 = { class: \"product-description\" }\nconst _hoisted_9 = [\"innerHTML\"]\nconst _hoisted_10 = {\n  class: \"accordion shipping-accordion\",\n  id: \"accordionExample\"\n}\nconst _hoisted_11 = { class: \"accordion-item\" }\nconst _hoisted_12 = {\n  class: \"accordion-header\",\n  id: \"headingOne\"\n}\nconst _hoisted_13 = {\n  class: \"accordion-button collapsed\",\n  type: \"button\",\n  \"data-bs-toggle\": \"collapse\",\n  \"data-bs-target\": `#${'review'}`\n}\nconst _hoisted_14 = {\n  id: `${'review'}`,\n  class: \"accordion-collapse collapse\",\n  \"data-bs-parent\": \"#accordionExample\"\n}\nconst _hoisted_15 = {\n  id: \"collapseOne\",\n  class: \"accordion-collapse collapse show\",\n  \"data-bs-parent\": \"#accordionExample\"\n}\nconst _hoisted_16 = { class: \"accordion-body\" }\nconst _hoisted_17 = {\n  class: \"accordion shipping-accordion\",\n  id: \"accordionExample\"\n}\nconst _hoisted_18 = { class: \"accordion-item\" }\nconst _hoisted_19 = {\n  class: \"accordion-header\",\n  id: \"headingOne\"\n}\nconst _hoisted_20 = {\n  class: \"accordion-button collapsed\",\n  type: \"button\",\n  \"data-bs-toggle\": \"collapse\",\n  \"data-bs-target\": `#${'qa'}`\n}\nconst _hoisted_21 = {\n  id: `${'qa'}`,\n  class: \"accordion-collapse collapse\",\n  \"data-bs-parent\": \"#accordionExample\"\n}\nconst _hoisted_22 = {\n  id: \"collapseOne\",\n  class: \"accordion-collapse collapse show\",\n  \"data-bs-parent\": \"#accordionExample\"\n}\nconst _hoisted_23 = { class: \"accordion-body\" }\n\n\nconst _sfc_main = {\n  __name: 'index',\n  props: {\n    product: Object,\n    reviews: Object,\n    questionAnswers: Object\n},\n  setup(__props) {\n\nlet props = __props;\n\nlet open = ref(true)\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_ShopProductDetailsWidgetsProductReview = _resolveComponent(\"ShopProductDetailsWidgetsProductReview\")\n  const _component_ShopProductDetailsWidgetsQuestionsAnswers = _resolveComponent(\"ShopProductDetailsWidgetsQuestionsAnswers\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"h2\", _hoisted_4, [\n            _createElementVNode(\"button\", {\n              class: \"accordion-button collapsed\",\n              type: \"button\",\n              \"data-bs-toggle\": \"collapse\",\n              \"data-bs-target\": `#${'description'}`,\n              \"aria-expanded\": _ctx.show == true ? 'true' : 'false'\n            }, [\n              _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"Description\")), 1),\n              _createVNode(_component_Icon, { name: \"ri:arrow-down-s-line\" })\n            ], 8, _hoisted_5)\n          ]),\n          _createElementVNode(\"div\", {\n            id: `${'description'}`,\n            class: _normalizeClass([\"accordion-collapse collapse\", { 'show': _unref(open) == true }]),\n            \"data-bs-parent\": \"#accordionExample\"\n          }, [\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createElementVNode(\"div\", _hoisted_7, [\n                _createElementVNode(\"div\", _hoisted_8, [\n                  _createElementVNode(\"div\", {\n                    class: \"nav-desh ckeditor-content\",\n                    innerHTML: __props.product?.description\n                  }, null, 8, _hoisted_9)\n                ])\n              ])\n            ])\n          ], 2)\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_10, [\n        _createElementVNode(\"div\", _hoisted_11, [\n          _createElementVNode(\"h2\", _hoisted_12, [\n            _createElementVNode(\"button\", _hoisted_13, [\n              _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"Review\")), 1),\n              _createVNode(_component_Icon, { name: \"ri:arrow-down-s-line\" })\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_14, [\n            _createElementVNode(\"div\", _hoisted_15, [\n              _createElementVNode(\"div\", _hoisted_16, [\n                _createVNode(_component_ShopProductDetailsWidgetsProductReview, {\n                  product: __props.product,\n                  reviews: __props.reviews\n                }, null, 8, [\"product\", \"reviews\"])\n              ])\n            ])\n          ])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_17, [\n        _createElementVNode(\"div\", _hoisted_18, [\n          _createElementVNode(\"h2\", _hoisted_19, [\n            _createElementVNode(\"button\", _hoisted_20, [\n              _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(\"QA\")), 1),\n              _createVNode(_component_Icon, { name: \"ri:arrow-down-s-line\" })\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_21, [\n            _createElementVNode(\"div\", _hoisted_22, [\n              _createElementVNode(\"div\", _hoisted_23, [\n                _createVNode(_component_ShopProductDetailsWidgetsQuestionsAnswers, {\n                  product: __props.product,\n                  questionAnswers: __props.questionAnswers\n                }, null, 8, [\"product\", \"questionAnswers\"])\n              ])\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056284728,
+      "end": 1716056284730,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056284730,
+      "end": 1716056284730,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056284730,
+      "end": 1716056284730,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056284730,
+      "end": 1716056284730,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056284730,
+      "end": 1716056284730,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductDetailsAccordion/index.vue\").then(r => r.default))",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056284731,
+      "end": 1716056284731,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056284731,
+      "end": 1716056284732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056284732,
+      "end": 1716056284732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056284732,
+      "end": 1716056284732,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/ProductDetails/Widgets/ProductDetailsAccordion/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056284732,
+      "end": 1716056284732,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056284732,
+      "end": 1716056284732,
+      "order": "normal"
+    }
+  ]
+}

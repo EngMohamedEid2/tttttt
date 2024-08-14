@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue?nuxt_component=async&nuxt_component_name=WidgetsModalsCommon",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n    <Teleport to=\"body\">\n        <Transition name=\"modals\">\n            <div class=\"modal fade theme-modal show d-block\" :class=\"modalClass\" v-if=\"showModal\" :id=\"modalId\" tabindex=\"-1\">\n                <div class=\"modal-dialog modal-dialog-centered\" :class=\"classes\">\n                    <OnClickOutside class=\"modal-content\" @trigger=\"() => { emit('close'); }\">\n                        <!-- <div class=\"modal-header p-0\">-->\n                        <button type=\"button\" class=\"btn-close\" @click.prevent=\"() => { emit('close') }\">\n                            <Icon name=\"ri:close-line\"></Icon>\n                        </button>\n                        <!-- </div>-->\n\n                        <div class=\"modal-body p-0\">\n                            <slot />\n                        </div>\n                    </OnClickOutside>\n                </div>\n            </div>\n        </Transition>\n    </Teleport>\n    <Teleport to=\"body\">\n        <Transition name=\"modals\">\n            <div class=\"bg-overlay show d-block\" v-if=\"showModal\"></div>\n        </Transition>\n    </Teleport>\n</div>\n</template>\n\n<script setup>\nimport { OnClickOutside } from '@vueuse/components';\nlet emit = defineEmits(['close'])\nlet props = defineProps({\n    modalClass:String,\n    modalId: String,\n    classes:String,\n    showModal: Boolean\n})\n</script>\n\n<style lang=\"scss\" scoped>\n.modals-enter-active,\n.modals-leave-active {\n    transition: all 0.25s ease;\n}\n\n.modals-enter-from,\n.modals-leave-to {\n    opacity: 0;\n    transform: scale(1.1);\n}\n</style>\n",
+      "start": 1716056339843,
+      "end": 1716056339935,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339935,
+      "end": 1716056339935,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339935,
+      "end": 1716056339935,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339935,
+      "end": 1716056339936,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339935,
+      "end": 1716056339936,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339936,
+      "end": 1716056339936,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339936,
+      "end": 1716056339936,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339936,
+      "end": 1716056339936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339936,
+      "end": 1716056339936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339936,
+      "end": 1716056339936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339936,
+      "end": 1716056339936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, withModifiers as _withModifiers, renderSlot as _renderSlot } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderTeleport as _ssrRenderTeleport } from \"vue/server-renderer\"\n\nimport { OnClickOutside } from '@vueuse/components';\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n    modalClass:String,\n    modalId: String,\n    classes:String,\n    showModal: Boolean\n},\n  emits: ['close'],\n  setup(__props, { emit: __emit }) {\n\nlet emit = __emit\nlet props = __props\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)} data-v-9664805c>`)\n  _ssrRenderTeleport(_push, (_push) => {\n    if (__props.showModal) {\n      _push(`<div class=\"${\n        _ssrRenderClass([__props.modalClass, \"modal fade theme-modal show d-block\"])\n      }\"${\n        _ssrRenderAttr(\"id\", __props.modalId)\n      } tabindex=\"-1\" data-v-9664805c><div class=\"${\n        _ssrRenderClass([__props.classes, \"modal-dialog modal-dialog-centered\"])\n      }\" data-v-9664805c>`)\n      _push(_ssrRenderComponent(_unref(OnClickOutside), {\n        class: \"modal-content\",\n        onTrigger: () => { _unref(emit)('close'); }\n      }, {\n        default: _withCtx((_, _push, _parent, _scopeId) => {\n          if (_push) {\n            _push(`<button type=\"button\" class=\"btn-close\" data-v-9664805c${_scopeId}>`)\n            _push(_ssrRenderComponent(_component_Icon, { name: \"ri:close-line\" }, null, _parent, _scopeId))\n            _push(`</button><div class=\"modal-body p-0\" data-v-9664805c${_scopeId}>`)\n            _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent, _scopeId)\n            _push(`</div>`)\n          } else {\n            return [\n              _createVNode(\"button\", {\n                type: \"button\",\n                class: \"btn-close\",\n                onClick: _withModifiers(() => { _unref(emit)('close') }, [\"prevent\"])\n              }, [\n                _createVNode(_component_Icon, { name: \"ri:close-line\" })\n              ], 8, [\"onClick\"]),\n              _createVNode(\"div\", { class: \"modal-body p-0\" }, [\n                _renderSlot(_ctx.$slots, \"default\", {}, undefined, true)\n              ])\n            ]\n          }\n        }),\n        _: 3\n      }, _parent))\n      _push(`</div></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n  }, \"body\", false, _parent)\n  _ssrRenderTeleport(_push, (_push) => {\n    if (__props.showModal) {\n      _push(`<div class=\"bg-overlay show d-block\" data-v-9664805c></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n  }, \"body\", false, _parent)\n  _push(`</div>`)\n}\n}\n\n}\n\n\nimport \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue?vue&type=style&index=0&scoped=9664805c&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Widgets/Modals/Common/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-9664805c\"]])",
+      "start": 1716056339936,
+      "end": 1716056339938,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339938,
+      "end": 1716056339938,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339938,
+      "end": 1716056339938,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339938,
+      "end": 1716056339938,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339938,
+      "end": 1716056339938,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339938,
+      "end": 1716056339938,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Modals/Common/index.vue\").then(r => r.default))",
+      "start": 1716056339938,
+      "end": 1716056339938,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339938,
+      "end": 1716056339938,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339938,
+      "end": 1716056339938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339938,
+      "end": 1716056339939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339939,
+      "end": 1716056339939,
+      "order": "normal"
+    }
+  ]
+}

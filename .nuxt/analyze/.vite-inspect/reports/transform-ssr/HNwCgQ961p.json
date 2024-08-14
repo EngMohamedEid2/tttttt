@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Support.vue?nuxt_component=async&nuxt_component_name=HeaderElementsSupport",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div>\n    <!-- Call Style Basic -->\n    <a href=\"javascript:void(0)\" class=\"delivery-login-box\" v-if=\"style == 'basic'\">\n        <div class=\"delivery-icon\">\n            <Icon name=\"ri:customer-service-line\"></Icon>\n        </div>\n        <div class=\"delivery-detail\">\n            <h6>{{ $t(\"24/7 Support Center\") }}</h6>\n            <h5>{{ themeOptions?.header?.support_number }}</h5>\n        </div>\n    </a>\n    <!-- Call Style Classic -->\n    <div class=\"support-box\" v-if=\"style == 'classic'\">\n        <div class=\"support-image\">\n            <img src=\"/images/icon/support.png\" class=\"img-fluid\" alt=\"support\">\n        </div>\n        <div class=\"support-number\">\n            <h2>{{ themeOptions?.header?.support_number }}</h2>\n            <h4>{{ $t(\"24/7 Support Center\") }}</h4>\n        </div>\n    </div>\n    <!-- Call Style Standard -->\n    <div class=\"nav-number\" v-if=\"style == 'standard'\">\n        <img src=\"/images/icon/music.png\" class=\"img-fluid\" alt=\"\">\n        <span>{{ themeOptions?.header?.support_number }}</span>\n    </div>\n</div>\n</template>\n\n<script setup>\nconst props = defineProps({\n    themeOptions: Object,\n    style: { type: [String,Object], default: 'basic' }\n})\n\n</script>",
+      "start": 1716056326452,
+      "end": 1716056339284,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339284,
+      "end": 1716056339284,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339284,
+      "end": 1716056339284,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339284,
+      "end": 1716056339284,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339284,
+      "end": 1716056339284,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339284,
+      "end": 1716056339284,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339284,
+      "end": 1716056339284,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339284,
+      "end": 1716056339284,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339284,
+      "end": 1716056339284,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339284,
+      "end": 1716056339284,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339284,
+      "end": 1716056339284,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/icon/support.png'\nimport _imports_1 from '/images/icon/music.png'\n\n\n\nconst _sfc_main = {\n  __name: 'Support',\n  __ssrInlineRender: true,\n  props: {\n    themeOptions: Object,\n    style: { type: [String,Object], default: 'basic' }\n},\n  setup(__props) {\n\nconst props = __props\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  if (__props.style == 'basic') {\n    _push(`<a href=\"javascript:void(0)\" class=\"delivery-login-box\"><div class=\"delivery-icon\">`)\n    _push(_ssrRenderComponent(_component_Icon, { name: \"ri:customer-service-line\" }, null, _parent))\n    _push(`</div><div class=\"delivery-detail\"><h6>${\n      _ssrInterpolate(_ctx.$t(\"24/7 Support Center\"))\n    }</h6><h5>${\n      _ssrInterpolate(__props.themeOptions?.header?.support_number)\n    }</h5></div></a>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.style == 'classic') {\n    _push(`<div class=\"support-box\"><div class=\"support-image\"><img${\n      _ssrRenderAttr(\"src\", _imports_0)\n    } class=\"img-fluid\" alt=\"support\"></div><div class=\"support-number\"><h2>${\n      _ssrInterpolate(__props.themeOptions?.header?.support_number)\n    }</h2><h4>${\n      _ssrInterpolate(_ctx.$t(\"24/7 Support Center\"))\n    }</h4></div></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.style == 'standard') {\n    _push(`<div class=\"nav-number\"><img${\n      _ssrRenderAttr(\"src\", _imports_1)\n    } class=\"img-fluid\" alt=\"\"><span>${\n      _ssrInterpolate(__props.themeOptions?.header?.support_number)\n    }</span></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Header/Elements/Support.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339284,
+      "end": 1716056339285,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339285,
+      "end": 1716056339285,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339285,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339285,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/Support.vue\").then(r => r.default))",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339286,
+      "end": 1716056339286,
+      "order": "normal"
+    }
+  ]
+}

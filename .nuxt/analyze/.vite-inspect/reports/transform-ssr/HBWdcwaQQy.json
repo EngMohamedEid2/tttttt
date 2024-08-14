@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/CollectionProduct/index.vue?nuxt_component=async&nuxt_component_name=ShopCollectionWidgetsCollectionProduct",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <ShopCollectionWidgetsCollectionSort\n    :filter=\"filter\"\n    :selectedGrid=\"selectedGrid\"\n    @setGridClass=\"setGridClass($event)\"\n    :show=\"show\"\n  />\n  <div :class=\"gridClass\">\n    <!-- <div v-if=\"skeletonLoader\">\n      <WidgetsProductBoxSkeletonProductBox\n        v-for=\"item in skeletonItems\"\n        :key=\"item\"\n      />\n    </div> -->\n\n    <div v-for=\"(product, index) in data.data\" :key=\"index\">\n      <WidgetsProductBox\n        :product=\"product\"\n        :style=\"'horizontal'\"\n        :classes=\"'product-box-3'\"\n      ></WidgetsProductBox>\n    </div>\n  </div>\n  <WidgetsNoData\n    :classes=\"'no-data-added collection-no-data'\"\n    :image=\"'/svg/no-product.svg'\"\n    :text=\"'Sorry! Couldn\\'t find the products you were looking For!'\"\n    :description=\"'Please check if you have misspelt something or try searching with other way.'\"\n    v-if=\"!data?.data?.length\"\n  />\n\n  <WidgetsPagination\n    :Data=\"data\"\n    @change-page=\"changePage\"\n    :filter=\"filter\"\n    v-if=\"data?.data?.length\"\n  />\n</template>\n\n<script setup>\n// let axios = useNuxtApp().$axios;\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useCollectionStore } from \"~/store/collection\";\nlet store = useCollectionStore();\nlet { filter, allProducts } = storeToRefs(useCollectionStore());\n\nlet { offCanvasMenu } = storeToRefs(useDataStore());\n\nlet props = defineProps({\n  filter: Object,\n  selectedGrid: String,\n  show: Boolean,\n});\nlet { data } = await HandleRequest(\n  \"https://alsouq.anevex.com/app/shop-api/products?\",\n  {\n    // key: \"getProduct\",\n    params: store.filter,\n  }\n);\n// console.log(data);\n// console.log(\"res is :\", data.value.data);\n\nlet gridClass = ref(\"\");\nlet emits = defineEmits([\"changeProductPage\", \"modelValue\"]);\nfunction setGridClass(value) {\n  gridClass.value = value;\n}\nfunction changePage(toPage) {\n  emits(\"changeProductPage\", toPage);\n}\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056339378,
+      "end": 1716056339457,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339457,
+      "end": 1716056339457,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056339457,
+      "end": 1716056339457,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339457,
+      "end": 1716056339457,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056339457,
+      "end": 1716056339457,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056339457,
+      "end": 1716056339457,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056339457,
+      "end": 1716056339457,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056339457,
+      "end": 1716056339457,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056339457,
+      "end": 1716056339457,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056339457,
+      "end": 1716056339457,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056339457,
+      "end": 1716056339457,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { storeToRefs } from \"pinia\";\nimport { useDataStore } from \"~/store/data\";\nimport { useCollectionStore } from \"~/store/collection\";\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  filter: Object,\n  selectedGrid: String,\n  show: Boolean,\n},\n  emits: [\"changeProductPage\", \"modelValue\"],\n  async setup(__props, { emit: __emit }) {\n\nlet __temp, __restore\n\n// let axios = useNuxtApp().$axios;\nlet store = useCollectionStore();\nlet { filter, allProducts } = storeToRefs(useCollectionStore());\n\nlet { offCanvasMenu } = storeToRefs(useDataStore());\n\nlet props = __props;\nlet { data } = (\n  ([__temp,__restore] = _withAsyncContext(() => HandleRequest(\n  \"https://alsouq.anevex.com/app/shop-api/products?\",\n  {\n    // key: \"getProduct\",\n    params: store.filter,\n  }\n))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n// console.log(data);\n// console.log(\"res is :\", data.value.data);\n\nlet gridClass = ref(\"\");\nlet emits = __emit;\nfunction setGridClass(value) {\n  gridClass.value = value;\n}\nfunction changePage(toPage) {\n  emits(\"changeProductPage\", toPage);\n}\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_ShopCollectionWidgetsCollectionSort = _resolveComponent(\"ShopCollectionWidgetsCollectionSort\")\n  const _component_WidgetsProductBox = _resolveComponent(\"WidgetsProductBox\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n  const _component_WidgetsPagination = _resolveComponent(\"WidgetsPagination\")\n\n  _push(`<!--[-->`)\n  _push(_ssrRenderComponent(_component_ShopCollectionWidgetsCollectionSort, {\n    filter: _unref(filter),\n    selectedGrid: __props.selectedGrid,\n    onSetGridClass: $event => (setGridClass($event)),\n    show: __props.show\n  }, null, _parent))\n  _push(`<div class=\"${_ssrRenderClass(_unref(gridClass))}\"><!--[-->`)\n  _ssrRenderList(_unref(data).data, (product, index) => {\n    _push(`<div>`)\n    _push(_ssrRenderComponent(_component_WidgetsProductBox, {\n      product: product,\n      style: 'horizontal',\n      classes: 'product-box-3'\n    }, null, _parent))\n    _push(`</div>`)\n  })\n  _push(`<!--]--></div>`)\n  if (!_unref(data)?.data?.length) {\n    _push(_ssrRenderComponent(_component_WidgetsNoData, {\n      classes: 'no-data-added collection-no-data',\n      image: '/svg/no-product.svg',\n      text: 'Sorry! Couldn\\'t find the products you were looking For!',\n      description: 'Please check if you have misspelt something or try searching with other way.'\n    }, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  if (_unref(data)?.data?.length) {\n    _push(_ssrRenderComponent(_component_WidgetsPagination, {\n      Data: _unref(data),\n      onChangePage: changePage,\n      filter: _unref(filter)\n    }, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<!--]-->`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Shop/Collection/widgets/CollectionProduct/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056339457,
+      "end": 1716056339459,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056339459,
+      "end": 1716056339459,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339459,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056339459,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Shop/Collection/widgets/CollectionProduct/index.vue\").then(r => r.default))",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056339460,
+      "end": 1716056339460,
+      "order": "normal"
+    }
+  ]
+}

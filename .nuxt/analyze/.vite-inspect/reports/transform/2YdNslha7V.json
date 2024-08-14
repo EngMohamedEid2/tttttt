@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/NavMenuButton.vue?nuxt_component=async&nuxt_component_name=HeaderElementsNavMenuButton",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <button\n    class=\"navbar-toggler d-xl-none d-inline navbar-menu-button\"\n    type=\"button\"\n    @click=\"toggleMenu()\"\n  >\n    <span class=\"navbar-toggler-icon me-md-3\">\n      <Icon name=\"ri:align-left\" />\n    </span>\n  </button>\n</template>\n\n<script setup>\nconst props = defineProps({\n  show: Boolean,\n});\n\nconst activeMenu = defineEmits();\nconst active = ref(false);\n\nfunction toggleMenu() {\n  active.value = !active.value;\n  activeMenu(\"activeMenu\", active.value);\n}\n\nonUpdated(() => {\n  active.value = props.show;\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056270710,
+      "end": 1716056270817,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056270817,
+      "end": 1716056270817,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056270817,
+      "end": 1716056270817,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056270817,
+      "end": 1716056270817,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056270817,
+      "end": 1716056270817,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056270817,
+      "end": 1716056270817,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056270817,
+      "end": 1716056270817,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056270817,
+      "end": 1716056270817,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"navbar-toggler-icon me-md-3\" }\n\n\nconst _sfc_main = {\n  __name: 'NavMenuButton',\n  props: {\n  show: Boolean,\n},\n  setup(__props, { emit: __emit }) {\n\nconst props = __props;\n\nconst activeMenu = __emit;\nconst active = ref(false);\n\nfunction toggleMenu() {\n  active.value = !active.value;\n  activeMenu(\"activeMenu\", active.value);\n}\n\nonUpdated(() => {\n  active.value = props.show;\n});\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"button\", {\n    class: \"navbar-toggler d-xl-none d-inline navbar-menu-button\",\n    type: \"button\",\n    onClick: _cache[0] || (_cache[0] = $event => (toggleMenu()))\n  }, [\n    _createElementVNode(\"span\", _hoisted_1, [\n      _createVNode(_component_Icon, { name: \"ri:align-left\" })\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056270817,
+      "end": 1716056270819,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/NavMenuButton.vue\").then(r => r.default))",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056270819,
+      "end": 1716056270819,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056270819,
+      "end": 1716056270820,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056270820,
+      "end": 1716056270820,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056270820,
+      "end": 1716056270820,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056270820,
+      "end": 1716056270820,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056270820,
+      "end": 1716056270820,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056270820,
+      "end": 1716056270820,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056270820,
+      "end": 1716056270820,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Header/Elements/NavMenuButton.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056270820,
+      "end": 1716056270820,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056270820,
+      "end": 1716056270820,
+      "order": "normal"
+    }
+  ]
+}

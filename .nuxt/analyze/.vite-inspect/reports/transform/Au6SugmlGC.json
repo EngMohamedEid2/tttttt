@@ -1,0 +1,217 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Auth/ForgotPassword.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <section class=\"log-in-section section-b-space forgot-section\">\n    <div class=\"container-fluid-lg w-100\">\n      <div class=\"row align-items-center\">\n        <div class=\"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\">\n          <div class=\"image-contain\">\n            <img src=\"/images/inner-page/forgot.png\" class=\"img-fluid\" alt=\"image\" />\n          </div>\n        </div>\n        <div class=\"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\">\n          <!-- <app-alert></app-alert> -->\n          <div class=\"log-in-box\">\n            <div class=\"log-in-title\">\n              <h3>{{ $t(\"Welcome To Fastkart\") }}</h3>\n              <h4>{{ $t(\"Forgot your password\") }}</h4>\n            </div>\n            <div class=\"input-box\">\n              <form class=\"row g-4\" @submit.prevent=\"submit()\">\n                <div class=\"col-12\">\n                  <div class=\"form-floating log-in-form\">\n                    <WidgetsInputFieldsEmailField errorMessage=\"Email is required.\" :formSubmitted=\"formSubmitted\"\n                      classes=\"form-control\" v-model=\"input.email\" id=\"email\" placeholder=\"Email Adrress\" />\n                    <label for=\"email\">{{ $t(\"Email Address\") }}</label>\n                  </div>\n                </div>\n                <div class=\"col-12\">\n                  <WidgetsButton :id=\"'forgot_btn'\">{{\n                    $t(\"Send\")\n                  }}</WidgetsButton>\n                </div>\n              </form>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</template>\n\n<script setup>\nlet input = ref({\n  email: { data: \"\" },\n});\nlet formSubmitted = ref(false);\nasync function submit() {\n  formSubmitted.value = true;\n  if (input.value.email.data) {\n    let { data, error } = await useFetch(\"forgot-password\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"post\",\n      body: { email: input.value.email.data },\n      async onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"fpemail\").value = input.value.email.data;\n          await navigateTo(\"/auth/otp\");\n        }\n      },\n    });\n  }\n}\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056286560,
+      "end": 1716056286847,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056286847,
+      "end": 1716056286847,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056286847,
+      "end": 1716056286847,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056286847,
+      "end": 1716056286847,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056286847,
+      "end": 1716056286847,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056286847,
+      "end": 1716056286847,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056286847,
+      "end": 1716056286847,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056286847,
+      "end": 1716056286847,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, withModifiers as _withModifiers, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from '/images/inner-page/forgot.png'\n\n\nconst _hoisted_1 = { class: \"log-in-section section-b-space forgot-section\" }\nconst _hoisted_2 = { class: \"container-fluid-lg w-100\" }\nconst _hoisted_3 = { class: \"row align-items-center\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"image-contain\" }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_0,\n      class: \"img-fluid\",\n      alt: \"image\"\n    })\n  ])\n], -1)\nconst _hoisted_5 = { class: \"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\" }\nconst _hoisted_6 = { class: \"log-in-box\" }\nconst _hoisted_7 = { class: \"log-in-title\" }\nconst _hoisted_8 = { class: \"input-box\" }\nconst _hoisted_9 = { class: \"col-12\" }\nconst _hoisted_10 = { class: \"form-floating log-in-form\" }\nconst _hoisted_11 = { for: \"email\" }\nconst _hoisted_12 = { class: \"col-12\" }\n\n\nconst _sfc_main = {\n  __name: 'ForgotPassword',\n  setup(__props) {\n\nlet input = ref({\n  email: { data: \"\" },\n});\nlet formSubmitted = ref(false);\nasync function submit() {\n  formSubmitted.value = true;\n  if (input.value.email.data) {\n    let { data, error } = await useFetch(\"forgot-password\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"post\",\n      body: { email: input.value.email.data },\n      async onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"fpemail\").value = input.value.email.data;\n          await navigateTo(\"/auth/otp\");\n        }\n      },\n    });\n  }\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsInputFieldsEmailField = _resolveComponent(\"WidgetsInputFieldsEmailField\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _hoisted_4,\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"h3\", null, _toDisplayString(_ctx.$t(\"Welcome To Fastkart\")), 1),\n              _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Forgot your password\")), 1)\n            ]),\n            _createElementVNode(\"div\", _hoisted_8, [\n              _createElementVNode(\"form\", {\n                class: \"row g-4\",\n                onSubmit: _cache[1] || (_cache[1] = _withModifiers($event => (submit()), [\"prevent\"]))\n              }, [\n                _createElementVNode(\"div\", _hoisted_9, [\n                  _createElementVNode(\"div\", _hoisted_10, [\n                    _createVNode(_component_WidgetsInputFieldsEmailField, {\n                      errorMessage: \"Email is required.\",\n                      formSubmitted: _unref(formSubmitted),\n                      classes: \"form-control\",\n                      modelValue: _unref(input).email,\n                      \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_unref(input).email) = $event)),\n                      id: \"email\",\n                      placeholder: \"Email Adrress\"\n                    }, null, 8, [\"formSubmitted\", \"modelValue\"]),\n                    _createElementVNode(\"label\", _hoisted_11, _toDisplayString(_ctx.$t(\"Email Address\")), 1)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createVNode(_component_WidgetsButton, { id: 'forgot_btn' }, {\n                    default: _withCtx(() => [\n                      _createTextVNode(_toDisplayString(_ctx.$t(\"Send\")), 1)\n                    ]),\n                    _: 1\n                  })\n                ])\n              ], 32)\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286847,
+      "end": 1716056286848,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056286848,
+      "end": 1716056286848,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056286849,
+      "end": 1716056286849,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "result": "import { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, withModifiers as _withModifiers, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from '/images/inner-page/forgot.png'\n\n\nconst _hoisted_1 = { class: \"log-in-section section-b-space forgot-section\" }\nconst _hoisted_2 = { class: \"container-fluid-lg w-100\" }\nconst _hoisted_3 = { class: \"row align-items-center\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"image-contain\" }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_0,\n      class: \"img-fluid\",\n      alt: \"image\"\n    })\n  ])\n], -1)\nconst _hoisted_5 = { class: \"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\" }\nconst _hoisted_6 = { class: \"log-in-box\" }\nconst _hoisted_7 = { class: \"log-in-title\" }\nconst _hoisted_8 = { class: \"input-box\" }\nconst _hoisted_9 = { class: \"col-12\" }\nconst _hoisted_10 = { class: \"form-floating log-in-form\" }\nconst _hoisted_11 = { for: \"email\" }\nconst _hoisted_12 = { class: \"col-12\" }\n\n\nconst _sfc_main = {\n  __name: 'ForgotPassword',\n  setup(__props) {\n\nlet input = ref({\n  email: { data: \"\" },\n});\nlet formSubmitted = ref(false);\nasync function submit() {\n  formSubmitted.value = true;\n  if (input.value.email.data) {\n    let { data, error } = await useFetch(\"forgot-password\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"post\",\n      body: { email: input.value.email.data },\n      async onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"fpemail\").value = input.value.email.data;\n          await navigateTo(\"/auth/otp\");\n        }\n      },\n    }, '$EAzbXMu2QF');\n  }\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsInputFieldsEmailField = _resolveComponent(\"WidgetsInputFieldsEmailField\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _hoisted_4,\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"h3\", null, _toDisplayString(_ctx.$t(\"Welcome To Fastkart\")), 1),\n              _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Forgot your password\")), 1)\n            ]),\n            _createElementVNode(\"div\", _hoisted_8, [\n              _createElementVNode(\"form\", {\n                class: \"row g-4\",\n                onSubmit: _cache[1] || (_cache[1] = _withModifiers($event => (submit()), [\"prevent\"]))\n              }, [\n                _createElementVNode(\"div\", _hoisted_9, [\n                  _createElementVNode(\"div\", _hoisted_10, [\n                    _createVNode(_component_WidgetsInputFieldsEmailField, {\n                      errorMessage: \"Email is required.\",\n                      formSubmitted: _unref(formSubmitted),\n                      classes: \"form-control\",\n                      modelValue: _unref(input).email,\n                      \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_unref(input).email) = $event)),\n                      id: \"email\",\n                      placeholder: \"Email Adrress\"\n                    }, null, 8, [\"formSubmitted\", \"modelValue\"]),\n                    _createElementVNode(\"label\", _hoisted_11, _toDisplayString(_ctx.$t(\"Email Address\")), 1)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createVNode(_component_WidgetsButton, { id: 'forgot_btn' }, {\n                    default: _withCtx(() => [\n                      _createTextVNode(_toDisplayString(_ctx.$t(\"Send\")), 1)\n                    ]),\n                    _: 1\n                  })\n                ])\n              ], 32)\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286849,
+      "end": 1716056286852,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { useCookie } from '#app/composables/cookie';\nimport { navigateTo } from '#app/composables/router';\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, withModifiers as _withModifiers, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from '/images/inner-page/forgot.png'\n\n\nconst _hoisted_1 = { class: \"log-in-section section-b-space forgot-section\" }\nconst _hoisted_2 = { class: \"container-fluid-lg w-100\" }\nconst _hoisted_3 = { class: \"row align-items-center\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"image-contain\" }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_0,\n      class: \"img-fluid\",\n      alt: \"image\"\n    })\n  ])\n], -1)\nconst _hoisted_5 = { class: \"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\" }\nconst _hoisted_6 = { class: \"log-in-box\" }\nconst _hoisted_7 = { class: \"log-in-title\" }\nconst _hoisted_8 = { class: \"input-box\" }\nconst _hoisted_9 = { class: \"col-12\" }\nconst _hoisted_10 = { class: \"form-floating log-in-form\" }\nconst _hoisted_11 = { for: \"email\" }\nconst _hoisted_12 = { class: \"col-12\" }\n\n\nconst _sfc_main = {\n  __name: 'ForgotPassword',\n  setup(__props) {\n\nlet input = ref({\n  email: { data: \"\" },\n});\nlet formSubmitted = ref(false);\nasync function submit() {\n  formSubmitted.value = true;\n  if (input.value.email.data) {\n    let { data, error } = await useFetch(\"forgot-password\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"post\",\n      body: { email: input.value.email.data },\n      async onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"fpemail\").value = input.value.email.data;\n          await navigateTo(\"/auth/otp\");\n        }\n      },\n    }, '$EAzbXMu2QF');\n  }\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsInputFieldsEmailField = _resolveComponent(\"WidgetsInputFieldsEmailField\")\n  const _component_WidgetsButton = _resolveComponent(\"WidgetsButton\")\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _hoisted_4,\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"h3\", null, _toDisplayString(_ctx.$t(\"Welcome To Fastkart\")), 1),\n              _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Forgot your password\")), 1)\n            ]),\n            _createElementVNode(\"div\", _hoisted_8, [\n              _createElementVNode(\"form\", {\n                class: \"row g-4\",\n                onSubmit: _cache[1] || (_cache[1] = _withModifiers($event => (submit()), [\"prevent\"]))\n              }, [\n                _createElementVNode(\"div\", _hoisted_9, [\n                  _createElementVNode(\"div\", _hoisted_10, [\n                    _createVNode(_component_WidgetsInputFieldsEmailField, {\n                      errorMessage: \"Email is required.\",\n                      formSubmitted: _unref(formSubmitted),\n                      classes: \"form-control\",\n                      modelValue: _unref(input).email,\n                      \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_unref(input).email) = $event)),\n                      id: \"email\",\n                      placeholder: \"Email Adrress\"\n                    }, null, 8, [\"formSubmitted\", \"modelValue\"]),\n                    _createElementVNode(\"label\", _hoisted_11, _toDisplayString(_ctx.$t(\"Email Address\")), 1)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createVNode(_component_WidgetsButton, { id: 'forgot_btn' }, {\n                    default: _withCtx(() => [\n                      _createTextVNode(_toDisplayString(_ctx.$t(\"Send\")), 1)\n                    ]),\n                    _: 1\n                  })\n                ])\n              ], 32)\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286853,
+      "end": 1716056286856,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056286856,
+      "end": 1716056286856,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056286856,
+      "end": 1716056286856,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056286856,
+      "end": 1716056286856,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056286856,
+      "end": 1716056286856,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/InputFields/EmailField.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Widgets/Button/index.vue\";\nimport { ref } from 'vue';\nimport { useFetch } from '#app/composables/fetch';\nimport { BaseUrl } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/urls.js';\nimport { GetHeaders } from 'C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/services/api/handleRequest.js';\nimport { useCookie } from '#app/composables/cookie';\nimport { navigateTo } from '#app/composables/router';\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, withModifiers as _withModifiers, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from '/images/inner-page/forgot.png'\n\n\nconst _hoisted_1 = { class: \"log-in-section section-b-space forgot-section\" }\nconst _hoisted_2 = { class: \"container-fluid-lg w-100\" }\nconst _hoisted_3 = { class: \"row align-items-center\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"image-contain\" }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_0,\n      class: \"img-fluid\",\n      alt: \"image\"\n    })\n  ])\n], -1)\nconst _hoisted_5 = { class: \"col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto\" }\nconst _hoisted_6 = { class: \"log-in-box\" }\nconst _hoisted_7 = { class: \"log-in-title\" }\nconst _hoisted_8 = { class: \"input-box\" }\nconst _hoisted_9 = { class: \"col-12\" }\nconst _hoisted_10 = { class: \"form-floating log-in-form\" }\nconst _hoisted_11 = { for: \"email\" }\nconst _hoisted_12 = { class: \"col-12\" }\n\n\nconst _sfc_main = {\n  __name: 'ForgotPassword',\n  setup(__props) {\n\nlet input = ref({\n  email: { data: \"\" },\n});\nlet formSubmitted = ref(false);\nasync function submit() {\n  formSubmitted.value = true;\n  if (input.value.email.data) {\n    let { data, error } = await useFetch(\"forgot-password\", {\n      baseURL: BaseUrl,\n      headers: GetHeaders(),\n      method: \"post\",\n      body: { email: input.value.email.data },\n      async onResponse({ response }) {\n        if (response._data.success) {\n          useCookie(\"fpemail\").value = input.value.email.data;\n          await navigateTo(\"/auth/otp\");\n        }\n      },\n    }, '$EAzbXMu2QF');\n  }\n}\n\nreturn (_ctx, _cache) => {\n  const _component_WidgetsInputFieldsEmailField = __nuxt_component_0\n  const _component_WidgetsButton = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _hoisted_4,\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"h3\", null, _toDisplayString(_ctx.$t(\"Welcome To Fastkart\")), 1),\n              _createElementVNode(\"h4\", null, _toDisplayString(_ctx.$t(\"Forgot your password\")), 1)\n            ]),\n            _createElementVNode(\"div\", _hoisted_8, [\n              _createElementVNode(\"form\", {\n                class: \"row g-4\",\n                onSubmit: _cache[1] || (_cache[1] = _withModifiers($event => (submit()), [\"prevent\"]))\n              }, [\n                _createElementVNode(\"div\", _hoisted_9, [\n                  _createElementVNode(\"div\", _hoisted_10, [\n                    _createVNode(_component_WidgetsInputFieldsEmailField, {\n                      errorMessage: \"Email is required.\",\n                      formSubmitted: _unref(formSubmitted),\n                      classes: \"form-control\",\n                      modelValue: _unref(input).email,\n                      \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_unref(input).email) = $event)),\n                      id: \"email\",\n                      placeholder: \"Email Adrress\"\n                    }, null, 8, [\"formSubmitted\", \"modelValue\"]),\n                    _createElementVNode(\"label\", _hoisted_11, _toDisplayString(_ctx.$t(\"Email Address\")), 1)\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createVNode(_component_WidgetsButton, { id: 'forgot_btn' }, {\n                    default: _withCtx(() => [\n                      _createTextVNode(_toDisplayString(_ctx.$t(\"Send\")), 1)\n                    ]),\n                    _: 1\n                  })\n                ])\n              ], 32)\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1716056286856,
+      "end": 1716056286856,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056286856,
+      "end": 1716056286857,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056286857,
+      "end": 1716056286857,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056286857,
+      "end": 1716056286857,
+      "order": "normal"
+    }
+  ]
+}

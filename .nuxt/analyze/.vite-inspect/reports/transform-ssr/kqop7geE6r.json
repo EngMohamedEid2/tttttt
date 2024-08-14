@@ -1,0 +1,252 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/data/languages/en.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "const english = {\n    \"All Category\": \"All Category\",\n    \"New\": \"New\",\n    \"Hot\": \"Hot\",\n    \"Home\": \"Home\",\n    \"Paris\": \"Paris\",\n    \"Tokyo\": \"Tokyo\",\n    \"Osaka\": \"Osaka\",\n    \"Rome\": \"Rome\",\n    \"Madrid\": \"Madrid\",\n    \"Berlin\": \"Berlin\",\n    \"Denver\": \"Denver\",\n    \"Help Center\":\"Help Center\",\n    \"Email Address\":\"Email Address\",\n    \"Theme Colo\":\"Theme Colo\",\n    \"Collections\": \"Collections\",\n    \"Collection Layouts\": \"Collection Layouts\",\n    \"Collection Left Sidebar\": \"Collection Left Sidebar\",\n    \"Collection Right Sidebar\": \"Collection Right Sidebar\",\n    \"Collection No Sidebar\": \"Collection No Sidebar\",\n    \"Collection 3 Grid\": \"Collection 3 Grid\",\n    \"Collection 4 Grid\": \"Collection 4 Grid\",\n    \"Collection 5 Grid\": \"Collection 5 Grid\",\n    \"Collection List View\": \"Collection List View\",\n    \"Category Slider\": \"Category Slider\",\n    \"Category Sidebar\": \"Category Sidebar\",\n    \"Category Banner\": \"Category Banner\",\n    \"Offcanvas Filter\": \"Offcanvas Filter\",\n    \"Product\": \"Product\",\n    \"Product Pages\": \"Product Pages\",\n    \"Product Thumbnail\": \"Product Thumbnail\",\n    \"Product Images\": \"Product Images\",\n    \"Product Slider\": \"Product Slider\",\n    \"Product Sticky\": \"Product Sticky\",\n    \"Product Accordion\": \"Product Accordion\",\n    \"Product Tab\": \"Product Tab\",\n    \"Product Features\": \"Product Features\",\n    \"Bundle (Cross Sale)\": \"Bundle (Cross Sale)\",\n    \"Hot Stock Progress\": \"Hot Stock Progress\",\n    \"SOLD OUT\": \"SOLD OUT\",\n    \"Sale Countdown\": \"Sale Countdown\",\n    \"Product Zoom\": \"Product Zoom\",\n    \"Product Variants Style\": \"Product Variants Style\",\n    \"Variant Rectangle\": \"Variant Rectangle\",\n    \"Variant Circle\": \"Variant Circle\",\n    \"Variant Image Swatch\": \"Variant Image Swatch\",\n    \"Variant Color\": \"Variant Color\",\n    \"Variant Radio Button\": \"Variant Radio Button\",\n    \"Variant Dropdown\": \"Variant Dropdown\",\n    \"Sticky Checkout\": \"Sticky Checkout\",\n    \"Dynamic Checkout\": \"Dynamic Checkout\",\n    \"Secure Checkout\": \"Secure Checkout\",\n    \"Active Product view\": \"Active Product view\",\n    \"Active Last Orders\": \"Active Last Orders\",\n    \"Product Simple\": \"Product Simple\",\n    \"Product Classified\": \"Product Classified\",\n    \"Size Chart\": \"Size Chart\",\n    \"Delivery & Return\": \"Delivery & Return\",\n    \"Payment Trust Badges\": \"Payment Trust Badges\",\n    \"Ask an Expert\": \"Ask an Expert\",\n    \"Product Tags\": \"Product Tags\",\n    \"Product Information\": \"Product Information\",\n    \"Social Share\": \"Social Share\",\n    \"Related Products\": \"Related Products\",\n    \"Wishlist & Compare\": \"Wishlist & Compare\",\n    \"Features\": \"Features\",\n    \"Theme Features\": \"Theme Features\",\n    \"Sticky Compare\": \"Sticky Compare\",\n    \"Cart Hover & Sticky\": \"Cart Hover & Sticky\",\n    \"Cart Sidebar\": \"Cart Sidebar\",\n    \"Cart Customize\": \"Cart Customize\",\n    \"Email Template\": \"Email Template\",\n    \"Welcome Template\": \"Welcome Template\",\n    \"Abandonment\": \"Abandonment\",\n    \"Offer Template\": \"Offer Template\",\n    \"Order Success\": \"Order Success\",\n    \"Reset Password\": \"Reset Password\",\n    \"Recent Purchase Product\": \"Recent Purchase Product\",\n    \"Newsletter\": \"Newsletter\",\n    \"Quick View Modal\": \"Quick View Modal\",\n    \"Exit Modal\": \"Exit Modal\",\n    \"Invoice Template\": \"Invoice Template\",\n    \"Invoice Template 1\": \"Invoice Template 1\",\n    \"Invoice Template 2\": \"Invoice Template 2\",\n    \"Invoice Template 3\": \"Invoice Template 3\",\n    \"Blog\": \"Blog\",\n    \"Blog Pages\": \"Blog Pages\",\n    \"Blog List\": \"Blog List\",\n    \"Grid Left Sidebar\": \"Grid Left Sidebar\",\n    \"Grid Right Sidebar\": \"Grid Right Sidebar\",\n    \"Grid No Sidebar\": \"Grid No Sidebar\",\n    \"Blog Details\": \"Blog Details\",\n    \"Pages\": \"Pages\",\n    \"Authentication\": \"Authentication\",\n    \"Sign In\": \"Sign In\",\n    \"Sign Up\": \"Sign Up\",\n    \"Forgot Password\": \"Forgot Password\",\n    \"Verify OTP\": \"Verify OTP\",\n    \"Update Password\": \"Update Password\",\n    \"Account\": \"Account\",\n    \"My Dashboard\": \"My Dashboard\",\n    \"My Notifications\": \"My Notifications\",\n    \"My Addresses\": \"My Addresses\",\n    \"My Wallet\": \"My Wallet\",\n    \"My Points\": \"My Points\",\n    \"My Orders\": \"My Orders\",\n    \"Order Details\": \"Order Details\",\n    \"Refund History\": \"Refund History\",\n    \"Payout Details\": \"Payout Details\",\n    \"About Us\": \"About Us\",\n    \"Browse FAQs\": \"Browse FAQs\",\n    \"Cart\": \"Cart\",\n    \"Checkout\": \"Checkout\",\n    \"Compare\": \"Compare\",\n    \"Contact Us\": \"Contact Us\",\n    \"Maintenance\": \"Maintenance\",\n    \"Offers\": \"Offers\",\n    \"Search\": \"Search\",\n    \"Wishlist\": \"Wishlist\",\n    \"404\": \"404\",\n    \"Seller\": \"Seller\",\n    \"Become Seller\": \"Become Seller\",\n    \"Seller Stores (Basic)\": \"Seller Stores (Basic)\",\n    \"Seller Stores (Classic)\": \"Seller Stores (Classic)\",\n    \"Store Details (Basic)\": \"Store Details (Basic)\",\n    \"Store Details (Classic)\": \"Store Details (Classic)\",\n    \"Categories\": \"Categories\",\n    \"Shop Now\": \"Shop Now\",\n    \"Trending Products\": \"Trending Products\",\n    \"Saved Address\": \"Saved Address\",\n    \"Add Address\": \"Add Address\",\n    \"Address\": \"Address\",\n    \"Pin Code\": \"Pin Code\",\n    \"Phone\": \"Phone\",\n    \"Edit\": \"Edit\",\n    \"Remove\": \"Remove\",\n    \"Bank Details\": \"Bank Details\",\n    \"Bank Account No\": \"Bank Account No\",\n    \"Enter Bank Account No\": \"Enter Bank Account No\",\n    \"Bank Name\": \"Bank Name\",\n    \"Enter Bank Name\": \"Enter Bank Name\",\n    \"Holder Name\": \"Holder Name\",\n    \"Enter Bank Holder Name\": \"Enter Bank Holder Name\",\n    \"Swift\": \"Swift\",\n    \"Enter Swift\": \"Enter Swift\",\n    \"IFSC\": \"IFSC\",\n    \"Enter IFSC\": \"Enter IFSC\",\n    \"Paypal Details\": \"Paypal Details\",\n    \"Paypal Email\": \"Paypal Email\",\n    \"Enter Paypal Email\": \"Enter Paypal Email\",\n    \"Save\": \"Save\",\n    \"Hello\": \"Hello\",\n    \"Welcome Text\": \"Welcome Text\",\n    \"Balance\": \"Balance\",\n    \"Total Points\": \"Total Points\",\n    \"Total Orders\": \"Total Orders\",\n    \"Profile Information\": \"Profile Information\",\n    \"Name\": \"Name\",\n    \"Login Details\": \"Login Details\",\n    \"Email\": \"Email\",\n    \"Password\": \"Password\",\n    \"Notifications\": \"Notifications\",\n    \"Order Number\": \"Order Number\",\n    \"Pay Now\": \"Pay Now\",\n    \"Invoice\": \"Invoice\",\n    \"Image\": \"Image\",\n    \"Price\": \"Price\",\n    \"Quantity\": \"Quantity\",\n    \"Subtotal\": \"Subtotal\",\n    \"Action\": \"Action\",\n    \"Ask For Refund\": \"Ask For Refund\",\n    \"Consumer Details\": \"Consumer Details\",\n    \"Billing Address\": \"Billing Address\",\n    \"Shipping Address\": \"Shipping Address\",\n    \"Shipping\": \"Shipping\",\n    \"Delivery Slot\": \"Delivery Slot\",\n    \"Payment Mode\": \"Payment Mode\",\n    \"Payment Status\": \"Payment Status\",\n    \"Summary\": \"Summary\",\n    \"Shipping\": \"Shipping\",\n    \"Tax\": \"Tax\",\n    \"Points\": \"Points\",\n    \"Wallet Balance\": \"Wallet Balance\",\n    \"Coupon Discount\": \"Coupon Discount\",\n    \"Total\": \"Total\",\n    \"Order Date\": \"Order Date\",\n    \"Total Amount\": \"Total Amount\",\n    \"Status\": \"Status\",\n    \"No\": \"No\",\n    \"Date\": \"Date\",\n    \"Amount\": \"Amount\",\n    \"Payment Method\": \"Payment Method\",\n    \"Option\": \"Option\",\n    \"1 Point\": \"1 Point\",\n    \"Remark\": \"Remark\",\n    \"Transactions\": \"Transactions\",\n    \"Refund\": \"Refund\",\n    \"Reason\": \"Reason\",\n    \"Created at\": \"Created at\",\n    \"Dashboard\": \"Dashboard\",\n    \"Earning Points\": \"Earning Points\",\n    \"Logout\": \"Logout\",\n    \"Show Menu\": \"Show Menu\",\n    \"Welcome To Fastkart\": \"Welcome To Fastkart\",\n    \"Forgot Your Password\": \"Forgot Your Password\",\n    \"Email Address\": \"Email Address\",\n    \"Email is required\": \"Email is required\",\n    \"Invalid Email\": \"Invalid Email\",\n    \"Send\": \"Send\",\n    \"Register Your Account\": \"Register Your Account\",\n    \"Login Your Account\": \"Login Your Account\",\n    \"Password is required\": \"Password is required\",\n    \"Remember me\": \"Remember me\",\n    \"Log In\": \"Log In\",\n    \"Or\": \"Or\",\n    \"Don't have an account\": \"Don't have an account\",\n    \"Please enter the one-time password to verify your account\": \"Please enter the one-time password to verify your account\",\n    \"A code has been sent to\": \"A code has been sent to\",\n    \"Validate\": \"Validate\",\n    \"Welcome To Our Store\": \"Welcome To Our Store\",\n    \"Create New Account\": \"Create New Account\",\n    \"Full Name\": \"Full Name\",\n    \"Name is required\": \"Name is required\",\n    \"Phone Number\": \"Phone Number\",\n    \"Phone number is required\": \"Phone number is required\",\n    \"Password Confirmation\": \"Password Confirmation\",\n    \"Confirm Password is required\": \"Confirm Password is required\",\n    \"Confirm password does not match\": \"Confirm password does not match\",\n    \"I agree with\": \"I agree with\",\n    \"Terms\": \"Terms\",\n    \"And\": \"And\",\n    \"Privacy\": \"Privacy\",\n    \"Already have an account\": \"Already have an account\",\n    \"Reset Your Account Password\": \"Reset Your Account Password\",\n    \"New password\": \"New password\",\n    \"New Password is required\": \"New Password is required\",\n    \"Confirm password\": \"Confirm password\",\n    \"Submit\": \"Submit\",\n    \"Recent Posts\": \"Recent Posts\",\n    \"Tags\": \"Tags\",\n    \"Featured\": \"Featured\",\n    \"Read More\": \"Read More\",\n    \"We make Organic Food In Market\": \"We make Organic Food In Market\",\n    \"Just a few seconds to measure your body temperature. Up to 5 users! The battery lasts up to 2 years. There are many variations of passages of Lorem Ipsum available. We started in 2019 and haven't stopped smashing it since. A global brand that doesn't sleep, we are 24/7 and always bringing something new with over 100 new products dropping on the monthly, bringing you the latest looks for less.\":\n        \"Just a few seconds to measure your body temperature. Up to 5 users! The battery lasts up to 2 years. There are many variations of passages of Lorem Ipsum available. We started in 2019 and haven't stopped smashing it since. A global brand that doesn't sleep, we are 24/7 and always bringing something new with over 100 new products dropping on the monthly, bringing you the latest looks for less.\",\n    \"Free delivery for all orders\": \"Free delivery for all orders\",\n    \"Only fresh foods\": \"Only fresh foods\",\n    \"What We Do\": \"What We Do\",\n    \"We are Trusted by Clients\": \"We are Trusted by Clients\",\n    \"Our Creative Team\": \"Our Creative Team\",\n    \"Fastkart team member\": \"Fastkart team member\",\n    \"Latest Testimonials\": \"Latest Testimonials\",\n    \"What people say\": \"What people say\",\n    \"Our Blog\": \"Our Blog\",\n    \"Our Latest Blog\": \"Our Latest Blog\",\n    \"Get In Touch\": \"Get In Touch\",\n    \"Enter Full Name\": \"Enter Full Name\",\n    \"Subject\": \"Subject\",\n    \"Enter Subject\": \"Enter Subject\",\n    \"Subject is required\": \"Subject is required\",\n    \"Message\": \"Message\",\n    \"Enter Your Message\": \"Enter Your Message\",\n    \"Message is required\": \"Message is required\",\n    \"Send Message\": \"Send Message\",\n    \"Enter Email Address\": \"Enter Email Address\",\n    \"Enter Your Phone Number\": \"Enter Your Phone Number\",\n    \"Copy Code\": \"Copy Code\",\n    \"Search for products\": \"Search for products\",\n    \"Sold By\": \"Sold By\",\n    \"Fastkart\": \"Fastkart\",\n    \"Unit\": \"Unit\",\n    \"Saving\": \"Saving\",\n    \"You Save\": \"You Save\",\n    \"Save for later\": \"Save for later\",\n    \"Cart Total\": \"Cart Total\",\n    \"Process To Checkout\": \"Process To Checkout\",\n    \"Return To Shopping\": \"Return To Shopping\",\n    \"Cost at Checkout\": \"Cost at Checkout\",\n    \"No Address Found\": \"No Address Found\",\n    \"Select Timing Slot\": \"Select Timing Slot\",\n    \"Add New\": \"Add New\",\n    \"Delivery Options\": \"Delivery Options\",\n    \"No Delivery Options Found\": \"No Delivery Options Found\",\n    \"Payment Options\": \"Payment Options\",\n    \"No Payment Options Found\": \"No Payment Options Found\",\n    \"Not Calculated Yet\": \"Not Calculated Yet\",\n    \"Would you prefer to pay using points?\": \"Would you prefer to pay using points?\",\n    \"Would you prefer to pay using wallet?\": \"Would you prefer to pay using wallet?\",\n    \"Have a Promo Code\": \"Have a Promo Code\",\n    \"Enter Coupon Code Here\": \"Enter Coupon Code Here\",\n    \"Apply\": \"Apply\",\n    \"You Saved\": \"You Saved\",\n    \"With this code\": \"With this code\",\n    \"Coupon Applied\": \"Coupon Applied\",\n    \"Place Order\": \"Place Order\",\n    \"Filter Menu\": \"Filter Menu\",\n    \"Sort By\": \"Sort By\",\n    \"Filters\": \"Filters\",\n    \"Clear All\": \"Clear All\",\n    \"Back\": \"Back\",\n    \"Rating\": \"Rating\",\n    \"Star\": \"Star\",\n    \"Discount\": \"Discount\",\n    \"Availability\": \"Availability\",\n    \"Review\": \"Review\",\n    \"Weight\": \"Weight\",\n    \"Move To Cart\": \"Move To Cart\",\n    \"Order failed\": \"Order failed\",\n    \"Payment Is Successfully And Your Order Is On The Way\": \"Payment Is Successfully And Your Order Is On The Way\",\n    \"Payment Is Failed Please Try Again\": \"Payment Is Failed Please Try Again\",\n    \"Qty\": \"Qty\",\n    \"Price Details\": \"Price Details\",\n    \"Shipping charges\": \"Shipping charges\",\n    \"Wallet Point\": \"Wallet Point\",\n    \"USD\": \"USD\",\n    \"SALE\": \"SALE\",\n    \"Guaranteed Safe Checkout\": \"Guaranteed Safe Checkout\",\n    \"Please hurry! Only\": \"Please hurry! Only\",\n    \"left in stock\": \"left in stock\",\n    \"Ask a question\": \"Ask a question\",\n    \"Frequently bought together\": \"Frequently bought together\",\n    \"Product Selected for\": \"Product Selected for\",\n    \"Add All To Cart\": \"Add All To Cart\",\n    \"Customers Ordered\": \"Customers Ordered\",\n    \"Active View in this item\": \"Active View in this item\",\n    \"Off\": \"Off\",\n    \"Add to Cart\": \"Add to Cart\",\n    \"Delivery Details\": \"Delivery Details\",\n    \"Description\": \"Description\",\n    \"Q&A\": \"Q&A\",\n    \"SKU\": \"SKU\",\n    \"Stock Status\": \"Stock Status\",\n    \"Gms\": \"Gms\",\n    \"Items Left\": \"Items Left\",\n    \"Review this product\": \"Review this product\",\n    \"Let other customers know what you think\": \"Let other customers know what you think\",\n    \"Write a review\": \"Write a review\",\n    \"Edit Review\": \"Edit Review\",\n    \"Share it\": \"Share it\",\n    \"Q\": \"Q\",\n    \"A\": \"A\",\n    \"Hurry up! Sales Ends In\": \"Hurry up! Sales Ends In\",\n    \"Days\": \"Days\",\n    \"Hours\": \"Hours\",\n    \"Min\": \"Min\",\n    \"Sec\": \"Sec\",\n    \"Contact\": \"Contact\",\n    \"If You Any Query\": \"If You Any Query\",\n    \"Visit Store\": \"Visit Store\",\n    \"Products\": \"Products\",\n    \"Follow Us\": \"Follow Us\",\n    \"Sold\": \"Sold\",\n    \"Items\": \"Items\",\n    \"Hurry up offer end in\": \"Hurry up offer end in\",\n    \"Offer Closed\": \"Offer Closed\",\n    \"Subscribe\": \"Subscribe\",\n    \"Code\": \"Code\",\n    \"Useful Links\": \"Useful Links\",\n    \"Quick Pages\": \"Quick Pages\",\n    \"Customer Support 24/7\": \"Customer Support 24/7\",\n    \"Download App\": \"Download App\",\n    \"Stay connected\": \"Stay connected\",\n    \"Menu\": \"Menu\",\n    \"24/7 Support Center\": \"24/7 Support Center\",\n    \"Unread messages\": \"Unread messages\",\n    \"Shopping Cart\": \"Shopping Cart\",\n    \"Spend\": \"Spend\",\n    \"More and enjoy\": \"More and enjoy\",\n    \"FREE SHIPPING\": \"FREE SHIPPING\",\n    \"Congratulations\": \"Congratulations\",\n    \"Enjoy free shipping on us\": \"Enjoy free shipping on us\",\n    \"Your cart is currently empty\": \"Your cart is currently empty\",\n    \"Shipping and taxes are calculated at checkout\": \"Shipping and taxes are calculated at checkout\",\n    \"View Cart\": \"View Cart\",\n    \"Deal Today\": \"Deal Today\",\n    \"Hot Deals\": \"Hot Deals\",\n    \"Hi\": \"Hi\",\n    \"My Account\": \"My Account\",\n    \"Register\": \"Register\",\n    \"Log Out\": \"Log Out\",\n    \"Get the App\": \"Get the App\",\n    \"Loading\": \"Loading\",\n    \"Edit Address\": \"Edit Address\",\n    \"Title\": \"Title\",\n    \"Enter Title\": \"Enter Title\",\n    \"Title is required\": \"Title is required\",\n    \"Enter Address\": \"Enter Address\",\n    \"Street address is required\": \"Street address is required\",\n    \"Country\": \"Country\",\n    \"Select Country\": \"Select Country\",\n    \"Country is required\": \"Country is required\",\n    \"State\": \"State\",\n    \"Select State\": \"Select State\",\n    \"State is required\": \"State is required\",\n    \"City\": \"City\",\n    \"Enter City\": \"Enter City\",\n    \"City is required\": \"City is required\",\n    \"Pincode\": \"Pincode\",\n    \"Enter Pincode\": \"Enter Pincode\",\n    \"Pincode is required\": \"Pincode is required\",\n    \"Enter Phone\": \"Enter Phone\",\n    \"Phone number is invalid\": \"Phone number is invalid\",\n    \"Cancel\": \"Cancel\",\n    \"Change Password\": \"Change Password\",\n    \"Current Password\": \"Current Password\",\n    \"Enter Current Password\": \"Enter Current Password\",\n    \"Current Password is required\": \"Current Password is required\",\n    \"Enter New Password\": \"Enter New Password\",\n    \"Enter Confirm Password\": \"Enter Confirm Password\",\n    \"Confirmation\": \"Confirmation\",\n    \"Are you sure you want to proceed\": \"Are you sure you want to proceed\",\n    \"Yes\": \"Yes\",\n    \"Recommended deals for you.\": \"Recommended deals for you.\",\n    \"Delete Item\": \"Delete Item\",\n    \"This Item Will Be Deleted Permanently. You Can't Undo This Action.\": \"This Item Will Be Deleted Permanently. You Can't Undo This Action.\",\n    \"Edit Profile\": \"Edit Profile\",\n    \"Enter Name\": \"Enter Name\",\n    \"Email address is required\": \"Email address is required\",\n    \"Please enter valid email\": \"Please enter valid email\",\n    \"Wait\": \"Wait\",\n    \"I'm sorry to see you go.\": \"I'm sorry to see you go.\",\n    \"In order to earn 10% off your first purchase, provide your email address.\": \"In order to earn 10% off your first purchase, provide your email address.\",\n    \"15%\": \"15%\",\n    \"Want to make your purchase\": \"Want to make your purchase\",\n    \"Plus, early access to new arrivals, exclusive sales, & lots more\": \"Plus, early access to new arrivals, exclusive sales, & lots more\",\n    \"Select payment method is required\": \"Select payment method is required\",\n    \"Product Details\": \"Product Details\",\n    \"Your Questions\": \"Your Questions\",\n    \"Enter Reason\": \"Enter Reason\",\n    \"Reason is required\": \"Reason is required\",\n    \"Select Payment Option\": \"Select Payment Option\",\n    \"Payment type is required\": \"Payment type is required\",\n    \"Rating is required\": \"Rating is required\",\n    \"Review Content\": \"Review Content\",\n    \"Write something\": \"Write something\",\n    \"Update Item\": \"Update Item\",\n    \"Add\": \"Add\",\n    \"Someone Recently Purchased\": \"Someone Recently Purchased\",\n    \"Minutes ago\": \"Minutes ago\",\n    \"Color\": \"Color\",\n    \"Theme Color\": \"Theme Color\",\n    \"Dark\": \"Dark\",\n    \"Light\": \"Light\",\n    \"RTL\": \"RTL\",\n    \"LTR\": \"LTR\",\n    \"Choose\": \"Choose\",\n    \"Buy Now\": \"Buy Now\",\n    \"Let other customers know what you think.\": \"Let other customers know what you think.\",\n    \"Have Doubts Regarding This Product\": \"Have Doubts Regarding This Product\",\n    \"Post Your Question\": \"Post Your Question\",\n    \"1\": \"1\",\n    \"2\": \"2\",\n    \"3\": \"3\",\n    \"User\": \"User\",\n    \"Cookies\": \"Cookies\",\n    \"We use cookies to make your experience better\": \"We use cookies to make your experience better\",\n    \"Privacy Policy\": \"Privacy Policy\",\n    \"OK\": \"OK\",\n    \"Welcome to Fastkart\":\"Welcome to Fastkart\",\n    \"Reset your account password\":\"Reset your account password\",\n    \"New Password\":\"New Password\",\n    \"Confirm Password\":\"Confirm Password\",\n    \"Password Confirmation\":\"Password Confirmation\",\n    \"Notification\":\"Notification\",\n    \"Welcome to your personalized My Account Dashboard. Here, you have the power to manage your entire e-commerce  experience in one place.Whether you're exploring the latest products, checking your wallet balance, or updating  your profile, everything is at your fingertips\":\"Welcome to your personalized My Account Dashboard. Here, you have the power to manage your entire e-commerce  experience in one place.Whether you're exploring the latest products, checking your wallet balance, or updating  your profile, everything is at your fingertips\",\n    \"Order\":\"Order\",\n    \"Created At\":\"Created At\",\n    \"This Field Cannot Be Empty\":\"This Field Cannot Be Empty\",\n    \"phone number is required.\":\"phone number is required.\",\n    \"Frequently Asked Questions\":\"Frequently Asked Questions\",\n    \"We are answering most frequent questions. No worries if you not find exact one. You can find out more by searching.\":\"We are answering most frequent questions. No worries if you not find exact one. You can find out more by searching.\",\n    \"London Office\":\"London Office\",\n    \"Bournemouth Office\":\"Bournemouth Office\",\n    \"Copy Code \":\"Copy Code \",\n    \" Search\":\" Search\",\n    \"Select Timing Slot:\":\"Select Timing Slot:\",\n    //----------New -----------//\n    \"Minutes Ago\":\"Minutes Ago\",\n    \"Category\":\"Category\",\n    \"Recent Post\":\"Recent Post\",\n    \"Email Address :\":\"Email Address :\",\n    \"Become a Seller\":\"Become a Seller\",\n    \"Loading...\":\"Loading...\",\n    \"Free Shipping\":\"Free Shipping\",\n    \"Hi , User \":\"Hi , User \",\n    \"Forgot Password ?\":\"Forgot Password ?\",\n    \"Please hurry! only\":\"Please hurry! only\",\n    \"Delivery Return\":\"Delivery Return\",\n    \"Ask a Question\":\"Ask a Question\",\n    \" Add All To Cart\":\" Add All To Cart\",\n    \"I am sorry to see you go\":\"I am sorry to see you go\",\n    \"Log In Your Account\":\"Log In Your Account\",\n    \"or\":\"or\",\n    \"password\":\"password\",\n    \"and\":\"and\",\n    \"Forgot your password\":\"Forgot your password\",\n    \"Email Adrress\":\"Email Adrress\",\n    \"email\":\"email\",\n    // new add\n    \"Become a Seller\":\"Become a Seller\",\n    \"Email Address\":\"Email Address\",\n    \"Minutes Ago\":\"Minutes Ago\",\n    \"Sold Out\":\"Sold Out\",\n    \"FEATURED\":\"FEATURED\",\n    \"subscribe\":\"subscribe\",\n    \"All Categories\":\"All Categories\",\n    \"Free Shipping\":\"Free Shipping\",\n    \"Hi , User\":\"Hi , User\",\n    \"items\":\"items\"\n};\nexport default english;",
+      "start": 1716056340036,
+      "end": 1716056340192,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340192,
+      "end": 1716056340192,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340192,
+      "end": 1716056340192,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340192,
+      "end": 1716056340192,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340192,
+      "end": 1716056340192,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056340192,
+      "end": 1716056340192,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056340193,
+      "end": 1716056340193,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056340193,
+      "end": 1716056340193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056340193,
+      "end": 1716056340193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056340193,
+      "end": 1716056340193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056340193,
+      "end": 1716056340193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1716056340193,
+      "end": 1716056340193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056340193,
+      "end": 1716056340193,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340193,
+      "end": 1716056340193,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340193,
+      "end": 1716056340193,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340193,
+      "end": 1716056340193,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340193,
+      "end": 1716056340193,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056340193,
+      "end": 1716056340193,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340193,
+      "end": 1716056340193,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056340193,
+      "end": 1716056340194,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056340194,
+      "end": 1716056340195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056340195,
+      "end": 1716056340195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056340195,
+      "end": 1716056340195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056340195,
+      "end": 1716056340195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056340195,
+      "end": 1716056340195,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056340195,
+      "end": 1716056340195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056340195,
+      "end": 1716056340195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056340195,
+      "end": 1716056340195,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340195,
+      "end": 1716056340195,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340195,
+      "end": 1716056340195,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056340195,
+      "end": 1716056340200,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056340195,
+      "end": 1716056340200,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340200,
+      "end": 1716056340200,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340200,
+      "end": 1716056340200,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340200,
+      "end": 1716056340200,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340200,
+      "end": 1716056340200,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056340200,
+      "end": 1716056340200,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056340200,
+      "end": 1716056340200,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056340201,
+      "end": 1716056340201,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056340201,
+      "end": 1716056340201,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056340201,
+      "end": 1716056340201,
+      "order": "normal"
+    }
+  ]
+}

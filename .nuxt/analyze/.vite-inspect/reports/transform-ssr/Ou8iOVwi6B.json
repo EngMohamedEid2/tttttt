@@ -1,0 +1,258 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/Content/index.vue?nuxt_component=async&nuxt_component_name=BlogContent",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"row g-4\" :class=\"{ 'ratio_65': style === 'list_view' }\" v-if=\"blog?.data?.length\">\n\n    <div :class=\"style === 'list_view' ? 'col-12' : 'col-xxl-4 col-sm-6'\" v-for=\"blog of blog?.data\" :key=\"blog\">\n      <div class=\"blog-box\" :class=\"{\n        'blog-list': style === 'list_view',\n        'sticky-blog-box': blog?.is_sticky === 1,\n      }\">\n        <div class=\"blog-label-tag\" v-if=\"blog?.is_featured\">\n          <span>{{ $t(\"Featured\") }}</span>\n        </div>\n        <div class=\"blog-image\">\n          <nuxt-link :to=\"`/blog/${blog?.slug}`\">\n            <img :src=\"blog?.blog_thumbnail?.original_url\" :alt=\"blog?.title\" />\n          </nuxt-link>\n        </div>\n        <div class=\"blog-contain blog-contain-2\" :class=\"{ 'blog-contain-2': style === 'list_view' }\">\n          <div class=\"blog-label\">\n            <span class=\"time\">\n              <Icon name=\"ri-time-line\"></Icon>\n              <span>{{ dateFormatter(blog?.created_at) }}</span>\n            </span>\n            <span class=\"super\" v-if=\"themeOption?.blog?.blog_author_enable\">\n              <Icon name=\"ri-user-line\"></Icon>\n              <span>{{ blog?.created_by?.name }}</span>\n            </span>\n          </div>\n          <nuxt-link :to=\"`/blog/${blog?.slug}`\">\n            <h3>{{ blog?.title }}</h3>\n          </nuxt-link>\n          <p v-html=\"blog.description\" v-if=\"blog?.description\"></p>\n          <nuxt-link :to=\"`/blog/${blog?.slug}`\" class=\"blog-button\" v-if=\"themeOption?.blog?.read_more_enable\">\n            {{ $t(\"Read More\") }}\n            <Icon name=\"ri-arrow-right-fill\"></Icon>\n          </nuxt-link>\n        </div>\n      </div>\n    </div>\n    <div class=\"custome-pagination\" v-if=\"blog?.data?.length\">\n      <WidgetsPagination :Data=\"blog\" @change-page=\"(toPage) => {\n        ChangePage({ toPage });\n      }\" />\n    </div>\n  </div>\n  <div v-else>\n    <WidgetsNoData :classes=\"'no-data-added'\" :image=\"'/svg/empty-items.svg'\" :text=\"'No Blogs Found'\"\n      :description=\"'Oops! It seems that we could not find any blogs matching your search criteria.'\"\n      v-if=\"!blog?.data?.length\">\n    </WidgetsNoData>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  blog: Object,\n  style: [String, Object],\n  sidebar: String,\n  filter: Object,\n  themeOption: Object\n});\n\nconst ChangePage = ({ toPage }) => {\n  props.filter.page = toPage;\n};\n</script>\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056306252,
+      "end": 1716056306364,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056306364,
+      "end": 1716056306364,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  __ssrInlineRender: true,\n  props: {\n  blog: Object,\n  style: [String, Object],\n  sidebar: String,\n  filter: Object,\n  themeOption: Object\n},\n  setup(__props) {\n\nlet props = __props;\n\nconst ChangePage = ({ toPage }) => {\n  props.filter.page = toPage;\n};\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_WidgetsPagination = _resolveComponent(\"WidgetsPagination\")\n  const _component_WidgetsNoData = _resolveComponent(\"WidgetsNoData\")\n\n  if (__props.blog?.data?.length) {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({\n      class: [\"row g-4\", { 'ratio_65': __props.style === 'list_view' }]\n    }, _attrs))}><!--[-->`)\n    _ssrRenderList(__props.blog?.data, (blog) => {\n      _push(`<div class=\"${\n        _ssrRenderClass(__props.style === 'list_view' ? 'col-12' : 'col-xxl-4 col-sm-6')\n      }\"><div class=\"${\n        _ssrRenderClass([{\n        'blog-list': __props.style === 'list_view',\n        'sticky-blog-box': blog?.is_sticky === 1,\n      }, \"blog-box\"])\n      }\">`)\n      if (blog?.is_featured) {\n        _push(`<div class=\"blog-label-tag\"><span>${_ssrInterpolate(_ctx.$t(\"Featured\"))}</span></div>`)\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<div class=\"blog-image\">`)\n      _push(_ssrRenderComponent(_component_nuxt_link, {\n        to: `/blog/${blog?.slug}`\n      }, {\n        default: _withCtx((_, _push, _parent, _scopeId) => {\n          if (_push) {\n            _push(`<img${\n              _ssrRenderAttr(\"src\", blog?.blog_thumbnail?.original_url)\n            }${\n              _ssrRenderAttr(\"alt\", blog?.title)\n            }${\n              _scopeId\n            }>`)\n          } else {\n            return [\n              _createVNode(\"img\", {\n                src: blog?.blog_thumbnail?.original_url,\n                alt: blog?.title\n              }, null, 8, [\"src\", \"alt\"])\n            ]\n          }\n        }),\n        _: 2\n      }, _parent))\n      _push(`</div><div class=\"${_ssrRenderClass([{ 'blog-contain-2': __props.style === 'list_view' }, \"blog-contain blog-contain-2\"])}\"><div class=\"blog-label\"><span class=\"time\">`)\n      _push(_ssrRenderComponent(_component_Icon, { name: \"ri-time-line\" }, null, _parent))\n      _push(`<span>${_ssrInterpolate(_ctx.dateFormatter(blog?.created_at))}</span></span>`)\n      if (__props.themeOption?.blog?.blog_author_enable) {\n        _push(`<span class=\"super\">`)\n        _push(_ssrRenderComponent(_component_Icon, { name: \"ri-user-line\" }, null, _parent))\n        _push(`<span>${_ssrInterpolate(blog?.created_by?.name)}</span></span>`)\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`</div>`)\n      _push(_ssrRenderComponent(_component_nuxt_link, {\n        to: `/blog/${blog?.slug}`\n      }, {\n        default: _withCtx((_, _push, _parent, _scopeId) => {\n          if (_push) {\n            _push(`<h3${\n              _scopeId\n            }>${\n              _ssrInterpolate(blog?.title)\n            }</h3>`)\n          } else {\n            return [\n              _createVNode(\"h3\", null, _toDisplayString(blog?.title), 1)\n            ]\n          }\n        }),\n        _: 2\n      }, _parent))\n      if (blog?.description) {\n        _push(`<p>${blog.description}</p>`)\n      } else {\n        _push(`<!---->`)\n      }\n      if (__props.themeOption?.blog?.read_more_enable) {\n        _push(_ssrRenderComponent(_component_nuxt_link, {\n          to: `/blog/${blog?.slug}`,\n          class: \"blog-button\"\n        }, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(`${_ssrInterpolate(_ctx.$t(\"Read More\"))} `)\n              _push(_ssrRenderComponent(_component_Icon, { name: \"ri-arrow-right-fill\" }, null, _parent, _scopeId))\n            } else {\n              return [\n                _createTextVNode(_toDisplayString(_ctx.$t(\"Read More\")) + \" \", 1),\n                _createVNode(_component_Icon, { name: \"ri-arrow-right-fill\" })\n              ]\n            }\n          }),\n          _: 2\n        }, _parent))\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`</div></div></div>`)\n    })\n    _push(`<!--]-->`)\n    if (__props.blog?.data?.length) {\n      _push(`<div class=\"custome-pagination\">`)\n      _push(_ssrRenderComponent(_component_WidgetsPagination, {\n        Data: __props.blog,\n        onChangePage: (toPage) => {\n        ChangePage({ toPage });\n      }\n      }, null, _parent))\n      _push(`</div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n    if (!__props.blog?.data?.length) {\n      _push(_ssrRenderComponent(_component_WidgetsNoData, {\n        classes: 'no-data-added',\n        image: '/svg/empty-items.svg',\n        text: 'No Blogs Found',\n        description: 'Oops! It seems that we could not find any blogs matching your search criteria.'\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  }\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Blog/Content/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056306364,
+      "end": 1716056306367,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056306367,
+      "end": 1716056306367,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306367,
+      "end": 1716056306367,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056306367,
+      "end": 1716056306367,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Blog/Content/index.vue\").then(r => r.default))",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056306368,
+      "end": 1716056306368,
+      "order": "normal"
+    }
+  ]
+}

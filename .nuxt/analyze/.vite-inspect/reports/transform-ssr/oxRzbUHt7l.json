@@ -1,0 +1,256 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Account/Dashboard/TotalContain.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"row row-cols-xxl-3 g-sm-4 g-3\">\n    <div>\n      <div class=\"totle-contain\">\n        <div class=\"wallet-point-box\">\n          <img src=\"/images/svg/wallet.svg\" class=\"img-1\" alt=\"wallet\" />\n          <img src=\"/images/svg/wallet.svg\" alt=\"wallet\" />\n          <div class=\"totle-detail\">\n            <h5>{{ $t(\"Balance\") }}</h5>\n            <h3>{{ user?.wallet ? user?.wallet?.balance : 0 }}</h3>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div>\n      <div class=\"totle-contain\">\n        <div class=\"wallet-point-box\">\n          <img src=\"/images/svg/coin.svg\" class=\"img-1\" alt=\"coin\" />\n          <img src=\"/images/svg/coin.svg\" alt=\"coin\" />\n          <div class=\"totle-detail\">\n            <h5>{{ $t(\"Total Points\") }}</h5>\n            <h3>{{ user?.point ? user?.point?.balance : 0 }}</h3>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div>\n      <div class=\"totle-contain\">\n        <div class=\"wallet-point-box\">\n          <img src=\"/images/svg/order.svg\" class=\"img-1\" alt=\"order\" />\n          <img src=\"/images/svg/order.svg\" alt=\"order\" />\n          <div class=\"totle-detail\">\n            <h5>{{ $t(\"Total Orders\") }}</h5>\n            <h3>{{ user?.orders_count ? user?.orders_count : 0 }}</h3>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nlet props = defineProps({\n  user: Object,\n});\n</script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056340184,
+      "end": 1716056340748,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '/images/svg/wallet.svg'\nimport _imports_1 from '/images/svg/coin.svg'\nimport _imports_2 from '/images/svg/order.svg'\n\n\n\nconst _sfc_main = {\n  __name: 'TotalContain',\n  __ssrInlineRender: true,\n  props: {\n  user: Object,\n},\n  setup(__props) {\n\nlet props = __props;\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"row row-cols-xxl-3 g-sm-4 g-3\" }, _attrs))\n  }><div><div class=\"totle-contain\"><div class=\"wallet-point-box\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } class=\"img-1\" alt=\"wallet\"><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } alt=\"wallet\"><div class=\"totle-detail\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Balance\"))\n  }</h5><h3>${\n    _ssrInterpolate(__props.user?.wallet ? __props.user?.wallet?.balance : 0)\n  }</h3></div></div></div></div><div><div class=\"totle-contain\"><div class=\"wallet-point-box\"><img${\n    _ssrRenderAttr(\"src\", _imports_1)\n  } class=\"img-1\" alt=\"coin\"><img${\n    _ssrRenderAttr(\"src\", _imports_1)\n  } alt=\"coin\"><div class=\"totle-detail\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Total Points\"))\n  }</h5><h3>${\n    _ssrInterpolate(__props.user?.point ? __props.user?.point?.balance : 0)\n  }</h3></div></div></div></div><div><div class=\"totle-contain\"><div class=\"wallet-point-box\"><img${\n    _ssrRenderAttr(\"src\", _imports_2)\n  } class=\"img-1\" alt=\"order\"><img${\n    _ssrRenderAttr(\"src\", _imports_2)\n  } alt=\"order\"><div class=\"totle-detail\"><h5>${\n    _ssrInterpolate(_ctx.$t(\"Total Orders\"))\n  }</h5><h3>${\n    _ssrInterpolate(__props.user?.orders_count ? __props.user?.orders_count : 0)\n  }</h3></div></div></div></div></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Account/Dashboard/TotalContain.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340748,
+      "end": 1716056340748,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340748,
+      "end": 1716056340749,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056340748,
+      "end": 1716056340749,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1716056340749,
+      "end": 1716056340749,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056340749,
+      "end": 1716056340749,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056340749,
+      "end": 1716056340749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056340749,
+      "end": 1716056340749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056340749,
+      "end": 1716056340749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056340749,
+      "end": 1716056340749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056340749,
+      "end": 1716056340749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056340749,
+      "end": 1716056340749,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056340749,
+      "end": 1716056340749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056340749,
+      "end": 1716056340749,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056340749,
+      "end": 1716056340749,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340749,
+      "end": 1716056340749,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056340749,
+      "end": 1716056340749,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056340749,
+      "end": 1716056340751,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056340749,
+      "end": 1716056340751,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340751,
+      "end": 1716056340751,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056340751,
+      "end": 1716056340751,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340751,
+      "end": 1716056340751,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056340751,
+      "end": 1716056340751,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1716056340751,
+      "end": 1716056340751,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056340751,
+      "end": 1716056340751,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056340751,
+      "end": 1716056340751,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1716056340751,
+      "end": 1716056340752,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056340752,
+      "end": 1716056340752,
+      "order": "normal"
+    }
+  ]
+}

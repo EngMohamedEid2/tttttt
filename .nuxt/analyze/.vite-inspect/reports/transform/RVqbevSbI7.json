@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/AboutUs/index.vue?nuxt_component=async&nuxt_component_name=PagesAboutUs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n  <!-- Fresh Vegetable Section Start -->\n  <PagesAboutUsVegetable />\n  <!-- Fresh Vegetable Section End -->\n\n  <!-- Client Section Start -->\n  <PagesAboutUsClient />\n  <!-- Client Section End -->\n\n  <!-- Team Section Start -->\n  <PagesAboutUsTeam />\n  <!-- Team Section End -->\n\n  <!-- Review Section Start -->\n  <PagesAboutUsReview />\n  <!-- Review Section End -->\n  <!-- Blog Section Start -->\n  <PagesAboutUsBlog />\n  <!-- Blog Section End -->\n</div>\n</template>\n\n<script setup></script>\n\n<style lang=\"scss\" scoped></style>\n",
+      "start": 1716056270810,
+      "end": 1716056271195,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1716056271195,
+      "end": 1716056271195,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1716056271195,
+      "end": 1716056271195,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1716056271195,
+      "end": 1716056271195,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1716056271195,
+      "end": 1716056271195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1716056271195,
+      "end": 1716056271195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1716056271195,
+      "end": 1716056271195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1716056271195,
+      "end": 1716056271195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_PagesAboutUsVegetable = _resolveComponent(\"PagesAboutUsVegetable\")\n  const _component_PagesAboutUsClient = _resolveComponent(\"PagesAboutUsClient\")\n  const _component_PagesAboutUsTeam = _resolveComponent(\"PagesAboutUsTeam\")\n  const _component_PagesAboutUsReview = _resolveComponent(\"PagesAboutUsReview\")\n  const _component_PagesAboutUsBlog = _resolveComponent(\"PagesAboutUsBlog\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_PagesAboutUsVegetable),\n    _createVNode(_component_PagesAboutUsClient),\n    _createVNode(_component_PagesAboutUsTeam),\n    _createVNode(_component_PagesAboutUsReview),\n    _createVNode(_component_PagesAboutUsBlog)\n  ]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1716056271195,
+      "end": 1716056271196,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1716056271196,
+      "end": 1716056271196,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1716056271196,
+      "end": 1716056271196,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1716056271196,
+      "end": 1716056271196,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1716056271196,
+      "end": 1716056271196,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/AboutUs/index.vue\").then(r => r.default))",
+      "start": 1716056271196,
+      "end": 1716056271196,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1716056271196,
+      "end": 1716056271196,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"C:/Users/mopc/Downloads/Compressed/Fastkart-Frontend-Nuxt/Fastkart-Frontend-Nuxt/components/Pages/AboutUs/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1716056271197,
+      "end": 1716056271197,
+      "order": "normal"
+    }
+  ]
+}
